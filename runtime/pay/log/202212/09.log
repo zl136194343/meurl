@@ -1,0 +1,44 @@
+[2022-12-09T17:06:01+08:00][sql] CONNECT:[ UseTime:0.000427s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-09T17:06:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_config` [ RunTime:0.000682s ]
+[2022-12-09T17:06:01+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'ALI_PAY_CONFIG' LIMIT 1 [ RunTime:0.000382s ]
+[2022-12-09T17:06:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_pay` [ RunTime:0.000767s ]
+[2022-12-09T17:06:01+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '20221209170523700002' LIMIT 1 [ RunTime:0.000441s ]
+[2022-12-09T17:06:01+08:00][sql] UPDATE `gxfc_pay`  SET `trade_no` = '4200001647202212097447155968' , `pay_type` = 'wechatpay' , `pay_addon` = 'wechatpay' , `pay_time` = 1670576761 , `pay_status` = 2  WHERE  `out_trade_no` = '20221209170523700002' [ RunTime:0.010959s ]
+[2022-12-09T17:06:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_recharge_order` [ RunTime:0.000667s ]
+[2022-12-09T17:06:01+08:00][sql] SELECT `order_id`,`site_id`,`recharge_id`,`recharge_name`,`order_no`,`cover_img`,`face_value`,`buy_price`,`point`,`growth`,`coupon_id`,`price`,`pay_type`,`status`,`create_time`,`pay_time`,`member_id`,`member_img`,`nickname`,`level`,`type` FROM `gxfc_member_recharge_order` WHERE  `out_trade_no` = '20221209170523700002' LIMIT 1 [ RunTime:0.000549s ]
+[2022-12-09T17:06:01+08:00][sql] UPDATE `gxfc_member_recharge_order`  SET `pay_type` = 'wechatpay' , `pay_type_name` = '微信支付' , `pay_time` = 1670576761 , `price` = 19.80 , `status` = 2  WHERE  `out_trade_no` = '20221209170523700002' [ RunTime:0.000577s ]
+[2022-12-09T17:06:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000497s ]
+[2022-12-09T17:06:01+08:00][sql] DELETE FROM `gxfc_cron` WHERE  `event` = 'SrtMenberLevel'  AND `relate_id` = 2370 [ RunTime:0.000268s ]
+[2022-12-09T17:06:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000726s ]
+[2022-12-09T17:06:01+08:00][sql] UPDATE `gxfc_member`  SET `expiration_time` = 1702112761 , `start_time` = 1670576761  WHERE  `member_id` = 2370 [ RunTime:0.000333s ]
+[2022-12-09T17:06:01+08:00][sql] INSERT INTO `gxfc_cron` SET `type` = 1 , `period` = 0 , `period_type` = 0 , `name` = '会员到期' , `event` = 'SrtMenberLevel' , `execute_time` = 1702112761 , `relate_id` = 2370 , `create_time` = 1670576761 [ RunTime:0.000296s ]
+[2022-12-09T17:06:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_recharge_card` [ RunTime:0.010680s ]
+[2022-12-09T17:06:01+08:00][sql] INSERT INTO `gxfc_member_recharge_card` SET `recharge_id` = 0 , `card_account` = '4847a36020948c22' , `recharge_name` = '其他' , `cover_img` = '' , `face_value` = '19.80' , `point` = 19.80 , `growth` = 19.80 , `coupon_id` = '0' , `buy_price` = '19.80' , `member_id` = 2370 , `member_img` = '' , `nickname` = '王巍' , `order_id` = 193 , `order_no` = '20221209170523700002' , `use_status` = 2 , `create_time` = 1670576761 , `use_time` = 1670576761 [ RunTime:0.000324s ]
+[2022-12-09T17:06:01+08:00][sql] SELECT `balance`,`username`,`mobile`,`email` FROM `gxfc_member` WHERE  `member_id` = 2370 LIMIT 1 [ RunTime:0.000271s ]
+[2022-12-09T17:06:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_account` [ RunTime:0.000574s ]
+[2022-12-09T17:06:01+08:00][sql] INSERT INTO `gxfc_member_account` SET `member_id` = 2370 , `account_type` = 'balance' , `account_data` = '19.80' , `from_type` = 'memberrecharge' , `type_name` = '会员充值' , `type_tag` = '0' , `create_time` = 1670576761 , `username` = '' , `mobile` = '18671031151' , `email` = '' , `remark` = '会员充值增加余额' [ RunTime:0.000307s ]
+[2022-12-09T17:06:01+08:00][sql] UPDATE `gxfc_member`  SET `balance` = 19.8  WHERE  `member_id` = 2370 [ RunTime:0.000309s ]
+[2022-12-09T17:06:01+08:00][sql] SELECT `point`,`username`,`mobile`,`email` FROM `gxfc_member` WHERE  `member_id` = 2370 LIMIT 1 [ RunTime:0.000216s ]
+[2022-12-09T17:06:01+08:00][sql] INSERT INTO `gxfc_member_account` SET `member_id` = 2370 , `account_type` = 'point' , `account_data` = '19.80' , `from_type` = 'memberrecharge' , `type_name` = '会员充值' , `type_tag` = '0' , `create_time` = 1670576761 , `username` = '' , `mobile` = '18671031151' , `email` = '' , `remark` = '会员充值增加积分' [ RunTime:0.000285s ]
+[2022-12-09T17:06:01+08:00][sql] UPDATE `gxfc_member`  SET `point` = 69.8  WHERE  `member_id` = 2370 [ RunTime:0.000254s ]
+[2022-12-09T17:06:01+08:00][sql] SELECT `is_fenxiao_charge`,`fenxiao_id`,`nickname`,`source_member` FROM `gxfc_member` WHERE  `member_id` = 2370 LIMIT 1 [ RunTime:0.000235s ]
+[2022-12-09T17:06:01+08:00][sql] SELECT `is_fenxiao_charge`,`fenxiao_id`,`nickname`,`member_level` FROM `gxfc_member` WHERE  `member_id` = 0 LIMIT 1 [ RunTime:0.000222s ]
+[2022-12-09T17:06:01+08:00][sql] SELECT `growth`,`username`,`mobile`,`email` FROM `gxfc_member` WHERE  `member_id` = 2370 LIMIT 1 [ RunTime:0.000190s ]
+[2022-12-09T17:06:01+08:00][sql] INSERT INTO `gxfc_member_account` SET `member_id` = 2370 , `account_type` = 'growth' , `account_data` = '19.80' , `from_type` = 'memberrecharge' , `type_name` = '会员充值' , `type_tag` = '0' , `create_time` = 1670576761 , `username` = '' , `mobile` = '18671031151' , `email` = '' , `remark` = '会员充值增加成长值' [ RunTime:0.000266s ]
+[2022-12-09T17:06:01+08:00][sql] UPDATE `gxfc_member`  SET `growth` = 19.8  WHERE  `member_id` = 2370 [ RunTime:0.000330s ]
+[2022-12-09T17:06:01+08:00][sql] SELECT `growth`,`member_level` FROM `gxfc_member` WHERE  `member_id` = 2370 LIMIT 1 [ RunTime:0.000197s ]
+[2022-12-09T17:06:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_level` [ RunTime:0.000466s ]
+[2022-12-09T17:06:01+08:00][sql] SELECT `level_id`,`level_name`,`sort`,`growth` FROM `gxfc_member_level` WHERE  `growth` <= '19.80' ORDER BY `sort` DESC [ RunTime:0.000255s ]
+[2022-12-09T17:06:01+08:00][sql] UPDATE `gxfc_member`  SET `member_level` = 2 , `member_level_name` = '白银会员'  WHERE  `member_id` = 2370 [ RunTime:0.000278s ]
+[2022-12-09T17:06:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_recharge` [ RunTime:0.000633s ]
+[2022-12-09T17:06:01+08:00][sql] SELECT `sale_num`,`coupon_id` FROM `gxfc_member_recharge` WHERE  `recharge_id` = 0 LIMIT 1 [ RunTime:0.000241s ]
+[2022-12-09T17:06:01+08:00][sql] UPDATE `gxfc_member_recharge`  SET `sale_num` = 1 , `update_time` = 1670576761  WHERE  `recharge_id` = 0 [ RunTime:0.000245s ]
+[2022-12-09T17:06:01+08:00][error] [2]Cannot modify header information - headers already sent by (output started at /www/wwwroot/www.hunqin.com/vendor/symfony/http-foundation/Response.php:381)
+[2022-12-09T17:06:01+08:00][error] [1]Uncaught think\exception\ErrorException: Cannot modify header information - headers already sent by (output started at /www/wwwroot/www.hunqin.com/vendor/symfony/http-foundation/Response.php:381) in /www/wwwroot/www.hunqin.com/vendor/topthink/framework/src/think/Cookie.php:226
+Stack trace:
+#0 [internal function]: think\initializer\Error->appError(2, 'Cannot modify h...', '/www/wwwroot/ww...', 226, Array)
+#1 /www/wwwroot/www.hunqin.com/vendor/topthink/framework/src/think/Cookie.php(226): setcookie('think_lang', '', 0, '/', '', false, false)
+#2 /www/wwwroot/www.hunqin.com/vendor/topthink/framework/src/think/Cookie.php(196): think\Cookie->saveCookie('think_lang', '', 0, '/', '', false, false, '')
+#3 /www/wwwroot/www.hunqin.com/vendor/topthink/framework/src/think/Response.php(142): think\Cookie->save()
+#4 /www/wwwroot/www.hunqin.com/vendor/topthink/framework/src/think/initializer/Error.php(58): think\Response->send()
+#5 [internal function]: think\initializer\Error->appException(Object(think\exception\ErrorExcepti

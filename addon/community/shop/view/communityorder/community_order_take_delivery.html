@@ -1,0 +1,28 @@
+
+
+<script>
+
+    /**
+     * 直接提货
+     * @param order_id
+     */
+    function communityOrderTakedelivery(order_id){
+        layer.confirm('确定要直接提货吗?', {title:'提示'},function() {
+            $.ajax({
+                url: ns.url("community://shop/communityorder/communityOrderTakedelivery"),
+                data: {order_id : order_id},
+                dataType: 'JSON',
+                type: 'POST',
+                success: function(res) {
+                    layer.msg(res.message);
+
+                    if (res.code == 0) {
+                        location.reload();
+                    }
+                }
+            });
+        }, function () {
+            layer.close();
+        });
+    }
+</script>

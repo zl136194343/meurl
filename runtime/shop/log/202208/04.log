@@ -1,0 +1,4 @@
+[2022-08-04T10:59:53+08:00][sql] CONNECT:[ UseTime:0.000356s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-04T10:59:53+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'SHOP_JOIN_ADV_CONFIG' LIMIT 1 [ RunTime:0.000360s ]
+[2022-08-04T13:00:12+08:00][sql] CONNECT:[ UseTime:0.000357s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-04T13:00:12+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'SHOP_JOIN_ADV_CONFIG' LIMIT 1 [ RunTime:0.000364s ]

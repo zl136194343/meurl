@@ -1,0 +1,11 @@
+[2022-12-16T10:36:02+08:00][error] [8]Trying to access array offset on value of type null
+[2022-12-16T11:19:58+08:00][error] [8]Trying to access array offset on value of type null
+[2022-12-16T13:48:51+08:00][error] [8]Trying to access array offset on value of type null
+[2022-12-16T13:49:39+08:00][error] [8]Trying to access array offset on value of type null
+[2022-12-16T13:51:13+08:00][error] [8]Trying to access array offset on value of type null
+[2022-12-16T13:53:13+08:00][error] [8]Trying to access array offset on value of type null
+[2022-12-16T13:54:58+08:00][sql] CONNECT:[ UseTime:0.020263s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-16T13:54:58+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_config` [ RunTime:0.001204s ]
+[2022-12-16T13:54:58+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'UPLOAD_CONFIG' LIMIT 1 [ RunTime:0.000529s ]
+[2022-12-16T13:54:58+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'ALIOSS_CONFIG' LIMIT 1 [ RunTime:0.000544s ]
+[2022-12-16T13:54:58+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'QINIU_CONFIG' LIMIT 1 [ RunTime:0.000433s ]

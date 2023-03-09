@@ -1,0 +1,810 @@
+[2022-09-30T09:59:09+08:00][sql] CONNECT:[ UseTime:0.017733s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T09:59:09+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_config` [ RunTime:0.002126s ]
+[2022-09-30T09:59:09+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'REGISTER_CONFIG' LIMIT 1 [ RunTime:0.000468s ]
+[2022-09-30T16:19:29+08:00][sql] CONNECT:[ UseTime:0.019942s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:19:29+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000914s ]
+[2022-09-30T16:19:29+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.016684s ]
+[2022-09-30T16:19:29+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.015853s ]
+[2022-09-30T16:19:32+08:00][sql] CONNECT:[ UseTime:0.019129s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:19:32+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000781s ]
+[2022-09-30T16:19:32+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.020096s ]
+[2022-09-30T16:19:32+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000571s ]
+[2022-09-30T16:19:43+08:00][sql] CONNECT:[ UseTime:0.018790s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:19:43+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000782s ]
+[2022-09-30T16:19:43+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.192406s ]
+[2022-09-30T16:19:43+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000628s ]
+[2022-09-30T16:19:46+08:00][sql] CONNECT:[ UseTime:0.022805s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:19:46+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000817s ]
+[2022-09-30T16:19:46+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.052435s ]
+[2022-09-30T16:19:46+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000581s ]
+[2022-09-30T16:19:49+08:00][sql] CONNECT:[ UseTime:0.001547s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:19:49+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001198s ]
+[2022-09-30T16:19:49+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.002075s ]
+[2022-09-30T16:19:49+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000518s ]
+[2022-09-30T16:20:38+08:00][sql] CONNECT:[ UseTime:0.017710s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:20:38+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001574s ]
+[2022-09-30T16:20:38+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.020690s ]
+[2022-09-30T16:20:38+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000662s ]
+[2022-09-30T16:20:43+08:00][sql] CONNECT:[ UseTime:0.023234s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:20:43+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000921s ]
+[2022-09-30T16:20:43+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.120974s ]
+[2022-09-30T16:20:43+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.042655s ]
+[2022-09-30T16:21:03+08:00][sql] CONNECT:[ UseTime:0.001674s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:21:03+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000942s ]
+[2022-09-30T16:21:03+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001794s ]
+[2022-09-30T16:21:03+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000538s ]
+[2022-09-30T16:21:33+08:00][sql] CONNECT:[ UseTime:0.001006s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:21:33+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001152s ]
+[2022-09-30T16:21:33+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001281s ]
+[2022-09-30T16:21:33+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000691s ]
+[2022-09-30T16:21:43+08:00][sql] CONNECT:[ UseTime:0.022639s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:21:43+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000771s ]
+[2022-09-30T16:21:43+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001618s ]
+[2022-09-30T16:21:43+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000581s ]
+[2022-09-30T16:21:46+08:00][sql] CONNECT:[ UseTime:0.023416s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:21:46+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000800s ]
+[2022-09-30T16:21:46+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.002031s ]
+[2022-09-30T16:21:46+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000530s ]
+[2022-09-30T16:21:49+08:00][sql] CONNECT:[ UseTime:0.023664s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:21:49+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000767s ]
+[2022-09-30T16:21:49+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001607s ]
+[2022-09-30T16:21:49+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000643s ]
+[2022-09-30T16:21:59+08:00][sql] CONNECT:[ UseTime:0.021733s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:21:59+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000820s ]
+[2022-09-30T16:21:59+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.002595s ]
+[2022-09-30T16:21:59+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.001180s ]
+[2022-09-30T16:23:50+08:00][sql] CONNECT:[ UseTime:0.019610s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:23:50+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000991s ]
+[2022-09-30T16:23:50+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.002632s ]
+[2022-09-30T16:23:50+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000636s ]
+[2022-09-30T16:25:10+08:00][sql] CONNECT:[ UseTime:0.001167s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:25:10+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000900s ]
+[2022-09-30T16:25:10+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001672s ]
+[2022-09-30T16:25:10+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000575s ]
+[2022-09-30T16:25:40+08:00][sql] CONNECT:[ UseTime:0.019936s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:25:40+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000935s ]
+[2022-09-30T16:25:40+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001248s ]
+[2022-09-30T16:25:40+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000612s ]
+[2022-09-30T16:26:35+08:00][sql] CONNECT:[ UseTime:0.024158s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:26:35+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001085s ]
+[2022-09-30T16:26:35+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001346s ]
+[2022-09-30T16:26:35+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000576s ]
+[2022-09-30T16:27:57+08:00][sql] CONNECT:[ UseTime:0.020892s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:27:57+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000800s ]
+[2022-09-30T16:27:57+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001295s ]
+[2022-09-30T16:27:57+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000577s ]
+[2022-09-30T16:34:33+08:00][sql] CONNECT:[ UseTime:0.019741s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:34:33+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000958s ]
+[2022-09-30T16:34:33+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001842s ]
+[2022-09-30T16:34:33+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000632s ]
+[2022-09-30T16:34:38+08:00][sql] CONNECT:[ UseTime:0.024000s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:34:38+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000797s ]
+[2022-09-30T16:34:38+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001269s ]
+[2022-09-30T16:34:38+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000702s ]
+[2022-09-30T16:34:49+08:00][sql] CONNECT:[ UseTime:0.023399s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:34:49+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000747s ]
+[2022-09-30T16:34:49+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001236s ]
+[2022-09-30T16:34:49+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000939s ]
+[2022-09-30T16:35:12+08:00][sql] CONNECT:[ UseTime:0.023964s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:35:12+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000834s ]
+[2022-09-30T16:35:12+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001303s ]
+[2022-09-30T16:35:12+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000558s ]
+[2022-09-30T16:36:47+08:00][sql] CONNECT:[ UseTime:0.019695s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:36:47+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000788s ]
+[2022-09-30T16:36:47+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001401s ]
+[2022-09-30T16:36:47+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.001257s ]
+[2022-09-30T16:38:13+08:00][sql] CONNECT:[ UseTime:0.000745s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:38:13+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000660s ]
+[2022-09-30T16:38:13+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001481s ]
+[2022-09-30T16:38:13+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000434s ]
+[2022-09-30T16:38:20+08:00][sql] CONNECT:[ UseTime:0.000976s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:38:20+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001386s ]
+[2022-09-30T16:38:20+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001393s ]
+[2022-09-30T16:38:20+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000705s ]
+[2022-09-30T16:38:29+08:00][sql] CONNECT:[ UseTime:0.001368s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:38:29+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000921s ]
+[2022-09-30T16:38:29+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001524s ]
+[2022-09-30T16:38:29+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000551s ]
+[2022-09-30T16:38:50+08:00][sql] CONNECT:[ UseTime:0.020385s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:38:50+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000769s ]
+[2022-09-30T16:38:50+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001232s ]
+[2022-09-30T16:38:50+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000552s ]
+[2022-09-30T16:39:05+08:00][sql] CONNECT:[ UseTime:0.024789s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:39:05+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000813s ]
+[2022-09-30T16:39:05+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001409s ]
+[2022-09-30T16:39:05+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000634s ]
+[2022-09-30T16:39:09+08:00][sql] CONNECT:[ UseTime:0.024221s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:39:09+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000794s ]
+[2022-09-30T16:39:09+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001534s ]
+[2022-09-30T16:39:09+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000536s ]
+[2022-09-30T16:40:03+08:00][sql] CONNECT:[ UseTime:0.025583s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:40:03+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000756s ]
+[2022-09-30T16:40:03+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001370s ]
+[2022-09-30T16:40:03+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000578s ]
+[2022-09-30T16:40:07+08:00][sql] CONNECT:[ UseTime:0.001154s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:40:07+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.023466s ]
+[2022-09-30T16:40:07+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.012751s ]
+[2022-09-30T16:40:07+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000593s ]
+[2022-09-30T16:40:26+08:00][sql] CONNECT:[ UseTime:0.020962s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:40:26+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000829s ]
+[2022-09-30T16:40:26+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001360s ]
+[2022-09-30T16:40:26+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000579s ]
+[2022-09-30T16:40:32+08:00][sql] CONNECT:[ UseTime:0.001034s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:40:32+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001886s ]
+[2022-09-30T16:40:32+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001465s ]
+[2022-09-30T16:40:32+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000627s ]
+[2022-09-30T16:40:35+08:00][sql] CONNECT:[ UseTime:0.000911s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:40:35+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000710s ]
+[2022-09-30T16:40:35+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001285s ]
+[2022-09-30T16:40:35+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000538s ]
+[2022-09-30T16:41:01+08:00][sql] CONNECT:[ UseTime:0.001235s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:41:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001143s ]
+[2022-09-30T16:41:01+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001596s ]
+[2022-09-30T16:41:01+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.001433s ]
+[2022-09-30T16:41:04+08:00][sql] CONNECT:[ UseTime:0.025036s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:41:04+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001581s ]
+[2022-09-30T16:41:04+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001360s ]
+[2022-09-30T16:41:04+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000577s ]
+[2022-09-30T16:41:17+08:00][sql] CONNECT:[ UseTime:0.023952s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:41:17+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000875s ]
+[2022-09-30T16:41:17+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001102s ]
+[2022-09-30T16:41:17+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000624s ]
+[2022-09-30T16:41:20+08:00][sql] CONNECT:[ UseTime:0.000813s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:41:20+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000681s ]
+[2022-09-30T16:41:20+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001288s ]
+[2022-09-30T16:41:20+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000505s ]
+[2022-09-30T16:42:18+08:00][sql] CONNECT:[ UseTime:0.011665s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:42:18+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000870s ]
+[2022-09-30T16:42:18+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001227s ]
+[2022-09-30T16:42:18+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000658s ]
+[2022-09-30T16:43:12+08:00][sql] CONNECT:[ UseTime:0.025530s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:43:12+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001167s ]
+[2022-09-30T16:43:12+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001262s ]
+[2022-09-30T16:43:12+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.001421s ]
+[2022-09-30T16:43:15+08:00][sql] CONNECT:[ UseTime:0.000865s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:43:15+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000735s ]
+[2022-09-30T16:43:15+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001249s ]
+[2022-09-30T16:43:15+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000456s ]
+[2022-09-30T16:44:13+08:00][sql] CONNECT:[ UseTime:0.023715s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:44:13+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001322s ]
+[2022-09-30T16:44:13+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001332s ]
+[2022-09-30T16:44:13+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000566s ]
+[2022-09-30T16:44:20+08:00][sql] CONNECT:[ UseTime:0.021894s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:44:20+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001183s ]
+[2022-09-30T16:44:20+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001329s ]
+[2022-09-30T16:44:20+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000559s ]
+[2022-09-30T16:44:28+08:00][sql] CONNECT:[ UseTime:0.020419s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:44:28+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001465s ]
+[2022-09-30T16:44:28+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001444s ]
+[2022-09-30T16:44:28+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000561s ]
+[2022-09-30T16:44:53+08:00][sql] CONNECT:[ UseTime:0.000796s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:44:53+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001264s ]
+[2022-09-30T16:44:53+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.002799s ]
+[2022-09-30T16:44:53+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000612s ]
+[2022-09-30T16:45:08+08:00][sql] CONNECT:[ UseTime:0.001301s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:45:08+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.002713s ]
+[2022-09-30T16:45:08+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001305s ]
+[2022-09-30T16:45:08+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000667s ]
+[2022-09-30T16:45:43+08:00][sql] CONNECT:[ UseTime:0.024874s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:45:43+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000785s ]
+[2022-09-30T16:45:43+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001731s ]
+[2022-09-30T16:45:43+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000555s ]
+[2022-09-30T16:46:05+08:00][sql] CONNECT:[ UseTime:0.009964s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:46:05+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000899s ]
+[2022-09-30T16:46:05+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001382s ]
+[2022-09-30T16:46:05+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000555s ]
+[2022-09-30T16:46:53+08:00][sql] CONNECT:[ UseTime:0.000941s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:46:53+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000864s ]
+[2022-09-30T16:46:53+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001604s ]
+[2022-09-30T16:46:53+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000551s ]
+[2022-09-30T16:46:56+08:00][sql] CONNECT:[ UseTime:0.001219s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:46:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000725s ]
+[2022-09-30T16:46:56+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001573s ]
+[2022-09-30T16:46:56+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000546s ]
+[2022-09-30T16:47:20+08:00][sql] CONNECT:[ UseTime:0.018158s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:47:20+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001162s ]
+[2022-09-30T16:47:20+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001420s ]
+[2022-09-30T16:47:20+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000612s ]
+[2022-09-30T16:47:23+08:00][sql] CONNECT:[ UseTime:0.023584s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:47:23+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000779s ]
+[2022-09-30T16:47:23+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001584s ]
+[2022-09-30T16:47:23+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000583s ]
+[2022-09-30T16:48:19+08:00][sql] CONNECT:[ UseTime:0.019341s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:48:19+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000841s ]
+[2022-09-30T16:48:19+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001610s ]
+[2022-09-30T16:48:19+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000736s ]
+[2022-09-30T16:48:23+08:00][sql] CONNECT:[ UseTime:0.024303s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:48:23+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000836s ]
+[2022-09-30T16:48:23+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001560s ]
+[2022-09-30T16:48:23+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000578s ]
+[2022-09-30T16:48:28+08:00][sql] CONNECT:[ UseTime:0.000791s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:48:28+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000708s ]
+[2022-09-30T16:48:28+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001327s ]
+[2022-09-30T16:48:28+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000745s ]
+[2022-09-30T16:48:32+08:00][sql] CONNECT:[ UseTime:0.002357s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:48:32+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001272s ]
+[2022-09-30T16:48:32+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.011001s ]
+[2022-09-30T16:48:32+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.001504s ]
+[2022-09-30T16:48:42+08:00][sql] CONNECT:[ UseTime:0.021734s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:48:42+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000824s ]
+[2022-09-30T16:48:42+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001532s ]
+[2022-09-30T16:48:42+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000529s ]
+[2022-09-30T16:48:58+08:00][sql] CONNECT:[ UseTime:0.021577s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:48:58+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000846s ]
+[2022-09-30T16:48:58+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001431s ]
+[2022-09-30T16:48:58+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000899s ]
+[2022-09-30T16:49:00+08:00][sql] CONNECT:[ UseTime:0.023478s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:49:00+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000958s ]
+[2022-09-30T16:49:00+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001664s ]
+[2022-09-30T16:49:00+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000530s ]
+[2022-09-30T16:50:16+08:00][sql] CONNECT:[ UseTime:0.000966s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:50:16+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001327s ]
+[2022-09-30T16:50:16+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001933s ]
+[2022-09-30T16:50:16+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000698s ]
+[2022-09-30T16:50:42+08:00][sql] CONNECT:[ UseTime:0.021751s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:50:42+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000793s ]
+[2022-09-30T16:50:42+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001620s ]
+[2022-09-30T16:50:42+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000557s ]
+[2022-09-30T16:50:45+08:00][sql] CONNECT:[ UseTime:0.023827s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:50:45+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000837s ]
+[2022-09-30T16:50:45+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001673s ]
+[2022-09-30T16:50:45+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000690s ]
+[2022-09-30T16:50:55+08:00][sql] CONNECT:[ UseTime:0.023815s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:50:55+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000759s ]
+[2022-09-30T16:50:55+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001793s ]
+[2022-09-30T16:50:55+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000646s ]
+[2022-09-30T16:51:54+08:00][sql] CONNECT:[ UseTime:0.023742s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:51:54+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001235s ]
+[2022-09-30T16:51:54+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001511s ]
+[2022-09-30T16:51:54+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.001541s ]
+[2022-09-30T16:52:30+08:00][sql] CONNECT:[ UseTime:0.001109s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:52:30+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001267s ]
+[2022-09-30T16:52:30+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001662s ]
+[2022-09-30T16:52:30+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000757s ]
+[2022-09-30T16:52:45+08:00][sql] CONNECT:[ UseTime:0.018806s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:52:45+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001179s ]
+[2022-09-30T16:52:45+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001467s ]
+[2022-09-30T16:52:45+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000552s ]
+[2022-09-30T16:52:59+08:00][sql] CONNECT:[ UseTime:0.017049s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:52:59+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000755s ]
+[2022-09-30T16:52:59+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001630s ]
+[2022-09-30T16:52:59+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000593s ]
+[2022-09-30T16:53:34+08:00][sql] CONNECT:[ UseTime:0.021212s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:53:34+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001092s ]
+[2022-09-30T16:53:34+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001315s ]
+[2022-09-30T16:53:34+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000557s ]
+[2022-09-30T16:53:44+08:00][sql] CONNECT:[ UseTime:0.010041s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:53:44+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000863s ]
+[2022-09-30T16:53:44+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001374s ]
+[2022-09-30T16:53:44+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000672s ]
+[2022-09-30T16:53:57+08:00][sql] CONNECT:[ UseTime:0.022593s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:53:57+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000925s ]
+[2022-09-30T16:53:57+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001718s ]
+[2022-09-30T16:53:57+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000640s ]
+[2022-09-30T16:53:59+08:00][sql] CONNECT:[ UseTime:0.024441s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:53:59+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000757s ]
+[2022-09-30T16:53:59+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001379s ]
+[2022-09-30T16:53:59+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000550s ]
+[2022-09-30T16:54:47+08:00][sql] CONNECT:[ UseTime:0.021184s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:54:47+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000889s ]
+[2022-09-30T16:54:47+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001464s ]
+[2022-09-30T16:54:47+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000611s ]
+[2022-09-30T16:57:29+08:00][sql] CONNECT:[ UseTime:0.016257s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:57:29+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001284s ]
+[2022-09-30T16:57:29+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001763s ]
+[2022-09-30T16:57:29+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000688s ]
+[2022-09-30T16:57:32+08:00][sql] CONNECT:[ UseTime:0.022189s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:57:32+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000900s ]
+[2022-09-30T16:57:32+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001583s ]
+[2022-09-30T16:57:32+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000609s ]
+[2022-09-30T16:57:50+08:00][sql] CONNECT:[ UseTime:0.001117s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:57:50+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000718s ]
+[2022-09-30T16:57:50+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.081161s ]
+[2022-09-30T16:57:50+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000600s ]
+[2022-09-30T16:58:01+08:00][sql] CONNECT:[ UseTime:0.022246s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:58:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000783s ]
+[2022-09-30T16:58:01+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001525s ]
+[2022-09-30T16:58:01+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000549s ]
+[2022-09-30T16:58:38+08:00][sql] CONNECT:[ UseTime:0.023108s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:58:38+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000891s ]
+[2022-09-30T16:58:38+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001300s ]
+[2022-09-30T16:58:38+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000543s ]
+[2022-09-30T16:59:26+08:00][sql] CONNECT:[ UseTime:0.000812s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:59:26+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001053s ]
+[2022-09-30T16:59:26+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001465s ]
+[2022-09-30T16:59:26+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000446s ]
+[2022-09-30T16:59:29+08:00][sql] CONNECT:[ UseTime:0.022064s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:59:29+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000891s ]
+[2022-09-30T16:59:29+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001303s ]
+[2022-09-30T16:59:29+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000592s ]
+[2022-09-30T16:59:45+08:00][sql] CONNECT:[ UseTime:0.014459s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:59:45+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000958s ]
+[2022-09-30T16:59:45+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001329s ]
+[2022-09-30T16:59:45+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000762s ]
+[2022-09-30T16:59:48+08:00][sql] CONNECT:[ UseTime:0.010392s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T16:59:48+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000803s ]
+[2022-09-30T16:59:48+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001615s ]
+[2022-09-30T16:59:48+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000560s ]
+[2022-09-30T17:00:10+08:00][sql] CONNECT:[ UseTime:0.000976s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:00:10+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001080s ]
+[2022-09-30T17:00:10+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.030416s ]
+[2022-09-30T17:00:10+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000486s ]
+[2022-09-30T17:00:12+08:00][sql] CONNECT:[ UseTime:0.000983s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:00:12+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000882s ]
+[2022-09-30T17:00:12+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001325s ]
+[2022-09-30T17:00:12+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000624s ]
+[2022-09-30T17:01:51+08:00][sql] CONNECT:[ UseTime:0.001482s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:01:51+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000908s ]
+[2022-09-30T17:01:51+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001569s ]
+[2022-09-30T17:01:51+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000571s ]
+[2022-09-30T17:02:12+08:00][sql] CONNECT:[ UseTime:0.000866s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:02:12+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000744s ]
+[2022-09-30T17:02:12+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001434s ]
+[2022-09-30T17:02:12+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000540s ]
+[2022-09-30T17:02:16+08:00][sql] CONNECT:[ UseTime:0.024903s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:02:16+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000761s ]
+[2022-09-30T17:02:16+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001327s ]
+[2022-09-30T17:02:16+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000740s ]
+[2022-09-30T17:02:34+08:00][sql] CONNECT:[ UseTime:0.021869s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:02:34+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000781s ]
+[2022-09-30T17:02:34+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001620s ]
+[2022-09-30T17:02:34+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000551s ]
+[2022-09-30T17:02:37+08:00][sql] CONNECT:[ UseTime:0.024352s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:02:37+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000821s ]
+[2022-09-30T17:02:37+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001216s ]
+[2022-09-30T17:02:37+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000613s ]
+[2022-09-30T17:02:49+08:00][sql] CONNECT:[ UseTime:0.024950s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:02:49+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000828s ]
+[2022-09-30T17:02:49+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001753s ]
+[2022-09-30T17:02:49+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000699s ]
+[2022-09-30T17:02:51+08:00][sql] CONNECT:[ UseTime:0.023751s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:02:51+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000770s ]
+[2022-09-30T17:02:51+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001402s ]
+[2022-09-30T17:02:51+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000558s ]
+[2022-09-30T17:03:05+08:00][sql] CONNECT:[ UseTime:0.021464s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:03:05+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000914s ]
+[2022-09-30T17:03:05+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001445s ]
+[2022-09-30T17:03:05+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000566s ]
+[2022-09-30T17:03:07+08:00][sql] CONNECT:[ UseTime:0.024021s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:03:07+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000756s ]
+[2022-09-30T17:03:07+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001211s ]
+[2022-09-30T17:03:07+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000551s ]
+[2022-09-30T17:03:20+08:00][sql] CONNECT:[ UseTime:0.000871s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:03:20+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000910s ]
+[2022-09-30T17:03:20+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001489s ]
+[2022-09-30T17:03:20+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000825s ]
+[2022-09-30T17:03:43+08:00][sql] CONNECT:[ UseTime:0.023050s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:03:43+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000803s ]
+[2022-09-30T17:03:43+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001276s ]
+[2022-09-30T17:03:43+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000610s ]
+[2022-09-30T17:04:10+08:00][sql] CONNECT:[ UseTime:0.019971s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:04:10+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000758s ]
+[2022-09-30T17:04:10+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001381s ]
+[2022-09-30T17:04:10+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000634s ]
+[2022-09-30T17:04:24+08:00][sql] CONNECT:[ UseTime:0.001538s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:04:24+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000878s ]
+[2022-09-30T17:04:24+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001658s ]
+[2022-09-30T17:04:24+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000757s ]
+[2022-09-30T17:04:27+08:00][sql] CONNECT:[ UseTime:0.024118s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:04:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001192s ]
+[2022-09-30T17:04:27+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.002134s ]
+[2022-09-30T17:04:27+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000535s ]
+[2022-09-30T17:04:38+08:00][sql] CONNECT:[ UseTime:0.020688s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:04:38+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000835s ]
+[2022-09-30T17:04:38+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001084s ]
+[2022-09-30T17:04:38+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000497s ]
+[2022-09-30T17:05:10+08:00][sql] CONNECT:[ UseTime:0.022468s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:05:10+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000965s ]
+[2022-09-30T17:05:10+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001711s ]
+[2022-09-30T17:05:10+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000882s ]
+[2022-09-30T17:05:14+08:00][sql] CONNECT:[ UseTime:0.021964s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:05:14+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001130s ]
+[2022-09-30T17:05:15+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001588s ]
+[2022-09-30T17:05:15+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000605s ]
+[2022-09-30T17:05:25+08:00][sql] CONNECT:[ UseTime:0.022818s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:05:25+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001141s ]
+[2022-09-30T17:05:25+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001571s ]
+[2022-09-30T17:05:25+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000638s ]
+[2022-09-30T17:05:37+08:00][sql] CONNECT:[ UseTime:0.001091s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:05:37+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000847s ]
+[2022-09-30T17:05:37+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001593s ]
+[2022-09-30T17:05:37+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000548s ]
+[2022-09-30T17:06:23+08:00][sql] CONNECT:[ UseTime:0.020193s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:06:23+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000757s ]
+[2022-09-30T17:06:23+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001585s ]
+[2022-09-30T17:06:23+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000556s ]
+[2022-09-30T17:06:52+08:00][sql] CONNECT:[ UseTime:0.017829s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:06:52+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000876s ]
+[2022-09-30T17:06:52+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001751s ]
+[2022-09-30T17:06:52+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000554s ]
+[2022-09-30T17:06:59+08:00][sql] CONNECT:[ UseTime:0.001333s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:06:59+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001070s ]
+[2022-09-30T17:06:59+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001494s ]
+[2022-09-30T17:06:59+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000844s ]
+[2022-09-30T17:07:46+08:00][sql] CONNECT:[ UseTime:0.022608s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:07:46+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001051s ]
+[2022-09-30T17:07:46+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001598s ]
+[2022-09-30T17:07:46+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000634s ]
+[2022-09-30T17:08:15+08:00][sql] CONNECT:[ UseTime:0.024439s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:08:15+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000917s ]
+[2022-09-30T17:08:15+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001273s ]
+[2022-09-30T17:08:15+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000545s ]
+[2022-09-30T17:08:33+08:00][sql] CONNECT:[ UseTime:0.016763s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:08:33+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001182s ]
+[2022-09-30T17:08:33+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001807s ]
+[2022-09-30T17:08:33+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000575s ]
+[2022-09-30T17:08:36+08:00][sql] CONNECT:[ UseTime:0.022929s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:08:36+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000923s ]
+[2022-09-30T17:08:36+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001485s ]
+[2022-09-30T17:08:36+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000534s ]
+[2022-09-30T17:08:51+08:00][sql] CONNECT:[ UseTime:0.024411s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:08:51+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000900s ]
+[2022-09-30T17:08:51+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001581s ]
+[2022-09-30T17:08:51+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000574s ]
+[2022-09-30T17:09:10+08:00][sql] CONNECT:[ UseTime:0.023108s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:09:10+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000917s ]
+[2022-09-30T17:09:10+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001477s ]
+[2022-09-30T17:09:10+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000878s ]
+[2022-09-30T17:09:13+08:00][sql] CONNECT:[ UseTime:0.022598s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:09:13+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000741s ]
+[2022-09-30T17:09:13+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001007s ]
+[2022-09-30T17:09:13+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000548s ]
+[2022-09-30T17:09:41+08:00][sql] CONNECT:[ UseTime:0.024807s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:09:41+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000805s ]
+[2022-09-30T17:09:41+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001526s ]
+[2022-09-30T17:09:41+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000590s ]
+[2022-09-30T17:09:58+08:00][sql] CONNECT:[ UseTime:0.001807s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:09:58+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001513s ]
+[2022-09-30T17:09:58+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001725s ]
+[2022-09-30T17:09:58+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000648s ]
+[2022-09-30T17:10:07+08:00][sql] CONNECT:[ UseTime:0.001711s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:10:07+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000838s ]
+[2022-09-30T17:10:07+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001274s ]
+[2022-09-30T17:10:07+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000584s ]
+[2022-09-30T17:11:42+08:00][sql] CONNECT:[ UseTime:0.016984s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:11:42+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000830s ]
+[2022-09-30T17:11:42+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001685s ]
+[2022-09-30T17:11:42+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000577s ]
+[2022-09-30T17:11:45+08:00][sql] CONNECT:[ UseTime:0.017234s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:11:45+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000918s ]
+[2022-09-30T17:11:45+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001199s ]
+[2022-09-30T17:11:45+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000611s ]
+[2022-09-30T17:11:57+08:00][sql] CONNECT:[ UseTime:0.015280s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:11:57+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000769s ]
+[2022-09-30T17:11:57+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001609s ]
+[2022-09-30T17:11:57+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000911s ]
+[2022-09-30T17:12:00+08:00][sql] CONNECT:[ UseTime:0.014714s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:12:00+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000837s ]
+[2022-09-30T17:12:00+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001353s ]
+[2022-09-30T17:12:00+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000546s ]
+[2022-09-30T17:12:14+08:00][sql] CONNECT:[ UseTime:0.001099s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:12:14+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000818s ]
+[2022-09-30T17:12:14+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001674s ]
+[2022-09-30T17:12:14+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000677s ]
+[2022-09-30T17:12:24+08:00][sql] CONNECT:[ UseTime:0.000833s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:12:24+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000667s ]
+[2022-09-30T17:12:24+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001383s ]
+[2022-09-30T17:12:24+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000434s ]
+[2022-09-30T17:12:52+08:00][sql] CONNECT:[ UseTime:0.001153s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:12:52+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000841s ]
+[2022-09-30T17:12:52+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001285s ]
+[2022-09-30T17:12:52+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000522s ]
+[2022-09-30T17:12:56+08:00][sql] CONNECT:[ UseTime:0.001272s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:12:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001169s ]
+[2022-09-30T17:12:56+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001252s ]
+[2022-09-30T17:12:56+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000620s ]
+[2022-09-30T17:13:05+08:00][sql] CONNECT:[ UseTime:0.015881s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:13:05+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001304s ]
+[2022-09-30T17:13:05+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.002691s ]
+[2022-09-30T17:13:05+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000742s ]
+[2022-09-30T17:13:23+08:00][sql] CONNECT:[ UseTime:0.001062s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:13:23+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001437s ]
+[2022-09-30T17:13:23+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001556s ]
+[2022-09-30T17:13:23+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000634s ]
+[2022-09-30T17:13:27+08:00][sql] CONNECT:[ UseTime:0.023722s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:13:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001189s ]
+[2022-09-30T17:13:27+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001221s ]
+[2022-09-30T17:13:27+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000530s ]
+[2022-09-30T17:13:40+08:00][sql] CONNECT:[ UseTime:0.024245s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:13:40+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000820s ]
+[2022-09-30T17:13:40+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001368s ]
+[2022-09-30T17:13:40+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000536s ]
+[2022-09-30T17:13:58+08:00][sql] CONNECT:[ UseTime:0.020989s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:13:58+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000770s ]
+[2022-09-30T17:13:58+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001168s ]
+[2022-09-30T17:13:58+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000551s ]
+[2022-09-30T17:14:01+08:00][sql] CONNECT:[ UseTime:0.021126s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:14:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000748s ]
+[2022-09-30T17:14:01+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001273s ]
+[2022-09-30T17:14:01+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000550s ]
+[2022-09-30T17:23:56+08:00][sql] CONNECT:[ UseTime:0.001400s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:23:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000891s ]
+[2022-09-30T17:23:56+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001905s ]
+[2022-09-30T17:23:56+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000572s ]
+[2022-09-30T17:24:11+08:00][sql] CONNECT:[ UseTime:0.022421s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:24:11+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000754s ]
+[2022-09-30T17:24:11+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001530s ]
+[2022-09-30T17:24:11+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000583s ]
+[2022-09-30T17:24:49+08:00][sql] CONNECT:[ UseTime:0.021594s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:24:49+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000843s ]
+[2022-09-30T17:24:49+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001572s ]
+[2022-09-30T17:24:49+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000684s ]
+[2022-09-30T17:25:06+08:00][sql] CONNECT:[ UseTime:0.022795s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:25:06+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000749s ]
+[2022-09-30T17:25:06+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001217s ]
+[2022-09-30T17:25:06+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000493s ]
+[2022-09-30T17:25:13+08:00][sql] CONNECT:[ UseTime:0.022122s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:25:13+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000848s ]
+[2022-09-30T17:25:13+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001453s ]
+[2022-09-30T17:25:13+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000546s ]
+[2022-09-30T17:25:44+08:00][sql] CONNECT:[ UseTime:0.024914s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:25:44+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000852s ]
+[2022-09-30T17:25:44+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001352s ]
+[2022-09-30T17:25:44+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000547s ]
+[2022-09-30T17:26:34+08:00][sql] CONNECT:[ UseTime:0.023125s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:26:34+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000918s ]
+[2022-09-30T17:26:34+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001279s ]
+[2022-09-30T17:26:34+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000675s ]
+[2022-09-30T17:26:37+08:00][sql] CONNECT:[ UseTime:0.023074s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:26:37+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001060s ]
+[2022-09-30T17:26:37+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001437s ]
+[2022-09-30T17:26:37+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000559s ]
+[2022-09-30T17:27:22+08:00][sql] CONNECT:[ UseTime:0.019586s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:27:22+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000811s ]
+[2022-09-30T17:27:22+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001326s ]
+[2022-09-30T17:27:22+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000568s ]
+[2022-09-30T17:27:25+08:00][sql] CONNECT:[ UseTime:0.000863s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:27:25+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000738s ]
+[2022-09-30T17:27:25+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001318s ]
+[2022-09-30T17:27:25+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000722s ]
+[2022-09-30T17:27:41+08:00][sql] CONNECT:[ UseTime:0.021914s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:27:41+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001176s ]
+[2022-09-30T17:27:41+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001873s ]
+[2022-09-30T17:27:41+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000575s ]
+[2022-09-30T17:28:18+08:00][sql] CONNECT:[ UseTime:0.000829s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:28:18+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000742s ]
+[2022-09-30T17:28:18+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001755s ]
+[2022-09-30T17:28:18+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000610s ]
+[2022-09-30T17:28:39+08:00][sql] CONNECT:[ UseTime:0.023358s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:28:39+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000854s ]
+[2022-09-30T17:28:39+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001669s ]
+[2022-09-30T17:28:39+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000609s ]
+[2022-09-30T17:28:43+08:00][sql] CONNECT:[ UseTime:0.023523s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:28:43+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001219s ]
+[2022-09-30T17:28:43+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001568s ]
+[2022-09-30T17:28:43+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000634s ]
+[2022-09-30T17:29:20+08:00][sql] CONNECT:[ UseTime:0.021046s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:29:20+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000868s ]
+[2022-09-30T17:29:20+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001198s ]
+[2022-09-30T17:29:20+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000657s ]
+[2022-09-30T17:29:22+08:00][sql] CONNECT:[ UseTime:0.001083s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:29:22+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001573s ]
+[2022-09-30T17:29:22+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001605s ]
+[2022-09-30T17:29:22+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.001333s ]
+[2022-09-30T17:29:52+08:00][sql] CONNECT:[ UseTime:0.022466s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:29:52+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001065s ]
+[2022-09-30T17:29:52+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001196s ]
+[2022-09-30T17:29:52+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000580s ]
+[2022-09-30T17:30:13+08:00][sql] CONNECT:[ UseTime:0.000954s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:30:13+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000961s ]
+[2022-09-30T17:30:13+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.000924s ]
+[2022-09-30T17:30:13+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000494s ]
+[2022-09-30T17:30:16+08:00][sql] CONNECT:[ UseTime:0.000834s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:30:16+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000718s ]
+[2022-09-30T17:30:16+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001125s ]
+[2022-09-30T17:30:16+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000552s ]
+[2022-09-30T17:30:51+08:00][sql] CONNECT:[ UseTime:0.022122s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:30:51+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000730s ]
+[2022-09-30T17:30:51+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001858s ]
+[2022-09-30T17:30:51+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000744s ]
+[2022-09-30T17:32:00+08:00][sql] CONNECT:[ UseTime:0.001179s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:32:00+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001522s ]
+[2022-09-30T17:32:00+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001552s ]
+[2022-09-30T17:32:00+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000514s ]
+[2022-09-30T17:40:39+08:00][sql] CONNECT:[ UseTime:0.021022s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:40:39+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000926s ]
+[2022-09-30T17:40:39+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001567s ]
+[2022-09-30T17:40:39+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000544s ]
+[2022-09-30T17:41:06+08:00][sql] CONNECT:[ UseTime:0.016387s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:41:06+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000770s ]
+[2022-09-30T17:41:06+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001261s ]
+[2022-09-30T17:41:06+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000591s ]
+[2022-09-30T17:41:18+08:00][sql] CONNECT:[ UseTime:0.000918s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:41:18+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000722s ]
+[2022-09-30T17:41:18+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001399s ]
+[2022-09-30T17:41:18+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000559s ]
+[2022-09-30T17:41:21+08:00][sql] CONNECT:[ UseTime:0.023540s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:41:21+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000969s ]
+[2022-09-30T17:41:21+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001441s ]
+[2022-09-30T17:41:21+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000548s ]
+[2022-09-30T17:41:45+08:00][sql] CONNECT:[ UseTime:0.022074s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:41:45+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000712s ]
+[2022-09-30T17:41:45+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.065318s ]
+[2022-09-30T17:41:45+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000633s ]
+[2022-09-30T17:42:32+08:00][sql] CONNECT:[ UseTime:0.000930s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:42:32+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001289s ]
+[2022-09-30T17:42:32+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001749s ]
+[2022-09-30T17:42:32+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000599s ]
+[2022-09-30T17:42:45+08:00][sql] CONNECT:[ UseTime:0.019387s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:42:45+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000825s ]
+[2022-09-30T17:42:45+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001548s ]
+[2022-09-30T17:42:45+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000571s ]
+[2022-09-30T17:43:06+08:00][sql] CONNECT:[ UseTime:0.021337s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:43:06+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000871s ]
+[2022-09-30T17:43:06+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001580s ]
+[2022-09-30T17:43:06+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000602s ]
+[2022-09-30T17:44:05+08:00][sql] CONNECT:[ UseTime:0.023056s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:44:05+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001059s ]
+[2022-09-30T17:44:05+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001668s ]
+[2022-09-30T17:44:05+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000600s ]
+[2022-09-30T17:44:36+08:00][sql] CONNECT:[ UseTime:0.001503s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:44:36+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001058s ]
+[2022-09-30T17:44:36+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001323s ]
+[2022-09-30T17:44:36+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000705s ]
+[2022-09-30T17:44:39+08:00][sql] CONNECT:[ UseTime:0.000924s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:44:39+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000860s ]
+[2022-09-30T17:44:39+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001352s ]
+[2022-09-30T17:44:39+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000610s ]
+[2022-09-30T17:45:35+08:00][sql] CONNECT:[ UseTime:0.001271s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:45:35+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001146s ]
+[2022-09-30T17:45:35+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001646s ]
+[2022-09-30T17:45:35+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000700s ]
+[2022-09-30T17:45:51+08:00][sql] CONNECT:[ UseTime:0.013887s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:45:51+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000787s ]
+[2022-09-30T17:45:51+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001455s ]
+[2022-09-30T17:45:51+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000891s ]
+[2022-09-30T17:48:56+08:00][sql] CONNECT:[ UseTime:0.019016s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:48:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000838s ]
+[2022-09-30T17:48:56+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001743s ]
+[2022-09-30T17:48:56+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000589s ]
+[2022-09-30T17:49:14+08:00][sql] CONNECT:[ UseTime:0.012658s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:49:14+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000907s ]
+[2022-09-30T17:49:14+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001486s ]
+[2022-09-30T17:49:14+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000607s ]
+[2022-09-30T17:49:17+08:00][sql] CONNECT:[ UseTime:0.023305s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:49:17+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000853s ]
+[2022-09-30T17:49:17+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.002101s ]
+[2022-09-30T17:49:17+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000789s ]
+[2022-09-30T17:54:46+08:00][sql] CONNECT:[ UseTime:0.013114s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:54:46+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001134s ]
+[2022-09-30T17:54:46+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001599s ]
+[2022-09-30T17:54:46+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000561s ]
+[2022-09-30T17:54:57+08:00][sql] CONNECT:[ UseTime:0.022023s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:54:57+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000763s ]
+[2022-09-30T17:54:57+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.003165s ]
+[2022-09-30T17:54:57+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000580s ]
+[2022-09-30T17:57:45+08:00][sql] CONNECT:[ UseTime:0.022441s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:57:45+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001082s ]
+[2022-09-30T17:57:45+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001861s ]
+[2022-09-30T17:57:45+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000586s ]
+[2022-09-30T17:57:59+08:00][sql] CONNECT:[ UseTime:0.020486s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:57:59+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000893s ]
+[2022-09-30T17:57:59+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001270s ]
+[2022-09-30T17:57:59+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000579s ]
+[2022-09-30T17:58:02+08:00][sql] CONNECT:[ UseTime:0.001024s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:58:02+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000831s ]
+[2022-09-30T17:58:02+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001178s ]
+[2022-09-30T17:58:02+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.001010s ]
+[2022-09-30T17:58:18+08:00][sql] CONNECT:[ UseTime:0.000850s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:58:18+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000767s ]
+[2022-09-30T17:58:18+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001409s ]
+[2022-09-30T17:58:18+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000441s ]
+[2022-09-30T17:58:20+08:00][sql] CONNECT:[ UseTime:0.001019s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:58:20+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001374s ]
+[2022-09-30T17:58:20+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001672s ]
+[2022-09-30T17:58:21+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.001416s ]
+[2022-09-30T17:58:32+08:00][sql] CONNECT:[ UseTime:0.022820s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:58:32+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000834s ]
+[2022-09-30T17:58:32+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001263s ]
+[2022-09-30T17:58:32+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000552s ]
+[2022-09-30T17:58:50+08:00][sql] CONNECT:[ UseTime:0.001313s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T17:58:50+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000806s ]
+[2022-09-30T17:58:50+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.002398s ]
+[2022-09-30T17:58:50+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000681s ]
+[2022-09-30T18:07:19+08:00][sql] CONNECT:[ UseTime:0.022469s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T18:07:19+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000985s ]
+[2022-09-30T18:07:19+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001105s ]
+[2022-09-30T18:07:19+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000560s ]
+[2022-09-30T18:07:23+08:00][sql] CONNECT:[ UseTime:0.001013s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T18:07:23+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000788s ]
+[2022-09-30T18:07:23+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001117s ]
+[2022-09-30T18:07:23+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000445s ]
+[2022-09-30T18:09:05+08:00][sql] CONNECT:[ UseTime:0.013266s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T18:09:05+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000758s ]
+[2022-09-30T18:09:05+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.002146s ]
+[2022-09-30T18:09:05+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000509s ]
+[2022-09-30T18:09:08+08:00][sql] CONNECT:[ UseTime:0.025342s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T18:09:08+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000996s ]
+[2022-09-30T18:09:08+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001595s ]
+[2022-09-30T18:09:08+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000590s ]
+[2022-09-30T18:09:50+08:00][sql] CONNECT:[ UseTime:0.020029s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T18:09:50+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000941s ]
+[2022-09-30T18:09:50+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001280s ]
+[2022-09-30T18:09:50+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000559s ]
+[2022-09-30T18:10:16+08:00][sql] CONNECT:[ UseTime:0.024989s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T18:10:16+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000931s ]
+[2022-09-30T18:10:16+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001576s ]
+[2022-09-30T18:10:16+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000565s ]
+[2022-09-30T18:10:19+08:00][sql] CONNECT:[ UseTime:0.001351s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T18:10:19+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001081s ]
+[2022-09-30T18:10:19+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001684s ]
+[2022-09-30T18:10:19+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000682s ]
+[2022-09-30T18:10:21+08:00][sql] CONNECT:[ UseTime:0.009976s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T18:10:21+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000811s ]
+[2022-09-30T18:10:21+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001128s ]
+[2022-09-30T18:10:21+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000526s ]
+[2022-09-30T18:10:24+08:00][sql] CONNECT:[ UseTime:0.025664s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T18:10:24+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.001149s ]
+[2022-09-30T18:10:24+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001369s ]
+[2022-09-30T18:10:24+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000534s ]
+[2022-09-30T18:11:26+08:00][sql] CONNECT:[ UseTime:0.017500s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T18:11:26+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000777s ]
+[2022-09-30T18:11:26+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.002003s ]
+[2022-09-30T18:11:26+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000569s ]
+[2022-09-30T18:11:31+08:00][sql] CONNECT:[ UseTime:0.023525s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T18:11:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000880s ]
+[2022-09-30T18:11:31+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001334s ]
+[2022-09-30T18:11:31+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000493s ]
+[2022-09-30T18:12:02+08:00][sql] CONNECT:[ UseTime:0.020703s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T18:12:02+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000793s ]
+[2022-09-30T18:12:02+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001594s ]
+[2022-09-30T18:12:02+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000608s ]
+[2022-09-30T18:12:05+08:00][sql] CONNECT:[ UseTime:0.000891s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T18:12:05+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000720s ]
+[2022-09-30T18:12:05+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001229s ]
+[2022-09-30T18:12:05+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000561s ]
+[2022-09-30T18:13:05+08:00][sql] CONNECT:[ UseTime:0.024695s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T18:13:05+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000849s ]
+[2022-09-30T18:13:05+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001485s ]
+[2022-09-30T18:13:05+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000548s ]
+[2022-09-30T18:27:02+08:00][sql] CONNECT:[ UseTime:0.004525s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T18:27:02+08:00][sql] CONNECT:[ UseTime:0.002199s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T18:27:02+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.005692s ]
+[2022-09-30T18:27:02+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods_sku` [ RunTime:0.033179s ]
+[2022-09-30T18:27:02+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.072799s ]
+[2022-09-30T18:27:02+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods_sku` `gs` INNER JOIN `gxfc_goods` `g` ON `gs`.`sku_id`=`g`.`sku_id` INNER JOIN `gxfc_shop` `s` ON `s`.`site_id`=`gs`.`site_id` WHERE  `gs`.`goods_state` = 1  AND `gs`.`verify_state` = 1  AND `gs`.`is_delete` = 0  AND `s`.`shop_status` = 1 ORDER BY `gs`.`sort` DESC,`gs`.`create_time` DESC [ RunTime:0.050548s ]
+[2022-09-30T18:27:02+08:00][sql] SELECT `gs`.`goods_id`,`gs`.`sku_id`,`gs`.`sku_name`,`gs`.`price`,`gs`.`market_price`,`gs`.`discount_price`,`gs`.`stock`,`gs`.`sale_num`,`gs`.`sku_image`,`gs`.`goods_name`,`gs`.`site_id`,`gs`.`website_id`,`gs`.`is_own`,`gs`.`is_free_shipping`,`gs`.`introduction`,`gs`.`promotion_type`,`g`.`goods_image` FROM `gxfc_goods_sku` `gs` INNER JOIN `gxfc_goods` `g` ON `gs`.`sku_id`=`g`.`sku_id` INNER JOIN `gxfc_shop` `s` ON `s`.`site_id`=`gs`.`site_id` WHERE  `gs`.`goods_state` = 1  AND `gs`.`verify_state` = 1  AND `gs`.`is_delete` = 0  AND `s`.`shop_status` = 1 ORDER BY `gs`.`sort` DESC,`gs`.`create_time` DESC LIMIT 0,0 [ RunTime:0.001066s ]
+[2022-09-30T18:27:02+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.003286s ]
+[2022-09-30T18:31:19+08:00][sql] CONNECT:[ UseTime:0.000927s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T18:31:19+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods_sku` [ RunTime:0.002205s ]
+[2022-09-30T18:31:19+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods_sku` `gs` INNER JOIN `gxfc_goods` `g` ON `gs`.`sku_id`=`g`.`sku_id` INNER JOIN `gxfc_shop` `s` ON `s`.`site_id`=`gs`.`site_id` WHERE  `gs`.`goods_state` = 1  AND `gs`.`verify_state` = 1  AND `gs`.`is_delete` = 0  AND `s`.`shop_status` = 1 ORDER BY `gs`.`sort` DESC,`gs`.`create_time` DESC [ RunTime:0.004400s ]
+[2022-09-30T18:31:19+08:00][sql] CONNECT:[ UseTime:0.002765s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T18:31:19+08:00][sql] SELECT `gs`.`goods_id`,`gs`.`sku_id`,`gs`.`sku_name`,`gs`.`price`,`gs`.`market_price`,`gs`.`discount_price`,`gs`.`stock`,`gs`.`sale_num`,`gs`.`sku_image`,`gs`.`goods_name`,`gs`.`site_id`,`gs`.`website_id`,`gs`.`is_own`,`gs`.`is_free_shipping`,`gs`.`introduction`,`gs`.`promotion_type`,`g`.`goods_image` FROM `gxfc_goods_sku` `gs` INNER JOIN `gxfc_goods` `g` ON `gs`.`sku_id`=`g`.`sku_id` INNER JOIN `gxfc_shop` `s` ON `s`.`site_id`=`gs`.`site_id` WHERE  `gs`.`goods_state` = 1  AND `gs`.`verify_state` = 1  AND `gs`.`is_delete` = 0  AND `s`.`shop_status` = 1 ORDER BY `gs`.`sort` DESC,`gs`.`create_time` DESC LIMIT 0,0 [ RunTime:0.000377s ]
+[2022-09-30T18:31:19+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.002039s ]
+[2022-09-30T18:31:19+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001540s ]
+[2022-09-30T18:31:19+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.001711s ]
+[2022-09-30T18:31:24+08:00][sql] CONNECT:[ UseTime:0.017357s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T18:31:24+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.002000s ]
+[2022-09-30T18:31:24+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001514s ]
+[2022-09-30T18:31:24+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.001968s ]
+[2022-09-30T18:31:24+08:00][sql] CONNECT:[ UseTime:0.023244s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T18:31:24+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods_sku` [ RunTime:0.002016s ]
+[2022-09-30T18:31:24+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods_sku` `gs` INNER JOIN `gxfc_goods` `g` ON `gs`.`sku_id`=`g`.`sku_id` INNER JOIN `gxfc_shop` `s` ON `s`.`site_id`=`gs`.`site_id` WHERE  `gs`.`goods_state` = 1  AND `gs`.`verify_state` = 1  AND `gs`.`is_delete` = 0  AND `s`.`shop_status` = 1 ORDER BY `gs`.`sort` DESC,`gs`.`create_time` DESC [ RunTime:0.002628s ]
+[2022-09-30T18:31:24+08:00][sql] SELECT `gs`.`goods_id`,`gs`.`sku_id`,`gs`.`sku_name`,`gs`.`price`,`gs`.`market_price`,`gs`.`discount_price`,`gs`.`stock`,`gs`.`sale_num`,`gs`.`sku_image`,`gs`.`goods_name`,`gs`.`site_id`,`gs`.`website_id`,`gs`.`is_own`,`gs`.`is_free_shipping`,`gs`.`introduction`,`gs`.`promotion_type`,`g`.`goods_image` FROM `gxfc_goods_sku` `gs` INNER JOIN `gxfc_goods` `g` ON `gs`.`sku_id`=`g`.`sku_id` INNER JOIN `gxfc_shop` `s` ON `s`.`site_id`=`gs`.`site_id` WHERE  `gs`.`goods_state` = 1  AND `gs`.`verify_state` = 1  AND `gs`.`is_delete` = 0  AND `s`.`shop_status` = 1 ORDER BY `gs`.`sort` DESC,`gs`.`create_time` DESC LIMIT 0,0 [ RunTime:0.000429s ]
+[2022-09-30T18:35:04+08:00][sql] CONNECT:[ UseTime:0.018335s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T18:35:04+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.002746s ]
+[2022-09-30T18:35:04+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001819s ]
+[2022-09-30T18:35:04+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.001783s ]
+[2022-09-30T18:35:04+08:00][sql] CONNECT:[ UseTime:0.018379s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T18:35:04+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods_sku` [ RunTime:0.002560s ]
+[2022-09-30T18:35:04+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods_sku` `gs` INNER JOIN `gxfc_goods` `g` ON `gs`.`sku_id`=`g`.`sku_id` INNER JOIN `gxfc_shop` `s` ON `s`.`site_id`=`gs`.`site_id` WHERE  `gs`.`goods_state` = 1  AND `gs`.`verify_state` = 1  AND `gs`.`is_delete` = 0  AND `s`.`shop_status` = 1 ORDER BY `gs`.`sort` DESC,`gs`.`create_time` DESC [ RunTime:0.002706s ]
+[2022-09-30T18:35:04+08:00][sql] SELECT `gs`.`goods_id`,`gs`.`sku_id`,`gs`.`sku_name`,`gs`.`price`,`gs`.`market_price`,`gs`.`discount_price`,`gs`.`stock`,`gs`.`sale_num`,`gs`.`sku_image`,`gs`.`goods_name`,`gs`.`site_id`,`gs`.`website_id`,`gs`.`is_own`,`gs`.`is_free_shipping`,`gs`.`introduction`,`gs`.`promotion_type`,`g`.`goods_image` FROM `gxfc_goods_sku` `gs` INNER JOIN `gxfc_goods` `g` ON `gs`.`sku_id`=`g`.`sku_id` INNER JOIN `gxfc_shop` `s` ON `s`.`site_id`=`gs`.`site_id` WHERE  `gs`.`goods_state` = 1  AND `gs`.`verify_state` = 1  AND `gs`.`is_delete` = 0  AND `s`.`shop_status` = 1 ORDER BY `gs`.`sort` DESC,`gs`.`create_time` DESC LIMIT 0,0 [ RunTime:0.000356s ]
+[2022-09-30T18:38:43+08:00][sql] CONNECT:[ UseTime:0.020297s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T18:38:43+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.002299s ]
+[2022-09-30T18:38:43+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods_sku` [ RunTime:0.002489s ]
+[2022-09-30T18:38:43+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.001483s ]
+[2022-09-30T18:38:43+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods_sku` `gs` INNER JOIN `gxfc_goods` `g` ON `gs`.`sku_id`=`g`.`sku_id` INNER JOIN `gxfc_shop` `s` ON `s`.`site_id`=`gs`.`site_id` WHERE  `gs`.`goods_state` = 1  AND `gs`.`verify_state` = 1  AND `gs`.`is_delete` = 0  AND `s`.`shop_status` = 1 ORDER BY `gs`.`sort` DESC,`gs`.`create_time` DESC [ RunTime:0.002977s ]
+[2022-09-30T18:38:43+08:00][sql] SELECT `gs`.`goods_id`,`gs`.`sku_id`,`gs`.`sku_name`,`gs`.`price`,`gs`.`market_price`,`gs`.`discount_price`,`gs`.`stock`,`gs`.`sale_num`,`gs`.`sku_image`,`gs`.`goods_name`,`gs`.`site_id`,`gs`.`website_id`,`gs`.`is_own`,`gs`.`is_free_shipping`,`gs`.`introduction`,`gs`.`promotion_type`,`g`.`goods_image` FROM `gxfc_goods_sku` `gs` INNER JOIN `gxfc_goods` `g` ON `gs`.`sku_id`=`g`.`sku_id` INNER JOIN `gxfc_shop` `s` ON `s`.`site_id`=`gs`.`site_id` WHERE  `gs`.`goods_state` = 1  AND `gs`.`verify_state` = 1  AND `gs`.`is_delete` = 0  AND `s`.`shop_status` = 1 ORDER BY `gs`.`sort` DESC,`gs`.`create_time` DESC LIMIT 0,0 [ RunTime:0.000290s ]
+[2022-09-30T18:38:43+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.001773s ]
+[2022-09-30T18:40:47+08:00][sql] CONNECT:[ UseTime:0.010806s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T18:40:47+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods_sku` [ RunTime:0.003019s ]
+[2022-09-30T18:40:47+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods_sku` `gs` INNER JOIN `gxfc_goods` `g` ON `gs`.`sku_id`=`g`.`sku_id` INNER JOIN `gxfc_shop` `s` ON `s`.`site_id`=`gs`.`site_id` WHERE  `gs`.`goods_state` = 1  AND `gs`.`verify_state` = 1  AND `gs`.`is_delete` = 0  AND `s`.`shop_status` = 1 ORDER BY `gs`.`sort` DESC,`gs`.`create_time` DESC [ RunTime:0.003255s ]
+[2022-09-30T18:40:47+08:00][sql] SELECT `gs`.`goods_id`,`gs`.`sku_id`,`gs`.`sku_name`,`gs`.`price`,`gs`.`market_price`,`gs`.`discount_price`,`gs`.`stock`,`gs`.`sale_num`,`gs`.`sku_image`,`gs`.`goods_name`,`gs`.`site_id`,`gs`.`website_id`,`gs`.`is_own`,`gs`.`is_free_shipping`,`gs`.`introduction`,`gs`.`promotion_type`,`g`.`goods_image` FROM `gxfc_goods_sku` `gs` INNER JOIN `gxfc_goods` `g` ON `gs`.`sku_id`=`g`.`sku_id` INNER JOIN `gxfc_shop` `s` ON `s`.`site_id`=`gs`.`site_id` WHERE  `gs`.`goods_state` = 1  AND `gs`.`verify_state` = 1  AND `gs`.`is_delete` = 0  AND `s`.`shop_status` = 1 ORDER BY `gs`.`sort` DESC,`gs`.`create_time` DESC LIMIT 0,10 [ RunTime:0.001749s ]
+[2022-09-30T18:41:42+08:00][sql] CONNECT:[ UseTime:0.001370s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T18:41:42+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods_sku` [ RunTime:0.002339s ]
+[2022-09-30T18:41:42+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods_sku` `gs` INNER JOIN `gxfc_goods` `g` ON `gs`.`sku_id`=`g`.`sku_id` INNER JOIN `gxfc_shop` `s` ON `s`.`site_id`=`gs`.`site_id` WHERE  `gs`.`goods_state` = 1  AND `gs`.`verify_state` = 1  AND `gs`.`is_delete` = 0  AND `s`.`shop_status` = 1 ORDER BY `gs`.`sort` DESC,`gs`.`create_time` DESC [ RunTime:0.002977s ]
+[2022-09-30T18:41:42+08:00][sql] SELECT `gs`.`goods_id`,`gs`.`sku_id`,`gs`.`sku_name`,`gs`.`price`,`gs`.`market_price`,`gs`.`discount_price`,`gs`.`stock`,`gs`.`sale_num`,`gs`.`sku_image`,`gs`.`goods_name`,`gs`.`site_id`,`gs`.`website_id`,`gs`.`is_own`,`gs`.`is_free_shipping`,`gs`.`introduction`,`gs`.`promotion_type`,`g`.`goods_image` FROM `gxfc_goods_sku` `gs` INNER JOIN `gxfc_goods` `g` ON `gs`.`sku_id`=`g`.`sku_id` INNER JOIN `gxfc_shop` `s` ON `s`.`site_id`=`gs`.`site_id` WHERE  `gs`.`goods_state` = 1  AND `gs`.`verify_state` = 1  AND `gs`.`is_delete` = 0  AND `s`.`shop_status` = 1 ORDER BY `gs`.`sort` DESC,`gs`.`create_time` DESC LIMIT 0,10 [ RunTime:0.000981s ]
+[2022-09-30T18:44:58+08:00][sql] CONNECT:[ UseTime:0.000886s ] mysql:host=127.0.0.1;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-09-30T18:44:58+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods_sku` [ RunTime:0.001258s ]
+[2022-09-30T18:44:58+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods_sku` `gs` INNER JOIN `gxfc_goods` `g` ON `gs`.`sku_id`=`g`.`sku_id` INNER JOIN `gxfc_shop` `s` ON `s`.`site_id`=`gs`.`site_id` WHERE  `gs`.`goods_state` = 1  AND `gs`.`verify_state` = 1  AND `gs`.`is_delete` = 0  AND `s`.`shop_status` = 1 ORDER BY `gs`.`sort` DESC,`gs`.`create_time` DESC [ RunTime:0.000486s ]
+[2022-09-30T18:44:58+08:00][sql] SELECT `gs`.`goods_id`,`gs`.`sku_id`,`gs`.`sku_name`,`gs`.`price`,`gs`.`market_price`,`gs`.`discount_price`,`gs`.`stock`,`gs`.`sale_num`,`gs`.`sku_image`,`gs`.`goods_name`,`gs`.`site_id`,`gs`.`website_id`,`gs`.`is_own`,`gs`.`is_free_shipping`,`gs`.`introduction`,`gs`.`promotion_type`,`g`.`goods_image` FROM `gxfc_goods_sku` `gs` INNER JOIN `gxfc_goods` `g` ON `gs`.`sku_id`=`g`.`sku_id` INNER JOIN `gxfc_shop` `s` ON `s`.`site_id`=`gs`.`site_id` WHERE  `gs`.`goods_state` = 1  AND `gs`.`verify_state` = 1  AND `gs`.`is_delete` = 0  AND `s`.`shop_status` = 1 ORDER BY `gs`.`sort` DESC,`gs`.`create_time` DESC LIMIT 0,10 [ RunTime:0.000649s ]

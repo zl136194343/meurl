@@ -1,0 +1,427 @@
+{extend name="base"/}
+{block name="resources"}
+{/block}
+{block name="main"}
+<!-- 筛选面板 -->
+<div class="ns-screen layui-collapse" lay-filter="selection_panel">
+    <div class="layui-colla-item">
+        <h2 class="layui-colla-title"></h2>
+        <form class="layui-colla-content layui-form layui-show" lay-filter="selection_panel_form">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">搜索方式：</label>
+                    <div class="layui-input-inline">
+                        <select name="select_field_type">
+                            {foreach $field_list as $key => $val}
+                            <option value="{$key}">{$val}</option>
+                            {/foreach}
+                        </select>
+                    </div>
+                    <div class="layui-input-inline">
+                        <input type="text" name="select_field_value" autocomplete="off" class="layui-input" placeholder="请按照搜索方式搜索"/>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">申请时间：</label>
+                    <div class="layui-inline">
+                        <div class="layui-input-inline">
+                            <input type="text" name="start_date" placeholder="开始时间" class="layui-input choose-date" autocomplete="off">
+                            <i class="ns-calendar"></i>
+                        </div>
+                        <div class="layui-form-mid">-</div>
+                        <div class="layui-input-inline">
+                            <input type="text" name="end_date" placeholder="结束时间" class="layui-input choose-date" autocomplete="off">
+                            <i class="ns-calendar"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <input type="hidden" name="status">
+            <div class="ns-form-row">
+                <button type="button" class="layui-btn ns-bg-color" lay-submit lay-filter="search">筛选</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- 列表 -->
+<div class="layui-tab ns-table-tab" lay-filter="page_tab">
+    <ul class="layui-tab-title">
+        <li class="layui-this" lay-id="">全部</li>
+        {volist name='status_data' id='vo'}
+        <li lay-id="{$vo.status}">{$vo.name}</li>
+        {/volist}
+    </ul>
+    <div class="layui-tab-content">
+        <table id="page_list" lay-filter="page_list"></table>
+    </div>
+</div>
+
+{/block}
+{block name="script"}
+<script type="text/javascript">
+    layui.use(['form', 'element', 'laydate', 'laytpl'], function(form, element, laydate, laytpl) {
+        // 防重复标识
+        var is_submit = false;
+
+        var table = new Table({
+            elem: '#page_list',
+            url: ns.url('community://shop/community/leaderapplylist'),
+            cols: [
+                [
+                    {
+                        title: '会员信息',
+                        width: '18%',
+                        templet: function (data) {
+                            var html = '',
+                                default_img = 'SHOP_IMG/default_headimg.png';
+
+                            html += '<div class="ns-table-title">';
+                                html += '<div class="ns-title-pic">';
+                                    html += '<img layer-src src="'+ (data.member_info.headimg ? ns.img(data.member_info.headimg) : default_img) +'" onerror="this.src = \'' + default_img + '\'">';
+                                html += '</div>';
+
+                                html += '<div class="ns-title-content">';
+                                    html += '<p class="ns-multi-line-hiding"><a href="'+ ns.url('community://shop/member/editmember', {member_id: data.member_id}) +'" class="ns-text-color" target="_blank">'+ data.member_info.nickname +'</a>'+ '</p>';
+                                html += '</div>';
+                            html += '</div>';
+
+                            return html;
+                        },
+                    },
+                    {
+                        title: '申请信息',
+                        width: '20%',
+                        templet: function (data) {
+                            var html = '',
+                                default_img = 'SHOP_IMG/default_headimg.png';
+
+                            html += '<div class="ns-table-title">';
+                                html += '<div class="ns-title-pic">';
+                                    html += '<img layer-src src="'+ (data.community_img ? ns.img(data.community_img) : default_img) +'" onerror="this.src = \'' + default_img + '\'">';
+                                html += '</div>';
+                                html += '<div class="ns-title-content">';
+                                    html += '<p class="ns-multi-line-hiding" title="'+ data.name +'">团长名称：'+ data.name +'</p>';
+                                    html += '<p class="ns-multi-line-hiding" title="'+ data.community +'">自提点：'+ data.community +'</p>';
+                                    html += '<p class="ns-multi-line-hiding" title="'+ data.mobile +'">手机号：'+ data.mobile +'</p>';
+                                    html += '<p class="ns-multi-line-hiding" title="'+ data.level_name +'">微信号：'+ data.wechat +'</p>';
+                                html += '</div>';
+                            html += '</div>';
+
+                            return html;
+                        },
+                    },
+                    {
+                        title: '详细地址',
+                        width: '20%',
+                        templet: function (data) {
+                            var html = '';
+
+                            html += '<div title="'+ (data.full_address + data.address) +'">';
+                            html += '<p class="ns-multi-line-hiding">'+ data.full_address +'</p>';
+                            html += '<p class="ns-multi-line-hiding">'+ data.address +'</p>';
+                            html += '</div>';
+
+                            return html;
+                        },
+                    },
+                    {
+                        title: '申请时间',
+                        width: '12%',
+                        templet: function (data) {
+                            return ns.time_to_date(data.apply_time);
+                        }
+                    },
+                    {
+                        title: '状态',
+                        width: '10%',
+                        templet: function (data) {
+                            return '<p class="ns-multi-line-hiding"><span style="color: '+ data.status_info.color +';">'+ data.status_info.name +'</span></p>';
+                        }
+                    },
+                    {
+                        title: '操作',
+                        width: '10%',
+                        templet: function(data) {
+                            var html = '';
+
+                            html += '<div class="ns-table-btn">';
+                                html += '<a class="layui-btn" href="'+ ns.url('community://shop/community/editLeader', {cl_id: data.cl_id}) +'" target="_blank">详情</a>';
+                                if (data.status_info.const === 'STATUS_AUDIT_WAIT') {
+                                    html += '<a class="layui-btn" lay-event="pass">通过</a>';
+                                    html += '<a class="layui-btn" lay-event="refuse">拒绝</a>';
+                                }
+                                if (data.status_info.const === 'STATUS_AUDIT_REFUSE') {
+                                    html += '<a class="layui-btn" lay-event="refuse_reason">拒绝原因</a>';
+                                }
+                            html += '</div>';
+                            return html;
+                        },
+                    }
+                ]
+            ],
+        });
+
+        // 渲染时间
+        lay('.choose-date').each(function(){
+            laydate.render({
+                elem: this,
+                trigger: 'click',
+                type: 'datetime'
+            });
+        });
+
+        // 监听Tab切换
+        element.on('tab(page_tab)', function () {
+            var status = $(this).attr('lay-id');
+
+            $('input[type="hidden"][name="status"]').val(status)
+
+            table.reload({
+                page: {
+                    curr: 1
+                },
+                where: {
+                    status: status
+                }
+            });
+        });
+
+        /**
+         * 搜索功能
+         */
+        form.on('submit(search)', function(data) {
+            table.reload({
+                page: {
+                    curr: 1
+                },
+                where: data.field
+            });
+            return false;
+        });
+
+
+        /**
+         * 监听行工具操作
+         */
+        table.tool(function(obj) {
+            var data = obj.data,
+                cl_id = data.cl_id;
+
+            switch (obj.event) {
+                // 通过
+                case 'pass':
+                    auditPassObj.init({
+                        laytpl: laytpl,
+                        form: form,
+                        table: table,
+                        clIds: cl_id
+                    }).render();
+                    break;
+                // 拒绝
+                case 'refuse':
+                    layer.prompt({
+                        title: '请输入拒绝原因',
+                        formType: 2,
+                        maxlength: 200,
+                    }, function(value, index, elem){
+                        layer.close(index);
+
+                        if (is_submit) return false;
+                        is_submit = true;
+
+                        $.ajax({
+                            url: ns.url('community://shop/community/auditRefuse'),
+                            data: {
+                                cl_id : cl_id,
+                                refuse_reason : value,
+                            },
+                            dataType: 'JSON',
+                            type: 'POST',
+                            beforeSend : function(){
+                                // 显示加载中提示
+                                layer_index = layer.load();
+                            },
+                            complete : function () {
+                                // 关闭加载中提示
+                                layer.close(layer_index);
+                            },
+                            success: function (res) {
+                                is_submit = false;
+                                layer.msg(res.message);
+
+                                if (res.code == 0) {
+                                    table.reload();
+                                }
+                            },
+                            error: function () {
+                                is_submit = false;
+                                layer.msg('操作异常');
+                            }
+                        });
+                    });
+                    break;
+                // 拒绝原因
+                case 'refuse_reason':
+                    layer.prompt({
+                        title: '拒绝原因',
+                        formType: 2,
+                        btn: false,
+                        value: data.refuse_reason
+                    });
+                    break;
+            }
+        });
+    });
+
+
+    /**
+     * 审核通过
+     */
+    var auditPassObj = {
+
+        laytpl: null,
+
+        form: null,
+
+        table: null,
+
+        clIds: '',
+
+        isSubmit: false,
+
+        layerIndex: 0,
+
+        /**
+         * 初始化
+         * @param params
+         * @returns {lineObj}
+         */
+        init: function (params) {
+            var _self = this;
+
+            $.each(params, function (k, v) {
+
+                if ($.inArray(k, ['laytpl', 'form', 'table', 'clIds']) !== -1) {
+                    _self[k] = v;
+                }
+            });
+
+            return _self;
+        },
+
+        /**
+         * 渲染
+         */
+        render: function () {
+            var _self = this;
+
+            _self.laytpl($('#audit_pass_box').html()).render({}, function(html) {
+                _self.layerIndex = layer.open({
+                    title: '审核通过',
+                    skin: 'layer-tips-class',
+                    type: 1,
+                    area: ['35%'],
+                    content: html,
+                    success: function(){
+                        _self.form.render();
+
+                        _self.submit();
+                    }
+                });
+            });
+        },
+
+        /**
+         * 选择路线
+         */
+        choose: function () {
+            layer.open({
+                title: '路线列表',
+                id: 'bind_line_layer',
+                type: 2,
+                area: ['60%', '80%'],
+                content: ns.url('community://shop/communitydelivery/chooseLine', {chooseCallback: 'auditPassObj.chooseCallback'}),
+            });
+        },
+
+        /**
+         * 选择路线回调
+         * @param data
+         */
+        chooseCallback: function (data) {
+            var _self = this;
+
+            // 这里要深拷贝数据
+            _self.form.val('audit_pass_form', JSON.parse(JSON.stringify(data)));
+        },
+
+        /**
+         * 提交
+         */
+        submit: function () {
+            var _self = this,
+                layer_index;
+
+            _self.form.on('submit(auditPass)', function(obj) {
+
+                layer.close(_self.layerIndex);
+
+                if (_self.isSubmit) return false;
+                _self.isSubmit = true;
+
+                $.ajax({
+                    url: ns.url('community://shop/community/auditPass'),
+                    data: $.extend(obj.field, {cl_ids: _self.clIds}),
+                    dataType: 'JSON',
+                    type: 'POST',
+                    beforeSend : function(){
+                        // 显示加载中提示
+                        layer_index = layer.load();
+                    },
+                    complete : function () {
+                        // 关闭加载中提示
+                        layer.close(layer_index);
+                    },
+                    success: function (res) {
+                        _self.isSubmit = false;
+                        layer.msg(res.message);
+
+                        if (res.code == 0) {
+                            _self.table.reload();
+                        }
+                    },
+                    error: function () {
+                        _self.isSubmit = false;
+                        layer.msg('操作异常');
+                    }
+                });
+            });
+        }
+    };
+</script>
+
+<!-- 审核通过 -->
+<script type="text/html" id="audit_pass_box">
+    <div class="layui-form member-form" lay-filter="audit_pass_form">
+        <div class="layui-form-item">
+            <label class="layui-form-label mid"><span class="required">*</span>团长等级：</label>
+            <div class="layui-input-block ns-len-mid">
+                <select name="level_id" lay-verify="required" >
+                    <option value="">请选择团长等级</option>
+                    {volist name='level_list' id='vo'}
+                    <option value="{$vo.level_id}">{$vo.level_name} ({$vo.commission_rate}%)</option>
+                    {/volist}
+                </select>
+            </div>
+        </div>
+        
+
+        <div class="ns-form-row mid">
+            <button class="layui-btn ns-bg-color" lay-submit lay-filter="auditPass">确定</button>
+        </div>
+    </div>
+</script>
+{/block}

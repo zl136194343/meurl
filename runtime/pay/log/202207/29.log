@@ -1,0 +1,369 @@
+[2022-07-29T14:49:31+08:00][sql] CONNECT:[ UseTime:0.000242s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-29T14:49:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_config` [ RunTime:0.000912s ]
+[2022-07-29T14:49:31+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'ALI_PAY_CONFIG' LIMIT 1 [ RunTime:0.000237s ]
+[2022-07-29T14:49:31+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'WECHAT_CONFIG' LIMIT 1 [ RunTime:0.000327s ]
+[2022-07-29T14:49:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_pay` [ RunTime:0.001046s ]
+[2022-07-29T14:49:31+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '202207291449300001' LIMIT 1 [ RunTime:0.000310s ]
+[2022-07-29T14:49:31+08:00][sql] UPDATE `gxfc_pay`  SET `trade_no` = '4200001453202207299893529961' , `pay_type` = 'wechatpay' , `pay_addon` = 'wechatpay' , `pay_time` = 1659077371 , `pay_status` = 2  WHERE  `out_trade_no` = '202207291449300001' [ RunTime:0.015050s ]
+[2022-07-29T14:49:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order` [ RunTime:0.001418s ]
+[2022-07-29T14:49:31+08:00][sql] SELECT * FROM `gxfc_order` WHERE  `out_trade_no` = '202207291449300001' [ RunTime:0.001886s ]
+[2022-07-29T14:49:31+08:00][sql] UPDATE `gxfc_order`  SET `pay_status` = 1 , `pay_time` = 1659077371 , `is_enable_refund` = 1 , `pay_type` = 'wechatpay' , `pay_type_name` = '微信支付' , `order_status` = 3 , `order_status_name` = '待核销' , `order_status_action` = '{\"status\":3,\"name\":\"\\u5f85\\u6838\\u9500\",\"is_allow_refund\":1,\"icon\":\"upload\\/uniapp\\/order\\/order-icon-close.png\",\"action\":[],\"member_action\":[],\"color\":\"\"}'  WHERE  `order_id` = 550 [ RunTime:0.000352s ]
+[2022-07-29T14:49:31+08:00][sql] SELECT `order_no`,`site_id`,`site_name`,`member_id`,`order_type`,`sign_time`,`order_status`,`delivery_code`,`create_time`,`name`,`pay_time`,`pay_money`,`mobile`,`is_lock`,`order_money` FROM `gxfc_order` WHERE  `order_id` = 550 LIMIT 1 [ RunTime:0.000212s ]
+[2022-07-29T14:49:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order_goods` [ RunTime:0.001046s ]
+[2022-07-29T14:49:31+08:00][sql] SELECT `sku_id`,`sku_name`,`sku_image`,`price`,`num`,`order_goods_id` FROM `gxfc_order_goods` WHERE  `order_id` = 550 LIMIT 1 [ RunTime:0.000468s ]
+[2022-07-29T14:49:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_verify` [ RunTime:0.000780s ]
+[2022-07-29T14:49:31+08:00][sql] INSERT INTO `gxfc_verify` SET `site_id` = 4 , `site_name` = '纵索2店铺' , `verify_code` = '20220729144900001' , `verify_type` = 'virtualgoods' , `verify_type_name` = '虚拟商品' , `verify_content_json` = '{\"item_array\":[{\"img\":\"upload\\/4\\/common\\/images\\/20220318\\/20220318033051164758865135810.jpg\",\"name\":\"dddd \",\"price\":\"0.40\",\"num\":1,\"order_goods_id\":581,\"remark_array\":[{\"title\":\"联系人\",\"value\":\"18271963152\"}]}],\"remark_array\":[{\"title\":\"订单金额\",\"value\":\"0.40\"},{\"title\":\"订单编号\",\"value\":\"202207291449300001\"},{\"title\":\"创建时间\",\"value\":\"2022-07-29 14:49:23\"},{\"title\":\"付款时间\",\"value\":\"2022-07-29 14:49:31\"}]}' , `create_time` = 1659077371 , `relate_id` = 0 [ RunTime:0.000249s ]
+[2022-07-29T14:49:31+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'H5_DOMAIN_NAME' LIMIT 1 [ RunTime:0.000283s ]
+[2022-07-29T14:49:31+08:00][sql] UPDATE `gxfc_order`  SET `virtual_code` = '20220729144900001'  WHERE  `order_id` = 550 [ RunTime:0.000377s ]
+[2022-07-29T14:49:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods_virtual` [ RunTime:0.000974s ]
+[2022-07-29T14:49:31+08:00][sql] INSERT INTO `gxfc_goods_virtual` SET `site_id` = 4 , `order_id` = 550 , `order_no` = '202207291449300001' , `sku_id` = 51 , `sku_name` = 'dddd ' , `code` = '20220729144900001' , `member_id` = 30 , `sku_image` = 'upload/4/common/images/20220318/20220318033051164758865135810.jpg' [ RunTime:0.000188s ]
+[2022-07-29T14:49:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000984s ]
+[2022-07-29T14:49:31+08:00][sql] UPDATE `gxfc_member`  SET `order_money` = `order_money` + 0.4  WHERE  `member_id` = 30 [ RunTime:0.000220s ]
+[2022-07-29T14:49:31+08:00][sql] UPDATE `gxfc_member`  SET `order_num` = `order_num` + 1  WHERE  `member_id` = 30 [ RunTime:0.000188s ]
+[2022-07-29T14:49:31+08:00][sql] SELECT `sku_id`,`num` FROM `gxfc_order_goods` WHERE  `order_id` = 550 [ RunTime:0.000329s ]
+[2022-07-29T14:49:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods_sku` [ RunTime:0.000985s ]
+[2022-07-29T14:49:31+08:00][sql] UPDATE `gxfc_goods_sku`  SET `sale_num` = `sale_num` + 1  WHERE  `sku_id` = 51 [ RunTime:0.000210s ]
+[2022-07-29T14:49:31+08:00][sql] SELECT `goods_id` FROM `gxfc_goods_sku` WHERE  `sku_id` = 51 LIMIT 1 [ RunTime:0.000169s ]
+[2022-07-29T14:49:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.000961s ]
+[2022-07-29T14:49:31+08:00][sql] UPDATE `gxfc_goods`  SET `sale_num` = `sale_num` + 1  WHERE  `goods_id` = 35 [ RunTime:0.000194s ]
+[2022-07-29T14:49:31+08:00][sql] UPDATE `gxfc_order_goods`  SET `refund_status_action` = '{\"status\":0,\"name\":\"\",\"action\":[],\"member_action\":[{\"event\":\"orderRefundApply\",\"title\":\"申请维权\",\"color\":\"\"}]}'  WHERE  `order_id` = 550 [ RunTime:0.000910s ]
+[2022-07-29T14:49:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order_log` [ RunTime:0.000690s ]
+[2022-07-29T14:49:31+08:00][sql] INSERT INTO `gxfc_order_log` SET `uid` = 30 , `nick_name` = '' , `module` = 'member' , `action` = '订单支付' , `order_status` = 1 , `order_status_name` = '待发货' , `action_way` = orderPay , `order_id` = 550 , `action_time` = 1659077371 [ RunTime:0.000188s ]
+[2022-07-29T14:49:31+08:00][sql] SELECT `member_id`,`promotion_money`,`coupon_money`,`goods_money`,`delivery_money`,`adjust_money`,`dj_money`,`order_money`,`platform_coupon_money` FROM `gxfc_order` WHERE  `order_id` = 550 LIMIT 1 [ RunTime:0.000199s ]
+[2022-07-29T14:49:31+08:00][sql] SELECT `order_goods_id`,`goods_money`,`commission_rate`,`real_goods_money` FROM `gxfc_order_goods` WHERE  `order_id` = 550 [ RunTime:0.000353s ]
+[2022-07-29T14:49:31+08:00][sql] SELECT `hospital_id` FROM `gxfc_member` WHERE  `member_id` = 30 LIMIT 1 [ RunTime:0.000168s ]
+[2022-07-29T14:49:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop` [ RunTime:0.000967s ]
+[2022-07-29T14:49:31+08:00][sql] SELECT `site_id` FROM `gxfc_shop` WHERE  `site_xgl_id` = '20220707006' LIMIT 1 [ RunTime:0.000175s ]
+[2022-07-29T14:49:31+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'CHECK_RATE_CONFIG' LIMIT 1 [ RunTime:0.000201s ]
+[2022-07-29T14:49:31+08:00][sql] UPDATE `gxfc_order_goods`  SET `shop_money` = 0.38 , `platform_money` = 0.02 , `hospital_money` = 0  WHERE  `order_goods_id` = 581 [ RunTime:0.000198s ]
+[2022-07-29T14:49:31+08:00][sql] UPDATE `gxfc_order`  SET `shop_money` = 0.38 , `platform_money` = 0.02 , `hospital_money` = 0 , `hospital_id` = 2  WHERE  `order_id` = 550 [ RunTime:0.000215s ]
+[2022-07-29T14:49:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_stat_shop` [ RunTime:0.000784s ]
+[2022-07-29T14:49:31+08:00][sql] SELECT `id` FROM `gxfc_stat_shop` WHERE  `site_id` = 4  AND `year` = 2022  AND `month` = 7  AND `day` = 29 LIMIT 1 [ RunTime:0.000207s ]
+[2022-07-29T14:49:31+08:00][sql] UPDATE `gxfc_stat_shop`  SET `modify_time` = 1659077371 , `order_total` = order_total+0.40 , `shipping_total` = shipping_total+0.00 , `order_pay_count` = order_pay_count+1 , `goods_pay_count` = goods_pay_count+1  WHERE  `site_id` = 4  AND `year` = 2022  AND `month` = 7  AND `day` = 29 [ RunTime:0.000245s ]
+[2022-07-29T14:49:31+08:00][sql] SELECT `id` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 7  AND `day` = 29 LIMIT 1 [ RunTime:0.000185s ]
+[2022-07-29T14:49:31+08:00][sql] UPDATE `gxfc_stat_shop`  SET `modify_time` = 1659077371 , `order_total` = order_total+0.40 , `shipping_total` = shipping_total+0.00 , `order_pay_count` = order_pay_count+1 , `goods_pay_count` = goods_pay_count+1  WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 7  AND `day` = 29 [ RunTime:0.000214s ]
+[2022-07-29T14:49:31+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'MEMBER_CONSUME_CONFIG' LIMIT 1 [ RunTime:0.000247s ]
+[2022-07-29T14:49:31+08:00][sql] SELECT * FROM `gxfc_order` WHERE  `order_id` = 550 LIMIT 1 [ RunTime:0.000435s ]
+[2022-07-29T14:49:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000754s ]
+[2022-07-29T14:49:31+08:00][sql] INSERT INTO `gxfc_cron` SET `type` = 1 , `period` = 0 , `period_type` = 0 , `name` = '订单小票打印' , `event` = 'PrintOrder' , `execute_time` = 1659077371 , `relate_id` = 550 , `create_time` = 1659077371 [ RunTime:0.000176s ]
+[2022-07-29T14:49:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_message` [ RunTime:0.000720s ]
+[2022-07-29T14:49:31+08:00][sql] SELECT * FROM `gxfc_message` WHERE  `keywords` = 'ORDER_PAY' LIMIT 1 [ RunTime:0.000212s ]
+[2022-07-29T14:49:31+08:00][sql] SELECT * FROM `gxfc_member` WHERE  `member_id` = 30  AND `is_delete` = 0 LIMIT 1 [ RunTime:0.000297s ]
+[2022-07-29T14:49:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_message_sms_records` [ RunTime:0.000757s ]
+[2022-07-29T14:49:31+08:00][sql] INSERT INTO `gxfc_message_sms_records` SET `account` = '18271963152' , `status` = 0 , `addon` = '' , `addon_name` = '' , `content` = '' , `var_parse` = '{\"orderno\":\"202207291449300001\",\"username\":\"\",\"ordermoney\":\"0.40\"}' , `keywords` = 'ORDER_PAY' , `create_time` = 1659077371 , `send_time` = 0 , `result` = '没有可用的短信发送方式' , `keywords_name` = '订单支付通知' [ RunTime:0.000188s ]
+[2022-07-29T14:49:31+08:00][sql] SELECT * FROM `gxfc_message` WHERE  `keywords` = 'BUYER_PAY' LIMIT 1 [ RunTime:0.000236s ]
+[2022-07-29T14:49:31+08:00][sql] SELECT `order_no`,`site_id`,`order_name`,`order_money`,`order_type`,`pay_time` FROM `gxfc_order` WHERE  `order_id` = 550 LIMIT 1 [ RunTime:0.000203s ]
+[2022-07-29T14:49:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_accept_message` [ RunTime:0.000695s ]
+[2022-07-29T14:49:31+08:00][sql] SELECT `sam`.*,`m`.`mobile`,`m`.`wx_openid`,`m`.`nickname`,`m`.`headimg`,`m`.`username`,`m`.`email` FROM `gxfc_shop_accept_message` `sam` LEFT JOIN `gxfc_member` `m` ON `m`.`member_id`=`sam`.`member_id` WHERE  `sam`.`site_id` = 4 [ RunTime:0.000217s ]
+[2022-07-29T14:49:31+08:00][error] [2]Cannot modify header information - headers already sent by (output started at /www/wwwroot/ls.chnssl.com/vendor/symfony/http-foundation/Response.php:381)
+[2022-07-29T14:49:31+08:00][error] [1]Uncaught think\exception\ErrorException: Cannot modify header information - headers already sent by (output started at /www/wwwroot/ls.chnssl.com/vendor/symfony/http-foundation/Response.php:381) in /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php:226
+Stack trace:
+#0 [internal function]: think\initializer\Error->appError(2, 'Cannot modify h...', '/www/wwwroot/ls...', 226, Array)
+#1 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php(226): setcookie('think_lang', '', 0, '/', '', false, false)
+#2 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php(196): think\Cookie->saveCookie('think_lang', '', 0, '/', '', false, false, '')
+#3 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Response.php(142): think\Cookie->save()
+#4 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/initializer/Error.php(58): think\Response->send()
+#5 [internal function]: think\initializer\Error->appException(Object(think\exception\ErrorException))
+#
+[2022-07-29T14:54:16+08:00][sql] CONNECT:[ UseTime:0.000240s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-29T14:54:16+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_pay` [ RunTime:0.000974s ]
+[2022-07-29T14:54:16+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '202207291454300001' LIMIT 1 [ RunTime:0.000292s ]
+[2022-07-29T14:54:16+08:00][sql] UPDATE `gxfc_pay`  SET `trade_no` = '4200001451202207292195937811' , `pay_type` = 'wechatpay' , `pay_addon` = 'wechatpay' , `pay_time` = 1659077656 , `pay_status` = 2  WHERE  `out_trade_no` = '202207291454300001' [ RunTime:0.004613s ]
+[2022-07-29T14:54:16+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order` [ RunTime:0.001354s ]
+[2022-07-29T14:54:16+08:00][sql] SELECT * FROM `gxfc_order` WHERE  `out_trade_no` = '202207291454300001' [ RunTime:0.001800s ]
+[2022-07-29T14:54:16+08:00][sql] UPDATE `gxfc_order`  SET `order_status` = 1 , `order_status_name` = '待发货' , `pay_status` = 1 , `order_status_action` = '{\"status\":1,\"name\":\"待发货\",\"is_allow_refund\":0,\"icon\":\"upload\\/uniapp\\/order\\/order-icon-send.png\",\"action\":[{\"action\":\"orderDelivery\",\"title\":\"发货\",\"color\":\"\"},{\"action\":\"orderAddressUpdate\",\"title\":\"修改地址\",\"color\":\"\"}],\"member_action\":[],\"color\":\"\"}' , `pay_time` = 1659077656 , `is_enable_refund` = 1 , `pay_type` = 'wechatpay' , `pay_type_name` = '微信支付'  WHERE  `order_id` = 551  AND `order_status` = 0 [ RunTime:0.000383s ]
+[2022-07-29T14:54:16+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000941s ]
+[2022-07-29T14:54:16+08:00][sql] UPDATE `gxfc_member`  SET `order_money` = `order_money` + 0.01  WHERE  `member_id` = 30 [ RunTime:0.000219s ]
+[2022-07-29T14:54:16+08:00][sql] UPDATE `gxfc_member`  SET `order_num` = `order_num` + 1  WHERE  `member_id` = 30 [ RunTime:0.000250s ]
+[2022-07-29T14:54:16+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order_goods` [ RunTime:0.000987s ]
+[2022-07-29T14:54:16+08:00][sql] SELECT `sku_id`,`num` FROM `gxfc_order_goods` WHERE  `order_id` = 551 [ RunTime:0.000330s ]
+[2022-07-29T14:54:16+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods_sku` [ RunTime:0.001018s ]
+[2022-07-29T14:54:16+08:00][sql] UPDATE `gxfc_goods_sku`  SET `sale_num` = `sale_num` + 1  WHERE  `sku_id` = 81 [ RunTime:0.000186s ]
+[2022-07-29T14:54:16+08:00][sql] SELECT `goods_id` FROM `gxfc_goods_sku` WHERE  `sku_id` = 81 LIMIT 1 [ RunTime:0.000164s ]
+[2022-07-29T14:54:16+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.000944s ]
+[2022-07-29T14:54:16+08:00][sql] UPDATE `gxfc_goods`  SET `sale_num` = `sale_num` + 1  WHERE  `goods_id` = 59 [ RunTime:0.000196s ]
+[2022-07-29T14:54:16+08:00][sql] UPDATE `gxfc_order_goods`  SET `refund_status_action` = '{\"status\":0,\"name\":\"\",\"action\":[],\"member_action\":[{\"event\":\"orderRefundApply\",\"title\":\"申请维权\",\"color\":\"\"}]}'  WHERE  `order_id` = 551 [ RunTime:0.000928s ]
+[2022-07-29T14:54:16+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order_log` [ RunTime:0.000712s ]
+[2022-07-29T14:54:16+08:00][sql] INSERT INTO `gxfc_order_log` SET `uid` = 30 , `nick_name` = '张亮' , `module` = 'member' , `action` = '订单支付' , `order_status` = 1 , `order_status_name` = '待发货' , `action_way` = orderPay , `order_id` = 551 , `action_time` = 1659077656 [ RunTime:0.000180s ]
+[2022-07-29T14:54:16+08:00][sql] SELECT `member_id`,`promotion_money`,`coupon_money`,`goods_money`,`delivery_money`,`adjust_money`,`dj_money`,`order_money`,`platform_coupon_money` FROM `gxfc_order` WHERE  `order_id` = 551 LIMIT 1 [ RunTime:0.000194s ]
+[2022-07-29T14:54:16+08:00][sql] SELECT `order_goods_id`,`goods_money`,`commission_rate`,`real_goods_money` FROM `gxfc_order_goods` WHERE  `order_id` = 551 [ RunTime:0.000339s ]
+[2022-07-29T14:54:16+08:00][sql] SELECT `hospital_id` FROM `gxfc_member` WHERE  `member_id` = 30 LIMIT 1 [ RunTime:0.000199s ]
+[2022-07-29T14:54:16+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop` [ RunTime:0.001018s ]
+[2022-07-29T14:54:16+08:00][sql] SELECT `site_id` FROM `gxfc_shop` WHERE  `site_xgl_id` = '20220707006' LIMIT 1 [ RunTime:0.000159s ]
+[2022-07-29T14:54:16+08:00][sql] UPDATE `gxfc_order_goods`  SET `shop_money` = 0 , `platform_money` = 0.01 , `hospital_money` = 0  WHERE  `order_goods_id` = 582 [ RunTime:0.000201s ]
+[2022-07-29T14:54:16+08:00][sql] UPDATE `gxfc_order`  SET `shop_money` = 0 , `platform_money` = 0.01 , `hospital_money` = 0 , `hospital_id` = 2  WHERE  `order_id` = 551 [ RunTime:0.000197s ]
+[2022-07-29T14:54:16+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_stat_shop` [ RunTime:0.000821s ]
+[2022-07-29T14:54:16+08:00][sql] SELECT `id` FROM `gxfc_stat_shop` WHERE  `site_id` = 11  AND `year` = 2022  AND `month` = 7  AND `day` = 29 LIMIT 1 [ RunTime:0.000174s ]
+[2022-07-29T14:54:16+08:00][sql] UPDATE `gxfc_stat_shop`  SET `modify_time` = 1659077656 , `order_total` = order_total+0.01 , `shipping_total` = shipping_total+0.00 , `order_pay_count` = order_pay_count+1 , `goods_pay_count` = goods_pay_count+1  WHERE  `site_id` = 11  AND `year` = 2022  AND `month` = 7  AND `day` = 29 [ RunTime:0.000215s ]
+[2022-07-29T14:54:16+08:00][sql] SELECT `id` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 7  AND `day` = 29 LIMIT 1 [ RunTime:0.000128s ]
+[2022-07-29T14:54:16+08:00][sql] UPDATE `gxfc_stat_shop`  SET `modify_time` = 1659077656 , `order_total` = order_total+0.01 , `shipping_total` = shipping_total+0.00 , `order_pay_count` = order_pay_count+1 , `goods_pay_count` = goods_pay_count+1  WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 7  AND `day` = 29 [ RunTime:0.000174s ]
+[2022-07-29T14:54:16+08:00][sql] SELECT * FROM `gxfc_order` WHERE  `order_id` = 551 LIMIT 1 [ RunTime:0.000414s ]
+[2022-07-29T14:54:16+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000744s ]
+[2022-07-29T14:54:16+08:00][sql] INSERT INTO `gxfc_cron` SET `type` = 1 , `period` = 0 , `period_type` = 0 , `name` = '订单小票打印' , `event` = 'PrintOrder' , `execute_time` = 1659077656 , `relate_id` = 551 , `create_time` = 1659077656 [ RunTime:0.000188s ]
+[2022-07-29T14:54:16+08:00][sql] SELECT * FROM `gxfc_member` WHERE  `member_id` = 30  AND `is_delete` = 0 LIMIT 1 [ RunTime:0.000376s ]
+[2022-07-29T14:54:16+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_message_sms_records` [ RunTime:0.000779s ]
+[2022-07-29T14:54:16+08:00][sql] INSERT INTO `gxfc_message_sms_records` SET `account` = '18271963152' , `status` = 0 , `addon` = '' , `addon_name` = '' , `content` = '' , `var_parse` = '{\"orderno\":\"202207291454300001\",\"username\":\"\\u5f20\\u4eae\",\"ordermoney\":\"0.01\"}' , `keywords` = 'ORDER_PAY' , `create_time` = 1659077656 , `send_time` = 0 , `result` = '没有可用的短信发送方式' , `keywords_name` = '订单支付通知' [ RunTime:0.000185s ]
+[2022-07-29T14:54:16+08:00][sql] SELECT `order_no`,`site_id`,`order_name`,`order_money`,`order_type`,`pay_time` FROM `gxfc_order` WHERE  `order_id` = 551 LIMIT 1 [ RunTime:0.000182s ]
+[2022-07-29T14:54:16+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_accept_message` [ RunTime:0.000704s ]
+[2022-07-29T14:54:16+08:00][sql] SELECT `sam`.*,`m`.`mobile`,`m`.`wx_openid`,`m`.`nickname`,`m`.`headimg`,`m`.`username`,`m`.`email` FROM `gxfc_shop_accept_message` `sam` LEFT JOIN `gxfc_member` `m` ON `m`.`member_id`=`sam`.`member_id` WHERE  `sam`.`site_id` = 11 [ RunTime:0.000191s ]
+[2022-07-29T14:54:16+08:00][error] [2]Cannot modify header information - headers already sent by (output started at /www/wwwroot/ls.chnssl.com/vendor/symfony/http-foundation/Response.php:381)
+[2022-07-29T14:54:16+08:00][error] [1]Uncaught think\exception\ErrorException: Cannot modify header information - headers already sent by (output started at /www/wwwroot/ls.chnssl.com/vendor/symfony/http-foundation/Response.php:381) in /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php:226
+Stack trace:
+#0 [internal function]: think\initializer\Error->appError(2, 'Cannot modify h...', '/www/wwwroot/ls...', 226, Array)
+#1 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php(226): setcookie('think_lang', '', 0, '/', '', false, false)
+#2 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php(196): think\Cookie->saveCookie('think_lang', '', 0, '/', '', false, false, '')
+#3 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Response.php(142): think\Cookie->save()
+#4 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/initializer/Error.php(58): think\Response->send()
+#5 [internal function]: think\initializer\Error->appException(Object(think\exception\ErrorException))
+#
+[2022-07-29T14:56:15+08:00][sql] CONNECT:[ UseTime:0.000239s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-29T14:56:15+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_pay` [ RunTime:0.000875s ]
+[2022-07-29T14:56:15+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '20220729145680001' LIMIT 1 [ RunTime:0.000298s ]
+[2022-07-29T14:56:15+08:00][sql] UPDATE `gxfc_pay`  SET `trade_no` = '4200001434202207299705376141' , `pay_type` = 'wechatpay' , `pay_addon` = 'wechatpay' , `pay_time` = 1659077775 , `pay_status` = 2  WHERE  `out_trade_no` = '20220729145680001' [ RunTime:0.007724s ]
+[2022-07-29T14:56:15+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order` [ RunTime:0.001230s ]
+[2022-07-29T14:56:15+08:00][sql] SELECT * FROM `gxfc_order` WHERE  `out_trade_no` = '20220729145680001' [ RunTime:0.001695s ]
+[2022-07-29T14:56:15+08:00][sql] UPDATE `gxfc_order`  SET `order_status` = 1 , `order_status_name` = '待发货' , `pay_status` = 1 , `order_status_action` = '{\"status\":1,\"name\":\"待发货\",\"is_allow_refund\":0,\"icon\":\"upload\\/uniapp\\/order\\/order-icon-send.png\",\"action\":[{\"action\":\"orderDelivery\",\"title\":\"发货\",\"color\":\"\"},{\"action\":\"orderAddressUpdate\",\"title\":\"修改地址\",\"color\":\"\"}],\"member_action\":[],\"color\":\"\"}' , `pay_time` = 1659077775 , `is_enable_refund` = 1 , `pay_type` = 'wechatpay' , `pay_type_name` = '微信支付'  WHERE  `order_id` = 552  AND `order_status` = 0 [ RunTime:0.000315s ]
+[2022-07-29T14:56:15+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000991s ]
+[2022-07-29T14:56:15+08:00][sql] UPDATE `gxfc_member`  SET `order_money` = `order_money` + 0.01  WHERE  `member_id` = 8 [ RunTime:0.000196s ]
+[2022-07-29T14:56:15+08:00][sql] UPDATE `gxfc_member`  SET `order_num` = `order_num` + 1  WHERE  `member_id` = 8 [ RunTime:0.000147s ]
+[2022-07-29T14:56:15+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order_goods` [ RunTime:0.000881s ]
+[2022-07-29T14:56:15+08:00][sql] SELECT `sku_id`,`num` FROM `gxfc_order_goods` WHERE  `order_id` = 552 [ RunTime:0.000301s ]
+[2022-07-29T14:56:15+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods_sku` [ RunTime:0.000957s ]
+[2022-07-29T14:56:15+08:00][sql] UPDATE `gxfc_goods_sku`  SET `sale_num` = `sale_num` + 1  WHERE  `sku_id` = 81 [ RunTime:0.000164s ]
+[2022-07-29T14:56:15+08:00][sql] SELECT `goods_id` FROM `gxfc_goods_sku` WHERE  `sku_id` = 81 LIMIT 1 [ RunTime:0.000124s ]
+[2022-07-29T14:56:15+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.000923s ]
+[2022-07-29T14:56:15+08:00][sql] UPDATE `gxfc_goods`  SET `sale_num` = `sale_num` + 1  WHERE  `goods_id` = 59 [ RunTime:0.000157s ]
+[2022-07-29T14:56:15+08:00][sql] UPDATE `gxfc_order_goods`  SET `refund_status_action` = '{\"status\":0,\"name\":\"\",\"action\":[],\"member_action\":[{\"event\":\"orderRefundApply\",\"title\":\"申请维权\",\"color\":\"\"}]}'  WHERE  `order_id` = 552 [ RunTime:0.000881s ]
+[2022-07-29T14:56:15+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order_log` [ RunTime:0.000719s ]
+[2022-07-29T14:56:15+08:00][sql] INSERT INTO `gxfc_order_log` SET `uid` = 8 , `nick_name` = '王志广' , `module` = 'member' , `action` = '订单支付' , `order_status` = 1 , `order_status_name` = '待发货' , `action_way` = orderPay , `order_id` = 552 , `action_time` = 1659077775 [ RunTime:0.000170s ]
+[2022-07-29T14:56:15+08:00][sql] SELECT `member_id`,`promotion_money`,`coupon_money`,`goods_money`,`delivery_money`,`adjust_money`,`dj_money`,`order_money`,`platform_coupon_money` FROM `gxfc_order` WHERE  `order_id` = 552 LIMIT 1 [ RunTime:0.000219s ]
+[2022-07-29T14:56:15+08:00][sql] SELECT `order_goods_id`,`goods_money`,`commission_rate`,`real_goods_money` FROM `gxfc_order_goods` WHERE  `order_id` = 552 [ RunTime:0.000322s ]
+[2022-07-29T14:56:15+08:00][sql] SELECT `hospital_id` FROM `gxfc_member` WHERE  `member_id` = 8 LIMIT 1 [ RunTime:0.000140s ]
+[2022-07-29T14:56:15+08:00][sql] UPDATE `gxfc_order_goods`  SET `shop_money` = 0 , `platform_money` = 0.01 , `hospital_money` = 0  WHERE  `order_goods_id` = 583 [ RunTime:0.000160s ]
+[2022-07-29T14:56:15+08:00][sql] UPDATE `gxfc_order`  SET `shop_money` = 0 , `platform_money` = 0.01 , `hospital_money` = 0 , `hospital_id` = 0  WHERE  `order_id` = 552 [ RunTime:0.000184s ]
+[2022-07-29T14:56:15+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_stat_shop` [ RunTime:0.000787s ]
+[2022-07-29T14:56:15+08:00][sql] SELECT `id` FROM `gxfc_stat_shop` WHERE  `site_id` = 11  AND `year` = 2022  AND `month` = 7  AND `day` = 29 LIMIT 1 [ RunTime:0.000173s ]
+[2022-07-29T14:56:15+08:00][sql] UPDATE `gxfc_stat_shop`  SET `modify_time` = 1659077775 , `order_total` = order_total+0.01 , `shipping_total` = shipping_total+0.00 , `order_pay_count` = order_pay_count+1 , `goods_pay_count` = goods_pay_count+1  WHERE  `site_id` = 11  AND `year` = 2022  AND `month` = 7  AND `day` = 29 [ RunTime:0.000202s ]
+[2022-07-29T14:56:15+08:00][sql] SELECT `id` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 7  AND `day` = 29 LIMIT 1 [ RunTime:0.000185s ]
+[2022-07-29T14:56:15+08:00][sql] UPDATE `gxfc_stat_shop`  SET `modify_time` = 1659077775 , `order_total` = order_total+0.01 , `shipping_total` = shipping_total+0.00 , `order_pay_count` = order_pay_count+1 , `goods_pay_count` = goods_pay_count+1  WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 7  AND `day` = 29 [ RunTime:0.000176s ]
+[2022-07-29T14:56:15+08:00][sql] SELECT * FROM `gxfc_order` WHERE  `order_id` = 552 LIMIT 1 [ RunTime:0.000388s ]
+[2022-07-29T14:56:15+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000741s ]
+[2022-07-29T14:56:15+08:00][sql] INSERT INTO `gxfc_cron` SET `type` = 1 , `period` = 0 , `period_type` = 0 , `name` = '订单小票打印' , `event` = 'PrintOrder' , `execute_time` = 1659077775 , `relate_id` = 552 , `create_time` = 1659077775 [ RunTime:0.000199s ]
+[2022-07-29T14:56:15+08:00][sql] SELECT * FROM `gxfc_member` WHERE  `member_id` = 8  AND `is_delete` = 0 LIMIT 1 [ RunTime:0.000371s ]
+[2022-07-29T14:56:15+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_message_sms_records` [ RunTime:0.000876s ]
+[2022-07-29T14:56:15+08:00][sql] INSERT INTO `gxfc_message_sms_records` SET `account` = '15927119597' , `status` = 0 , `addon` = '' , `addon_name` = '' , `content` = '' , `var_parse` = '{\"orderno\":\"20220729145680001\",\"username\":\"\\u738b\\u5fd7\\u5e7f\",\"ordermoney\":\"0.01\"}' , `keywords` = 'ORDER_PAY' , `create_time` = 1659077775 , `send_time` = 0 , `result` = '没有可用的短信发送方式' , `keywords_name` = '订单支付通知' [ RunTime:0.000212s ]
+[2022-07-29T14:56:15+08:00][sql] SELECT `order_no`,`site_id`,`order_name`,`order_money`,`order_type`,`pay_time` FROM `gxfc_order` WHERE  `order_id` = 552 LIMIT 1 [ RunTime:0.000245s ]
+[2022-07-29T14:56:15+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_accept_message` [ RunTime:0.000748s ]
+[2022-07-29T14:56:15+08:00][sql] SELECT `sam`.*,`m`.`mobile`,`m`.`wx_openid`,`m`.`nickname`,`m`.`headimg`,`m`.`username`,`m`.`email` FROM `gxfc_shop_accept_message` `sam` LEFT JOIN `gxfc_member` `m` ON `m`.`member_id`=`sam`.`member_id` WHERE  `sam`.`site_id` = 11 [ RunTime:0.000225s ]
+[2022-07-29T14:56:15+08:00][error] [2]Cannot modify header information - headers already sent by (output started at /www/wwwroot/ls.chnssl.com/vendor/symfony/http-foundation/Response.php:381)
+[2022-07-29T14:56:15+08:00][error] [1]Uncaught think\exception\ErrorException: Cannot modify header information - headers already sent by (output started at /www/wwwroot/ls.chnssl.com/vendor/symfony/http-foundation/Response.php:381) in /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php:226
+Stack trace:
+#0 [internal function]: think\initializer\Error->appError(2, 'Cannot modify h...', '/www/wwwroot/ls...', 226, Array)
+#1 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php(226): setcookie('think_lang', '', 0, '/', '', false, false)
+#2 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php(196): think\Cookie->saveCookie('think_lang', '', 0, '/', '', false, false, '')
+#3 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Response.php(142): think\Cookie->save()
+#4 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/initializer/Error.php(58): think\Response->send()
+#5 [internal function]: think\initializer\Error->appException(Object(think\exception\ErrorException))
+#
+[2022-07-29T14:58:36+08:00][sql] CONNECT:[ UseTime:0.000244s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-29T14:58:36+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_pay` [ RunTime:0.000884s ]
+[2022-07-29T14:58:36+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '202207291458300001' LIMIT 1 [ RunTime:0.000272s ]
+[2022-07-29T14:58:36+08:00][sql] UPDATE `gxfc_pay`  SET `trade_no` = '4200001441202207293773840433' , `pay_type` = 'wechatpay' , `pay_addon` = 'wechatpay' , `pay_time` = 1659077916 , `pay_status` = 2  WHERE  `out_trade_no` = '202207291458300001' [ RunTime:0.006437s ]
+[2022-07-29T14:58:36+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order` [ RunTime:0.001205s ]
+[2022-07-29T14:58:36+08:00][sql] SELECT * FROM `gxfc_order` WHERE  `out_trade_no` = '202207291458300001' [ RunTime:0.001758s ]
+[2022-07-29T14:58:36+08:00][sql] UPDATE `gxfc_order`  SET `order_status` = 1 , `order_status_name` = '待发货' , `pay_status` = 1 , `order_status_action` = '{\"status\":1,\"name\":\"待发货\",\"is_allow_refund\":0,\"icon\":\"upload\\/uniapp\\/order\\/order-icon-send.png\",\"action\":[{\"action\":\"orderDelivery\",\"title\":\"发货\",\"color\":\"\"},{\"action\":\"orderAddressUpdate\",\"title\":\"修改地址\",\"color\":\"\"}],\"member_action\":[],\"color\":\"\"}' , `pay_time` = 1659077916 , `is_enable_refund` = 1 , `pay_type` = 'wechatpay' , `pay_type_name` = '微信支付'  WHERE  `order_id` = 554  AND `order_status` = 0 [ RunTime:0.000333s ]
+[2022-07-29T14:58:36+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000972s ]
+[2022-07-29T14:58:36+08:00][sql] UPDATE `gxfc_member`  SET `order_money` = `order_money` + 0.01  WHERE  `member_id` = 30 [ RunTime:0.000201s ]
+[2022-07-29T14:58:36+08:00][sql] UPDATE `gxfc_member`  SET `order_num` = `order_num` + 1  WHERE  `member_id` = 30 [ RunTime:0.000150s ]
+[2022-07-29T14:58:36+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order_goods` [ RunTime:0.000871s ]
+[2022-07-29T14:58:36+08:00][sql] SELECT `sku_id`,`num` FROM `gxfc_order_goods` WHERE  `order_id` = 554 [ RunTime:0.000298s ]
+[2022-07-29T14:58:36+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods_sku` [ RunTime:0.000939s ]
+[2022-07-29T14:58:36+08:00][sql] UPDATE `gxfc_goods_sku`  SET `sale_num` = `sale_num` + 1  WHERE  `sku_id` = 81 [ RunTime:0.000176s ]
+[2022-07-29T14:58:36+08:00][sql] SELECT `goods_id` FROM `gxfc_goods_sku` WHERE  `sku_id` = 81 LIMIT 1 [ RunTime:0.000137s ]
+[2022-07-29T14:58:36+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.000924s ]
+[2022-07-29T14:58:36+08:00][sql] UPDATE `gxfc_goods`  SET `sale_num` = `sale_num` + 1  WHERE  `goods_id` = 59 [ RunTime:0.000172s ]
+[2022-07-29T14:58:36+08:00][sql] UPDATE `gxfc_order_goods`  SET `refund_status_action` = '{\"status\":0,\"name\":\"\",\"action\":[],\"member_action\":[{\"event\":\"orderRefundApply\",\"title\":\"申请维权\",\"color\":\"\"}]}'  WHERE  `order_id` = 554 [ RunTime:0.000916s ]
+[2022-07-29T14:58:36+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order_log` [ RunTime:0.000682s ]
+[2022-07-29T14:58:36+08:00][sql] INSERT INTO `gxfc_order_log` SET `uid` = 30 , `nick_name` = '张亮' , `module` = 'member' , `action` = '订单支付' , `order_status` = 1 , `order_status_name` = '待发货' , `action_way` = orderPay , `order_id` = 554 , `action_time` = 1659077916 [ RunTime:0.000159s ]
+[2022-07-29T14:58:36+08:00][sql] SELECT `member_id`,`promotion_money`,`coupon_money`,`goods_money`,`delivery_money`,`adjust_money`,`dj_money`,`order_money`,`platform_coupon_money` FROM `gxfc_order` WHERE  `order_id` = 554 LIMIT 1 [ RunTime:0.000207s ]
+[2022-07-29T14:58:36+08:00][sql] SELECT `order_goods_id`,`goods_money`,`commission_rate`,`real_goods_money` FROM `gxfc_order_goods` WHERE  `order_id` = 554 [ RunTime:0.000337s ]
+[2022-07-29T14:58:36+08:00][sql] SELECT `hospital_id` FROM `gxfc_member` WHERE  `member_id` = 30 LIMIT 1 [ RunTime:0.000136s ]
+[2022-07-29T14:58:36+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop` [ RunTime:0.000962s ]
+[2022-07-29T14:58:36+08:00][sql] SELECT `site_id` FROM `gxfc_shop` WHERE  `site_xgl_id` = '20220707006' LIMIT 1 [ RunTime:0.000159s ]
+[2022-07-29T14:58:36+08:00][sql] UPDATE `gxfc_order_goods`  SET `shop_money` = 0 , `platform_money` = 0.01 , `hospital_money` = 0  WHERE  `order_goods_id` = 585 [ RunTime:0.000186s ]
+[2022-07-29T14:58:36+08:00][sql] UPDATE `gxfc_order`  SET `shop_money` = 0 , `platform_money` = 0.01 , `hospital_money` = 0 , `hospital_id` = 2  WHERE  `order_id` = 554 [ RunTime:0.000189s ]
+[2022-07-29T14:58:36+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_stat_shop` [ RunTime:0.000886s ]
+[2022-07-29T14:58:36+08:00][sql] SELECT `id` FROM `gxfc_stat_shop` WHERE  `site_id` = 11  AND `year` = 2022  AND `month` = 7  AND `day` = 29 LIMIT 1 [ RunTime:0.000252s ]
+[2022-07-29T14:58:36+08:00][sql] UPDATE `gxfc_stat_shop`  SET `modify_time` = 1659077916 , `order_total` = order_total+0.01 , `shipping_total` = shipping_total+0.00 , `order_pay_count` = order_pay_count+1 , `goods_pay_count` = goods_pay_count+1  WHERE  `site_id` = 11  AND `year` = 2022  AND `month` = 7  AND `day` = 29 [ RunTime:0.000257s ]
+[2022-07-29T14:58:36+08:00][sql] SELECT `id` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 7  AND `day` = 29 LIMIT 1 [ RunTime:0.000177s ]
+[2022-07-29T14:58:36+08:00][sql] UPDATE `gxfc_stat_shop`  SET `modify_time` = 1659077916 , `order_total` = order_total+0.01 , `shipping_total` = shipping_total+0.00 , `order_pay_count` = order_pay_count+1 , `goods_pay_count` = goods_pay_count+1  WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 7  AND `day` = 29 [ RunTime:0.000230s ]
+[2022-07-29T14:58:36+08:00][sql] SELECT * FROM `gxfc_order` WHERE  `order_id` = 554 LIMIT 1 [ RunTime:0.000423s ]
+[2022-07-29T14:58:36+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000822s ]
+[2022-07-29T14:58:36+08:00][sql] INSERT INTO `gxfc_cron` SET `type` = 1 , `period` = 0 , `period_type` = 0 , `name` = '订单小票打印' , `event` = 'PrintOrder' , `execute_time` = 1659077916 , `relate_id` = 554 , `create_time` = 1659077916 [ RunTime:0.000175s ]
+[2022-07-29T14:58:36+08:00][sql] SELECT * FROM `gxfc_member` WHERE  `member_id` = 30  AND `is_delete` = 0 LIMIT 1 [ RunTime:0.000347s ]
+[2022-07-29T14:58:36+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_message_sms_records` [ RunTime:0.000820s ]
+[2022-07-29T14:58:36+08:00][sql] INSERT INTO `gxfc_message_sms_records` SET `account` = '18271963152' , `status` = 0 , `addon` = '' , `addon_name` = '' , `content` = '' , `var_parse` = '{\"orderno\":\"202207291458300001\",\"username\":\"\\u5f20\\u4eae\",\"ordermoney\":\"0.01\"}' , `keywords` = 'ORDER_PAY' , `create_time` = 1659077916 , `send_time` = 0 , `result` = '没有可用的短信发送方式' , `keywords_name` = '订单支付通知' [ RunTime:0.000235s ]
+[2022-07-29T14:58:36+08:00][sql] SELECT `order_no`,`site_id`,`order_name`,`order_money`,`order_type`,`pay_time` FROM `gxfc_order` WHERE  `order_id` = 554 LIMIT 1 [ RunTime:0.000316s ]
+[2022-07-29T14:58:36+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_accept_message` [ RunTime:0.000715s ]
+[2022-07-29T14:58:36+08:00][sql] SELECT `sam`.*,`m`.`mobile`,`m`.`wx_openid`,`m`.`nickname`,`m`.`headimg`,`m`.`username`,`m`.`email` FROM `gxfc_shop_accept_message` `sam` LEFT JOIN `gxfc_member` `m` ON `m`.`member_id`=`sam`.`member_id` WHERE  `sam`.`site_id` = 11 [ RunTime:0.000221s ]
+[2022-07-29T14:58:36+08:00][error] [2]Cannot modify header information - headers already sent by (output started at /www/wwwroot/ls.chnssl.com/vendor/symfony/http-foundation/Response.php:381)
+[2022-07-29T14:58:36+08:00][error] [1]Uncaught think\exception\ErrorException: Cannot modify header information - headers already sent by (output started at /www/wwwroot/ls.chnssl.com/vendor/symfony/http-foundation/Response.php:381) in /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php:226
+Stack trace:
+#0 [internal function]: think\initializer\Error->appError(2, 'Cannot modify h...', '/www/wwwroot/ls...', 226, Array)
+#1 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php(226): setcookie('think_lang', '', 0, '/', '', false, false)
+#2 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php(196): think\Cookie->saveCookie('think_lang', '', 0, '/', '', false, false, '')
+#3 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Response.php(142): think\Cookie->save()
+#4 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/initializer/Error.php(58): think\Response->send()
+#5 [internal function]: think\initializer\Error->appException(Object(think\exception\ErrorException))
+#
+[2022-07-29T14:59:13+08:00][sql] CONNECT:[ UseTime:0.000268s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-29T14:59:13+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_pay` [ RunTime:0.000955s ]
+[2022-07-29T14:59:13+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '20220729145980001' LIMIT 1 [ RunTime:0.000298s ]
+[2022-07-29T14:59:13+08:00][sql] UPDATE `gxfc_pay`  SET `trade_no` = '4200001517202207290984834874' , `pay_type` = 'wechatpay' , `pay_addon` = 'wechatpay' , `pay_time` = 1659077953 , `pay_status` = 2  WHERE  `out_trade_no` = '20220729145980001' [ RunTime:0.008446s ]
+[2022-07-29T14:59:13+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order` [ RunTime:0.001320s ]
+[2022-07-29T14:59:13+08:00][sql] SELECT * FROM `gxfc_order` WHERE  `out_trade_no` = '20220729145980001' [ RunTime:0.001831s ]
+[2022-07-29T14:59:13+08:00][sql] UPDATE `gxfc_order`  SET `order_status` = 1 , `order_status_name` = '待发货' , `pay_status` = 1 , `order_status_action` = '{\"status\":1,\"name\":\"待发货\",\"is_allow_refund\":0,\"icon\":\"upload\\/uniapp\\/order\\/order-icon-send.png\",\"action\":[{\"action\":\"orderDelivery\",\"title\":\"发货\",\"color\":\"\"},{\"action\":\"orderAddressUpdate\",\"title\":\"修改地址\",\"color\":\"\"}],\"member_action\":[],\"color\":\"\"}' , `pay_time` = 1659077953 , `is_enable_refund` = 1 , `pay_type` = 'wechatpay' , `pay_type_name` = '微信支付'  WHERE  `order_id` = 555  AND `order_status` = 0 [ RunTime:0.000381s ]
+[2022-07-29T14:59:13+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.001006s ]
+[2022-07-29T14:59:13+08:00][sql] UPDATE `gxfc_member`  SET `order_money` = `order_money` + 0.01  WHERE  `member_id` = 8 [ RunTime:0.000173s ]
+[2022-07-29T14:59:13+08:00][sql] UPDATE `gxfc_member`  SET `order_num` = `order_num` + 1  WHERE  `member_id` = 8 [ RunTime:0.000154s ]
+[2022-07-29T14:59:13+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order_goods` [ RunTime:0.000952s ]
+[2022-07-29T14:59:13+08:00][sql] SELECT `sku_id`,`num` FROM `gxfc_order_goods` WHERE  `order_id` = 555 [ RunTime:0.000330s ]
+[2022-07-29T14:59:13+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods_sku` [ RunTime:0.000988s ]
+[2022-07-29T14:59:13+08:00][sql] UPDATE `gxfc_goods_sku`  SET `sale_num` = `sale_num` + 1  WHERE  `sku_id` = 81 [ RunTime:0.000191s ]
+[2022-07-29T14:59:13+08:00][sql] SELECT `goods_id` FROM `gxfc_goods_sku` WHERE  `sku_id` = 81 LIMIT 1 [ RunTime:0.000158s ]
+[2022-07-29T14:59:13+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.000936s ]
+[2022-07-29T14:59:13+08:00][sql] UPDATE `gxfc_goods`  SET `sale_num` = `sale_num` + 1  WHERE  `goods_id` = 59 [ RunTime:0.000180s ]
+[2022-07-29T14:59:13+08:00][sql] UPDATE `gxfc_order_goods`  SET `refund_status_action` = '{\"status\":0,\"name\":\"\",\"action\":[],\"member_action\":[{\"event\":\"orderRefundApply\",\"title\":\"申请维权\",\"color\":\"\"}]}'  WHERE  `order_id` = 555 [ RunTime:0.000923s ]
+[2022-07-29T14:59:13+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order_log` [ RunTime:0.000744s ]
+[2022-07-29T14:59:13+08:00][sql] INSERT INTO `gxfc_order_log` SET `uid` = 8 , `nick_name` = '王志广' , `module` = 'member' , `action` = '订单支付' , `order_status` = 1 , `order_status_name` = '待发货' , `action_way` = orderPay , `order_id` = 555 , `action_time` = 1659077953 [ RunTime:0.000172s ]
+[2022-07-29T14:59:13+08:00][sql] SELECT `member_id`,`promotion_money`,`coupon_money`,`goods_money`,`delivery_money`,`adjust_money`,`dj_money`,`order_money`,`platform_coupon_money` FROM `gxfc_order` WHERE  `order_id` = 555 LIMIT 1 [ RunTime:0.000222s ]
+[2022-07-29T14:59:13+08:00][sql] SELECT `order_goods_id`,`goods_money`,`commission_rate`,`real_goods_money` FROM `gxfc_order_goods` WHERE  `order_id` = 555 [ RunTime:0.000315s ]
+[2022-07-29T14:59:13+08:00][sql] SELECT `hospital_id` FROM `gxfc_member` WHERE  `member_id` = 8 LIMIT 1 [ RunTime:0.000143s ]
+[2022-07-29T14:59:13+08:00][sql] UPDATE `gxfc_order_goods`  SET `shop_money` = 0 , `platform_money` = 0.01 , `hospital_money` = 0  WHERE  `order_goods_id` = 586 [ RunTime:0.000155s ]
+[2022-07-29T14:59:13+08:00][sql] UPDATE `gxfc_order`  SET `shop_money` = 0 , `platform_money` = 0.01 , `hospital_money` = 0 , `hospital_id` = 0  WHERE  `order_id` = 555 [ RunTime:0.000188s ]
+[2022-07-29T14:59:13+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_stat_shop` [ RunTime:0.000807s ]
+[2022-07-29T14:59:13+08:00][sql] SELECT `id` FROM `gxfc_stat_shop` WHERE  `site_id` = 11  AND `year` = 2022  AND `month` = 7  AND `day` = 29 LIMIT 1 [ RunTime:0.000182s ]
+[2022-07-29T14:59:13+08:00][sql] UPDATE `gxfc_stat_shop`  SET `modify_time` = 1659077953 , `order_total` = order_total+0.01 , `shipping_total` = shipping_total+0.00 , `order_pay_count` = order_pay_count+1 , `goods_pay_count` = goods_pay_count+1  WHERE  `site_id` = 11  AND `year` = 2022  AND `month` = 7  AND `day` = 29 [ RunTime:0.000203s ]
+[2022-07-29T14:59:13+08:00][sql] SELECT `id` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 7  AND `day` = 29 LIMIT 1 [ RunTime:0.000142s ]
+[2022-07-29T14:59:13+08:00][sql] UPDATE `gxfc_stat_shop`  SET `modify_time` = 1659077953 , `order_total` = order_total+0.01 , `shipping_total` = shipping_total+0.00 , `order_pay_count` = order_pay_count+1 , `goods_pay_count` = goods_pay_count+1  WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 7  AND `day` = 29 [ RunTime:0.000175s ]
+[2022-07-29T14:59:13+08:00][sql] SELECT * FROM `gxfc_order` WHERE  `order_id` = 555 LIMIT 1 [ RunTime:0.000446s ]
+[2022-07-29T14:59:13+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000888s ]
+[2022-07-29T14:59:13+08:00][sql] INSERT INTO `gxfc_cron` SET `type` = 1 , `period` = 0 , `period_type` = 0 , `name` = '订单小票打印' , `event` = 'PrintOrder' , `execute_time` = 1659077953 , `relate_id` = 555 , `create_time` = 1659077953 [ RunTime:0.000185s ]
+[2022-07-29T14:59:13+08:00][sql] SELECT * FROM `gxfc_member` WHERE  `member_id` = 8  AND `is_delete` = 0 LIMIT 1 [ RunTime:0.000326s ]
+[2022-07-29T14:59:13+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_message_sms_records` [ RunTime:0.000786s ]
+[2022-07-29T14:59:13+08:00][sql] INSERT INTO `gxfc_message_sms_records` SET `account` = '15927119597' , `status` = 0 , `addon` = '' , `addon_name` = '' , `content` = '' , `var_parse` = '{\"orderno\":\"20220729145980001\",\"username\":\"\\u738b\\u5fd7\\u5e7f\",\"ordermoney\":\"0.01\"}' , `keywords` = 'ORDER_PAY' , `create_time` = 1659077953 , `send_time` = 0 , `result` = '没有可用的短信发送方式' , `keywords_name` = '订单支付通知' [ RunTime:0.000193s ]
+[2022-07-29T14:59:13+08:00][sql] SELECT `order_no`,`site_id`,`order_name`,`order_money`,`order_type`,`pay_time` FROM `gxfc_order` WHERE  `order_id` = 555 LIMIT 1 [ RunTime:0.000182s ]
+[2022-07-29T14:59:13+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_accept_message` [ RunTime:0.000719s ]
+[2022-07-29T14:59:13+08:00][sql] SELECT `sam`.*,`m`.`mobile`,`m`.`wx_openid`,`m`.`nickname`,`m`.`headimg`,`m`.`username`,`m`.`email` FROM `gxfc_shop_accept_message` `sam` LEFT JOIN `gxfc_member` `m` ON `m`.`member_id`=`sam`.`member_id` WHERE  `sam`.`site_id` = 11 [ RunTime:0.000221s ]
+[2022-07-29T14:59:13+08:00][error] [2]Cannot modify header information - headers already sent by (output started at /www/wwwroot/ls.chnssl.com/vendor/symfony/http-foundation/Response.php:381)
+[2022-07-29T14:59:13+08:00][error] [1]Uncaught think\exception\ErrorException: Cannot modify header information - headers already sent by (output started at /www/wwwroot/ls.chnssl.com/vendor/symfony/http-foundation/Response.php:381) in /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php:226
+Stack trace:
+#0 [internal function]: think\initializer\Error->appError(2, 'Cannot modify h...', '/www/wwwroot/ls...', 226, Array)
+#1 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php(226): setcookie('think_lang', '', 0, '/', '', false, false)
+#2 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php(196): think\Cookie->saveCookie('think_lang', '', 0, '/', '', false, false, '')
+#3 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Response.php(142): think\Cookie->save()
+#4 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/initializer/Error.php(58): think\Response->send()
+#5 [internal function]: think\initializer\Error->appException(Object(think\exception\ErrorException))
+#
+[2022-07-29T15:09:01+08:00][sql] CONNECT:[ UseTime:0.000299s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-29T15:09:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_pay` [ RunTime:0.000943s ]
+[2022-07-29T15:09:01+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '202207291508300001' LIMIT 1 [ RunTime:0.000306s ]
+[2022-07-29T15:09:01+08:00][sql] UPDATE `gxfc_pay`  SET `trade_no` = '4200001441202207293014836150' , `pay_type` = 'wechatpay' , `pay_addon` = 'wechatpay' , `pay_time` = 1659078541 , `pay_status` = 2  WHERE  `out_trade_no` = '202207291508300001' [ RunTime:0.004536s ]
+[2022-07-29T15:09:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order` [ RunTime:0.001479s ]
+[2022-07-29T15:09:01+08:00][sql] SELECT * FROM `gxfc_order` WHERE  `out_trade_no` = '202207291508300001' [ RunTime:0.001868s ]
+[2022-07-29T15:09:01+08:00][sql] UPDATE `gxfc_order`  SET `order_status` = 1 , `order_status_name` = '待发货' , `pay_status` = 1 , `order_status_action` = '{\"status\":1,\"name\":\"待发货\",\"is_allow_refund\":0,\"icon\":\"upload\\/uniapp\\/order\\/order-icon-send.png\",\"action\":[{\"action\":\"orderDelivery\",\"title\":\"发货\",\"color\":\"\"},{\"action\":\"orderAddressUpdate\",\"title\":\"修改地址\",\"color\":\"\"}],\"member_action\":[],\"color\":\"\"}' , `pay_time` = 1659078541 , `is_enable_refund` = 1 , `pay_type` = 'wechatpay' , `pay_type_name` = '微信支付'  WHERE  `order_id` = 557  AND `order_status` = 0 [ RunTime:0.000359s ]
+[2022-07-29T15:09:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.001043s ]
+[2022-07-29T15:09:01+08:00][sql] UPDATE `gxfc_member`  SET `order_money` = `order_money` + 0.01  WHERE  `member_id` = 30 [ RunTime:0.000194s ]
+[2022-07-29T15:09:01+08:00][sql] UPDATE `gxfc_member`  SET `order_num` = `order_num` + 1  WHERE  `member_id` = 30 [ RunTime:0.000135s ]
+[2022-07-29T15:09:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order_goods` [ RunTime:0.000939s ]
+[2022-07-29T15:09:01+08:00][sql] SELECT `sku_id`,`num` FROM `gxfc_order_goods` WHERE  `order_id` = 557 [ RunTime:0.000427s ]
+[2022-07-29T15:09:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods_sku` [ RunTime:0.001062s ]
+[2022-07-29T15:09:01+08:00][sql] UPDATE `gxfc_goods_sku`  SET `sale_num` = `sale_num` + 1  WHERE  `sku_id` = 81 [ RunTime:0.000217s ]
+[2022-07-29T15:09:01+08:00][sql] SELECT `goods_id` FROM `gxfc_goods_sku` WHERE  `sku_id` = 81 LIMIT 1 [ RunTime:0.000144s ]
+[2022-07-29T15:09:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001114s ]
+[2022-07-29T15:09:01+08:00][sql] UPDATE `gxfc_goods`  SET `sale_num` = `sale_num` + 1  WHERE  `goods_id` = 59 [ RunTime:0.000210s ]
+[2022-07-29T15:09:01+08:00][sql] UPDATE `gxfc_order_goods`  SET `refund_status_action` = '{\"status\":0,\"name\":\"\",\"action\":[],\"member_action\":[{\"event\":\"orderRefundApply\",\"title\":\"申请维权\",\"color\":\"\"}]}'  WHERE  `order_id` = 557 [ RunTime:0.000953s ]
+[2022-07-29T15:09:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order_log` [ RunTime:0.001263s ]
+[2022-07-29T15:09:01+08:00][sql] INSERT INTO `gxfc_order_log` SET `uid` = 30 , `nick_name` = '张亮' , `module` = 'member' , `action` = '订单支付' , `order_status` = 1 , `order_status_name` = '待发货' , `action_way` = orderPay , `order_id` = 557 , `action_time` = 1659078541 [ RunTime:0.000181s ]
+[2022-07-29T15:09:01+08:00][sql] SELECT `member_id`,`promotion_money`,`coupon_money`,`goods_money`,`delivery_money`,`adjust_money`,`dj_money`,`order_money`,`platform_coupon_money` FROM `gxfc_order` WHERE  `order_id` = 557 LIMIT 1 [ RunTime:0.000210s ]
+[2022-07-29T15:09:01+08:00][sql] SELECT `order_goods_id`,`goods_money`,`commission_rate`,`real_goods_money` FROM `gxfc_order_goods` WHERE  `order_id` = 557 [ RunTime:0.000351s ]
+[2022-07-29T15:09:01+08:00][sql] SELECT `hospital_id` FROM `gxfc_member` WHERE  `member_id` = 30 LIMIT 1 [ RunTime:0.000144s ]
+[2022-07-29T15:09:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop` [ RunTime:0.000996s ]
+[2022-07-29T15:09:01+08:00][sql] SELECT `site_id` FROM `gxfc_shop` WHERE  `site_xgl_id` = '20220707006' LIMIT 1 [ RunTime:0.000212s ]
+[2022-07-29T15:09:01+08:00][sql] UPDATE `gxfc_order_goods`  SET `shop_money` = 0 , `platform_money` = 0.01 , `hospital_money` = 0  WHERE  `order_goods_id` = 588 [ RunTime:0.000182s ]
+[2022-07-29T15:09:01+08:00][sql] UPDATE `gxfc_order`  SET `shop_money` = 0 , `platform_money` = 0.01 , `hospital_money` = 0 , `hospital_id` = 2  WHERE  `order_id` = 557 [ RunTime:0.000222s ]
+[2022-07-29T15:09:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_stat_shop` [ RunTime:0.000944s ]
+[2022-07-29T15:09:01+08:00][sql] SELECT `id` FROM `gxfc_stat_shop` WHERE  `site_id` = 11  AND `year` = 2022  AND `month` = 7  AND `day` = 29 LIMIT 1 [ RunTime:0.000207s ]
+[2022-07-29T15:09:01+08:00][sql] UPDATE `gxfc_stat_shop`  SET `modify_time` = 1659078541 , `order_total` = order_total+0.01 , `shipping_total` = shipping_total+0.00 , `order_pay_count` = order_pay_count+1 , `goods_pay_count` = goods_pay_count+1  WHERE  `site_id` = 11  AND `year` = 2022  AND `month` = 7  AND `day` = 29 [ RunTime:0.000218s ]
+[2022-07-29T15:09:01+08:00][sql] SELECT `id` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 7  AND `day` = 29 LIMIT 1 [ RunTime:0.000159s ]
+[2022-07-29T15:09:01+08:00][sql] UPDATE `gxfc_stat_shop`  SET `modify_time` = 1659078541 , `order_total` = order_total+0.01 , `shipping_total` = shipping_total+0.00 , `order_pay_count` = order_pay_count+1 , `goods_pay_count` = goods_pay_count+1  WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 7  AND `day` = 29 [ RunTime:0.000174s ]
+[2022-07-29T15:09:01+08:00][sql] SELECT * FROM `gxfc_order` WHERE  `order_id` = 557 LIMIT 1 [ RunTime:0.000499s ]
+[2022-07-29T15:09:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000761s ]
+[2022-07-29T15:09:01+08:00][sql] INSERT INTO `gxfc_cron` SET `type` = 1 , `period` = 0 , `period_type` = 0 , `name` = '订单小票打印' , `event` = 'PrintOrder' , `execute_time` = 1659078541 , `relate_id` = 557 , `create_time` = 1659078541 [ RunTime:0.000193s ]
+[2022-07-29T15:09:01+08:00][sql] SELECT * FROM `gxfc_member` WHERE  `member_id` = 30  AND `is_delete` = 0 LIMIT 1 [ RunTime:0.000488s ]
+[2022-07-29T15:09:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_message_sms_records` [ RunTime:0.000845s ]
+[2022-07-29T15:09:01+08:00][sql] INSERT INTO `gxfc_message_sms_records` SET `account` = '18271963152' , `status` = 0 , `addon` = '' , `addon_name` = '' , `content` = '' , `var_parse` = '{\"orderno\":\"202207291508300001\",\"username\":\"\\u5f20\\u4eae\",\"ordermoney\":\"0.01\"}' , `keywords` = 'ORDER_PAY' , `create_time` = 1659078541 , `send_time` = 0 , `result` = '没有可用的短信发送方式' , `keywords_name` = '订单支付通知' [ RunTime:0.000203s ]
+[2022-07-29T15:09:01+08:00][sql] SELECT `order_no`,`site_id`,`order_name`,`order_money`,`order_type`,`pay_time` FROM `gxfc_order` WHERE  `order_id` = 557 LIMIT 1 [ RunTime:0.000229s ]
+[2022-07-29T15:09:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_accept_message` [ RunTime:0.000724s ]
+[2022-07-29T15:09:01+08:00][sql] SELECT `sam`.*,`m`.`mobile`,`m`.`wx_openid`,`m`.`nickname`,`m`.`headimg`,`m`.`username`,`m`.`email` FROM `gxfc_shop_accept_message` `sam` LEFT JOIN `gxfc_member` `m` ON `m`.`member_id`=`sam`.`member_id` WHERE  `sam`.`site_id` = 11 [ RunTime:0.000195s ]
+[2022-07-29T15:09:01+08:00][error] [2]Cannot modify header information - headers already sent by (output started at /www/wwwroot/ls.chnssl.com/vendor/symfony/http-foundation/Response.php:381)
+[2022-07-29T15:09:01+08:00][error] [1]Uncaught think\exception\ErrorException: Cannot modify header information - headers already sent by (output started at /www/wwwroot/ls.chnssl.com/vendor/symfony/http-foundation/Response.php:381) in /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php:226
+Stack trace:
+#0 [internal function]: think\initializer\Error->appError(2, 'Cannot modify h...', '/www/wwwroot/ls...', 226, Array)
+#1 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php(226): setcookie('think_lang', '', 0, '/', '', false, false)
+#2 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php(196): think\Cookie->saveCookie('think_lang', '', 0, '/', '', false, false, '')
+#3 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Response.php(142): think\Cookie->save()
+#4 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/initializer/Error.php(58): think\Response->send()
+#5 [internal function]: think\initializer\Error->appException(Object(think\exception\ErrorException))
+#
+[2022-07-29T15:10:28+08:00][sql] CONNECT:[ UseTime:0.000225s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-29T15:10:28+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_pay` [ RunTime:0.000974s ]
+[2022-07-29T15:10:28+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '20220729151050001' LIMIT 1 [ RunTime:0.000269s ]
+[2022-07-29T15:10:28+08:00][sql] UPDATE `gxfc_pay`  SET `trade_no` = '4200001417202207293326165239' , `pay_type` = 'wechatpay' , `pay_addon` = 'wechatpay' , `pay_time` = 1659078628 , `pay_status` = 2  WHERE  `out_trade_no` = '20220729151050001' [ RunTime:0.003776s ]
+[2022-07-29T15:10:28+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order` [ RunTime:0.001213s ]
+[2022-07-29T15:10:28+08:00][sql] SELECT * FROM `gxfc_order` WHERE  `out_trade_no` = '20220729151050001' [ RunTime:0.001716s ]
+[2022-07-29T15:10:28+08:00][sql] UPDATE `gxfc_order`  SET `order_status` = 1 , `order_status_name` = '待发货' , `pay_status` = 1 , `order_status_action` = '{\"status\":1,\"name\":\"待发货\",\"is_allow_refund\":0,\"icon\":\"upload\\/uniapp\\/order\\/order-icon-send.png\",\"action\":[{\"action\":\"orderDelivery\",\"title\":\"发货\",\"color\":\"\"},{\"action\":\"orderAddressUpdate\",\"title\":\"修改地址\",\"color\":\"\"}],\"member_action\":[],\"color\":\"\"}' , `pay_time` = 1659078628 , `is_enable_refund` = 1 , `pay_type` = 'wechatpay' , `pay_type_name` = '微信支付'  WHERE  `order_id` = 558  AND `order_status` = 0 [ RunTime:0.000340s ]
+[2022-07-29T15:10:28+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000944s ]
+[2022-07-29T15:10:28+08:00][sql] UPDATE `gxfc_member`  SET `order_money` = `order_money` + 0.01  WHERE  `member_id` = 5 [ RunTime:0.000177s ]
+[2022-07-29T15:10:28+08:00][sql] UPDATE `gxfc_member`  SET `order_num` = `order_num` + 1  WHERE  `member_id` = 5 [ RunTime:0.000146s ]
+[2022-07-29T15:10:28+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order_goods` [ RunTime:0.000926s ]
+[2022-07-29T15:10:28+08:00][sql] SELECT `sku_id`,`num` FROM `gxfc_order_goods` WHERE  `order_id` = 558 [ RunTime:0.000302s ]
+[2022-07-29T15:10:28+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods_sku` [ RunTime:0.001000s ]
+[2022-07-29T15:10:28+08:00][sql] UPDATE `gxfc_goods_sku`  SET `sale_num` = `sale_num` + 1  WHERE  `sku_id` = 81 [ RunTime:0.000202s ]
+[2022-07-29T15:10:28+08:00][sql] SELECT `goods_id` FROM `gxfc_goods_sku` WHERE  `sku_id` = 81 LIMIT 1 [ RunTime:0.000130s ]
+[2022-07-29T15:10:28+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.000967s ]
+[2022-07-29T15:10:28+08:00][sql] UPDATE `gxfc_goods`  SET `sale_num` = `sale_num` + 1  WHERE  `goods_id` = 59 [ RunTime:0.000160s ]
+[2022-07-29T15:10:28+08:00][sql] UPDATE `gxfc_order_goods`  SET `refund_status_action` = '{\"status\":0,\"name\":\"\",\"action\":[],\"member_action\":[{\"event\":\"orderRefundApply\",\"title\":\"申请维权\",\"color\":\"\"}]}'  WHERE  `order_id` = 558 [ RunTime:0.000919s ]
+[2022-07-29T15:10:28+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order_log` [ RunTime:0.000781s ]
+[2022-07-29T15:10:28+08:00][sql] INSERT INTO `gxfc_order_log` SET `uid` = 5 , `nick_name` = '何峰' , `module` = 'member' , `action` = '订单支付' , `order_status` = 1 , `order_status_name` = '待发货' , `action_way` = orderPay , `order_id` = 558 , `action_time` = 1659078628 [ RunTime:0.000161s ]
+[2022-07-29T15:10:28+08:00][sql] SELECT `member_id`,`promotion_money`,`coupon_money`,`goods_money`,`delivery_money`,`adjust_money`,`dj_money`,`order_money`,`platform_coupon_money` FROM `gxfc_order` WHERE  `order_id` = 558 LIMIT 1 [ RunTime:0.000226s ]
+[2022-07-29T15:10:28+08:00][sql] SELECT `order_goods_id`,`goods_money`,`commission_rate`,`real_goods_money` FROM `gxfc_order_goods` WHERE  `order_id` = 558 [ RunTime:0.000320s ]
+[2022-07-29T15:10:28+08:00][sql] SELECT `hospital_id` FROM `gxfc_member` WHERE  `member_id` = 5 LIMIT 1 [ RunTime:0.000127s ]
+[2022-07-29T15:10:28+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop` [ RunTime:0.001046s ]
+[2022-07-29T15:10:28+08:00][sql] SELECT `site_id` FROM `gxfc_shop` WHERE  `site_xgl_id` = '1' LIMIT 1 [ RunTime:0.000158s ]
+[2022-07-29T15:10:28+08:00][sql] UPDATE `gxfc_order_goods`  SET `shop_money` = 0 , `platform_money` = 0.01 , `hospital_money` = 0  WHERE  `order_goods_id` = 589 [ RunTime:0.000177s ]
+[2022-07-29T15:10:28+08:00][sql] UPDATE `gxfc_order`  SET `shop_money` = 0 , `platform_money` = 0.01 , `hospital_money` = 0 , `hospital_id` = NULL  WHERE  `order_id` = 558 [ RunTime:0.000218s ]
+[2022-07-29T15:10:28+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_stat_shop` [ RunTime:0.000853s ]
+[2022-07-29T15:10:28+08:00][sql] SELECT `id` FROM `gxfc_stat_shop` WHERE  `site_id` = 11  AND `year` = 2022  AND `month` = 7  AND `day` = 29 LIMIT 1 [ RunTime:0.000198s ]
+[2022-07-29T15:10:28+08:00][sql] UPDATE `gxfc_stat_shop`  SET `modify_time` = 1659078628 , `order_total` = order_total+0.01 , `shipping_total` = shipping_total+0.00 , `order_pay_count` = order_pay_count+1 , `goods_pay_count` = goods_pay_count+1  WHERE  `site_id` = 11  AND `year` = 2022  AND `month` = 7  AND `day` = 29 [ RunTime:0.000261s ]
+[2022-07-29T15:10:28+08:00][sql] SELECT `id` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 7  AND `day` = 29 LIMIT 1 [ RunTime:0.000180s ]
+[2022-07-29T15:10:28+08:00][sql] UPDATE `gxfc_stat_shop`  SET `modify_time` = 1659078628 , `order_total` = order_total+0.01 , `shipping_total` = shipping_total+0.00 , `order_pay_count` = order_pay_count+1 , `goods_pay_count` = goods_pay_count+1  WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 7  AND `day` = 29 [ RunTime:0.000216s ]
+[2022-07-29T15:10:28+08:00][sql] SELECT * FROM `gxfc_order` WHERE  `order_id` = 558 LIMIT 1 [ RunTime:0.000446s ]
+[2022-07-29T15:10:28+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000899s ]
+[2022-07-29T15:10:28+08:00][sql] INSERT INTO `gxfc_cron` SET `type` = 1 , `period` = 0 , `period_type` = 0 , `name` = '订单小票打印' , `event` = 'PrintOrder' , `execute_time` = 1659078628 , `relate_id` = 558 , `create_time` = 1659078628 [ RunTime:0.000207s ]
+[2022-07-29T15:10:28+08:00][sql] SELECT * FROM `gxfc_member` WHERE  `member_id` = 5  AND `is_delete` = 0 LIMIT 1 [ RunTime:0.000467s ]
+[2022-07-29T15:10:28+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_message_sms_records` [ RunTime:0.000910s ]
+[2022-07-29T15:10:28+08:00][sql] INSERT INTO `gxfc_message_sms_records` SET `account` = '18672370882' , `status` = 0 , `addon` = '' , `addon_name` = '' , `content` = '' , `var_parse` = '{\"orderno\":\"20220729151050001\",\"username\":\"\\u4f55\\u5cf0\",\"ordermoney\":\"0.01\"}' , `keywords` = 'ORDER_PAY' , `create_time` = 1659078628 , `send_time` = 0 , `result` = '没有可用的短信发送方式' , `keywords_name` = '订单支付通知' [ RunTime:0.000244s ]
+[2022-07-29T15:10:28+08:00][sql] SELECT `order_no`,`site_id`,`order_name`,`order_money`,`order_type`,`pay_time` FROM `gxfc_order` WHERE  `order_id` = 558 LIMIT 1 [ RunTime:0.000333s ]
+[2022-07-29T15:10:28+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_accept_message` [ RunTime:0.000791s ]
+[2022-07-29T15:10:28+08:00][sql] SELECT `sam`.*,`m`.`mobile`,`m`.`wx_openid`,`m`.`nickname`,`m`.`headimg`,`m`.`username`,`m`.`email` FROM `gxfc_shop_accept_message` `sam` LEFT JOIN `gxfc_member` `m` ON `m`.`member_id`=`sam`.`member_id` WHERE  `sam`.`site_id` = 11 [ RunTime:0.000284s ]
+[2022-07-29T15:10:28+08:00][error] [2]Cannot modify header information - headers already sent by (output started at /www/wwwroot/ls.chnssl.com/vendor/symfony/http-foundation/Response.php:381)
+[2022-07-29T15:10:28+08:00][error] [1]Uncaught think\exception\ErrorException: Cannot modify header information - headers already sent by (output started at /www/wwwroot/ls.chnssl.com/vendor/symfony/http-foundation/Response.php:381) in /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php:226
+Stack trace:
+#0 [internal function]: think\initializer\Error->appError(2, 'Cannot modify h...', '/www/wwwroot/ls...', 226, Array)
+#1 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php(226): setcookie('think_lang', '', 0, '/', '', false, false)
+#2 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php(196): think\Cookie->saveCookie('think_lang', '', 0, '/', '', false, false, '')
+#3 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Response.php(142): think\Cookie->save()
+#4 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/initializer/Error.php(58): think\Response->send()
+#5 [internal function]: think\initializer\Error->appException(Object(think\exception\ErrorException))
+#

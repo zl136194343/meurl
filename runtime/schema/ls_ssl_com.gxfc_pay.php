@@ -1,0 +1,22 @@
+<?php 
+return array (
+  'id' => 'int',
+  'site_id' => 'int',
+  'out_trade_no' => 'string',
+  'pay_type' => 'string',
+  'trade_no' => 'string',
+  'pay_no' => 'string',
+  'pay_body' => 'string',
+  'pay_detail' => 'string',
+  'pay_money' => 'float',
+  'pay_addon' => 'string',
+  'pay_voucher' => 'string',
+  'pay_status' => 'int',
+  'return_url' => 'string',
+  'event' => 'string',
+  'mch_info' => 'string',
+  'create_time' => 'int',
+  'pay_time' => 'int',
+  '_pk' => 'id',
+  '_autoinc' => 'id',
+);

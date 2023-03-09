@@ -1,0 +1,705 @@
+{extend name="base"/}
+{block name="resources"}
+<link rel="stylesheet" href="SHOP_CSS/index.css">
+{/block}
+{block name="main"}
+<div class="ns-survey">
+	<div class="">
+		<div class="ns-survey-title">
+			<span class="ns-survey-title-name">实时概况</span>
+			<span class="ns-survey-title-time">更新时间：2020-03-31 09:17:20</span>
+		</div>
+		<div class="admin-row layui-col-space20">
+			<div class="layui-col-md2">
+				<a href="{:addon_url('shop/order/lists')}#!order_status=0">
+					<div class="ns-survey-detail-con">
+						<div class="statistics-box">
+							<div class="statistics-title">待付款订单</div>
+							<div class="statistics-value ns-text-color">{$num_data.waitpay}</div>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="layui-col-md2">
+				<a href="{:addon_url('shop/order/lists')}#!order_status=1">
+					<div class="ns-survey-detail-con">
+						<div class="statistics-box">
+							<div class="statistics-title">待配货订单</div>
+							<div class="statistics-value ns-text-color">{$num_data['waitsend']}</div>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="layui-col-md2">
+				<a href="{:addon_url('shop/orderrefund/lists')}">
+					<div class="ns-survey-detail-con">
+						<div class="statistics-box">
+							<div class="statistics-title">退款中订单</div>
+							<div class="statistics-value ns-text-color">{$num_data['refund']}</div>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="layui-col-md2">
+				<a href="{:addon_url('shop/goods/lists')}">
+					<div class="ns-survey-detail-con">
+						<div class="statistics-box">
+							<div class="statistics-title">库存预警</div>
+							<div class="statistics-value ns-text-color">{$num_data['goods_stock_alarm']}</div>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="layui-col-md2">
+				<a href="{:addon_url('shop/community/leaderApplyList')}">
+					<div class="ns-survey-detail-con">
+						<div class="statistics-box">
+							<div class="statistics-title">团长申请</div>
+							<div class="statistics-value ns-text-color">{$num_data.leader_apply_count}</div>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="layui-col-md2">
+				<a href="{:addon_url('shop/memberwithdraw/lists')}">
+					<div class="ns-survey-detail-con">
+						<div class="statistics-box">
+							<div class="statistics-title">提现申请（元）</div>
+							<div class="statistics-value ns-text-color">{$num_data.member_account.balance_withdraw_apply}</div>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+
+		<div class="admin-row layui-col-space20">
+			<div class="admin-col-md2">
+				<div class="">
+					<div class="overview-box">
+						<div class="overview-title">
+							<div class="overview-title-text">今日订单数</div>
+
+							<div class="title ns-prompt-block overview-prompt">
+								<div class="ns-prompt">
+									<button class="layui-btn layui-btn-primary ns-text-color ns-border-color ns-survey-yesterday-btn">昨日</button>
+									<div class="ns-prompt-box">
+										<div class="ns-prompt-con">
+											昨日订单数：{if isset($stat_yesterday.order_pay_count)}{$stat_yesterday.order_pay_count}{else /} 0 {/if}
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="overview-con">
+							<div class="overview-value ns-text-color">{$stat_day.order_pay_count}</div>
+							<div class="overview-rate">
+								<div>日同比 {$day_rate.order_pay_count}
+									{if $day_rate.order_pay_count > 0}
+									<img src="SHOP_IMG/shop-rate-add.png">
+									{else /}
+									<img src="SHOP_IMG/shop-rate-less.png">
+									{/if}
+								</div>
+								<!-- <div>周同比 {$week_rate['order_pay_count']}
+									{if $week_rate.order_pay_count > 0}
+									<img src="SHOP_IMG/shop-rate-add.png">
+									{else /}
+									<img src="SHOP_IMG/shop-rate-less.png">
+									{/if}
+								</div> -->
+								<div>昨日订单数：{if isset($stat_yesterday.order_pay_count)}{$stat_yesterday.order_pay_count}{else /} 0 {/if}</div>
+							</div>
+
+							<div class="overview-bottom">
+								<div class="overview-bottom-text">订单总数</div>
+								<div class="overview-bottom-value">{$shop_stat_sum.order_pay_count}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="admin-col-md2">
+				<div class="">
+					<div class="overview-box">
+						<div class="overview-title">
+							<div class="overview-title-text">今日销售额</div>
+
+							<div class="title ns-prompt-block overview-prompt">
+								<div class="ns-prompt">
+									<button class="layui-btn layui-btn-primary ns-text-color ns-border-color ns-survey-yesterday-btn">昨日</button>
+									<div class="ns-prompt-box">
+										<div class="ns-prompt-con">
+											昨日销售额：{if isset($stat_yesterday.order_total)}{$stat_yesterday.order_total}{else /} 0.00 {/if}
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="overview-con">
+							<div class="overview-value ns-text-color">{if isset($stat_day.order_total)}{$stat_day.order_total}{else /} 0.00
+								{/if}</div>
+							<div class="overview-rate">
+								<div>日同比 {$day_rate.order_total}
+									{if $day_rate.order_total > 0}
+									<img src="SHOP_IMG/shop-rate-add.png">
+									{else /}
+									<img src="SHOP_IMG/shop-rate-less.png">
+									{/if}
+								</div>
+								<!-- <div>周同比 {$week_rate['order_total']}
+									{if $week_rate.order_total > 0}
+									<img src="SHOP_IMG/shop-rate-add.png">
+									{else /}
+									<img src="SHOP_IMG/shop-rate-less.png">
+									{/if}
+								</div> -->
+								<div>昨日销售额：{if isset($stat_yesterday.order_total)}{$stat_yesterday.order_total}{else /} 0.00 {/if}</div>
+							</div>
+
+							<div class="overview-bottom">
+								<div class="overview-bottom-text">销售总额</div>
+								<div class="overview-bottom-value">{$shop_stat_sum.order_total}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="admin-col-md2">
+				<div class="">
+					<div class="overview-box">
+						<div class="overview-title">
+							<div class="overview-title-text">今日新增会员</div>
+
+							<div class="title ns-prompt-block overview-prompt">
+								<div class="ns-prompt">
+									<button class="layui-btn layui-btn-primary ns-text-color ns-border-color ns-survey-yesterday-btn">昨日</button>
+									<div class="ns-prompt-box">
+										<div class="ns-prompt-con">
+											昨日新增会员：{if isset($stat_yesterday.member_count)}{$stat_yesterday.member_count}{else /} 0 {/if}
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="overview-con">
+							<div class="overview-value ns-text-color">{$stat_day.member_count}</div>
+							<div class="overview-rate">
+								<div>日同比 {$day_rate.member_count}
+									{if $day_rate.member_count > 0}
+									<img src="SHOP_IMG/shop-rate-add.png">
+									{else /}
+									<img src="SHOP_IMG/shop-rate-less.png">
+									{/if}
+								</div>
+								<!-- <div>周同比
+									{$week_rate['member_count']}
+									{if $week_rate.member_count > 0}
+									<img src="SHOP_IMG/shop-rate-add.png">
+									{else /}
+									<img src="SHOP_IMG/shop-rate-less.png">
+									{/if}
+								</div> -->
+								<div>昨日新增会员：{if isset($stat_yesterday.member_count)}{$stat_yesterday.member_count}{else /} 0 {/if}</div>
+							</div>
+
+							<div class="overview-bottom">
+								<div class="overview-bottom-text">会员总数</div>
+								<div class="overview-bottom-value">{$member_count}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="admin-col-md2">
+				<div class="">
+					<div class="overview-box">
+						<div class="overview-title">
+							<div class="overview-title-text">今日新增团长</div>
+
+							<div class="title ns-prompt-block overview-prompt">
+								<div class="ns-prompt">
+									<button class="layui-btn layui-btn-primary ns-text-color ns-border-color ns-survey-yesterday-btn">昨日</button>
+									<div class="ns-prompt-box">
+										<div class="ns-prompt-con">
+											昨日新增团长：{if isset($stat_yesterday.leader_count)}{$stat_yesterday.leader_count}{else /} 0 {/if}
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="overview-con">
+							<div class="overview-value ns-text-color">{$stat_day.leader_count}</div>
+							<div class="overview-rate">
+								<div>日同比 {$day_rate.leader_count}
+									{if $day_rate.leader_count > 0}
+									<img src="SHOP_IMG/shop-rate-add.png">
+									{else /}
+									<img src="SHOP_IMG/shop-rate-less.png">
+									{/if}
+								</div>
+								<!-- <div>周同比
+									{$week_rate['visit_count']}
+									{if $week_rate.visit_count > 0}
+									<img src="SHOP_IMG/shop-rate-add.png">
+									{else /}
+									<img src="SHOP_IMG/shop-rate-less.png">
+									{/if}
+								</div> -->
+								<div>昨日新增团长：{if isset($stat_yesterday.leader_count)}{$stat_yesterday.leader_count}{else /} 0 {/if}</div>
+							</div>
+
+							<div class="overview-bottom">
+								<div class="overview-bottom-text">团长总数</div>
+								<div class="overview-bottom-value">{$leader_count}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="admin-row layui-col-space20">
+			<div class="admin-col-md4">
+				<div class="ns-survey-detail-con echarts-wrap">
+					<div class="echarts-order">
+						<h5>订单数量</h5>
+						<div id="order" style="width: 100%; height: 300px;"></div>
+					</div>
+				</div>
+			</div>
+			<div class="admin-col-md4">
+				<div class="ns-survey-detail-con echarts-wrap">
+					<div class="echarts-money">
+						<h5>订单销售额(元)</h5>
+						<div id="money" style="width: 100%; height: 300px;"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="admin-row layui-col-space20">
+			<div class="admin-col-md4">
+				<div class="ns-survey-detail-con echarts-wrap">
+					<div class="echarts-order">
+						<h5>新增会员数</h5>
+						<div id="member" style="width: 100%; height: 300px;"></div>
+					</div>
+				</div>
+			</div>
+			<div class="admin-col-md4">
+				<div class="ns-survey-detail-con echarts-wrap">
+					<div class="echarts-money">
+						<h5>新增团长数</h5>
+						<div id="team" style="width: 100%; height: 300px;"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="admin-row layui-col-space20">
+			<div class="admin-col-md4 leader-echarts">
+				<div class="ns-survey-detail-con echarts-wrap">
+					<div class="echarts-order">
+						<h5>团长销售排行(团长销售金额排行)</h5>
+						<div id="team_money" style="width: 100%; height: 320px;"></div>
+					</div>
+				</div>
+			</div>
+			<div class="admin-col-md4 goods-echarts">
+				<div class="ns-survey-detail-con echarts-wrap">
+					<div class="echarts-money">
+						<h5>商品销售排行(商品销售数量排行)</h5>
+						<div id="goods_money" style="width: 100%; height: 320px;"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{/block}
+{block name="script"}
+<script src="SHOP_JS/echarts.min.js"></script>
+<script>
+	$(function() {
+		$("body").on("click", ".ns-shop-state button", function() {
+			location.href = ns.url("shop/index/renewExpireTime");
+		});
+
+		var ten_day_json = {:json_encode($ten_day, JSON_UNESCAPED_UNICODE)};
+		var rank_data_json = {:json_encode($rank_data, JSON_UNESCAPED_UNICODE)};
+		console.log(rank_data_json);
+
+		function getDay(day) {
+			var today = new Date();
+			var targetday_milliseconds = today.getTime() + 1000 * 60 * 60 * 24 * day;
+			today.setTime(targetday_milliseconds); //注意，这行是关键代码
+			var tYear = today.getFullYear();
+			var tMonth = today.getMonth();
+			var tDate = today.getDate();
+			tMonth = doHandleMonth(tMonth + 1);
+			tDate = doHandleMonth(tDate);
+			return tMonth + "-" + tDate;
+		}
+
+		function doHandleMonth(month) {
+			var m = month;
+			if (month.toString().length == 1) {
+				m = "0" + month;
+			}
+			return m;
+		}
+
+		var data = [getDay(-9), getDay(-8), getDay(-7), getDay(-6), getDay(-5), getDay(-4), getDay(-3), getDay(-2), getDay(-1), getDay(0)];
+	
+		/******************* 订单数量 *********************/
+		var myChart = echarts.init(document.getElementById('order'));
+		// 指定图表的配置项和数据
+		option = {
+			xAxis: {
+				type: 'category',
+				data: data
+			},
+			yAxis: {
+				type: 'value'
+			},
+			tooltip: {
+				formatter: function(params, ticket, callback) {
+					return "日期：" + data[params.dataIndex] + '<br />' + params.seriesName + "：" + params.value;
+				},
+				backgroundColor: 'rgba(0, 0, 0, 0.5)',
+				padding: [5, 10],
+				textStyle: {
+					color: '#fff',
+					lineHeight: 30,
+				}
+			},
+			series: [{
+				name: ['订单数'],
+				data: ten_day_json.order_pay_count,
+				type: 'bar',
+				showBackground: true,
+				barCategoryGap: '70%',
+				itemStyle: {
+					color: new echarts.graphic.LinearGradient(
+						0, 0, 0, 1,
+						[{
+							offset: 1,
+							color: '#70B0FF'
+						}, {
+							offset: 0,
+							color: '#C688FF'
+						}]
+					)
+				}
+			}]
+		};
+		// 使用刚指定的配置项和数据显示图表。
+		myChart.setOption(option);
+		/******************* end *********************/
+		
+		
+		/******************* 销售金额 *********************/
+		var moneyChart = echarts.init(document.getElementById('money'));
+		// 指定图表的配置项和数据
+		moneyOption = {
+			xAxis: {
+				type: 'category',
+				data: data
+			},
+			yAxis: {
+				type: 'value'
+			},
+			tooltip: {
+				trigger: 'axis',
+				showContent: true,
+				backgroundColor: 'rgba(0, 0, 0, 0.5)',
+				padding: [5, 10],
+				textStyle: {
+					color: '#fff',
+					lineHeight: 30,
+				},
+				formatter: function(params, ticket, callback) {
+					return "日期：" + params[0].axisValue + '<br />' + params[0].seriesName + "：" + params[0].value + "元";
+				},
+			},
+			series: [{
+				name: ['销售额'],
+				data: ten_day_json.order_total,
+				type: 'line',
+				symbol: 'circle',
+				smooth: false,
+				itemStyle: {
+					color: '#FF2306'
+				},
+				lineStyle: {
+					color: '#FF6706'
+				}
+			}]
+		};
+
+		// 使用刚指定的配置项和数据显示图表。
+		moneyChart.setOption(moneyOption);
+		/******************* end *********************/
+		
+		
+		/******************* 新增会员数 *********************/
+		var memberChart = echarts.init(document.getElementById('member'));
+		// 指定图表的配置项和数据
+		memberOption = {
+			xAxis: {
+				type: 'category',
+				data: data
+			},
+			yAxis: {
+				type: 'value'
+			},
+			tooltip: {
+				trigger: 'axis',
+				showContent: true,
+				backgroundColor: 'rgba(0, 0, 0, 0.5)',
+				padding: [5, 10],
+				textStyle: {
+					color: '#fff',
+					lineHeight: 30,
+				},
+				formatter: function(params, ticket, callback) {
+					return "日期：" + params[0].axisValue + '<br />' + params[0].seriesName + "：" + params[0].value;
+				},
+			},
+			series: [{
+				name: ['新增会员数'],
+				data: ten_day_json.member_count,
+				type: 'line',
+				symbol: 'none',
+				smooth: true,
+				lineStyle: {
+					color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+						offset: 0,
+						color: '#FF6706'
+					}, {
+						offset: 1,
+						color: '#FF1D06'
+					}])//线条渐变色
+				},
+				areaStyle: {
+					color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+						offset: 0,
+						color: '#FF6706'
+					}, {
+						offset: 1,
+						color: '#FF1D06'
+					}]),
+					opacity: 0.1
+				}
+			}]
+		};
+		
+		// 使用刚指定的配置项和数据显示图表。
+		memberChart.setOption(memberOption);
+		/******************* end *********************/
+		
+		
+		/******************* 新增团长数 *********************/
+		var teamChart = echarts.init(document.getElementById('team'));
+		// 指定图表的配置项和数据
+		teamOption = {
+			xAxis: {
+				type: 'category',
+				data: data
+			},
+			yAxis: {
+				type: 'value'
+			},
+			tooltip: {
+				trigger: 'axis',
+				showContent: true,
+				backgroundColor: 'rgba(0, 0, 0, 0.5)',
+				padding: [5, 10],
+				textStyle: {
+					color: '#fff',
+					lineHeight: 30,
+				},
+				formatter: function(params, ticket, callback) {
+					return "日期：" + params[0].axisValue + '<br />' + params[0].seriesName + "：" + params[0].value;
+				},
+			},
+			series: [{
+				name: ['新增团长数'],
+				data: ten_day_json.leader_count,
+				type: 'line',
+				symbol: 'none',
+				smooth: true,
+				lineStyle: {
+					color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+						offset: 0,
+						color: '#0675FF'
+					}, {
+						offset: 1,
+						color: '#8706FF'
+					}])//线条渐变色
+				},
+				areaStyle: {
+					color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{
+						offset: 0,
+						color: '#0675FF'
+					}, {
+						offset: 1,
+						color: '#8706FF'
+					}]),
+					opacity: 0.1
+				}
+			}]
+		};
+		
+		// 使用刚指定的配置项和数据显示图表。
+		teamChart.setOption(teamOption);
+		/******************* end *********************/
+		
+		
+		/******************* 团长销售排行 *********************/
+		var teamLegendData = [], teamSeriesData = [];
+		
+		if (rank_data_json.leader.length == 0) {
+			$(".leader-echarts").addClass("layui-hide");
+		}
+		
+		for (var i = 0; i < rank_data_json.leader.length; i++) {
+			if (i < 10) {
+				name = rank_data_json.leader[i].name;
+				teamLegendData.push(name);
+				teamSeriesData.push({
+					name: name,
+					value: rank_data_json.leader[i].order_complete_money
+				});
+			}
+		}
+		var teamMoneyChart = echarts.init(document.getElementById('team_money'));
+		// 指定图表的配置项和数据
+		teamMoneyOption = {
+			tooltip: {
+				trigger: 'item',
+				showContent: true,
+				backgroundColor: 'rgba(0, 0, 0, 0.5)',
+				padding: [5, 10],
+				textStyle: {
+					color: '#fff',
+					lineHeight: 30,
+				},
+				formatter: "{b}: {c}元",
+			},
+			legend: {
+				type: 'plain',
+				orient: 'vertical',
+				right: 60,
+				top: 20,
+				bottom: 20,
+				itemGap: 15,
+				itemWidth: 20,
+				itemHeight: 10,
+				textStyle: {
+					color: '#262626',
+					fontSize: 14
+				},
+				selectedMode: false,
+				data: teamLegendData,
+			},
+			color : [ '#FF914C', '#4C97FF', '#BB4CFF', '#FFA94C', '#F24968', '#496BF2', '#FF734C', '#E846EB', '#4BB4FA', '#FA8B4B' ],
+			series: [{
+				name: '姓名',
+				data: teamSeriesData,
+				type: 'pie',
+				radius: '50%',
+				center: ['30%', '55%']
+			}]
+		};
+		
+		// 使用刚指定的配置项和数据显示图表。
+		teamMoneyChart.setOption(teamMoneyOption);
+		/******************* end *********************/
+		
+		
+		/******************* 商品销售排行 *********************/
+		var goodsLegendData = [], goodsSeriesData = [];
+		
+		if (rank_data_json.goods.length == 0) {
+			$(".goods-echarts").addClass("layui-hide");
+		}
+		
+		for (var i = 0; i < rank_data_json.goods.length; i++) {
+			if (i < 10) {
+				name = rank_data_json.goods[i].goods_name;
+				goodsLegendData.push(name);
+				goodsSeriesData.push({
+					name: name,
+					value: rank_data_json.goods[i].sale_num
+				});
+			}
+		}
+		var goodsMoneyChart = echarts.init(document.getElementById('goods_money'));
+		// 指定图表的配置项和数据
+		goodsMoneyOption = {
+			tooltip: {
+				trigger: 'item',
+				showContent: true,
+				backgroundColor: 'rgba(0, 0, 0, 0.5)',
+				padding: [5, 10],
+				textStyle: {
+					color: '#fff',
+					lineHeight: 30,
+				},
+				formatter: "{b}: {c}",
+			},
+			legend: {
+				type: 'plain',
+				orient: 'vertical',
+				width: 10,
+				right: 60,
+				top: 20,
+				itemGap: 15,
+				itemWidth: 20,
+				itemHeight: 10,
+				formatter: function(name) {
+					return name.length>10?name.substr(0,10)+"...":name;
+				},
+				textStyle: {
+					color: '#262626',
+					fontSize: 14,
+				},
+				selectedMode: false,
+				data: goodsLegendData,
+			},
+			color : [ '#FF914C', '#4C97FF', '#BB4CFF', '#FFA94C', '#F24968', '#496BF2', '#FF734C', '#E846EB', '#4BB4FA', '#FA8B4B' ],
+			series: [{
+				name: '姓名',
+				data: goodsSeriesData,
+				label: {
+					width: 200,
+					formatter: function(params) {
+						return params.name.length>10?params.name.substr(0,10)+"...":params.name;
+					},
+					rich: {
+						a: {
+							width: 200
+						}
+					}
+				},
+				type: 'pie',
+				radius: ['35%', '50%'],
+				center: ['30%', '55%']
+			}]
+		};
+		
+		// 使用刚指定的配置项和数据显示图表。
+		goodsMoneyChart.setOption(goodsMoneyOption);
+		/******************* end *********************/
+	});
+</script>
+{/block}
+{/block}

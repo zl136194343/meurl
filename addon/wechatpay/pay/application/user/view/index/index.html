@@ -1,0 +1,341 @@
+{extend name="/common/default" /}
+{block name="main"}
+<style>
+    .table-responsive {
+        min-height: .01%;
+        overflow-x: auto;
+    }
+
+    @media screen {
+        .table-responsive {
+            width: 100%;
+            margin-bottom: 15px;
+            overflow-y: hidden;
+            -ms-overflow-style: -ms-autohiding-scrollbar;
+            border: 1px solid #ddd;
+        }
+
+        .table-responsive > .table {
+            margin-bottom: 0;
+        }
+
+        .table-responsive > .table > thead > tr > th,
+        .table-responsive > .table > tbody > tr > th,
+        .table-responsive > .table > tfoot > tr > th,
+        .table-responsive > .table > thead > tr > td,
+        .table-responsive > .table > tbody > tr > td,
+        .table-responsive > .table > tfoot > tr > td {
+            white-space: nowrap;
+        }
+
+        .table-responsive > .table-bordered {
+            border: 0;
+        }
+
+        .table-responsive > .table-bordered > thead > tr > th:first-child,
+        .table-responsive > .table-bordered > tbody > tr > th:first-child,
+        .table-responsive > .table-bordered > tfoot > tr > th:first-child,
+        .table-responsive > .table-bordered > thead > tr > td:first-child,
+        .table-responsive > .table-bordered > tbody > tr > td:first-child,
+        .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+            border-left: 0;
+        }
+
+        .table-responsive > .table-bordered > thead > tr > th:last-child,
+        .table-responsive > .table-bordered > tbody > tr > th:last-child,
+        .table-responsive > .table-bordered > tfoot > tr > th:last-child,
+        .table-responsive > .table-bordered > thead > tr > td:last-child,
+        .table-responsive > .table-bordered > tbody > tr > td:last-child,
+        .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+            border-right: 0;
+        }
+
+        .table-responsive > .table-bordered > tbody > tr:last-child > th,
+        .table-responsive > .table-bordered > tfoot > tr:last-child > th,
+        .table-responsive > .table-bordered > tbody > tr:last-child > td,
+        .table-responsive > .table-bordered > tfoot > tr:last-child > td {
+            border-bottom: 0;
+        }
+    }
+</style>
+<style>
+    .table-responsive {
+        min-height: .01%;
+        overflow-x: auto;
+    }
+
+    @media screen {
+        .table-responsive {
+            width: 100%;
+            margin-bottom: 15px;
+            overflow-y: hidden;
+            -ms-overflow-style: -ms-autohiding-scrollbar;
+            border: 1px solid #ddd;
+        }
+
+        .table-responsive > .table {
+            margin-bottom: 0;
+        }
+
+        .table-responsive > .table > thead > tr > th,
+        .table-responsive > .table > tbody > tr > th,
+        .table-responsive > .table > tfoot > tr > th,
+        .table-responsive > .table > thead > tr > td,
+        .table-responsive > .table > tbody > tr > td,
+        .table-responsive > .table > tfoot > tr > td {
+            white-space: nowrap;
+        }
+
+        .table-responsive > .table-bordered {
+            border: 0;
+        }
+
+        .table-responsive > .table-bordered > thead > tr > th:first-child,
+        .table-responsive > .table-bordered > tbody > tr > th:first-child,
+        .table-responsive > .table-bordered > tfoot > tr > th:first-child,
+        .table-responsive > .table-bordered > thead > tr > td:first-child,
+        .table-responsive > .table-bordered > tbody > tr > td:first-child,
+        .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+            border-left: 0;
+        }
+
+        .table-responsive > .table-bordered > thead > tr > th:last-child,
+        .table-responsive > .table-bordered > tbody > tr > th:last-child,
+        .table-responsive > .table-bordered > tfoot > tr > th:last-child,
+        .table-responsive > .table-bordered > thead > tr > td:last-child,
+        .table-responsive > .table-bordered > tbody > tr > td:last-child,
+        .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+            border-right: 0;
+        }
+
+        .table-responsive > .table-bordered > tbody > tr:last-child > th,
+        .table-responsive > .table-bordered > tfoot > tr:last-child > th,
+        .table-responsive > .table-bordered > tbody > tr:last-child > td,
+        .table-responsive > .table-bordered > tfoot > tr:last-child > td {
+            border-bottom: 0;
+        }
+    }
+</style>
+<div class="row js-appear-enabled animated fadeIn" data-toggle="appear">
+    <!-- Row #1 -->
+    <div class="col-6 col-xl-3">
+        <a class="block block-rounded block-bordered block-link-shadow bg-danger" href="javascript:void(0)">
+            <div class="block-content block-content-full clearfix">
+                <div class="float-right mt-15 d-none d-sm-block">
+                    <font color="white"><i class="si si-bag fa-2x"></i></font>
+                </div>
+                <div class="font-size-h3 font-w600 text-white js-count-to-enabled" data-toggle="countTo"
+                     data-speed="1000" data-to="1500">{$order}
+                </div>
+                <div class="font-size-sm font-w600 text-white text-muted">订单总数</div>
+            </div>
+        </a>
+    </div>
+    <div class="col-6 col-xl-3">
+        <a class="block block-rounded block-bordered block-link-shadow bg-success" href="javascript:void(0)">
+            <div class="block-content block-content-full clearfix">
+                <div class="float-right mt-15 d-none d-sm-block">
+                    <font color="white"><i class="si si-wallet fa-2x"></i></font>
+                </div>
+                <div class="font-size-h3 font-w600 text-white">$&nbsp;<span data-toggle="countTo" data-speed="1000"
+                                                                            data-to="780" class="js-count-to-enabled">{if $user['uprice']}{$user['uprice']}{else/}0{/if}</span>
+                </div>
+                <div class="font-size-sm font-w600 text-white text-muted">预存金额</div>
+            </div>
+        </a>
+    </div>
+    <div class="col-6 col-xl-3">
+        <a class="block block-rounded block-bordered block-link-shadow bg-warning" href="javascript:void(0)">
+            <div class="block-content block-content-full clearfix">
+                <div class="float-right mt-15 d-none d-sm-block">
+                    <font color="white"><i class="si si-bar-chart fa-3x"></i></font>
+                </div>
+                <div class="font-size-h3 font-w600 text-white">$&nbsp;<span data-toggle="countTo" data-speed="1000"
+                                                                            data-to="780" class="js-count-to-enabled">{$order_num}</span>
+                </div>
+                <div class="font-size-sm font-w600 text-white text-muted">交易流水</div>
+            </div>
+        </a>
+    </div>
+    <div class="col-6 col-xl-3">
+        <a class="block block-rounded block-bordered block-link-shadow bg-info" href="javascript:void(0)">
+            <div class="block-content block-content-full clearfix">
+                <div class="float-right mt-15 d-none d-sm-block">
+                    <font color="white"><i class="si si-users fa-2x"></i></font>
+                </div>
+                <div class="font-size-h3 font-w600 text-white js-count-to-enabled" data-toggle="countTo"
+                     data-speed="1000" data-to="4252">{$user['vname']}
+                </div>
+                <div class="font-size-sm font-w600 text-white text-muted">会员等级</div>
+            </div>
+        </a>
+    </div>
+    <!-- END Row #1 -->
+</div>
+<div class="row js-appear-enabled animated fadeIn" data-toggle="appear">
+    <!-- Row #3 -->
+    <div class="col-md-6">
+        <a class="block" href="javascript:void(0)">
+            <div class="block-content block-content-full">
+                <i class="si si-game-controller fa-2x text-body-bg-dark"></i>
+                <div class="row pt-10 pb-30 text-center">
+                    <div class="col-6 border-r">
+                        <div class="font-size-h3 font-w600">${$order_y}</div>
+                        <div class="font-size-sm font-w600 text-uppercase text-muted">昨日流水</div>
+                    </div>
+                    <div class="col-6">
+                        <div class="font-size-h3 font-w600">${$order_t}</div>
+                        <div class="font-size-sm font-w600 text-uppercase text-muted">今日流水</div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-md-6">
+        <a class="block" href="javascript:void(0)">
+            <div class="block-content block-content-full">
+                <div class="text-right">
+                    <i class="si si-wallet fa-2x text-body-bg-dark"></i>
+                </div>
+                <div class="row pt-10 pb-30 text-center">
+                    <div class="col-6 border-r">
+                        <div class="font-size-h3 font-w600">${$rate_y}</div>
+                        <div class="font-size-sm font-w600 text-uppercase text-muted">昨日扣费</div>
+                    </div>
+                    <div class="col-6">
+                        <div class="font-size-h3 font-w600">${$rate_t}</div>
+                        <div class="font-size-sm font-w600 text-uppercase text-muted">今日扣费</div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <!-- END Row #3 -->
+</div>
+<div class="row row-deck">
+    <!-- Customer's Basic Info -->
+    <div class="col-lg-4">
+        <a class="block block-rounded block-link-shadow text-center" href="JavaScript:void(0)">
+            <div class="block-content bg-gd-dusk">
+                <div class="push" onclick="window.location.href='/{:USER_DIR}/info.html'">
+                    <img class="img-avatar img-avatar-thumb"
+                         src="http://q2.qlogo.cn/headimg_dl?bs=qq&dst_uin={$uinfo.qq}&spec=100" alt="">
+                </div>
+                <div class="pull-r-l pull-b py-10 bg-black-op-25">
+                    <div class="font-w600 mb-5 text-white">
+                        {:qqname($uinfo['qq'])} <i class="fa fa-star text-warning"></i>
+                    </div>
+                    <div class="font-size-sm text-white-op">会员等级：{$user['vname']}</div>
+                </div>
+            </div>
+            <div class="block-content">
+                <div class="row items-push text-center">
+                    <div class="col-6">
+                        <div class="mb-5"><i class="si si-diamond fa-2x"></i></div>
+                        <div class="font-size-sm text-muted"><b>{$user['wx_rate']}%</b>费率</div>
+                    </div>
+                    <div class="col-6" onclick="window.location.href='/{:USER_DIR}/recharge.html';">
+                        <div class="mb-5"><i class="si si-basket-loaded fa-2x"></i></div>
+                        <div class="font-size-sm text-muted"><b>点击充值</b></div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <!-- END Customer's Basic Info -->
+
+    <!-- Customer's Past Orders -->
+    <div class="col-lg-8">
+        <div class="block block-rounded">
+            <div class="block-header bg-gd-sea">
+                <h3 class="block-title"><font color="white">公告列表</font></h3>
+                <div class="block-options">
+                    <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle"
+                            data-action-mode="demo">
+                        <i class="si si-refresh"></i>
+                    </button>
+                    <button type="button" class="btn-block-option" data-toggle="block-option"
+                            data-action="content_toggle"><i class="si si-arrow-up"></i></button>
+                </div>
+            </div>
+            <div class="block-content">
+                <ul class="list-group push">
+                    {foreach $notice as $v}
+                    <li class="list-group-item" onclick="look_notice('{$v.id}')">
+                        <span class="js-task-badge badge badge-info float-right animated bounceIn">共 <b>{if !$v.look}0{else}{$v.look}{/if}</b> 次阅读</span>
+                        {if(!checkmobile())}
+                        <span class="js-task-badge badge badge-default float-right animated bounceIn"> - </span>
+                        <span class="js-task-badge badge badge-success float-right animated bounceIn">点击查阅</span>
+                        {/if}
+                        <span class="js-task-badge badge badge-danger animated bounceIn">Top</span>
+                        {$v.title}
+                    </li>
+                    {/foreach}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- END Customer's Past Orders -->
+</div>
+<div class="modal fade in" id="Showgg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-gd-sea">
+                <h4 style="color:#FFFFFF;" class="pull-center">公告详情</h4>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center" id="ggtitle"></h3>
+                <hr>
+                <div class="text-muted text-center"><i class="fa fa-user"></i> 系统管理员
+                    <i class="si si-clock"></i> <span id="ggdate"></span>
+                    <i class="si si-eye"></i> <b id="gglook"></b>人已读
+                    <hr>
+                </div>
+                <div id="ggbody" class="text-center"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn btn-alt-info" data-dismiss="modal">好的</button>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footjs"}
+<script>
+    function look_notice(id) {
+        layer.load(2, {shade: [0.1, '#fff']});
+        $.ajax({
+            url: "/{:USER_DIR}/look_notice/" + id + ".html",
+            type: 'get',
+            dataType: 'json',
+            success: function (res) {
+                layer.closeAll();
+                if (res.code == 1) {
+                    layer.closeAll();
+                    $('#ggtitle').html(res.title);
+                    $('#ggbody').html(res.body);
+                    $('#ggdate').html(res.date);
+                    $('#gglook').html(res.look);
+                    $('#Showgg').modal('show');
+                    //隐藏未读字样
+                    $('#hide' + id).hide();
+
+                } else {
+                    layer.msg(res.msg, {icon: 5});
+                }
+            },
+            timeout: 10000,
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                layer.closeAll();
+                if (textStatus == "timeout") {
+                    layer.msg('请求超时！');
+                } else {
+                    layer.msg('服务器错误！');
+                }
+            }
+        });
+    }
+
+
+</script>
+{/block}

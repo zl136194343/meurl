@@ -1,0 +1,498 @@
+{extend name="base"/}
+{block name="resources"}
+<style>
+	.ns-reason-box{display: none;width: 350px;box-sizing: border-box;padding: 20px;border: 1px solid #aaa;border-radius: 5px;background-color: #FFF;position: absolute;top: 50px;z-index: 999;color: #666;line-height: 30px;left: 0px;font-weight: normal;}
+	.ns-reason-box:before, .ns-reason-box:after{content: "";border: solid transparent;height: 0;position: absolute;width: 0;}
+	.ns-reason-box:before{border-width: 12px;border-bottom-color: #aaa;top: -12px;left: 43px;border-top: none;}
+	.ns-reason-growth:before{left: 56px;}
+	.ns-reason-box:after{border-width: 10px;border-bottom-color: #FFF;top: -20px;left: 45px;}
+	.ns-reason-growth:after{left: 58px;}
+	.ns-reason-box p{white-space: normal;line-height: 1.5;}
+	.layui-table-header{overflow: inherit;}
+	.layui-table-header .layui-table-cell{overflow: inherit;}
+	.ns-prompt-block.balance, .ns-prompt-block.growth {justify-content: flex-end;}
+	.layui-form-item .layui-form-checkbox[lay-skin=primary] {margin-top: 0;}
+	.blacklist{background: #333;color: #fff;line-height: 1;padding: 3px 6px;border-radius: 3px;font-size: 12px;}
+</style>
+<link rel="stylesheet" type="text/css" href="SHOP_CSS/member.css" />
+{/block}
+{block name="main"}
+<div class="layui-collapse ns-tips" >
+	<div class="layui-colla-item">
+		<h2 class="layui-colla-title">操作提示</h2>
+		<ul class="layui-colla-content layui-show">
+			<li>商城可以针对团长进行添加，编辑，冻结等操作。</li>
+			<li>账户类型有小区名称、团长名称、手机号三种类型，筛选时可以选择其中一种类型并输入对应的内容进行筛选。</li>
+			<li>点击收起按钮可以将搜索面板隐收起，变成高级搜索按钮。</li>
+		</ul>
+	</div>
+</div>
+
+<!-- 添加团长 -->
+<div class="ns-single-filter-box">
+	<button type="button" class="layui-btn ns-bg-color" onclick="window.location.href='{:addon_url("community://shop/community/addleader")}'">添加团长</button>
+</div>
+
+<div class="ns-screen layui-collapse" lay-filter="selection_panel">
+	<div class="layui-colla-item">
+		<h2 class="layui-colla-title"></h2>
+		<form class="layui-colla-content layui-form layui-show">
+			<div class="layui-form-item">
+				<div class="layui-inline">
+					<label class="layui-form-label">账号</label>
+					<div class="layui-input-inline">
+						<select name="search_text_type">
+							<option value="community">社区名称</option>
+							<option value="name">团长名称</option>
+							<option value="mobile">手机号</option>
+						</select>
+					</div>
+					<div class="layui-input-inline">
+						<input type="text" name="search_text" placeholder="社区名称/团长名称/手机号" autocomplete="off" class="layui-input ">
+					</div>
+
+					<div class="layui-inline">
+						<label class="layui-form-label">会员等级</label>
+						<div class="layui-input-inline">
+							<select name="level_id">
+								<option value="">请选择</option>
+								{foreach $level_list as $level_list_k=> $level_list_v}
+								<option value="{$level_list_v.level_id}">{$level_list_v.level_name}</option>
+								{/foreach}
+							</select>
+						</div>
+					</div>
+
+			<div class="ns-form-row">
+				<button class="layui-btn ns-bg-color" lay-submit lay-filter="search">筛选</button>
+				<button class="layui-btn ns-bg-color" lay-submit lay-filter="export">批量导出</button>
+				<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+<!-- 列表 -->
+<table id="community_list" lay-filter="community_list"></table>
+
+<!-- 用户信息 -->
+<script type="text/html" id="userdetail">
+	<div class='ns-table-title'>
+		<div class='ns-title-pic'>
+            <img layer-src src="{{ns.img(d.headimg)}}" onerror="this.src = 'SHOP_IMG/default_headimg.png' ">
+		</div>
+		<div class='ns-title-content'>
+			<p class="layui-elip">{{d.nickname}}</p>
+		</div>
+	</div>
+</script>
+
+<!--团长信息-->
+<script type="text/html" id="leaderdetail">
+	<div class='ns-table-title'>
+		<div class='ns-title-content'>
+			<p class="layui-elip">团长名称：{{d.name}}</p>
+			<p class="layui-elip">团长等级：{{d.level_name}}</p>
+			<p class="layui-elip">团长手机号：{{d.mobile}}</p>
+			<p class="layui-elip">社区名称：{{d.community}}</p>
+		</div>
+	</div>
+</script>
+
+
+<!-- 状态 -->
+<script type="text/html" id="status">
+	{{#  if(d.status == 0){  }}
+	待审核
+	{{#  }else if(d.status == 1){  }}
+	已通过
+	{{#  }else if(d.status == 2){  }}
+	已拒绝
+	{{#  }else if(d.status == 3){  }}
+	已冻结
+	{{#  }  }}
+</script>
+
+<!-- 状态 -->
+<script type="text/html" id="rest_status">
+	{{ d.rest_status == 1 ? '是' : '否' }}
+</script>
+
+
+<!-- 工具栏操作 -->
+<script type="text/html" id="operation">
+	<div class="ns-table-btn">
+		<a class="layui-btn" lay-event="info">详情</a>
+		<a class="layui-btn" lay-event="more">更多</a>
+		<div class="more-operation">
+
+			{{# if(d.status == 0){ }}
+			<a class="operation" lay-event="pass">审核通过</a>
+			<a class="operation" lay-event="refuse">审核拒绝</a>
+			{{# }else if(d.status == 1){ }}
+			<a class="operation" lay-event="set_freeze">设置冻结</a>
+				{{# if(d.rest_status == 0){ }}
+				<a class="operation" lay-event="set_rest0">设置休息</a>
+				{{# }else if(d.rest_status == 1){ }}
+				<a class="operation" lay-event="set_rest1">取消休息</a>
+				{{# } }}
+			{{# }else if(d.status == 3){ }}
+			<a class="operation" lay-event="set_thaw">取消解冻</a>
+			{{# } }}
+
+		</div>
+	</div>
+</script>
+
+{/block}
+{block name="script"}
+
+<script type="text/javascript">
+	var table, form, laytpl, laydate,
+		repeat_flag = false,
+		currentDate = new Date(),
+		minDate = "",
+		layer_pass,
+		layer_label;
+
+	layui.use(['form', 'laytpl', 'laydate', 'upload'], function() {
+		form = layui.form;
+		laytpl = layui.laytpl;
+		form.render();
+		/**
+		 * 加载表格
+		 */
+		table = new Table({
+			elem: '#community_list',
+			url: ns.url("community://shop/community/lists"),
+			where:{'status': 0},
+			cols: [
+				[
+					{
+						width: "3%",
+						type: 'checkbox',
+						unresize: 'false'
+					},
+				{
+					field: 'userdetail',
+					title: '账户',
+					width: '15%',
+					unresize: 'false',
+					templet: '#userdetail'
+				}, {
+					field: 'leaderdetail',
+					title: '团长信息',
+					width: '15%',
+					unresize: 'false',
+					templet: '#leaderdetail'
+
+				},  {
+					field: 'commission_total',
+					title: '佣金',
+					width: '5%',
+					unresize: 'false',
+					align: 'right'
+				}, {
+					field: 'full_address',
+					title: '提货地址',
+					width: '15%',
+					unresize: 'false',
+				}, {
+					field: 'time',
+					title: '申请/审核时间',
+					width: '12%',
+					unresize: 'false',
+					templet: function (data) {
+						return ns.time_to_date(data.apply_time)+'<br/>'+ns.time_to_date(data.audit_time);
+					}
+				},  {
+					field: 'rest_status',
+					title: '是否休息',
+					width: '5%',
+					unresize: 'false',
+					templet: '#rest_status'
+				}, {
+					field: 'status',
+					title: '状态',
+					width: '8%',
+					unresize: 'false',
+					templet: '#status'
+				},
+					{
+					title: '操作',
+					width: '10%',
+					unresize: 'false',
+					toolbar: '#operation'
+				}
+				]
+			],
+			toolbar: '#toolbarOperation',
+		});
+
+		/**
+		 * 监听工具栏操作
+		 */
+		 table.tool(function(obj) {
+			var data = obj.data;
+			switch (obj.event) {
+				case 'info': //编辑
+                    location.href = ns.url("community://shop/community/editLeader?cl_id="+data.cl_id);
+					break;
+				case 'set_freeze': //冻结账户
+					updateStatus(data.cl_id, 3, '冻结信息后，团长将不可进行提现选择取货地址等操作，您确认要冻结吗？');
+					break;
+				case 'set_thaw': //解冻账户
+					updateStatus(data.cl_id, 1, '解冻信息后，团长恢复一切团长的权限，您确认要解冻吗？');
+					break;
+				case 'set_rest0': //设置休息
+					updateRestStatus(data.cl_id, 1, '设置休息后，会员将不可选择当前团长，您确认要休息吗？');
+					break;
+				case 'set_rest1': //取消休息
+					updateRestStatus(data.cl_id, 0, '取消休息后，会员将可继续选择当前团长，您确认要取消吗？');
+					break;
+				case 'more': //更多
+					$('.more-operation').css('display', 'none');
+					$(obj.tr).find('.more-operation').css('display', 'block');
+					break;
+				case 'pass': //通过
+					layer.confirm('确定要通过吗?', function () {
+						if (repeat_flag) return;
+						repeat_flag = true;
+						$.ajax({
+							url: ns.url("community://shop/community/updateLeaderStatus"),
+							data: {"cl_id":data.cl_id,'status':1},
+							dataType: 'JSON',
+							type: 'POST',
+							success: function(res) {
+								layer.msg(res.message);
+								repeat_flag = false;
+								if (res.code == 0) {
+									table.reload();
+								}
+							}
+						});
+					});
+					break;
+				case 'refuse': //拒绝
+					layer.confirm('确定要拒绝吗?', function () {
+						if (repeat_flag) return;
+						repeat_flag = true;
+						$.ajax({
+							url: ns.url("community://shop/community/updateLeaderStatus"),
+							data: {"cl_id":data.cl_id,'status':2},
+							dataType: 'JSON',
+							type: 'POST',
+							success: function(res) {
+								layer.msg(res.message);
+								repeat_flag = false;
+
+								if (res.code == 0) {
+									table.reload();
+								}
+							}
+						});
+					});
+					break;
+			}
+		});
+
+		$(document).click(function(event) {
+			if ($(event.target).attr('lay-event') != 'more' && $('.more-operation').not(':hidden').length) {
+				$('.more-operation').css('display', 'none');
+			}
+		});
+
+		/**
+		 * 批量操作
+		 */
+		table.bottomToolbar(function(obj) {
+			console.log("批量操作",obj);
+			if (obj.data.length < 1) {
+				layer.msg('请选择要操作的数据');
+				return;
+			}
+
+			switch (obj.event) {
+				case "del":
+					var id_array = new Array();
+					for (i in obj.data) id_array.push(obj.data[i].member_id);
+					delMember(id_array.toString());
+					break;
+				case "setlabel":
+					var id_array = new Array();
+					for (i in obj.data) id_array.push(obj.data[i].member_id);
+					settingLabels({member_id: id_array.toString()});
+					break;
+			}
+		});
+
+		/**
+		 * 批量操作
+		 */
+		table.toolbar(function(obj) {
+
+			if (obj.data.length < 1) {
+				layer.msg('请选择要操作的数据');
+				return;
+			}
+
+			switch (obj.event) {
+				case "del":
+					var id_array = new Array();
+					for (i in obj.data) id_array.push(obj.data[i].member_id);
+					delMember(id_array.toString());
+					break;
+				case "setlabel":
+					var id_array = new Array();
+					for (i in obj.data) id_array.push(obj.data[i].member_id);
+					settingLabels({member_id: id_array.toString()});
+					break;
+			}
+		});
+
+		/**
+		 * 搜索功能
+		 */
+		form.on('submit(search)', function(data) {
+			table.reload({
+				page: {
+					curr: 1
+				},
+				where: {
+					'search_text_type':data.field.search_text_type,
+					'search_text':data.field.search_text,
+					'level_id':data.field.level_id,
+					'status':0,
+				}
+			});
+			return false;
+		});
+
+        /**
+         *  导出
+         */
+        form.on('submit(export)', function(data) {
+            location.href = ns.url("community://shop/community/exportleader",data.field);
+            return false;
+        });
+
+		$(".search-form").click(function() {
+			$(".layui-form-search").show();
+			$(this).hide();
+		});
+
+		$(".form-hide-btn").click(function() {
+			$(".layui-form-search").hide();
+			$(".search-form").show();
+		});
+
+		//修改团长状态
+		function updateStatus(cl_id, status, status_msg) {
+			layer.confirm(status_msg, function() {
+				$.ajax({
+					url: ns.url("community://shop/community/updateleaderstatus"),
+					data: {'cl_id':cl_id,'status':status},
+					dataType: 'JSON',
+					type: 'POST',
+					success: function(res) {
+						layer.msg(res.message);
+						if (res.code == 0) {
+							table.reload();
+						}
+					}
+				});
+			}, function () {
+				layer.close();
+			});
+		}
+
+		//设置休息
+		function updateRestStatus(cl_id, status, status_msg) {
+			layer.confirm(status_msg, function() {
+				$.ajax({
+					url: ns.url("community://shop/community/updateleaderreststatus"),
+					data: {'cl_id':cl_id,'rest_status':status},
+					dataType: 'JSON',
+					type: 'POST',
+					success: function(res) {
+						layer.msg(res.message);
+						if (res.code == 0) {
+							table.reload();
+						}
+					}
+				});
+			}, function () {
+				layer.close();
+			});
+		}
+	});
+
+
+
+
+	function closePass() {
+		layer.close(layer_pass);
+	}
+
+	function closeLabel() {
+		layer.close(layer_label);
+	}
+
+	function downloadMemberFile(){
+		location.href = ns.url("community://shop/member/downloadMemberFile");
+		return false;
+	}
+</script>
+
+<!-- 发放优惠券弹框 -->
+<script type="text/html" id="recive_coupon">
+	<div class="recive-coupon">
+		<div class="coupon-modal">
+			<div class="coupon-list all-coupon">
+				<div class="title ns-bg-color-gray">可选优惠券</div>
+				<div class="box"></div>
+			</div>
+			<button class="add">添加</button>
+			<div class="coupon-list selected-coupon">
+				<div class="title ns-bg-color-gray">已选优惠券</div>
+				<div class="box"></div>
+			</div>
+		</div>
+		<div class="modal-operation">
+			<button class="layui-btn ns-bg-color save-btn">确定</button>
+			<button class="layui-btn layui-btn-primary" onclick="back()">返回</button>
+		</div>
+	</div>
+</script>
+
+<!-- 重置密码弹框html -->
+<script type="text/html" id="pass_change">
+	<div class="layui-form" id="reset_pass" lay-filter="form">
+
+		<div class="layui-form-item">
+			<label class="layui-form-label mid"><span class="required">*</span>新密码：</label>
+			<div class="layui-input-block">
+				<input type="password" name="password" lay-verify="required" class="layui-input ns-len-mid new_pass" maxlength="18">
+			</div>
+		</div>
+
+		<div class="layui-form-item">
+			<label class="layui-form-label mid"><span class="required">*</span>确认新密码：</label>
+			<div class="layui-input-block">
+				<input type="password" name="password" lay-verify="repass|required" class="layui-input ns-len-mid" maxlength="18">
+			</div>
+			<div class="ns-word-aux mid">请再一次输入密码，两次输入密码须一致</div>
+		</div>
+
+		<div class="ns-form-row mid">
+			<button class="layui-btn ns-bg-color" lay-submit lay-filter="repass">确定</button>
+			<button class="layui-btn layui-btn-primary" onclick="closePass()">返回</button>
+		</div>
+
+		<input class="reset-pass-id" type="hidden" name="member_ids" value="{{d.member_id}}"/>
+	</div>
+</script>
+<script type="text/html" id="toolbarOperation">
+	<button class="layui-btn layui-btn-primary" lay-event="setlabel">设置休息</button>
+</script>
+{/block}

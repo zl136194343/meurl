@@ -1,0 +1,59 @@
+{extend name="base"/}
+{block name="resources"}
+<style>
+	.js-pid a{
+		margin-left: 20px;
+	}
+	.ns-form {
+		margin-top: 0;
+	}
+</style>
+{/block}
+{block name="main"}
+<form class="layui-form ns-form">
+	<div class="layui-form-item">
+		<label class="layui-form-label"><span class="required">*</span>分类名称：</label>
+		<div class="layui-input-block">
+			<input name="category_name" type="text" value="{$goods_category_info['type_name']}" placeholder="请输入分类名称" maxlength="30" lay-verify="required" class="layui-input ns-len-long" autocomplete="off">
+		</div>
+		<div class="ns-word-aux">
+			<p>分类名称最长不超过30个字符</p>
+		</div>
+	</div>
+	
+	<div class="layui-form-item">
+		<label class="layui-form-label">是否显示：</label>
+		<div class="layui-input-block">
+			<input type="checkbox" name="is_show" lay-skin="switch" value="1" {if $goods_category_info['is_show']==1}checked{/if}>
+		</div>
+		<div class="ns-word-aux">
+			<p>用于控制前台是否展示</p>
+		</div>
+	</div>
+	
+
+
+	
+	 <div class="layui-form-item">
+		<label class="layui-form-label">排序：</label>
+		<div class="layui-input-block">
+			<input name="sort" type="number" placeholder="请输入排序" lay-verify="num" class="layui-input ns-len-short" value="{$goods_category_info['sort']}">
+		</div>
+		<div class="ns-word-aux">
+			<p>排序值只能为整数</p>
+		</div>
+	</div> 
+	
+
+	<input type="hidden" name="id" value="{$goods_category_info['id']}">
+	
+	<div class="ns-form-row">
+		<button class="layui-btn ns-bg-color" lay-submit lay-filter="save">保存</button>
+		<button type="reset" class="layui-btn layui-btn-primary" onclick="back()">返回</button>
+	</div>
+</form>
+
+{/block}
+{block name="script"}
+<script src="ADMIN_JS/config_edit_category.js"></script>
+{/block}

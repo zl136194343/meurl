@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="zh" class="no-focus">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>{$title} - {:config('sitename')}</title>
+    <link rel="stylesheet" id="css-main" href="/static/css/codebase.min.css">
+</head>
+<body>
+<div id="page-container" class="main-content-boxed">
+    <main id="main-container">
+        <div class="bg-body-dark bg-pattern" style="background-image: url('/static/media/various/bg-pattern-inverse.png');">
+            <div class="row mx-0 justify-content-center">
+                <div class="hero-static col-lg-6 col-xl-4">
+                    <div class="content content-full overflow-hidden">
+                        <div class="py-30 text-center">
+                            <h1 class="h4 font-w700 mt-30 mb-10">Welcome to {:config('sitename')}</h1>
+                        </div>
+                        <form class="js-validation-signin">
+                            <div class="block block-themed block-rounded block-shadow">
+                                <div class="block-header bg-gd-dusk">
+                                    <h3 class="block-title">用户中心登录</h3>
+                                    <div class="block-options">
+                                        <a href="/user/reg" class="btn-block-option">
+                                            注册
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="block-content">
+                                    <div class="form-group row">
+                                        <div class="col-12">
+                                            <label for="login-username">用户名</label>
+                                            <input type="text" class="form-control" name="username" placeholder="请输入用户名">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-12">
+                                            <label for="login-password">密码</label>
+                                            <input type="password" class="form-control" name="password" placeholder="请输入密码">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-0">
+                                        <div class="col-sm-12 text-sm-center push">
+                                            <button type="button" id="login" class="btn btn-alt-primary">
+                                                <i class="si si-login mr-10"></i> 登入
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<script src="/static/js/codebase.core.min.js"></script>
+<script src="/static/js/codebase.app.min.js"></script>
+<script src="//cdn.bootcss.com/layer/2.3/layer.js"></script>
+<script src="//static.geetest.com/static/tools/gt.js"></script>
+<script>
+    var handlerEmbed = function (captchaObj) {
+        captchaObj.onReady(function () {
+            $("#wait").hide();
+        }).onSuccess(function () {
+            var result = captchaObj.getValidate();
+            var username = $("input[name='username']").val();
+            var password = $("input[name='password']").val();
+            if (username == '' || password == '') {
+                layer.alert('请确保每项不为空！', {icon: 5});
+                return false;
+            }
+            if (!result) {
+                layer.alert('请先完成滑动验证！', {icon: 5});
+                return false;
+            }
+            layer.msg('登录中...', {
+                icon: 16
+                , shade: 0.01
+                , time: false
+            });
+            $.ajax({
+                url: "/{:USER_DIR}{:url('/do_login')}",
+                type: 'post',
+                dataType: 'json',
+                data: {
+                    username: username,
+                    password: password,
+                    geetest_challenge: result.geetest_challenge,
+                    geetest_validate: result.geetest_validate,
+                    geetest_seccode: result.geetest_seccode
+                },
+                success: function (data) {
+                    layer.closeAll();
+                    if (data.code == 1) {
+                        captchaObj.reset();
+                        layer.alert(data.msg, {icon: 6},function(){
+                            window.location.href="/{:USER_DIR}.html";
+                        });
+                    } else {
+                        captchaObj.reset();
+                        layer.alert(data.msg, {icon: 5});
+                    }
+                },
+                timeout: 10000,
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    layer.closeAll();
+                    if (textStatus == "timeout") {
+                        captchaObj.reset();
+                        layer.msg('请求超时！');
+                    } else {
+                        captchaObj.reset();
+                        layer.msg('服务器错误！');
+                    }
+                }
+            });
+        });
+        $(document).keyup(function (event) {
+            if (event.keyCode == 13) {
+                $("#login").click();
+            }
+        });
+        $("#login").click(function () {
+            var username = $("input[name='username']").val();
+            var password = $("input[name='password']").val();
+            if (username == '' || password == '') {
+                layer.alert('请确保每项不为空！', {icon: 5});
+                return false;
+            }
+            captchaObj.verify();
+        });
+    };
+
+    $.ajax({
+        url: "{:url('/geetest')}?t=" + (new Date()).getTime(),
+        type: "post",
+        dataType: "json",
+        success: function (data) {
+            initGeetest({
+                gt: data.gt,
+                challenge: data.challenge,
+                new_captcha: data.new_captcha,
+                product: "bind",
+                offline: !data.success,
+                width: '100%'
+            }, handlerEmbed);
+        },
+        timeout: 10000,
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            if (textStatus == "timeout") {
+                layer.msg('请求超时！');
+            } else {
+                layer.msg('服务器错误！');
+            }
+        }
+    });
+</script>
+</body>
+</html>

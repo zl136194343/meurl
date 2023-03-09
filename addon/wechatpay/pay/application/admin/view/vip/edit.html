@@ -1,0 +1,98 @@
+{extend name="/common/default" /}
+{block name="main"}
+<div class="row">
+    <div class="col-xl-12">
+        <!-- Bootstrap Contact -->
+        <div class="block block-themed">
+            <div class="block-header bg-info">
+                <h3 class="block-title">{$title}</h3>
+                <div class="block-options">
+                    <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle"
+                            data-action-mode="demo">
+                        <i class="si si-refresh"></i>
+                    </button>
+                    <button type="button" class="btn-block-option" data-toggle="block-option"
+                            data-action="content_toggle"><i class="si si-arrow-up"></i></button>
+                </div>
+            </div>
+            <div class="block-content">
+                <form method="post" onsubmit="return false;">
+                    <div class="form-group row">
+                        <div class="col-6">
+                            <label for="contact1-firstname">等级名称</label>
+                            <input type="hidden" name="vid" value="{$vip['vid']}">
+                            <input type="text" class="form-control" id="contact1-firstname" name="vname"
+                                   placeholder="会员等级名称" value="{$vip['vname']}">
+                        </div>
+                        <div class="col-6">
+                            <label for="contact1-email">会员原价</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="contact1-email" name="vprice"
+                                       placeholder="会员原价" value="{$vip['vprice']}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-6">
+                            <label for="contact1-lastname">会员价格</label>
+                            <input type="text" class="form-control" id="contact1-lastname" name="price"
+                                   placeholder="折扣后价格" value="{$vip['price']}">
+                        </div>
+                        <div class="col-6">
+                            <label>会员微信费率</label>
+                            <input type="text" class="form-control" name="wx_rate" placeholder="会员费率" value="{$vip['wx_rate']}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-12">会员介绍</label>
+                        <div class="col-12">
+                            <textarea class="form-control" name="info" rows="7" placeholder="会员套餐介绍">{$vip['info']}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-12">
+                            <button type="submit" id="submit" style="float:right;" class="btn btn-alt-info">
+                                <i class="fa fa-send mr-5"></i> 立即修改
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- END Bootstrap Contact -->
+    </div>
+</div>
+{/block}
+{block name="footjs"}
+<script>
+    $("#submit").click(function () {
+        var cont = $("form").serialize();
+        layer.load(2, {shade: [0.1, '#fff']});
+        $.ajax({
+            url: "/{:ADMIN_DIR}/vip/update",
+            type: 'post',
+            dataType: 'json',
+            data: cont,
+            success: function (res) {
+                layer.closeAll();
+                if (res == '修改成功') {
+                    layer.alert(res, {icon: 6}, function () {
+                        location.href = "/{:ADMIN_DIR}/vip/index";
+                    });
+                } else {
+                    layer.msg(res, {icon: 5});
+                }
+            },
+            timeout: 10000,
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                layer.closeAll();
+                if (textStatus == "timeout") {
+                    layer.msg('请求超时！');
+                } else {
+                    layer.msg('服务器错误！');
+                }
+            }
+        });
+    });
+</script>
+{/block}

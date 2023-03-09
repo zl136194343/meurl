@@ -1,0 +1,130 @@
+{extend name='common/default'/}
+{block name="main"}
+<style>
+    .table-responsive {
+        min-height: .01%;
+        overflow-x: auto;
+    }
+
+    @media screen {
+        .table-responsive {
+            width: 100%;
+            margin-bottom: 15px;
+            overflow-y: hidden;
+            -ms-overflow-style: -ms-autohiding-scrollbar;
+            border: 1px solid #ddd;
+        }
+
+        .table-responsive > .table {
+            margin-bottom: 0;
+        }
+
+        .table-responsive > .table > thead > tr > th,
+        .table-responsive > .table > tbody > tr > th,
+        .table-responsive > .table > tfoot > tr > th,
+        .table-responsive > .table > thead > tr > td,
+        .table-responsive > .table > tbody > tr > td,
+        .table-responsive > .table > tfoot > tr > td {
+            white-space: nowrap;
+        }
+
+        .table-responsive > .table-bordered {
+            border: 0;
+        }
+
+        .table-responsive > .table-bordered > thead > tr > th:first-child,
+        .table-responsive > .table-bordered > tbody > tr > th:first-child,
+        .table-responsive > .table-bordered > tfoot > tr > th:first-child,
+        .table-responsive > .table-bordered > thead > tr > td:first-child,
+        .table-responsive > .table-bordered > tbody > tr > td:first-child,
+        .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+            border-left: 0;
+        }
+
+        .table-responsive > .table-bordered > thead > tr > th:last-child,
+        .table-responsive > .table-bordered > tbody > tr > th:last-child,
+        .table-responsive > .table-bordered > tfoot > tr > th:last-child,
+        .table-responsive > .table-bordered > thead > tr > td:last-child,
+        .table-responsive > .table-bordered > tbody > tr > td:last-child,
+        .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+            border-right: 0;
+        }
+
+        .table-responsive > .table-bordered > tbody > tr:last-child > th,
+        .table-responsive > .table-bordered > tfoot > tr:last-child > th,
+        .table-responsive > .table-bordered > tbody > tr:last-child > td,
+        .table-responsive > .table-bordered > tfoot > tr:last-child > td {
+            border-bottom: 0;
+        }
+    }
+</style>
+<div class="block">
+    <div class="block-header block-header-default bg-gd-sea">
+        <h3 class="block-title">{$title}</h3>
+    </div>
+    <div class="block-content">
+        <div class="table-responsive">
+            <table class="table table-bordered table-vcenter">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>标题</th>
+                    <th>内容</th>
+                    <th>发布时间</th>
+                    <th>排序iD</th>
+                    <th>查看次数</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                {foreach $list as $v}
+                <tr>
+                    <td>{$v.id}</td>
+                    <td>{$v.title}</td>
+                    <td><button class="btn btn btn-alt-primary btn-sm" onclick="layer.alert('{$v.body}')">点击查看</button></td>
+                    <td>{:date('Y-m-d H:i:s',$v.date)}</td>
+                    <td>{$v.pid}</td>
+                    <td>{$v.look}</td>
+                    <td>
+                        <button onclick="window.location.href='notice/edit/{$v.id}/.html'" class="btn btn btn-alt-success btn-sm">编辑</button>
+                        <button onclick="del({$v.id})" class="btn btn btn-alt-danger btn-sm">删除</button>
+                    </td>
+                </tr>
+                {/foreach}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footjs"}
+<script>
+    function del(id){
+        layer.load(2, {shade: [0.1, '#fff']});
+        $.ajax({
+            type: "GET",
+            url: "/{:ADMIN_DIR}{:url('/notice/del/"+id+"')}",
+            dataType: 'json',
+            success: function (data) {
+                layer.closeAll();
+                if (data.code == 1) {
+                    layer.alert(data.msg, {icon: 6}, function () {
+                        window.location.href = "/{:ADMIN_DIR}{:url('/notice')}";
+                    });
+                } else {
+                    layer.alert(data.msg, {icon: 5});
+                }
+            },
+            timeout: 10000,
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                layer.closeAll();
+                if (textStatus == "timeout") {
+                    layer.msg('请求超时！');
+                } else {
+                    layer.msg('服务器错误！');
+                }
+            }
+        });
+    }
+</script>
+{/block}

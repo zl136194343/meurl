@@ -1,0 +1,193 @@
+{extend name='common/default'/}
+{block name="main"}
+<style>
+    .table-responsive {
+        min-height: .01%;
+        overflow-x: auto;
+    }
+
+    @media screen {
+        .table-responsive {
+            width: 100%;
+            margin-bottom: 15px;
+            overflow-y: hidden;
+            -ms-overflow-style: -ms-autohiding-scrollbar;
+            border: 1px solid #ddd;
+        }
+
+        .table-responsive > .table {
+            margin-bottom: 0;
+        }
+
+        .table-responsive > .table > thead > tr > th,
+        .table-responsive > .table > tbody > tr > th,
+        .table-responsive > .table > tfoot > tr > th,
+        .table-responsive > .table > thead > tr > td,
+        .table-responsive > .table > tbody > tr > td,
+        .table-responsive > .table > tfoot > tr > td {
+            white-space: nowrap;
+        }
+
+        .table-responsive > .table-bordered {
+            border: 0;
+        }
+
+        .table-responsive > .table-bordered > thead > tr > th:first-child,
+        .table-responsive > .table-bordered > tbody > tr > th:first-child,
+        .table-responsive > .table-bordered > tfoot > tr > th:first-child,
+        .table-responsive > .table-bordered > thead > tr > td:first-child,
+        .table-responsive > .table-bordered > tbody > tr > td:first-child,
+        .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+            border-left: 0;
+        }
+
+        .table-responsive > .table-bordered > thead > tr > th:last-child,
+        .table-responsive > .table-bordered > tbody > tr > th:last-child,
+        .table-responsive > .table-bordered > tfoot > tr > th:last-child,
+        .table-responsive > .table-bordered > thead > tr > td:last-child,
+        .table-responsive > .table-bordered > tbody > tr > td:last-child,
+        .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+            border-right: 0;
+        }
+
+        .table-responsive > .table-bordered > tbody > tr:last-child > th,
+        .table-responsive > .table-bordered > tfoot > tr:last-child > th,
+        .table-responsive > .table-bordered > tbody > tr:last-child > td,
+        .table-responsive > .table-bordered > tfoot > tr:last-child > td {
+            border-bottom: 0;
+        }
+    }
+</style>
+<div class="block">
+    <div class="block-header block-header-default bg-gd-sea">
+        <h3 class="block-title">{$title}</h3>
+    </div>
+    <div class="block-content">
+        <form action="">
+            <div class="table-responsive">
+                <table class="table table-bordered table-vcenter">
+                    <tr>
+                        <th>开始时间</th>
+                        <th>结束时间</th>
+                        <th>搜索类型</th>
+                        <th>搜索内容</th>
+                        <th rowspan="2">
+                            <button type="submit" class="btn btn-info">
+                                <i class="fa fa-search"></i> 查找
+                            </button>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td width="170px"><input type="date" class="form-control" name="starttime"></td>
+                        <td width="170px"><input type="date" class="form-control" name="stoptime"></td>
+                        <td>
+                            <select id="search" class="form-control">
+                                <option value="1" selected>订单号</option>
+                                <option value="2">商户订单号</option>
+                                <option value="3">商户号MCHID</option>
+                                <option value="4">商品名称</option>
+                            </select>
+                        </td>
+                        <td><input type="text" id="searchname" name="trade_no" class="form-control"
+                                   placeholder="请输入搜索内容"></td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+        <div class="table-responsive">
+            <table class="table table-bordered table-vcenter">
+                <thead>
+                <tr>
+                    <th>订单号</th>
+                    <th>商户订单号</th>
+                    <th>MCHID商户号</th>
+                    <th>商品名称</th>
+                    <th>金额</th>
+                    <th>域名</th>
+                    <th>交易类型</th>
+                    <th>状态</th>
+                    <th>创建时间</th>
+                    <th>完成时间</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                {foreach $list as $v}
+                <tr>
+                    <td>{$v.trade_no}</td>
+                    <td>{$v.out_trade_no}</td>
+                    <td>{$v.mchid}</td>
+                    <td>{$v.o_name}</td>
+                    <td>{$v.money}元</td>
+                    <td>{:getdomain($v.notify_url)}</td>
+                    <td>{if $v.m_type==1}公众号H5{elseif $v.m_type==2}PC扫码{else}未知{/if}</td>
+                    <td>{if $v.state==1}<font color="green">已支付</font>{elseif $v.state==2}<font color="orange">已退款</font>{else}<font
+                            color="red">未支付</font>{/if}
+                    </td>
+                    <td>{$v.addtime}</td>
+                    <td>{if $v.endtime}{$v.endtime}{else}<font color="red">未支付</font>{/if}</td>
+                    <td><button class="btn btn-info btn-sm" onclick="tui('{$v.trade_no}')" {if $v.state!=1}disabled{/if}>退款</button>
+                        <a
+                            class="btn btn-success btn-sm" href="{:do_callback($v,$uinfo.docking)}"
+                            target="_blank">重新通知</a></td>
+                </tr>
+                {/foreach}
+                </tbody>
+            </table>
+        </div>
+        <center>
+            {$fy | raw}
+        </center>
+    </div>
+</div>
+{/block}
+{block name="footjs"}
+<script>
+    $("#search").change(function () {
+        var id = $("#search").val();
+        if (id == 1) {
+            $("#searchname").attr('name', 'trade_no');
+        } else if (id == 2) {
+            $("#searchname").attr('name', 'out_trade_no');
+        } else if (id == 3) {
+            $("#searchname").attr('name', 'mchid');
+        } else if (id == 4) {
+            $("#searchname").attr('name', 'name');
+        }
+    });
+
+    function tui(trade_no) {
+        layer.confirm('是否确认退款？', {
+                btn: ['确认', '取消'] //按钮
+            }, function () {
+                layer.load(2, {shade: [0.1, '#fff']});
+                $.ajax({
+                    url: "/user/tui_order",
+                    type: 'get',
+                    dataType: 'json',
+                    data: {trade_no: trade_no},
+                    success: function (res) {
+                        layer.closeAll();
+                        if (res.code == 1) {
+                            layer.alert(res.msg, {icon: 6}, function () {
+                                window.location.href = "{:url('/user/order')}";
+                            });
+                        } else {
+                            layer.alert(res.msg, {icon: 5});
+                        }
+                    },
+                    timeout: 10000,
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        layer.closeAll();
+                        if (textStatus == "timeout") {
+                            layer.msg('请求超时！');
+                        } else {
+                            layer.msg('服务器错误！');
+                        }
+                    }
+                });
+            }
+        )
+    }
+</script>
+{/block}

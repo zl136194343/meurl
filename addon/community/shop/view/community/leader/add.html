@@ -1,0 +1,460 @@
+{extend name="base"/}
+{block name="resources"}
+<style>
+    #container{ width: 650px; height: 500px; }
+    .empty-address{ display: none; }
+    .address-content {display: inline-block;vertical-align: top;}
+    .ns-form {margin-top: 0;}
+    .layui-input-block {overflow: hidden;}
+    .ns-check-member .layui-btn {
+        position: absolute;
+        top: 1px;
+        border-color: #e5e5e5;
+        padding: 0 10px;
+        border-right: 0;
+        border-top: 0;
+        border-bottom: 0;
+        left: 207px;
+        height: 32px;
+    }
+    /* 关联会员 */
+    .ns-search-result { border: 1px solid; padding: 15px 30px 15px 15px; display: flex; align-items: center; position: relative;margin-top:10px;border-color: #e5e5e5 !important; }
+    .ns-search-res-img { width: 50px; height: 50px; margin-right: 5px; text-align: center; line-height: 50px; }
+    .ns-search-res-img img { max-width: 100%; max-height: 100%; }
+    .ns-search-res-intro p { line-height: 24px; }
+    .ns-search-res-close { position: absolute; top: 5px; right: 5px; }
+
+    .ns-search-result-admin { border: 1px solid; padding: 15px 30px 15px 15px; display: flex; align-items: center; position: relative;margin-top:10px;border-color: #e5e5e5 !important; }
+
+</style>
+{/block}
+{block name="main"}
+<div class="layui-form ns-form " lay-filter="editselffetch">
+    <div class="layui-form-item ns-check-member-box">
+        <label class="layui-form-label"><span class="required">*</span>关联前台会员：</label>
+        <div class="layui-input-block ns-check-member">
+            <input type="text" id="search_text" name="search_text" placeholder="请输入用户名或手机" lay-verify="required" class="layui-input ns-len-mid ns-member-name">
+            <button type="button" class="layui-btn layui-btn-primary" onclick="checkMember()">
+                <i class="layui-icon">&#xe615;</i>
+            </button>
+            <input class="ns-member-id" type="hidden" name="member_id" />
+        </div>
+        <p class="ns-word-aux">关联会员后才能在手机上使用团长核销功能</p>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label"><span class="required">*</span>团长名称：</label>
+        <div class="layui-input-block">
+            <input name="name" type="text" lay-verify="required" class="layui-input ns-len-long" placeholder="请输入团长名称">
+        </div>
+        <div class="ns-word-aux">团长名称</div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label"><span class="required">*</span>团长手机号：</label>
+        <div class="layui-input-block">
+            <input name="mobile" type="text" lay-verify="mobile|required"  class="layui-input ns-len-long" placeholder="请输入团长手机号">
+        </div>
+        <div class="ns-word-aux">已进行手机号验证，请填写正确的手机号</div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label"><span class="required">*</span>自提点：</label>
+        <div class="layui-input-block">
+            <input name="community" type="text" lay-verify="required" class="layui-input ns-len-long" placeholder="请输入自提点">
+        </div>
+    </div>
+
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">微信号：</label>
+        <div class="layui-input-block">
+            <input name="wechat" type="text" class="layui-input ns-len-long" placeholder="请输入微信号">
+        </div>
+        <div class="ns-word-aux">微信号码</div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label"><span class="required">*</span>团长等级：</label>
+        <div class="layui-input-inline ns-len-mid">
+            <select class="member_level" name="level_id" lay-verify="level_id" lay-filter="level_id">
+                <option value="">请选择</option>
+                {volist name='community_level' id='vo'}
+                <option value="{$vo.level_id}">{$vo.level_name} ({$vo.commission_rate}%)</option>
+                {/volist}
+            </select>
+        </div>
+    </div>
+
+<!--    <div class="layui-form-item">
+        <label class="layui-form-label"><span class="required">*</span>绑定路线：</label>
+        <div class="layui-input-block">
+            <div class="layui-input-inline">
+                <input type="text" placeholder="请选择路线" readonly name="line_name" autocomplete="off" class="layui-input ns-len-mid">
+            </div>
+            <input type="hidden" name="line_id" lay-verify="required" placeholder="请绑定路线">
+            <button class="layui-btn ns-bg-color" type="button" onclick="chooseLine()">选择路线</button>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label"><span class="required">*</span>绑定配送员：</label>
+        <div class="layui-input-block">
+            <div class="layui-input-inline">
+                <input type="text" placeholder="绑定路线后将自动绑定配送员" readonly name="clerk_name" autocomplete="off" class="layui-input ns-len-mid">
+            </div>
+            <input type="hidden" name="clerk_id" lay-verify="required" placeholder="请绑定路线">
+        </div>
+    </div>-->
+
+
+    <div class="layui-form-item">
+        <label class="layui-form-label img-upload-lable"><span class="required">*</span>自提点图片：</label>
+        <div class="layui-input-block img-upload">
+            <div class="upload-img-block">
+                <div class="upload-img-box">
+                    <div class="ns-upload-default" id="storeUpload">
+                        <div class="upload">
+                            <img src="SHOP_IMG/upload_img.png" />
+                            <p>点击上传</p>
+                        </div>
+
+                    </div>
+                    <div class="operation"  >
+                        <div >
+                            <i title="图片预览" class="iconfont iconreview js-preview" style="margin-right: 20px;"></i>
+                            <i title="删除图片" class="layui-icon layui-icon-delete js-delete"></i>
+                        </div>
+                        <div class="replace_img js-replace">点击替换</div>
+                    </div>
+                    <input type="hidden" name="community_img" lay-verify="required" placeholder="请上传自提点图片">
+                </div>
+            </div>
+        </div>
+        <div class="ns-word-aux">
+            <p>门店图片在PC及移动端对应页面及列表作为门店标志出现。</p>
+            <p>建议图片尺寸：100 * 100像素，图片格式：jpg、png、jpeg。</p>
+        </div>
+    </div>
+
+    <!--自提点地址-->
+    <div class="layui-form-item">
+        <label class="layui-form-label"><span class="required">*</span>社区地址：</label>
+        <div class="layui-input-inline ns-len-mid area-select">
+            <select name="province_id" lay-filter="province_id" lay-verify="province_id">
+                <option value="">请选择省份</option>
+                {foreach $province_list as $k => $v}
+                <option value="{$v.id}">{$v.name}</option>
+                {/foreach}
+            </select>
+        </div>
+
+        <div class="layui-input-inline ns-len-mid area-select">
+            <select name="city_id"  lay-filter="city_id" lay-verify="city_id">
+                <option value="">请选择城市</option>
+            </select>
+        </div>
+
+        <div class="layui-input-inline ns-len-mid area-select">
+            <select name="district_id"  lay-filter="district_id" lay-verify="district_id">
+                <option value="">请选择区/县</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label"></label>
+        <div class="layui-input-block">
+            <input type="text" name="address"  placeholder="请填写门店的具体地址" lay-verify="required" autocomplete="off" class="layui-input ns-len-long address-content" value="">
+            <input type = "hidden" name="longitude" lay-verify="required" class="layui-input"/>
+            <input type = "hidden" name="latitude" lay-verify="required" class="layui-input"/>
+            <button class='layui-btn-primary layui-btn' onclick="refreshFrom();">查找地址</button>
+        </div>
+        <div class="ns-word-aux">点击查找地址可在地图上显示输入的地理位置</div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">地图定位：</label>
+        <div class="layui-input-block ns-special-length">
+            <div id="container" class="selffetch-map"></div>
+        </div>
+        <div class="ns-word-aux empty-address">请选择地理位置！在地图上点击得到的地理位置会自动填入到对应的输入框中</div>
+    </div>
+
+
+    <div class="ns-form-row">
+        <button class="layui-btn ns-bg-color" lay-submit lay-filter="save">保存</button>
+        <button class="layui-btn layui-btn-primary" onclick="back()">返回</button>
+    </div>
+
+</div>
+{/block}
+{block name="script"}
+<script type="text/javascript">
+    window._AMapSecurityConfig = {
+        securityJsCode:'f51f7697ff2a557159c69c0d851e51d7',
+    }
+</script>
+<script type="text/javascript" src="{:get_http_type()}://webapi.amap.com/maps?v=1.4.6&amp;key={if empty($map_key['gaode_map_key'])}483a1e58dc5ddbbc28ea13ec30d0d885{else/}{$map_key['gaode_map_key']}{/if}"></script>
+<script type="text/javascript" src="SHOP_JS/address.js"></script>
+<script type="text/javascript" src="STATIC_JS/map_address.js"></script>
+<script>
+    var form, repeat_flag, map_class;
+
+    layui.use(['form'], function() {
+        form = layui.form;
+        repeat_flag = false;//防重复标识
+
+        map_class = new mapClass("container",{lat:'',lng:''});
+        form.render();
+
+        /**
+         * 验证码
+         */
+        form.verify({
+            required : function(value, item){
+                var msg = $(item).attr("placeholder") != undefined ? $(item).attr("placeholder") : '';
+                if(value == '') return msg;
+            },
+            level_id : function(value, item){
+                if(value == ''){
+                    return '请选择等级';
+                }
+            },
+            province_id : function(value, item){
+                if(value == ''){
+                    return '请选择省份';
+                }
+            },
+            city_id : function(value, item){
+                if(value == ''){
+                    return '请选择城市';
+                }
+            },
+            district_id : function(value, item){
+                if(value == ''){
+                    return '请选择区/县';
+                }
+            },
+            mobile : function(value, item) {
+                var tel = /^(\(\d{3,4}\)|\d{3,4}-|\s)?\d{7,14}$/; //固定电话
+                var phone = /^1[345678]\d{9}$/; //手机
+                if (value != '') {
+                    if (!(tel.test(value)) && !(phone.test(value))) {
+                        return '请输入正确的电话号码或手机号！';
+                    }
+                }
+            },
+        });
+
+        // 门店logo
+        var upload = new Upload({
+            elem: '#storeUpload'
+        });
+
+        /**
+         * 监听提交
+         */
+        form.on('submit(save)', function(data){
+
+            if( data.field.longitude == "" || data.field.latitude == ""){
+                layer.msg('请确认地理位置!');
+                $(".empty-address").show();
+                return;
+            }else{
+                $(".empty-address").hide();
+            }
+
+            // var full_address  = [];
+            // full_address.push($("select[name=province_id] option:selected").text());
+            // full_address.push($("select[name=city_id] option:selected").text());
+            // full_address.push($("select[name=district_id] option:selected").text());
+
+            data.field.full_address = $("select[name=province_id] option:selected").text()+$("select[name=city_id] option:selected").text()+$("select[name=district_id] option:selected").text();
+
+            // 删除图片
+            if(!data.field.community_img) upload.delete();
+
+            if(repeat_flag) return;
+            // repeat_flag = true;
+
+            $.ajax({
+                type : "POST",
+                dataType: 'JSON',
+                url : ns.url("community://shop/community/addLeader"),
+                async : true,
+                data : data.field,
+                success : function(res) {
+                    repeat_flag = false;
+
+                    if (res.code == 0) {
+                        layer.confirm('添加成功', {
+                            title: '操作提示',
+                            btn: ['返回列表', '继续添加'],
+                            closeBtn: 0,
+                            yes: function() {
+                                location.href = ns.url("community://shop/community/lists")
+                            },
+                            btn2: function() {
+                                location.href = ns.url("community://shop/community/addLeader");
+                            }
+                        });
+                    } else {
+                        layer.msg(res.message);
+                    }
+                }
+            })
+        });
+    });
+
+    function back() {
+        location.href = ns.url("community://shop/community/lists");
+    }
+
+    /**
+     * 重新渲染表单
+     */
+    function refreshFrom(){
+        form.render();
+        orderAddressChange();//改变地址
+        map_class.mapChange();
+    }
+
+    //动态改变订单地址赋值
+    function orderAddressChange(){
+        map_class.address.province = $("select[name=province_id]").val();
+        map_class.address.province_name = $("select[name=province_id] option:selected").text();
+        map_class.address.city = $("select[name=city_id]").val();
+        map_class.address.city_name = $("select[name=city_id] option:selected").text();
+        map_class.address.district = $("select[name=district_id]").val();
+        map_class.address.district_name = $("select[name=district_id] option:selected").text();
+        map_class.address.detail_address = $("input[name=address]").val()
+    }
+
+    /**
+     * 地址下拉框（主要用于坐标记录）
+     */
+    function selectCallBack(){
+        $("input[name=longitude]").val(map_class.address.longitude);//坐标
+        $("input[name=latitude]").val(map_class.address.latitude);//坐标
+    }
+
+    //地图点击回调事件
+    function mapChangeCallBack(){
+        $("input[name=address]").val(map_class.address.address);//详细地址
+        $("input[name=longitude]").val(map_class.address.longitude);//坐标
+        $("input[name=latitude]").val(map_class.address.latitude);//坐标
+
+        $.ajax({
+            type : "POST",
+            dataType: 'JSON',
+            url : ns.url("community://shop/address/getGeographicId"),
+            async : true,
+            data : {
+                "address" : map_class.address.area
+            },
+            success : function(data) {
+                map_class.address.province = data.province_id;
+                map_class.address.city = data.city_id;
+                map_class.address.district = data.district_id;
+                map_class.address.township = data.subdistrict_id;
+                map_class.map_change = false;
+                form.val("editselffetch", {
+                    "province_id": data.province_id
+                });
+                $("select[name=province_id]").change();
+                form.val("editselffetch", {
+                    "city_id": data.city_id
+                });
+                $("select[name=city_id]").change();
+                form.val("editselffetch", {
+                    "district_id": data.district_id
+                });
+                refreshFrom();//重新渲染form
+                map_class.map_change = true;
+            }
+        });
+    }
+
+    /**
+     * 点击搜索
+     */
+    var repeat_flag_member = false;
+    var html, val;
+    function checkMember() {
+        var parent = $(".ns-check-member");
+        var con = parent.find(".ns-member-name").val();
+        $(".layui-word-aux").remove();
+        $(".ns-search-result").remove();
+
+        if (repeat_flag_member) return false;
+        repeat_flag_member = true;
+
+        if (con == "" || con == null || con.trim() == "") {
+            repeat_flag = false;
+        } else {
+            $.ajax({
+                type: 'POST',
+                url: ns.url("community://shop/verify/searchMember"),
+                data: {
+                    'search_text': con
+                },
+                dataType: 'JSON',
+                success: function(res) {
+                    // layer.msg(res.message);
+                    repeat_flag_member = false;
+
+                    if (res.data == null) {
+                        html = '<span class="layui-word-aux">未找到该用户</span>';
+                        val = res.data;
+                    } else {
+                        html = '<div class="ns-search-result layui-input-inline ns-border-color-gray">' +
+                            '<div class="ns-search-res-img">' +
+                            '<img src="' + ( res.data.headimg ? ns.img(res.data.headimg) : ns.img("{$default_headimg}")) + '" />' +
+                            '</div>' +
+                            '<div class="ns-search-res-intro">' +
+                            '<p>用户名：' + res.data.username + '</p>' +
+                            '<p>电话：' + res.data.mobile + '</p>' +
+                            '</div>' +
+                            '<div class="ns-search-res-close" onclick="closeMember()">' +
+                            '<i class="iconfont iconclose_light"></i>' +
+                            '</div>' +
+                            '</div>';
+                        val = res.data.member_id;
+                    }
+
+                    $(".ns-member-id").attr("value", val);
+                    $(".ns-check-member").append(html);
+                }
+            });
+        }
+    }
+
+    function closeMember() {
+        $(".ns-search-result").hide();
+    }
+
+    /**
+     * 选择路线
+     */
+    function chooseLine() {
+        layer.open({
+            title: '路线列表',
+            id: 'bind_line_layer',
+            type: 2,
+            area: ['60%', '80%'],
+            content: ns.url('community://shop/communitydelivery/chooseLine', {chooseCallback: 'chooseLineCallback'}),
+        });
+    }
+
+    /**
+     * 选择路线回调
+     * @param data
+     */
+    function chooseLineCallback(data) {
+        $('input[name="line_id"]').val(data.line_id);
+        $('input[name="line_name"]').val(data.line_name);
+        $('input[name="clerk_id"]').val(data.clerk_id);
+        $('input[name="clerk_name"]').val(data.clerk_name);
+    }
+</script>
+{/block}

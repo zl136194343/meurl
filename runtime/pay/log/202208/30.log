@@ -1,0 +1,160 @@
+[2022-08-30T13:33:22+08:00][sql] CONNECT:[ UseTime:0.000389s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-30T13:33:22+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'ALI_PAY_CONFIG' LIMIT 1 [ RunTime:0.000412s ]
+[2022-08-30T13:33:22+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'WECHAT_CONFIG' LIMIT 1 [ RunTime:0.000368s ]
+[2022-08-30T13:33:22+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '2022083013332410001' LIMIT 1 [ RunTime:0.000355s ]
+[2022-08-30T13:33:22+08:00][sql] UPDATE `gxfc_pay`  SET `trade_no` = '4200001589202208301821129599' , `pay_type` = 'wechatpay' , `pay_addon` = 'wechatpay' , `pay_time` = 1661837602 , `pay_status` = 2  WHERE  `out_trade_no` = '2022083013332410001' [ RunTime:0.005961s ]
+[2022-08-30T13:33:23+08:00][sql] CONNECT:[ UseTime:0.000389s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-30T13:33:23+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '2022083013332410001' LIMIT 1 [ RunTime:0.000434s ]
+[2022-08-30T13:33:23+08:00][error] [2]Cannot modify header information - headers already sent by (output started at /www/wwwroot/ls.chnssl.com/vendor/symfony/http-foundation/Response.php:381)
+[2022-08-30T13:33:23+08:00][error] [1]Uncaught think\exception\ErrorException: Cannot modify header information - headers already sent by (output started at /www/wwwroot/ls.chnssl.com/vendor/symfony/http-foundation/Response.php:381) in /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php:226
+Stack trace:
+#0 [internal function]: think\initializer\Error->appError(2, 'Cannot modify h...', '/www/wwwroot/ls...', 226, Array)
+#1 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php(226): setcookie('think_lang', '', 0, '/', '', false, false)
+#2 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php(196): think\Cookie->saveCookie('think_lang', '', 0, '/', '', false, false, '')
+#3 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Response.php(142): think\Cookie->save()
+#4 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/initializer/Error.php(58): think\Response->send()
+#5 [internal function]: think\initializer\Error->appException(Object(think\exception\ErrorException))
+#
+[2022-08-30T13:33:46+08:00][sql] CONNECT:[ UseTime:0.000348s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-30T13:33:46+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '2022083013332520001' LIMIT 1 [ RunTime:0.000382s ]
+[2022-08-30T13:33:47+08:00][sql] UPDATE `gxfc_pay`  SET `trade_no` = '4200001621202208305620665475' , `pay_type` = 'wechatpay' , `pay_addon` = 'wechatpay' , `pay_time` = 1661837626 , `pay_status` = 2  WHERE  `out_trade_no` = '2022083013332520001' [ RunTime:0.005519s ]
+[2022-08-30T13:34:02+08:00][sql] CONNECT:[ UseTime:0.000383s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-30T13:34:02+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '2022083013332520001' LIMIT 1 [ RunTime:0.000455s ]
+[2022-08-30T13:34:02+08:00][error] [2]Cannot modify header information - headers already sent by (output started at /www/wwwroot/ls.chnssl.com/vendor/symfony/http-foundation/Response.php:381)
+[2022-08-30T13:34:02+08:00][error] [1]Uncaught think\exception\ErrorException: Cannot modify header information - headers already sent by (output started at /www/wwwroot/ls.chnssl.com/vendor/symfony/http-foundation/Response.php:381) in /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php:226
+Stack trace:
+#0 [internal function]: think\initializer\Error->appError(2, 'Cannot modify h...', '/www/wwwroot/ls...', 226, Array)
+#1 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php(226): setcookie('think_lang', '', 0, '/', '', false, false)
+#2 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php(196): think\Cookie->saveCookie('think_lang', '', 0, '/', '', false, false, '')
+#3 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Response.php(142): think\Cookie->save()
+#4 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/initializer/Error.php(58): think\Response->send()
+#5 [internal function]: think\initializer\Error->appException(Object(think\exception\ErrorException))
+#
+[2022-08-30T13:40:07+08:00][sql] CONNECT:[ UseTime:0.000356s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-30T13:40:07+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '2022083013392520002' LIMIT 1 [ RunTime:0.000468s ]
+[2022-08-30T13:40:07+08:00][sql] UPDATE `gxfc_pay`  SET `trade_no` = '4200001603202208302936506202' , `pay_type` = 'wechatpay' , `pay_addon` = 'wechatpay' , `pay_time` = 1661838007 , `pay_status` = 2  WHERE  `out_trade_no` = '2022083013392520002' [ RunTime:0.006515s ]
+[2022-08-30T13:40:08+08:00][sql] CONNECT:[ UseTime:0.000567s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-30T13:40:08+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '2022083013392520002' LIMIT 1 [ RunTime:0.000428s ]
+[2022-08-30T13:40:08+08:00][error] [2]Cannot modify header information - headers already sent by (output started at /www/wwwroot/ls.chnssl.com/vendor/symfony/http-foundation/Response.php:381)
+[2022-08-30T13:40:08+08:00][error] [1]Uncaught think\exception\ErrorException: Cannot modify header information - headers already sent by (output started at /www/wwwroot/ls.chnssl.com/vendor/symfony/http-foundation/Response.php:381) in /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php:226
+Stack trace:
+#0 [internal function]: think\initializer\Error->appError(2, 'Cannot modify h...', '/www/wwwroot/ls...', 226, Array)
+#1 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php(226): setcookie('think_lang', '', 0, '/', '', false, false)
+#2 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php(196): think\Cookie->saveCookie('think_lang', '', 0, '/', '', false, false, '')
+#3 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Response.php(142): think\Cookie->save()
+#4 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/initializer/Error.php(58): think\Response->send()
+#5 [internal function]: think\initializer\Error->appException(Object(think\exception\ErrorException))
+#
+[2022-08-30T13:53:57+08:00][sql] CONNECT:[ UseTime:0.000344s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-30T13:53:57+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'ALI_PAY_CONFIG' LIMIT 1 [ RunTime:0.000397s ]
+[2022-08-30T13:53:57+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'WECHAT_PAY_CONFIG' LIMIT 1 [ RunTime:0.000339s ]
+[2022-08-30T13:53:57+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'WECHAT_CONFIG' LIMIT 1 [ RunTime:0.000243s ]
+[2022-08-30T13:53:57+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '2022083013432520001' LIMIT 1 [ RunTime:0.000286s ]
+[2022-08-30T13:53:57+08:00][sql] UPDATE `gxfc_pay`  SET `trade_no` = '4200001592202208300217453217' , `pay_type` = 'wechatpay' , `pay_addon` = 'wechatpay' , `pay_time` = 1661838837 , `pay_status` = 2  WHERE  `out_trade_no` = '2022083013432520001' [ RunTime:0.004451s ]
+[2022-08-30T13:53:58+08:00][sql] CONNECT:[ UseTime:0.000316s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-30T13:53:58+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '2022083013432520001' LIMIT 1 [ RunTime:0.000433s ]
+[2022-08-30T13:53:58+08:00][error] [2]Cannot modify header information - headers already sent by (output started at /www/wwwroot/ls.chnssl.com/vendor/symfony/http-foundation/Response.php:381)
+[2022-08-30T13:53:58+08:00][error] [1]Uncaught think\exception\ErrorException: Cannot modify header information - headers already sent by (output started at /www/wwwroot/ls.chnssl.com/vendor/symfony/http-foundation/Response.php:381) in /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php:226
+Stack trace:
+#0 [internal function]: think\initializer\Error->appError(2, 'Cannot modify h...', '/www/wwwroot/ls...', 226, Array)
+#1 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php(226): setcookie('think_lang', '', 0, '/', '', false, false)
+#2 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php(196): think\Cookie->saveCookie('think_lang', '', 0, '/', '', false, false, '')
+#3 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Response.php(142): think\Cookie->save()
+#4 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/initializer/Error.php(58): think\Response->send()
+#5 [internal function]: think\initializer\Error->appException(Object(think\exception\ErrorException))
+#
+[2022-08-30T13:54:23+08:00][sql] CONNECT:[ UseTime:0.000377s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-30T13:54:23+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '2022083013542520001' LIMIT 1 [ RunTime:0.000408s ]
+[2022-08-30T13:54:23+08:00][sql] UPDATE `gxfc_pay`  SET `trade_no` = '4200001600202208304505716077' , `pay_type` = 'wechatpay' , `pay_addon` = 'wechatpay' , `pay_time` = 1661838863 , `pay_status` = 2  WHERE  `out_trade_no` = '2022083013542520001' [ RunTime:0.004387s ]
+[2022-08-30T13:54:24+08:00][sql] CONNECT:[ UseTime:0.000402s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-30T13:54:24+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '2022083013542520001' LIMIT 1 [ RunTime:0.000411s ]
+[2022-08-30T13:54:24+08:00][error] [2]Cannot modify header information - headers already sent by (output started at /www/wwwroot/ls.chnssl.com/vendor/symfony/http-foundation/Response.php:381)
+[2022-08-30T13:54:24+08:00][error] [1]Uncaught think\exception\ErrorException: Cannot modify header information - headers already sent by (output started at /www/wwwroot/ls.chnssl.com/vendor/symfony/http-foundation/Response.php:381) in /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php:226
+Stack trace:
+#0 [internal function]: think\initializer\Error->appError(2, 'Cannot modify h...', '/www/wwwroot/ls...', 226, Array)
+#1 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php(226): setcookie('think_lang', '', 0, '/', '', false, false)
+#2 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php(196): think\Cookie->saveCookie('think_lang', '', 0, '/', '', false, false, '')
+#3 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Response.php(142): think\Cookie->save()
+#4 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/initializer/Error.php(58): think\Response->send()
+#5 [internal function]: think\initializer\Error->appException(Object(think\exception\ErrorException))
+#
+[2022-08-30T13:57:50+08:00][sql] CONNECT:[ UseTime:0.000370s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-30T13:57:50+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '2022083013572520003' LIMIT 1 [ RunTime:0.000405s ]
+[2022-08-30T13:57:50+08:00][sql] UPDATE `gxfc_pay`  SET `trade_no` = '4200001606202208300076384557' , `pay_type` = 'wechatpay' , `pay_addon` = 'wechatpay' , `pay_time` = 1661839070 , `pay_status` = 2  WHERE  `out_trade_no` = '2022083013572520003' [ RunTime:0.004939s ]
+[2022-08-30T13:57:51+08:00][sql] CONNECT:[ UseTime:0.000345s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-30T13:57:51+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '2022083013572520003' LIMIT 1 [ RunTime:0.000463s ]
+[2022-08-30T13:57:51+08:00][error] [2]Cannot modify header information - headers already sent by (output started at /www/wwwroot/ls.chnssl.com/vendor/symfony/http-foundation/Response.php:381)
+[2022-08-30T13:57:51+08:00][error] [1]Uncaught think\exception\ErrorException: Cannot modify header information - headers already sent by (output started at /www/wwwroot/ls.chnssl.com/vendor/symfony/http-foundation/Response.php:381) in /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php:226
+Stack trace:
+#0 [internal function]: think\initializer\Error->appError(2, 'Cannot modify h...', '/www/wwwroot/ls...', 226, Array)
+#1 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php(226): setcookie('think_lang', '', 0, '/', '', false, false)
+#2 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php(196): think\Cookie->saveCookie('think_lang', '', 0, '/', '', false, false, '')
+#3 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Response.php(142): think\Cookie->save()
+#4 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/initializer/Error.php(58): think\Response->send()
+#5 [internal function]: think\initializer\Error->appException(Object(think\exception\ErrorException))
+#
+[2022-08-30T14:09:31+08:00][sql] CONNECT:[ UseTime:0.000377s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-30T14:09:31+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '2022083014092520001' LIMIT 1 [ RunTime:0.000439s ]
+[2022-08-30T14:09:31+08:00][sql] UPDATE `gxfc_pay`  SET `trade_no` = '4200001619202208303196303047' , `pay_type` = 'wechatpay' , `pay_addon` = 'wechatpay' , `pay_time` = 1661839771 , `pay_status` = 2  WHERE  `out_trade_no` = '2022083014092520001' [ RunTime:0.004180s ]
+[2022-08-30T14:09:32+08:00][sql] CONNECT:[ UseTime:0.000395s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-30T14:09:32+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '2022083014092520001' LIMIT 1 [ RunTime:0.000447s ]
+[2022-08-30T14:09:32+08:00][error] [2]Cannot modify header information - headers already sent by (output started at /www/wwwroot/ls.chnssl.com/vendor/symfony/http-foundation/Response.php:381)
+[2022-08-30T14:09:32+08:00][error] [1]Uncaught think\exception\ErrorException: Cannot modify header information - headers already sent by (output started at /www/wwwroot/ls.chnssl.com/vendor/symfony/http-foundation/Response.php:381) in /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php:226
+Stack trace:
+#0 [internal function]: think\initializer\Error->appError(2, 'Cannot modify h...', '/www/wwwroot/ls...', 226, Array)
+#1 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php(226): setcookie('think_lang', '', 0, '/', '', false, false)
+#2 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php(196): think\Cookie->saveCookie('think_lang', '', 0, '/', '', false, false, '')
+#3 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Response.php(142): think\Cookie->save()
+#4 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/initializer/Error.php(58): think\Response->send()
+#5 [internal function]: think\initializer\Error->appException(Object(think\exception\ErrorException))
+#
+[2022-08-30T14:11:20+08:00][sql] CONNECT:[ UseTime:0.000357s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-30T14:11:20+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '2022083014112520001' LIMIT 1 [ RunTime:0.000400s ]
+[2022-08-30T14:11:20+08:00][sql] UPDATE `gxfc_pay`  SET `trade_no` = '4200001608202208301462748396' , `pay_type` = 'wechatpay' , `pay_addon` = 'wechatpay' , `pay_time` = 1661839880 , `pay_status` = 2  WHERE  `out_trade_no` = '2022083014112520001' [ RunTime:0.004340s ]
+[2022-08-30T14:11:21+08:00][sql] CONNECT:[ UseTime:0.000341s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-30T14:11:21+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '2022083014112520001' LIMIT 1 [ RunTime:0.000424s ]
+[2022-08-30T14:11:21+08:00][error] [2]Cannot modify header information - headers already sent by (output started at /www/wwwroot/ls.chnssl.com/vendor/symfony/http-foundation/Response.php:381)
+[2022-08-30T14:11:21+08:00][error] [1]Uncaught think\exception\ErrorException: Cannot modify header information - headers already sent by (output started at /www/wwwroot/ls.chnssl.com/vendor/symfony/http-foundation/Response.php:381) in /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php:226
+Stack trace:
+#0 [internal function]: think\initializer\Error->appError(2, 'Cannot modify h...', '/www/wwwroot/ls...', 226, Array)
+#1 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php(226): setcookie('think_lang', '', 0, '/', '', false, false)
+#2 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php(196): think\Cookie->saveCookie('think_lang', '', 0, '/', '', false, false, '')
+#3 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Response.php(142): think\Cookie->save()
+#4 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/initializer/Error.php(58): think\Response->send()
+#5 [internal function]: think\initializer\Error->appException(Object(think\exception\ErrorException))
+#
+[2022-08-30T14:17:15+08:00][sql] CONNECT:[ UseTime:0.000358s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-30T14:17:15+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'ALI_PAY_CONFIG' LIMIT 1 [ RunTime:0.000399s ]
+[2022-08-30T14:17:15+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'WECHAT_CONFIG' LIMIT 1 [ RunTime:0.000293s ]
+[2022-08-30T14:17:15+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '2022083014172520001' LIMIT 1 [ RunTime:0.000344s ]
+[2022-08-30T14:17:15+08:00][sql] UPDATE `gxfc_pay`  SET `trade_no` = '4200001591202208304961295075' , `pay_type` = 'wechatpay' , `pay_addon` = 'wechatpay' , `pay_time` = 1661840235 , `pay_status` = 2  WHERE  `out_trade_no` = '2022083014172520001' [ RunTime:0.006449s ]
+[2022-08-30T14:17:16+08:00][sql] CONNECT:[ UseTime:0.000386s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-30T14:17:16+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '2022083014172520001' LIMIT 1 [ RunTime:0.000454s ]
+[2022-08-30T14:17:17+08:00][error] [2]Cannot modify header information - headers already sent by (output started at /www/wwwroot/ls.chnssl.com/vendor/symfony/http-foundation/Response.php:381)
+[2022-08-30T14:17:17+08:00][error] [1]Uncaught think\exception\ErrorException: Cannot modify header information - headers already sent by (output started at /www/wwwroot/ls.chnssl.com/vendor/symfony/http-foundation/Response.php:381) in /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php:226
+Stack trace:
+#0 [internal function]: think\initializer\Error->appError(2, 'Cannot modify h...', '/www/wwwroot/ls...', 226, Array)
+#1 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php(226): setcookie('think_lang', '', 0, '/', '', false, false)
+#2 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php(196): think\Cookie->saveCookie('think_lang', '', 0, '/', '', false, false, '')
+#3 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Response.php(142): think\Cookie->save()
+#4 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/initializer/Error.php(58): think\Response->send()
+#5 [internal function]: think\initializer\Error->appException(Object(think\exception\ErrorException))
+#
+[2022-08-30T14:25:22+08:00][sql] CONNECT:[ UseTime:0.001423s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-30T14:25:22+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '2022083014252520001' LIMIT 1 [ RunTime:0.000420s ]
+[2022-08-30T14:25:22+08:00][sql] UPDATE `gxfc_pay`  SET `trade_no` = '4200001603202208305439693097' , `pay_type` = 'wechatpay' , `pay_addon` = 'wechatpay' , `pay_time` = 1661840722 , `pay_status` = 2  WHERE  `out_trade_no` = '2022083014252520001' [ RunTime:0.003929s ]
+[2022-08-30T14:25:22+08:00][sql] SELECT `order_id`,`order_no`,`cover_img`,`face_value`,`buy_price`,`point`,`growth`,`coupon_id`,`price`,`pay_type`,`status`,`create_time`,`pay_time`,`member_id`,`nickname` FROM `gxfc_member_invest_order` WHERE  `out_trade_no` = '2022083014252520001' LIMIT 1 [ RunTime:0.000422s ]
+[2022-08-30T14:25:22+08:00][sql] UPDATE `gxfc_member_invest_order`  SET `pay_type` = 'wechatpay' , `pay_type_name` = '微信支付' , `pay_time` = 1661840722 , `price` = '0.02' , `status` = 2  WHERE  `out_trade_no` = '2022083014252520001' [ RunTime:0.000372s ]
+[2022-08-30T14:25:23+08:00][sql] SELECT `invest_money`,`username`,`mobile`,`email` FROM `gxfc_member` WHERE  `member_id` = 252 LIMIT 1 [ RunTime:0.000260s ]
+[2022-08-30T14:25:23+08:00][sql] INSERT INTO `gxfc_member_invest_account` SET `member_id` = 252 , `account_data` = '0.02' , `from_type` = 0 , `type_name` = '投资' , `create_time` = 1661840723 [ RunTime:0.000230s ]
+[2022-08-30T14:25:23+08:00][sql] UPDATE `gxfc_member`  SET `invest_money` = 0.04  WHERE  `member_id` = 252 [ RunTime:0.000248s ]
+[2022-08-30T14:25:23+08:00][error] [2]Cannot modify header information - headers already sent by (output started at /www/wwwroot/ls.chnssl.com/vendor/symfony/http-foundation/Response.php:381)
+[2022-08-30T14:25:23+08:00][error] [1]Uncaught think\exception\ErrorException: Cannot modify header information - headers already sent by (output started at /www/wwwroot/ls.chnssl.com/vendor/symfony/http-foundation/Response.php:381) in /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php:226
+Stack trace:
+#0 [internal function]: think\initializer\Error->appError(2, 'Cannot modify h...', '/www/wwwroot/ls...', 226, Array)
+#1 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php(226): setcookie('think_lang', '', 0, '/', '', false, false)
+#2 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Cookie.php(196): think\Cookie->saveCookie('think_lang', '', 0, '/', '', false, false, '')
+#3 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/Response.php(142): think\Cookie->save()
+#4 /www/wwwroot/ls.chnssl.com/vendor/topthink/framework/src/think/initializer/Error.php(58): think\Response->send()
+#5 [internal function]: think\initializer\Error->appException(Object(think\exception\ErrorException))
+#

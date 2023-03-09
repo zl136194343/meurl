@@ -1,0 +1,119 @@
+{{extend name="base"/}
+{block name="resources"}
+{/block}
+{block name="main"}
+
+
+<div class="ns-single-filter-box">
+	<button type="button" class="layui-btn ns-bg-color" onclick="window.location.href='{:addon_url("community://shop/community/addlevel")}'">添加等级</button>
+</div>
+
+<!-- 列表 -->
+<table id="level_list" lay-filter="level_list"></table>
+
+
+<!-- 操作 -->
+<script type="text/html" id="operation">
+	<div class="ns-table-btn">
+		<a class="layui-btn" lay-event="edit">编辑</a>
+		<a class="layui-btn" lay-event="del">删除</a>
+	</div>
+</script>
+{/block}
+
+{block name="script"}
+<script>
+    layui.use('form', function() {
+        var table,
+            repeat_flag = false; //防重复标识
+
+        table = new Table({
+            elem: '#level_list',
+			url: ns.url("community://shop/community/levellist"),
+            cols: [
+                [ {
+                    field: 'level_name',
+                    title: '等级名称',
+                    unresize: 'false',
+                    width: '10%'
+                },
+				// 	{
+                //     field: 'commission_money',
+                //     title: '提成金额',
+                //     unresize: 'false',
+                //     width: '10%',
+                //     templet: function(data) {
+                //         return data.commission_money;
+                //     },
+                // },
+					{
+					field: 'commission_rate',
+					title: '提成比例',
+					unresize: 'false',
+					width: '10%',
+					templet: function(data) {
+						return data.commission_rate + '%';
+					},
+				},
+				// 	{
+                //     field: 'sort',
+                //     title: '权重（由低到高）',
+                //     unresize: 'false',
+                //     width: '10%',
+                // },
+					{
+                    title: '操作',
+                    toolbar: '#operation',
+                    unresize: 'false',
+                    width: '10%'
+                }]
+            ],
+
+        });
+
+        /**
+         * 监听工具栏操作
+         */
+        table.tool(function(obj) {
+            var data = obj.data;
+            switch (obj.event) {
+                case 'del': //删除
+                    del(data.level_id);
+                    break;
+                case 'edit': //编辑
+                    location.href = ns.url("community://shop/community/editlevel", {"level_id": data.level_id});
+                    break;
+            }
+        });
+
+        /**
+         * 删除
+         */
+        function del(level_id){
+            if (repeat_flag) return false;
+            repeat_flag = true;
+
+            layer.confirm('确定要删除该团长等级吗?', function() {
+                $.ajax({
+                    url: ns.url("community://shop/community/deletelevel"),
+                    data: {level_id:level_id},
+                    dataType: 'JSON',
+                    type: 'POST',
+                    success: function(res) {
+                        layer.msg(res.message);
+                        repeat_flag = false;
+
+                        if (res.code == 0) {
+                            table.reload();
+                        }
+                    }
+                });
+            }, function () {
+                layer.close();
+                repeat_flag = false;
+            });
+        }
+
+    });
+</script>
+{/block}

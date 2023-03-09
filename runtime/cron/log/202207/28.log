@@ -1,0 +1,705 @@
+[2022-07-28T01:14:28+08:00][info] 检测事件执行2022-07-28 01:14:28
+[2022-07-28T01:14:28+08:00][sql] CONNECT:[ UseTime:0.000229s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T01:14:28+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000960s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658942068 [ RunTime:0.000278s ]
+[2022-07-28T01:14:28+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_coupon` [ RunTime:0.000869s ]
+[2022-07-28T01:14:28+08:00][sql] UPDATE `gxfc_promotion_coupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1658942068 [ RunTime:0.000259s ]
+[2022-07-28T01:14:28+08:00][cron] event:data{"id":2,"type":2,"period":1,"period_type":0,"name":"\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronCouponEnd","execute_time":1658909344,"relate_id":0,"create_time":1646988964}
+[2022-07-28T01:14:28+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658909404  WHERE  `id` = 2 [ RunTime:0.012920s ]
+[2022-07-28T01:14:28+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_weapp_live_room` [ RunTime:0.000795s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_weapp_live_room` WHERE  `live_status` IN ('101','102','105') [ RunTime:0.000232s ]
+[2022-07-28T01:14:28+08:00][cron] event:data{"id":3,"type":2,"period":1,"period_type":1,"name":"\u8f6e\u8be2\u66f4\u65b0\u540c\u6b65\u76f4\u64ad\u95f4","event":"LiveRoomStatus","execute_time":1658937600,"relate_id":0,"create_time":1646988964}
+[2022-07-28T01:14:28+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1659024000  WHERE  `id` = 3 [ RunTime:0.003243s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT GROUP_CONCAT(goods_id) as goods_id FROM gxfc_weapp_goods WHERE status = 1 [ RunTime:0.000213s ]
+[2022-07-28T01:14:28+08:00][cron] event:data{"id":4,"type":2,"period":1,"period_type":1,"name":"\u8f6e\u8be2\u66f4\u65b0\u540c\u6b65\u76f4\u64ad\u5546\u54c1","event":"LiveGoodsStatus","execute_time":1658937600,"relate_id":0,"create_time":1646988964}
+[2022-07-28T01:14:28+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1659024000  WHERE  `id` = 4 [ RunTime:0.003570s ]
+[2022-07-28T01:14:28+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_platformcoupon` [ RunTime:0.000798s ]
+[2022-07-28T01:14:28+08:00][sql] UPDATE `gxfc_promotion_platformcoupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1658942068 [ RunTime:0.000186s ]
+[2022-07-28T01:14:28+08:00][cron] event:data{"id":5,"type":2,"period":1,"period_type":0,"name":"\u5e73\u53f0\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronPlatformcouponEnd","execute_time":1658909344,"relate_id":0,"create_time":1646988964}
+[2022-07-28T01:14:28+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658909404  WHERE  `id` = 5 [ RunTime:0.003220s ]
+[2022-07-28T01:14:28+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_supplier` [ RunTime:0.000934s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT `supplier_site_id` FROM `gxfc_supplier` WHERE  `status` = 1  AND ( `expire_time` <= 1658942068 and expire_time != 0 ) [ RunTime:0.000173s ]
+[2022-07-28T01:14:28+08:00][cron] event:data{"id":6,"type":2,"period":1,"period_type":1,"name":"\u8f6e\u8be2\u68c0\u6d4b\u53ef\u5173\u95ed\u7684\u4f9b\u5e94\u5546","event":"CronSupplyClose","execute_time":1658937600,"relate_id":0,"create_time":1646988964}
+[2022-07-28T01:14:28+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1659024000  WHERE  `id` = 6 [ RunTime:0.003962s ]
+[2022-07-28T01:14:28+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop` [ RunTime:0.001012s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT `site_id` FROM `gxfc_shop` WHERE  `shop_status` = 1  AND ( `expire_time` <= 1658942068 and expire_time != 0 ) [ RunTime:0.000198s ]
+[2022-07-28T01:14:28+08:00][cron] event:data{"id":8,"type":2,"period":1,"period_type":1,"name":"\u5e97\u94fa\u6279\u91cf\u81ea\u52a8\u5173\u95ed","event":"CronShopClose","execute_time":1658937600,"relate_id":0,"create_time":1646988965}
+[2022-07-28T01:14:28+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1659024000  WHERE  `id` = 8 [ RunTime:0.003598s ]
+[2022-07-28T01:14:28+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_cluster` [ RunTime:0.000711s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT `rule_json`,`cluster_id` FROM `gxfc_member_cluster` [ RunTime:0.000131s ]
+[2022-07-28T01:14:28+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000906s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000162s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000152s ]
+[2022-07-28T01:14:28+08:00][sql] UPDATE `gxfc_member_cluster`  SET `member_num` = 11 , `member_ids` = '1,2,3,4,5,6,8,9,10,11,30' , `update_time` = 1658942068  WHERE  `cluster_id` = 1 [ RunTime:0.003626s ]
+[2022-07-28T01:14:28+08:00][cron] event:data{"id":10,"type":2,"period":1,"period_type":0,"name":"\u4f1a\u5458\u7fa4\u4f53\u5b9a\u65f6\u5237\u65b0","event":"CronMemberClusterRefresh","execute_time":1658909345,"relate_id":0,"create_time":1646988965}
+[2022-07-28T01:14:28+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658909405  WHERE  `id` = 10 [ RunTime:0.003124s ]
+[2022-07-28T01:14:28+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_settlement_period` [ RunTime:0.000781s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT `period_start_time`,`period_end_time` FROM `gxfc_shop_settlement_period` ORDER BY `period_id` DESC LIMIT 1 [ RunTime:0.000161s ]
+[2022-07-28T01:14:28+08:00][sql] INSERT INTO `gxfc_shop_settlement_period` SET `period_no` = '2022072801142423' , `create_time` = 1658942068 , `period_start_time` = 1658851200 , `period_end_time` = 1658937600 [ RunTime:0.003411s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT `site_id`,`site_name`,`website_id` FROM `gxfc_shop` WHERE  `shop_status` = 1 [ RunTime:0.000189s ]
+[2022-07-28T01:14:28+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order` [ RunTime:0.001254s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT sum(order_money) as order_money, sum(refund_money) as refund_money, sum(shop_money) as shop_money, sum(platform_money) as platform_money, sum(refund_shop_money) as refund_shop_money, sum(refund_platform_money) as refund_platform_money, sum(commission) as commission, sum(platform_coupon_money) as platform_coupon_money, sum(refund_platform_coupon_money) as refund_platform_coupon_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 1  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1658937600 LIMIT 1 [ RunTime:0.000429s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT sum(hospital_money) as hospital_money,sum(refund_hospital_money) as refund_hospital_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `hospital_id` = 1  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1658937600 LIMIT 1 [ RunTime:0.000261s ]
+[2022-07-28T01:14:28+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_settlement` [ RunTime:0.000731s ]
+[2022-07-28T01:14:28+08:00][sql] INSERT INTO `gxfc_shop_settlement` SET `order_money` = 0 , `refund_money` = 0 , `shop_money` = 0 , `platform_money` = 0 , `refund_shop_money` = 0 , `refund_platform_money` = 0 , `commission` = 0 , `platform_coupon_money` = 0 , `refund_platform_coupon_money` = 0 , `settlement_no` = '20220728011419645' , `site_id` = 1 , `site_name` = '测试店铺' , `period_id` = 126 , `period_start_time` = 1658851200 , `period_end_time` = 1658937600 , `website_commission` = 0 [ RunTime:0.003369s ]
+[2022-07-28T01:14:28+08:00][sql] UPDATE `gxfc_order`  SET `is_settlement` = 1 , `settlement_id` = 438  WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 1  AND `finish_time` <= 1658937600 [ RunTime:0.001531s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT `account` FROM `gxfc_shop` WHERE  `site_id` = 1 LIMIT 1 [ RunTime:0.000161s ]
+[2022-07-28T01:14:28+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_account` [ RunTime:0.000688s ]
+[2022-07-28T01:14:28+08:00][sql] INSERT INTO `gxfc_shop_account` SET `site_id` = 1 , `account_no` = '2022072801143135' , `account_type` = 'account' , `account_data` = 0 , `from_type` = 'order' , `type_name` = '店铺结算' , `relate_tag` = '438' , `create_time` = 1658942068 , `remark` = '店铺结算，账单编号20220728011419645' [ RunTime:0.003086s ]
+[2022-07-28T01:14:28+08:00][sql] UPDATE `gxfc_shop`  SET `account` = 957.01  WHERE  `site_id` = 1 [ RunTime:0.006362s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT sum(order_money) as order_money, sum(refund_money) as refund_money, sum(shop_money) as shop_money, sum(platform_money) as platform_money, sum(refund_shop_money) as refund_shop_money, sum(refund_platform_money) as refund_platform_money, sum(commission) as commission, sum(platform_coupon_money) as platform_coupon_money, sum(refund_platform_coupon_money) as refund_platform_coupon_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 2  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1658937600 LIMIT 1 [ RunTime:0.000422s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT sum(hospital_money) as hospital_money,sum(refund_hospital_money) as refund_hospital_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `hospital_id` = 2  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1658937600 LIMIT 1 [ RunTime:0.000313s ]
+[2022-07-28T01:14:28+08:00][sql] INSERT INTO `gxfc_shop_settlement` SET `order_money` = 0 , `refund_money` = 0 , `shop_money` = 0 , `platform_money` = 0 , `refund_shop_money` = 0 , `refund_platform_money` = 0 , `commission` = 0 , `platform_coupon_money` = 0 , `refund_platform_coupon_money` = 0 , `settlement_no` = '20220728011425151' , `site_id` = 2 , `site_name` = '甘霖的店铺' , `period_id` = 126 , `period_start_time` = 1658851200 , `period_end_time` = 1658937600 , `website_commission` = 0 [ RunTime:0.003786s ]
+[2022-07-28T01:14:28+08:00][sql] UPDATE `gxfc_order`  SET `is_settlement` = 1 , `settlement_id` = 439  WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 2  AND `finish_time` <= 1658937600 [ RunTime:0.001455s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT `account` FROM `gxfc_shop` WHERE  `site_id` = 2 LIMIT 1 [ RunTime:0.000158s ]
+[2022-07-28T01:14:28+08:00][sql] INSERT INTO `gxfc_shop_account` SET `site_id` = 2 , `account_no` = '2022072801147345' , `account_type` = 'account' , `account_data` = 0 , `from_type` = 'order' , `type_name` = '店铺结算' , `relate_tag` = '439' , `create_time` = 1658942068 , `remark` = '店铺结算，账单编号20220728011425151' [ RunTime:0.007708s ]
+[2022-07-28T01:14:28+08:00][sql] UPDATE `gxfc_shop`  SET `account` = 0  WHERE  `site_id` = 2 [ RunTime:0.006710s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT sum(order_money) as order_money, sum(refund_money) as refund_money, sum(shop_money) as shop_money, sum(platform_money) as platform_money, sum(refund_shop_money) as refund_shop_money, sum(refund_platform_money) as refund_platform_money, sum(commission) as commission, sum(platform_coupon_money) as platform_coupon_money, sum(refund_platform_coupon_money) as refund_platform_coupon_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 4  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1658937600 LIMIT 1 [ RunTime:0.000378s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT sum(hospital_money) as hospital_money,sum(refund_hospital_money) as refund_hospital_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `hospital_id` = 4  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1658937600 LIMIT 1 [ RunTime:0.000282s ]
+[2022-07-28T01:14:28+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_website` [ RunTime:0.000865s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT `site_area_name`,`order_rate` FROM `gxfc_website` WHERE  `site_id` = 3 LIMIT 1 [ RunTime:0.000169s ]
+[2022-07-28T01:14:28+08:00][sql] INSERT INTO `gxfc_shop_settlement` SET `order_money` = 0 , `refund_money` = 0 , `shop_money` = 0 , `platform_money` = 0 , `refund_shop_money` = 0 , `refund_platform_money` = 0 , `commission` = 0 , `platform_coupon_money` = 0 , `refund_platform_coupon_money` = 0 , `settlement_no` = '20220728011443773' , `site_id` = 4 , `site_name` = '纵索2店铺' , `period_id` = 126 , `period_start_time` = 1658851200 , `period_end_time` = 1658937600 , `website_id` = 3 , `website_commission` = 0 [ RunTime:0.003994s ]
+[2022-07-28T01:14:28+08:00][sql] UPDATE `gxfc_order`  SET `is_settlement` = 1 , `settlement_id` = 440  WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 4  AND `finish_time` <= 1658937600 [ RunTime:0.001415s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT `account` FROM `gxfc_shop` WHERE  `site_id` = 4 LIMIT 1 [ RunTime:0.000135s ]
+[2022-07-28T01:14:28+08:00][sql] INSERT INTO `gxfc_shop_account` SET `site_id` = 4 , `account_no` = '2022072801144970' , `account_type` = 'account' , `account_data` = 0 , `from_type` = 'order' , `type_name` = '店铺结算' , `relate_tag` = '440' , `create_time` = 1658942068 , `remark` = '店铺结算，账单编号20220728011443773' [ RunTime:0.002985s ]
+[2022-07-28T01:14:28+08:00][sql] UPDATE `gxfc_shop`  SET `account` = 12398.23  WHERE  `site_id` = 4 [ RunTime:0.003045s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT sum(order_money) as order_money, sum(refund_money) as refund_money, sum(shop_money) as shop_money, sum(platform_money) as platform_money, sum(refund_shop_money) as refund_shop_money, sum(refund_platform_money) as refund_platform_money, sum(commission) as commission, sum(platform_coupon_money) as platform_coupon_money, sum(refund_platform_coupon_money) as refund_platform_coupon_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 9  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1658937600 LIMIT 1 [ RunTime:0.000387s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT sum(hospital_money) as hospital_money,sum(refund_hospital_money) as refund_hospital_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `hospital_id` = 9  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1658937600 LIMIT 1 [ RunTime:0.000301s ]
+[2022-07-28T01:14:28+08:00][sql] INSERT INTO `gxfc_shop_settlement` SET `order_money` = 0 , `refund_money` = 0 , `shop_money` = 0 , `platform_money` = 0 , `refund_shop_money` = 0 , `refund_platform_money` = 0 , `commission` = 0 , `platform_coupon_money` = 0 , `refund_platform_coupon_money` = 0 , `settlement_no` = '20220728011497806' , `site_id` = 9 , `site_name` = '小谷粒旗舰店' , `period_id` = 126 , `period_start_time` = 1658851200 , `period_end_time` = 1658937600 , `website_commission` = 0 [ RunTime:0.003206s ]
+[2022-07-28T01:14:28+08:00][sql] UPDATE `gxfc_order`  SET `is_settlement` = 1 , `settlement_id` = 441  WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 9  AND `finish_time` <= 1658937600 [ RunTime:0.001470s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT `account` FROM `gxfc_shop` WHERE  `site_id` = 9 LIMIT 1 [ RunTime:0.000152s ]
+[2022-07-28T01:14:28+08:00][sql] INSERT INTO `gxfc_shop_account` SET `site_id` = 9 , `account_no` = '2022072801148954' , `account_type` = 'account' , `account_data` = 0 , `from_type` = 'order' , `type_name` = '店铺结算' , `relate_tag` = '441' , `create_time` = 1658942068 , `remark` = '店铺结算，账单编号20220728011497806' [ RunTime:0.003501s ]
+[2022-07-28T01:14:28+08:00][sql] UPDATE `gxfc_shop`  SET `account` = 4765.36  WHERE  `site_id` = 9 [ RunTime:0.004670s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT sum(order_money) as order_money, sum(refund_money) as refund_money, sum(shop_money) as shop_money, sum(platform_money) as platform_money, sum(refund_shop_money) as refund_shop_money, sum(refund_platform_money) as refund_platform_money, sum(commission) as commission, sum(platform_coupon_money) as platform_coupon_money, sum(refund_platform_coupon_money) as refund_platform_coupon_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 10  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1658937600 LIMIT 1 [ RunTime:0.000339s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT sum(hospital_money) as hospital_money,sum(refund_hospital_money) as refund_hospital_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `hospital_id` = 10  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1658937600 LIMIT 1 [ RunTime:0.000278s ]
+[2022-07-28T01:14:28+08:00][sql] INSERT INTO `gxfc_shop_settlement` SET `order_money` = 0 , `refund_money` = 0 , `shop_money` = 0 , `platform_money` = 0 , `refund_shop_money` = 0 , `refund_platform_money` = 0 , `commission` = 0 , `platform_coupon_money` = 0 , `refund_platform_coupon_money` = 0 , `settlement_no` = '202207280114108451' , `site_id` = 10 , `site_name` = '李婉晴' , `period_id` = 126 , `period_start_time` = 1658851200 , `period_end_time` = 1658937600 , `website_commission` = 0 [ RunTime:0.003174s ]
+[2022-07-28T01:14:28+08:00][sql] UPDATE `gxfc_order`  SET `is_settlement` = 1 , `settlement_id` = 442  WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 10  AND `finish_time` <= 1658937600 [ RunTime:0.001421s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT `account` FROM `gxfc_shop` WHERE  `site_id` = 10 LIMIT 1 [ RunTime:0.000162s ]
+[2022-07-28T01:14:28+08:00][sql] INSERT INTO `gxfc_shop_account` SET `site_id` = 10 , `account_no` = '2022072801148108' , `account_type` = 'account' , `account_data` = 0 , `from_type` = 'order' , `type_name` = '店铺结算' , `relate_tag` = '442' , `create_time` = 1658942068 , `remark` = '店铺结算，账单编号202207280114108451' [ RunTime:0.003017s ]
+[2022-07-28T01:14:28+08:00][sql] UPDATE `gxfc_shop`  SET `account` = 60.6  WHERE  `site_id` = 10 [ RunTime:0.002975s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT sum(order_money) as order_money, sum(refund_money) as refund_money, sum(shop_money) as shop_money, sum(platform_money) as platform_money, sum(refund_shop_money) as refund_shop_money, sum(refund_platform_money) as refund_platform_money, sum(commission) as commission, sum(platform_coupon_money) as platform_coupon_money, sum(refund_platform_coupon_money) as refund_platform_coupon_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 11  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1658937600 LIMIT 1 [ RunTime:0.000349s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT sum(hospital_money) as hospital_money,sum(refund_hospital_money) as refund_hospital_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `hospital_id` = 11  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1658937600 LIMIT 1 [ RunTime:0.000274s ]
+[2022-07-28T01:14:28+08:00][sql] INSERT INTO `gxfc_shop_settlement` SET `order_money` = 0 , `refund_money` = 0 , `shop_money` = 0 , `platform_money` = 0 , `refund_shop_money` = 0 , `refund_platform_money` = 0 , `commission` = 0 , `platform_coupon_money` = 0 , `refund_platform_coupon_money` = 0 , `settlement_no` = '202207280114114835' , `site_id` = 11 , `site_name` = '有点东西旗舰店' , `period_id` = 126 , `period_start_time` = 1658851200 , `period_end_time` = 1658937600 , `website_commission` = 0 [ RunTime:0.004060s ]
+[2022-07-28T01:14:28+08:00][sql] UPDATE `gxfc_order`  SET `is_settlement` = 1 , `settlement_id` = 443  WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 11  AND `finish_time` <= 1658937600 [ RunTime:0.001546s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT `account` FROM `gxfc_shop` WHERE  `site_id` = 11 LIMIT 1 [ RunTime:0.000150s ]
+[2022-07-28T01:14:28+08:00][sql] INSERT INTO `gxfc_shop_account` SET `site_id` = 11 , `account_no` = '2022072801143559' , `account_type` = 'account' , `account_data` = 0 , `from_type` = 'order' , `type_name` = '店铺结算' , `relate_tag` = '443' , `create_time` = 1658942068 , `remark` = '店铺结算，账单编号202207280114114835' [ RunTime:0.002635s ]
+[2022-07-28T01:14:28+08:00][sql] UPDATE `gxfc_shop`  SET `account` = 4383.04  WHERE  `site_id` = 11 [ RunTime:0.002751s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT sum(order_money) as order_money, sum(refund_money) as refund_money, sum(shop_money) as shop_money, sum(platform_money) as platform_money, sum(refund_shop_money) as refund_shop_money, sum(refund_platform_money) as refund_platform_money, sum(commission) as commission, sum(platform_coupon_money) as platform_coupon_money, sum(refund_platform_coupon_money) as refund_platform_coupon_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 14  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1658937600 LIMIT 1 [ RunTime:0.000390s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT sum(hospital_money) as hospital_money,sum(refund_hospital_money) as refund_hospital_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `hospital_id` = 14  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1658937600 LIMIT 1 [ RunTime:0.000278s ]
+[2022-07-28T01:14:28+08:00][sql] INSERT INTO `gxfc_shop_settlement` SET `order_money` = 0 , `refund_money` = 0 , `shop_money` = 0 , `platform_money` = 0 , `refund_shop_money` = 0 , `refund_platform_money` = 0 , `commission` = 0 , `platform_coupon_money` = 0 , `refund_platform_coupon_money` = 0 , `settlement_no` = '202207280114148918' , `site_id` = 14 , `site_name` = 'FD小谷粒' , `period_id` = 126 , `period_start_time` = 1658851200 , `period_end_time` = 1658937600 , `website_commission` = 0 [ RunTime:0.003254s ]
+[2022-07-28T01:14:28+08:00][sql] UPDATE `gxfc_order`  SET `is_settlement` = 1 , `settlement_id` = 444  WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 14  AND `finish_time` <= 1658937600 [ RunTime:0.001444s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT `account` FROM `gxfc_shop` WHERE  `site_id` = 14 LIMIT 1 [ RunTime:0.000152s ]
+[2022-07-28T01:14:28+08:00][sql] INSERT INTO `gxfc_shop_account` SET `site_id` = 14 , `account_no` = '2022072801144674' , `account_type` = 'account' , `account_data` = 0 , `from_type` = 'order' , `type_name` = '店铺结算' , `relate_tag` = '444' , `create_time` = 1658942068 , `remark` = '店铺结算，账单编号202207280114148918' [ RunTime:0.002598s ]
+[2022-07-28T01:14:28+08:00][sql] UPDATE `gxfc_shop`  SET `account` = 600  WHERE  `site_id` = 14 [ RunTime:0.002604s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT sum(order_money) as order_money, sum(refund_money) as refund_money, sum(shop_money) as shop_money, sum(platform_money) as platform_money, sum(refund_shop_money) as refund_shop_money, sum(refund_platform_money) as refund_platform_money, sum(commission) as commission, sum(platform_coupon_money) as platform_coupon_money, sum(refund_platform_coupon_money) as refund_platform_coupon_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 15  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1658937600 LIMIT 1 [ RunTime:0.000425s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT sum(hospital_money) as hospital_money,sum(refund_hospital_money) as refund_hospital_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `hospital_id` = 15  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1658937600 LIMIT 1 [ RunTime:0.000281s ]
+[2022-07-28T01:14:28+08:00][sql] INSERT INTO `gxfc_shop_settlement` SET `order_money` = 0 , `refund_money` = 0 , `shop_money` = 0 , `platform_money` = 0 , `refund_shop_money` = 0 , `refund_platform_money` = 0 , `commission` = 0 , `platform_coupon_money` = 0 , `refund_platform_coupon_money` = 0 , `settlement_no` = '202207280114154414' , `site_id` = 15 , `site_name` = '能卓百货经营部' , `period_id` = 126 , `period_start_time` = 1658851200 , `period_end_time` = 1658937600 , `website_commission` = 0 [ RunTime:0.003107s ]
+[2022-07-28T01:14:28+08:00][sql] UPDATE `gxfc_order`  SET `is_settlement` = 1 , `settlement_id` = 445  WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 15  AND `finish_time` <= 1658937600 [ RunTime:0.001442s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT `account` FROM `gxfc_shop` WHERE  `site_id` = 15 LIMIT 1 [ RunTime:0.000144s ]
+[2022-07-28T01:14:28+08:00][sql] INSERT INTO `gxfc_shop_account` SET `site_id` = 15 , `account_no` = '2022072801144575' , `account_type` = 'account' , `account_data` = 0 , `from_type` = 'order' , `type_name` = '店铺结算' , `relate_tag` = '445' , `create_time` = 1658942068 , `remark` = '店铺结算，账单编号202207280114154414' [ RunTime:0.002847s ]
+[2022-07-28T01:14:28+08:00][sql] UPDATE `gxfc_shop`  SET `account` = 0  WHERE  `site_id` = 15 [ RunTime:0.002982s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT sum(order_money) as order_money, sum(refund_money) as refund_money, sum(shop_money) as shop_money, sum(platform_money) as platform_money, sum(refund_shop_money) as refund_shop_money, sum(refund_platform_money) as refund_platform_money, sum(commission) as commission, sum(platform_coupon_money) as platform_coupon_money, sum(refund_platform_coupon_money) as refund_platform_coupon_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 16  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1658937600 LIMIT 1 [ RunTime:0.000345s ]
+[2022-07-28T01:14:28+08:00][sql] SELECT sum(hospital_money) as hospital_money,sum(refund_hospital_money) as refund_hospital_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `hospital_id` = 16  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1658937600 LIMIT 1 [ RunTime:0.000272s ]
+[2022-07-28T01:14:28+08:00][sql] INSERT INTO `gxfc_shop_settlement` SET `order_money` = 0 , `refund_money` = 0 , `shop_money` = 0 , `platform_money` = 0 , `refund_shop_money` = 0 , `refund_platform_money` = 0 , `commission` = 0 , `platform_coupon_money` = 0 , `refund_platform_coupon_money` = 0 , `settlement_no` = '202207280114165117' , `site_id` = 16 , `site_name` = '乐越百货' , `period_id` = 126 , `period_start_time` = 1658851200 , `period_end_time` = 1658937600 , `website_commission` = 0 [ RunTime:0.004777s ]
+[2022-07-28T01:14:29+08:00][sql] UPDATE `gxfc_order`  SET `is_settlement` = 1 , `settlement_id` = 446  WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 16  AND `finish_time` <= 1658937600 [ RunTime:0.002418s ]
+[2022-07-28T01:14:29+08:00][sql] SELECT `account` FROM `gxfc_shop` WHERE  `site_id` = 16 LIMIT 1 [ RunTime:0.000196s ]
+[2022-07-28T01:14:29+08:00][sql] INSERT INTO `gxfc_shop_account` SET `site_id` = 16 , `account_no` = '2022072801144382' , `account_type` = 'account' , `account_data` = 0 , `from_type` = 'order' , `type_name` = '店铺结算' , `relate_tag` = '446' , `create_time` = 1658942069 , `remark` = '店铺结算，账单编号202207280114165117' [ RunTime:0.002872s ]
+[2022-07-28T01:14:29+08:00][sql] UPDATE `gxfc_shop`  SET `account` = 0  WHERE  `site_id` = 16 [ RunTime:0.008794s ]
+[2022-07-28T01:14:29+08:00][sql] SELECT sum(order_money) as order_money, sum(refund_money) as refund_money, sum(shop_money) as shop_money, sum(platform_money) as platform_money, sum(refund_shop_money) as refund_shop_money, sum(refund_platform_money) as refund_platform_money, sum(commission) as commission, sum(platform_coupon_money) as platform_coupon_money, sum(refund_platform_coupon_money) as refund_platform_coupon_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 17  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1658937600 LIMIT 1 [ RunTime:0.000361s ]
+[2022-07-28T01:14:29+08:00][sql] SELECT sum(hospital_money) as hospital_money,sum(refund_hospital_money) as refund_hospital_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `hospital_id` = 17  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1658937600 LIMIT 1 [ RunTime:0.000270s ]
+[2022-07-28T01:14:29+08:00][sql] INSERT INTO `gxfc_shop_settlement` SET `order_money` = 0 , `refund_money` = 0 , `shop_money` = 0 , `platform_money` = 0 , `refund_shop_money` = 0 , `refund_platform_money` = 0 , `commission` = 0 , `platform_coupon_money` = 0 , `refund_platform_coupon_money` = 0 , `settlement_no` = '202207280114177349' , `site_id` = 17 , `site_name` = '呈卓百货' , `period_id` = 126 , `period_start_time` = 1658851200 , `period_end_time` = 1658937600 , `website_commission` = 0 [ RunTime:0.004516s ]
+[2022-07-28T01:14:29+08:00][sql] UPDATE `gxfc_order`  SET `is_settlement` = 1 , `settlement_id` = 447  WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 17  AND `finish_time` <= 1658937600 [ RunTime:0.001758s ]
+[2022-07-28T01:14:29+08:00][sql] SELECT `account` FROM `gxfc_shop` WHERE  `site_id` = 17 LIMIT 1 [ RunTime:0.000148s ]
+[2022-07-28T01:14:29+08:00][sql] INSERT INTO `gxfc_shop_account` SET `site_id` = 17 , `account_no` = '2022072801142015' , `account_type` = 'account' , `account_data` = 0 , `from_type` = 'order' , `type_name` = '店铺结算' , `relate_tag` = '447' , `create_time` = 1658942069 , `remark` = '店铺结算，账单编号202207280114177349' [ RunTime:0.002870s ]
+[2022-07-28T01:14:29+08:00][sql] UPDATE `gxfc_shop`  SET `account` = 0  WHERE  `site_id` = 17 [ RunTime:0.002582s ]
+[2022-07-28T01:14:29+08:00][sql] UPDATE `gxfc_shop_settlement_period`  SET `shop_num` = 10 , `order_money` = 0 , `refund_money` = 0 , `shop_money` = 0 , `platform_money` = 0 , `refund_shop_money` = 0 , `refund_platform_money` = 0 , `commission` = 0 , `website_commission` = 0 , `platform_coupon_money` = 0 , `refund_platform_coupon_money` = 0  WHERE  `period_id` = 126 [ RunTime:0.003358s ]
+[2022-07-28T01:14:29+08:00][sql] SELECT `account` FROM `gxfc_website` WHERE  `site_id` = 0 LIMIT 1 [ RunTime:0.000161s ]
+[2022-07-28T01:14:29+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_account` [ RunTime:0.000824s ]
+[2022-07-28T01:14:29+08:00][sql] INSERT INTO `gxfc_account` SET `account_no` = '2022072801144221' , `site_id` = 0 , `account_type` = 'account' , `account_data` = 0 , `from_type` = 'order' , `relate_tag` = '126' , `create_time` = 1658942069 , `remark` = '订单结算，账单编号:2022072801142423' [ RunTime:0.005152s ]
+[2022-07-28T01:14:29+08:00][sql] UPDATE `gxfc_website`  SET `account` = 1476.46  WHERE  `site_id` = 0 [ RunTime:0.002473s ]
+[2022-07-28T01:14:29+08:00][cron] event:data{"id":54,"type":2,"period":1,"period_type":1,"name":"\u5e97\u94fa\u5468\u671f\u7ed3\u7b97","event":"ShopWithdrawPeriodCalc","execute_time":1658937600,"relate_id":0,"create_time":1647495751}
+[2022-07-28T01:14:29+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1659024000  WHERE  `id` = 54 [ RunTime:0.003747s ]
+[2022-07-28T01:14:29+08:00][sql] SELECT `store_settlement_time` FROM `gxfc_shop` WHERE  `site_id` = 1 LIMIT 1 [ RunTime:0.000169s ]
+[2022-07-28T01:14:29+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_store` [ RunTime:0.000937s ]
+[2022-07-28T01:14:29+08:00][sql] SELECT `site_id`,`site_name`,`store_id`,`store_name` FROM `gxfc_store` WHERE  `site_id` = 1 [ RunTime:0.000208s ]
+[2022-07-28T01:14:29+08:00][sql] UPDATE `gxfc_shop`  SET `store_settlement_time` = 1658937600  WHERE  `site_id` = 1 [ RunTime:0.000169s ]
+[2022-07-28T01:14:29+08:00][cron] event:data{"id":68,"type":2,"period":1,"period_type":1,"name":"\u95e8\u5e97\u5468\u671f\u7ed3\u7b97","event":"StoreWithdrawPeriodCalc","execute_time":1658937600,"relate_id":1,"create_time":1647856701}
+[2022-07-28T01:14:29+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1659024000  WHERE  `id` = 68 [ RunTime:0.003340s ]
+[2022-07-28T01:14:29+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_supply_settlement_period` [ RunTime:0.000864s ]
+[2022-07-28T01:14:29+08:00][sql] SELECT `period_start_time`,`period_end_time` FROM `gxfc_supply_settlement_period` ORDER BY `period_id` DESC LIMIT 1 [ RunTime:0.000157s ]
+[2022-07-28T01:14:29+08:00][sql] INSERT INTO `gxfc_supply_settlement_period` SET `period_no` = '2022072801146864' , `create_time` = 1658942069 , `period_start_time` = 1658851200 , `period_end_time` = 1658937600 [ RunTime:0.003702s ]
+[2022-07-28T01:14:29+08:00][sql] SELECT `supplier_site_id`,`title`,`website_id` FROM `gxfc_supplier` WHERE  `status` = 1 [ RunTime:0.000174s ]
+[2022-07-28T01:14:29+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_supply_order` [ RunTime:0.001080s ]
+[2022-07-28T01:14:29+08:00][sql] SELECT sum(order_money) as order_money, sum(refund_money) as refund_money, sum(supply_money) as supply_money, sum(platform_money) as platform_money, sum(refund_supply_money) as refund_supply_money, sum(refund_platform_money) as refund_platform_money, sum(commission) as commission FROM `gxfc_supply_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 5  AND `finish_time` <= 1658937600 LIMIT 1 [ RunTime:0.000257s ]
+[2022-07-28T01:14:29+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_supply_settlement` [ RunTime:0.000953s ]
+[2022-07-28T01:14:29+08:00][sql] INSERT INTO `gxfc_supply_settlement` SET `order_money` = 0 , `refund_money` = 0 , `supply_money` = 0 , `platform_money` = 0 , `refund_supply_money` = 0 , `refund_platform_money` = 0 , `commission` = 0 , `settlement_no` = '20220728011456854' , `site_id` = 5 , `site_name` = '甘霖' , `period_id` = 120 , `period_start_time` = 1658851200 , `period_end_time` = 1658937600 , `website_commission` = 0 [ RunTime:0.003745s ]
+[2022-07-28T01:14:29+08:00][sql] UPDATE `gxfc_supply_order`  SET `is_settlement` = 1 , `settlement_id` = 120  WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 5  AND `finish_time` <= 1658937600 [ RunTime:0.000217s ]
+[2022-07-28T01:14:29+08:00][sql] SELECT `account` FROM `gxfc_supplier` WHERE  `supplier_site_id` = 5 LIMIT 1 [ RunTime:0.000177s ]
+[2022-07-28T01:14:29+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_supply_account` [ RunTime:0.000859s ]
+[2022-07-28T01:14:29+08:00][sql] INSERT INTO `gxfc_supply_account` SET `site_id` = 5 , `account_no` = '2022072801141687' , `account_type` = 'account' , `account_data` = 0 , `from_type` = 'order' , `type_name` = '供应商结算' , `relate_tag` = '120' , `create_time` = 1658942069 , `remark` = '供应商结算，账单编号20220728011456854' [ RunTime:0.004457s ]
+[2022-07-28T01:14:29+08:00][sql] UPDATE `gxfc_supplier`  SET `account` = 0  WHERE  `supplier_site_id` = 5 [ RunTime:0.003527s ]
+[2022-07-28T01:14:29+08:00][sql] UPDATE `gxfc_supply_settlement_period`  SET `supply_num` = 1 , `order_money` = 0 , `refund_money` = 0 , `supply_money` = 0 , `platform_money` = 0 , `refund_supply_money` = 0 , `refund_platform_money` = 0 , `commission` = 0 , `website_commission` = 0  WHERE  `period_id` = 120 [ RunTime:0.004058s ]
+[2022-07-28T01:14:29+08:00][sql] SELECT `account` FROM `gxfc_website` WHERE  `site_id` = 0 LIMIT 1 [ RunTime:0.000187s ]
+[2022-07-28T01:14:29+08:00][sql] INSERT INTO `gxfc_account` SET `account_no` = '2022072801149094' , `site_id` = 0 , `account_type` = 'account' , `account_data` = 0 , `from_type` = 'order' , `relate_tag` = '120' , `create_time` = 1658942069 , `remark` = '供应商订单结算，账单编号:2022072801146864' [ RunTime:0.005184s ]
+[2022-07-28T01:14:29+08:00][sql] UPDATE `gxfc_website`  SET `account` = 1476.46  WHERE  `site_id` = 0 [ RunTime:0.004778s ]
+[2022-07-28T01:14:29+08:00][cron] event:data{"id":76,"type":2,"period":1,"period_type":1,"name":"\u4f9b\u5e94\u5546\u5468\u671f\u7ed3\u7b97","event":"SupplyPeriodCalc","execute_time":1658937600,"relate_id":0,"create_time":1648609290}
+[2022-07-28T01:14:29+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1659024000  WHERE  `id` = 76 [ RunTime:0.003811s ]
+[2022-07-28T01:14:29+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.001054s ]
+[2022-07-28T01:14:29+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000337s ]
+[2022-07-28T01:14:29+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T02:42:26+08:00][info] 检测事件执行2022-07-28 02:42:26
+[2022-07-28T02:42:26+08:00][sql] CONNECT:[ UseTime:0.000301s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T02:42:26+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000945s ]
+[2022-07-28T02:42:26+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658947346 [ RunTime:0.000241s ]
+[2022-07-28T02:42:26+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_coupon` [ RunTime:0.000877s ]
+[2022-07-28T02:42:26+08:00][sql] UPDATE `gxfc_promotion_coupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1658947346 [ RunTime:0.000280s ]
+[2022-07-28T02:42:26+08:00][cron] event:data{"id":2,"type":2,"period":1,"period_type":0,"name":"\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronCouponEnd","execute_time":1658909404,"relate_id":0,"create_time":1646988964}
+[2022-07-28T02:42:26+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658909464  WHERE  `id` = 2 [ RunTime:0.005107s ]
+[2022-07-28T02:42:26+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_platformcoupon` [ RunTime:0.000810s ]
+[2022-07-28T02:42:26+08:00][sql] UPDATE `gxfc_promotion_platformcoupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1658947346 [ RunTime:0.000200s ]
+[2022-07-28T02:42:26+08:00][cron] event:data{"id":5,"type":2,"period":1,"period_type":0,"name":"\u5e73\u53f0\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronPlatformcouponEnd","execute_time":1658909404,"relate_id":0,"create_time":1646988964}
+[2022-07-28T02:42:26+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658909464  WHERE  `id` = 5 [ RunTime:0.003858s ]
+[2022-07-28T02:42:26+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_cluster` [ RunTime:0.000753s ]
+[2022-07-28T02:42:26+08:00][sql] SELECT `rule_json`,`cluster_id` FROM `gxfc_member_cluster` [ RunTime:0.000158s ]
+[2022-07-28T02:42:26+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000938s ]
+[2022-07-28T02:42:26+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000194s ]
+[2022-07-28T02:42:26+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000174s ]
+[2022-07-28T02:42:26+08:00][sql] UPDATE `gxfc_member_cluster`  SET `member_num` = 11 , `member_ids` = '1,2,3,4,5,6,8,9,10,11,30' , `update_time` = 1658947346  WHERE  `cluster_id` = 1 [ RunTime:0.004998s ]
+[2022-07-28T02:42:26+08:00][cron] event:data{"id":10,"type":2,"period":1,"period_type":0,"name":"\u4f1a\u5458\u7fa4\u4f53\u5b9a\u65f6\u5237\u65b0","event":"CronMemberClusterRefresh","execute_time":1658909405,"relate_id":0,"create_time":1646988965}
+[2022-07-28T02:42:26+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658909465  WHERE  `id` = 10 [ RunTime:0.006005s ]
+[2022-07-28T02:42:26+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000979s ]
+[2022-07-28T02:42:26+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000337s ]
+[2022-07-28T02:42:26+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T05:01:04+08:00][info] 检测事件执行2022-07-28 05:01:04
+[2022-07-28T05:01:04+08:00][sql] CONNECT:[ UseTime:0.000217s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T05:01:04+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000938s ]
+[2022-07-28T05:01:04+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658955664 [ RunTime:0.000273s ]
+[2022-07-28T05:01:04+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_coupon` [ RunTime:0.000857s ]
+[2022-07-28T05:01:04+08:00][sql] UPDATE `gxfc_promotion_coupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1658955664 [ RunTime:0.000350s ]
+[2022-07-28T05:01:04+08:00][cron] event:data{"id":2,"type":2,"period":1,"period_type":0,"name":"\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronCouponEnd","execute_time":1658909464,"relate_id":0,"create_time":1646988964}
+[2022-07-28T05:01:04+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658909524  WHERE  `id` = 2 [ RunTime:0.009065s ]
+[2022-07-28T05:01:04+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_platformcoupon` [ RunTime:0.000821s ]
+[2022-07-28T05:01:04+08:00][sql] UPDATE `gxfc_promotion_platformcoupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1658955664 [ RunTime:0.000243s ]
+[2022-07-28T05:01:04+08:00][cron] event:data{"id":5,"type":2,"period":1,"period_type":0,"name":"\u5e73\u53f0\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronPlatformcouponEnd","execute_time":1658909464,"relate_id":0,"create_time":1646988964}
+[2022-07-28T05:01:04+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658909524  WHERE  `id` = 5 [ RunTime:0.003662s ]
+[2022-07-28T05:01:04+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_cluster` [ RunTime:0.000786s ]
+[2022-07-28T05:01:04+08:00][sql] SELECT `rule_json`,`cluster_id` FROM `gxfc_member_cluster` [ RunTime:0.000149s ]
+[2022-07-28T05:01:04+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000926s ]
+[2022-07-28T05:01:04+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000173s ]
+[2022-07-28T05:01:04+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000152s ]
+[2022-07-28T05:01:04+08:00][sql] UPDATE `gxfc_member_cluster`  SET `member_num` = 11 , `member_ids` = '1,2,3,4,5,6,8,9,10,11,30' , `update_time` = 1658955664  WHERE  `cluster_id` = 1 [ RunTime:0.010224s ]
+[2022-07-28T05:01:04+08:00][cron] event:data{"id":10,"type":2,"period":1,"period_type":0,"name":"\u4f1a\u5458\u7fa4\u4f53\u5b9a\u65f6\u5237\u65b0","event":"CronMemberClusterRefresh","execute_time":1658909465,"relate_id":0,"create_time":1646988965}
+[2022-07-28T05:01:04+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658909525  WHERE  `id` = 10 [ RunTime:0.003746s ]
+[2022-07-28T05:01:04+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000994s ]
+[2022-07-28T05:01:04+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000354s ]
+[2022-07-28T05:01:04+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T05:07:01+08:00][info] 检测事件执行2022-07-28 05:07:01
+[2022-07-28T05:07:01+08:00][sql] CONNECT:[ UseTime:0.000222s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T05:07:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000881s ]
+[2022-07-28T05:07:01+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658956021 [ RunTime:0.000309s ]
+[2022-07-28T05:07:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_coupon` [ RunTime:0.000839s ]
+[2022-07-28T05:07:01+08:00][sql] UPDATE `gxfc_promotion_coupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1658956021 [ RunTime:0.000286s ]
+[2022-07-28T05:07:01+08:00][cron] event:data{"id":2,"type":2,"period":1,"period_type":0,"name":"\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronCouponEnd","execute_time":1658909524,"relate_id":0,"create_time":1646988964}
+[2022-07-28T05:07:01+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658909584  WHERE  `id` = 2 [ RunTime:0.003624s ]
+[2022-07-28T05:07:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_platformcoupon` [ RunTime:0.000758s ]
+[2022-07-28T05:07:01+08:00][sql] UPDATE `gxfc_promotion_platformcoupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1658956021 [ RunTime:0.000200s ]
+[2022-07-28T05:07:01+08:00][cron] event:data{"id":5,"type":2,"period":1,"period_type":0,"name":"\u5e73\u53f0\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronPlatformcouponEnd","execute_time":1658909524,"relate_id":0,"create_time":1646988964}
+[2022-07-28T05:07:01+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658909584  WHERE  `id` = 5 [ RunTime:0.003231s ]
+[2022-07-28T05:07:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_cluster` [ RunTime:0.000704s ]
+[2022-07-28T05:07:01+08:00][sql] SELECT `rule_json`,`cluster_id` FROM `gxfc_member_cluster` [ RunTime:0.000156s ]
+[2022-07-28T05:07:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000909s ]
+[2022-07-28T05:07:01+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000193s ]
+[2022-07-28T05:07:01+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000174s ]
+[2022-07-28T05:07:01+08:00][sql] UPDATE `gxfc_member_cluster`  SET `member_num` = 11 , `member_ids` = '1,2,3,4,5,6,8,9,10,11,30' , `update_time` = 1658956021  WHERE  `cluster_id` = 1 [ RunTime:0.003455s ]
+[2022-07-28T05:07:01+08:00][cron] event:data{"id":10,"type":2,"period":1,"period_type":0,"name":"\u4f1a\u5458\u7fa4\u4f53\u5b9a\u65f6\u5237\u65b0","event":"CronMemberClusterRefresh","execute_time":1658909525,"relate_id":0,"create_time":1646988965}
+[2022-07-28T05:07:01+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658909585  WHERE  `id` = 10 [ RunTime:0.002874s ]
+[2022-07-28T05:07:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000911s ]
+[2022-07-28T05:07:01+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000322s ]
+[2022-07-28T05:07:01+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T05:10:06+08:00][info] 检测事件执行2022-07-28 05:10:06
+[2022-07-28T05:10:06+08:00][sql] CONNECT:[ UseTime:0.000268s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T05:10:06+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000816s ]
+[2022-07-28T05:10:06+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658956206 [ RunTime:0.000274s ]
+[2022-07-28T05:10:06+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000910s ]
+[2022-07-28T05:10:06+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000395s ]
+[2022-07-28T05:10:06+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T08:33:22+08:00][info] 检测事件执行2022-07-28 08:33:22
+[2022-07-28T08:33:22+08:00][info] 检测事件执行2022-07-28 08:33:22
+[2022-07-28T08:33:22+08:00][info] 防止多次执行
+[2022-07-28T08:33:22+08:00][info] 检测事件执行2022-07-28 08:33:22
+[2022-07-28T08:33:22+08:00][info] 防止多次执行
+[2022-07-28T08:33:22+08:00][sql] CONNECT:[ UseTime:0.000214s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T08:33:22+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.001077s ]
+[2022-07-28T08:33:22+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658968402 [ RunTime:0.000360s ]
+[2022-07-28T08:33:22+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.001107s ]
+[2022-07-28T08:33:22+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000528s ]
+[2022-07-28T08:33:22+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T08:33:22+08:00][info] 检测事件执行2022-07-28 08:33:22
+[2022-07-28T08:33:22+08:00][info] 防止多次执行
+[2022-07-28T08:33:22+08:00][info] 检测事件执行2022-07-28 08:33:22
+[2022-07-28T08:33:22+08:00][info] 防止多次执行
+[2022-07-28T08:33:22+08:00][info] 检测事件执行2022-07-28 08:33:22
+[2022-07-28T08:33:22+08:00][info] 防止多次执行
+[2022-07-28T08:35:19+08:00][info] 检测事件执行2022-07-28 08:35:19
+[2022-07-28T08:35:19+08:00][info] 检测事件执行2022-07-28 08:35:19
+[2022-07-28T08:35:19+08:00][info] 防止多次执行
+[2022-07-28T08:35:19+08:00][info] 检测事件执行2022-07-28 08:35:19
+[2022-07-28T08:35:19+08:00][info] 防止多次执行
+[2022-07-28T08:35:19+08:00][sql] CONNECT:[ UseTime:0.000265s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T08:35:19+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.001317s ]
+[2022-07-28T08:35:19+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658968519 [ RunTime:0.002934s ]
+[2022-07-28T08:35:19+08:00][info] 检测事件执行2022-07-28 08:35:19
+[2022-07-28T08:35:19+08:00][info] 防止多次执行
+[2022-07-28T08:35:19+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.001285s ]
+[2022-07-28T08:35:19+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000634s ]
+[2022-07-28T08:35:19+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T08:35:19+08:00][info] 检测事件执行2022-07-28 08:35:19
+[2022-07-28T08:35:19+08:00][info] 防止多次执行
+[2022-07-28T08:37:25+08:00][info] 检测事件执行2022-07-28 08:37:25
+[2022-07-28T08:37:25+08:00][sql] CONNECT:[ UseTime:0.000249s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T08:37:25+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000921s ]
+[2022-07-28T08:37:25+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658968645 [ RunTime:0.000232s ]
+[2022-07-28T08:37:25+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000908s ]
+[2022-07-28T08:37:25+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000352s ]
+[2022-07-28T08:37:25+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T08:42:12+08:00][info] 检测事件执行2022-07-28 08:42:12
+[2022-07-28T08:42:12+08:00][sql] CONNECT:[ UseTime:0.000262s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T08:42:12+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000938s ]
+[2022-07-28T08:42:12+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658968932 [ RunTime:0.000281s ]
+[2022-07-28T08:42:12+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000942s ]
+[2022-07-28T08:42:12+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000394s ]
+[2022-07-28T08:42:12+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T08:44:28+08:00][info] 检测事件执行2022-07-28 08:44:28
+[2022-07-28T08:44:28+08:00][sql] CONNECT:[ UseTime:0.000252s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T08:44:28+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000831s ]
+[2022-07-28T08:44:28+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658969068 [ RunTime:0.000297s ]
+[2022-07-28T08:44:28+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000955s ]
+[2022-07-28T08:44:28+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000410s ]
+[2022-07-28T08:44:28+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T09:09:02+08:00][info] 检测事件执行2022-07-28 09:09:02
+[2022-07-28T09:09:02+08:00][sql] CONNECT:[ UseTime:0.000539s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T09:09:02+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000879s ]
+[2022-07-28T09:09:02+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658970542 [ RunTime:0.000302s ]
+[2022-07-28T09:09:02+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.001023s ]
+[2022-07-28T09:09:02+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000386s ]
+[2022-07-28T09:09:02+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T09:16:21+08:00][info] 检测事件执行2022-07-28 09:16:21
+[2022-07-28T09:16:21+08:00][sql] CONNECT:[ UseTime:0.000221s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T09:16:21+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000938s ]
+[2022-07-28T09:16:21+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658970981 [ RunTime:0.000259s ]
+[2022-07-28T09:16:21+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000928s ]
+[2022-07-28T09:16:21+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000383s ]
+[2022-07-28T09:16:21+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T09:27:44+08:00][info] 检测事件执行2022-07-28 09:27:44
+[2022-07-28T09:27:44+08:00][sql] CONNECT:[ UseTime:0.000258s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T09:27:44+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000810s ]
+[2022-07-28T09:27:44+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658971664 [ RunTime:0.000264s ]
+[2022-07-28T09:27:44+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000954s ]
+[2022-07-28T09:27:44+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000402s ]
+[2022-07-28T09:27:44+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T09:33:59+08:00][info] 检测事件执行2022-07-28 09:33:59
+[2022-07-28T09:33:59+08:00][sql] CONNECT:[ UseTime:0.000234s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T09:33:59+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000914s ]
+[2022-07-28T09:33:59+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658972039 [ RunTime:0.000295s ]
+[2022-07-28T09:33:59+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000936s ]
+[2022-07-28T09:33:59+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000415s ]
+[2022-07-28T09:33:59+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T09:36:33+08:00][info] 检测事件执行2022-07-28 09:36:33
+[2022-07-28T09:36:33+08:00][sql] CONNECT:[ UseTime:0.000223s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T09:36:33+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000989s ]
+[2022-07-28T09:36:33+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658972193 [ RunTime:0.000254s ]
+[2022-07-28T09:36:33+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000944s ]
+[2022-07-28T09:36:33+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000377s ]
+[2022-07-28T09:36:33+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T09:44:01+08:00][info] 检测事件执行2022-07-28 09:44:01
+[2022-07-28T09:44:01+08:00][sql] CONNECT:[ UseTime:0.000283s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T09:44:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.002176s ]
+[2022-07-28T09:44:01+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658972641 [ RunTime:0.000341s ]
+[2022-07-28T09:44:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.001140s ]
+[2022-07-28T09:44:01+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000445s ]
+[2022-07-28T09:44:01+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T09:47:22+08:00][info] 检测事件执行2022-07-28 09:47:22
+[2022-07-28T09:47:22+08:00][info] 检测事件执行2022-07-28 09:47:22
+[2022-07-28T09:47:22+08:00][info] 防止多次执行
+[2022-07-28T09:47:22+08:00][sql] CONNECT:[ UseTime:0.000393s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T09:47:22+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.001286s ]
+[2022-07-28T09:47:22+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658972842 [ RunTime:0.001635s ]
+[2022-07-28T09:47:22+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.001394s ]
+[2022-07-28T09:47:22+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000566s ]
+[2022-07-28T09:47:22+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T09:47:22+08:00][info] 检测事件执行2022-07-28 09:47:22
+[2022-07-28T09:47:22+08:00][info] 防止多次执行
+[2022-07-28T09:47:22+08:00][info] 检测事件执行2022-07-28 09:47:22
+[2022-07-28T09:47:22+08:00][info] 防止多次执行
+[2022-07-28T09:47:22+08:00][info] 检测事件执行2022-07-28 09:47:22
+[2022-07-28T09:47:22+08:00][info] 防止多次执行
+[2022-07-28T09:47:22+08:00][info] 检测事件执行2022-07-28 09:47:22
+[2022-07-28T09:47:22+08:00][info] 防止多次执行
+[2022-07-28T10:00:40+08:00][info] 检测事件执行2022-07-28 10:00:40
+[2022-07-28T10:00:40+08:00][sql] CONNECT:[ UseTime:0.000234s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T10:00:40+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.001569s ]
+[2022-07-28T10:00:40+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658973640 [ RunTime:0.000436s ]
+[2022-07-28T10:00:40+08:00][info] 检测事件执行2022-07-28 10:00:40
+[2022-07-28T10:00:40+08:00][info] 防止多次执行
+[2022-07-28T10:00:40+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.001577s ]
+[2022-07-28T10:00:40+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000565s ]
+[2022-07-28T10:00:40+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T10:00:40+08:00][info] 检测事件执行2022-07-28 10:00:40
+[2022-07-28T10:00:40+08:00][info] 防止多次执行
+[2022-07-28T10:00:40+08:00][info] 检测事件执行2022-07-28 10:00:40
+[2022-07-28T10:00:40+08:00][info] 防止多次执行
+[2022-07-28T10:00:40+08:00][info] 检测事件执行2022-07-28 10:00:40
+[2022-07-28T10:00:40+08:00][info] 防止多次执行
+[2022-07-28T10:00:40+08:00][info] 检测事件执行2022-07-28 10:00:40
+[2022-07-28T10:00:40+08:00][info] 防止多次执行
+[2022-07-28T14:56:32+08:00][info] 检测事件执行2022-07-28 14:56:32
+[2022-07-28T14:56:32+08:00][info] 检测事件执行2022-07-28 14:56:32
+[2022-07-28T14:56:32+08:00][info] 防止多次执行
+[2022-07-28T14:56:32+08:00][sql] CONNECT:[ UseTime:0.000264s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T14:56:32+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000970s ]
+[2022-07-28T14:56:32+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658991392 [ RunTime:0.000393s ]
+[2022-07-28T14:56:32+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.001422s ]
+[2022-07-28T14:56:32+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000973s ]
+[2022-07-28T14:56:32+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T14:56:32+08:00][info] 检测事件执行2022-07-28 14:56:32
+[2022-07-28T14:56:32+08:00][info] 防止多次执行
+[2022-07-28T14:56:32+08:00][info] 检测事件执行2022-07-28 14:56:32
+[2022-07-28T14:56:32+08:00][info] 防止多次执行
+[2022-07-28T15:11:01+08:00][info] 检测事件执行2022-07-28 15:11:01
+[2022-07-28T15:11:01+08:00][sql] CONNECT:[ UseTime:0.000278s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T15:11:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.001165s ]
+[2022-07-28T15:11:01+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658992261 [ RunTime:0.000418s ]
+[2022-07-28T15:11:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.001346s ]
+[2022-07-28T15:11:01+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000521s ]
+[2022-07-28T15:11:01+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T15:13:23+08:00][info] 检测事件执行2022-07-28 15:13:23
+[2022-07-28T15:13:23+08:00][sql] CONNECT:[ UseTime:0.000256s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T15:13:23+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000852s ]
+[2022-07-28T15:13:23+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658992403 [ RunTime:0.000284s ]
+[2022-07-28T15:13:23+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000942s ]
+[2022-07-28T15:13:23+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000414s ]
+[2022-07-28T15:13:23+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T15:15:53+08:00][info] 检测事件执行2022-07-28 15:15:53
+[2022-07-28T15:15:53+08:00][sql] CONNECT:[ UseTime:0.000231s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T15:15:53+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000963s ]
+[2022-07-28T15:15:53+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658992553 [ RunTime:0.000349s ]
+[2022-07-28T15:15:53+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000949s ]
+[2022-07-28T15:15:53+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000425s ]
+[2022-07-28T15:15:53+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T15:16:09+08:00][info] 检测事件执行2022-07-28 15:16:09
+[2022-07-28T15:16:09+08:00][sql] CONNECT:[ UseTime:0.000256s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T15:16:09+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000922s ]
+[2022-07-28T15:16:09+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658992569 [ RunTime:0.000243s ]
+[2022-07-28T15:16:09+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000864s ]
+[2022-07-28T15:16:09+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000428s ]
+[2022-07-28T15:16:09+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T15:18:24+08:00][info] 检测事件执行2022-07-28 15:18:24
+[2022-07-28T15:18:24+08:00][sql] CONNECT:[ UseTime:0.000257s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T15:18:24+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000984s ]
+[2022-07-28T15:18:24+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658992704 [ RunTime:0.000296s ]
+[2022-07-28T15:18:24+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000991s ]
+[2022-07-28T15:18:24+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000467s ]
+[2022-07-28T15:18:24+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T15:20:56+08:00][info] 检测事件执行2022-07-28 15:20:56
+[2022-07-28T15:20:56+08:00][sql] CONNECT:[ UseTime:0.000254s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T15:20:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000898s ]
+[2022-07-28T15:20:56+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658992856 [ RunTime:0.000268s ]
+[2022-07-28T15:20:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000961s ]
+[2022-07-28T15:20:56+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000372s ]
+[2022-07-28T15:20:56+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T15:23:19+08:00][info] 检测事件执行2022-07-28 15:23:19
+[2022-07-28T15:23:19+08:00][sql] CONNECT:[ UseTime:0.000247s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T15:23:19+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000880s ]
+[2022-07-28T15:23:19+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658992999 [ RunTime:0.000245s ]
+[2022-07-28T15:23:19+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000907s ]
+[2022-07-28T15:23:19+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000399s ]
+[2022-07-28T15:23:19+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T15:26:17+08:00][info] 检测事件执行2022-07-28 15:26:17
+[2022-07-28T15:26:17+08:00][sql] CONNECT:[ UseTime:0.000221s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T15:26:17+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000961s ]
+[2022-07-28T15:26:17+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658993177 [ RunTime:0.000299s ]
+[2022-07-28T15:26:17+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000931s ]
+[2022-07-28T15:26:17+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000355s ]
+[2022-07-28T15:26:17+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T15:43:10+08:00][info] 检测事件执行2022-07-28 15:43:10
+[2022-07-28T15:43:10+08:00][sql] CONNECT:[ UseTime:0.000246s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T15:43:10+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.001077s ]
+[2022-07-28T15:43:10+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658994190 [ RunTime:0.000274s ]
+[2022-07-28T15:43:10+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000956s ]
+[2022-07-28T15:43:10+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000373s ]
+[2022-07-28T15:43:10+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T15:57:50+08:00][info] 检测事件执行2022-07-28 15:57:50
+[2022-07-28T15:57:50+08:00][sql] CONNECT:[ UseTime:0.000230s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T15:57:50+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000888s ]
+[2022-07-28T15:57:50+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658995070 [ RunTime:0.000285s ]
+[2022-07-28T15:57:50+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000895s ]
+[2022-07-28T15:57:50+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000353s ]
+[2022-07-28T15:57:50+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T16:02:46+08:00][info] 检测事件执行2022-07-28 16:02:46
+[2022-07-28T16:02:46+08:00][sql] CONNECT:[ UseTime:0.000258s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T16:02:46+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000863s ]
+[2022-07-28T16:02:46+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658995366 [ RunTime:0.000233s ]
+[2022-07-28T16:02:46+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000926s ]
+[2022-07-28T16:02:46+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000393s ]
+[2022-07-28T16:02:46+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T16:06:39+08:00][info] 检测事件执行2022-07-28 16:06:39
+[2022-07-28T16:06:39+08:00][sql] CONNECT:[ UseTime:0.000265s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T16:06:39+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000837s ]
+[2022-07-28T16:06:39+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658995599 [ RunTime:0.000437s ]
+[2022-07-28T16:06:39+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000980s ]
+[2022-07-28T16:06:39+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000862s ]
+[2022-07-28T16:06:39+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T16:08:22+08:00][info] 检测事件执行2022-07-28 16:08:22
+[2022-07-28T16:08:22+08:00][sql] CONNECT:[ UseTime:0.000259s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T16:08:22+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000838s ]
+[2022-07-28T16:08:22+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658995702 [ RunTime:0.000232s ]
+[2022-07-28T16:08:22+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000891s ]
+[2022-07-28T16:08:22+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000356s ]
+[2022-07-28T16:08:22+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T16:10:03+08:00][info] 检测事件执行2022-07-28 16:10:03
+[2022-07-28T16:10:03+08:00][info] 检测事件执行2022-07-28 16:10:03
+[2022-07-28T16:10:03+08:00][info] 防止多次执行
+[2022-07-28T16:10:03+08:00][sql] CONNECT:[ UseTime:0.000290s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T16:10:03+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000885s ]
+[2022-07-28T16:10:03+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658995803 [ RunTime:0.000291s ]
+[2022-07-28T16:10:03+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.001085s ]
+[2022-07-28T16:10:03+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000489s ]
+[2022-07-28T16:10:03+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T16:12:14+08:00][info] 检测事件执行2022-07-28 16:12:14
+[2022-07-28T16:12:14+08:00][sql] CONNECT:[ UseTime:0.000248s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T16:12:14+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000957s ]
+[2022-07-28T16:12:14+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658995934 [ RunTime:0.000252s ]
+[2022-07-28T16:12:14+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.001009s ]
+[2022-07-28T16:12:14+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000383s ]
+[2022-07-28T16:12:14+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T16:14:20+08:00][info] 检测事件执行2022-07-28 16:14:20
+[2022-07-28T16:14:20+08:00][sql] CONNECT:[ UseTime:0.000238s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T16:14:20+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000826s ]
+[2022-07-28T16:14:20+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658996060 [ RunTime:0.000257s ]
+[2022-07-28T16:14:20+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000919s ]
+[2022-07-28T16:14:20+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000393s ]
+[2022-07-28T16:14:20+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T16:16:02+08:00][info] 检测事件执行2022-07-28 16:16:02
+[2022-07-28T16:16:02+08:00][sql] CONNECT:[ UseTime:0.000263s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T16:16:02+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000824s ]
+[2022-07-28T16:16:02+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658996162 [ RunTime:0.000265s ]
+[2022-07-28T16:16:02+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000917s ]
+[2022-07-28T16:16:02+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000403s ]
+[2022-07-28T16:16:02+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T16:18:18+08:00][info] 检测事件执行2022-07-28 16:18:18
+[2022-07-28T16:18:18+08:00][sql] CONNECT:[ UseTime:0.000245s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T16:18:18+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000860s ]
+[2022-07-28T16:18:18+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658996298 [ RunTime:0.000251s ]
+[2022-07-28T16:18:18+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000964s ]
+[2022-07-28T16:18:18+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000437s ]
+[2022-07-28T16:18:18+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T16:20:08+08:00][info] 检测事件执行2022-07-28 16:20:08
+[2022-07-28T16:20:08+08:00][sql] CONNECT:[ UseTime:0.000235s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T16:20:08+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000811s ]
+[2022-07-28T16:20:08+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658996408 [ RunTime:0.000274s ]
+[2022-07-28T16:20:08+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000885s ]
+[2022-07-28T16:20:08+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000418s ]
+[2022-07-28T16:20:08+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T16:21:49+08:00][info] 检测事件执行2022-07-28 16:21:49
+[2022-07-28T16:21:49+08:00][sql] CONNECT:[ UseTime:0.000223s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T16:21:49+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.001031s ]
+[2022-07-28T16:21:49+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658996509 [ RunTime:0.000409s ]
+[2022-07-28T16:21:49+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.001797s ]
+[2022-07-28T16:21:49+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000524s ]
+[2022-07-28T16:21:49+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T16:21:49+08:00][info] 检测事件执行2022-07-28 16:21:49
+[2022-07-28T16:21:49+08:00][info] 防止多次执行
+[2022-07-28T16:21:49+08:00][info] 检测事件执行2022-07-28 16:21:49
+[2022-07-28T16:21:49+08:00][info] 防止多次执行
+[2022-07-28T16:21:49+08:00][info] 检测事件执行2022-07-28 16:21:49
+[2022-07-28T16:21:49+08:00][info] 防止多次执行
+[2022-07-28T16:21:49+08:00][info] 检测事件执行2022-07-28 16:21:49
+[2022-07-28T16:21:49+08:00][info] 防止多次执行
+[2022-07-28T16:38:13+08:00][info] 检测事件执行2022-07-28 16:38:13
+[2022-07-28T16:38:13+08:00][info] 检测事件执行2022-07-28 16:38:13
+[2022-07-28T16:38:13+08:00][info] 防止多次执行
+[2022-07-28T16:38:13+08:00][sql] CONNECT:[ UseTime:0.000249s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T16:38:13+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.001385s ]
+[2022-07-28T16:38:13+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658997493 [ RunTime:0.000417s ]
+[2022-07-28T16:38:13+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.001489s ]
+[2022-07-28T16:38:13+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000606s ]
+[2022-07-28T16:38:13+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T16:38:13+08:00][info] 检测事件执行2022-07-28 16:38:13
+[2022-07-28T16:38:13+08:00][info] 防止多次执行
+[2022-07-28T16:38:13+08:00][info] 检测事件执行2022-07-28 16:38:13
+[2022-07-28T16:38:13+08:00][info] 防止多次执行
+[2022-07-28T16:38:13+08:00][info] 检测事件执行2022-07-28 16:38:13
+[2022-07-28T16:38:13+08:00][info] 防止多次执行
+[2022-07-28T16:40:47+08:00][info] 检测事件执行2022-07-28 16:40:47
+[2022-07-28T16:40:47+08:00][sql] CONNECT:[ UseTime:0.000229s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T16:40:47+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000882s ]
+[2022-07-28T16:40:47+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658997647 [ RunTime:0.000256s ]
+[2022-07-28T16:40:47+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000958s ]
+[2022-07-28T16:40:47+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000379s ]
+[2022-07-28T16:40:47+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T16:45:03+08:00][info] 检测事件执行2022-07-28 16:45:03
+[2022-07-28T16:45:03+08:00][sql] CONNECT:[ UseTime:0.000226s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T16:45:03+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000913s ]
+[2022-07-28T16:45:03+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658997903 [ RunTime:0.000259s ]
+[2022-07-28T16:45:03+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000917s ]
+[2022-07-28T16:45:03+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000375s ]
+[2022-07-28T16:45:03+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T16:47:47+08:00][info] 检测事件执行2022-07-28 16:47:47
+[2022-07-28T16:47:47+08:00][sql] CONNECT:[ UseTime:0.000245s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T16:47:47+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000802s ]
+[2022-07-28T16:47:47+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658998067 [ RunTime:0.000273s ]
+[2022-07-28T16:47:47+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000887s ]
+[2022-07-28T16:47:47+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000421s ]
+[2022-07-28T16:47:47+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T16:50:02+08:00][info] 检测事件执行2022-07-28 16:50:02
+[2022-07-28T16:50:02+08:00][sql] CONNECT:[ UseTime:0.000251s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T16:50:02+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000908s ]
+[2022-07-28T16:50:02+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658998202 [ RunTime:0.000234s ]
+[2022-07-28T16:50:02+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.001068s ]
+[2022-07-28T16:50:02+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000360s ]
+[2022-07-28T16:50:02+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T16:54:31+08:00][info] 检测事件执行2022-07-28 16:54:31
+[2022-07-28T16:54:31+08:00][sql] CONNECT:[ UseTime:0.000253s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T16:54:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000862s ]
+[2022-07-28T16:54:31+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658998471 [ RunTime:0.000229s ]
+[2022-07-28T16:54:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000899s ]
+[2022-07-28T16:54:31+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000383s ]
+[2022-07-28T16:54:31+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T17:07:46+08:00][info] 检测事件执行2022-07-28 17:07:46
+[2022-07-28T17:07:46+08:00][sql] CONNECT:[ UseTime:0.000182s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T17:07:46+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000855s ]
+[2022-07-28T17:07:46+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658999266 [ RunTime:0.000269s ]
+[2022-07-28T17:07:46+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000929s ]
+[2022-07-28T17:07:46+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000412s ]
+[2022-07-28T17:07:46+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T17:07:46+08:00][info] 检测事件执行2022-07-28 17:07:46
+[2022-07-28T17:07:46+08:00][info] 防止多次执行
+[2022-07-28T17:07:46+08:00][info] 检测事件执行2022-07-28 17:07:46
+[2022-07-28T17:07:46+08:00][info] 防止多次执行
+[2022-07-28T17:07:46+08:00][info] 检测事件执行2022-07-28 17:07:46
+[2022-07-28T17:07:46+08:00][info] 防止多次执行
+[2022-07-28T17:07:46+08:00][info] 检测事件执行2022-07-28 17:07:46
+[2022-07-28T17:07:46+08:00][info] 防止多次执行
+[2022-07-28T17:07:46+08:00][info] 检测事件执行2022-07-28 17:07:46
+[2022-07-28T17:07:46+08:00][info] 防止多次执行
+[2022-07-28T17:09:56+08:00][info] 检测事件执行2022-07-28 17:09:56
+[2022-07-28T17:09:56+08:00][sql] CONNECT:[ UseTime:0.000236s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T17:09:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000927s ]
+[2022-07-28T17:09:56+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658999396 [ RunTime:0.000268s ]
+[2022-07-28T17:09:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000887s ]
+[2022-07-28T17:09:56+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000362s ]
+[2022-07-28T17:09:56+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T17:12:17+08:00][info] 检测事件执行2022-07-28 17:12:17
+[2022-07-28T17:12:17+08:00][sql] CONNECT:[ UseTime:0.000400s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T17:12:17+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.001385s ]
+[2022-07-28T17:12:17+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658999537 [ RunTime:0.000406s ]
+[2022-07-28T17:12:17+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.001506s ]
+[2022-07-28T17:12:17+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000593s ]
+[2022-07-28T17:12:17+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T17:12:17+08:00][info] 检测事件执行2022-07-28 17:12:17
+[2022-07-28T17:12:17+08:00][info] 防止多次执行
+[2022-07-28T17:12:17+08:00][info] 检测事件执行2022-07-28 17:12:17
+[2022-07-28T17:12:17+08:00][info] 防止多次执行
+[2022-07-28T17:12:17+08:00][info] 检测事件执行2022-07-28 17:12:17
+[2022-07-28T17:12:17+08:00][info] 防止多次执行
+[2022-07-28T17:12:17+08:00][info] 检测事件执行2022-07-28 17:12:17
+[2022-07-28T17:12:17+08:00][info] 防止多次执行
+[2022-07-28T17:12:17+08:00][info] 检测事件执行2022-07-28 17:12:17
+[2022-07-28T17:12:17+08:00][info] 防止多次执行
+[2022-07-28T17:14:27+08:00][info] 检测事件执行2022-07-28 17:14:27
+[2022-07-28T17:14:27+08:00][sql] CONNECT:[ UseTime:0.000225s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T17:14:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000933s ]
+[2022-07-28T17:14:27+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658999667 [ RunTime:0.000281s ]
+[2022-07-28T17:14:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000870s ]
+[2022-07-28T17:14:27+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000382s ]
+[2022-07-28T17:14:27+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T17:23:48+08:00][info] 检测事件执行2022-07-28 17:23:48
+[2022-07-28T17:23:48+08:00][sql] CONNECT:[ UseTime:0.000245s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T17:23:48+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000855s ]
+[2022-07-28T17:23:48+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1659000228 [ RunTime:0.000249s ]
+[2022-07-28T17:23:48+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000884s ]
+[2022-07-28T17:23:48+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000391s ]
+[2022-07-28T17:23:48+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T17:36:23+08:00][info] 检测事件执行2022-07-28 17:36:23
+[2022-07-28T17:36:23+08:00][sql] CONNECT:[ UseTime:0.000259s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T17:36:23+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000843s ]
+[2022-07-28T17:36:23+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1659000983 [ RunTime:0.000235s ]
+[2022-07-28T17:36:23+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000894s ]
+[2022-07-28T17:36:23+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000389s ]
+[2022-07-28T17:36:23+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T17:48:17+08:00][info] 检测事件执行2022-07-28 17:48:17
+[2022-07-28T17:48:17+08:00][sql] CONNECT:[ UseTime:0.000263s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T17:48:17+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000899s ]
+[2022-07-28T17:48:17+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1659001697 [ RunTime:0.000242s ]
+[2022-07-28T17:48:17+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000899s ]
+[2022-07-28T17:48:17+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000394s ]
+[2022-07-28T17:48:17+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T17:53:21+08:00][info] 检测事件执行2022-07-28 17:53:21
+[2022-07-28T17:53:21+08:00][sql] CONNECT:[ UseTime:0.000260s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T17:53:21+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000826s ]
+[2022-07-28T17:53:21+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1659002001 [ RunTime:0.000310s ]
+[2022-07-28T17:53:21+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000939s ]
+[2022-07-28T17:53:21+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000426s ]
+[2022-07-28T17:53:21+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T17:56:34+08:00][info] 检测事件执行2022-07-28 17:56:34
+[2022-07-28T17:56:34+08:00][sql] CONNECT:[ UseTime:0.000240s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T17:56:34+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.001362s ]
+[2022-07-28T17:56:34+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1659002194 [ RunTime:0.000384s ]
+[2022-07-28T17:56:34+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.001511s ]
+[2022-07-28T17:56:34+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000608s ]
+[2022-07-28T17:56:34+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T17:56:34+08:00][info] 检测事件执行2022-07-28 17:56:34
+[2022-07-28T17:56:34+08:00][info] 防止多次执行
+[2022-07-28T17:56:34+08:00][info] 检测事件执行2022-07-28 17:56:34
+[2022-07-28T17:56:34+08:00][info] 防止多次执行
+[2022-07-28T17:56:34+08:00][info] 检测事件执行2022-07-28 17:56:34
+[2022-07-28T17:56:34+08:00][info] 防止多次执行
+[2022-07-28T17:56:34+08:00][info] 检测事件执行2022-07-28 17:56:34
+[2022-07-28T17:56:34+08:00][info] 防止多次执行
+[2022-07-28T17:56:34+08:00][info] 检测事件执行2022-07-28 17:56:34
+[2022-07-28T17:56:34+08:00][info] 防止多次执行
+[2022-07-28T17:58:49+08:00][info] 检测事件执行2022-07-28 17:58:49
+[2022-07-28T17:58:49+08:00][sql] CONNECT:[ UseTime:0.000244s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T17:58:49+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000907s ]
+[2022-07-28T17:58:49+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1659002329 [ RunTime:0.000322s ]
+[2022-07-28T17:58:49+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000944s ]
+[2022-07-28T17:58:49+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000403s ]
+[2022-07-28T17:58:49+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T18:08:59+08:00][info] 检测事件执行2022-07-28 18:08:59
+[2022-07-28T18:08:59+08:00][sql] CONNECT:[ UseTime:0.000236s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T18:08:59+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000973s ]
+[2022-07-28T18:08:59+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1659002939 [ RunTime:0.000235s ]
+[2022-07-28T18:08:59+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000886s ]
+[2022-07-28T18:08:59+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000347s ]
+[2022-07-28T18:08:59+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T18:14:35+08:00][info] 检测事件执行2022-07-28 18:14:35
+[2022-07-28T18:14:35+08:00][sql] CONNECT:[ UseTime:0.000228s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T18:14:35+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000856s ]
+[2022-07-28T18:14:35+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1659003275 [ RunTime:0.000292s ]
+[2022-07-28T18:14:35+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000977s ]
+[2022-07-28T18:14:35+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000393s ]
+[2022-07-28T18:14:35+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T18:22:02+08:00][info] 检测事件执行2022-07-28 18:22:02
+[2022-07-28T18:22:02+08:00][sql] CONNECT:[ UseTime:0.000257s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T18:22:02+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000839s ]
+[2022-07-28T18:22:02+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1659003722 [ RunTime:0.000251s ]
+[2022-07-28T18:22:02+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000902s ]
+[2022-07-28T18:22:02+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000365s ]
+[2022-07-28T18:22:02+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T23:29:41+08:00][info] 检测事件执行2022-07-28 23:29:41
+[2022-07-28T23:29:41+08:00][info] 检测事件执行2022-07-28 23:29:41
+[2022-07-28T23:29:41+08:00][info] 防止多次执行
+[2022-07-28T23:29:41+08:00][info] 检测事件执行2022-07-28 23:29:41
+[2022-07-28T23:29:41+08:00][info] 防止多次执行
+[2022-07-28T23:29:41+08:00][sql] CONNECT:[ UseTime:0.021001s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-28T23:29:41+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.001174s ]
+[2022-07-28T23:29:41+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1659022181 [ RunTime:0.000445s ]
+[2022-07-28T23:29:41+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.001297s ]
+[2022-07-28T23:29:41+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000544s ]
+[2022-07-28T23:29:41+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-07-28T23:29:41+08:00][info] 检测事件执行2022-07-28 23:29:41
+[2022-07-28T23:29:41+08:00][info] 防止多次执行
+[2022-07-28T23:29:41+08:00][info] 检测事件执行2022-07-28 23:29:41
+[2022-07-28T23:29:41+08:00][info] 防止多次执行
+[2022-07-28T23:29:41+08:00][info] 检测事件执行2022-07-28 23:29:41
+[2022-07-28T23:29:41+08:00][info] 防止多次执行

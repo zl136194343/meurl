@@ -1,0 +1,989 @@
+[2022-11-18T09:59:30+08:00][sql] CONNECT:[ UseTime:0.000429s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T09:59:30+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_user` [ RunTime:0.000675s ]
+[2022-11-18T09:59:30+08:00][sql] SELECT `uid`,`app_module`,`app_group`,`is_admin`,`site_id`,`group_id`,`group_name`,`username`,`password`,`member_id`,`create_time`,`update_time`,`status`,`login_time`,`login_ip` FROM `gxfc_user` WHERE  `username` = 'admin'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000398s ]
+[2022-11-18T09:59:30+08:00][sql] UPDATE `gxfc_user`  SET `login_time` = 1668736770 , `login_ip` = '171.113.167.133'  WHERE  `uid` = 1 [ RunTime:0.020381s ]
+[2022-11-18T09:59:30+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_user_log` [ RunTime:0.000672s ]
+[2022-11-18T09:59:30+08:00][sql] INSERT INTO `gxfc_user_log` SET `uid` = 1 , `username` = 'admin' , `site_id` = 0 , `url` = 'admin/Login/login' , `ip` = '171.113.167.133' , `data` = '[]' , `action_name` = '用户登录' , `create_time` = 1668736770 [ RunTime:0.005969s ]
+[2022-11-18T09:59:31+08:00][sql] CONNECT:[ UseTime:0.000427s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T09:59:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_group` [ RunTime:0.000686s ]
+[2022-11-18T09:59:31+08:00][sql] SELECT * FROM `gxfc_group` WHERE  `group_id` = 1  AND `site_id` = 0  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000364s ]
+[2022-11-18T09:59:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000646s ]
+[2022-11-18T09:59:31+08:00][sql] SELECT * FROM `gxfc_menu` WHERE  `app_module` = 'admin'  AND `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.001348s ]
+[2022-11-18T09:59:31+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Index/index'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000490s ]
+[2022-11-18T09:59:31+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'INDEX_ROOT'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000463s ]
+[2022-11-18T09:59:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_website` [ RunTime:0.000625s ]
+[2022-11-18T09:59:31+08:00][sql] SELECT `title`,`logo`,`desc`,`keywords`,`web_status`,`close_reason` FROM `gxfc_website` WHERE  `site_id` = 0 LIMIT 1 [ RunTime:0.000244s ]
+[2022-11-18T09:59:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_stat_shop` [ RunTime:0.000728s ]
+[2022-11-18T09:59:31+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 18 LIMIT 1 [ RunTime:0.000373s ]
+[2022-11-18T09:59:31+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 18 LIMIT 1 [ RunTime:0.000332s ]
+[2022-11-18T09:59:31+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 17 LIMIT 1 [ RunTime:0.000405s ]
+[2022-11-18T09:59:31+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 09 LIMIT 1 [ RunTime:0.002586s ]
+[2022-11-18T09:59:31+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 10 LIMIT 1 [ RunTime:0.000478s ]
+[2022-11-18T09:59:31+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 11 LIMIT 1 [ RunTime:0.000635s ]
+[2022-11-18T09:59:31+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 12 LIMIT 1 [ RunTime:0.000360s ]
+[2022-11-18T09:59:31+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 13 LIMIT 1 [ RunTime:0.000351s ]
+[2022-11-18T09:59:31+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 14 LIMIT 1 [ RunTime:0.000370s ]
+[2022-11-18T09:59:31+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 15 LIMIT 1 [ RunTime:0.000319s ]
+[2022-11-18T09:59:31+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 16 LIMIT 1 [ RunTime:0.000305s ]
+[2022-11-18T09:59:31+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 17 LIMIT 1 [ RunTime:0.000306s ]
+[2022-11-18T09:59:31+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 18 LIMIT 1 [ RunTime:0.000309s ]
+[2022-11-18T09:59:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order` [ RunTime:0.001001s ]
+[2022-11-18T09:59:31+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_order` WHERE  `order_status` = 0  AND `is_delete` = 0 [ RunTime:0.000293s ]
+[2022-11-18T09:59:31+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_order` WHERE  `order_status` = 1  AND `is_delete` = 0 [ RunTime:0.000254s ]
+[2022-11-18T09:59:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order_goods` [ RunTime:0.000806s ]
+[2022-11-18T09:59:31+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_order_goods` WHERE  `refund_status` NOT IN (0,3) [ RunTime:0.000889s ]
+[2022-11-18T09:59:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.000776s ]
+[2022-11-18T09:59:31+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `goods_state` = 1  AND `is_delete` = 0 [ RunTime:0.000332s ]
+[2022-11-18T09:59:31+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `goods_state` = 0  AND `is_delete` = 0 [ RunTime:0.000310s ]
+[2022-11-18T09:59:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_fenxiao_withdraw` [ RunTime:0.000749s ]
+[2022-11-18T09:59:31+08:00][sql] SELECT COUNT(`id`) AS think_count FROM `gxfc_fenxiao_withdraw` WHERE  `status` = 1 [ RunTime:0.000270s ]
+[2022-11-18T09:59:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_fenxiao_apply` [ RunTime:0.000639s ]
+[2022-11-18T09:59:31+08:00][sql] SELECT COUNT(`apply_id`) AS think_count FROM `gxfc_fenxiao_apply` WHERE  `status` = 1 [ RunTime:0.000306s ]
+[2022-11-18T09:59:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order_complain` [ RunTime:0.000803s ]
+[2022-11-18T09:59:31+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_order_complain` WHERE  `complain_status` = 1 [ RunTime:0.000274s ]
+[2022-11-18T09:59:31+08:00][sql] SELECT SUM(`order_money`) AS think_sum FROM `gxfc_order` [ RunTime:0.000295s ]
+[2022-11-18T09:59:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000693s ]
+[2022-11-18T09:59:31+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` [ RunTime:0.000212s ]
+[2022-11-18T09:59:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_apply` [ RunTime:0.000559s ]
+[2022-11-18T09:59:31+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_shop_apply` WHERE  `create_time` BETWEEN 1668700800 AND 1668787199 [ RunTime:0.000255s ]
+[2022-11-18T09:59:31+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_shop_apply` WHERE  `create_time` BETWEEN 1668614400 AND 1668700799 [ RunTime:0.000241s ]
+[2022-11-18T09:59:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop` [ RunTime:0.000732s ]
+[2022-11-18T09:59:31+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_shop` WHERE  `create_time` BETWEEN 1668700800 AND 1668787199 [ RunTime:0.000229s ]
+[2022-11-18T09:59:31+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_shop` [ RunTime:0.000201s ]
+[2022-11-18T09:59:31+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` [ RunTime:0.000201s ]
+[2022-11-18T09:59:31+08:00][sql] CONNECT:[ UseTime:0.000406s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T09:59:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_user` [ RunTime:0.000714s ]
+[2022-11-18T09:59:31+08:00][sql] SELECT `uid`,`app_module`,`app_group`,`is_admin`,`site_id`,`group_id`,`group_name`,`username`,`password`,`member_id`,`create_time`,`update_time`,`status`,`login_time`,`login_ip` FROM `gxfc_user` WHERE  `username` = 'admin'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000428s ]
+[2022-11-18T09:59:31+08:00][sql] UPDATE `gxfc_user`  SET `login_time` = 1668736771 , `login_ip` = '171.113.167.133'  WHERE  `uid` = 1 [ RunTime:0.008966s ]
+[2022-11-18T09:59:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_user_log` [ RunTime:0.000579s ]
+[2022-11-18T09:59:31+08:00][sql] INSERT INTO `gxfc_user_log` SET `uid` = 1 , `username` = 'admin' , `site_id` = 0 , `url` = 'admin/Login/login' , `ip` = '171.113.167.133' , `data` = '[]' , `action_name` = '用户登录' , `create_time` = 1668736771 [ RunTime:0.009482s ]
+[2022-11-18T09:59:32+08:00][sql] CONNECT:[ UseTime:0.000461s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T09:59:32+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_stat_shop` [ RunTime:0.000881s ]
+[2022-11-18T09:59:32+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 18 LIMIT 1 [ RunTime:0.000529s ]
+[2022-11-18T09:59:32+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 18 LIMIT 1 [ RunTime:0.000469s ]
+[2022-11-18T09:59:32+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 17 LIMIT 1 [ RunTime:0.000465s ]
+[2022-11-18T09:59:32+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 09 LIMIT 1 [ RunTime:0.000395s ]
+[2022-11-18T09:59:32+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 10 LIMIT 1 [ RunTime:0.000409s ]
+[2022-11-18T09:59:32+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 11 LIMIT 1 [ RunTime:0.000414s ]
+[2022-11-18T09:59:32+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 12 LIMIT 1 [ RunTime:0.000460s ]
+[2022-11-18T09:59:32+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 13 LIMIT 1 [ RunTime:0.000395s ]
+[2022-11-18T09:59:32+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 14 LIMIT 1 [ RunTime:0.000459s ]
+[2022-11-18T09:59:32+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 15 LIMIT 1 [ RunTime:0.000381s ]
+[2022-11-18T09:59:32+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 16 LIMIT 1 [ RunTime:0.000379s ]
+[2022-11-18T09:59:32+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 17 LIMIT 1 [ RunTime:0.000605s ]
+[2022-11-18T09:59:32+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 18 LIMIT 1 [ RunTime:0.000377s ]
+[2022-11-18T09:59:32+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order` [ RunTime:0.001194s ]
+[2022-11-18T09:59:32+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_order` WHERE  `order_status` = 0  AND `is_delete` = 0 [ RunTime:0.000415s ]
+[2022-11-18T09:59:32+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_order` WHERE  `order_status` = 1  AND `is_delete` = 0 [ RunTime:0.000376s ]
+[2022-11-18T09:59:32+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order_goods` [ RunTime:0.000798s ]
+[2022-11-18T09:59:32+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_order_goods` WHERE  `refund_status` NOT IN (0,3) [ RunTime:0.000939s ]
+[2022-11-18T09:59:32+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.000830s ]
+[2022-11-18T09:59:32+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `goods_state` = 1  AND `is_delete` = 0 [ RunTime:0.000288s ]
+[2022-11-18T09:59:32+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `goods_state` = 0  AND `is_delete` = 0 [ RunTime:0.000280s ]
+[2022-11-18T09:59:32+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_fenxiao_withdraw` [ RunTime:0.000648s ]
+[2022-11-18T09:59:32+08:00][sql] SELECT COUNT(`id`) AS think_count FROM `gxfc_fenxiao_withdraw` WHERE  `status` = 1 [ RunTime:0.000310s ]
+[2022-11-18T09:59:32+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_fenxiao_apply` [ RunTime:0.000593s ]
+[2022-11-18T09:59:32+08:00][sql] SELECT COUNT(`apply_id`) AS think_count FROM `gxfc_fenxiao_apply` WHERE  `status` = 1 [ RunTime:0.000308s ]
+[2022-11-18T09:59:32+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order_complain` [ RunTime:0.000611s ]
+[2022-11-18T09:59:32+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_order_complain` WHERE  `complain_status` = 1 [ RunTime:0.000254s ]
+[2022-11-18T09:59:32+08:00][sql] SELECT SUM(`order_money`) AS think_sum FROM `gxfc_order` [ RunTime:0.000323s ]
+[2022-11-18T09:59:32+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000995s ]
+[2022-11-18T09:59:32+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` [ RunTime:0.000261s ]
+[2022-11-18T09:59:32+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_apply` [ RunTime:0.000920s ]
+[2022-11-18T09:59:32+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_shop_apply` WHERE  `create_time` BETWEEN 1668700800 AND 1668787199 [ RunTime:0.000327s ]
+[2022-11-18T09:59:32+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_shop_apply` WHERE  `create_time` BETWEEN 1668614400 AND 1668700799 [ RunTime:0.000298s ]
+[2022-11-18T09:59:32+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop` [ RunTime:0.004685s ]
+[2022-11-18T09:59:32+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_shop` WHERE  `create_time` BETWEEN 1668700800 AND 1668787199 [ RunTime:0.000324s ]
+[2022-11-18T09:59:32+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_shop` [ RunTime:0.000327s ]
+[2022-11-18T09:59:32+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` [ RunTime:0.000264s ]
+[2022-11-18T09:59:33+08:00][sql] CONNECT:[ UseTime:0.000511s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T09:59:33+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000771s ]
+[2022-11-18T09:59:33+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Goods/lists'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000499s ]
+[2022-11-18T09:59:33+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'GOODS_MANAGE'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000425s ]
+[2022-11-18T09:59:33+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'GOODS_ROOT'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000417s ]
+[2022-11-18T09:59:33+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.000991s ]
+[2022-11-18T09:59:33+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 0  AND `is_delete` = 0 [ RunTime:0.000394s ]
+[2022-11-18T09:59:33+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = -2  AND `is_delete` = 0 [ RunTime:0.000332s ]
+[2022-11-18T09:59:33+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 10  AND `is_delete` = 0 [ RunTime:0.000346s ]
+[2022-11-18T09:59:33+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_express_template` [ RunTime:0.000791s ]
+[2022-11-18T09:59:33+08:00][sql] SELECT `template_id`,`template_name` FROM `gxfc_express_template` ORDER BY `is_default` DESC [ RunTime:0.002523s ]
+[2022-11-18T09:59:33+08:00][sql] CONNECT:[ UseTime:0.000422s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T09:59:33+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods_category` [ RunTime:0.000810s ]
+[2022-11-18T09:59:33+08:00][sql] SELECT `category_id`,`category_name`,`pid`,`level`,`category_id_1`,`category_id_2`,`category_id_3` FROM `gxfc_goods_category` WHERE  `level` = 1  AND `is_jifen` = 0 ORDER BY `sort` ASC [ RunTime:0.000383s ]
+[2022-11-18T09:59:33+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods_category` WHERE  `pid` = 30 [ RunTime:0.000295s ]
+[2022-11-18T09:59:33+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods_category` WHERE  `pid` = 31 [ RunTime:0.000262s ]
+[2022-11-18T09:59:33+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods_category` WHERE  `pid` = 36 [ RunTime:0.000218s ]
+[2022-11-18T09:59:33+08:00][sql] CONNECT:[ UseTime:0.000453s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T09:59:33+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods_brand` [ RunTime:0.000850s ]
+[2022-11-18T09:59:33+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods_brand` `ngb` LEFT JOIN `gxfc_shop` `ns` ON `ngb`.`site_id`=`ns`.`site_id` LEFT JOIN `gxfc_supplier` `nsp` ON `ngb`.`site_id`=`nsp`.`supplier_site_id` ORDER BY `ngb`.`create_time` DESC [ RunTime:0.000554s ]
+[2022-11-18T09:59:33+08:00][sql] SELECT `ngb`.`brand_id`,`ngb`.`brand_name`,`ngb`.`brand_initial`,`ngb`.`image_url`,`ngb`.`sort`,`ngb`.`create_time`,`ngb`.`is_recommend`,`ngb`.`site_id`,`ns`.`site_name`,nsp.title as supply_name FROM `gxfc_goods_brand` `ngb` LEFT JOIN `gxfc_shop` `ns` ON `ngb`.`site_id`=`ns`.`site_id` LEFT JOIN `gxfc_supplier` `nsp` ON `ngb`.`site_id`=`nsp`.`supplier_site_id` ORDER BY `ngb`.`create_time` DESC LIMIT 0,10 [ RunTime:0.000574s ]
+[2022-11-18T09:59:33+08:00][sql] CONNECT:[ UseTime:0.000471s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T09:59:33+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001346s ]
+[2022-11-18T09:59:33+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 0  AND `is_delete` = 0 [ RunTime:0.000370s ]
+[2022-11-18T09:59:33+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = -2  AND `is_delete` = 0 [ RunTime:0.000318s ]
+[2022-11-18T09:59:33+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 10  AND `is_delete` = 0 [ RunTime:0.000335s ]
+[2022-11-18T09:59:33+08:00][sql] CONNECT:[ UseTime:0.000455s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T09:59:33+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001409s ]
+[2022-11-18T09:59:33+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` `` WHERE  `is_delete` = 0 ORDER BY `create_time` DESC [ RunTime:0.000415s ]
+[2022-11-18T09:59:33+08:00][sql] SELECT `goods_id`,`goods_name`,`site_id`,`site_name`,`goods_image`,`is_own`,`goods_state`,`verify_state`,`price`,`goods_stock`,`goods_stock_alarm`,`create_time`,`sale_num`,`is_virtual`,`goods_class`,`is_fenxiao`,`fenxiao_type`,`sku_id`,`max_buy`,`min_buy`,`promotion_addon`,`sort` FROM `gxfc_goods` `` WHERE  `is_delete` = 0 ORDER BY `create_time` DESC LIMIT 0,10 [ RunTime:0.000439s ]
+[2022-11-18T09:59:33+08:00][sql] CONNECT:[ UseTime:0.000379s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T09:59:33+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000771s ]
+[2022-11-18T09:59:33+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Order/lists'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000482s ]
+[2022-11-18T09:59:33+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'ORDER_EXPRESS'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000388s ]
+[2022-11-18T09:59:33+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'ORDER_ROOT'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000375s ]
+[2022-11-18T09:59:34+08:00][sql] CONNECT:[ UseTime:0.000469s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T09:59:34+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order` [ RunTime:0.001254s ]
+[2022-11-18T09:59:34+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_order` `o` ORDER BY `o`.`create_time` DESC [ RunTime:0.000304s ]
+[2022-11-18T09:59:34+08:00][sql] SELECT `o`.* FROM `gxfc_order` `o` ORDER BY `o`.`create_time` DESC LIMIT 0,10 [ RunTime:0.000746s ]
+[2022-11-18T09:59:34+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order_goods` [ RunTime:0.000766s ]
+[2022-11-18T09:59:34+08:00][sql] SELECT * FROM `gxfc_order_goods` WHERE  `order_id` = 2071 [ RunTime:0.003751s ]
+[2022-11-18T09:59:34+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000710s ]
+[2022-11-18T09:59:34+08:00][sql] SELECT `nickname` FROM `gxfc_member` WHERE  `member_id` = 2387 LIMIT 1 [ RunTime:0.000265s ]
+[2022-11-18T09:59:34+08:00][sql] SELECT * FROM `gxfc_order_goods` WHERE  `order_id` = 2070 [ RunTime:0.003712s ]
+[2022-11-18T09:59:34+08:00][sql] SELECT `nickname` FROM `gxfc_member` WHERE  `member_id` = 2375 LIMIT 1 [ RunTime:0.000341s ]
+[2022-11-18T09:59:34+08:00][sql] SELECT * FROM `gxfc_order_goods` WHERE  `order_id` = 2069 [ RunTime:0.003683s ]
+[2022-11-18T09:59:34+08:00][sql] SELECT `nickname` FROM `gxfc_member` WHERE  `member_id` = 2375 LIMIT 1 [ RunTime:0.000236s ]
+[2022-11-18T09:59:34+08:00][sql] SELECT * FROM `gxfc_order_goods` WHERE  `order_id` = 2068 [ RunTime:0.003713s ]
+[2022-11-18T09:59:34+08:00][sql] SELECT `nickname` FROM `gxfc_member` WHERE  `member_id` = 2375 LIMIT 1 [ RunTime:0.000322s ]
+[2022-11-18T09:59:34+08:00][sql] SELECT * FROM `gxfc_order_goods` WHERE  `order_id` = 2067 [ RunTime:0.003678s ]
+[2022-11-18T09:59:34+08:00][sql] SELECT `nickname` FROM `gxfc_member` WHERE  `member_id` = 2375 LIMIT 1 [ RunTime:0.000240s ]
+[2022-11-18T09:59:34+08:00][sql] SELECT * FROM `gxfc_order_goods` WHERE  `order_id` = 2066 [ RunTime:0.003953s ]
+[2022-11-18T09:59:34+08:00][sql] SELECT `nickname` FROM `gxfc_member` WHERE  `member_id` = 2375 LIMIT 1 [ RunTime:0.000328s ]
+[2022-11-18T09:59:34+08:00][sql] SELECT * FROM `gxfc_order_goods` WHERE  `order_id` = 2065 [ RunTime:0.003739s ]
+[2022-11-18T09:59:34+08:00][sql] SELECT `nickname` FROM `gxfc_member` WHERE  `member_id` = 2368 LIMIT 1 [ RunTime:0.000242s ]
+[2022-11-18T09:59:34+08:00][sql] SELECT * FROM `gxfc_order_goods` WHERE  `order_id` = 2064 [ RunTime:0.003642s ]
+[2022-11-18T09:59:34+08:00][sql] SELECT `nickname` FROM `gxfc_member` WHERE  `member_id` = 2368 LIMIT 1 [ RunTime:0.000232s ]
+[2022-11-18T09:59:34+08:00][sql] SELECT * FROM `gxfc_order_goods` WHERE  `order_id` = 2063 [ RunTime:0.003987s ]
+[2022-11-18T09:59:34+08:00][sql] SELECT `nickname` FROM `gxfc_member` WHERE  `member_id` = 2368 LIMIT 1 [ RunTime:0.000307s ]
+[2022-11-18T09:59:34+08:00][sql] SELECT * FROM `gxfc_order_goods` WHERE  `order_id` = 2062 [ RunTime:0.003763s ]
+[2022-11-18T09:59:34+08:00][sql] SELECT `nickname` FROM `gxfc_member` WHERE  `member_id` = 2368 LIMIT 1 [ RunTime:0.000283s ]
+[2022-11-18T09:59:35+08:00][sql] CONNECT:[ UseTime:0.000463s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T09:59:35+08:00][sql] CONNECT:[ UseTime:0.000292s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T09:59:35+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001557s ]
+[2022-11-18T09:59:35+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001821s ]
+[2022-11-18T09:59:35+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` `` WHERE  `is_delete` = 0  AND `verify_state` = 0 ORDER BY `create_time` DESC [ RunTime:0.000487s ]
+[2022-11-18T09:59:35+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 0  AND `is_delete` = 0 [ RunTime:0.000375s ]
+[2022-11-18T09:59:35+08:00][sql] SELECT `goods_id`,`goods_name`,`site_id`,`site_name`,`goods_image`,`is_own`,`goods_state`,`verify_state`,`price`,`goods_stock`,`goods_stock_alarm`,`create_time`,`sale_num`,`is_virtual`,`goods_class`,`is_fenxiao`,`fenxiao_type`,`sku_id`,`max_buy`,`min_buy`,`promotion_addon`,`sort` FROM `gxfc_goods` `` WHERE  `is_delete` = 0  AND `verify_state` = 0 ORDER BY `create_time` DESC LIMIT 0,10 [ RunTime:0.000469s ]
+[2022-11-18T09:59:35+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = -2  AND `is_delete` = 0 [ RunTime:0.000349s ]
+[2022-11-18T09:59:35+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 10  AND `is_delete` = 0 [ RunTime:0.000276s ]
+[2022-11-18T09:59:36+08:00][sql] CONNECT:[ UseTime:0.000422s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T09:59:36+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.000896s ]
+[2022-11-18T09:59:36+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 0  AND `is_delete` = 0 [ RunTime:0.000377s ]
+[2022-11-18T09:59:36+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = -2  AND `is_delete` = 0 [ RunTime:0.000289s ]
+[2022-11-18T09:59:36+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 10  AND `is_delete` = 0 [ RunTime:0.000269s ]
+[2022-11-18T09:59:37+08:00][sql] CONNECT:[ UseTime:0.000433s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T09:59:37+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001639s ]
+[2022-11-18T09:59:37+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` `` WHERE  `is_delete` = 0 ORDER BY `create_time` DESC [ RunTime:0.000429s ]
+[2022-11-18T09:59:37+08:00][sql] SELECT `goods_id`,`goods_name`,`site_id`,`site_name`,`goods_image`,`is_own`,`goods_state`,`verify_state`,`price`,`goods_stock`,`goods_stock_alarm`,`create_time`,`sale_num`,`is_virtual`,`goods_class`,`is_fenxiao`,`fenxiao_type`,`sku_id`,`max_buy`,`min_buy`,`promotion_addon`,`sort` FROM `gxfc_goods` `` WHERE  `is_delete` = 0 ORDER BY `create_time` DESC LIMIT 0,10 [ RunTime:0.000545s ]
+[2022-11-18T09:59:37+08:00][sql] CONNECT:[ UseTime:0.000322s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T09:59:37+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001169s ]
+[2022-11-18T09:59:37+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 0  AND `is_delete` = 0 [ RunTime:0.000354s ]
+[2022-11-18T09:59:37+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = -2  AND `is_delete` = 0 [ RunTime:0.000289s ]
+[2022-11-18T09:59:37+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 10  AND `is_delete` = 0 [ RunTime:0.000307s ]
+[2022-11-18T09:59:38+08:00][sql] CONNECT:[ UseTime:0.000455s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T09:59:38+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001477s ]
+[2022-11-18T09:59:38+08:00][sql] UPDATE `gxfc_goods`  SET `verify_state` = 1 , `verify_state_remark` = ''  WHERE  `goods_id` = 191 [ RunTime:0.009121s ]
+[2022-11-18T09:59:38+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods_sku` [ RunTime:0.000944s ]
+[2022-11-18T09:59:38+08:00][sql] UPDATE `gxfc_goods_sku`  SET `verify_state` = 1 , `verify_state_remark` = ''  WHERE  `goods_id` = 191 [ RunTime:0.007349s ]
+[2022-11-18T09:59:38+08:00][sql] CONNECT:[ UseTime:0.000444s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T09:59:38+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001413s ]
+[2022-11-18T09:59:38+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 0  AND `is_delete` = 0 [ RunTime:0.000456s ]
+[2022-11-18T09:59:38+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = -2  AND `is_delete` = 0 [ RunTime:0.000394s ]
+[2022-11-18T09:59:38+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 10  AND `is_delete` = 0 [ RunTime:0.000363s ]
+[2022-11-18T09:59:38+08:00][sql] CONNECT:[ UseTime:0.000472s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T09:59:38+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001332s ]
+[2022-11-18T09:59:38+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` `` WHERE  `is_delete` = 0  AND `verify_state` = 0 ORDER BY `create_time` DESC [ RunTime:0.000388s ]
+[2022-11-18T09:59:38+08:00][sql] SELECT `goods_id`,`goods_name`,`site_id`,`site_name`,`goods_image`,`is_own`,`goods_state`,`verify_state`,`price`,`goods_stock`,`goods_stock_alarm`,`create_time`,`sale_num`,`is_virtual`,`goods_class`,`is_fenxiao`,`fenxiao_type`,`sku_id`,`max_buy`,`min_buy`,`promotion_addon`,`sort` FROM `gxfc_goods` `` WHERE  `is_delete` = 0  AND `verify_state` = 0 ORDER BY `create_time` DESC LIMIT 0,10 [ RunTime:0.000418s ]
+[2022-11-18T09:59:39+08:00][sql] CONNECT:[ UseTime:0.000435s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T09:59:39+08:00][sql] CONNECT:[ UseTime:0.000375s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T09:59:39+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001408s ]
+[2022-11-18T09:59:39+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 0  AND `is_delete` = 0 [ RunTime:0.000394s ]
+[2022-11-18T09:59:39+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001321s ]
+[2022-11-18T09:59:39+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` `` WHERE  `is_delete` = 0  AND `verify_state` = 0 ORDER BY `create_time` DESC [ RunTime:0.000414s ]
+[2022-11-18T09:59:39+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = -2  AND `is_delete` = 0 [ RunTime:0.000271s ]
+[2022-11-18T09:59:39+08:00][sql] SELECT `goods_id`,`goods_name`,`site_id`,`site_name`,`goods_image`,`is_own`,`goods_state`,`verify_state`,`price`,`goods_stock`,`goods_stock_alarm`,`create_time`,`sale_num`,`is_virtual`,`goods_class`,`is_fenxiao`,`fenxiao_type`,`sku_id`,`max_buy`,`min_buy`,`promotion_addon`,`sort` FROM `gxfc_goods` `` WHERE  `is_delete` = 0  AND `verify_state` = 0 ORDER BY `create_time` DESC LIMIT 0,10 [ RunTime:0.000501s ]
+[2022-11-18T09:59:39+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 10  AND `is_delete` = 0 [ RunTime:0.000326s ]
+[2022-11-18T09:59:44+08:00][sql] CONNECT:[ UseTime:0.000454s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T09:59:44+08:00][sql] CONNECT:[ UseTime:0.000476s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T09:59:44+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001503s ]
+[2022-11-18T09:59:44+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001537s ]
+[2022-11-18T09:59:44+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 0  AND `is_delete` = 0 [ RunTime:0.000405s ]
+[2022-11-18T09:59:44+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` `` WHERE  `is_delete` = 0  AND `verify_state` = 10 ORDER BY `create_time` DESC [ RunTime:0.000446s ]
+[2022-11-18T09:59:44+08:00][sql] SELECT `goods_id`,`goods_name`,`site_id`,`site_name`,`goods_image`,`is_own`,`goods_state`,`verify_state`,`price`,`goods_stock`,`goods_stock_alarm`,`create_time`,`sale_num`,`is_virtual`,`goods_class`,`is_fenxiao`,`fenxiao_type`,`sku_id`,`max_buy`,`min_buy`,`promotion_addon`,`sort` FROM `gxfc_goods` `` WHERE  `is_delete` = 0  AND `verify_state` = 10 ORDER BY `create_time` DESC LIMIT 0,10 [ RunTime:0.000755s ]
+[2022-11-18T09:59:44+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = -2  AND `is_delete` = 0 [ RunTime:0.000363s ]
+[2022-11-18T09:59:44+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 10  AND `is_delete` = 0 [ RunTime:0.000297s ]
+[2022-11-18T09:59:46+08:00][sql] CONNECT:[ UseTime:0.000470s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T09:59:46+08:00][sql] CONNECT:[ UseTime:0.000337s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T09:59:46+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001490s ]
+[2022-11-18T09:59:46+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` `` WHERE  `is_delete` = 0  AND `verify_state` = 0 ORDER BY `create_time` DESC [ RunTime:0.000439s ]
+[2022-11-18T09:59:46+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001356s ]
+[2022-11-18T09:59:46+08:00][sql] SELECT `goods_id`,`goods_name`,`site_id`,`site_name`,`goods_image`,`is_own`,`goods_state`,`verify_state`,`price`,`goods_stock`,`goods_stock_alarm`,`create_time`,`sale_num`,`is_virtual`,`goods_class`,`is_fenxiao`,`fenxiao_type`,`sku_id`,`max_buy`,`min_buy`,`promotion_addon`,`sort` FROM `gxfc_goods` `` WHERE  `is_delete` = 0  AND `verify_state` = 0 ORDER BY `create_time` DESC LIMIT 0,10 [ RunTime:0.000500s ]
+[2022-11-18T09:59:46+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 0  AND `is_delete` = 0 [ RunTime:0.000306s ]
+[2022-11-18T09:59:46+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = -2  AND `is_delete` = 0 [ RunTime:0.000316s ]
+[2022-11-18T09:59:46+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 10  AND `is_delete` = 0 [ RunTime:0.000323s ]
+[2022-11-18T09:59:47+08:00][sql] CONNECT:[ UseTime:0.000430s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T09:59:47+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.000926s ]
+[2022-11-18T09:59:47+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 0  AND `is_delete` = 0 [ RunTime:0.000379s ]
+[2022-11-18T09:59:47+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = -2  AND `is_delete` = 0 [ RunTime:0.000340s ]
+[2022-11-18T09:59:47+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 10  AND `is_delete` = 0 [ RunTime:0.000309s ]
+[2022-11-18T09:59:47+08:00][sql] CONNECT:[ UseTime:0.000492s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T09:59:47+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.000949s ]
+[2022-11-18T09:59:47+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 0  AND `is_delete` = 0 [ RunTime:0.000378s ]
+[2022-11-18T09:59:47+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = -2  AND `is_delete` = 0 [ RunTime:0.000343s ]
+[2022-11-18T09:59:47+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 10  AND `is_delete` = 0 [ RunTime:0.000330s ]
+[2022-11-18T09:59:47+08:00][sql] CONNECT:[ UseTime:0.000371s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T09:59:47+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001253s ]
+[2022-11-18T09:59:47+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` `` WHERE  `is_delete` = 0 ORDER BY `create_time` DESC [ RunTime:0.000299s ]
+[2022-11-18T09:59:47+08:00][sql] SELECT `goods_id`,`goods_name`,`site_id`,`site_name`,`goods_image`,`is_own`,`goods_state`,`verify_state`,`price`,`goods_stock`,`goods_stock_alarm`,`create_time`,`sale_num`,`is_virtual`,`goods_class`,`is_fenxiao`,`fenxiao_type`,`sku_id`,`max_buy`,`min_buy`,`promotion_addon`,`sort` FROM `gxfc_goods` `` WHERE  `is_delete` = 0 ORDER BY `create_time` DESC LIMIT 0,10 [ RunTime:0.000433s ]
+[2022-11-18T09:59:51+08:00][sql] CONNECT:[ UseTime:0.000428s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T09:59:51+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001221s ]
+[2022-11-18T09:59:51+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` `` WHERE  `is_delete` = 0  AND `verify_state` = 0 ORDER BY `create_time` DESC [ RunTime:0.000446s ]
+[2022-11-18T09:59:51+08:00][sql] SELECT `goods_id`,`goods_name`,`site_id`,`site_name`,`goods_image`,`is_own`,`goods_state`,`verify_state`,`price`,`goods_stock`,`goods_stock_alarm`,`create_time`,`sale_num`,`is_virtual`,`goods_class`,`is_fenxiao`,`fenxiao_type`,`sku_id`,`max_buy`,`min_buy`,`promotion_addon`,`sort` FROM `gxfc_goods` `` WHERE  `is_delete` = 0  AND `verify_state` = 0 ORDER BY `create_time` DESC LIMIT 0,10 [ RunTime:0.000531s ]
+[2022-11-18T09:59:51+08:00][sql] CONNECT:[ UseTime:0.000332s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T09:59:51+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001292s ]
+[2022-11-18T09:59:51+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 0  AND `is_delete` = 0 [ RunTime:0.000327s ]
+[2022-11-18T09:59:51+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = -2  AND `is_delete` = 0 [ RunTime:0.000299s ]
+[2022-11-18T09:59:51+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 10  AND `is_delete` = 0 [ RunTime:0.000279s ]
+[2022-11-18T09:59:58+08:00][sql] CONNECT:[ UseTime:0.000403s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T09:59:58+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.000892s ]
+[2022-11-18T09:59:58+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 0  AND `is_delete` = 0 [ RunTime:0.000339s ]
+[2022-11-18T09:59:58+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = -2  AND `is_delete` = 0 [ RunTime:0.000278s ]
+[2022-11-18T09:59:58+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 10  AND `is_delete` = 0 [ RunTime:0.000292s ]
+[2022-11-18T09:59:58+08:00][sql] CONNECT:[ UseTime:0.000410s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T09:59:58+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001434s ]
+[2022-11-18T09:59:58+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 0  AND `is_delete` = 0 [ RunTime:0.000481s ]
+[2022-11-18T09:59:58+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = -2  AND `is_delete` = 0 [ RunTime:0.000391s ]
+[2022-11-18T09:59:58+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 10  AND `is_delete` = 0 [ RunTime:0.000377s ]
+[2022-11-18T09:59:58+08:00][sql] CONNECT:[ UseTime:0.000397s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T09:59:58+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001264s ]
+[2022-11-18T09:59:58+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` `` WHERE  `is_delete` = 0 ORDER BY `create_time` DESC [ RunTime:0.000395s ]
+[2022-11-18T09:59:58+08:00][sql] SELECT `goods_id`,`goods_name`,`site_id`,`site_name`,`goods_image`,`is_own`,`goods_state`,`verify_state`,`price`,`goods_stock`,`goods_stock_alarm`,`create_time`,`sale_num`,`is_virtual`,`goods_class`,`is_fenxiao`,`fenxiao_type`,`sku_id`,`max_buy`,`min_buy`,`promotion_addon`,`sort` FROM `gxfc_goods` `` WHERE  `is_delete` = 0 ORDER BY `create_time` DESC LIMIT 0,10 [ RunTime:0.000377s ]
+[2022-11-18T10:00:03+08:00][sql] CONNECT:[ UseTime:0.000438s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T10:00:03+08:00][sql] CONNECT:[ UseTime:0.000411s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T10:00:03+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001170s ]
+[2022-11-18T10:00:03+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.000968s ]
+[2022-11-18T10:00:03+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 0  AND `is_delete` = 0 [ RunTime:0.000415s ]
+[2022-11-18T10:00:03+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` `` WHERE  `is_delete` = 0  AND `verify_state` = 0 ORDER BY `create_time` DESC [ RunTime:0.000315s ]
+[2022-11-18T10:00:03+08:00][sql] SELECT `goods_id`,`goods_name`,`site_id`,`site_name`,`goods_image`,`is_own`,`goods_state`,`verify_state`,`price`,`goods_stock`,`goods_stock_alarm`,`create_time`,`sale_num`,`is_virtual`,`goods_class`,`is_fenxiao`,`fenxiao_type`,`sku_id`,`max_buy`,`min_buy`,`promotion_addon`,`sort` FROM `gxfc_goods` `` WHERE  `is_delete` = 0  AND `verify_state` = 0 ORDER BY `create_time` DESC LIMIT 0,10 [ RunTime:0.000452s ]
+[2022-11-18T10:00:03+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = -2  AND `is_delete` = 0 [ RunTime:0.000307s ]
+[2022-11-18T10:00:03+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 10  AND `is_delete` = 0 [ RunTime:0.001075s ]
+[2022-11-18T10:02:36+08:00][sql] CONNECT:[ UseTime:0.001780s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T10:02:36+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001393s ]
+[2022-11-18T10:02:36+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` `` WHERE  `is_delete` = 0  AND `verify_state` = 0 ORDER BY `create_time` DESC [ RunTime:0.000405s ]
+[2022-11-18T10:02:36+08:00][sql] SELECT `goods_id`,`goods_name`,`site_id`,`site_name`,`goods_image`,`is_own`,`goods_state`,`verify_state`,`price`,`goods_stock`,`goods_stock_alarm`,`create_time`,`sale_num`,`is_virtual`,`goods_class`,`is_fenxiao`,`fenxiao_type`,`sku_id`,`max_buy`,`min_buy`,`promotion_addon`,`sort` FROM `gxfc_goods` `` WHERE  `is_delete` = 0  AND `verify_state` = 0 ORDER BY `create_time` DESC LIMIT 0,10 [ RunTime:0.000425s ]
+[2022-11-18T10:02:36+08:00][sql] CONNECT:[ UseTime:0.000591s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T10:02:36+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001514s ]
+[2022-11-18T10:02:36+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 0  AND `is_delete` = 0 [ RunTime:0.000337s ]
+[2022-11-18T10:02:36+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = -2  AND `is_delete` = 0 [ RunTime:0.000355s ]
+[2022-11-18T10:02:36+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 10  AND `is_delete` = 0 [ RunTime:0.000330s ]
+[2022-11-18T10:10:15+08:00][sql] CONNECT:[ UseTime:0.000449s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T10:10:15+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001405s ]
+[2022-11-18T10:10:15+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 0  AND `is_delete` = 0 [ RunTime:0.000424s ]
+[2022-11-18T10:10:15+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = -2  AND `is_delete` = 0 [ RunTime:0.000335s ]
+[2022-11-18T10:10:15+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 10  AND `is_delete` = 0 [ RunTime:0.000313s ]
+[2022-11-18T10:10:15+08:00][sql] CONNECT:[ UseTime:0.000373s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T10:10:15+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001359s ]
+[2022-11-18T10:10:15+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` `` WHERE  `is_delete` = 0  AND `verify_state` = 10 ORDER BY `create_time` DESC [ RunTime:0.000337s ]
+[2022-11-18T10:10:15+08:00][sql] SELECT `goods_id`,`goods_name`,`site_id`,`site_name`,`goods_image`,`is_own`,`goods_state`,`verify_state`,`price`,`goods_stock`,`goods_stock_alarm`,`create_time`,`sale_num`,`is_virtual`,`goods_class`,`is_fenxiao`,`fenxiao_type`,`sku_id`,`max_buy`,`min_buy`,`promotion_addon`,`sort` FROM `gxfc_goods` `` WHERE  `is_delete` = 0  AND `verify_state` = 10 ORDER BY `create_time` DESC LIMIT 0,10 [ RunTime:0.000402s ]
+[2022-11-18T10:10:22+08:00][sql] CONNECT:[ UseTime:0.000493s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T10:10:22+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001661s ]
+[2022-11-18T10:10:22+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` `` WHERE  `is_delete` = 0  AND `verify_state` = 0 ORDER BY `create_time` DESC [ RunTime:0.000433s ]
+[2022-11-18T10:10:22+08:00][sql] CONNECT:[ UseTime:0.000350s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T10:10:22+08:00][sql] SELECT `goods_id`,`goods_name`,`site_id`,`site_name`,`goods_image`,`is_own`,`goods_state`,`verify_state`,`price`,`goods_stock`,`goods_stock_alarm`,`create_time`,`sale_num`,`is_virtual`,`goods_class`,`is_fenxiao`,`fenxiao_type`,`sku_id`,`max_buy`,`min_buy`,`promotion_addon`,`sort` FROM `gxfc_goods` `` WHERE  `is_delete` = 0  AND `verify_state` = 0 ORDER BY `create_time` DESC LIMIT 0,10 [ RunTime:0.000536s ]
+[2022-11-18T10:10:22+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001447s ]
+[2022-11-18T10:10:22+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 0  AND `is_delete` = 0 [ RunTime:0.000429s ]
+[2022-11-18T10:10:22+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = -2  AND `is_delete` = 0 [ RunTime:0.000348s ]
+[2022-11-18T10:10:22+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 10  AND `is_delete` = 0 [ RunTime:0.000308s ]
+[2022-11-18T10:12:45+08:00][sql] CONNECT:[ UseTime:0.000453s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T10:12:45+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order` [ RunTime:0.001628s ]
+[2022-11-18T10:12:45+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_order` `o` ORDER BY `o`.`create_time` DESC [ RunTime:0.000306s ]
+[2022-11-18T10:12:45+08:00][sql] SELECT `o`.* FROM `gxfc_order` `o` ORDER BY `o`.`create_time` DESC LIMIT 0,10 [ RunTime:0.000785s ]
+[2022-11-18T10:12:45+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order_goods` [ RunTime:0.000677s ]
+[2022-11-18T10:12:45+08:00][sql] SELECT * FROM `gxfc_order_goods` WHERE  `order_id` = 2071 [ RunTime:0.003695s ]
+[2022-11-18T10:12:45+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000678s ]
+[2022-11-18T10:12:45+08:00][sql] SELECT `nickname` FROM `gxfc_member` WHERE  `member_id` = 2387 LIMIT 1 [ RunTime:0.000284s ]
+[2022-11-18T10:12:45+08:00][sql] SELECT * FROM `gxfc_order_goods` WHERE  `order_id` = 2070 [ RunTime:0.003644s ]
+[2022-11-18T10:12:45+08:00][sql] SELECT `nickname` FROM `gxfc_member` WHERE  `member_id` = 2375 LIMIT 1 [ RunTime:0.000231s ]
+[2022-11-18T10:12:45+08:00][sql] SELECT * FROM `gxfc_order_goods` WHERE  `order_id` = 2069 [ RunTime:0.003755s ]
+[2022-11-18T10:12:45+08:00][sql] SELECT `nickname` FROM `gxfc_member` WHERE  `member_id` = 2375 LIMIT 1 [ RunTime:0.000272s ]
+[2022-11-18T10:12:45+08:00][sql] SELECT * FROM `gxfc_order_goods` WHERE  `order_id` = 2068 [ RunTime:0.003622s ]
+[2022-11-18T10:12:45+08:00][sql] SELECT `nickname` FROM `gxfc_member` WHERE  `member_id` = 2375 LIMIT 1 [ RunTime:0.000221s ]
+[2022-11-18T10:12:45+08:00][sql] SELECT * FROM `gxfc_order_goods` WHERE  `order_id` = 2067 [ RunTime:0.003655s ]
+[2022-11-18T10:12:45+08:00][sql] SELECT `nickname` FROM `gxfc_member` WHERE  `member_id` = 2375 LIMIT 1 [ RunTime:0.000313s ]
+[2022-11-18T10:12:45+08:00][sql] SELECT * FROM `gxfc_order_goods` WHERE  `order_id` = 2066 [ RunTime:0.003732s ]
+[2022-11-18T10:12:45+08:00][sql] SELECT `nickname` FROM `gxfc_member` WHERE  `member_id` = 2375 LIMIT 1 [ RunTime:0.000251s ]
+[2022-11-18T10:12:45+08:00][sql] SELECT * FROM `gxfc_order_goods` WHERE  `order_id` = 2065 [ RunTime:0.003651s ]
+[2022-11-18T10:12:45+08:00][sql] SELECT `nickname` FROM `gxfc_member` WHERE  `member_id` = 2368 LIMIT 1 [ RunTime:0.000234s ]
+[2022-11-18T10:12:45+08:00][sql] SELECT * FROM `gxfc_order_goods` WHERE  `order_id` = 2064 [ RunTime:0.003651s ]
+[2022-11-18T10:12:45+08:00][sql] SELECT `nickname` FROM `gxfc_member` WHERE  `member_id` = 2368 LIMIT 1 [ RunTime:0.000223s ]
+[2022-11-18T10:12:45+08:00][sql] SELECT * FROM `gxfc_order_goods` WHERE  `order_id` = 2063 [ RunTime:0.003626s ]
+[2022-11-18T10:12:45+08:00][sql] SELECT `nickname` FROM `gxfc_member` WHERE  `member_id` = 2368 LIMIT 1 [ RunTime:0.000251s ]
+[2022-11-18T10:12:45+08:00][sql] SELECT * FROM `gxfc_order_goods` WHERE  `order_id` = 2062 [ RunTime:0.003851s ]
+[2022-11-18T10:12:45+08:00][sql] SELECT `nickname` FROM `gxfc_member` WHERE  `member_id` = 2368 LIMIT 1 [ RunTime:0.000297s ]
+[2022-11-18T10:12:58+08:00][sql] CONNECT:[ UseTime:0.000444s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T10:12:58+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000875s ]
+[2022-11-18T10:12:58+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Shop/lists'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000449s ]
+[2022-11-18T10:12:58+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'SHOP_LIST'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000356s ]
+[2022-11-18T10:12:58+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'SHOP_INDEX'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000471s ]
+[2022-11-18T10:12:58+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'SHOP_ROOT'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000367s ]
+[2022-11-18T10:12:58+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_category` [ RunTime:0.000622s ]
+[2022-11-18T10:12:58+08:00][sql] SELECT `category_id`,`category_name` FROM `gxfc_shop_category` ORDER BY `sort` ASC [ RunTime:0.000321s ]
+[2022-11-18T10:12:58+08:00][sql] CONNECT:[ UseTime:0.000490s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T10:12:58+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop` [ RunTime:0.001284s ]
+[2022-11-18T10:12:58+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_shop` `a` ORDER BY site_id desc [ RunTime:0.000366s ]
+[2022-11-18T10:12:58+08:00][sql] SELECT * FROM `gxfc_shop` `a` ORDER BY site_id desc LIMIT 0,10 [ RunTime:0.000682s ]
+[2022-11-18T10:12:58+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_cert` [ RunTime:0.000715s ]
+[2022-11-18T10:12:58+08:00][sql] SELECT * FROM `gxfc_shop_cert` WHERE  `cert_id` = 128 LIMIT 1 [ RunTime:0.000446s ]
+[2022-11-18T10:12:58+08:00][sql] SELECT * FROM `gxfc_shop_cert` WHERE  `cert_id` = 126 LIMIT 1 [ RunTime:0.000465s ]
+[2022-11-18T10:12:58+08:00][sql] SELECT * FROM `gxfc_shop_cert` WHERE  `cert_id` = 120 LIMIT 1 [ RunTime:0.000428s ]
+[2022-11-18T10:12:58+08:00][sql] SELECT * FROM `gxfc_shop_cert` WHERE  `cert_id` = 118 LIMIT 1 [ RunTime:0.000414s ]
+[2022-11-18T10:12:58+08:00][sql] SELECT * FROM `gxfc_shop_cert` WHERE  `cert_id` = 1 LIMIT 1 [ RunTime:0.000448s ]
+[2022-11-18T10:13:02+08:00][sql] CONNECT:[ UseTime:0.000439s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T10:13:02+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order` [ RunTime:0.001704s ]
+[2022-11-18T10:13:02+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_order` `o` ORDER BY `o`.`create_time` DESC [ RunTime:0.000371s ]
+[2022-11-18T10:13:02+08:00][sql] SELECT `o`.* FROM `gxfc_order` `o` ORDER BY `o`.`create_time` DESC LIMIT 0,10 [ RunTime:0.000882s ]
+[2022-11-18T10:13:02+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order_goods` [ RunTime:0.000797s ]
+[2022-11-18T10:13:02+08:00][sql] SELECT * FROM `gxfc_order_goods` WHERE  `order_id` = 2071 [ RunTime:0.003731s ]
+[2022-11-18T10:13:02+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000802s ]
+[2022-11-18T10:13:02+08:00][sql] SELECT `nickname` FROM `gxfc_member` WHERE  `member_id` = 2387 LIMIT 1 [ RunTime:0.000332s ]
+[2022-11-18T10:13:02+08:00][sql] SELECT * FROM `gxfc_order_goods` WHERE  `order_id` = 2070 [ RunTime:0.003675s ]
+[2022-11-18T10:13:02+08:00][sql] SELECT `nickname` FROM `gxfc_member` WHERE  `member_id` = 2375 LIMIT 1 [ RunTime:0.000325s ]
+[2022-11-18T10:13:02+08:00][sql] SELECT * FROM `gxfc_order_goods` WHERE  `order_id` = 2069 [ RunTime:0.003683s ]
+[2022-11-18T10:13:02+08:00][sql] SELECT `nickname` FROM `gxfc_member` WHERE  `member_id` = 2375 LIMIT 1 [ RunTime:0.000286s ]
+[2022-11-18T10:13:02+08:00][sql] SELECT * FROM `gxfc_order_goods` WHERE  `order_id` = 2068 [ RunTime:0.003639s ]
+[2022-11-18T10:13:02+08:00][sql] SELECT `nickname` FROM `gxfc_member` WHERE  `member_id` = 2375 LIMIT 1 [ RunTime:0.000275s ]
+[2022-11-18T10:13:02+08:00][sql] SELECT * FROM `gxfc_order_goods` WHERE  `order_id` = 2067 [ RunTime:0.003669s ]
+[2022-11-18T10:13:02+08:00][sql] SELECT `nickname` FROM `gxfc_member` WHERE  `member_id` = 2375 LIMIT 1 [ RunTime:0.000304s ]
+[2022-11-18T10:13:02+08:00][sql] SELECT * FROM `gxfc_order_goods` WHERE  `order_id` = 2066 [ RunTime:0.003656s ]
+[2022-11-18T10:13:02+08:00][sql] SELECT `nickname` FROM `gxfc_member` WHERE  `member_id` = 2375 LIMIT 1 [ RunTime:0.000275s ]
+[2022-11-18T10:13:02+08:00][sql] SELECT * FROM `gxfc_order_goods` WHERE  `order_id` = 2065 [ RunTime:0.003676s ]
+[2022-11-18T10:13:02+08:00][sql] SELECT `nickname` FROM `gxfc_member` WHERE  `member_id` = 2368 LIMIT 1 [ RunTime:0.000311s ]
+[2022-11-18T10:13:02+08:00][sql] SELECT * FROM `gxfc_order_goods` WHERE  `order_id` = 2064 [ RunTime:0.003693s ]
+[2022-11-18T10:13:02+08:00][sql] SELECT `nickname` FROM `gxfc_member` WHERE  `member_id` = 2368 LIMIT 1 [ RunTime:0.000326s ]
+[2022-11-18T10:13:02+08:00][sql] SELECT * FROM `gxfc_order_goods` WHERE  `order_id` = 2063 [ RunTime:0.003677s ]
+[2022-11-18T10:13:02+08:00][sql] SELECT `nickname` FROM `gxfc_member` WHERE  `member_id` = 2368 LIMIT 1 [ RunTime:0.000301s ]
+[2022-11-18T10:13:02+08:00][sql] SELECT * FROM `gxfc_order_goods` WHERE  `order_id` = 2062 [ RunTime:0.003669s ]
+[2022-11-18T10:13:02+08:00][sql] SELECT `nickname` FROM `gxfc_member` WHERE  `member_id` = 2368 LIMIT 1 [ RunTime:0.000332s ]
+[2022-11-18T16:23:39+08:00][sql] CONNECT:[ UseTime:0.000456s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:23:39+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_user` [ RunTime:0.000690s ]
+[2022-11-18T16:23:39+08:00][sql] SELECT `uid`,`app_module`,`app_group`,`is_admin`,`site_id`,`group_id`,`group_name`,`username`,`password`,`member_id`,`create_time`,`update_time`,`status`,`login_time`,`login_ip` FROM `gxfc_user` WHERE  `username` = 'admin'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000395s ]
+[2022-11-18T16:23:39+08:00][sql] UPDATE `gxfc_user`  SET `login_time` = 1668759819 , `login_ip` = '27.27.160.199'  WHERE  `uid` = 1 [ RunTime:0.007176s ]
+[2022-11-18T16:23:39+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_user_log` [ RunTime:0.000772s ]
+[2022-11-18T16:23:39+08:00][sql] INSERT INTO `gxfc_user_log` SET `uid` = 1 , `username` = 'admin' , `site_id` = 0 , `url` = 'admin/Login/login' , `ip` = '27.27.160.199' , `data` = '[]' , `action_name` = '用户登录' , `create_time` = 1668759819 [ RunTime:0.006301s ]
+[2022-11-18T16:23:40+08:00][sql] CONNECT:[ UseTime:0.000424s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:23:40+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_stat_shop` [ RunTime:0.000759s ]
+[2022-11-18T16:23:40+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 18 LIMIT 1 [ RunTime:0.000439s ]
+[2022-11-18T16:23:40+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 18 LIMIT 1 [ RunTime:0.000344s ]
+[2022-11-18T16:23:40+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 17 LIMIT 1 [ RunTime:0.000347s ]
+[2022-11-18T16:23:40+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 09 LIMIT 1 [ RunTime:0.000355s ]
+[2022-11-18T16:23:40+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 10 LIMIT 1 [ RunTime:0.000332s ]
+[2022-11-18T16:23:40+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 11 LIMIT 1 [ RunTime:0.000341s ]
+[2022-11-18T16:23:40+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 12 LIMIT 1 [ RunTime:0.000356s ]
+[2022-11-18T16:23:40+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 13 LIMIT 1 [ RunTime:0.000327s ]
+[2022-11-18T16:23:40+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 14 LIMIT 1 [ RunTime:0.000323s ]
+[2022-11-18T16:23:40+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 15 LIMIT 1 [ RunTime:0.000351s ]
+[2022-11-18T16:23:40+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 16 LIMIT 1 [ RunTime:0.000346s ]
+[2022-11-18T16:23:40+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 17 LIMIT 1 [ RunTime:0.000373s ]
+[2022-11-18T16:23:40+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 11  AND `day` = 18 LIMIT 1 [ RunTime:0.000330s ]
+[2022-11-18T16:23:40+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order` [ RunTime:0.001077s ]
+[2022-11-18T16:23:40+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_order` WHERE  `order_status` = 0  AND `is_delete` = 0 [ RunTime:0.000325s ]
+[2022-11-18T16:23:40+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_order` WHERE  `order_status` = 1  AND `is_delete` = 0 [ RunTime:0.000294s ]
+[2022-11-18T16:23:40+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order_goods` [ RunTime:0.000706s ]
+[2022-11-18T16:23:40+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_order_goods` WHERE  `refund_status` NOT IN (0,3) [ RunTime:0.000893s ]
+[2022-11-18T16:23:40+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.000738s ]
+[2022-11-18T16:23:40+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `goods_state` = 1  AND `is_delete` = 0 [ RunTime:0.000264s ]
+[2022-11-18T16:23:40+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `goods_state` = 0  AND `is_delete` = 0 [ RunTime:0.000253s ]
+[2022-11-18T16:23:40+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_fenxiao_withdraw` [ RunTime:0.000682s ]
+[2022-11-18T16:23:40+08:00][sql] SELECT COUNT(`id`) AS think_count FROM `gxfc_fenxiao_withdraw` WHERE  `status` = 1 [ RunTime:0.000233s ]
+[2022-11-18T16:23:40+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_fenxiao_apply` [ RunTime:0.000594s ]
+[2022-11-18T16:23:40+08:00][sql] SELECT COUNT(`apply_id`) AS think_count FROM `gxfc_fenxiao_apply` WHERE  `status` = 1 [ RunTime:0.000241s ]
+[2022-11-18T16:23:40+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order_complain` [ RunTime:0.000814s ]
+[2022-11-18T16:23:40+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_order_complain` WHERE  `complain_status` = 1 [ RunTime:0.000241s ]
+[2022-11-18T16:23:40+08:00][sql] SELECT SUM(`order_money`) AS think_sum FROM `gxfc_order` [ RunTime:0.000288s ]
+[2022-11-18T16:23:40+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000784s ]
+[2022-11-18T16:23:40+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` [ RunTime:0.000221s ]
+[2022-11-18T16:23:40+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_apply` [ RunTime:0.000618s ]
+[2022-11-18T16:23:40+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_shop_apply` WHERE  `create_time` BETWEEN 1668700800 AND 1668787199 [ RunTime:0.000276s ]
+[2022-11-18T16:23:40+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_shop_apply` WHERE  `create_time` BETWEEN 1668614400 AND 1668700799 [ RunTime:0.000279s ]
+[2022-11-18T16:23:40+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop` [ RunTime:0.000791s ]
+[2022-11-18T16:23:40+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_shop` WHERE  `create_time` BETWEEN 1668700800 AND 1668787199 [ RunTime:0.000285s ]
+[2022-11-18T16:23:40+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_shop` [ RunTime:0.000250s ]
+[2022-11-18T16:23:40+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` [ RunTime:0.000255s ]
+[2022-11-18T16:23:50+08:00][sql] CONNECT:[ UseTime:0.000423s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:23:50+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000830s ]
+[2022-11-18T16:23:50+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Account/index'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000925s ]
+[2022-11-18T16:23:50+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'ACCOUNT_INDEX'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000361s ]
+[2022-11-18T16:23:50+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'ACCOUNT_ROOT'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000399s ]
+[2022-11-18T16:23:50+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order` [ RunTime:0.001074s ]
+[2022-11-18T16:23:50+08:00][sql] SELECT SUM(`order_money`) AS think_sum FROM `gxfc_order` WHERE  `order_status` > 0 [ RunTime:0.000341s ]
+[2022-11-18T16:23:50+08:00][sql] SELECT SUM(`dj_money`) AS think_sum FROM `gxfc_order` WHERE  `order_status` > 0 [ RunTime:0.000303s ]
+[2022-11-18T16:23:50+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_website` [ RunTime:0.000535s ]
+[2022-11-18T16:23:50+08:00][sql] SELECT `account` FROM `gxfc_website` WHERE  `site_id` = 0 LIMIT 1 [ RunTime:0.000233s ]
+[2022-11-18T16:23:50+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_settlement_period` [ RunTime:0.000655s ]
+[2022-11-18T16:23:50+08:00][sql] SELECT 
+                sum(shop_money) as shop_money,
+                sum(refund_shop_money) as refund_shop_money,
+                sum(commission) as commission,
+                sum(platform_money) as platform_money,
+                sum(website_commission) as website_commission,
+                sum(platform_coupon_money) as platform_coupon_money,
+                sum(refund_platform_coupon_money) as refund_platform_coupon_money
+                 FROM `gxfc_shop_settlement_period` WHERE  `period_id` > 0 LIMIT 1 [ RunTime:0.000344s ]
+[2022-11-18T16:23:50+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop` [ RunTime:0.000820s ]
+[2022-11-18T16:23:50+08:00][sql] SELECT sum(account) as account, sum(account_withdraw) as account_withdraw, sum(account_withdraw_apply) as account_withdraw_apply, sum(shop_baozhrmb) as shop_baozhrmb, sum(shop_open_fee) as shop_open_fee FROM `gxfc_shop` WHERE  `site_id` > 0 LIMIT 1 [ RunTime:0.000315s ]
+[2022-11-18T16:23:50+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000765s ]
+[2022-11-18T16:23:50+08:00][sql] SELECT 
+                sum(balance) as balance, 
+                sum(balance_money) as balance_money,
+                sum(balance_withdraw_apply) as balance_withdraw_apply, 
+                sum(balance_withdraw) as balance_withdraw
+                 FROM `gxfc_member` WHERE  `member_id` > 0 LIMIT 1 [ RunTime:0.000323s ]
+[2022-11-18T16:23:50+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_fenxiao` [ RunTime:0.000577s ]
+[2022-11-18T16:23:50+08:00][sql] SELECT sum(account) as account,sum(account_withdraw) as account_withdraw,sum(account_withdraw_apply) as account_withdraw_apply FROM `gxfc_fenxiao` WHERE  `status` IN (1,-1)  AND `is_delete` = 0 LIMIT 1 [ RunTime:0.000321s ]
+[2022-11-18T16:23:50+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_fenxiao_order` [ RunTime:0.000552s ]
+[2022-11-18T16:23:50+08:00][sql] SELECT sum(real_goods_money) as real_goods_money FROM `gxfc_fenxiao_order` WHERE  `is_refund` = 0  AND `is_settlement` = 1 LIMIT 1 [ RunTime:0.000253s ]
+[2022-11-18T16:23:50+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_supply_settlement_period` [ RunTime:0.000628s ]
+[2022-11-18T16:23:50+08:00][sql] SELECT 
+                sum(supply_money) as supply_money,
+                sum(refund_supply_money) as refund_supply_money,
+                sum(commission) as commission,
+                sum(platform_money) as platform_money,
+                sum(website_commission) as website_commission
+                 FROM `gxfc_supply_settlement_period` WHERE  `period_id` > 0 LIMIT 1 [ RunTime:0.000498s ]
+[2022-11-18T16:23:50+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_supplier` [ RunTime:0.000856s ]
+[2022-11-18T16:23:50+08:00][sql] SELECT sum(account) as account, sum(account_withdraw) as account_withdraw, sum(account_withdraw_apply) as account_withdraw_apply, sum(bond) as bond, sum(open_fee) as open_fee FROM `gxfc_supplier` WHERE  `supplier_site_id` > 0 LIMIT 1 [ RunTime:0.000424s ]
+[2022-11-18T16:23:50+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_supply_order` [ RunTime:0.000876s ]
+[2022-11-18T16:23:50+08:00][sql] SELECT SUM(`order_money`) AS think_sum FROM `gxfc_supply_order` WHERE  `order_status` > 0 [ RunTime:0.000248s ]
+[2022-11-18T16:23:54+08:00][sql] CONNECT:[ UseTime:0.000478s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:23:54+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order` [ RunTime:0.001111s ]
+[2022-11-18T16:23:54+08:00][sql] SELECT SUM(`order_money`) AS think_sum FROM `gxfc_order` WHERE  `order_status` > 0 [ RunTime:0.000383s ]
+[2022-11-18T16:23:54+08:00][sql] SELECT SUM(`dj_money`) AS think_sum FROM `gxfc_order` WHERE  `order_status` > 0 [ RunTime:0.000297s ]
+[2022-11-18T16:23:54+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_settlement_period` [ RunTime:0.000593s ]
+[2022-11-18T16:23:54+08:00][sql] SELECT 
+                sum(shop_money) as shop_money,
+                sum(refund_shop_money) as refund_shop_money,
+                sum(commission) as commission,
+                sum(platform_money) as platform_money,
+                sum(website_commission) as website_commission,
+                sum(platform_coupon_money) as platform_coupon_money,
+                sum(refund_platform_coupon_money) as refund_platform_coupon_money
+                 FROM `gxfc_shop_settlement_period` WHERE  `period_id` > 0 LIMIT 1 [ RunTime:0.000348s ]
+[2022-11-18T16:23:54+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop` [ RunTime:0.000757s ]
+[2022-11-18T16:23:54+08:00][sql] SELECT sum(account) as account, sum(account_withdraw) as account_withdraw, sum(account_withdraw_apply) as account_withdraw_apply, sum(shop_baozhrmb) as shop_baozhrmb, sum(shop_open_fee) as shop_open_fee FROM `gxfc_shop` WHERE  `site_id` > 0 LIMIT 1 [ RunTime:0.000287s ]
+[2022-11-18T16:23:54+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000790s ]
+[2022-11-18T16:23:54+08:00][sql] SELECT 
+                sum(balance) as balance, 
+                sum(balance_money) as balance_money,
+                sum(balance_withdraw_apply) as balance_withdraw_apply, 
+                sum(balance_withdraw) as balance_withdraw
+                 FROM `gxfc_member` WHERE  `member_id` > 0 LIMIT 1 [ RunTime:0.000287s ]
+[2022-11-18T16:23:54+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_fenxiao` [ RunTime:0.000673s ]
+[2022-11-18T16:23:54+08:00][sql] SELECT sum(account) as account,sum(account_withdraw) as account_withdraw,sum(account_withdraw_apply) as account_withdraw_apply FROM `gxfc_fenxiao` WHERE  `status` IN (1,-1)  AND `is_delete` = 0 LIMIT 1 [ RunTime:0.000356s ]
+[2022-11-18T16:23:54+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_fenxiao_order` [ RunTime:0.000598s ]
+[2022-11-18T16:23:54+08:00][sql] SELECT sum(real_goods_money) as real_goods_money FROM `gxfc_fenxiao_order` WHERE  `is_refund` = 0  AND `is_settlement` = 1 LIMIT 1 [ RunTime:0.000247s ]
+[2022-11-18T16:23:54+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_supply_settlement_period` [ RunTime:0.000521s ]
+[2022-11-18T16:23:54+08:00][sql] SELECT 
+                sum(supply_money) as supply_money,
+                sum(refund_supply_money) as refund_supply_money,
+                sum(commission) as commission,
+                sum(platform_money) as platform_money,
+                sum(website_commission) as website_commission
+                 FROM `gxfc_supply_settlement_period` WHERE  `period_id` > 0 LIMIT 1 [ RunTime:0.000454s ]
+[2022-11-18T16:23:54+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_supplier` [ RunTime:0.000693s ]
+[2022-11-18T16:23:54+08:00][sql] SELECT sum(account) as account, sum(account_withdraw) as account_withdraw, sum(account_withdraw_apply) as account_withdraw_apply, sum(bond) as bond, sum(open_fee) as open_fee FROM `gxfc_supplier` WHERE  `supplier_site_id` > 0 LIMIT 1 [ RunTime:0.000254s ]
+[2022-11-18T16:23:54+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_supply_order` [ RunTime:0.000831s ]
+[2022-11-18T16:23:54+08:00][sql] SELECT SUM(`order_money`) AS think_sum FROM `gxfc_supply_order` WHERE  `order_status` > 0 [ RunTime:0.000225s ]
+[2022-11-18T16:23:56+08:00][sql] CONNECT:[ UseTime:0.000601s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:23:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000745s ]
+[2022-11-18T16:23:56+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Shopsettlement/lists'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000453s ]
+[2022-11-18T16:23:56+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'ACCOUNT_SHOP_SETTLEMENT_LIST'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000364s ]
+[2022-11-18T16:23:56+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'ACCOUNT_SHOP_SETTLEMENT'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000377s ]
+[2022-11-18T16:23:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_settlement_period` [ RunTime:0.000699s ]
+[2022-11-18T16:23:56+08:00][sql] SELECT 
+                sum(shop_money) as shop_money,
+                sum(refund_shop_money) as refund_shop_money,
+                sum(commission) as commission,
+                sum(platform_money) as platform_money,
+                sum(website_commission) as website_commission,
+                sum(platform_coupon_money) as platform_coupon_money,
+                sum(refund_platform_coupon_money) as refund_platform_coupon_money
+                 FROM `gxfc_shop_settlement_period` WHERE  `period_id` > 0 LIMIT 1 [ RunTime:0.000363s ]
+[2022-11-18T16:23:56+08:00][sql] CONNECT:[ UseTime:0.000442s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:23:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_settlement_period` [ RunTime:0.000870s ]
+[2022-11-18T16:23:56+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_shop_settlement_period` `a` ORDER BY `create_time` DESC [ RunTime:0.000323s ]
+[2022-11-18T16:23:56+08:00][sql] SELECT * FROM `gxfc_shop_settlement_period` `a` ORDER BY `create_time` DESC LIMIT 0,10 [ RunTime:0.001423s ]
+[2022-11-18T16:23:57+08:00][sql] CONNECT:[ UseTime:0.000450s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:23:57+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.001205s ]
+[2022-11-18T16:23:57+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Shopaccount/withdrawlist'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000504s ]
+[2022-11-18T16:23:57+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'ACCOUNT_SHOP_WITHDRAW'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000469s ]
+[2022-11-18T16:23:57+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop` [ RunTime:0.001057s ]
+[2022-11-18T16:23:57+08:00][sql] SELECT sum(account) as account, sum(account_withdraw) as account_withdraw, sum(account_withdraw_apply) as account_withdraw_apply, sum(shop_baozhrmb) as shop_baozhrmb, sum(shop_open_fee) as shop_open_fee FROM `gxfc_shop` WHERE  `site_id` > 0 LIMIT 1 [ RunTime:0.000404s ]
+[2022-11-18T16:23:57+08:00][sql] SELECT `parent` FROM `gxfc_menu` WHERE  `url` = 'admin/shopaccount/withdrawlist'  AND `level` = 4 LIMIT 1 [ RunTime:0.000368s ]
+[2022-11-18T16:23:57+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_config` [ RunTime:0.000555s ]
+[2022-11-18T16:23:57+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'SHOP_WITHDRAW_CONFIG' LIMIT 1 [ RunTime:0.000327s ]
+[2022-11-18T16:23:58+08:00][sql] CONNECT:[ UseTime:0.000399s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:23:58+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop` [ RunTime:0.000897s ]
+[2022-11-18T16:23:58+08:00][sql] SELECT sum(account) as account, sum(account_withdraw) as account_withdraw, sum(account_withdraw_apply) as account_withdraw_apply, sum(shop_baozhrmb) as shop_baozhrmb, sum(shop_open_fee) as shop_open_fee FROM `gxfc_shop` WHERE  `site_id` > 0 LIMIT 1 [ RunTime:0.000353s ]
+[2022-11-18T16:23:58+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_withdraw` [ RunTime:0.000717s ]
+[2022-11-18T16:23:58+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_shop_withdraw` `a` ORDER BY `apply_time` DESC [ RunTime:0.000217s ]
+[2022-11-18T16:23:58+08:00][sql] SELECT * FROM `gxfc_shop_withdraw` `a` ORDER BY `apply_time` DESC LIMIT 0,10 [ RunTime:0.000350s ]
+[2022-11-18T16:23:58+08:00][sql] CONNECT:[ UseTime:0.000430s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:23:58+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000781s ]
+[2022-11-18T16:23:58+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Memberwithdraw/lists'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000961s ]
+[2022-11-18T16:23:58+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'MEMBER_WITHDRAW_LIST'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000405s ]
+[2022-11-18T16:23:58+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000957s ]
+[2022-11-18T16:23:58+08:00][sql] SELECT 
+                sum(balance) as balance, 
+                sum(balance_money) as balance_money,
+                sum(balance_withdraw_apply) as balance_withdraw_apply, 
+                sum(balance_withdraw) as balance_withdraw
+                 FROM `gxfc_member` WHERE  `member_id` > 0 LIMIT 1 [ RunTime:0.000484s ]
+[2022-11-18T16:23:58+08:00][sql] CONNECT:[ UseTime:0.000420s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:23:58+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_withdraw` [ RunTime:0.000890s ]
+[2022-11-18T16:23:58+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member_withdraw` `` ORDER BY `apply_time` DESC [ RunTime:0.000272s ]
+[2022-11-18T16:23:58+08:00][sql] SELECT * FROM `gxfc_member_withdraw` `` ORDER BY `apply_time` DESC LIMIT 0,10 [ RunTime:0.000331s ]
+[2022-11-18T16:24:00+08:00][sql] CONNECT:[ UseTime:0.000590s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:24:00+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order` [ RunTime:0.001306s ]
+[2022-11-18T16:24:00+08:00][sql] SELECT SUM(`order_money`) AS think_sum FROM `gxfc_order` WHERE  `order_status` > 0 [ RunTime:0.000555s ]
+[2022-11-18T16:24:00+08:00][sql] SELECT SUM(`dj_money`) AS think_sum FROM `gxfc_order` WHERE  `order_status` > 0 [ RunTime:0.000728s ]
+[2022-11-18T16:24:00+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_settlement_period` [ RunTime:0.000698s ]
+[2022-11-18T16:24:00+08:00][sql] SELECT 
+                sum(shop_money) as shop_money,
+                sum(refund_shop_money) as refund_shop_money,
+                sum(commission) as commission,
+                sum(platform_money) as platform_money,
+                sum(website_commission) as website_commission,
+                sum(platform_coupon_money) as platform_coupon_money,
+                sum(refund_platform_coupon_money) as refund_platform_coupon_money
+                 FROM `gxfc_shop_settlement_period` WHERE  `period_id` > 0 LIMIT 1 [ RunTime:0.000418s ]
+[2022-11-18T16:24:00+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop` [ RunTime:0.000802s ]
+[2022-11-18T16:24:00+08:00][sql] SELECT sum(account) as account, sum(account_withdraw) as account_withdraw, sum(account_withdraw_apply) as account_withdraw_apply, sum(shop_baozhrmb) as shop_baozhrmb, sum(shop_open_fee) as shop_open_fee FROM `gxfc_shop` WHERE  `site_id` > 0 LIMIT 1 [ RunTime:0.000710s ]
+[2022-11-18T16:24:00+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.001182s ]
+[2022-11-18T16:24:00+08:00][sql] SELECT 
+                sum(balance) as balance, 
+                sum(balance_money) as balance_money,
+                sum(balance_withdraw_apply) as balance_withdraw_apply, 
+                sum(balance_withdraw) as balance_withdraw
+                 FROM `gxfc_member` WHERE  `member_id` > 0 LIMIT 1 [ RunTime:0.000438s ]
+[2022-11-18T16:24:00+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_fenxiao` [ RunTime:0.000785s ]
+[2022-11-18T16:24:00+08:00][sql] SELECT sum(account) as account,sum(account_withdraw) as account_withdraw,sum(account_withdraw_apply) as account_withdraw_apply FROM `gxfc_fenxiao` WHERE  `status` IN (1,-1)  AND `is_delete` = 0 LIMIT 1 [ RunTime:0.000429s ]
+[2022-11-18T16:24:00+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_fenxiao_order` [ RunTime:0.000685s ]
+[2022-11-18T16:24:00+08:00][sql] SELECT sum(real_goods_money) as real_goods_money FROM `gxfc_fenxiao_order` WHERE  `is_refund` = 0  AND `is_settlement` = 1 LIMIT 1 [ RunTime:0.000311s ]
+[2022-11-18T16:24:00+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_supply_settlement_period` [ RunTime:0.000612s ]
+[2022-11-18T16:24:00+08:00][sql] SELECT 
+                sum(supply_money) as supply_money,
+                sum(refund_supply_money) as refund_supply_money,
+                sum(commission) as commission,
+                sum(platform_money) as platform_money,
+                sum(website_commission) as website_commission
+                 FROM `gxfc_supply_settlement_period` WHERE  `period_id` > 0 LIMIT 1 [ RunTime:0.000522s ]
+[2022-11-18T16:24:00+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_supplier` [ RunTime:0.000857s ]
+[2022-11-18T16:24:00+08:00][sql] SELECT sum(account) as account, sum(account_withdraw) as account_withdraw, sum(account_withdraw_apply) as account_withdraw_apply, sum(bond) as bond, sum(open_fee) as open_fee FROM `gxfc_supplier` WHERE  `supplier_site_id` > 0 LIMIT 1 [ RunTime:0.000327s ]
+[2022-11-18T16:24:00+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_supply_order` [ RunTime:0.000899s ]
+[2022-11-18T16:24:00+08:00][sql] SELECT SUM(`order_money`) AS think_sum FROM `gxfc_supply_order` WHERE  `order_status` > 0 [ RunTime:0.000276s ]
+[2022-11-18T16:24:09+08:00][sql] CONNECT:[ UseTime:0.000432s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:24:09+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order` [ RunTime:0.001246s ]
+[2022-11-18T16:24:09+08:00][sql] SELECT SUM(`order_money`) AS think_sum FROM `gxfc_order` WHERE  `order_status` > 0 [ RunTime:0.000424s ]
+[2022-11-18T16:24:09+08:00][sql] SELECT SUM(`dj_money`) AS think_sum FROM `gxfc_order` WHERE  `order_status` > 0 [ RunTime:0.000347s ]
+[2022-11-18T16:24:09+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_settlement_period` [ RunTime:0.000611s ]
+[2022-11-18T16:24:09+08:00][sql] SELECT 
+                sum(shop_money) as shop_money,
+                sum(refund_shop_money) as refund_shop_money,
+                sum(commission) as commission,
+                sum(platform_money) as platform_money,
+                sum(website_commission) as website_commission,
+                sum(platform_coupon_money) as platform_coupon_money,
+                sum(refund_platform_coupon_money) as refund_platform_coupon_money
+                 FROM `gxfc_shop_settlement_period` WHERE  `period_id` > 0 LIMIT 1 [ RunTime:0.000367s ]
+[2022-11-18T16:24:09+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop` [ RunTime:0.000830s ]
+[2022-11-18T16:24:09+08:00][sql] SELECT sum(account) as account, sum(account_withdraw) as account_withdraw, sum(account_withdraw_apply) as account_withdraw_apply, sum(shop_baozhrmb) as shop_baozhrmb, sum(shop_open_fee) as shop_open_fee FROM `gxfc_shop` WHERE  `site_id` > 0 LIMIT 1 [ RunTime:0.000359s ]
+[2022-11-18T16:24:09+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000774s ]
+[2022-11-18T16:24:09+08:00][sql] SELECT 
+                sum(balance) as balance, 
+                sum(balance_money) as balance_money,
+                sum(balance_withdraw_apply) as balance_withdraw_apply, 
+                sum(balance_withdraw) as balance_withdraw
+                 FROM `gxfc_member` WHERE  `member_id` > 0 LIMIT 1 [ RunTime:0.000340s ]
+[2022-11-18T16:24:09+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_fenxiao` [ RunTime:0.000636s ]
+[2022-11-18T16:24:09+08:00][sql] SELECT sum(account) as account,sum(account_withdraw) as account_withdraw,sum(account_withdraw_apply) as account_withdraw_apply FROM `gxfc_fenxiao` WHERE  `status` IN (1,-1)  AND `is_delete` = 0 LIMIT 1 [ RunTime:0.000371s ]
+[2022-11-18T16:24:09+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_fenxiao_order` [ RunTime:0.000653s ]
+[2022-11-18T16:24:09+08:00][sql] SELECT sum(real_goods_money) as real_goods_money FROM `gxfc_fenxiao_order` WHERE  `is_refund` = 0  AND `is_settlement` = 1 LIMIT 1 [ RunTime:0.000345s ]
+[2022-11-18T16:24:09+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_supply_settlement_period` [ RunTime:0.000557s ]
+[2022-11-18T16:24:09+08:00][sql] SELECT 
+                sum(supply_money) as supply_money,
+                sum(refund_supply_money) as refund_supply_money,
+                sum(commission) as commission,
+                sum(platform_money) as platform_money,
+                sum(website_commission) as website_commission
+                 FROM `gxfc_supply_settlement_period` WHERE  `period_id` > 0 LIMIT 1 [ RunTime:0.000450s ]
+[2022-11-18T16:24:09+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_supplier` [ RunTime:0.000690s ]
+[2022-11-18T16:24:09+08:00][sql] SELECT sum(account) as account, sum(account_withdraw) as account_withdraw, sum(account_withdraw_apply) as account_withdraw_apply, sum(bond) as bond, sum(open_fee) as open_fee FROM `gxfc_supplier` WHERE  `supplier_site_id` > 0 LIMIT 1 [ RunTime:0.000295s ]
+[2022-11-18T16:24:09+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_supply_order` [ RunTime:0.000733s ]
+[2022-11-18T16:24:09+08:00][sql] SELECT SUM(`order_money`) AS think_sum FROM `gxfc_supply_order` WHERE  `order_status` > 0 [ RunTime:0.000231s ]
+[2022-11-18T16:24:10+08:00][sql] CONNECT:[ UseTime:0.000467s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:24:10+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_settlement_period` [ RunTime:0.000750s ]
+[2022-11-18T16:24:10+08:00][sql] SELECT 
+                sum(shop_money) as shop_money,
+                sum(refund_shop_money) as refund_shop_money,
+                sum(commission) as commission,
+                sum(platform_money) as platform_money,
+                sum(website_commission) as website_commission,
+                sum(platform_coupon_money) as platform_coupon_money,
+                sum(refund_platform_coupon_money) as refund_platform_coupon_money
+                 FROM `gxfc_shop_settlement_period` WHERE  `period_id` > 0 LIMIT 1 [ RunTime:0.000427s ]
+[2022-11-18T16:24:10+08:00][sql] CONNECT:[ UseTime:0.000477s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:24:10+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_settlement_period` [ RunTime:0.000896s ]
+[2022-11-18T16:24:10+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_shop_settlement_period` `a` ORDER BY `create_time` DESC [ RunTime:0.000309s ]
+[2022-11-18T16:24:10+08:00][sql] SELECT * FROM `gxfc_shop_settlement_period` `a` ORDER BY `create_time` DESC LIMIT 0,10 [ RunTime:0.000384s ]
+[2022-11-18T16:24:11+08:00][sql] CONNECT:[ UseTime:0.000487s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:24:11+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop` [ RunTime:0.001267s ]
+[2022-11-18T16:24:11+08:00][sql] SELECT sum(account) as account, sum(account_withdraw) as account_withdraw, sum(account_withdraw_apply) as account_withdraw_apply, sum(shop_baozhrmb) as shop_baozhrmb, sum(shop_open_fee) as shop_open_fee FROM `gxfc_shop` WHERE  `site_id` > 0 LIMIT 1 [ RunTime:0.000489s ]
+[2022-11-18T16:24:11+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000622s ]
+[2022-11-18T16:24:11+08:00][sql] SELECT `parent` FROM `gxfc_menu` WHERE  `url` = 'admin/shopaccount/withdrawlist'  AND `level` = 4 LIMIT 1 [ RunTime:0.000380s ]
+[2022-11-18T16:24:12+08:00][sql] CONNECT:[ UseTime:0.000432s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:24:12+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop` [ RunTime:0.000956s ]
+[2022-11-18T16:24:12+08:00][sql] SELECT sum(account) as account, sum(account_withdraw) as account_withdraw, sum(account_withdraw_apply) as account_withdraw_apply, sum(shop_baozhrmb) as shop_baozhrmb, sum(shop_open_fee) as shop_open_fee FROM `gxfc_shop` WHERE  `site_id` > 0 LIMIT 1 [ RunTime:0.000362s ]
+[2022-11-18T16:24:12+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_withdraw` [ RunTime:0.000685s ]
+[2022-11-18T16:24:12+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_shop_withdraw` `a` ORDER BY `apply_time` DESC [ RunTime:0.000248s ]
+[2022-11-18T16:24:12+08:00][sql] SELECT * FROM `gxfc_shop_withdraw` `a` ORDER BY `apply_time` DESC LIMIT 0,10 [ RunTime:0.000352s ]
+[2022-11-18T16:24:12+08:00][sql] CONNECT:[ UseTime:0.000446s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:24:12+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000868s ]
+[2022-11-18T16:24:12+08:00][sql] SELECT 
+                sum(balance) as balance, 
+                sum(balance_money) as balance_money,
+                sum(balance_withdraw_apply) as balance_withdraw_apply, 
+                sum(balance_withdraw) as balance_withdraw
+                 FROM `gxfc_member` WHERE  `member_id` > 0 LIMIT 1 [ RunTime:0.000395s ]
+[2022-11-18T16:24:13+08:00][sql] CONNECT:[ UseTime:0.000443s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:24:13+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_withdraw` [ RunTime:0.000748s ]
+[2022-11-18T16:24:13+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member_withdraw` `` ORDER BY `apply_time` DESC [ RunTime:0.000255s ]
+[2022-11-18T16:24:13+08:00][sql] SELECT * FROM `gxfc_member_withdraw` `` ORDER BY `apply_time` DESC LIMIT 0,10 [ RunTime:0.000310s ]
+[2022-11-18T16:26:38+08:00][sql] CONNECT:[ UseTime:0.000419s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:26:38+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order` [ RunTime:0.001245s ]
+[2022-11-18T16:26:38+08:00][sql] SELECT SUM(`order_money`) AS think_sum FROM `gxfc_order` WHERE  `order_status` > 0 [ RunTime:0.000459s ]
+[2022-11-18T16:26:38+08:00][sql] SELECT SUM(`dj_money`) AS think_sum FROM `gxfc_order` WHERE  `order_status` > 0 [ RunTime:0.000360s ]
+[2022-11-18T16:26:38+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_settlement_period` [ RunTime:0.000691s ]
+[2022-11-18T16:26:38+08:00][sql] SELECT 
+                sum(shop_money) as shop_money,
+                sum(refund_shop_money) as refund_shop_money,
+                sum(commission) as commission,
+                sum(platform_money) as platform_money,
+                sum(website_commission) as website_commission,
+                sum(platform_coupon_money) as platform_coupon_money,
+                sum(refund_platform_coupon_money) as refund_platform_coupon_money
+                 FROM `gxfc_shop_settlement_period` WHERE  `period_id` > 0 LIMIT 1 [ RunTime:0.000392s ]
+[2022-11-18T16:26:38+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop` [ RunTime:0.000865s ]
+[2022-11-18T16:26:38+08:00][sql] SELECT sum(account) as account, sum(account_withdraw) as account_withdraw, sum(account_withdraw_apply) as account_withdraw_apply, sum(shop_baozhrmb) as shop_baozhrmb, sum(shop_open_fee) as shop_open_fee FROM `gxfc_shop` WHERE  `site_id` > 0 LIMIT 1 [ RunTime:0.000354s ]
+[2022-11-18T16:26:38+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000817s ]
+[2022-11-18T16:26:38+08:00][sql] SELECT 
+                sum(balance) as balance, 
+                sum(balance_money) as balance_money,
+                sum(balance_withdraw_apply) as balance_withdraw_apply, 
+                sum(balance_withdraw) as balance_withdraw
+                 FROM `gxfc_member` WHERE  `member_id` > 0 LIMIT 1 [ RunTime:0.000375s ]
+[2022-11-18T16:26:38+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_fenxiao` [ RunTime:0.000663s ]
+[2022-11-18T16:26:38+08:00][sql] SELECT sum(account) as account,sum(account_withdraw) as account_withdraw,sum(account_withdraw_apply) as account_withdraw_apply FROM `gxfc_fenxiao` WHERE  `status` IN (1,-1)  AND `is_delete` = 0 LIMIT 1 [ RunTime:0.000382s ]
+[2022-11-18T16:26:38+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_fenxiao_order` [ RunTime:0.000591s ]
+[2022-11-18T16:26:38+08:00][sql] SELECT sum(real_goods_money) as real_goods_money FROM `gxfc_fenxiao_order` WHERE  `is_refund` = 0  AND `is_settlement` = 1 LIMIT 1 [ RunTime:0.000294s ]
+[2022-11-18T16:26:38+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_supply_settlement_period` [ RunTime:0.000617s ]
+[2022-11-18T16:26:38+08:00][sql] SELECT 
+                sum(supply_money) as supply_money,
+                sum(refund_supply_money) as refund_supply_money,
+                sum(commission) as commission,
+                sum(platform_money) as platform_money,
+                sum(website_commission) as website_commission
+                 FROM `gxfc_supply_settlement_period` WHERE  `period_id` > 0 LIMIT 1 [ RunTime:0.000500s ]
+[2022-11-18T16:26:38+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_supplier` [ RunTime:0.000799s ]
+[2022-11-18T16:26:38+08:00][sql] SELECT sum(account) as account, sum(account_withdraw) as account_withdraw, sum(account_withdraw_apply) as account_withdraw_apply, sum(bond) as bond, sum(open_fee) as open_fee FROM `gxfc_supplier` WHERE  `supplier_site_id` > 0 LIMIT 1 [ RunTime:0.000301s ]
+[2022-11-18T16:26:38+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_supply_order` [ RunTime:0.000888s ]
+[2022-11-18T16:26:38+08:00][sql] SELECT SUM(`order_money`) AS think_sum FROM `gxfc_supply_order` WHERE  `order_status` > 0 [ RunTime:0.000297s ]
+[2022-11-18T16:26:39+08:00][sql] CONNECT:[ UseTime:0.000427s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:26:39+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order` [ RunTime:0.001076s ]
+[2022-11-18T16:26:39+08:00][sql] SELECT SUM(`order_money`) AS think_sum FROM `gxfc_order` WHERE  `order_status` > 0 [ RunTime:0.000369s ]
+[2022-11-18T16:26:39+08:00][sql] SELECT SUM(`dj_money`) AS think_sum FROM `gxfc_order` WHERE  `order_status` > 0 [ RunTime:0.000310s ]
+[2022-11-18T16:26:39+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_settlement_period` [ RunTime:0.000581s ]
+[2022-11-18T16:26:39+08:00][sql] SELECT 
+                sum(shop_money) as shop_money,
+                sum(refund_shop_money) as refund_shop_money,
+                sum(commission) as commission,
+                sum(platform_money) as platform_money,
+                sum(website_commission) as website_commission,
+                sum(platform_coupon_money) as platform_coupon_money,
+                sum(refund_platform_coupon_money) as refund_platform_coupon_money
+                 FROM `gxfc_shop_settlement_period` WHERE  `period_id` > 0 LIMIT 1 [ RunTime:0.000308s ]
+[2022-11-18T16:26:39+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop` [ RunTime:0.000746s ]
+[2022-11-18T16:26:39+08:00][sql] SELECT sum(account) as account, sum(account_withdraw) as account_withdraw, sum(account_withdraw_apply) as account_withdraw_apply, sum(shop_baozhrmb) as shop_baozhrmb, sum(shop_open_fee) as shop_open_fee FROM `gxfc_shop` WHERE  `site_id` > 0 LIMIT 1 [ RunTime:0.000277s ]
+[2022-11-18T16:26:39+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000669s ]
+[2022-11-18T16:26:39+08:00][sql] SELECT 
+                sum(balance) as balance, 
+                sum(balance_money) as balance_money,
+                sum(balance_withdraw_apply) as balance_withdraw_apply, 
+                sum(balance_withdraw) as balance_withdraw
+                 FROM `gxfc_member` WHERE  `member_id` > 0 LIMIT 1 [ RunTime:0.000285s ]
+[2022-11-18T16:26:39+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_fenxiao` [ RunTime:0.000610s ]
+[2022-11-18T16:26:39+08:00][sql] SELECT sum(account) as account,sum(account_withdraw) as account_withdraw,sum(account_withdraw_apply) as account_withdraw_apply FROM `gxfc_fenxiao` WHERE  `status` IN (1,-1)  AND `is_delete` = 0 LIMIT 1 [ RunTime:0.000349s ]
+[2022-11-18T16:26:39+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_fenxiao_order` [ RunTime:0.000589s ]
+[2022-11-18T16:26:39+08:00][sql] SELECT sum(real_goods_money) as real_goods_money FROM `gxfc_fenxiao_order` WHERE  `is_refund` = 0  AND `is_settlement` = 1 LIMIT 1 [ RunTime:0.000247s ]
+[2022-11-18T16:26:39+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_supply_settlement_period` [ RunTime:0.000535s ]
+[2022-11-18T16:26:39+08:00][sql] SELECT 
+                sum(supply_money) as supply_money,
+                sum(refund_supply_money) as refund_supply_money,
+                sum(commission) as commission,
+                sum(platform_money) as platform_money,
+                sum(website_commission) as website_commission
+                 FROM `gxfc_supply_settlement_period` WHERE  `period_id` > 0 LIMIT 1 [ RunTime:0.000480s ]
+[2022-11-18T16:26:39+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_supplier` [ RunTime:0.000682s ]
+[2022-11-18T16:26:39+08:00][sql] SELECT sum(account) as account, sum(account_withdraw) as account_withdraw, sum(account_withdraw_apply) as account_withdraw_apply, sum(bond) as bond, sum(open_fee) as open_fee FROM `gxfc_supplier` WHERE  `supplier_site_id` > 0 LIMIT 1 [ RunTime:0.000265s ]
+[2022-11-18T16:26:39+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_supply_order` [ RunTime:0.000855s ]
+[2022-11-18T16:26:39+08:00][sql] SELECT SUM(`order_money`) AS think_sum FROM `gxfc_supply_order` WHERE  `order_status` > 0 [ RunTime:0.000225s ]
+[2022-11-18T16:26:39+08:00][sql] CONNECT:[ UseTime:0.000412s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:26:39+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_settlement_period` [ RunTime:0.000746s ]
+[2022-11-18T16:26:39+08:00][sql] SELECT 
+                sum(shop_money) as shop_money,
+                sum(refund_shop_money) as refund_shop_money,
+                sum(commission) as commission,
+                sum(platform_money) as platform_money,
+                sum(website_commission) as website_commission,
+                sum(platform_coupon_money) as platform_coupon_money,
+                sum(refund_platform_coupon_money) as refund_platform_coupon_money
+                 FROM `gxfc_shop_settlement_period` WHERE  `period_id` > 0 LIMIT 1 [ RunTime:0.000423s ]
+[2022-11-18T16:26:40+08:00][sql] CONNECT:[ UseTime:0.000435s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:26:40+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_settlement_period` [ RunTime:0.000761s ]
+[2022-11-18T16:26:40+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_shop_settlement_period` `a` ORDER BY `create_time` DESC [ RunTime:0.000261s ]
+[2022-11-18T16:26:40+08:00][sql] SELECT * FROM `gxfc_shop_settlement_period` `a` ORDER BY `create_time` DESC LIMIT 0,10 [ RunTime:0.000320s ]
+[2022-11-18T16:26:40+08:00][sql] CONNECT:[ UseTime:0.000442s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:26:40+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop` [ RunTime:0.000935s ]
+[2022-11-18T16:26:40+08:00][sql] SELECT sum(account) as account, sum(account_withdraw) as account_withdraw, sum(account_withdraw_apply) as account_withdraw_apply, sum(shop_baozhrmb) as shop_baozhrmb, sum(shop_open_fee) as shop_open_fee FROM `gxfc_shop` WHERE  `site_id` > 0 LIMIT 1 [ RunTime:0.000364s ]
+[2022-11-18T16:26:40+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000500s ]
+[2022-11-18T16:26:40+08:00][sql] SELECT `parent` FROM `gxfc_menu` WHERE  `url` = 'admin/shopaccount/withdrawlist'  AND `level` = 4 LIMIT 1 [ RunTime:0.000302s ]
+[2022-11-18T16:26:40+08:00][sql] CONNECT:[ UseTime:0.000418s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:26:40+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop` [ RunTime:0.001018s ]
+[2022-11-18T16:26:40+08:00][sql] SELECT sum(account) as account, sum(account_withdraw) as account_withdraw, sum(account_withdraw_apply) as account_withdraw_apply, sum(shop_baozhrmb) as shop_baozhrmb, sum(shop_open_fee) as shop_open_fee FROM `gxfc_shop` WHERE  `site_id` > 0 LIMIT 1 [ RunTime:0.000409s ]
+[2022-11-18T16:26:40+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_withdraw` [ RunTime:0.000660s ]
+[2022-11-18T16:26:40+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_shop_withdraw` `a` ORDER BY `apply_time` DESC [ RunTime:0.000282s ]
+[2022-11-18T16:26:40+08:00][sql] SELECT * FROM `gxfc_shop_withdraw` `a` ORDER BY `apply_time` DESC LIMIT 0,10 [ RunTime:0.000349s ]
+[2022-11-18T16:26:41+08:00][sql] CONNECT:[ UseTime:0.000433s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:26:41+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000900s ]
+[2022-11-18T16:26:41+08:00][sql] SELECT 
+                sum(balance) as balance, 
+                sum(balance_money) as balance_money,
+                sum(balance_withdraw_apply) as balance_withdraw_apply, 
+                sum(balance_withdraw) as balance_withdraw
+                 FROM `gxfc_member` WHERE  `member_id` > 0 LIMIT 1 [ RunTime:0.000381s ]
+[2022-11-18T16:26:41+08:00][sql] CONNECT:[ UseTime:0.000453s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:26:41+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_withdraw` [ RunTime:0.000842s ]
+[2022-11-18T16:26:41+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member_withdraw` `` ORDER BY `apply_time` DESC [ RunTime:0.000277s ]
+[2022-11-18T16:26:41+08:00][sql] SELECT * FROM `gxfc_member_withdraw` `` ORDER BY `apply_time` DESC LIMIT 0,10 [ RunTime:0.000310s ]
+[2022-11-18T16:26:42+08:00][sql] CONNECT:[ UseTime:0.000448s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:26:42+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop` [ RunTime:0.000917s ]
+[2022-11-18T16:26:42+08:00][sql] SELECT sum(account) as account, sum(account_withdraw) as account_withdraw, sum(account_withdraw_apply) as account_withdraw_apply, sum(shop_baozhrmb) as shop_baozhrmb, sum(shop_open_fee) as shop_open_fee FROM `gxfc_shop` WHERE  `site_id` > 0 LIMIT 1 [ RunTime:0.000389s ]
+[2022-11-18T16:26:42+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000581s ]
+[2022-11-18T16:26:42+08:00][sql] SELECT `parent` FROM `gxfc_menu` WHERE  `url` = 'admin/shopaccount/withdrawlist'  AND `level` = 4 LIMIT 1 [ RunTime:0.000359s ]
+[2022-11-18T16:26:42+08:00][sql] CONNECT:[ UseTime:0.000422s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:26:42+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop` [ RunTime:0.000876s ]
+[2022-11-18T16:26:42+08:00][sql] SELECT sum(account) as account, sum(account_withdraw) as account_withdraw, sum(account_withdraw_apply) as account_withdraw_apply, sum(shop_baozhrmb) as shop_baozhrmb, sum(shop_open_fee) as shop_open_fee FROM `gxfc_shop` WHERE  `site_id` > 0 LIMIT 1 [ RunTime:0.000371s ]
+[2022-11-18T16:26:42+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_withdraw` [ RunTime:0.000583s ]
+[2022-11-18T16:26:42+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_shop_withdraw` `a` ORDER BY `apply_time` DESC [ RunTime:0.000210s ]
+[2022-11-18T16:26:42+08:00][sql] SELECT * FROM `gxfc_shop_withdraw` `a` ORDER BY `apply_time` DESC LIMIT 0,10 [ RunTime:0.000309s ]
+[2022-11-18T16:26:43+08:00][sql] CONNECT:[ UseTime:0.000411s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:26:43+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_settlement_period` [ RunTime:0.000725s ]
+[2022-11-18T16:26:43+08:00][sql] SELECT 
+                sum(shop_money) as shop_money,
+                sum(refund_shop_money) as refund_shop_money,
+                sum(commission) as commission,
+                sum(platform_money) as platform_money,
+                sum(website_commission) as website_commission,
+                sum(platform_coupon_money) as platform_coupon_money,
+                sum(refund_platform_coupon_money) as refund_platform_coupon_money
+                 FROM `gxfc_shop_settlement_period` WHERE  `period_id` > 0 LIMIT 1 [ RunTime:0.000380s ]
+[2022-11-18T16:26:43+08:00][sql] CONNECT:[ UseTime:0.000437s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:26:43+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_settlement_period` [ RunTime:0.000695s ]
+[2022-11-18T16:26:43+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_shop_settlement_period` `a` ORDER BY `create_time` DESC [ RunTime:0.000247s ]
+[2022-11-18T16:26:43+08:00][sql] SELECT * FROM `gxfc_shop_settlement_period` `a` ORDER BY `create_time` DESC LIMIT 0,10 [ RunTime:0.000343s ]
+[2022-11-18T16:26:47+08:00][sql] CONNECT:[ UseTime:0.000439s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:26:47+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000685s ]
+[2022-11-18T16:26:47+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Stat/index'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000483s ]
+[2022-11-18T16:26:47+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'STAT_INDEX'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000479s ]
+[2022-11-18T16:26:47+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'STAT_ROOT'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000406s ]
+[2022-11-18T16:26:48+08:00][sql] CONNECT:[ UseTime:0.000338s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:26:48+08:00][sql] CONNECT:[ UseTime:0.000488s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:26:48+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_stat_shop` [ RunTime:0.000777s ]
+[2022-11-18T16:26:48+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_stat_shop` [ RunTime:0.000776s ]
+[2022-11-18T16:26:48+08:00][sql] SELECT SUM(order_total) as order_total,SUM(shipping_total) as shipping_total,SUM(refund_total) as refund_total,SUM(order_pay_count) as order_pay_count,SUM(goods_pay_count) as goods_pay_count,SUM(shop_money) as shop_money,SUM(platform_money) as platform_money,SUM(collect_shop) as collect_shop,SUM(collect_goods) as collect_goods,SUM(visit_count) as visit_count,SUM(order_count) as order_count,SUM(goods_count) as goods_count,SUM(add_goods_count) as add_goods_count,SUM(member_count) as member_count FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `day_time` >= 1668700800 LIMIT 1 [ RunTime:0.000486s ]
+[2022-11-18T16:26:48+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `day_time` >= 1668182400 [ RunTime:0.000532s ]
+[2022-11-18T16:26:50+08:00][sql] CONNECT:[ UseTime:0.000410s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:26:50+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order` [ RunTime:0.001191s ]
+[2022-11-18T16:26:50+08:00][sql] SELECT SUM(`order_money`) AS think_sum FROM `gxfc_order` WHERE  `order_status` > 0 [ RunTime:0.000390s ]
+[2022-11-18T16:26:50+08:00][sql] SELECT SUM(`dj_money`) AS think_sum FROM `gxfc_order` WHERE  `order_status` > 0 [ RunTime:0.000379s ]
+[2022-11-18T16:26:50+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_settlement_period` [ RunTime:0.000572s ]
+[2022-11-18T16:26:50+08:00][sql] SELECT 
+                sum(shop_money) as shop_money,
+                sum(refund_shop_money) as refund_shop_money,
+                sum(commission) as commission,
+                sum(platform_money) as platform_money,
+                sum(website_commission) as website_commission,
+                sum(platform_coupon_money) as platform_coupon_money,
+                sum(refund_platform_coupon_money) as refund_platform_coupon_money
+                 FROM `gxfc_shop_settlement_period` WHERE  `period_id` > 0 LIMIT 1 [ RunTime:0.000331s ]
+[2022-11-18T16:26:50+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop` [ RunTime:0.000780s ]
+[2022-11-18T16:26:50+08:00][sql] SELECT sum(account) as account, sum(account_withdraw) as account_withdraw, sum(account_withdraw_apply) as account_withdraw_apply, sum(shop_baozhrmb) as shop_baozhrmb, sum(shop_open_fee) as shop_open_fee FROM `gxfc_shop` WHERE  `site_id` > 0 LIMIT 1 [ RunTime:0.000296s ]
+[2022-11-18T16:26:50+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000736s ]
+[2022-11-18T16:26:50+08:00][sql] SELECT 
+                sum(balance) as balance, 
+                sum(balance_money) as balance_money,
+                sum(balance_withdraw_apply) as balance_withdraw_apply, 
+                sum(balance_withdraw) as balance_withdraw
+                 FROM `gxfc_member` WHERE  `member_id` > 0 LIMIT 1 [ RunTime:0.000303s ]
+[2022-11-18T16:26:50+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_fenxiao` [ RunTime:0.000632s ]
+[2022-11-18T16:26:50+08:00][sql] SELECT sum(account) as account,sum(account_withdraw) as account_withdraw,sum(account_withdraw_apply) as account_withdraw_apply FROM `gxfc_fenxiao` WHERE  `status` IN (1,-1)  AND `is_delete` = 0 LIMIT 1 [ RunTime:0.000340s ]
+[2022-11-18T16:26:50+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_fenxiao_order` [ RunTime:0.000585s ]
+[2022-11-18T16:26:50+08:00][sql] SELECT sum(real_goods_money) as real_goods_money FROM `gxfc_fenxiao_order` WHERE  `is_refund` = 0  AND `is_settlement` = 1 LIMIT 1 [ RunTime:0.000252s ]
+[2022-11-18T16:26:50+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_supply_settlement_period` [ RunTime:0.000567s ]
+[2022-11-18T16:26:50+08:00][sql] SELECT 
+                sum(supply_money) as supply_money,
+                sum(refund_supply_money) as refund_supply_money,
+                sum(commission) as commission,
+                sum(platform_money) as platform_money,
+                sum(website_commission) as website_commission
+                 FROM `gxfc_supply_settlement_period` WHERE  `period_id` > 0 LIMIT 1 [ RunTime:0.000808s ]
+[2022-11-18T16:26:50+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_supplier` [ RunTime:0.000736s ]
+[2022-11-18T16:26:50+08:00][sql] SELECT sum(account) as account, sum(account_withdraw) as account_withdraw, sum(account_withdraw_apply) as account_withdraw_apply, sum(bond) as bond, sum(open_fee) as open_fee FROM `gxfc_supplier` WHERE  `supplier_site_id` > 0 LIMIT 1 [ RunTime:0.000260s ]
+[2022-11-18T16:26:50+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_supply_order` [ RunTime:0.000808s ]
+[2022-11-18T16:26:50+08:00][sql] SELECT SUM(`order_money`) AS think_sum FROM `gxfc_supply_order` WHERE  `order_status` > 0 [ RunTime:0.000254s ]
+[2022-11-18T16:26:51+08:00][sql] CONNECT:[ UseTime:0.000448s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:26:51+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000714s ]
+[2022-11-18T16:26:51+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Promotion/config'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000567s ]
+[2022-11-18T16:26:51+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'PROMOTION_CONFIG'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000515s ]
+[2022-11-18T16:26:51+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'PROMOTION_ROOT'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000428s ]
+[2022-11-18T16:26:51+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_addon` [ RunTime:0.000778s ]
+[2022-11-18T16:26:51+08:00][sql] SELECT `name`,`title` FROM `gxfc_addon` WHERE  `name` = '' LIMIT 1 [ RunTime:0.000271s ]
+[2022-11-18T16:26:51+08:00][sql] CONNECT:[ UseTime:0.000411s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:26:51+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order` [ RunTime:0.001198s ]
+[2022-11-18T16:26:51+08:00][sql] SELECT SUM(`order_money`) AS think_sum FROM `gxfc_order` WHERE  `order_status` > 0 [ RunTime:0.000422s ]
+[2022-11-18T16:26:51+08:00][sql] SELECT SUM(`dj_money`) AS think_sum FROM `gxfc_order` WHERE  `order_status` > 0 [ RunTime:0.000332s ]
+[2022-11-18T16:26:51+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_settlement_period` [ RunTime:0.000562s ]
+[2022-11-18T16:26:51+08:00][sql] SELECT 
+                sum(shop_money) as shop_money,
+                sum(refund_shop_money) as refund_shop_money,
+                sum(commission) as commission,
+                sum(platform_money) as platform_money,
+                sum(website_commission) as website_commission,
+                sum(platform_coupon_money) as platform_coupon_money,
+                sum(refund_platform_coupon_money) as refund_platform_coupon_money
+                 FROM `gxfc_shop_settlement_period` WHERE  `period_id` > 0 LIMIT 1 [ RunTime:0.000310s ]
+[2022-11-18T16:26:51+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop` [ RunTime:0.000748s ]
+[2022-11-18T16:26:51+08:00][sql] SELECT sum(account) as account, sum(account_withdraw) as account_withdraw, sum(account_withdraw_apply) as account_withdraw_apply, sum(shop_baozhrmb) as shop_baozhrmb, sum(shop_open_fee) as shop_open_fee FROM `gxfc_shop` WHERE  `site_id` > 0 LIMIT 1 [ RunTime:0.000323s ]
+[2022-11-18T16:26:51+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000714s ]
+[2022-11-18T16:26:51+08:00][sql] SELECT 
+                sum(balance) as balance, 
+                sum(balance_money) as balance_money,
+                sum(balance_withdraw_apply) as balance_withdraw_apply, 
+                sum(balance_withdraw) as balance_withdraw
+                 FROM `gxfc_member` WHERE  `member_id` > 0 LIMIT 1 [ RunTime:0.000305s ]
+[2022-11-18T16:26:51+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_fenxiao` [ RunTime:0.000878s ]
+[2022-11-18T16:26:51+08:00][sql] SELECT sum(account) as account,sum(account_withdraw) as account_withdraw,sum(account_withdraw_apply) as account_withdraw_apply FROM `gxfc_fenxiao` WHERE  `status` IN (1,-1)  AND `is_delete` = 0 LIMIT 1 [ RunTime:0.000491s ]
+[2022-11-18T16:26:51+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_fenxiao_order` [ RunTime:0.000791s ]
+[2022-11-18T16:26:51+08:00][sql] SELECT sum(real_goods_money) as real_goods_money FROM `gxfc_fenxiao_order` WHERE  `is_refund` = 0  AND `is_settlement` = 1 LIMIT 1 [ RunTime:0.000342s ]
+[2022-11-18T16:26:51+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_supply_settlement_period` [ RunTime:0.000592s ]
+[2022-11-18T16:26:51+08:00][sql] SELECT 
+                sum(supply_money) as supply_money,
+                sum(refund_supply_money) as refund_supply_money,
+                sum(commission) as commission,
+                sum(platform_money) as platform_money,
+                sum(website_commission) as website_commission
+                 FROM `gxfc_supply_settlement_period` WHERE  `period_id` > 0 LIMIT 1 [ RunTime:0.000521s ]
+[2022-11-18T16:26:51+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_supplier` [ RunTime:0.000690s ]
+[2022-11-18T16:26:51+08:00][sql] SELECT sum(account) as account, sum(account_withdraw) as account_withdraw, sum(account_withdraw_apply) as account_withdraw_apply, sum(bond) as bond, sum(open_fee) as open_fee FROM `gxfc_supplier` WHERE  `supplier_site_id` > 0 LIMIT 1 [ RunTime:0.000279s ]
+[2022-11-18T16:26:51+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_supply_order` [ RunTime:0.000704s ]
+[2022-11-18T16:26:51+08:00][sql] SELECT SUM(`order_money`) AS think_sum FROM `gxfc_supply_order` WHERE  `order_status` > 0 [ RunTime:0.000230s ]
+[2022-11-18T16:26:53+08:00][sql] CONNECT:[ UseTime:0.000438s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:26:53+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_settlement_period` [ RunTime:0.000676s ]
+[2022-11-18T16:26:53+08:00][sql] SELECT 
+                sum(shop_money) as shop_money,
+                sum(refund_shop_money) as refund_shop_money,
+                sum(commission) as commission,
+                sum(platform_money) as platform_money,
+                sum(website_commission) as website_commission,
+                sum(platform_coupon_money) as platform_coupon_money,
+                sum(refund_platform_coupon_money) as refund_platform_coupon_money
+                 FROM `gxfc_shop_settlement_period` WHERE  `period_id` > 0 LIMIT 1 [ RunTime:0.000387s ]
+[2022-11-18T16:26:53+08:00][sql] CONNECT:[ UseTime:0.000434s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:26:53+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_settlement_period` [ RunTime:0.000737s ]
+[2022-11-18T16:26:53+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_shop_settlement_period` `a` ORDER BY `create_time` DESC [ RunTime:0.000294s ]
+[2022-11-18T16:26:53+08:00][sql] SELECT * FROM `gxfc_shop_settlement_period` `a` ORDER BY `create_time` DESC LIMIT 0,10 [ RunTime:0.000343s ]
+[2022-11-18T16:26:54+08:00][sql] CONNECT:[ UseTime:0.000394s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:26:54+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop` [ RunTime:0.000933s ]
+[2022-11-18T16:26:54+08:00][sql] SELECT sum(account) as account, sum(account_withdraw) as account_withdraw, sum(account_withdraw_apply) as account_withdraw_apply, sum(shop_baozhrmb) as shop_baozhrmb, sum(shop_open_fee) as shop_open_fee FROM `gxfc_shop` WHERE  `site_id` > 0 LIMIT 1 [ RunTime:0.000352s ]
+[2022-11-18T16:26:54+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000528s ]
+[2022-11-18T16:26:54+08:00][sql] SELECT `parent` FROM `gxfc_menu` WHERE  `url` = 'admin/shopaccount/withdrawlist'  AND `level` = 4 LIMIT 1 [ RunTime:0.000303s ]
+[2022-11-18T16:26:54+08:00][sql] CONNECT:[ UseTime:0.000496s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:26:54+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop` [ RunTime:0.001098s ]
+[2022-11-18T16:26:54+08:00][sql] SELECT sum(account) as account, sum(account_withdraw) as account_withdraw, sum(account_withdraw_apply) as account_withdraw_apply, sum(shop_baozhrmb) as shop_baozhrmb, sum(shop_open_fee) as shop_open_fee FROM `gxfc_shop` WHERE  `site_id` > 0 LIMIT 1 [ RunTime:0.000414s ]
+[2022-11-18T16:26:54+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_withdraw` [ RunTime:0.000701s ]
+[2022-11-18T16:26:54+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_shop_withdraw` `a` ORDER BY `apply_time` DESC [ RunTime:0.000234s ]
+[2022-11-18T16:26:54+08:00][sql] SELECT * FROM `gxfc_shop_withdraw` `a` ORDER BY `apply_time` DESC LIMIT 0,10 [ RunTime:0.000469s ]
+[2022-11-18T16:26:54+08:00][sql] CONNECT:[ UseTime:0.000422s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:26:54+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000855s ]
+[2022-11-18T16:26:54+08:00][sql] SELECT 
+                sum(balance) as balance, 
+                sum(balance_money) as balance_money,
+                sum(balance_withdraw_apply) as balance_withdraw_apply, 
+                sum(balance_withdraw) as balance_withdraw
+                 FROM `gxfc_member` WHERE  `member_id` > 0 LIMIT 1 [ RunTime:0.000364s ]
+[2022-11-18T16:26:54+08:00][sql] CONNECT:[ UseTime:0.000460s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T16:26:54+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_withdraw` [ RunTime:0.000797s ]
+[2022-11-18T16:26:54+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member_withdraw` `` ORDER BY `apply_time` DESC [ RunTime:0.000236s ]
+[2022-11-18T16:26:54+08:00][sql] SELECT * FROM `gxfc_member_withdraw` `` ORDER BY `apply_time` DESC LIMIT 0,10 [ RunTime:0.000312s ]
+[2022-11-18T17:29:43+08:00][sql] CONNECT:[ UseTime:0.000443s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T17:29:43+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000734s ]
+[2022-11-18T17:29:43+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Diy/index'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000465s ]
+[2022-11-18T17:29:43+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'WEBSITE_MID_INDEX'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000471s ]
+[2022-11-18T17:29:43+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'WEBSITE_MID_CONFIG'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000418s ]
+[2022-11-18T17:29:43+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'APPLET_ROOT'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000650s ]
+[2022-11-18T17:29:43+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop` [ RunTime:0.000938s ]
+[2022-11-18T17:29:43+08:00][sql] SELECT `group_id` FROM `gxfc_shop` WHERE  `site_id` = 0 LIMIT 1 [ RunTime:0.000412s ]
+[2022-11-18T17:29:43+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_group` [ RunTime:0.000689s ]
+[2022-11-18T17:29:43+08:00][sql] SELECT `addon_array` FROM `gxfc_shop_group` WHERE  `group_id` IS NULL LIMIT 1 [ RunTime:0.000202s ]
+[2022-11-18T17:29:43+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_diy_view_util` [ RunTime:0.000621s ]
+[2022-11-18T17:29:43+08:00][sql] SELECT `id`,`name`,`title`,`type`,`controller`,`value`,`addon_name`,`support_diy_view`,`max_count`,`is_delete`,`icon`,`icon_selected` FROM `gxfc_diy_view_util` WHERE  (`support_diy_view` LIKE 'DIY_VIEW_INDEX' OR `support_diy_view` LIKE '%DIY_VIEW_INDEX,%' OR `support_diy_view` LIKE '%DIY_VIEW_INDEX' OR `support_diy_view` LIKE '%,DIY_VIEW_INDEX,%' OR `support_diy_view` LIKE '') ORDER BY `sort` ASC [ RunTime:0.000459s ]
+[2022-11-18T17:29:43+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000520s ]
+[2022-11-18T17:29:43+08:00][sql] SELECT `site_id`,`name` FROM `gxfc_site_diy_view` WHERE  `site_id` = 0  AND `name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000275s ]
+[2022-11-18T17:29:43+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`site_id` = 0  AND `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000577s ]
+[2022-11-18T17:29:44+08:00][sql] CONNECT:[ UseTime:0.000465s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T17:29:44+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000819s ]
+[2022-11-18T17:29:44+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/System/cache'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.003707s ]
+[2022-11-18T17:29:44+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'CONFIG_SYSTEM_CACHE'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000488s ]
+[2022-11-18T17:29:44+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'CONFIG_SYSTEM'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000500s ]
+[2022-11-18T17:29:44+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'CONFIG_ROOT'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000423s ]
+[2022-11-18T17:29:47+08:00][sql] CONNECT:[ UseTime:0.000434s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T17:29:47+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop` [ RunTime:0.000926s ]
+[2022-11-18T17:29:47+08:00][sql] SELECT `group_id` FROM `gxfc_shop` WHERE  `site_id` = 0 LIMIT 1 [ RunTime:0.000275s ]
+[2022-11-18T17:29:47+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_group` [ RunTime:0.000584s ]
+[2022-11-18T17:29:47+08:00][sql] SELECT `addon_array` FROM `gxfc_shop_group` WHERE  `group_id` IS NULL LIMIT 1 [ RunTime:0.000177s ]
+[2022-11-18T17:29:47+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_diy_view_util` [ RunTime:0.000560s ]
+[2022-11-18T17:29:47+08:00][sql] SELECT `id`,`name`,`title`,`type`,`controller`,`value`,`addon_name`,`support_diy_view`,`max_count`,`is_delete`,`icon`,`icon_selected` FROM `gxfc_diy_view_util` WHERE  (`support_diy_view` LIKE 'DIY_VIEW_INDEX' OR `support_diy_view` LIKE '%DIY_VIEW_INDEX,%' OR `support_diy_view` LIKE '%DIY_VIEW_INDEX' OR `support_diy_view` LIKE '%,DIY_VIEW_INDEX,%' OR `support_diy_view` LIKE '') ORDER BY `sort` ASC [ RunTime:0.000425s ]
+[2022-11-18T17:29:47+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000493s ]
+[2022-11-18T17:29:47+08:00][sql] SELECT `site_id`,`name` FROM `gxfc_site_diy_view` WHERE  `site_id` = 0  AND `name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000268s ]
+[2022-11-18T17:29:47+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`site_id` = 0  AND `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000678s ]
+[2022-11-18T17:30:14+08:00][sql] CONNECT:[ UseTime:0.000393s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T17:30:14+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop` [ RunTime:0.000883s ]
+[2022-11-18T17:30:14+08:00][sql] SELECT `group_id` FROM `gxfc_shop` WHERE  `site_id` = 0 LIMIT 1 [ RunTime:0.000287s ]
+[2022-11-18T17:30:14+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_group` [ RunTime:0.000609s ]
+[2022-11-18T17:30:14+08:00][sql] SELECT `addon_array` FROM `gxfc_shop_group` WHERE  `group_id` IS NULL LIMIT 1 [ RunTime:0.000191s ]
+[2022-11-18T17:30:14+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_diy_view_util` [ RunTime:0.000526s ]
+[2022-11-18T17:30:14+08:00][sql] SELECT `id`,`name`,`title`,`type`,`controller`,`value`,`addon_name`,`support_diy_view`,`max_count`,`is_delete`,`icon`,`icon_selected` FROM `gxfc_diy_view_util` WHERE  (`support_diy_view` LIKE 'DIY_VIEW_INDEX' OR `support_diy_view` LIKE '%DIY_VIEW_INDEX,%' OR `support_diy_view` LIKE '%DIY_VIEW_INDEX' OR `support_diy_view` LIKE '%,DIY_VIEW_INDEX,%' OR `support_diy_view` LIKE '') ORDER BY `sort` ASC [ RunTime:0.000404s ]
+[2022-11-18T17:30:14+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000504s ]
+[2022-11-18T17:30:14+08:00][sql] SELECT `site_id`,`name` FROM `gxfc_site_diy_view` WHERE  `site_id` = 0  AND `name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000290s ]
+[2022-11-18T17:30:14+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`site_id` = 0  AND `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000695s ]
+[2022-11-18T17:31:03+08:00][sql] CONNECT:[ UseTime:0.000430s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T17:31:03+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000771s ]
+[2022-11-18T17:31:03+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Album/album'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000463s ]
+[2022-11-18T17:31:03+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'ADMIN_ALBUM_BOX'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000405s ]
+[2022-11-18T17:31:03+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'ADMIN_ALBUM_MANAGE'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000372s ]
+[2022-11-18T17:31:03+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_album` [ RunTime:0.000848s ]
+[2022-11-18T17:31:03+08:00][sql] SELECT `album_id`,`site_id`,`site_name`,`album_name`,`sort`,`cover`,`desc`,`is_default`,`update_time`,`num`,`app_module` FROM `gxfc_album` WHERE  `site_id` = 0  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000372s ]
+[2022-11-18T17:31:03+08:00][sql] SELECT `album_id`,`site_id`,`album_name`,`sort`,`cover`,`desc`,`is_default`,`update_time`,`num` FROM `gxfc_album` WHERE  `site_id` = 0  AND `app_module` = 'admin' [ RunTime:0.000310s ]
+[2022-11-18T17:31:03+08:00][sql] CONNECT:[ UseTime:0.000434s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-11-18T17:31:03+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_album_pic` [ RunTime:0.000773s ]
+[2022-11-18T17:31:03+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_album_pic` `a` WHERE  `site_id` = 0  AND `album_id` = 1 ORDER BY `update_time` DESC [ RunTime:0.000375s ]
+[2022-11-18T17:31:03+08:00][sql] SELECT `pic_id`,`pic_name`,`pic_path`,`pic_spec`,`site_id`,`update_time` FROM `gxfc_album_pic` `a` WHERE  `site_id` = 0  AND `album_id` = 1 ORDER BY `update_time` DESC LIMIT 0,12 [ RunTime:0.000332s ]

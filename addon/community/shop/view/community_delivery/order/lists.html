@@ -1,0 +1,804 @@
+{extend name="base"/}
+{block name="resources"}
+<style>
+    .layui-table-box {
+        overflow: inherit;
+    }
+    .layui-table-body {
+        overflow: inherit;
+    }
+    .layui-table-view td:last-child>div {
+        overflow: inherit;
+    }
+    .ns-table-btn {
+        position: relative;
+    }
+    .ns-table-btn .more-operation {
+        display: none;
+        font-size: 14px;
+        line-height: 20px;
+        background-color: #fff;
+        box-shadow: 0 2px 8px 0 rgba(200, 201, 204, .5);
+        position: absolute;
+        z-index: 2000;
+        border-radius: 2px;
+        padding: 13px 12px;
+        top: 40px;
+        right: 55%;
+        transform: translateX(10px);
+    }
+    .ns-table-btn .more-operation:before {
+        right: 14px;
+        top: -14px;
+        border: solid transparent;
+        content: "";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-color: transparent;
+        border-bottom-color: #fff;
+        border-width: 8px;
+    }
+    .ns-table-btn .more-operation .operation {
+        display: block;
+        text-align: right;
+        margin-bottom: 12px;
+        cursor: pointer;
+    }
+</style>
+{/block}
+{block name="main"}
+
+<!-- 筛选面板 -->
+<div class="ns-screen layui-collapse" lay-filter="selection_panel">
+    <div class="layui-colla-item">
+        <h2 class="layui-colla-title"></h2>
+        <form class="layui-colla-content layui-form layui-show" lay-filter="selection_panel_form">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">搜索方式：</label>
+                    <div class="layui-input-inline">
+                        <select name="select_field_type">
+                            {foreach $field_list.select as $key => $val}
+                            <option value="{$key}">{$val}</option>
+                            {/foreach}
+                        </select>
+                    </div>
+                    <div class="layui-input-inline">
+                        <input type="text" name="select_field_value" autocomplete="off" class="layui-input" placeholder="请按照搜索方式搜索"/>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">时间类型：</label>
+                    <div class="layui-input-inline">
+                        <select name="time_field_type">
+                            {foreach $field_list.time as $key => $val}
+                            <option value="{$key}">{$val}</option>
+                            {/foreach}
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <div class="layui-input-inline">
+                        <input type="text" name="start_date" placeholder="开始时间" class="layui-input choose-date" autocomplete="off">
+                        <i class="ns-calendar"></i>
+                    </div>
+                    <div class="layui-form-mid">-</div>
+                    <div class="layui-input-inline">
+                        <input type="text" name="end_date" placeholder="结束时间" class="layui-input choose-date" autocomplete="off">
+                        <i class="ns-calendar"></i>
+                    </div>
+                </div>
+            </div>
+
+            <input type="hidden" name="delivery_status">
+            <div class="ns-form-row">
+                <button type="button" class="layui-btn ns-bg-color" lay-submit lay-filter="search">筛选</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                <a class="layui-btn layui-btn-primary" href="{:url('community://shop/communitydelivery/exportlist')}" target="_blank">导出列表</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- 列表 -->
+<div class="layui-tab ns-table-tab" lay-filter="page_tab">
+    <ul class="layui-tab-title">
+        <li class="layui-this" lay-id="">全部</li>
+        {volist name='status_data' id='vo'}
+        <li lay-id="{$vo.status}">{$vo.name}</li>
+        {/volist}
+    </ul>
+    <div class="layui-tab-content">
+        <table id="page_list" lay-filter="page_list"></table>
+    </div>
+</div>
+
+{/block}
+{block name="script"}
+<script src="SHOP_JS/lodop_funcs.js"></script>
+
+<script type="text/javascript">
+    layui.use(['form', 'element', 'laydate'], function(form, element, laydate) {
+        // 防重复标识
+        var is_submit = false;
+
+        var table = new Table({
+            elem: '#page_list',
+            url: ns.url('community://shop/communitydelivery/orderlist'),
+            toolbar: (function () {
+                var html = '';
+
+                html += '<div class="tool-temp-btns">';
+                    html += '<button class="layui-btn layui-btn-primary" lay-event="batch_delivery">批量配送</button>';
+                    html += '<button class="layui-btn layui-btn-primary" lay-event="delivery">一键配送</button>';
+                    html += '<button class="layui-btn layui-btn-primary" lay-event="batch_complete">批量收货</button>';
+                    html += '<button class="layui-btn layui-btn-primary" lay-event="complete">一键收货</button>';
+                    html += '<button class="layui-btn layui-btn-primary" lay-event="export_goods_gather">导出商品出库单</button>';
+                    html += '<button class="layui-btn layui-btn-primary" lay-event="export_leader_invoice">导出团长对货单</button>';
+                    html += '<button class="layui-btn layui-btn-primary" lay-event="print_goods_gather">打印商品出库单</button>';
+                    html += '<button class="layui-btn layui-btn-primary" lay-event="print_leader_invoice">打印团长对货单</button>';
+                html += '</div>';
+
+                return html;
+            })(),
+            cols: [
+                [
+                    {
+                        width: '2%',
+                        type: 'checkbox'
+                    },
+                    {
+                        title: '配送单',
+                        width: '12%',
+                        templet: function (data) {
+                            var html = '';
+
+                            html += '<p style="color: '+ data.delivery_status_info.color +';">'+ data.delivery_status_info.name +'</p>';
+                            html += '<p class="ns-multi-line-hiding" title="'+ data.delivery_no +'">'+ data.delivery_no +'</p>';
+
+                            return html;
+                        },
+                    },
+                    {
+                        title: '团长',
+                        width: '16%',
+                        templet: function (data) {
+                            var html = '',
+                                default_img = 'SHOP_IMG/default_headimg.png';
+
+                            html += '<div class="ns-table-title">';
+                                html += '<div class="ns-title-pic">';
+                                    html += '<img layer-src src="'+ (data.leader_community_img ? ns.img(data.leader_community_img) : default_img) +'" onerror="this.src = \'' + default_img + '\'">';
+                                html += '</div>';
+                                html += '<div class="ns-title-content">';
+                                    html += '<p class="ns-multi-line-hiding" title="'+ data.leader_name +'">'+ data.leader_name +'</p>';
+                                    html += '<p class="ns-multi-line-hiding" title="'+ data.leader_mobile +'">'+ data.leader_mobile +'</p>';
+                                    html += '<div title="'+ (data.leader_full_address + data.leader_address) +'">';
+                                        html += '<p class="ns-multi-line-hiding">'+ data.leader_full_address +'</p>';
+                                        html += '<p class="ns-multi-line-hiding">'+ data.leader_address +'</p>';
+                                    html += '</div>';
+                                html += '</div>';
+                            html += '</div>';
+
+                            return html;
+                        },
+                    },
+                    {
+                        title: '自提点',
+                        width: '10%',
+                        templet: function (data) {
+                            return '<p class="ns-multi-line-hiding" title="'+ data.leader_community +'">'+ data.leader_community +'</p>';
+                        },
+                    },
+                    {
+                        title: '路线名称',
+                        width: '10%',
+                        templet: function (data) {
+                            return '<p class="ns-multi-line-hiding" title="'+ data.line_name +'">'+ data.line_name +'</p>';
+                        },
+                    },
+                    {
+                        title: '配送员',
+                        width: '14%',
+                        templet: function (data) {
+                            var html = '',
+                                default_img = 'SHOP_IMG/default_headimg.png';
+
+                            html += '<div class="ns-table-title">';
+                                html += '<div class="ns-title-pic">';
+                                    html += '<img layer-src src="'+ (data.clerk_headimg ? ns.img(data.clerk_headimg) : default_img) +'" onerror="this.src = \'' + default_img + '\'">';
+                                html += '</div>';
+                                html += '<div class="ns-title-content">';
+                                    html += '<p class="ns-multi-line-hiding" title="'+ data.clerk_name +'">'+ data.clerk_name +'</p>';
+                                    html += '<p class="ns-multi-line-hiding" title="'+ data.clerk_mobile +'">'+ data.clerk_mobile +'</p>';
+                                html += '</div>';
+                            html += '</div>';
+
+                            return html;
+                        },
+                    },
+                    {
+                        title: '时间',
+                        width: '15%',
+                        templet: function (data) {
+                            var html = '';
+
+                            html += '<p class="ns-multi-line-hiding">创建时间：'+ ns.time_to_date(data.create_time) +'</p>';
+                            html += '<p class="ns-multi-line-hiding">预计自提：'+ ns.time_to_date(data.arrive_time) +'</p>';
+                            if (data.delivery_time) {
+                                html += '<p class="ns-multi-line-hiding">配送时间：'+ ns.time_to_date(data.delivery_time) +'</p>';
+                            }
+                            if (data.complete_time) {
+                                html += '<p class="ns-multi-line-hiding">送达时间：'+ ns.time_to_date(data.complete_time) +'</p>';
+                            }
+
+                            return html;
+                        },
+                    },
+                    {
+                        title: '数量',
+                        width: '10%',
+                        templet: function (data) {
+                            var html = '';
+
+                            html += '<p class="ns-multi-line-hiding">订单数量：'+ data.order_num +'</p>';
+                            html += '<p class="ns-multi-line-hiding">商品数量：'+ data.goods_num +'</p>';
+
+                            return html;
+                        },
+                    },
+                    {
+                        title: '操作',
+                        width: '10%',
+                        templet: function (data) {
+                            var html = '';
+
+                            html += '<div class="ns-table-btn">';
+                                html += '<a class="layui-btn" href="'+ ns.url('community://shop/communitydelivery/orderdetail', {delivery_id: data.delivery_id}) +'" target="_blank">详情</a>';
+                                html += '<a class="layui-btn" lay-event="more">更多</a>';
+                                html += '<div class="more-operation">';
+                                    data.delivery_status_info.action.forEach(function (v) {
+                                        html += '<a class="operation" lay-event="'+ v.action +'">'+ v.name +'</a>';
+                                    });
+                                    html += '<a class="operation" lay-event="export_goods_gather">导出商品出库单</a>';
+                                    html += '<a class="operation" lay-event="export_leader_invoice">导出团长对货单</a>';
+                                    html += '<a class="operation" lay-event="print_goods_gather">打印商品出库单</a>';
+                                    html += '<a class="operation" lay-event="print_leader_invoice">打印团长对货单</a>';
+                                html += '</div>';
+                            html += '</div>';
+
+                            return html;
+                        },
+                    }
+                ]
+            ],
+            bottomToolbar: (function () {
+                var html = '';
+
+                html += '<div class="tool-temp-btns">';
+                    html += '<button class="layui-btn layui-btn-primary" lay-event="batch_delivery">批量配送</button>';
+                    html += '<button class="layui-btn layui-btn-primary" lay-event="delivery">一键配送</button>';
+                    html += '<button class="layui-btn layui-btn-primary" lay-event="batch_complete">批量收货</button>';
+                    html += '<button class="layui-btn layui-btn-primary" lay-event="complete">一键收货</button>';
+                    html += '<button class="layui-btn layui-btn-primary" lay-event="export_goods_gather">导出商品出库单</button>';
+                    html += '<button class="layui-btn layui-btn-primary" lay-event="export_leader_invoice">导出团长对货单</button>';
+                    html += '<button class="layui-btn layui-btn-primary" lay-event="print_goods_gather">打印商品出库单</button>';
+                    html += '<button class="layui-btn layui-btn-primary" lay-event="print_leader_invoice">打印团长对货单</button>';
+                html += '</div>';
+
+                return html;
+            })(),
+        });
+
+        // 渲染时间
+        lay('.choose-date').each(function(){
+            laydate.render({
+                elem: this,
+                trigger: 'click',
+                type: 'datetime'
+            });
+        });
+
+        // 监听Tab切换
+        element.on('tab(page_tab)', function () {
+            var delivery_status = $(this).attr('lay-id');
+
+            $('input[type="hidden"][name="delivery_status"]').val(delivery_status)
+
+            table.reload({
+                page: {
+                    curr: 1
+                },
+                where: {
+                    delivery_status: delivery_status
+                }
+            });
+        });
+
+        /**
+         * 搜索功能
+         */
+        form.on('submit(search)', function(data) {
+            table.reload({
+                page: {
+                    curr: 1
+                },
+                where: data.field
+            });
+            return false;
+        });
+
+        /**
+         * 监听行工具操作
+         */
+        table.tool(function(obj) {
+            var data = obj.data,
+                delivery_id = data.delivery_id;
+
+            switch (obj.event) {
+                // 更多
+                case 'more':
+                    (function () {
+                        var more_el = '.more-operation',
+                            hide = function(event) {
+                                if (event.target && $(event.target).attr('lay-event') !== 'more') {
+                                    $(more_el).hide();
+                                }
+                            };
+
+                        $(more_el).hide();
+                        $(obj.tr).find(more_el).show();
+
+                        $(document).off('click', hide).on('click', hide)
+                    })();
+                    break;
+                // 更新
+                case 'update':
+                    layer.confirm('更新该配送单的基础信息, 确定要更新吗?', function(index) {
+                        layer.close(index);
+                        updateOrder(delivery_id);
+                    });
+                    break;
+                // 开始配送
+                case 'delivery':
+                    layer.confirm('确定要配送吗?', function(index) {
+                        layer.close(index);
+                        orderDelivery(delivery_id);
+                    });
+                    break;
+                // 确认收货
+                case 'complete':
+                    layer.confirm('确定要收货吗?', function(index) {
+                        layer.close(index);
+                        orderComplete(delivery_id);
+                    });
+                    break;
+                // 删除
+                case 'delete':
+                    layer.confirm('确定要删除吗?', function(index) {
+                        layer.close(index);
+                        deleteOrder(delivery_id);
+                    });
+                    break;
+                // 导出商品出库单
+                case 'export_goods_gather':
+                    exportOrder('goods_gather', {
+                        select_field_type: 'delivery_no',
+                        select_field_value: data.delivery_no,
+                        delivery_id: delivery_id
+                    });
+                    break;
+                // 导出团长对货单
+                case 'export_leader_invoice':
+                    exportOrder('leader_invoice', {
+                        select_field_type: 'delivery_no',
+                        select_field_value: data.delivery_no,
+                        delivery_id: delivery_id
+                    });
+                    break;
+                // 打印商品出库单
+                case 'print_goods_gather':
+                    printCommunityDeliveryOrder('goods_gather', delivery_id);
+                    break;
+                // 打印团长对货单
+                case 'print_leader_invoice':
+                    printCommunityDeliveryOrder('leader_invoice', delivery_id);
+                    break;
+            }
+        });
+
+        /**
+         * 监听头部工具栏操作
+         */
+        table.toolbar(function (obj) {
+            toolbar(obj)
+        })
+
+        /**
+         * 监听底部工具栏操作
+         */
+        table.bottomToolbar(function (obj) {
+            toolbar(obj)
+        });
+
+        /**
+         * 工具栏操作
+         */
+        function toolbar(obj) {
+            var data = obj.data,
+                id_arr = [],
+                error = function () {
+                    if (data.length > 0) {
+                        return false;
+                    }
+
+                    layer.msg('请选择要操作的数据');
+                    return true;
+                }
+
+            for (i in data) id_arr.push(data[i].delivery_id);
+            var ids = id_arr.toString();
+
+            switch (obj.event) {
+                // 一键更新
+                case 'update':
+                    layer.confirm('只针对【待配送】状态的配送单更新部分基础信息, 确定要更新吗?', function(index) {
+                        layer.close(index);
+                        updateOrder();
+                    });
+                    break;
+                // 批量配送
+                case 'batch_delivery':
+                    if (!error()) {
+                        layer.confirm('此操作会把<span class="ns-text-color">已选</span>【待配送】状态的配送单更新为【配送中】状态, 确定要批量配送吗?', function(index) {
+                            layer.close(index);
+                            orderDelivery(ids);
+                        });
+                    }
+                    break;
+                // 一键配送
+                case 'delivery':
+                    layer.confirm('此操作会把【待配送】状态的配送单<span class="ns-text-color">全部</span>更新为【配送中】状态, 确定要一键配送吗?', function(index) {
+                        layer.close(index);
+                        orderDelivery();
+                    });
+                    break;
+                // 批量收货
+                case 'batch_complete':
+                    if (!error()) {
+                        layer.confirm('此操作会把<span class="ns-text-color">已选</span>【配送中】状态的配送单更新为【已送达】状态, 确定要批量收货吗?', function(index) {
+                            layer.close(index);
+                            orderComplete(ids);
+                        });
+                    }
+                    break;
+                // 一键收货
+                case 'complete':
+                    layer.confirm('此操作会把【配送中】状态的配送单<span class="ns-text-color">全部</span>更新为【已送达】状态, 确定要一键收货吗?', function(index) {
+                        layer.close(index);
+                        orderComplete();
+                    });
+                    break;
+                // 导出商品出库单
+                case 'export_goods_gather':
+                    exportOrder('goods_gather', form.val('selection_panel_form'));
+                    break;
+                // 导出团长对货单
+                case 'export_leader_invoice':
+                    exportOrder('leader_invoice', form.val('selection_panel_form'));
+                    break;
+                // 打印商品出库单
+                case 'print_goods_gather':
+                    if (!error()) {
+                        id_arr.forEach(function (delivery_id) {
+                            printCommunityDeliveryOrder('goods_gather', delivery_id, true);
+                        })
+                    }
+                    break;
+                // 打印团长对货单
+                case 'print_leader_invoice':
+                    if (!error()) {
+                        id_arr.forEach(function (delivery_id) {
+                            printCommunityDeliveryOrder('leader_invoice', delivery_id, true);
+                        })
+                    }
+                    break;
+            }
+        }
+
+        /**
+         * 更新配送单
+         * @param delivery_ids
+         */
+        function updateOrder(delivery_ids) {
+            var layer_index;
+
+            delivery_ids = delivery_ids ? String(delivery_ids) : '';
+
+            if (is_submit) return false;
+            is_submit = true;
+
+            $.ajax({
+                url: ns.url('community://shop/communitydelivery/updateOrder'),
+                data: {delivery_ids : delivery_ids},
+                dataType: 'JSON',
+                type: 'POST',
+                beforeSend : function(){
+                    // 显示加载中提示
+                    layer_index = layer.load();
+                },
+                complete : function () {
+                    // 关闭加载中提示
+                    layer.close(layer_index);
+                },
+                success: function (res) {
+                    is_submit = false;
+                    layer.msg(res.message);
+
+                    if (res.code == 0) {
+                        table.reload();
+                    }
+                },
+                error: function () {
+                    is_submit = false;
+                    layer.msg('操作异常');
+                }
+            });
+        }
+
+        /**
+         * 配送单配送
+         * @param delivery_ids
+         */
+        function orderDelivery(delivery_ids) {
+            var layer_index;
+
+            delivery_ids = delivery_ids ? String(delivery_ids) : '';
+
+            if (is_submit) return false;
+            is_submit = true;
+
+            $.ajax({
+                url: ns.url('community://shop/communitydelivery/orderDelivery'),
+                data: {delivery_ids : delivery_ids},
+                dataType: 'JSON',
+                type: 'POST',
+                beforeSend : function(){
+                    // 显示加载中提示
+                    layer_index = layer.load();
+                },
+                complete : function () {
+                    // 关闭加载中提示
+                    layer.close(layer_index);
+                },
+                success: function (res) {
+                    is_submit = false;
+                    layer.msg(res.message);
+
+                    if (res.code == 0) {
+                        table.reload();
+                    }
+                },
+                error: function () {
+                    is_submit = false;
+                    layer.msg('操作异常');
+                }
+            });
+        }
+
+        /**
+         * 配送单收货
+         * @param delivery_ids
+         */
+        function orderComplete(delivery_ids) {
+            var layer_index;
+
+            delivery_ids = delivery_ids ? String(delivery_ids) : '';
+
+            if (is_submit) return false;
+            is_submit = true;
+
+            $.ajax({
+                url: ns.url('community://shop/communitydelivery/orderComplete'),
+                data: {delivery_ids : delivery_ids},
+                dataType: 'JSON',
+                type: 'POST',
+                beforeSend : function(){
+                    // 显示加载中提示
+                    layer_index = layer.load();
+                },
+                complete : function () {
+                    // 关闭加载中提示
+                    layer.close(layer_index);
+                },
+                success: function (res) {
+                    is_submit = false;
+                    layer.msg(res.message);
+
+                    if (res.code == 0) {
+                        table.reload();
+                    }
+                },
+                error: function () {
+                    is_submit = false;
+                    layer.msg('操作异常');
+                }
+            });
+        }
+
+        /**
+         * 删除配送单
+         * @param delivery_ids
+         */
+        function deleteOrder(delivery_ids) {
+            var layer_index;
+
+            delivery_ids = delivery_ids ? String(delivery_ids) : '';
+
+            if (is_submit) return false;
+            is_submit = true;
+
+            $.ajax({
+                url: ns.url('community://shop/communitydelivery/deleteOrder'),
+                data: {delivery_ids : delivery_ids},
+                dataType: 'JSON',
+                type: 'POST',
+                beforeSend : function(){
+                    // 显示加载中提示
+                    layer_index = layer.load();
+                },
+                complete : function () {
+                    // 关闭加载中提示
+                    layer.close(layer_index);
+                },
+                success: function (res) {
+                    is_submit = false;
+                    layer.msg(res.message);
+
+                    if (res.code == 0) {
+                        table.reload();
+                    }
+                },
+                error: function () {
+                    is_submit = false;
+                    layer.msg('操作异常');
+                }
+            });
+        }
+
+        /**
+         * 导出配送单
+         * @param type
+         * @param condition
+         */
+        function exportOrder(type, condition) {
+            var layer_index;
+
+            layer.prompt({
+                formType: 3,
+                title: '导出记录名称',
+                maxlength: 30
+            }, function(value, index, elem){
+                var reg_en = /[`~!@#$%^&*()_+<>?:"{},.\/; '[\]]/im,
+                    reg_cn = /[·！#￥（——）：；“”‘、，|《。》？、【】[\]]/im;
+
+                if(reg_en.test(value) || reg_cn.test(value)) {
+                    elem.focus();
+                    layer.msg('名称不能包含特殊字符');
+                    return;
+                }
+
+                var data = $.extend(($.isPlainObject(condition) ? condition : {}), {
+                    export_type : type,
+                    export_name: value
+                });
+
+                layer.close(index);
+
+                if (is_submit) return false;
+                is_submit = true;
+
+                new Promise(function (resolve, reject) {
+
+                    // 添加导出记录
+                    $.ajax({
+                        url: ns.url('community://shop/communitydelivery/addExport'),
+                        data: data,
+                        dataType: 'JSON',
+                        type: 'POST',
+                        beforeSend : function(){
+                            // 显示加载中提示
+                            layer_index = layer.load();
+                        },
+                        complete : function () {
+                            // 关闭加载中提示
+                            layer.close(layer_index);
+                        },
+                        success: function (res) {
+
+                            layer.msg(res.message);
+
+                            if (res.code == 0) {
+                                resolve(res.data);
+                            } else {
+                                reject();
+                            }
+                        },
+                        error: function () {
+                            layer.msg('操作异常');
+                            reject()
+                        }
+                    });
+                }).then(function (res) {
+
+                    // 执行导出
+                    $.ajax({
+                        url: ns.url('community://shop/communitydelivery/exportOrder'),
+                        data: {export_id: res},
+                        dataType: 'JSON',
+                        type: 'POST',
+                        success: function (res) {},
+                    });
+
+                    // 跳转导出页面
+                    is_submit = false;
+                    window.open(ns.url("shop/communitydelivery/exportList"));
+
+                }).catch(function (reason) {
+                    is_submit = false;
+                })
+            });
+        }
+
+        /**
+         * 打印
+         * @param type
+         * @param delivery_id
+         * @param is_batch
+         */
+        function printCommunityDeliveryOrder(type, delivery_id, is_batch) {
+            var url = '',
+                title = '';
+            switch (type) {
+                case 'goods_gather':
+                    url = ns.url('community://shop/printer/communityDeliveryGoodsGather', {delivery_id: delivery_id});
+                    title = '商品出库单';
+                    break;
+                case 'leader_invoice':
+                    url = ns.url('community://shop/printer/communityDeliveryLeaderInvoice', {delivery_id: delivery_id});
+                    title = '团长对货单';
+                    break;
+            }
+            if (!delivery_id) {
+                layer.msg('参数错误');
+                return;
+            }
+            if (!url) {
+                layer.msg('类型错误');
+                return;
+            }
+
+            var LODOP = getLodop();
+            LODOP.PRINT_INIT(title);
+            LODOP.ADD_PRINT_TBURL(5,10,"770","95%",url);
+            LODOP.SET_PRINT_STYLEA(0,"HOrient",3);
+            LODOP.SET_PRINT_STYLEA(0,"VOrient",3);
+            LODOP.ADD_PRINT_TEXT(590,680,130,22,"页号：第#页/共&页");
+            LODOP.SET_PRINT_STYLEA(0,"ItemType",2);
+            LODOP.SET_PRINT_STYLEA(0,"Horient",1);
+            LODOP.SET_PRINT_STYLEA(0,"Vorient",1);
+            LODOP.SET_SHOW_MODE("MESSAGE_GETING_URL",""); //该语句隐藏进度条或修改提示信息
+
+            if (is_batch) {
+                // 直接打印
+                LODOP.PRINT();
+            } else {
+                // 预览
+                LODOP.PREVIEW();
+            }
+        }
+    });
+</script>
+{/block}

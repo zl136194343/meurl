@@ -1,0 +1,808 @@
+{extend name="base"/}
+{block name="resources"}
+<style>
+    .layui-table-box {
+        overflow: inherit;
+    }
+    .layui-table-body {
+        overflow: inherit;
+    }
+    .layui-table-view td:last-child>div {
+        overflow: inherit;
+    }
+    .ns-table-btn {
+        position: relative;
+    }
+    .ns-table-btn .more-operation {
+        display: none;
+        font-size: 14px;
+        line-height: 20px;
+        background-color: #fff;
+        box-shadow: 0 2px 8px 0 rgba(200, 201, 204, .5);
+        position: absolute;
+        z-index: 2000;
+        border-radius: 2px;
+        padding: 13px 12px;
+        top: 40px;
+        right: 55%;
+        transform: translateX(10px);
+    }
+    .ns-table-btn .more-operation:before {
+        right: 0;
+        top: -14px;
+        border: solid transparent;
+        content: "";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-color: transparent;
+        border-bottom-color: #fff;
+        border-width: 8px;
+    }
+    .ns-table-btn .more-operation .operation {
+        display: block;
+        text-align: right;
+        margin-bottom: 12px;
+        cursor: pointer;
+    }
+</style>
+{/block}
+{block name="main"}
+<!-- 筛选面板 -->
+<div class="ns-screen layui-collapse" lay-filter="selection_panel">
+    <div class="layui-colla-item">
+        <h2 class="layui-colla-title"></h2>
+        <form class="layui-colla-content layui-form layui-show" lay-filter="selection_panel_form">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">搜索方式：</label>
+                    <div class="layui-input-inline">
+                        <select name="select_field_type">
+                            {foreach $field_list.select as $key => $val}
+                            <option value="{$key}">{$val}</option>
+                            {/foreach}
+                        </select>
+                    </div>
+                    <div class="layui-input-inline">
+                        <input type="text" name="select_field_value" autocomplete="off" class="layui-input" placeholder="请按照搜索方式搜索"/>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">时间类型：</label>
+                    <div class="layui-input-inline">
+                        <select name="time_field_type">
+                            {foreach $field_list.time as $key => $val}
+                            <option value="{$key}">{$val}</option>
+                            {/foreach}
+                        </select>
+                    </div>
+                    <div class="layui-inline">
+                        <div class="layui-input-inline">
+                            <input type="text" name="start_date" placeholder="开始时间" class="layui-input choose-date" autocomplete="off">
+                            <i class="ns-calendar"></i>
+                        </div>
+                        <div class="layui-form-mid">-</div>
+                        <div class="layui-input-inline">
+                            <input type="text" name="end_date" placeholder="结束时间" class="layui-input choose-date" autocomplete="off">
+                            <i class="ns-calendar"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">团长等级：</label>
+                    <div class="layui-input-inline">
+                        <select name="level_id">
+                            <option value="">请选择团长等级</option>
+                            {volist name='level_list' id='vo'}
+                            <option value="{$vo.level_id}">{$vo.level_name}</option>
+                            {/volist}
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">休息状态：</label>
+                    <div class="layui-input-inline">
+                        <select name="rest_status">
+                            <option value="">请选择休息状态</option>
+                            {volist name='rest_status_data' id='vo'}
+                            <option value="{$vo.status}">{$vo.name}</option>
+                            {/volist}
+                        </select>
+                    </div>
+                </div>
+<!--                <div class="layui-inline">
+                    <label class="layui-form-label">配送路线：</label>
+                    <div class="layui-input-inline">
+                        <select name="line_id">
+                            <option value="">请选择配送路线</option>
+                            {volist name='line_list' id='vo'}
+                            <option value="{$vo.line_id}">{$vo.line_name}</option>
+                            {/volist}
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">配送员：</label>
+                    <div class="layui-input-inline">
+                        <select name="clerk_id">
+                            <option value="">请选择配送员</option>
+                            {volist name='clerk_list' id='vo'}
+                            <option value="{$vo.clerk_id}">{$vo.clerk_name}</option>
+                            {/volist}
+                        </select>
+                    </div>
+                </div>-->
+            </div>
+
+            <input type="hidden" name="status">
+            <div class="ns-form-row">
+                <button type="button" class="layui-btn ns-bg-color" lay-submit lay-filter="search">筛选</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                <a class="layui-btn ns-bg-color" href="{:url('community/shop/community/addLeader')}" >添加团长</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- 列表 -->
+<div class="layui-tab ns-table-tab" lay-filter="page_tab">
+    <ul class="layui-tab-title">
+        <li class="layui-this" lay-id="">全部</li>
+        {volist name='status_data' id='vo'}
+        <li lay-id="{$vo.status}">{$vo.name}</li>
+        {/volist}
+    </ul>
+    <div class="layui-tab-content">
+        <table id="page_list" lay-filter="page_list"></table>
+    </div>
+</div>
+
+{/block}
+{block name="script"}
+<script type="text/javascript">
+    layui.use(['form', 'element', 'laydate', 'laytpl'], function(form, element, laydate, laytpl) {
+        // 防重复标识
+        var is_submit = false;
+
+        var table = new Table({
+            elem: '#page_list',
+            url: ns.url('community://shop/community/lists'),
+            toolbar: (function () {
+                var html = '';
+
+                html += '<div class="tool-temp-btns">';
+                    html += '<button class="layui-btn layui-btn-primary" lay-event="freeze">批量冻结</button>';
+                    html += '<button class="layui-btn layui-btn-primary" lay-event="recover">批量恢复</button>';
+                   /* html += '<button class="layui-btn layui-btn-primary" lay-event="bind_line">绑定路线</button>';*/
+                    html += '<button class="layui-btn layui-btn-primary" lay-event="set_rest">设置休息</button>';
+                    html += '<button class="layui-btn layui-btn-primary" lay-event="cancel_rest">取消休息</button>';
+                html += '</div>';
+
+                return html;
+            })(),
+            cols: [
+                [
+                    {
+                        width: '2%',
+                        type: 'checkbox'
+                    },
+                    {
+                        title: '团长信息',
+                        width: '20%',
+                        templet: function (data) {
+                            var html = '',
+                                default_img = 'SHOP_IMG/default_headimg.png';
+
+                            html += '<div class="ns-table-title">';
+                                html += '<div class="ns-title-pic">';
+                                    html += '<img layer-src src="'+ (data.community_img ? ns.img(data.community_img) : default_img) +'" onerror="this.src = \'' + default_img + '\'">';
+                                html += '</div>';
+                                html += '<div class="ns-title-content">';
+                                    html += '<p class="ns-multi-line-hiding" title="'+ data.community +'">自提点：'+ data.community +'</p>';
+                                    html += '<p class="ns-multi-line-hiding" title="'+ (data.name + '【'+ data.level_name +'】') +'">团长名称：'+ (data.name + '【'+ data.level_name +'】') +'</p>';
+                                    html += '<p class="ns-multi-line-hiding" title="'+ data.mobile +'">团长手机：'+ data.mobile +'</p>';
+                                    html += '<p class="ns-multi-line-hiding" title="'+ (data.line_name + '【'+ data.clerk_name +'】') +'">';
+                                        /*html += '配送路线：<a href="'+ ns.url('community://shop/communitydelivery/editline', {line_id: data.line_id}) +'" class="ns-text-color" target="_blank">'+ data.line_name +'</a>';*/
+                                        /*html += '【<a href="'+ ns.url('community://shop/communitydelivery/editclerk', {clerk_id: data.clerk_id}) +'" class="ns-text-color" target="_blank">'+ data.clerk_name +'</a>】';*/
+                                    html += '</p>'
+                                html += '</div>';
+                            html += '</div>';
+
+                            return html;
+                        },
+                    },
+                    {
+                        title: '详细地址',
+                        width: '16%',
+                        templet: function (data) {
+                            var html = '';
+
+                            html += '<div title="'+ (data.full_address + data.address) +'">';
+                                html += '<p class="ns-multi-line-hiding">'+ data.full_address +'</p>';
+                                html += '<p class="ns-multi-line-hiding">'+ data.address +'</p>';
+                            html += '</div>';
+
+                            return html;
+                        },
+                    },
+                    {
+                        title: '时间',
+                        width: '15%',
+                        templet: function (data) {
+                            var html = '';
+
+                            html += '<p class="ns-multi-line-hiding">申请时间：'+ ns.time_to_date(data.apply_time) +'</p>';
+                            html += '<p class="ns-multi-line-hiding">成为团长：'+ ns.time_to_date(data.audit_time) +'</p>';
+
+                            return html;
+                        }
+                    },
+                    {
+                        field: 'commission_total',
+                        title: '总佣金',
+                        width: '6%',
+                        sort: true,
+                        autoSort: false,
+                    },
+                    {
+                        field: 'order_complete_money',
+                        title: '销售额',
+                        width: '6%',
+                        sort: true,
+                        autoSort: false,
+                    },
+                    {
+                        field: 'order_complete_num',
+                        title: '订单数',
+                        width: '6%',
+                        sort: true,
+                        autoSort: false,
+                    },
+                    {
+                        field: 'team_sum',
+                        title: '会员数',
+                        width: '6%'
+                    },
+                    {
+                        title: '状态',
+                        width: '10%',
+                        templet: function (data) {
+                            var html = '';
+
+                            html += '<p class="ns-multi-line-hiding">账号状态：<span style="color: '+ data.status_info.color +';">'+ data.status_info.name +'</span></p>';
+                            html += '<p class="ns-multi-line-hiding">休息状态：<span style="color: '+ data.rest_status_info.color +';">'+ data.rest_status_info.name +'</span></p>';
+
+                            return html;
+                        }
+                    },
+                    {
+                        title: '操作',
+                        width: '8%',
+                        templet: function(data) {
+                            var html = '';
+
+                            html += '<div class="ns-table-btn">';
+                                html += '<a class="layui-btn" href="'+ ns.url('community://shop/community/editLeader', {cl_id: data.cl_id}) +'" target="_blank">详情</a>';
+                                html += '<a class="layui-btn" lay-event="more">更多</a>';
+                                html += '<div class="more-operation">';
+                                    if (data.status_info.const === 'STATUS_NORMAL') {
+                                        html += '<a class="operation" lay-event="freeze">冻结账号</a>';
+                                    }
+                                    if (data.status_info.const === 'STATUS_FREEZE') {
+                                        html += '<a class="operation" lay-event="recover">恢复账号</a>';
+                                    }
+                                    /*html += '<a class="operation" lay-event="bind_line">绑定路线</a>';*/
+                                    if (data.rest_status_info.const === 'REST_NORMAL') {
+                                        html += '<a class="operation" lay-event="set_rest">设置休息</a>';
+                                    }
+                                    if (data.rest_status_info.const === 'RESTING') {
+                                        html += '<a class="operation" lay-event="cancel_rest">取消休息</a>';
+                                    }
+                                html += '</div>';
+                                html += '</div>';
+                            html += '</div>';
+                            return html;
+                        },
+                    }
+                ]
+            ],
+            bottomToolbar: (function () {
+                var html = '';
+
+                html += '<div class="tool-temp-btns">';
+                    html += '<button class="layui-btn layui-btn-primary" lay-event="freeze">批量冻结</button>';
+                    html += '<button class="layui-btn layui-btn-primary" lay-event="recover">批量恢复</button>';
+                    /*html += '<button class="layui-btn layui-btn-primary" lay-event="bind_line">绑定路线</button>';*/
+                    html += '<button class="layui-btn layui-btn-primary" lay-event="set_rest">设置休息</button>';
+                    html += '<button class="layui-btn layui-btn-primary" lay-event="cancel_rest">取消休息</button>';
+                html += '</div>';
+
+                return html;
+            })(),
+        });
+
+        // 渲染时间
+        lay('.choose-date').each(function(){
+            laydate.render({
+                elem: this,
+                trigger: 'click',
+                type: 'datetime'
+            });
+        });
+
+        // 监听Tab切换
+        element.on('tab(page_tab)', function () {
+            var status = $(this).attr('lay-id');
+
+            $('input[type="hidden"][name="status"]').val(status)
+
+            table.reload({
+                page: {
+                    curr: 1
+                },
+                where: {
+                    status: status
+                }
+            });
+        });
+
+        /**
+         * 搜索功能
+         */
+        form.on('submit(search)', function(data) {
+            table.reload({
+                page: {
+                    curr: 1
+                },
+                where: data.field
+            });
+            return false;
+        });
+
+
+        /**
+         * 监听行工具操作
+         */
+        table.tool(function(obj) {
+            var data = obj.data,
+                cl_id = data.cl_id;
+
+            switch (obj.event) {
+                // 更多
+                case 'more':
+                    (function () {
+                        var more_el = '.more-operation',
+                            hide = function(event) {
+                                if (event.target && $(event.target).attr('lay-event') !== 'more') {
+                                    $(more_el).hide();
+                                }
+                            };
+
+                        $(more_el).hide();
+                        $(obj.tr).find(more_el).show();
+
+                        $(document).off('click', hide).on('click', hide)
+                    })();
+                    break;
+                // 冻结账号
+                case 'freeze':
+                    layer.confirm('团长将不可进行提现选择取货地址等操作，确定要把该团长的<span class="ns-text-color">账号状态</span>变更为【冻结中】状态吗?', function(index) {
+                        layer.close(index);
+                        freezeLeader(cl_id);
+                    });
+                    break;
+                // 恢复账号
+                case 'recover':
+                    layer.confirm('恢复团长的一切权限，确定要把该团长的<span class="ns-text-color">账号状态</span>恢复为【正常】状态吗?', function(index) {
+                        layer.close(index);
+                        recoverLeader(cl_id);
+                    });
+                    break;
+                // 绑定路线
+                /*case 'bind_line':
+                    bindLine(cl_id, data);
+                    break;*/
+                // 设置休息
+                case 'set_rest':
+                    layer.confirm('会员将不可选择当前团长，确定要把该团长的<span class="ns-text-color">休息状态</span>变更为【休息中】状态吗?', function(index) {
+                        layer.close(index);
+                        setLeaderRest(cl_id, 1);
+                    });
+                    break;
+                // 取消休息
+                case 'cancel_rest':
+                    layer.confirm('会员将可继续选择当前团长，确定要把该团长的<span class="ns-text-color">休息状态</span>恢复为【正常】状态吗?', function(index) {
+                        layer.close(index);
+                        setLeaderRest(cl_id, 0);
+                    });
+                    break;
+            }
+        });
+
+        /**
+         * 监听头部工具栏操作
+         */
+        table.toolbar(function (obj) {
+            toolbar(obj)
+        })
+
+        /**
+         * 监听底部工具栏操作
+         */
+        table.bottomToolbar(function (obj) {
+            toolbar(obj)
+        });
+
+        /**
+         * 工具栏操作
+         */
+        function toolbar(obj) {
+            var data = obj.data,
+                id_arr = [],
+                error = function () {
+                    if (data.length > 0) {
+                        return false;
+                    }
+
+                    layer.msg('请选择要操作的数据');
+                    return true;
+                }
+
+            for (i in data) id_arr.push(data[i].cl_id);
+            var ids = id_arr.toString();
+
+            switch (obj.event) {
+                // 批量冻结
+                case 'freeze':
+                    if (!error()) {
+                        layer.confirm('团长将不可进行提现选择取货地址等操作，此操作会把<span class="ns-text-color">已选</span>团长的<span class="ns-text-color">账号状态</span>变更为【冻结中】状态, 确定要批量冻结吗?', function(index) {
+                            layer.close(index);
+                            freezeLeader(ids);
+                        });
+                    }
+                    break;
+                // 批量恢复
+                case 'recover':
+                    if (!error()) {
+                        layer.confirm('恢复团长的一切权限，此操作会把<span class="ns-text-color">已选</span>团长的<span class="ns-text-color">账号状态</span>恢复为【正常】状态, 确定要批量恢复吗?', function(index) {
+                            layer.close(index);
+                            recoverLeader(ids);
+                        });
+                    }
+                    break;
+                // 绑定路线
+                /*case 'bind_line':
+                    if (!error()) {
+                        bindLine(ids, (id_arr.length > 1 ? {} : data[0]));
+                    }
+                    break;*/
+                // 设置休息
+                case 'set_rest':
+                    if (!error()) {
+                        layer.confirm('会员将不可选择当前团长，此操作会把<span class="ns-text-color">已选</span>团长的<span class="ns-text-color">休息状态</span>变更为【休息中】状态, 确定要批量设置休息吗?', function(index) {
+                            layer.close(index);
+                            setLeaderRest(ids, 1);
+                        });
+                    }
+                    break;
+                // 取消休息
+                case 'cancel_rest':
+                    if (!error()) {
+                        layer.confirm('会员将可继续选择当前团长, 此操作会把<span class="ns-text-color">已选</span>团长的<span class="ns-text-color">休息状态</span>恢复为【正常】状态, 确定要批量取消休息吗?', function(index) {
+                            layer.close(index);
+                            setLeaderRest(ids, 0);
+                        });
+                    }
+                    break;
+            }
+        }
+
+        // 排序事件监听
+        table.on('sort', function (obj) {
+            table.reload({initSort: obj, where: $.extend(form.val('selection_panel_form'), {order_field: obj.field, order_type: obj.type})});
+        })
+
+        /**
+         * 冻结团长账号
+         * @param cl_ids
+         */
+        function freezeLeader(cl_ids) {
+            var layer_index;
+
+            cl_ids = cl_ids ? String(cl_ids) : '';
+
+            if (is_submit) return false;
+            is_submit = true;
+
+            $.ajax({
+                url: ns.url('community://shop/community/freezeLeader'),
+                data: {cl_ids : cl_ids},
+                dataType: 'JSON',
+                type: 'POST',
+                beforeSend : function(){
+                    // 显示加载中提示
+                    layer_index = layer.load();
+                },
+                complete : function () {
+                    // 关闭加载中提示
+                    layer.close(layer_index);
+                },
+                success: function (res) {
+                    is_submit = false;
+                    layer.msg(res.message);
+
+                    if (res.code == 0) {
+                        table.reload();
+                    }
+                },
+                error: function () {
+                    is_submit = false;
+                    layer.msg('操作异常');
+                }
+            });
+        }
+
+        /**
+         * 恢复团长账号
+         * @param cl_ids
+         */
+        function recoverLeader(cl_ids) {
+            var layer_index;
+
+            cl_ids = cl_ids ? String(cl_ids) : '';
+
+            if (is_submit) return false;
+            is_submit = true;
+
+            $.ajax({
+                url: ns.url('community://shop/community/recoverLeader'),
+                data: {cl_ids : cl_ids},
+                dataType: 'JSON',
+                type: 'POST',
+                beforeSend : function(){
+                    // 显示加载中提示
+                    layer_index = layer.load();
+                },
+                complete : function () {
+                    // 关闭加载中提示
+                    layer.close(layer_index);
+                },
+                success: function (res) {
+                    is_submit = false;
+                    layer.msg(res.message);
+
+                    if (res.code == 0) {
+                        table.reload();
+                    }
+                },
+                error: function () {
+                    is_submit = false;
+                    layer.msg('操作异常');
+                }
+            });
+        }
+
+        /**
+         * 绑定团长路线
+         * @param cl_ids
+         * @param data
+         */
+        function bindLine(cl_ids, data) {
+            lineObj.init({
+                laytpl: laytpl,
+                form: form,
+                table: table,
+                clIds: String(cl_ids)
+            }).render(data);
+        }
+
+        /**
+         * 设置团长休息
+         * @param cl_ids
+         * @param rest_status
+         */
+        function setLeaderRest(cl_ids, rest_status) {
+            var layer_index;
+
+            cl_ids = cl_ids ? String(cl_ids) : '';
+
+            if (is_submit) return false;
+            is_submit = true;
+
+            $.ajax({
+                url: ns.url('community://shop/community/setLeaderRest'),
+                data: {cl_ids : cl_ids, rest_status: rest_status},
+                dataType: 'JSON',
+                type: 'POST',
+                beforeSend : function(){
+                    // 显示加载中提示
+                    layer_index = layer.load();
+                },
+                complete : function () {
+                    // 关闭加载中提示
+                    layer.close(layer_index);
+                },
+                success: function (res) {
+                    is_submit = false;
+                    layer.msg(res.message);
+
+                    if (res.code == 0) {
+                        table.reload();
+                    }
+                },
+                error: function () {
+                    is_submit = false;
+                    layer.msg('操作异常');
+                }
+            });
+        }
+    });
+
+    /**
+     * 路线
+     */
+    var lineObj = {
+
+        laytpl: null,
+
+        form: null,
+
+        table: null,
+
+        clIds: '',
+
+        isSubmit: false,
+
+        layerIndex: 0,
+
+        /**
+         * 初始化
+         * @param params
+         * @returns {lineObj}
+         */
+        init: function (params) {
+            var _self = this;
+
+            $.each(params, function (k, v) {
+
+                if ($.inArray(k, ['laytpl', 'form', 'table', 'clIds']) !== -1) {
+                    _self[k] = v;
+                }
+            });
+
+            return _self;
+        },
+
+        /**
+         * 渲染
+         * @param data
+         */
+        render: function (data) {
+            var _self = this;
+
+            data = $.extend({
+                line_id: '',
+                line_name: '',
+                clerk_id: '',
+                clerk_name: '',
+            }, ($.isPlainObject(data) ? data : {}));
+
+            _self.laytpl($('#bind_line_box').html()).render(data, function(html) {
+                _self.layerIndex = layer.open({
+                    title: '绑定路线',
+                    skin: 'layer-tips-class',
+                    type: 1,
+                    area: ['35%'],
+                    content: html,
+                    success: function(){
+                        _self.form.render();
+
+                        _self.submit();
+
+                    }
+                });
+            });
+        },
+
+        /**
+         * 选择路线
+         */
+        choose: function () {
+            layer.open({
+                title: '路线列表',
+                id: 'bind_line_layer',
+                type: 2,
+                area: ['60%', '80%'],
+                content: ns.url('community://shop/communitydelivery/chooseLine', {chooseCallback: 'lineObj.chooseCallback'}),
+            });
+        },
+
+        /**
+         * 选择路线回调
+         * @param data
+         */
+        chooseCallback: function (data) {
+            var _self = this;
+
+            // 这里要深拷贝数据
+            _self.form.val('bind_line_form', JSON.parse(JSON.stringify(data)));
+        },
+
+        /**
+         * 提交
+         */
+        submit: function () {
+            var _self = this,
+                layer_index;
+
+            _self.form.on('submit(bindLine)', function(obj) {
+
+                layer.close(_self.layerIndex);
+
+                if (_self.isSubmit) return false;
+                _self.isSubmit = true;
+
+                $.ajax({
+                    url: ns.url('community://shop/community/bindLeaderLine'),
+                    data: $.extend(obj.field, {cl_ids: _self.clIds}),
+                    dataType: 'JSON',
+                    type: 'POST',
+                    beforeSend : function(){
+                        // 显示加载中提示
+                        layer_index = layer.load();
+                    },
+                    complete : function () {
+                        // 关闭加载中提示
+                        layer.close(layer_index);
+                    },
+                    success: function (res) {
+                        _self.isSubmit = false;
+                        layer.msg(res.message);
+
+                        if (res.code == 0) {
+                            _self.table.reload();
+                        }
+                    },
+                    error: function () {
+                        _self.isSubmit = false;
+                        layer.msg('操作异常');
+                    }
+                });
+            });
+        }
+    };
+</script>
+
+<!-- 绑定路线 -->
+<!--<script type="text/html" id="bind_line_box">
+    <div class="layui-form member-form" lay-filter="bind_line_form">
+        <div class="layui-form-item">
+            <label class="layui-form-label mid"><span class="required">*</span>绑定路线：</label>
+            <div class="layui-input-block">
+                <div class="layui-input-inline">
+                    <input type="text" placeholder="请选择路线" readonly name="line_name" autocomplete="off" class="layui-input ns-len-mid" value="{{d.line_name}}">
+                </div>
+                <input type="hidden" name="line_id" lay-verify="required" placeholder="请绑定路线" value="{{d.line_id}}">
+                <button class="layui-btn ns-bg-color" type="button" onclick="lineObj.choose()">选择路线</button>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label mid"><span class="required">*</span>绑定配送员：</label>
+            <div class="layui-input-block">
+                <div class="layui-input-inline">
+                    <input type="text" placeholder="绑定路线后将自动绑定配送员" readonly name="clerk_name" autocomplete="off" class="layui-input ns-len-mid" value="{{d.clerk_name}}">
+                </div>
+                <input type="hidden" name="clerk_id" lay-verify="required" placeholder="请绑定路线" value="{{d.clerk_id}}">
+            </div>
+        </div>
+
+        <div class="ns-form-row mid">
+            <button class="layui-btn ns-bg-color" lay-submit lay-filter="bindLine">确定</button>
+        </div>
+    </div>
+</script>-->
+{/block}

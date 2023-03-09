@@ -1,0 +1,114 @@
+{extend name="base"/}
+{block name="resources"}
+<link rel="stylesheet" href="__STATIC__/ext/video/video.css">
+<link rel="stylesheet" type="text/css" href="__STATIC__/ext/searchable_select/searchable_select.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/css/common.css" />
+<link rel="stylesheet" type="text/css" href="__STATIC__/css/main.css" />
+<link rel="stylesheet" type="text/css" href="SHOP_CSS/goods_edit.css" />
+{/block}
+{block name="main"}
+<div class="layui-form">
+	<div class="ns-tab layui-tab layui-tab-brief" lay-filter="goods_tab">
+		<div class="layui-tab-content">
+
+			<!-- 基础设置 -->
+			<div class="layui-tab-item layui-show">
+
+				<!-- 商品类型 -->
+				<div class="layui-card ns-card-common">
+					<div class="layui-card-header">
+						<span class="ns-card-title">使用说明</span>
+					</div>
+					<div class="layui-card-body">
+					     <div class="layui-form-item">
+                    		<label class="layui-form-label"><span class="required">*</span>详细分类名：</label>
+                    		<div class="layui-input-inline">
+                    			<input type="text" name="title" lay-verify="name" value="{$info.title}" placeholder="请输入对应的分类名" autocomplete="off" class="layui-input ns-len-long">
+                    		</div>
+                    	</div>
+						<div class="layui-form-item">
+							<label class="layui-form-label">说明视频：</label>
+							<div class="layui-input-block">
+								<div class="video-thumb">
+									<video id="goods_video" class="video-js vjs-big-play-centered" controls="" poster="SHOP_IMG/goods_video_preview.png" preload="auto" src="{:img($info.content)}"></video>
+									<video id="temp_goods_video" class="video-js vjs-big-play-centered" controls="" poster="SHOP_IMG/goods_video_preview.png" preload="auto"></video>
+									<span class="delete-video hide" onclick="deleteVideo()"></span>
+								</div>
+								<div id="videoUpload" title="商品视频" style="position: absolute;left: 0;width: 250px;height: 90px;opacity: 0;cursor: pointer;z-index:10;"></div>
+							</div>
+						</div>
+						
+						<div class="layui-form-item">
+							<label class="layui-form-label"></label>
+							<div class="layui-input-block">
+								<input type="text" name="video_url" placeholder="视频地址" autocomplete="off" value="{$info.content}" class="layui-input ns-len-long">
+								<!--<input type="text" name="sort" value="{$info.sort}" placeholder="权重" autocomplete="off" class="layui-input ns-len-long">-->
+							</div>
+						</div>
+
+						<div class="layui-form-item">
+							<label class="layui-form-label">权重：</label>
+							<div class="layui-input-block">
+								<input type="hidden" name="id" value="{$info.id}">
+								<input type="text" name="sort" value="{$info.sort}" placeholder="权重" autocomplete="off" class="layui-input ns-len-long">
+							</div>
+						</div>
+				</div>
+			</div>
+			<!--	问卷调查-->
+	</div>
+
+	<div class="fixed-btn">
+		<button class="layui-btn layui-btn-primary ns-border-color ns-text-color js-prev" lay-submit="" lay-filter="prev">上一步</button>
+		<button class="layui-btn ns-bg-color js-save" lay-submit="" lay-filter="save">保存</button>
+		<button class="layui-btn layui-btn-primary ns-border-color ns-text-color js-next" lay-submit="" lay-filter="next">下一步</button>
+	</div>
+</div></div>
+
+<!--选择商品分类-->
+
+{/block}
+{block name="script"}
+
+<script src="__STATIC__/ext/drag-arrange.js"></script>
+<script src="__STATIC__/ext/video/videojs-ie8.min.js"></script>
+<script src="__STATIC__/ext/video/video.min.js"></script>
+<script src="__STATIC__/ext/searchable_select/searchable_select.js"></script>
+<script src="ADMIN_JS/sysm.js"></script>
+
+<script>
+	function insRow()
+	{
+
+		n = parseFloat(num.innerHTML)+1;
+		num.innerHTML= n;
+		 s=n-1;
+		var x=document.getElementById('myTable').insertRow(-1)
+		var y=x.insertCell(0)
+		var z=x.insertCell(1)
+		y.innerHTML='<p style="text-align: right;"> 问题 ' + n + '&nbsp; <a href="#del" class="delwt"> <p   style="text-align: right;">-删除问题</p></a> </p>'
+		z.innerHTML='<p>问题标题</p><input class="common-text" name="title[]" size="50" value="" type="text">                                        <p>问题类型：<input name="type[' + s + ']" value="0" type="radio" checked="" style="display:inline-block" class="xuanzhe"/>  单选题  <input name="type[' + s + ']" value="2" type="radio" style="display:inline-block" class="tiankong" /> 填空题</p>                                        <div class="ipt_div"><p>选项1：<input class="common-text" name="answer1[]" size="50" value="" type="text"></p>                                        <p>选项2：<input class="common-text" name="answer2[]" size="50" value="" type="text"></p>                                        <p>选项3：<input class="common-text" name="answer3[]" size="50" value="" type="text"></p>                                        <p>选项4：<input class="common-text" name="answer4[]" size="50" value="" type="text"></p>                                        <p>选项5：<input class="common-text" name="answer5[]" size="50" value="" type="text"></p>                                        <p>选项6：<input class="common-text" name="answer6[]" size="50" value="" type="text"></p></div>'
+	}
+
+	function tiankong() {
+		$(this).parent().parent().find('.ipt_div').css('display','none');
+	}
+	function xuanzhe() {
+		$(this).parent().parent().find('.ipt_div').css('display','inline-block');
+	}
+	$(function () {
+		$('body').on("click",'.xuanzhe',function () {
+			$(this).parent().parent().find('.ipt_div').css('display','inline-block');
+		})
+		$('body').on("click",'.tiankong',function () {
+			$(this).parent().parent().find('.ipt_div').css('display','none');
+		})
+		$('body').on("click",'.delwt',function () {
+			$(this).parents('tr').remove();
+			num.innerHTML = parseFloat(num.innerHTML) -1;
+		})
+
+	})
+
+</script>
+{/block}

@@ -1,0 +1,1001 @@
+[2022-12-19T09:20:55+08:00][sql] CONNECT:[ UseTime:0.007135s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T09:20:55+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_user` [ RunTime:0.003523s ]
+[2022-12-19T09:20:55+08:00][sql] SELECT `uid`,`app_module`,`app_group`,`is_admin`,`site_id`,`group_id`,`group_name`,`username`,`password`,`member_id`,`create_time`,`update_time`,`status`,`login_time`,`login_ip` FROM `gxfc_user` WHERE  `username` = 'admin'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000737s ]
+[2022-12-19T09:20:55+08:00][sql] UPDATE `gxfc_user`  SET `login_time` = 1671412855 , `login_ip` = '127.0.0.1'  WHERE  `uid` = 1 [ RunTime:0.002742s ]
+[2022-12-19T09:20:55+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_user_log` [ RunTime:0.003504s ]
+[2022-12-19T09:20:55+08:00][sql] INSERT INTO `gxfc_user_log` SET `uid` = 1 , `username` = 'admin' , `site_id` = 0 , `url` = 'admin/Login/login' , `ip` = '127.0.0.1' , `data` = '[]' , `action_name` = '用户登录' , `create_time` = 1671412855 [ RunTime:0.002770s ]
+[2022-12-19T09:20:56+08:00][sql] CONNECT:[ UseTime:0.008881s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T09:20:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.003930s ]
+[2022-12-19T09:20:56+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Index/index'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.001429s ]
+[2022-12-19T09:20:56+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'INDEX_ROOT'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.001458s ]
+[2022-12-19T09:20:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_stat_shop` [ RunTime:0.004524s ]
+[2022-12-19T09:20:56+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 12  AND `day` = 19 LIMIT 1 [ RunTime:0.000941s ]
+[2022-12-19T09:20:56+08:00][sql] INSERT INTO `gxfc_stat_shop` SET `site_id` = 0 , `year` = 2022 , `month` = 12 , `day` = 19 , `day_time` = 1671379200 [ RunTime:0.005364s ]
+[2022-12-19T09:20:56+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 12  AND `day` = 19  AND `day_time` = 1671379200 LIMIT 1 [ RunTime:0.000589s ]
+[2022-12-19T09:20:56+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 12  AND `day` = 19 LIMIT 1 [ RunTime:0.000403s ]
+[2022-12-19T09:20:56+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 12  AND `day` = 18 LIMIT 1 [ RunTime:0.000363s ]
+[2022-12-19T09:20:56+08:00][sql] INSERT INTO `gxfc_stat_shop` SET `site_id` = 0 , `year` = 2022 , `month` = 12 , `day` = 18 , `day_time` = 1671379200 [ RunTime:0.001399s ]
+[2022-12-19T09:20:56+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 12  AND `day` = 18  AND `day_time` = 1671379200 LIMIT 1 [ RunTime:0.000366s ]
+[2022-12-19T09:20:56+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 12  AND `day` = 10 LIMIT 1 [ RunTime:0.000395s ]
+[2022-12-19T09:20:56+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 12  AND `day` = 11 LIMIT 1 [ RunTime:0.000385s ]
+[2022-12-19T09:20:56+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 12  AND `day` = 12 LIMIT 1 [ RunTime:0.000590s ]
+[2022-12-19T09:20:56+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 12  AND `day` = 13 LIMIT 1 [ RunTime:0.000493s ]
+[2022-12-19T09:20:56+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 12  AND `day` = 14 LIMIT 1 [ RunTime:0.000420s ]
+[2022-12-19T09:20:56+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 12  AND `day` = 15 LIMIT 1 [ RunTime:0.000365s ]
+[2022-12-19T09:20:56+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 12  AND `day` = 16 LIMIT 1 [ RunTime:0.000352s ]
+[2022-12-19T09:20:56+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 12  AND `day` = 17 LIMIT 1 [ RunTime:0.000345s ]
+[2022-12-19T09:20:56+08:00][sql] INSERT INTO `gxfc_stat_shop` SET `site_id` = 0 , `year` = 2022 , `month` = 12 , `day` = 17 , `day_time` = 1671379200 [ RunTime:0.001546s ]
+[2022-12-19T09:20:56+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 12  AND `day` = 17  AND `day_time` = 1671379200 LIMIT 1 [ RunTime:0.000342s ]
+[2022-12-19T09:20:56+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 12  AND `day` = 18 LIMIT 1 [ RunTime:0.000625s ]
+[2022-12-19T09:20:56+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 12  AND `day` = 19 LIMIT 1 [ RunTime:0.000480s ]
+[2022-12-19T09:20:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order` [ RunTime:0.005437s ]
+[2022-12-19T09:20:56+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_order` WHERE  `order_status` = 0  AND `is_delete` = 0 [ RunTime:0.001193s ]
+[2022-12-19T09:20:56+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_order` WHERE  `order_status` = 1  AND `is_delete` = 0 [ RunTime:0.000465s ]
+[2022-12-19T09:20:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order_goods` [ RunTime:0.004567s ]
+[2022-12-19T09:20:56+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_order_goods` WHERE  `refund_status` NOT IN (0,3) [ RunTime:0.014310s ]
+[2022-12-19T09:20:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.004992s ]
+[2022-12-19T09:20:56+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `goods_state` = 1  AND `is_delete` = 0 [ RunTime:0.000891s ]
+[2022-12-19T09:20:56+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `goods_state` = 0  AND `is_delete` = 0 [ RunTime:0.000366s ]
+[2022-12-19T09:20:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_fenxiao_withdraw` [ RunTime:0.004361s ]
+[2022-12-19T09:20:56+08:00][sql] SELECT COUNT(`id`) AS think_count FROM `gxfc_fenxiao_withdraw` WHERE  `status` = 1 [ RunTime:0.000363s ]
+[2022-12-19T09:20:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_fenxiao_apply` [ RunTime:0.003536s ]
+[2022-12-19T09:20:56+08:00][sql] SELECT COUNT(`apply_id`) AS think_count FROM `gxfc_fenxiao_apply` WHERE  `status` = 1 [ RunTime:0.000312s ]
+[2022-12-19T09:20:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order_complain` [ RunTime:0.003804s ]
+[2022-12-19T09:20:56+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_order_complain` WHERE  `complain_status` = 1 [ RunTime:0.000454s ]
+[2022-12-19T09:20:56+08:00][sql] SELECT SUM(`order_money`) AS think_sum FROM `gxfc_order` [ RunTime:0.001374s ]
+[2022-12-19T09:20:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.005179s ]
+[2022-12-19T09:20:56+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` [ RunTime:0.000884s ]
+[2022-12-19T09:20:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_apply` [ RunTime:0.004945s ]
+[2022-12-19T09:20:56+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_shop_apply` WHERE  `create_time` BETWEEN 1671379200 AND 1671465599 [ RunTime:0.000413s ]
+[2022-12-19T09:20:56+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_shop_apply` WHERE  `create_time` BETWEEN 1671292800 AND 1671379199 [ RunTime:0.000319s ]
+[2022-12-19T09:20:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop` [ RunTime:0.002839s ]
+[2022-12-19T09:20:56+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_shop` WHERE  `create_time` BETWEEN 1671379200 AND 1671465599 [ RunTime:0.001495s ]
+[2022-12-19T09:20:56+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_shop` [ RunTime:0.000480s ]
+[2022-12-19T09:20:56+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` [ RunTime:0.000302s ]
+[2022-12-19T09:21:00+08:00][sql] CONNECT:[ UseTime:0.004560s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T09:21:00+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl` [ RunTime:0.005283s ]
+[2022-12-19T09:21:00+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000388s ]
+[2022-12-19T09:21:00+08:00][sql] SELECT * FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC LIMIT 0,10 [ RunTime:0.000292s ]
+[2022-12-19T09:21:02+08:00][sql] CONNECT:[ UseTime:0.001024s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T09:21:02+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl` [ RunTime:0.000979s ]
+[2022-12-19T09:21:02+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000642s ]
+[2022-12-19T09:21:02+08:00][sql] SELECT * FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC LIMIT 0,10 [ RunTime:0.000415s ]
+[2022-12-19T09:22:18+08:00][sql] CONNECT:[ UseTime:0.000999s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T09:22:18+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl` [ RunTime:0.000905s ]
+[2022-12-19T09:22:18+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000324s ]
+[2022-12-19T09:22:18+08:00][sql] SELECT * FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC LIMIT 0,10 [ RunTime:0.000354s ]
+[2022-12-19T09:22:35+08:00][sql] CONNECT:[ UseTime:0.000863s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T09:22:35+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl` [ RunTime:0.000941s ]
+[2022-12-19T09:22:35+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000301s ]
+[2022-12-19T09:22:35+08:00][sql] SELECT * FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC LIMIT 0,10 [ RunTime:0.000315s ]
+[2022-12-19T09:41:04+08:00][sql] CONNECT:[ UseTime:0.000762s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T09:41:04+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl` [ RunTime:0.000899s ]
+[2022-12-19T09:41:04+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000248s ]
+[2022-12-19T09:41:04+08:00][sql] SELECT * FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC LIMIT 0,10 [ RunTime:0.000235s ]
+[2022-12-19T09:42:33+08:00][sql] CONNECT:[ UseTime:0.000996s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T09:42:33+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.001589s ]
+[2022-12-19T09:42:33+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Goods/lists'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000609s ]
+[2022-12-19T09:42:33+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'GOODS_MANAGE'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000574s ]
+[2022-12-19T09:42:33+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'GOODS_ROOT'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000457s ]
+[2022-12-19T09:42:33+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.002149s ]
+[2022-12-19T09:42:33+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 0  AND `is_delete` = 0 [ RunTime:0.000522s ]
+[2022-12-19T09:42:33+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = -2  AND `is_delete` = 0 [ RunTime:0.000341s ]
+[2022-12-19T09:42:33+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 10  AND `is_delete` = 0 [ RunTime:0.000709s ]
+[2022-12-19T09:42:33+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_express_template` [ RunTime:0.003857s ]
+[2022-12-19T09:42:33+08:00][sql] SELECT `template_id`,`template_name` FROM `gxfc_express_template` ORDER BY `is_default` DESC [ RunTime:0.000317s ]
+[2022-12-19T09:42:33+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods_category` [ RunTime:0.003548s ]
+[2022-12-19T09:42:33+08:00][sql] SELECT `category_id`,`category_name`,`level`,`commission_rate` FROM `gxfc_goods_category` WHERE  `pid` = 0 ORDER BY `sort` ASC [ RunTime:0.000735s ]
+[2022-12-19T09:42:33+08:00][sql] CONNECT:[ UseTime:0.000677s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T09:42:33+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods_category` [ RunTime:0.001719s ]
+[2022-12-19T09:42:33+08:00][sql] SELECT `category_id`,`category_name`,`pid`,`level`,`category_id_1`,`category_id_2`,`category_id_3` FROM `gxfc_goods_category` WHERE  `level` = 1  AND `is_jifen` = 0 ORDER BY `sort` ASC [ RunTime:0.000364s ]
+[2022-12-19T09:42:33+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods_category` WHERE  `pid` = 30 [ RunTime:0.000395s ]
+[2022-12-19T09:42:33+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods_category` WHERE  `pid` = 31 [ RunTime:0.000212s ]
+[2022-12-19T09:42:33+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods_category` WHERE  `pid` = 36 [ RunTime:0.000327s ]
+[2022-12-19T09:42:34+08:00][sql] CONNECT:[ UseTime:0.002164s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T09:42:34+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods_brand` [ RunTime:0.003236s ]
+[2022-12-19T09:42:34+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods_brand` `ngb` LEFT JOIN `gxfc_shop` `ns` ON `ngb`.`site_id`=`ns`.`site_id` LEFT JOIN `gxfc_supplier` `nsp` ON `ngb`.`site_id`=`nsp`.`supplier_site_id` ORDER BY `ngb`.`create_time` DESC [ RunTime:0.007724s ]
+[2022-12-19T09:42:34+08:00][sql] SELECT `ngb`.`brand_id`,`ngb`.`brand_name`,`ngb`.`brand_initial`,`ngb`.`image_url`,`ngb`.`sort`,`ngb`.`create_time`,`ngb`.`is_recommend`,`ngb`.`site_id`,`ns`.`site_name`,nsp.title as supply_name FROM `gxfc_goods_brand` `ngb` LEFT JOIN `gxfc_shop` `ns` ON `ngb`.`site_id`=`ns`.`site_id` LEFT JOIN `gxfc_supplier` `nsp` ON `ngb`.`site_id`=`nsp`.`supplier_site_id` ORDER BY `ngb`.`create_time` DESC LIMIT 0,10 [ RunTime:0.000510s ]
+[2022-12-19T09:42:34+08:00][sql] CONNECT:[ UseTime:0.000803s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T09:42:34+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.008338s ]
+[2022-12-19T09:42:34+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 0  AND `is_delete` = 0 [ RunTime:0.000615s ]
+[2022-12-19T09:42:34+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = -2  AND `is_delete` = 0 [ RunTime:0.000452s ]
+[2022-12-19T09:42:34+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 10  AND `is_delete` = 0 [ RunTime:0.000427s ]
+[2022-12-19T09:42:34+08:00][sql] CONNECT:[ UseTime:0.003027s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T09:42:34+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.000964s ]
+[2022-12-19T09:42:34+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` `` WHERE  `is_delete` = 0 ORDER BY `create_time` DESC [ RunTime:0.000405s ]
+[2022-12-19T09:42:34+08:00][sql] SELECT `goods_id`,`goods_name`,`site_id`,`site_name`,`goods_image`,`is_own`,`goods_state`,`verify_state`,`price`,`goods_stock`,`goods_stock_alarm`,`create_time`,`sale_num`,`is_virtual`,`goods_class`,`is_fenxiao`,`fenxiao_type`,`sku_id`,`max_buy`,`min_buy`,`promotion_addon`,`sort` FROM `gxfc_goods` `` WHERE  `is_delete` = 0 ORDER BY `create_time` DESC LIMIT 0,10 [ RunTime:0.000400s ]
+[2022-12-19T09:42:35+08:00][sql] CONNECT:[ UseTime:0.012839s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T09:42:35+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.001357s ]
+[2022-12-19T09:42:35+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Goods/evaluatelist'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000368s ]
+[2022-12-19T09:42:35+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'GOODS_EVALUATE'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000367s ]
+[2022-12-19T09:42:35+08:00][sql] CONNECT:[ UseTime:0.018528s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T09:42:35+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods_evaluate` [ RunTime:0.003324s ]
+[2022-12-19T09:42:35+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods_evaluate` `a` ORDER BY `create_time` DESC [ RunTime:0.000373s ]
+[2022-12-19T09:42:35+08:00][sql] SELECT `evaluate_id`,`order_id`,`order_no`,`order_goods_id`,`goods_id`,`sku_id`,`sku_name`,`sku_price`,`sku_image`,`content`,`images`,`explain_first`,`member_name`,`member_headimg`,`member_id`,`is_anonymous`,`scores`,`again_content`,`again_images`,`again_explain`,`explain_type`,`is_show`,`create_time`,`again_time`,`shop_desccredit`,`shop_servicecredit`,`shop_deliverycredit`,`is_audit` FROM `gxfc_goods_evaluate` `a` ORDER BY `create_time` DESC LIMIT 0,2 [ RunTime:0.000393s ]
+[2022-12-19T10:03:49+08:00][sql] CONNECT:[ UseTime:0.000994s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T10:03:49+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl` [ RunTime:0.001406s ]
+[2022-12-19T10:03:49+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000428s ]
+[2022-12-19T10:03:49+08:00][sql] SELECT * FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC LIMIT 0,10 [ RunTime:0.000572s ]
+[2022-12-19T10:03:49+08:00][sql] CONNECT:[ UseTime:0.019914s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T10:03:49+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000889s ]
+[2022-12-19T10:03:49+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Dtgl/comment'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000589s ]
+[2022-12-19T10:03:49+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'DTGL_PINGLUN'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000464s ]
+[2022-12-19T10:03:50+08:00][sql] CONNECT:[ UseTime:0.010154s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T10:03:50+08:00][error] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'hunqin.gxfc_member_gc_pinglun' doesn't exist
+[2022-12-19T10:04:30+08:00][sql] CONNECT:[ UseTime:0.004214s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T10:04:30+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl_pinglun` [ RunTime:0.003302s ]
+[2022-12-19T10:04:30+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_dtgl_pinglun` `a` ORDER BY `id` DESC [ RunTime:0.000645s ]
+[2022-12-19T10:04:30+08:00][sql] SELECT * FROM `gxfc_dtgl_pinglun` `a` ORDER BY `id` DESC LIMIT 0,2 [ RunTime:0.000526s ]
+[2022-12-19T10:14:53+08:00][sql] CONNECT:[ UseTime:0.001111s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T10:14:53+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl_pinglun` [ RunTime:0.003299s ]
+[2022-12-19T10:14:53+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_dtgl_pinglun` `a` ORDER BY `id` DESC [ RunTime:0.000628s ]
+[2022-12-19T10:14:53+08:00][sql] SELECT * FROM `gxfc_dtgl_pinglun` `a` ORDER BY `id` DESC LIMIT 0,2 [ RunTime:0.001100s ]
+[2022-12-19T10:17:51+08:00][sql] CONNECT:[ UseTime:0.001502s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T10:17:51+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl_pinglun` [ RunTime:0.001614s ]
+[2022-12-19T10:17:51+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_dtgl_pinglun` `a` ORDER BY `id` DESC [ RunTime:0.000234s ]
+[2022-12-19T10:17:51+08:00][sql] SELECT * FROM `gxfc_dtgl_pinglun` `a` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000191s ]
+[2022-12-19T10:18:12+08:00][sql] CONNECT:[ UseTime:0.017441s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T10:18:12+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl_pinglun` [ RunTime:0.001637s ]
+[2022-12-19T10:18:12+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_dtgl_pinglun` `a` ORDER BY `id` DESC [ RunTime:0.000384s ]
+[2022-12-19T10:18:12+08:00][sql] SELECT * FROM `gxfc_dtgl_pinglun` `a` ORDER BY `id` DESC LIMIT 0,8 [ RunTime:0.000222s ]
+[2022-12-19T10:18:24+08:00][sql] CONNECT:[ UseTime:0.001670s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T10:18:24+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl_pinglun` [ RunTime:0.001481s ]
+[2022-12-19T10:18:24+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_dtgl_pinglun` `a` ORDER BY `id` DESC [ RunTime:0.000200s ]
+[2022-12-19T10:18:24+08:00][sql] SELECT * FROM `gxfc_dtgl_pinglun` `a` ORDER BY `id` DESC LIMIT 0,5 [ RunTime:0.000183s ]
+[2022-12-19T10:18:35+08:00][sql] CONNECT:[ UseTime:0.000830s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T10:18:35+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl_pinglun` [ RunTime:0.001336s ]
+[2022-12-19T10:18:35+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_dtgl_pinglun` `a` ORDER BY `id` DESC [ RunTime:0.000268s ]
+[2022-12-19T10:18:35+08:00][sql] SELECT * FROM `gxfc_dtgl_pinglun` `a` ORDER BY `id` DESC LIMIT 0,6 [ RunTime:0.000227s ]
+[2022-12-19T10:23:14+08:00][sql] CONNECT:[ UseTime:0.012506s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T10:23:14+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl_pinglun` [ RunTime:0.001667s ]
+[2022-12-19T10:23:14+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_dtgl_pinglun` `a` ORDER BY `id` DESC [ RunTime:0.000268s ]
+[2022-12-19T10:23:14+08:00][sql] SELECT * FROM `gxfc_dtgl_pinglun` `a` ORDER BY `id` DESC LIMIT 0,6 [ RunTime:0.000348s ]
+[2022-12-19T10:23:38+08:00][sql] CONNECT:[ UseTime:0.000826s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T10:23:38+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl_pinglun` [ RunTime:0.001275s ]
+[2022-12-19T10:23:38+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_dtgl_pinglun` `a` ORDER BY `id` DESC [ RunTime:0.000269s ]
+[2022-12-19T10:23:38+08:00][sql] SELECT * FROM `gxfc_dtgl_pinglun` `a` ORDER BY `id` DESC LIMIT 0,6 [ RunTime:0.000287s ]
+[2022-12-19T10:23:42+08:00][sql] CONNECT:[ UseTime:0.000764s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T10:23:42+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl_pinglun` [ RunTime:0.000811s ]
+[2022-12-19T10:23:42+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_dtgl_pinglun` `a` ORDER BY `id` DESC [ RunTime:0.000370s ]
+[2022-12-19T10:23:42+08:00][sql] SELECT * FROM `gxfc_dtgl_pinglun` `a` ORDER BY `id` DESC LIMIT 0,6 [ RunTime:0.000276s ]
+[2022-12-19T10:23:59+08:00][sql] CONNECT:[ UseTime:0.000733s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T10:23:59+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl_pinglun` [ RunTime:0.001167s ]
+[2022-12-19T10:23:59+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_dtgl_pinglun` `a` ORDER BY `id` DESC [ RunTime:0.000337s ]
+[2022-12-19T10:23:59+08:00][sql] SELECT * FROM `gxfc_dtgl_pinglun` `a` ORDER BY `id` DESC LIMIT 0,6 [ RunTime:0.000476s ]
+[2022-12-19T10:24:57+08:00][sql] CONNECT:[ UseTime:0.020577s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T10:24:57+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl_pinglun` [ RunTime:0.001591s ]
+[2022-12-19T10:24:57+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_dtgl_pinglun` `a` WHERE  ( `zp_title` LIKE '%15271600813%' OR `member_name` LIKE '%15271600813%' ) ORDER BY `id` DESC [ RunTime:0.000564s ]
+[2022-12-19T10:24:57+08:00][sql] SELECT * FROM `gxfc_dtgl_pinglun` `a` WHERE  ( `zp_title` LIKE '%15271600813%' OR `member_name` LIKE '%15271600813%' ) ORDER BY `id` DESC LIMIT 0,6 [ RunTime:0.000578s ]
+[2022-12-19T10:25:12+08:00][sql] CONNECT:[ UseTime:0.021239s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T10:25:12+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl_pinglun` [ RunTime:0.001282s ]
+[2022-12-19T10:25:12+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_dtgl_pinglun` `a` WHERE  ( `zp_title` LIKE '%测试%' OR `member_name` LIKE '%测试%' ) ORDER BY `id` DESC [ RunTime:0.000361s ]
+[2022-12-19T10:25:12+08:00][sql] SELECT * FROM `gxfc_dtgl_pinglun` `a` WHERE  ( `zp_title` LIKE '%测试%' OR `member_name` LIKE '%测试%' ) ORDER BY `id` DESC LIMIT 0,6 [ RunTime:0.000339s ]
+[2022-12-19T10:25:15+08:00][sql] CONNECT:[ UseTime:0.021653s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T10:25:15+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl_pinglun` [ RunTime:0.001560s ]
+[2022-12-19T10:25:15+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_dtgl_pinglun` `a` ORDER BY `id` DESC [ RunTime:0.000357s ]
+[2022-12-19T10:25:15+08:00][sql] SELECT * FROM `gxfc_dtgl_pinglun` `a` ORDER BY `id` DESC LIMIT 0,6 [ RunTime:0.000315s ]
+[2022-12-19T10:37:20+08:00][sql] CONNECT:[ UseTime:0.012988s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T10:37:20+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.001932s ]
+[2022-12-19T10:37:20+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Goodscategory/lists'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000875s ]
+[2022-12-19T10:37:20+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'GOODS_CATEGORY'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000691s ]
+[2022-12-19T10:37:20+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods_category` [ RunTime:0.001860s ]
+[2022-12-19T10:37:20+08:00][sql] SELECT `category_id`,`category_name`,`short_name`,`pid`,`level`,`is_show`,`sort`,`image`,`attr_class_name`,`category_id_1`,`category_id_2`,`category_id_3`,`commission_rate`,`supply_commission_rate` FROM `gxfc_goods_category` ORDER BY `sort` ASC [ RunTime:0.000481s ]
+[2022-12-19T10:57:27+08:00][sql] CONNECT:[ UseTime:0.000992s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T10:57:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.001121s ]
+[2022-12-19T10:57:27+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Dtgl/lists'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000514s ]
+[2022-12-19T10:57:27+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'DTGL_LIST'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000441s ]
+[2022-12-19T10:57:27+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'DTGL_ROOT'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000600s ]
+[2022-12-19T10:57:27+08:00][sql] CONNECT:[ UseTime:0.001685s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T10:57:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl` [ RunTime:0.000905s ]
+[2022-12-19T10:57:27+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000264s ]
+[2022-12-19T10:57:27+08:00][sql] SELECT * FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC LIMIT 0,10 [ RunTime:0.000194s ]
+[2022-12-19T10:57:30+08:00][sql] CONNECT:[ UseTime:0.013771s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T10:57:30+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.001745s ]
+[2022-12-19T10:57:30+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Dtgl/fllists'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000546s ]
+[2022-12-19T10:57:30+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'DTGL_FENLEI'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000402s ]
+[2022-12-19T10:57:30+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl_fenlei` [ RunTime:0.000761s ]
+[2022-12-19T10:57:30+08:00][sql] SELECT `id`,`name`,`img`,`sort` FROM `gxfc_dtgl_fenlei` ORDER BY `sort` ASC [ RunTime:0.000482s ]
+[2022-12-19T10:57:34+08:00][sql] CONNECT:[ UseTime:0.021424s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T10:57:34+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods_category` [ RunTime:0.000801s ]
+[2022-12-19T10:57:34+08:00][sql] UPDATE `gxfc_goods_category`  SET `sort` = 0  WHERE  `category_id` = 1 [ RunTime:0.000328s ]
+[2022-12-19T10:59:02+08:00][sql] CONNECT:[ UseTime:0.019902s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T10:59:02+08:00][error] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'hunqin.gxfc_compamy' doesn't exist
+[2022-12-19T10:59:35+08:00][sql] CONNECT:[ UseTime:0.011560s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T10:59:35+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001472s ]
+[2022-12-19T10:59:35+08:00][error] [10501]SQLSTATE[42S22]: Column not found: 1054 Unknown column 'img' in 'field list'
+[2022-12-19T11:01:22+08:00][sql] CONNECT:[ UseTime:0.018991s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T11:01:22+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001485s ]
+[2022-12-19T11:01:22+08:00][sql] SELECT `id`,`name`,`image`,`sort`,`pid`,`full_address` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.000358s ]
+[2022-12-19T11:01:22+08:00][error] [0]Call to undefined method app\admin\controller\Company::assign()
+[2022-12-19T11:02:04+08:00][error] [0]Call to undefined method app\admin\controller\Company::assign()
+[2022-12-19T11:02:36+08:00][sql] CONNECT:[ UseTime:0.019404s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T11:02:36+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.001358s ]
+[2022-12-19T11:02:36+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Company/lists'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.001952s ]
+[2022-12-19T11:02:36+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'DTGL_GS_LIST'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000515s ]
+[2022-12-19T11:02:36+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'DTGL_GS'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000504s ]
+[2022-12-19T11:02:36+08:00][error] [0]模板文件不存在:D:\phpstudy_pro\WWW\www.hunqin.com\app\admin\view\company\lists.html
+[2022-12-19T11:07:23+08:00][sql] CONNECT:[ UseTime:0.021473s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T11:07:23+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001475s ]
+[2022-12-19T11:07:23+08:00][sql] SELECT `id`,`name`,`image`,`sort`,`pid`,`full_address`,`level` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.000366s ]
+[2022-12-19T11:07:23+08:00][error] [8]未定义数组索引: category_id
+[2022-12-19T11:07:48+08:00][sql] CONNECT:[ UseTime:0.001356s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T11:07:48+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001602s ]
+[2022-12-19T11:07:48+08:00][sql] SELECT `id`,`name`,`image`,`sort`,`pid`,`full_address`,`level` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.000508s ]
+[2022-12-19T11:08:26+08:00][sql] CONNECT:[ UseTime:0.023338s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T11:08:26+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001574s ]
+[2022-12-19T11:08:26+08:00][sql] SELECT `id`,`name`,`image`,`sort`,`pid`,`full_address`,`level` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.001236s ]
+[2022-12-19T11:08:48+08:00][sql] CONNECT:[ UseTime:0.019492s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T11:08:48+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001392s ]
+[2022-12-19T11:08:48+08:00][sql] SELECT `id`,`name`,`image`,`sort`,`pid`,`full_address`,`level` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.000391s ]
+[2022-12-19T11:09:00+08:00][sql] CONNECT:[ UseTime:0.001073s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T11:09:00+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001286s ]
+[2022-12-19T11:09:00+08:00][sql] SELECT `id`,`name`,`image`,`sort`,`pid`,`full_address`,`level` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.000461s ]
+[2022-12-19T11:09:10+08:00][sql] CONNECT:[ UseTime:0.018566s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T11:09:10+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods_category` [ RunTime:0.001490s ]
+[2022-12-19T11:09:10+08:00][sql] UPDATE `gxfc_goods_category`  SET `sort` = 0  WHERE  `category_id` = 30 [ RunTime:0.001619s ]
+[2022-12-19T11:09:10+08:00][sql] UPDATE `gxfc_goods_category`  SET `sort` = 1  WHERE  `category_id` = 31 [ RunTime:0.001376s ]
+[2022-12-19T11:09:10+08:00][sql] UPDATE `gxfc_goods_category`  SET `sort` = 2  WHERE  `category_id` = 29 [ RunTime:0.001428s ]
+[2022-12-19T11:09:10+08:00][sql] UPDATE `gxfc_goods_category`  SET `sort` = 3  WHERE  `category_id` = 36 [ RunTime:0.001373s ]
+[2022-12-19T11:09:10+08:00][sql] UPDATE `gxfc_goods_category`  SET `sort` = 4  WHERE  `category_id` = 40 [ RunTime:0.001446s ]
+[2022-12-19T11:09:10+08:00][sql] UPDATE `gxfc_goods_category`  SET `sort` = 5  WHERE  `category_id` = 41 [ RunTime:0.001394s ]
+[2022-12-19T11:09:10+08:00][sql] UPDATE `gxfc_goods_category`  SET `sort` = 6  WHERE  `category_id` = 42 [ RunTime:0.001304s ]
+[2022-12-19T11:09:10+08:00][sql] UPDATE `gxfc_goods_category`  SET `sort` = 7  WHERE  `category_id` = 43 [ RunTime:0.001356s ]
+[2022-12-19T11:09:10+08:00][sql] UPDATE `gxfc_goods_category`  SET `sort` = 8  WHERE  `category_id` = 44 [ RunTime:0.001434s ]
+[2022-12-19T11:09:12+08:00][sql] CONNECT:[ UseTime:0.013087s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T11:09:12+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001334s ]
+[2022-12-19T11:09:12+08:00][sql] SELECT `id`,`name`,`image`,`sort`,`pid`,`full_address`,`level` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.000330s ]
+[2022-12-19T11:09:24+08:00][sql] CONNECT:[ UseTime:0.021495s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T11:09:24+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.000810s ]
+[2022-12-19T11:09:24+08:00][sql] SELECT `id`,`name`,`image`,`sort`,`pid`,`full_address`,`level` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.000426s ]
+[2022-12-19T11:09:27+08:00][sql] CONNECT:[ UseTime:0.021948s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T11:09:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001457s ]
+[2022-12-19T11:09:27+08:00][sql] SELECT `id`,`name`,`image`,`sort`,`pid`,`full_address`,`level` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.000390s ]
+[2022-12-19T11:10:08+08:00][sql] CONNECT:[ UseTime:0.011347s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T11:10:08+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001322s ]
+[2022-12-19T11:10:08+08:00][sql] SELECT `id`,`name`,`image`,`sort`,`pid`,`full_address`,`level` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.000424s ]
+[2022-12-19T11:12:08+08:00][sql] CONNECT:[ UseTime:0.019969s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T11:12:08+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001884s ]
+[2022-12-19T11:12:08+08:00][sql] SELECT `id`,`name`,`image`,`sort`,`pid`,`full_address`,`level` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.000309s ]
+[2022-12-19T11:18:32+08:00][sql] CONNECT:[ UseTime:0.001429s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T11:18:32+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.000894s ]
+[2022-12-19T11:18:32+08:00][sql] SELECT `id`,`name`,`image`,`sort`,`pid`,`full_address`,`level` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.000320s ]
+[2022-12-19T11:18:37+08:00][sql] CONNECT:[ UseTime:0.021685s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T11:18:37+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.000891s ]
+[2022-12-19T11:18:37+08:00][sql] SELECT `id`,`name`,`image`,`sort`,`pid`,`full_address`,`level` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.000464s ]
+[2022-12-19T11:18:37+08:00][error] [8]未定义数组索引: category_id
+[2022-12-19T11:19:37+08:00][sql] CONNECT:[ UseTime:0.001282s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T11:19:37+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001532s ]
+[2022-12-19T11:19:37+08:00][sql] SELECT `id`,`name`,`image`,`sort`,`pid`,`full_address`,`level` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.000377s ]
+[2022-12-19T11:19:37+08:00][error] [8]未定义数组索引: is_show
+[2022-12-19T11:19:48+08:00][sql] CONNECT:[ UseTime:0.021382s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T11:19:48+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001080s ]
+[2022-12-19T11:19:48+08:00][sql] SELECT `id`,`is_show`,`name`,`image`,`sort`,`pid`,`full_address`,`level` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.000446s ]
+[2022-12-19T11:19:48+08:00][error] [8]未定义数组索引: ud
+[2022-12-19T11:20:11+08:00][sql] CONNECT:[ UseTime:0.020021s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T11:20:11+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.000866s ]
+[2022-12-19T11:20:11+08:00][sql] SELECT `id`,`is_show`,`name`,`image`,`sort`,`pid`,`full_address`,`level` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.000382s ]
+[2022-12-19T11:20:35+08:00][sql] CONNECT:[ UseTime:0.000741s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T11:20:35+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.000589s ]
+[2022-12-19T11:20:35+08:00][sql] SELECT `id`,`is_show`,`name`,`image`,`sort`,`pid`,`full_address`,`level` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.000344s ]
+[2022-12-19T11:20:45+08:00][sql] CONNECT:[ UseTime:0.000748s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T11:20:45+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.000906s ]
+[2022-12-19T11:20:45+08:00][sql] SELECT `id`,`is_show`,`name`,`image`,`sort`,`pid`,`full_address`,`level` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.000370s ]
+[2022-12-19T11:38:35+08:00][sql] CONNECT:[ UseTime:0.012560s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T11:38:35+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.002585s ]
+[2022-12-19T11:38:35+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Company/position'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.001459s ]
+[2022-12-19T11:38:35+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'DTGL_GS_ZW'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000789s ]
+[2022-12-19T13:18:07+08:00][sql] CONNECT:[ UseTime:0.018853s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T13:18:07+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.003876s ]
+[2022-12-19T13:18:07+08:00][sql] SELECT `id`,`is_show`,`name`,`image`,`sort`,`pid`,`full_address`,`level` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.000796s ]
+[2022-12-19T13:24:11+08:00][sql] CONNECT:[ UseTime:0.000951s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T13:24:11+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.000765s ]
+[2022-12-19T13:24:11+08:00][sql] SELECT `id`,`is_show`,`name`,`image`,`sort`,`pid`,`full_address`,`level` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.000385s ]
+[2022-12-19T13:24:25+08:00][sql] CONNECT:[ UseTime:0.001404s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T13:24:25+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.001558s ]
+[2022-12-19T13:24:25+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Dtgl/lists'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000798s ]
+[2022-12-19T13:24:25+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'DTGL_LIST'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000596s ]
+[2022-12-19T13:24:25+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'DTGL_ROOT'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000531s ]
+[2022-12-19T13:24:25+08:00][sql] CONNECT:[ UseTime:0.000715s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T13:24:25+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl` [ RunTime:0.003340s ]
+[2022-12-19T13:24:25+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000206s ]
+[2022-12-19T13:24:25+08:00][sql] SELECT * FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC LIMIT 0,10 [ RunTime:0.000161s ]
+[2022-12-19T13:26:11+08:00][sql] CONNECT:[ UseTime:0.022354s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T13:26:11+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001075s ]
+[2022-12-19T13:26:11+08:00][sql] SELECT `id`,`is_show`,`name`,`image`,`sort`,`pid`,`full_address`,`level` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.000498s ]
+[2022-12-19T13:26:11+08:00][sql] CONNECT:[ UseTime:0.001171s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T13:26:11+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl` [ RunTime:0.001130s ]
+[2022-12-19T13:26:11+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000272s ]
+[2022-12-19T13:26:11+08:00][sql] SELECT * FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC LIMIT 0,10 [ RunTime:0.000346s ]
+[2022-12-19T13:32:04+08:00][sql] CONNECT:[ UseTime:0.025627s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T13:32:04+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001013s ]
+[2022-12-19T13:32:04+08:00][sql] SELECT `id`,`is_show`,`name`,`image`,`sort`,`pid`,`full_address`,`level` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.000337s ]
+[2022-12-19T13:32:05+08:00][sql] CONNECT:[ UseTime:0.000978s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T13:32:05+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.000907s ]
+[2022-12-19T13:32:05+08:00][sql] SELECT `id`,`is_show`,`name`,`image`,`sort`,`pid`,`full_address`,`level` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.000410s ]
+[2022-12-19T13:32:05+08:00][error] [8]未定义变量: menu
+[2022-12-19T13:35:13+08:00][sql] CONNECT:[ UseTime:0.000860s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T13:35:13+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company_position` [ RunTime:0.001697s ]
+[2022-12-19T13:35:13+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company_position` `a` ORDER BY `id` DESC [ RunTime:0.003748s ]
+[2022-12-19T13:35:13+08:00][sql] SELECT * FROM `gxfc_company_position` `a` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000629s ]
+[2022-12-19T13:35:13+08:00][error] [8]未定义数组索引: data
+[2022-12-19T13:35:29+08:00][sql] CONNECT:[ UseTime:0.000750s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T13:35:29+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company_position` [ RunTime:0.005447s ]
+[2022-12-19T13:35:29+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company_position` `a` ORDER BY `id` DESC [ RunTime:0.000442s ]
+[2022-12-19T13:35:29+08:00][sql] SELECT * FROM `gxfc_company_position` `a` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000199s ]
+[2022-12-19T13:37:46+08:00][sql] CONNECT:[ UseTime:0.000822s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T13:37:46+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company_position` [ RunTime:0.001865s ]
+[2022-12-19T13:37:46+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company_position` `a` ORDER BY `id` DESC [ RunTime:0.000939s ]
+[2022-12-19T13:37:46+08:00][sql] SELECT * FROM `gxfc_company_position` `a` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000409s ]
+[2022-12-19T13:38:21+08:00][sql] CONNECT:[ UseTime:0.001034s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T13:38:21+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company_position` [ RunTime:0.001732s ]
+[2022-12-19T13:38:21+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company_position` `a` ORDER BY `id` DESC [ RunTime:0.000354s ]
+[2022-12-19T13:38:21+08:00][sql] SELECT * FROM `gxfc_company_position` `a` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000378s ]
+[2022-12-19T13:39:58+08:00][sql] CONNECT:[ UseTime:0.001424s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T13:39:58+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company_position` [ RunTime:0.001767s ]
+[2022-12-19T13:39:58+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company_position` `a` ORDER BY `id` DESC [ RunTime:0.000285s ]
+[2022-12-19T13:39:58+08:00][sql] SELECT * FROM `gxfc_company_position` `a` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000210s ]
+[2022-12-19T13:42:01+08:00][sql] CONNECT:[ UseTime:0.000806s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T13:42:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl` [ RunTime:0.001062s ]
+[2022-12-19T13:42:01+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000408s ]
+[2022-12-19T13:42:01+08:00][sql] SELECT * FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC LIMIT 0,10 [ RunTime:0.001649s ]
+[2022-12-19T13:42:08+08:00][sql] CONNECT:[ UseTime:0.000947s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T13:42:08+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company_position` [ RunTime:0.000879s ]
+[2022-12-19T13:42:08+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company_position` `a` ORDER BY `id` DESC [ RunTime:0.000298s ]
+[2022-12-19T13:42:08+08:00][sql] SELECT * FROM `gxfc_company_position` `a` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000288s ]
+[2022-12-19T14:02:11+08:00][sql] CONNECT:[ UseTime:0.007473s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T14:02:11+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl` [ RunTime:0.003488s ]
+[2022-12-19T14:02:11+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000372s ]
+[2022-12-19T14:02:11+08:00][sql] SELECT * FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC LIMIT 0,10 [ RunTime:0.000290s ]
+[2022-12-19T14:36:19+08:00][sql] CONNECT:[ UseTime:0.004147s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T14:36:19+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company_position` [ RunTime:0.004137s ]
+[2022-12-19T14:36:19+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company_position` `a` ORDER BY `id` DESC [ RunTime:0.000539s ]
+[2022-12-19T14:36:19+08:00][sql] SELECT * FROM `gxfc_company_position` `a` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000354s ]
+[2022-12-19T14:37:09+08:00][sql] CONNECT:[ UseTime:0.001421s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T14:37:09+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company_position` [ RunTime:0.001930s ]
+[2022-12-19T14:37:09+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company_position` `a` ORDER BY `id` DESC [ RunTime:0.000251s ]
+[2022-12-19T14:37:09+08:00][sql] SELECT * FROM `gxfc_company_position` `a` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000195s ]
+[2022-12-19T14:37:20+08:00][sql] CONNECT:[ UseTime:0.001178s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T14:37:20+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company_position` [ RunTime:0.001902s ]
+[2022-12-19T14:37:20+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company_position` `a` ORDER BY `id` DESC [ RunTime:0.000295s ]
+[2022-12-19T14:37:20+08:00][sql] SELECT * FROM `gxfc_company_position` `a` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000211s ]
+[2022-12-19T14:38:56+08:00][sql] CONNECT:[ UseTime:0.002939s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T14:38:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company_position` [ RunTime:0.002423s ]
+[2022-12-19T14:38:56+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company_position` `a` ORDER BY `id` DESC [ RunTime:0.000582s ]
+[2022-12-19T14:38:56+08:00][sql] SELECT * FROM `gxfc_company_position` `a` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000724s ]
+[2022-12-19T14:39:08+08:00][sql] CONNECT:[ UseTime:0.000955s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T14:39:08+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company_position` [ RunTime:0.002946s ]
+[2022-12-19T14:39:08+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company_position` `a` ORDER BY `id` DESC [ RunTime:0.000650s ]
+[2022-12-19T14:39:08+08:00][sql] SELECT * FROM `gxfc_company_position` `a` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000358s ]
+[2022-12-19T14:40:03+08:00][sql] CONNECT:[ UseTime:0.001417s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T14:40:03+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company_position` [ RunTime:0.001528s ]
+[2022-12-19T14:40:03+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company_position` `a` ORDER BY `id` DESC [ RunTime:0.000228s ]
+[2022-12-19T14:40:03+08:00][sql] SELECT * FROM `gxfc_company_position` `a` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000476s ]
+[2022-12-19T14:41:02+08:00][sql] CONNECT:[ UseTime:0.000878s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T14:41:02+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company_position` [ RunTime:0.001400s ]
+[2022-12-19T14:41:02+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company_position` `a` ORDER BY `id` DESC [ RunTime:0.000368s ]
+[2022-12-19T14:41:02+08:00][sql] SELECT * FROM `gxfc_company_position` `a` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000288s ]
+[2022-12-19T14:41:06+08:00][sql] CONNECT:[ UseTime:0.000911s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T14:41:06+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company_position` [ RunTime:0.000757s ]
+[2022-12-19T14:41:06+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company_position` `a` ORDER BY `id` DESC [ RunTime:0.000187s ]
+[2022-12-19T14:41:06+08:00][sql] SELECT * FROM `gxfc_company_position` `a` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000168s ]
+[2022-12-19T14:41:32+08:00][sql] CONNECT:[ UseTime:0.001131s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T14:41:32+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company_position` [ RunTime:0.000877s ]
+[2022-12-19T14:41:32+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company_position` `a` ORDER BY `id` DESC [ RunTime:0.000238s ]
+[2022-12-19T14:41:32+08:00][sql] SELECT * FROM `gxfc_company_position` `a` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000214s ]
+[2022-12-19T14:41:44+08:00][sql] CONNECT:[ UseTime:0.020970s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T14:41:44+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company_position` [ RunTime:0.000763s ]
+[2022-12-19T14:41:44+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company_position` `a` ORDER BY `id` DESC [ RunTime:0.000329s ]
+[2022-12-19T14:41:44+08:00][sql] SELECT * FROM `gxfc_company_position` `a` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000294s ]
+[2022-12-19T14:41:56+08:00][sql] CONNECT:[ UseTime:0.001070s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T14:41:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company_position` [ RunTime:0.000978s ]
+[2022-12-19T14:41:56+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company_position` `a` ORDER BY `id` DESC [ RunTime:0.000329s ]
+[2022-12-19T14:41:56+08:00][sql] SELECT * FROM `gxfc_company_position` `a` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000181s ]
+[2022-12-19T14:42:08+08:00][sql] CONNECT:[ UseTime:0.019565s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T14:42:08+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company_position` [ RunTime:0.001430s ]
+[2022-12-19T14:42:08+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company_position` `a` ORDER BY `id` DESC [ RunTime:0.000357s ]
+[2022-12-19T14:42:08+08:00][sql] SELECT * FROM `gxfc_company_position` `a` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000250s ]
+[2022-12-19T14:42:23+08:00][sql] CONNECT:[ UseTime:0.000677s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T14:42:23+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.000809s ]
+[2022-12-19T14:42:23+08:00][sql] SELECT `id`,`is_show`,`name`,`image`,`sort`,`pid`,`full_address`,`level` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.001953s ]
+[2022-12-19T14:42:27+08:00][sql] CONNECT:[ UseTime:0.021161s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T14:42:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company_position` [ RunTime:0.001278s ]
+[2022-12-19T14:42:27+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company_position` `a` ORDER BY `id` DESC [ RunTime:0.000315s ]
+[2022-12-19T14:42:27+08:00][sql] SELECT * FROM `gxfc_company_position` `a` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000222s ]
+[2022-12-19T14:58:48+08:00][sql] CONNECT:[ UseTime:0.001445s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T14:58:48+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.001164s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Member/index'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.001039s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'MEMBER_INDEX'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000643s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'MEMBER_ROOT'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000500s ]
+[2022-12-19T14:58:48+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.002341s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000528s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `reg_time` BETWEEN 1671379200 AND 1671433128   AND `is_delete` = 0 [ RunTime:0.001265s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `order_money` > 0  AND `is_delete` = 0 [ RunTime:0.001123s ]
+[2022-12-19T14:58:48+08:00][sql] CONNECT:[ UseTime:0.001109s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T14:58:48+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.003461s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0  AND `is_delete` = 0 [ RunTime:0.000417s ]
+[2022-12-19T14:58:48+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_area` [ RunTime:0.009324s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT `id`,`shortname` FROM `gxfc_area` WHERE  `pid` = 0 ORDER BY `sort` ASC [ RunTime:0.009428s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 110000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.003206s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 120000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000594s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 130000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000577s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 140000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.002035s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 150000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000779s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 210000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000649s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 220000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000711s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 230000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000633s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 310000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000633s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 320000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000595s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 330000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000598s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 340000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000541s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 350000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000581s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 360000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000610s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 370000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000582s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 410000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.001375s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 420000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.002332s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 430000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000871s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 440000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000740s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 450000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000619s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 460000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000655s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 500000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000718s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 510000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000666s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 520000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000684s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 530000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000565s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 540000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.003248s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 610000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000697s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 620000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000583s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 630000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000814s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 640000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000927s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 650000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000727s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 810000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000589s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 820000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000675s ]
+[2022-12-19T14:58:48+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 710000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000647s ]
+[2022-12-19T14:58:49+08:00][sql] CONNECT:[ UseTime:0.000844s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T14:58:49+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.002427s ]
+[2022-12-19T14:58:49+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0  AND `is_delete` = 0 [ RunTime:0.001422s ]
+[2022-12-19T14:58:49+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 110000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.001404s ]
+[2022-12-19T14:58:49+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 120000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000400s ]
+[2022-12-19T14:58:49+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 130000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000561s ]
+[2022-12-19T14:58:49+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 140000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000555s ]
+[2022-12-19T14:58:49+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 150000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000559s ]
+[2022-12-19T14:58:49+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 210000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000380s ]
+[2022-12-19T14:58:49+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 220000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000444s ]
+[2022-12-19T14:58:49+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 230000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000305s ]
+[2022-12-19T14:58:49+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 310000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000291s ]
+[2022-12-19T14:58:49+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 320000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.002110s ]
+[2022-12-19T14:58:49+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 330000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000418s ]
+[2022-12-19T14:58:49+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 340000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000329s ]
+[2022-12-19T14:58:49+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 350000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000483s ]
+[2022-12-19T14:58:49+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 360000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000445s ]
+[2022-12-19T14:58:49+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 370000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000327s ]
+[2022-12-19T14:58:49+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 410000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000369s ]
+[2022-12-19T14:58:49+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 420000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.001738s ]
+[2022-12-19T14:58:49+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 430000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000447s ]
+[2022-12-19T14:58:49+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 440000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000314s ]
+[2022-12-19T14:58:49+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 450000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000295s ]
+[2022-12-19T14:58:49+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 460000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000369s ]
+[2022-12-19T14:58:49+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 500000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000390s ]
+[2022-12-19T14:58:49+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 510000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000378s ]
+[2022-12-19T14:58:49+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 520000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.001477s ]
+[2022-12-19T14:58:49+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 530000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000424s ]
+[2022-12-19T14:58:49+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 540000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000337s ]
+[2022-12-19T14:58:49+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 610000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000287s ]
+[2022-12-19T14:58:49+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 620000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000278s ]
+[2022-12-19T14:58:49+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 630000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000393s ]
+[2022-12-19T14:58:49+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 640000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000489s ]
+[2022-12-19T14:58:49+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 650000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.001891s ]
+[2022-12-19T14:58:49+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 810000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000444s ]
+[2022-12-19T14:58:49+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 820000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000332s ]
+[2022-12-19T14:58:49+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 710000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000321s ]
+[2022-12-19T14:58:52+08:00][sql] CONNECT:[ UseTime:0.018981s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T14:58:52+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.001847s ]
+[2022-12-19T14:58:52+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Member/memberlist'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000707s ]
+[2022-12-19T14:58:52+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'MEMBER_LIST'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000502s ]
+[2022-12-19T14:58:52+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'MEMBER_LIST_INDEX'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.001156s ]
+[2022-12-19T14:58:52+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_level` [ RunTime:0.004864s ]
+[2022-12-19T14:58:52+08:00][sql] SELECT `level_id`,`level_name` FROM `gxfc_member_level` ORDER BY `growth` ASC [ RunTime:0.000499s ]
+[2022-12-19T14:58:52+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_label` [ RunTime:0.003977s ]
+[2022-12-19T14:58:52+08:00][sql] SELECT `label_id`,`label_name` FROM `gxfc_member_label` ORDER BY `sort` ASC [ RunTime:0.000365s ]
+[2022-12-19T14:58:52+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_config` [ RunTime:0.001844s ]
+[2022-12-19T14:58:52+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'MEMBER_CONSUME_CONFIG' LIMIT 1 [ RunTime:0.001637s ]
+[2022-12-19T14:58:52+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'MEMBER_REGISTER_REWARD_CONFIG' LIMIT 1 [ RunTime:0.000549s ]
+[2022-12-19T14:58:52+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'MEMBER_SIGNIN_REWARD_CONFIG' LIMIT 1 [ RunTime:0.000591s ]
+[2022-12-19T14:58:52+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_cluster` [ RunTime:0.004409s ]
+[2022-12-19T14:58:52+08:00][sql] SELECT `cluster_id`,`cluster_name` FROM `gxfc_member_cluster` ORDER BY `create_time` DESC [ RunTime:0.000586s ]
+[2022-12-19T14:58:52+08:00][sql] CONNECT:[ UseTime:0.000822s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T14:58:52+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.001499s ]
+[2022-12-19T14:58:52+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` `` WHERE  `username` LIKE '%%'  AND `is_delete` = 0 ORDER BY `reg_time` DESC [ RunTime:0.000386s ]
+[2022-12-19T14:58:52+08:00][sql] SELECT `member_id`,`fenxiao_id`,`is_fenxiao`,`username`,`mobile`,`email`,`status`,`headimg`,`member_level`,`member_level_name`,`member_label`,`member_label_name`,`qq`,`qq_openid`,`wx_openid`,`wx_unionid`,`ali_openid`,`baidu_openid`,`toutiao_openid`,`douyin_openid`,`login_ip`,`login_type`,`login_time`,`last_login_ip`,`last_login_type`,`last_login_time`,`login_num`,`nickname`,`realname`,`sex`,`location`,`birthday`,`reg_time`,`point`,`balance`,`balance_money`,`growth`,`account5` FROM `gxfc_member` `` WHERE  `username` LIKE '%%'  AND `is_delete` = 0 ORDER BY `reg_time` DESC LIMIT 0,10 [ RunTime:0.000427s ]
+[2022-12-19T14:58:52+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_fenxiao` [ RunTime:0.005505s ]
+[2022-12-19T14:58:52+08:00][sql] SELECT `parent` FROM `gxfc_fenxiao` WHERE  `fenxiao_id` = 59 LIMIT 1 [ RunTime:0.000280s ]
+[2022-12-19T14:59:03+08:00][sql] CONNECT:[ UseTime:0.018516s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T14:59:03+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000811s ]
+[2022-12-19T14:59:03+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Memberlabel/labellist'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000498s ]
+[2022-12-19T14:59:03+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'MEMBER_LABEL'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000385s ]
+[2022-12-19T14:59:04+08:00][sql] CONNECT:[ UseTime:0.000727s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T14:59:04+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_label` [ RunTime:0.001246s ]
+[2022-12-19T14:59:04+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member_label` `a` WHERE  `label_name` LIKE '%%' ORDER BY `sort` ASC,`create_time` DESC [ RunTime:0.000259s ]
+[2022-12-19T14:59:04+08:00][sql] SELECT * FROM `gxfc_member_label` `a` WHERE  `label_name` LIKE '%%' ORDER BY `sort` ASC,`create_time` DESC LIMIT 0,10 [ RunTime:0.000235s ]
+[2022-12-19T14:59:08+08:00][sql] CONNECT:[ UseTime:0.000777s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T14:59:08+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.001497s ]
+[2022-12-19T14:59:08+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Memberlabel/addLabel'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000370s ]
+[2022-12-19T14:59:08+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'MEMBER_LABEL_ADD'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000610s ]
+[2022-12-19T14:59:09+08:00][sql] CONNECT:[ UseTime:0.000736s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T14:59:09+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.001910s ]
+[2022-12-19T14:59:09+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Memberlabel/labelList'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.001638s ]
+[2022-12-19T15:51:50+08:00][sql] CONNECT:[ UseTime:0.001132s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T15:51:50+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.002796s ]
+[2022-12-19T15:51:50+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Dtgl/fllists'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.001497s ]
+[2022-12-19T15:51:50+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'DTGL_FENLEI'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000484s ]
+[2022-12-19T15:51:50+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl_fenlei` [ RunTime:0.001297s ]
+[2022-12-19T15:51:50+08:00][sql] SELECT `id`,`name`,`img`,`sort` FROM `gxfc_dtgl_fenlei` ORDER BY `sort` ASC [ RunTime:0.000304s ]
+[2022-12-19T15:51:50+08:00][sql] CONNECT:[ UseTime:0.000925s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T15:51:50+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.001352s ]
+[2022-12-19T15:51:50+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Dtgl/comment'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.002049s ]
+[2022-12-19T15:51:50+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'DTGL_PINGLUN'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000568s ]
+[2022-12-19T15:51:51+08:00][sql] CONNECT:[ UseTime:0.000703s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T15:51:51+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl_pinglun` [ RunTime:0.000812s ]
+[2022-12-19T15:51:51+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_dtgl_pinglun` `a` ORDER BY `id` DESC [ RunTime:0.002084s ]
+[2022-12-19T15:51:51+08:00][sql] SELECT * FROM `gxfc_dtgl_pinglun` `a` ORDER BY `id` DESC LIMIT 0,6 [ RunTime:0.001076s ]
+[2022-12-19T15:51:51+08:00][sql] CONNECT:[ UseTime:0.001000s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T15:51:51+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001143s ]
+[2022-12-19T15:51:51+08:00][sql] SELECT `id`,`is_show`,`name`,`image`,`sort`,`pid`,`full_address`,`level` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.000858s ]
+[2022-12-19T16:30:44+08:00][sql] CONNECT:[ UseTime:0.000687s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T16:30:44+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_label` [ RunTime:0.001493s ]
+[2022-12-19T16:30:44+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member_label` `a` WHERE  `label_name` LIKE '%%' ORDER BY `sort` ASC,`create_time` DESC [ RunTime:0.000356s ]
+[2022-12-19T16:30:44+08:00][sql] SELECT * FROM `gxfc_member_label` `a` WHERE  `label_name` LIKE '%%' ORDER BY `sort` ASC,`create_time` DESC LIMIT 0,10 [ RunTime:0.000242s ]
+[2022-12-19T16:31:10+08:00][sql] CONNECT:[ UseTime:0.001642s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T16:31:10+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_label` [ RunTime:0.002108s ]
+[2022-12-19T16:31:10+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member_label` `a` WHERE  `label_name` LIKE '%%' ORDER BY `sort` ASC,`create_time` DESC [ RunTime:0.000340s ]
+[2022-12-19T16:31:10+08:00][sql] SELECT * FROM `gxfc_member_label` `a` WHERE  `label_name` LIKE '%%' ORDER BY `sort` ASC,`create_time` DESC LIMIT 0,10 [ RunTime:0.000347s ]
+[2022-12-19T16:38:19+08:00][sql] CONNECT:[ UseTime:0.000949s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T16:38:19+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.001608s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Member/index'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000682s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'MEMBER_INDEX'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000499s ]
+[2022-12-19T16:38:19+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000980s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000714s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `reg_time` BETWEEN 1671379200 AND 1671439099   AND `is_delete` = 0 [ RunTime:0.000302s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `order_money` > 0  AND `is_delete` = 0 [ RunTime:0.000234s ]
+[2022-12-19T16:38:19+08:00][sql] CONNECT:[ UseTime:0.000698s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T16:38:19+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.001477s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0  AND `is_delete` = 0 [ RunTime:0.000277s ]
+[2022-12-19T16:38:19+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_area` [ RunTime:0.002428s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT `id`,`shortname` FROM `gxfc_area` WHERE  `pid` = 0 ORDER BY `sort` ASC [ RunTime:0.001091s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 110000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000714s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 120000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000339s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 130000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000644s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 140000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000563s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 150000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000341s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 210000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000301s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 220000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000317s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 230000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000489s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 310000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000324s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 320000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.002209s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 330000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000457s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 340000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000552s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 350000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000408s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 360000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000301s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 370000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000476s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 410000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000689s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 420000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000566s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 430000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000357s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 440000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000301s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 450000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000302s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 460000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000284s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 500000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000305s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 510000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.001003s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 520000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000623s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 530000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000676s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 540000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000405s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 610000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000296s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 620000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000305s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 630000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000591s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 640000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000704s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 650000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000421s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 810000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000353s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 820000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000305s ]
+[2022-12-19T16:38:19+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 710000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000329s ]
+[2022-12-19T16:38:20+08:00][sql] CONNECT:[ UseTime:0.000968s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T16:38:20+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.001521s ]
+[2022-12-19T16:38:20+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0  AND `is_delete` = 0 [ RunTime:0.000488s ]
+[2022-12-19T16:38:20+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 110000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.001466s ]
+[2022-12-19T16:38:20+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 120000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000683s ]
+[2022-12-19T16:38:20+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 130000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000871s ]
+[2022-12-19T16:38:20+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 140000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000549s ]
+[2022-12-19T16:38:20+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 150000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000439s ]
+[2022-12-19T16:38:20+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 210000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000450s ]
+[2022-12-19T16:38:20+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 220000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000666s ]
+[2022-12-19T16:38:20+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 230000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.002644s ]
+[2022-12-19T16:38:20+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 310000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000585s ]
+[2022-12-19T16:38:20+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 320000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000480s ]
+[2022-12-19T16:38:20+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 330000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000500s ]
+[2022-12-19T16:38:20+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 340000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000461s ]
+[2022-12-19T16:38:20+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 350000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000680s ]
+[2022-12-19T16:38:20+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 360000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000849s ]
+[2022-12-19T16:38:20+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 370000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000511s ]
+[2022-12-19T16:38:20+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 410000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000509s ]
+[2022-12-19T16:38:20+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 420000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000485s ]
+[2022-12-19T16:38:20+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 430000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000446s ]
+[2022-12-19T16:38:20+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 440000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000729s ]
+[2022-12-19T16:38:20+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 450000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.001031s ]
+[2022-12-19T16:38:20+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 460000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000535s ]
+[2022-12-19T16:38:20+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 500000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000367s ]
+[2022-12-19T16:38:20+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 510000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000374s ]
+[2022-12-19T16:38:20+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 520000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000413s ]
+[2022-12-19T16:38:20+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 530000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.001799s ]
+[2022-12-19T16:38:20+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 540000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000633s ]
+[2022-12-19T16:38:20+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 610000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000401s ]
+[2022-12-19T16:38:20+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 620000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000402s ]
+[2022-12-19T16:38:20+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 630000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000604s ]
+[2022-12-19T16:38:20+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 640000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000822s ]
+[2022-12-19T16:38:20+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 650000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000832s ]
+[2022-12-19T16:38:20+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 810000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000653s ]
+[2022-12-19T16:38:20+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 820000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000554s ]
+[2022-12-19T16:38:20+08:00][sql] SELECT COUNT(*) AS think_count FROM ( SELECT count(*) AS think_count FROM `gxfc_member` `nm` LEFT JOIN `gxfc_member_address` `nma` ON `nm`.`member_id`=`nma`.`member_id` WHERE  `nma`.`is_default` = 1  AND `nma`.`province_id` = 710000  AND `nm`.`is_delete` = 0  AND `is_delete` = 0 GROUP BY `nm`.`member_id` ) `_group_count_` [ RunTime:0.000527s ]
+[2022-12-19T16:38:21+08:00][sql] CONNECT:[ UseTime:0.000758s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T16:38:21+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000867s ]
+[2022-12-19T16:38:21+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Member/memberlist'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.001992s ]
+[2022-12-19T16:38:21+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'MEMBER_LIST'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000407s ]
+[2022-12-19T16:38:21+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'MEMBER_LIST_INDEX'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000347s ]
+[2022-12-19T16:38:21+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_level` [ RunTime:0.001279s ]
+[2022-12-19T16:38:21+08:00][sql] SELECT `level_id`,`level_name` FROM `gxfc_member_level` ORDER BY `growth` ASC [ RunTime:0.000377s ]
+[2022-12-19T16:38:21+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_label` [ RunTime:0.002169s ]
+[2022-12-19T16:38:21+08:00][sql] SELECT `label_id`,`label_name` FROM `gxfc_member_label` ORDER BY `sort` ASC [ RunTime:0.000244s ]
+[2022-12-19T16:38:21+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_config` [ RunTime:0.001425s ]
+[2022-12-19T16:38:21+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'MEMBER_CONSUME_CONFIG' LIMIT 1 [ RunTime:0.000377s ]
+[2022-12-19T16:38:21+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'MEMBER_REGISTER_REWARD_CONFIG' LIMIT 1 [ RunTime:0.000342s ]
+[2022-12-19T16:38:21+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'MEMBER_SIGNIN_REWARD_CONFIG' LIMIT 1 [ RunTime:0.000292s ]
+[2022-12-19T16:38:21+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_cluster` [ RunTime:0.001234s ]
+[2022-12-19T16:38:21+08:00][sql] SELECT `cluster_id`,`cluster_name` FROM `gxfc_member_cluster` ORDER BY `create_time` DESC [ RunTime:0.000245s ]
+[2022-12-19T16:38:21+08:00][sql] CONNECT:[ UseTime:0.014187s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T16:38:21+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.001412s ]
+[2022-12-19T16:38:21+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` `` WHERE  `username` LIKE '%%'  AND `is_delete` = 0 ORDER BY `reg_time` DESC [ RunTime:0.000258s ]
+[2022-12-19T16:38:21+08:00][sql] SELECT `member_id`,`fenxiao_id`,`is_fenxiao`,`username`,`mobile`,`email`,`status`,`headimg`,`member_level`,`member_level_name`,`member_label`,`member_label_name`,`qq`,`qq_openid`,`wx_openid`,`wx_unionid`,`ali_openid`,`baidu_openid`,`toutiao_openid`,`douyin_openid`,`login_ip`,`login_type`,`login_time`,`last_login_ip`,`last_login_type`,`last_login_time`,`login_num`,`nickname`,`realname`,`sex`,`location`,`birthday`,`reg_time`,`point`,`balance`,`balance_money`,`growth`,`account5` FROM `gxfc_member` `` WHERE  `username` LIKE '%%'  AND `is_delete` = 0 ORDER BY `reg_time` DESC LIMIT 0,10 [ RunTime:0.000337s ]
+[2022-12-19T16:38:21+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_fenxiao` [ RunTime:0.001217s ]
+[2022-12-19T16:38:21+08:00][sql] SELECT `parent` FROM `gxfc_fenxiao` WHERE  `fenxiao_id` = 59 LIMIT 1 [ RunTime:0.000281s ]
+[2022-12-19T16:39:17+08:00][sql] CONNECT:[ UseTime:0.001214s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T16:39:17+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.001343s ]
+[2022-12-19T16:39:17+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Card/lists'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000776s ]
+[2022-12-19T16:39:17+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'DTGL_LIST'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000457s ]
+[2022-12-19T16:39:17+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'DTGL_ROOT'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000385s ]
+[2022-12-19T16:39:17+08:00][error] [0]Class 'app\admin\controller\MemberClusterModel' not found
+[2022-12-19T16:40:00+08:00][error] [8]未定义变量: is_exit_fenxiao
+[2022-12-19T16:49:09+08:00][error] [8]未定义变量: cluster_id
+[2022-12-19T16:49:44+08:00][error] [8]未定义变量: is_exit_fenxiao
+[2022-12-19T16:50:08+08:00][sql] CONNECT:[ UseTime:0.021644s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T16:50:08+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.001217s ]
+[2022-12-19T16:50:08+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` `` WHERE  `username` LIKE '%%'  AND `is_delete` = 0 ORDER BY `reg_time` DESC [ RunTime:0.000516s ]
+[2022-12-19T16:50:08+08:00][sql] SELECT `member_id`,`fenxiao_id`,`is_fenxiao`,`username`,`mobile`,`email`,`status`,`headimg`,`member_level`,`member_level_name`,`member_label`,`member_label_name`,`qq`,`qq_openid`,`wx_openid`,`wx_unionid`,`ali_openid`,`baidu_openid`,`toutiao_openid`,`douyin_openid`,`login_ip`,`login_type`,`login_time`,`last_login_ip`,`last_login_type`,`last_login_time`,`login_num`,`nickname`,`realname`,`sex`,`location`,`birthday`,`reg_time`,`point`,`balance`,`balance_money`,`growth`,`account5` FROM `gxfc_member` `` WHERE  `username` LIKE '%%'  AND `is_delete` = 0 ORDER BY `reg_time` DESC LIMIT 0,10 [ RunTime:0.000485s ]
+[2022-12-19T16:50:08+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_fenxiao` [ RunTime:0.001345s ]
+[2022-12-19T16:50:08+08:00][sql] SELECT `parent` FROM `gxfc_fenxiao` WHERE  `fenxiao_id` = 59 LIMIT 1 [ RunTime:0.000334s ]
+[2022-12-19T16:55:06+08:00][error] [0]Class 'app\model\member\Card' not found
+[2022-12-19T16:55:27+08:00][error] [0]Class 'app\model\dtgl\Card' not found
+[2022-12-19T16:56:06+08:00][sql] CONNECT:[ UseTime:0.001181s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T16:56:06+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.002111s ]
+[2022-12-19T16:56:06+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000338s ]
+[2022-12-19T16:56:06+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000260s ]
+[2022-12-19T16:56:20+08:00][sql] CONNECT:[ UseTime:0.001358s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T16:56:20+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000695s ]
+[2022-12-19T16:56:20+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Dtgl/fllists'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000417s ]
+[2022-12-19T16:56:20+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'DTGL_FENLEI'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000431s ]
+[2022-12-19T16:56:20+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl_fenlei` [ RunTime:0.001097s ]
+[2022-12-19T16:56:20+08:00][sql] SELECT `id`,`name`,`img`,`sort` FROM `gxfc_dtgl_fenlei` ORDER BY `sort` ASC [ RunTime:0.000186s ]
+[2022-12-19T16:56:22+08:00][sql] CONNECT:[ UseTime:0.002489s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T16:56:22+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.001323s ]
+[2022-12-19T16:56:22+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Dtgl/comment'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000337s ]
+[2022-12-19T16:56:22+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'DTGL_PINGLUN'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000358s ]
+[2022-12-19T16:56:23+08:00][sql] CONNECT:[ UseTime:0.001427s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T16:56:23+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl_pinglun` [ RunTime:0.001070s ]
+[2022-12-19T16:56:23+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_dtgl_pinglun` `a` ORDER BY `id` DESC [ RunTime:0.000841s ]
+[2022-12-19T16:56:23+08:00][sql] SELECT * FROM `gxfc_dtgl_pinglun` `a` ORDER BY `id` DESC LIMIT 0,6 [ RunTime:0.000922s ]
+[2022-12-19T16:56:25+08:00][sql] CONNECT:[ UseTime:0.001031s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T16:56:25+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.001500s ]
+[2022-12-19T16:56:25+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Dtgl/lists'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000667s ]
+[2022-12-19T16:56:25+08:00][sql] CONNECT:[ UseTime:0.000912s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T16:56:25+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl` [ RunTime:0.001033s ]
+[2022-12-19T16:56:25+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000368s ]
+[2022-12-19T16:56:25+08:00][sql] SELECT * FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC LIMIT 0,10 [ RunTime:0.000363s ]
+[2022-12-19T16:56:31+08:00][sql] CONNECT:[ UseTime:0.000680s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T16:56:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.001668s ]
+[2022-12-19T16:56:31+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000305s ]
+[2022-12-19T16:56:31+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000218s ]
+[2022-12-19T16:56:34+08:00][sql] CONNECT:[ UseTime:0.000678s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T16:56:34+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.001240s ]
+[2022-12-19T16:56:34+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000210s ]
+[2022-12-19T16:56:34+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000211s ]
+[2022-12-19T16:56:41+08:00][sql] CONNECT:[ UseTime:0.019114s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T16:56:41+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.001454s ]
+[2022-12-19T16:56:41+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000499s ]
+[2022-12-19T16:56:41+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000442s ]
+[2022-12-19T16:57:03+08:00][sql] CONNECT:[ UseTime:0.000841s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T16:57:03+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.002895s ]
+[2022-12-19T16:57:03+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000374s ]
+[2022-12-19T16:57:03+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000317s ]
+[2022-12-19T16:57:05+08:00][sql] CONNECT:[ UseTime:0.009931s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T16:57:05+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.001423s ]
+[2022-12-19T16:57:05+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000354s ]
+[2022-12-19T16:57:05+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000181s ]
+[2022-12-19T16:57:08+08:00][sql] CONNECT:[ UseTime:0.001065s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T16:57:08+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.002095s ]
+[2022-12-19T16:57:08+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000468s ]
+[2022-12-19T16:57:08+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000180s ]
+[2022-12-19T16:57:10+08:00][sql] CONNECT:[ UseTime:0.000935s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T16:57:10+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.001362s ]
+[2022-12-19T16:57:10+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Company/lists'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.001528s ]
+[2022-12-19T16:57:10+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'DTGL_GS_LIST'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000653s ]
+[2022-12-19T16:57:10+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'DTGL_GS'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000613s ]
+[2022-12-19T16:57:10+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001509s ]
+[2022-12-19T16:57:10+08:00][sql] SELECT `id`,`is_show`,`name`,`image`,`sort`,`pid`,`full_address`,`level` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.000647s ]
+[2022-12-19T16:57:13+08:00][sql] CONNECT:[ UseTime:0.019048s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T16:57:13+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000730s ]
+[2022-12-19T16:57:13+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Dtgl/lists'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000452s ]
+[2022-12-19T16:57:13+08:00][sql] CONNECT:[ UseTime:0.022115s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T16:57:13+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl` [ RunTime:0.001483s ]
+[2022-12-19T16:57:13+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000340s ]
+[2022-12-19T16:57:13+08:00][sql] SELECT * FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC LIMIT 0,10 [ RunTime:0.000350s ]
+[2022-12-19T16:57:13+08:00][sql] CONNECT:[ UseTime:0.001252s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T16:57:13+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001169s ]
+[2022-12-19T16:57:13+08:00][sql] SELECT `id`,`is_show`,`name`,`image`,`sort`,`pid`,`full_address`,`level` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.000512s ]
+[2022-12-19T16:57:14+08:00][sql] CONNECT:[ UseTime:0.000921s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T16:57:14+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.000688s ]
+[2022-12-19T16:57:14+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000269s ]
+[2022-12-19T16:57:14+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000251s ]
+[2022-12-19T16:57:40+08:00][sql] CONNECT:[ UseTime:0.010962s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T16:57:40+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.001347s ]
+[2022-12-19T16:57:40+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000216s ]
+[2022-12-19T16:57:40+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000171s ]
+[2022-12-19T16:57:43+08:00][sql] CONNECT:[ UseTime:0.019385s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T16:57:43+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.002458s ]
+[2022-12-19T16:57:43+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000619s ]
+[2022-12-19T16:57:43+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000428s ]
+[2022-12-19T16:57:48+08:00][sql] CONNECT:[ UseTime:0.001425s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T16:57:48+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.001369s ]
+[2022-12-19T16:57:48+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000276s ]
+[2022-12-19T16:57:48+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000307s ]
+[2022-12-19T17:02:06+08:00][sql] CONNECT:[ UseTime:0.001097s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:02:06+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.001798s ]
+[2022-12-19T17:02:06+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000302s ]
+[2022-12-19T17:02:06+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000223s ]
+[2022-12-19T17:02:32+08:00][sql] CONNECT:[ UseTime:0.017953s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:02:32+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000964s ]
+[2022-12-19T17:02:32+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Company/lists'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000539s ]
+[2022-12-19T17:02:32+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'DTGL_GS_LIST'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000487s ]
+[2022-12-19T17:02:32+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'DTGL_GS'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000488s ]
+[2022-12-19T17:02:32+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.000816s ]
+[2022-12-19T17:02:32+08:00][sql] SELECT `id`,`is_show`,`name`,`image`,`sort`,`pid`,`full_address`,`level` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.000515s ]
+[2022-12-19T17:02:34+08:00][sql] CONNECT:[ UseTime:0.000943s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:02:34+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.001847s ]
+[2022-12-19T17:02:34+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Company/position'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.001007s ]
+[2022-12-19T17:02:34+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'DTGL_GS_ZW'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000663s ]
+[2022-12-19T17:02:34+08:00][sql] CONNECT:[ UseTime:0.000700s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:02:34+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company_position` [ RunTime:0.000618s ]
+[2022-12-19T17:02:34+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company_position` `a` ORDER BY `id` DESC [ RunTime:0.000231s ]
+[2022-12-19T17:02:34+08:00][sql] SELECT * FROM `gxfc_company_position` `a` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000166s ]
+[2022-12-19T17:02:50+08:00][sql] CONNECT:[ UseTime:0.000815s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:02:50+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.001707s ]
+[2022-12-19T17:02:50+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000390s ]
+[2022-12-19T17:02:50+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000313s ]
+[2022-12-19T17:11:02+08:00][sql] CONNECT:[ UseTime:0.000879s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:11:02+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company_position` [ RunTime:0.000959s ]
+[2022-12-19T17:11:02+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company_position` `a` ORDER BY `id` DESC [ RunTime:0.000356s ]
+[2022-12-19T17:11:02+08:00][sql] SELECT * FROM `gxfc_company_position` `a` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000210s ]
+[2022-12-19T17:11:31+08:00][sql] CONNECT:[ UseTime:0.009829s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:11:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.000890s ]
+[2022-12-19T17:11:31+08:00][sql] SELECT `id`,`is_show`,`name`,`image`,`sort`,`pid`,`full_address`,`level` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.000506s ]
+[2022-12-19T17:11:38+08:00][sql] CONNECT:[ UseTime:0.020977s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:11:38+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.001124s ]
+[2022-12-19T17:11:38+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Dtgl/lists'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000599s ]
+[2022-12-19T17:11:38+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'DTGL_LIST'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000740s ]
+[2022-12-19T17:11:38+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'DTGL_ROOT'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000512s ]
+[2022-12-19T17:11:38+08:00][sql] CONNECT:[ UseTime:0.000730s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:11:38+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl` [ RunTime:0.000770s ]
+[2022-12-19T17:11:38+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000283s ]
+[2022-12-19T17:11:38+08:00][sql] SELECT * FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC LIMIT 0,10 [ RunTime:0.001653s ]
+[2022-12-19T17:11:41+08:00][sql] CONNECT:[ UseTime:0.000854s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:11:41+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000988s ]
+[2022-12-19T17:11:41+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Dtgl/fllists'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000546s ]
+[2022-12-19T17:11:41+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'DTGL_FENLEI'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000535s ]
+[2022-12-19T17:11:41+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl_fenlei` [ RunTime:0.000770s ]
+[2022-12-19T17:11:41+08:00][sql] SELECT `id`,`name`,`img`,`sort` FROM `gxfc_dtgl_fenlei` ORDER BY `sort` ASC [ RunTime:0.000360s ]
+[2022-12-19T17:11:44+08:00][sql] CONNECT:[ UseTime:0.000691s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:11:44+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000941s ]
+[2022-12-19T17:11:44+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Dtgl/comment'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000567s ]
+[2022-12-19T17:11:44+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'DTGL_PINGLUN'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000707s ]
+[2022-12-19T17:11:45+08:00][sql] CONNECT:[ UseTime:0.000825s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:11:45+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl_pinglun` [ RunTime:0.000663s ]
+[2022-12-19T17:11:45+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_dtgl_pinglun` `a` ORDER BY `id` DESC [ RunTime:0.000235s ]
+[2022-12-19T17:11:45+08:00][sql] SELECT * FROM `gxfc_dtgl_pinglun` `a` ORDER BY `id` DESC LIMIT 0,6 [ RunTime:0.000255s ]
+[2022-12-19T17:11:46+08:00][sql] CONNECT:[ UseTime:0.013470s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:11:46+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl` [ RunTime:0.000809s ]
+[2022-12-19T17:11:46+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000237s ]
+[2022-12-19T17:11:46+08:00][sql] SELECT * FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC LIMIT 0,10 [ RunTime:0.000205s ]
+[2022-12-19T17:12:24+08:00][sql] CONNECT:[ UseTime:0.000682s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:12:24+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company_position` [ RunTime:0.000858s ]
+[2022-12-19T17:12:24+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company_position` `a` ORDER BY `id` DESC [ RunTime:0.000314s ]
+[2022-12-19T17:12:24+08:00][sql] SELECT * FROM `gxfc_company_position` `a` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000205s ]
+[2022-12-19T17:12:45+08:00][sql] CONNECT:[ UseTime:0.019617s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:12:45+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000750s ]
+[2022-12-19T17:12:45+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Goods/lists'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000593s ]
+[2022-12-19T17:12:45+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'GOODS_MANAGE'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000495s ]
+[2022-12-19T17:12:45+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'GOODS_ROOT'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000415s ]
+[2022-12-19T17:12:45+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001775s ]
+[2022-12-19T17:12:45+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 0  AND `is_delete` = 0 [ RunTime:0.000343s ]
+[2022-12-19T17:12:45+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = -2  AND `is_delete` = 0 [ RunTime:0.001019s ]
+[2022-12-19T17:12:45+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 10  AND `is_delete` = 0 [ RunTime:0.000457s ]
+[2022-12-19T17:12:45+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_express_template` [ RunTime:0.001869s ]
+[2022-12-19T17:12:45+08:00][sql] SELECT `template_id`,`template_name` FROM `gxfc_express_template` ORDER BY `is_default` DESC [ RunTime:0.000717s ]
+[2022-12-19T17:12:45+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods_category` [ RunTime:0.002923s ]
+[2022-12-19T17:12:45+08:00][sql] SELECT `category_id`,`category_name`,`level`,`commission_rate` FROM `gxfc_goods_category` WHERE  `pid` = 0 ORDER BY `sort` ASC [ RunTime:0.001110s ]
+[2022-12-19T17:12:45+08:00][sql] CONNECT:[ UseTime:0.000777s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:12:45+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods_category` [ RunTime:0.001717s ]
+[2022-12-19T17:12:45+08:00][sql] SELECT `category_id`,`category_name`,`pid`,`level`,`category_id_1`,`category_id_2`,`category_id_3` FROM `gxfc_goods_category` WHERE  `level` = 1  AND `is_jifen` = 0 ORDER BY `sort` ASC [ RunTime:0.000413s ]
+[2022-12-19T17:12:45+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods_category` WHERE  `pid` = 30 [ RunTime:0.000552s ]
+[2022-12-19T17:12:45+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods_category` WHERE  `pid` = 31 [ RunTime:0.000452s ]
+[2022-12-19T17:12:45+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods_category` WHERE  `pid` = 36 [ RunTime:0.000793s ]
+[2022-12-19T17:12:46+08:00][sql] CONNECT:[ UseTime:0.003363s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:12:46+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods_brand` [ RunTime:0.001562s ]
+[2022-12-19T17:12:46+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods_brand` `ngb` LEFT JOIN `gxfc_shop` `ns` ON `ngb`.`site_id`=`ns`.`site_id` LEFT JOIN `gxfc_supplier` `nsp` ON `ngb`.`site_id`=`nsp`.`supplier_site_id` ORDER BY `ngb`.`create_time` DESC [ RunTime:0.007292s ]
+[2022-12-19T17:12:46+08:00][sql] CONNECT:[ UseTime:0.003091s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:12:46+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001897s ]
+[2022-12-19T17:12:46+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 0  AND `is_delete` = 0 [ RunTime:0.036137s ]
+[2022-12-19T17:12:46+08:00][sql] SELECT `ngb`.`brand_id`,`ngb`.`brand_name`,`ngb`.`brand_initial`,`ngb`.`image_url`,`ngb`.`sort`,`ngb`.`create_time`,`ngb`.`is_recommend`,`ngb`.`site_id`,`ns`.`site_name`,nsp.title as supply_name FROM `gxfc_goods_brand` `ngb` LEFT JOIN `gxfc_shop` `ns` ON `ngb`.`site_id`=`ns`.`site_id` LEFT JOIN `gxfc_supplier` `nsp` ON `ngb`.`site_id`=`nsp`.`supplier_site_id` ORDER BY `ngb`.`create_time` DESC LIMIT 0,10 [ RunTime:0.041525s ]
+[2022-12-19T17:12:46+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = -2  AND `is_delete` = 0 [ RunTime:0.000378s ]
+[2022-12-19T17:12:46+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 10  AND `is_delete` = 0 [ RunTime:0.000348s ]
+[2022-12-19T17:12:47+08:00][sql] CONNECT:[ UseTime:0.000818s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:12:47+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001375s ]
+[2022-12-19T17:12:47+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` `` WHERE  `is_delete` = 0 ORDER BY `create_time` DESC [ RunTime:0.000281s ]
+[2022-12-19T17:12:47+08:00][sql] SELECT `goods_id`,`goods_name`,`site_id`,`site_name`,`goods_image`,`is_own`,`goods_state`,`verify_state`,`price`,`goods_stock`,`goods_stock_alarm`,`create_time`,`sale_num`,`is_virtual`,`goods_class`,`is_fenxiao`,`fenxiao_type`,`sku_id`,`max_buy`,`min_buy`,`promotion_addon`,`sort` FROM `gxfc_goods` `` WHERE  `is_delete` = 0 ORDER BY `create_time` DESC LIMIT 0,10 [ RunTime:0.000309s ]
+[2022-12-19T17:12:48+08:00][sql] CONNECT:[ UseTime:0.000663s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:12:48+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.003183s ]
+[2022-12-19T17:12:48+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Goodscategory/lists'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000394s ]
+[2022-12-19T17:12:48+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'GOODS_CATEGORY'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000585s ]
+[2022-12-19T17:12:48+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods_category` [ RunTime:0.001926s ]
+[2022-12-19T17:12:48+08:00][sql] SELECT `category_id`,`category_name`,`short_name`,`pid`,`level`,`is_show`,`sort`,`image`,`attr_class_name`,`category_id_1`,`category_id_2`,`category_id_3`,`commission_rate`,`supply_commission_rate` FROM `gxfc_goods_category` ORDER BY `sort` ASC [ RunTime:0.000596s ]
+[2022-12-19T17:12:51+08:00][sql] CONNECT:[ UseTime:0.019704s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:12:51+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.002006s ]
+[2022-12-19T17:12:51+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 0  AND `is_delete` = 0 [ RunTime:0.000689s ]
+[2022-12-19T17:12:51+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = -2  AND `is_delete` = 0 [ RunTime:0.000508s ]
+[2022-12-19T17:12:51+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 10  AND `is_delete` = 0 [ RunTime:0.000427s ]
+[2022-12-19T17:12:52+08:00][sql] CONNECT:[ UseTime:0.001042s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:12:52+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001857s ]
+[2022-12-19T17:12:52+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 0  AND `is_delete` = 0 [ RunTime:0.000549s ]
+[2022-12-19T17:12:52+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = -2  AND `is_delete` = 0 [ RunTime:0.002500s ]
+[2022-12-19T17:12:52+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 10  AND `is_delete` = 0 [ RunTime:0.000506s ]
+[2022-12-19T17:12:52+08:00][sql] CONNECT:[ UseTime:0.000714s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:12:52+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.002282s ]
+[2022-12-19T17:12:52+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` `` WHERE  `is_delete` = 0 ORDER BY `create_time` DESC [ RunTime:0.000779s ]
+[2022-12-19T17:12:52+08:00][sql] SELECT `goods_id`,`goods_name`,`site_id`,`site_name`,`goods_image`,`is_own`,`goods_state`,`verify_state`,`price`,`goods_stock`,`goods_stock_alarm`,`create_time`,`sale_num`,`is_virtual`,`goods_class`,`is_fenxiao`,`fenxiao_type`,`sku_id`,`max_buy`,`min_buy`,`promotion_addon`,`sort` FROM `gxfc_goods` `` WHERE  `is_delete` = 0 ORDER BY `create_time` DESC LIMIT 0,10 [ RunTime:0.001128s ]
+[2022-12-19T17:13:03+08:00][sql] CONNECT:[ UseTime:0.000892s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:13:03+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.014835s ]
+[2022-12-19T17:13:03+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 0  AND `is_delete` = 0 [ RunTime:0.002269s ]
+[2022-12-19T17:13:03+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = -2  AND `is_delete` = 0 [ RunTime:0.000469s ]
+[2022-12-19T17:13:03+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 10  AND `is_delete` = 0 [ RunTime:0.000386s ]
+[2022-12-19T17:13:04+08:00][sql] CONNECT:[ UseTime:0.001423s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:13:04+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.002091s ]
+[2022-12-19T17:13:04+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 0  AND `is_delete` = 0 [ RunTime:0.000568s ]
+[2022-12-19T17:13:04+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = -2  AND `is_delete` = 0 [ RunTime:0.000537s ]
+[2022-12-19T17:13:04+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 10  AND `is_delete` = 0 [ RunTime:0.000337s ]
+[2022-12-19T17:13:04+08:00][sql] CONNECT:[ UseTime:0.000657s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:13:04+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001381s ]
+[2022-12-19T17:13:04+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` `` WHERE  `is_delete` = 0 ORDER BY `create_time` DESC [ RunTime:0.000524s ]
+[2022-12-19T17:13:04+08:00][sql] SELECT `goods_id`,`goods_name`,`site_id`,`site_name`,`goods_image`,`is_own`,`goods_state`,`verify_state`,`price`,`goods_stock`,`goods_stock_alarm`,`create_time`,`sale_num`,`is_virtual`,`goods_class`,`is_fenxiao`,`fenxiao_type`,`sku_id`,`max_buy`,`min_buy`,`promotion_addon`,`sort` FROM `gxfc_goods` `` WHERE  `is_delete` = 0 ORDER BY `create_time` DESC LIMIT 0,10 [ RunTime:0.000400s ]
+[2022-12-19T17:13:22+08:00][sql] CONNECT:[ UseTime:0.021200s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:13:22+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001005s ]
+[2022-12-19T17:13:22+08:00][sql] SELECT `id`,`is_show`,`name`,`image`,`sort`,`pid`,`full_address`,`level` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.000554s ]
+[2022-12-19T17:13:25+08:00][sql] CONNECT:[ UseTime:0.000751s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:13:25+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company_position` [ RunTime:0.001284s ]
+[2022-12-19T17:13:25+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company_position` `a` ORDER BY `id` DESC [ RunTime:0.000309s ]
+[2022-12-19T17:13:25+08:00][sql] SELECT * FROM `gxfc_company_position` `a` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000215s ]
+[2022-12-19T17:15:15+08:00][sql] CONNECT:[ UseTime:0.000767s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:15:15+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company_position` [ RunTime:0.001659s ]
+[2022-12-19T17:15:15+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company_position` `a` ORDER BY `id` DESC [ RunTime:0.000400s ]
+[2022-12-19T17:15:15+08:00][sql] SELECT * FROM `gxfc_company_position` `a` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000383s ]
+[2022-12-19T17:16:17+08:00][sql] CONNECT:[ UseTime:0.000746s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:16:17+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company_position` [ RunTime:0.001167s ]
+[2022-12-19T17:16:17+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company_position` `a` ORDER BY `id` DESC [ RunTime:0.000299s ]
+[2022-12-19T17:16:17+08:00][sql] SELECT * FROM `gxfc_company_position` `a` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000368s ]
+[2022-12-19T17:16:22+08:00][sql] CONNECT:[ UseTime:0.000757s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:16:22+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company_position` [ RunTime:0.000797s ]
+[2022-12-19T17:16:22+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company_position` `a` ORDER BY `id` DESC [ RunTime:0.000202s ]
+[2022-12-19T17:16:22+08:00][sql] SELECT * FROM `gxfc_company_position` `a` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000298s ]
+[2022-12-19T17:17:10+08:00][sql] CONNECT:[ UseTime:0.001823s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:17:10+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company_position` [ RunTime:0.001129s ]
+[2022-12-19T17:17:10+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company_position` `a` ORDER BY `id` DESC [ RunTime:0.000622s ]
+[2022-12-19T17:17:10+08:00][sql] SELECT * FROM `gxfc_company_position` `a` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000376s ]
+[2022-12-19T17:17:13+08:00][sql] CONNECT:[ UseTime:0.000661s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:17:13+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company_position` [ RunTime:0.000611s ]
+[2022-12-19T17:17:13+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company_position` `a` ORDER BY `id` DESC [ RunTime:0.000204s ]
+[2022-12-19T17:17:13+08:00][sql] SELECT * FROM `gxfc_company_position` `a` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000162s ]
+[2022-12-19T17:19:19+08:00][sql] CONNECT:[ UseTime:0.000727s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:19:19+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company_position` [ RunTime:0.000722s ]
+[2022-12-19T17:19:19+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company_position` `a` ORDER BY `id` DESC [ RunTime:0.000224s ]
+[2022-12-19T17:19:19+08:00][sql] SELECT * FROM `gxfc_company_position` `a` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000245s ]
+[2022-12-19T17:19:26+08:00][sql] CONNECT:[ UseTime:0.000832s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:19:26+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl` [ RunTime:0.000969s ]
+[2022-12-19T17:19:26+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000313s ]
+[2022-12-19T17:19:26+08:00][sql] SELECT * FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC LIMIT 0,10 [ RunTime:0.000421s ]
+[2022-12-19T17:21:22+08:00][sql] CONNECT:[ UseTime:0.001074s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:21:22+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.001601s ]
+[2022-12-19T17:21:22+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000260s ]
+[2022-12-19T17:21:22+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000184s ]
+[2022-12-19T17:21:57+08:00][sql] CONNECT:[ UseTime:0.001186s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:21:57+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.000697s ]
+[2022-12-19T17:21:57+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000250s ]
+[2022-12-19T17:21:57+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000347s ]
+[2022-12-19T17:22:35+08:00][sql] CONNECT:[ UseTime:0.000932s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:22:35+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001054s ]
+[2022-12-19T17:22:35+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 0  AND `is_delete` = 0 [ RunTime:0.000572s ]
+[2022-12-19T17:22:35+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = -2  AND `is_delete` = 0 [ RunTime:0.000598s ]
+[2022-12-19T17:22:35+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 10  AND `is_delete` = 0 [ RunTime:0.000378s ]
+[2022-12-19T17:22:36+08:00][sql] CONNECT:[ UseTime:0.000858s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:22:36+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.000793s ]
+[2022-12-19T17:22:36+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 0  AND `is_delete` = 0 [ RunTime:0.000257s ]
+[2022-12-19T17:22:36+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = -2  AND `is_delete` = 0 [ RunTime:0.000242s ]
+[2022-12-19T17:22:36+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `verify_state` = 10  AND `is_delete` = 0 [ RunTime:0.000429s ]
+[2022-12-19T17:22:37+08:00][sql] CONNECT:[ UseTime:0.020932s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:22:37+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001179s ]
+[2022-12-19T17:22:37+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` `` WHERE  `is_delete` = 0 ORDER BY `create_time` DESC [ RunTime:0.000439s ]
+[2022-12-19T17:22:37+08:00][sql] SELECT `goods_id`,`goods_name`,`site_id`,`site_name`,`goods_image`,`is_own`,`goods_state`,`verify_state`,`price`,`goods_stock`,`goods_stock_alarm`,`create_time`,`sale_num`,`is_virtual`,`goods_class`,`is_fenxiao`,`fenxiao_type`,`sku_id`,`max_buy`,`min_buy`,`promotion_addon`,`sort` FROM `gxfc_goods` `` WHERE  `is_delete` = 0 ORDER BY `create_time` DESC LIMIT 0,10 [ RunTime:0.014329s ]
+[2022-12-19T17:23:58+08:00][sql] CONNECT:[ UseTime:0.018791s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:23:58+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.001699s ]
+[2022-12-19T17:23:58+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000395s ]
+[2022-12-19T17:23:58+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000351s ]
+[2022-12-19T17:35:38+08:00][sql] CONNECT:[ UseTime:0.001185s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:35:38+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.002934s ]
+[2022-12-19T17:35:38+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000462s ]
+[2022-12-19T17:35:38+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000328s ]
+[2022-12-19T17:36:05+08:00][sql] CONNECT:[ UseTime:0.001025s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:36:05+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.002022s ]
+[2022-12-19T17:36:05+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000454s ]
+[2022-12-19T17:36:05+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000381s ]
+[2022-12-19T17:36:21+08:00][sql] CONNECT:[ UseTime:0.001041s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:36:21+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.003725s ]
+[2022-12-19T17:36:21+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000493s ]
+[2022-12-19T17:36:21+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000622s ]
+[2022-12-19T17:36:39+08:00][sql] CONNECT:[ UseTime:0.004196s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:36:39+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.001910s ]
+[2022-12-19T17:36:39+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000364s ]
+[2022-12-19T17:36:39+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000382s ]
+[2022-12-19T17:36:43+08:00][sql] CONNECT:[ UseTime:0.001798s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:36:43+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.001387s ]
+[2022-12-19T17:36:43+08:00][sql] UPDATE `gxfc_card`  SET `is_status` = 0  WHERE  `id` = 2396 [ RunTime:0.001974s ]
+[2022-12-19T17:36:43+08:00][sql] CONNECT:[ UseTime:0.000779s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:36:43+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.002408s ]
+[2022-12-19T17:36:43+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000404s ]
+[2022-12-19T17:36:43+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000357s ]
+[2022-12-19T17:37:23+08:00][sql] CONNECT:[ UseTime:0.000688s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:37:23+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.001102s ]
+[2022-12-19T17:37:23+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000364s ]
+[2022-12-19T17:37:23+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000387s ]
+[2022-12-19T17:37:25+08:00][sql] CONNECT:[ UseTime:0.019478s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:37:25+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.001122s ]
+[2022-12-19T17:37:25+08:00][sql] UPDATE `gxfc_card`  SET `is_status` = 1  WHERE  `id` = 2396 [ RunTime:0.001754s ]
+[2022-12-19T17:37:25+08:00][sql] CONNECT:[ UseTime:0.000694s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:37:25+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.002018s ]
+[2022-12-19T17:37:25+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000706s ]
+[2022-12-19T17:37:25+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000373s ]
+[2022-12-19T17:37:29+08:00][sql] CONNECT:[ UseTime:0.000706s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:37:29+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.002355s ]
+[2022-12-19T17:37:29+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000423s ]
+[2022-12-19T17:37:29+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000400s ]
+[2022-12-19T17:38:09+08:00][sql] CONNECT:[ UseTime:0.000822s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:38:09+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.000747s ]
+[2022-12-19T17:38:09+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000187s ]
+[2022-12-19T17:38:09+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000182s ]
+[2022-12-19T17:48:15+08:00][sql] CONNECT:[ UseTime:0.001953s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T17:48:15+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.007473s ]
+[2022-12-19T17:48:15+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000386s ]
+[2022-12-19T17:48:15+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000377s ]
+[2022-12-19T18:04:59+08:00][sql] CONNECT:[ UseTime:0.001565s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T18:04:59+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001921s ]
+[2022-12-19T18:04:59+08:00][sql] SELECT `id`,`is_show`,`name`,`image`,`sort`,`pid`,`full_address`,`level` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.000791s ]
+[2022-12-19T18:05:00+08:00][sql] CONNECT:[ UseTime:0.000750s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T18:05:00+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl` [ RunTime:0.002060s ]
+[2022-12-19T18:05:00+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000181s ]
+[2022-12-19T18:05:00+08:00][sql] SELECT * FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC LIMIT 0,10 [ RunTime:0.000157s ]
+[2022-12-19T18:05:01+08:00][sql] CONNECT:[ UseTime:0.001404s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T18:05:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001494s ]
+[2022-12-19T18:05:01+08:00][sql] SELECT `id`,`is_show`,`name`,`image`,`sort`,`pid`,`full_address`,`level` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.000495s ]
+[2022-12-19T18:05:02+08:00][sql] CONNECT:[ UseTime:0.001217s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-19T18:05:02+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company_position` [ RunTime:0.001104s ]
+[2022-12-19T18:05:02+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company_position` `a` ORDER BY `id` DESC [ RunTime:0.000312s ]
+[2022-12-19T18:05:02+08:00][sql] SELECT * FROM `gxfc_company_position` `a` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000293s ]

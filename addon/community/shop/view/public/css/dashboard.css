@@ -1,0 +1,133 @@
+.ns-card-common {
+	margin-top: 0;
+}
+
+.ns-card-common .layui-card-header {
+	padding-left: 5px;
+	padding-top: 14px;
+	height: 20px;
+	line-height: 20px;
+}
+
+.ns-card-brief .ns-card-title {
+	padding-left: 13px;
+	font-weight: 500;
+}
+
+.ns-card-common .layui-card-body {
+	display: flex;
+	padding: 20px 62px 20px 5px !important;
+}
+
+.overview-box {
+	border: 1px solid #E5E5E5;
+}
+
+.overview-title {
+	padding: 0 20px;
+	height: 57px;
+	line-height: 1;
+	border-bottom: 1px solid rgba(229, 229, 229, 0.5);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.overview-title-text {
+	font-size: 16px;
+}
+
+.overview-con {
+	padding: 20px 20px 15px;
+}
+
+.overview-prompt {
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.overview-prompt .layui-btn {
+	font-size: 12px;
+	height: 22px;
+	line-height: 20px;
+	padding: 0 10px;
+}
+
+.overview-value {
+	font-size: 36px;
+	text-align: left;
+	margin: 2px 0 23px;
+	line-height: 1;
+}
+
+.overview-rate {
+	text-align: left;
+	line-height: 24px;
+	padding-bottom: 25px;
+}
+
+.overview-rate div {
+	display: inline-block;
+	text-align: left;
+	font-size: 16px;
+	color: #262626;
+}
+
+.overview-rate div:nth-of-type(1) {
+	margin-right: 25px;
+}
+
+.overview-bottom {
+	padding-top: 18px;
+	border-top: 1px solid rgba(229, 229, 229, 0.5);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	line-height: 1;
+}
+
+.overview-bottom-text {
+	font-size: 16px;
+	line-height: 1;
+}
+
+.overview-bottom-value {
+	font-size: 16px;
+	line-height: 1;
+}
+
+
+
+.ns-prompt-block .ns-prompt .iconfont {
+	font-size: 18px;
+	margin-left: 0;
+}
+
+.ns-prompt-block .ns-prompt-box {
+	right: -15px;
+	top: 32px;
+	left: unset;
+	width: 200px;
+}
+
+.ns-prompt-block .ns-prompt {
+	width: auto;
+	height: auto;
+}
+
+.ns-prompt-block .ns-prompt-box:before, .ns-prompt-block .ns-prompt-box:after {
+	right: 11px;
+	left: unset;
+}
+
+.ns-prompt-block .ns-prompt-box:before {
+	top: -25px;
+	border-bottom-color: #e4e4e4;
+	border-right-color: transparent;
+}
+
+.ns-prompt-block .ns-prompt-box:after {
+	top: -23px;
+	border-bottom-color: #FFFFFF;
+	border-right-color: transparent;
+}

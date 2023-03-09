@@ -1,0 +1,396 @@
+{extend name="base"/}
+
+{block name="resources"}
+<link rel="stylesheet" href="SHOP_CSS/order_list.css"/>
+{/block}
+
+{block name="main"}
+<div class="layui-card ns-card-common">
+    <div class="layui-card-header">
+        <span class="ns-card-title">配送单信息</span>
+    </div>
+    <div class="layui-card-body">
+        <table id="delivery_detail" lay-filter="delivery_detail"></table>
+    </div>
+</div>
+
+<div class="layui-tab ns-table-tab" lay-filter="page_tab">
+    <ul class="layui-tab-title">
+        <li class="layui-this" lay-id="relevance_order">相关订单</li>
+        <li class="" lay-id="goods_gather">商品汇总</li>
+    </ul>
+    <div class="layui-tab-content">
+        <div class="layui-tab-item layui-show">
+            <div class="ns-single-filter-box">
+                <div class="layui-form" lay-filter="order_selection_panel_form">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">搜索类型：</label>
+                        <div class="layui-input-inline">
+                            <select name="order_field">
+                                <option value="order_no">订单编号</option>
+                                <option value="out_trade_no">外部单号</option>
+                                <option value="name">收货人姓名</option>
+                                <option value="mobile">收货人手机</option>
+                            </select>
+                        </div>
+                        <div class="layui-input-inline">
+                            <input type="text" name="field_value" placeholder="请按照搜索类型搜索" autocomplete="off" class="layui-input ">
+                            <button type="button" class="layui-btn layui-btn-primary" lay-filter="order_search" lay-submit>
+                                <i class="layui-icon">&#xe615;</i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="order-container">
+                <div id="order_list"></div>
+                <div id="order_page"></div>
+            </div>
+        </div>
+
+        <div class="layui-tab-item">
+            <table id="goods_gather_list" lay-filter="goods_gather_list"></table>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="script"}
+<script src="SHOP_JS/order_list.js"></script>
+<script>
+    /**
+     * 配送单详情
+     */
+    new Table({
+        elem: '#delivery_detail',
+        page: false,
+        limit: 1,
+        cols: [
+            [
+                {
+                    title: '配送单',
+                    width: '10%',
+                    templet: function (data) {
+                        var html = '';
+
+                        html += '<p style="color: '+ data.delivery_status_info.color +';">'+ data.delivery_status_info.name +'</p>';
+                        html += '<p class="ns-multi-line-hiding" title="'+ data.delivery_no +'">'+ data.delivery_no +'</p>';
+
+                        return html;
+                    },
+                },
+                {
+                    title: '团长',
+                    width: '16%',
+                    templet: function (data) {
+                        var html = '',
+                            default_img = 'SHOP_IMG/default_headimg.png';
+
+                        html += '<div class="ns-table-title">';
+                            html += '<div class="ns-title-pic">';
+                                html += '<img layer-src src="'+ (data.leader_community_img ? ns.img(data.leader_community_img) : default_img) +'" onerror="this.src = \'' + default_img + '\'">';
+                            html += '</div>';
+                            html += '<div class="ns-title-content">';
+                                html += '<p class="ns-multi-line-hiding" title="'+ data.leader_name +'">'+ data.leader_name +'</p>';
+                                html += '<p class="ns-multi-line-hiding" title="'+ data.leader_mobile +'">'+ data.leader_mobile +'</p>';
+                                html += '<div title="'+ (data.leader_full_address + data.leader_address) +'">';
+                                    html += '<p class="ns-multi-line-hiding">'+ data.leader_full_address +'</p>';
+                                    html += '<p class="ns-multi-line-hiding">'+ data.leader_address +'</p>';
+                                html += '</div>';
+                            html += '</div>';
+                        html += '</div>';
+
+                        return html;
+                    },
+                },
+                {
+                    title: '自提点',
+                    width: '12%',
+                    templet: function (data) {
+                        return '<p class="ns-multi-line-hiding" title="'+ data.leader_community +'">'+ data.leader_community +'</p>';
+                    },
+                },
+                {
+                    title: '路线名称',
+                    width: '12%',
+                    templet: function (data) {
+                        return '<p class="ns-multi-line-hiding" title="'+ data.line_name +'">'+ data.line_name +'</p>';
+                    },
+                },
+                {
+                    title: '配送员',
+                    width: '18%',
+                    templet: function (data) {
+                        var html = '',
+                            default_img = 'SHOP_IMG/default_headimg.png';
+
+                        html += '<div class="ns-table-title">';
+                            html += '<div class="ns-title-pic">';
+                                html += '<img layer-src src="'+ (data.clerk_headimg ? ns.img(data.clerk_headimg) : default_img) +'" onerror="this.src = \'' + default_img + '\'">';
+                            html += '</div>';
+                            html += '<div class="ns-title-content">';
+                                html += '<p class="ns-multi-line-hiding" title="'+ data.clerk_name +'">'+ data.clerk_name +'</p>';
+                                html += '<p class="ns-multi-line-hiding" title="'+ data.clerk_mobile +'">'+ data.clerk_mobile +'</p>';
+                            html += '</div>';
+                        html += '</div>';
+
+                        return html;
+                    },
+                },
+                {
+                    title: '时间',
+                    width: '18%',
+                    templet: function (data) {
+                        var html = '';
+
+                        html += '<p class="ns-multi-line-hiding">创建时间：'+ ns.time_to_date(data.create_time) +'</p>';
+                        html += '<p class="ns-multi-line-hiding">预计自提：'+ ns.time_to_date(data.arrive_time) +'</p>';
+                        if (data.delivery_time) {
+                            html += '<p class="ns-multi-line-hiding">配送时间：'+ ns.time_to_date(data.delivery_time) +'</p>';
+                        }
+                        if (data.complete_time) {
+                            html += '<p class="ns-multi-line-hiding">送达时间：'+ ns.time_to_date(data.complete_time) +'</p>';
+                        }
+
+                        return html;
+                    },
+                },
+                {
+                    title: '数量',
+                    width: '10%',
+                    templet: function (data) {
+                        var html = '';
+
+                        html += '<p class="ns-multi-line-hiding">订单数量：'+ data.order_num +'</p>';
+                        html += '<p class="ns-multi-line-hiding">商品数量：'+ data.goods_num +'</p>';
+
+                        return html;
+                    },
+                },
+            ]
+        ],
+        data: [
+            JSON.parse('{:json_encode($delivery_detail, JSON_UNESCAPED_UNICODE)}')
+        ],
+    });
+</script>
+<script>
+    layui.use(['form', 'element', 'laypage'], function(form, element, laypage) {
+
+        /**
+         * 初始化订单类
+         */
+        var order = (function () {
+            Order.prototype.cols.forEach(function (v) {
+                if (v.title === '操作') {
+                    v = $.extend(v, {
+                        width: '10%',
+                        align: 'center',
+                        template: function (order_goods, order) {
+                            var html = '';
+
+                            html += '<div class="ns-table-btn">';
+                                html += '<a class="layui-btn" href="'+ ns.url('community://shop/order/detail', {order_id: order.order_id}) +'" target="_blank">查看详情</a>';
+                            html += '</div>';
+                            return html;
+                        }
+                    })
+                }
+            });
+
+            Order.prototype.tbody = function () {
+                var _self = this,
+                    html = '<tbody>';
+
+
+                _self.data.list.forEach(function (order, i) {
+
+                    // 分割行
+                    if (i > 0) {
+                        html += '<tr class="separation-row">';
+                            html += '<td colspan="' + _self.cols.length + '"></td>';
+                        html += '</tr>';
+                    }
+
+                    // 订单项头部
+                    html += '<tr class="header-row">';
+                        html += '<td colspan="' + _self.cols.length + '">';
+                            html += '<span class="order-item-header" style="margin-right:10px;">订单号：' + order.order_no + '</span>';
+                            html += '<span class="order-item-header ns-text-color more" style="margin-right:50px;" onclick="showMore(' + order.order_id + ')">更多';
+                            html += '<div class="more-operation" data-order-id="' + order.order_id + '">';
+                            html += '<span>支付流水号：' + order.out_trade_no + '</span>';
+                            html += '</div></span>';
+                            html += '<span class="order-item-header" style="margin-right:50px;">下单时间：' + ns.time_to_date(order.create_time) + '</span>';
+                            if (order.pay_type_name) html += '<span class="order-item-header" style="margin-right:50px;">支付方式：' + order.pay_type_name + '</span>';
+                            if (order.delivery_id > 0) html += '<span class="order-item-header" style="margin-right:50px;">预计自提时间：' + ns.time_to_date(order.arrive_time) + '</span>';
+                            if (order.delivery_id > 0) html += '<span class="order-item-header" style="margin-right:50px;">配送单号：{$delivery_detail.delivery_no}</span>';
+                        html += '</td>';
+                    html += '</tr>';
+
+                    // 订单项内容
+                    order.order_goods.forEach(function (goods, j) {
+                        html += '<tr class="content-row">';
+                            _self.cols.forEach(function (v, k) {
+
+                                if (v.template) {
+                                    if (j < 1 && v.merge) {
+                                        html += '<td rowspan="'+ order.order_goods.length +'" class="' + (v.className || '') + '" align="' + (v.align || '') + '" style="' + (v.style || '') + '">';
+                                        html += v.template(goods, order);
+                                        html += '</td>';
+                                    } else if (!v.merge) {
+                                        html += '<td class="' + (v.className || '') + '" align="' + (v.align || '') + '" style="' + (v.style || '') + '">';
+                                        html += v.template(goods, order);
+                                        html += '</td>';
+                                    }
+                                }
+                            });
+                        html += '</tr>';
+                    });
+
+                    if (order.remark !== '') {
+                        html += '<tr class="remark-row">';
+                            html += '<td colspan="' + _self.cols.length + '">卖家备注：' + order.remark + '</td>';
+                        html += '</tr>';
+                    }
+                });
+                html += '</tbody>';
+                return html;
+            }
+            return new Order();
+        })();
+
+        /**
+         * 获取配送单相关订单
+         * @param page
+         */
+        function getOrderList(page) {
+            var page_size = 10;
+            page = page || 1;
+
+            $.ajax({
+                type: 'GET',
+                dataType: 'JSON',
+                url: ns.url('community://shop/communitydelivery/relevanceOrder'),
+                data: $.extend(form.val('order_selection_panel_form'), {
+                    page: page,
+                    page_size: page_size,
+                    delivery_id: '{$delivery_detail.delivery_id}',
+                }),
+                success : function(res){
+                    if(res.code >= 0){
+                        // 渲染数据
+                         order.setData(res.data);
+                         $('#order_list').html(order.fetch());
+
+                        // 渲染分页
+                        laypage.render({
+                            elem: 'order_page',
+                            count: res.data.count,
+                            limit: page_size,
+                            curr: page,
+                            layout: ['count', 'prev', 'page', 'next'],
+                            jump: function(obj, first){
+                                // 首次不执行
+                                if(!first){
+                                    getOrderList(obj.curr);
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+        }
+        getOrderList()
+
+        /**
+         * 搜索功能
+         */
+        form.on('submit(order_search)', function(data) {
+            getOrderList();
+            return false;
+        });
+
+
+        /**
+         * 商品汇总
+         */
+        function goodsGather() {
+            new Table({
+                elem: '#goods_gather_list',
+                url: ns.url('community://shop/communitydelivery/goodsGather'),
+                where: {
+                    delivery_id: '{$delivery_detail.delivery_id}',
+                },
+                parseData: function(res) {
+                    var data = res.data.data;
+                    return {
+                        code: res.code,
+                        msg: res.message,
+                        count: data.length,
+                        data: data,
+                    }
+                },
+                page: false,
+                limit: Number.MAX_VALUE,
+                cols: [
+                    [
+                        {
+                            field: 'serial',
+                            title: '序号',
+                            width: '6%'
+                        },
+                        {
+                            title: '商品',
+                            width: '50%',
+                            templet: function (data) {
+                                var html = '';
+
+                                html += '<div class="ns-table-title">';
+                                    html += '<div class="ns-title-pic">';
+                                        html += '<img layer-src src="'+ ns.img(data.sku_image) +'" >';
+                                    html += '</div>';
+                                    html += '<div class="ns-title-content">';
+                                        html += '<p class="ns-multi-line-hiding">'+ data.sku_name +'</p>';
+                                    html += '</div>';
+                                html += '</div>';
+
+                                return html;
+                            }
+                        },
+                        {
+                            field: 'category_name_1',
+                            title: '一级分类',
+                            width: '15%'
+                        },
+                        {
+                            field: 'num',
+                            title: '数量',
+                            width: '12%'
+                        },
+                        {
+                            field: 'goods_money',
+                            title: '总价',
+                            width: '12%'
+                        },
+                    ]
+                ],
+            });
+        }
+
+        // 监听Tab切换
+        element.on('tab(page_tab)', function (data) {
+            var type = $(this).attr('lay-id');
+
+            switch (type) {
+                // 相关订单
+                case 'relevance_order':
+                    getOrderList();
+                    break;
+                // 商品汇总
+                case 'goods_gather':
+                    goodsGather();
+                    break;
+            }
+        });
+    });
+</script>
+{/block}

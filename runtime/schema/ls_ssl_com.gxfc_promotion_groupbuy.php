@@ -1,0 +1,22 @@
+<?php 
+return array (
+  'groupbuy_id' => 'int',
+  'site_id' => 'int',
+  'site_name' => 'string',
+  'goods_id' => 'int',
+  'goods_name' => 'string',
+  'goods_image' => 'string',
+  'is_virtual_goods' => 'int',
+  'goods_price' => 'float',
+  'groupbuy_price' => 'float',
+  'buy_num' => 'int',
+  'create_time' => 'int',
+  'modify_time' => 'int',
+  'start_time' => 'int',
+  'end_time' => 'int',
+  'sell_num' => 'int',
+  'status' => 'int',
+  'sku_id' => 'int',
+  '_pk' => 'groupbuy_id',
+  '_autoinc' => 'groupbuy_id',
+);

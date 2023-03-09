@@ -1,0 +1,4 @@
+<?php
+//000000000000
+ exit();?>
+a:3:{i:0;a:8:{s:11:"category_id";i:30;s:13:"category_name";s:6:"新品";s:3:"pid";i:0;s:5:"level";i:1;s:13:"category_id_1";i:30;s:13:"category_id_2";i:0;s:13:"category_id_3";i:0;s:11:"child_count";i:7;}i:1;a:8:{s:11:"category_id";i:31;s:13:"category_name";s:6:"二手";s:3:"pid";i:0;s:5:"level";i:1;s:13:"category_id_1";i:31;s:13:"category_id_2";i:0;s:13:"category_id_3";i:0;s:11:"child_count";i:7;}i:2;a:8:{s:11:"category_id";i:36;s:13:"category_name";s:6:"租赁";s:3:"pid";i:0;s:5:"level";i:1;s:13:"category_id_1";i:36;s:13:"category_id_2";i:0;s:13:"category_id_3";i:0;s:11:"child_count";i:7;}}

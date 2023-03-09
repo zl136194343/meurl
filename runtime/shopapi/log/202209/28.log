@@ -1,0 +1,2 @@
+[2022-09-28T10:57:33+08:00][sql] CONNECT:[ UseTime:0.000427s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-09-28T10:57:33+08:00][sql] SELECT `uid`,`app_module`,`app_group`,`is_admin`,`site_id`,`group_id`,`group_name`,`username`,`password`,`member_id`,`create_time`,`update_time`,`status`,`login_time`,`login_ip` FROM `gxfc_user` WHERE  `username` = '18980363806'  AND `app_module` = 'shop' LIMIT 1 [ RunTime:0.000459s ]

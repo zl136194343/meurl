@@ -1,0 +1,71 @@
+{extend name='common/default'/}
+{block name="main"}
+<div class="row">
+    <div class="col-md-12">
+        <div class="block block-themed block-rounded block-shadow">
+            <div class="block-header block-header-default bg-gd-sea">
+                <h3 class="block-title">{$title}</h3>
+                <div class="block-options">
+                    <button type="button" class="btn-block-option">
+                        <i class="si si-wrench"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="block-content">
+                <form>
+                    <div class="form-group row">
+                        <label class="col-12" for="example-text-input">captcha_id</label>
+                        <div class="col-md-12">
+                            <input type="text" class="form-control" name="captcha_id" value="{:config('captcha_id')}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-12" for="example-text-input">private_key</label>
+                        <div class="col-md-12">
+                            <input type="text" class="form-control" name="private_key" value="{:config('private_key')}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-12">
+                            <button type="button" id="submit" class="btn btn-alt-primary">保存</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footjs"}
+<script>
+    $('#submit').click(function () {
+        var cont = $("input,textarea,select").serialize();
+        layer.load(2, {shade: [0.1, '#fff']});
+        $.ajax({
+            type: "POST",
+            url: "/{:ADMIN_DIR}{:url('/do_config')}",
+            data: cont,
+            dataType: 'json',
+            success: function (data) {
+                layer.closeAll();
+                if (data.code == 1) {
+                    layer.alert(data.msg, {icon: 6}, function () {
+                        window.location.href = "/{:ADMIN_DIR}{:url('/yz_config')}";
+                    });
+                } else {
+                    layer.alert(data.msg, {icon: 5});
+                }
+            },
+            timeout: 10000,
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                layer.closeAll();
+                if (textStatus == "timeout") {
+                    layer.msg('请求超时！');
+                } else {
+                    layer.msg('服务器错误！');
+                }
+            }
+        });
+    });
+</script>
+{/block}

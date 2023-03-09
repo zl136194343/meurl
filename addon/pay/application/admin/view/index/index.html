@@ -1,0 +1,352 @@
+{extend name='common/default'/}
+{block name="main"}
+<style>
+    .table-responsive {
+        min-height: .01%;
+        overflow-x: auto;
+    }
+
+    @media screen {
+        .table-responsive {
+            width: 100%;
+            margin-bottom: 15px;
+            overflow-y: hidden;
+            -ms-overflow-style: -ms-autohiding-scrollbar;
+            border: 1px solid #ddd;
+        }
+
+        .table-responsive > .table {
+            margin-bottom: 0;
+        }
+
+        .table-responsive > .table > thead > tr > th,
+        .table-responsive > .table > tbody > tr > th,
+        .table-responsive > .table > tfoot > tr > th,
+        .table-responsive > .table > thead > tr > td,
+        .table-responsive > .table > tbody > tr > td,
+        .table-responsive > .table > tfoot > tr > td {
+            white-space: nowrap;
+        }
+
+        .table-responsive > .table-bordered {
+            border: 0;
+        }
+
+        .table-responsive > .table-bordered > thead > tr > th:first-child,
+        .table-responsive > .table-bordered > tbody > tr > th:first-child,
+        .table-responsive > .table-bordered > tfoot > tr > th:first-child,
+        .table-responsive > .table-bordered > thead > tr > td:first-child,
+        .table-responsive > .table-bordered > tbody > tr > td:first-child,
+        .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+            border-left: 0;
+        }
+
+        .table-responsive > .table-bordered > thead > tr > th:last-child,
+        .table-responsive > .table-bordered > tbody > tr > th:last-child,
+        .table-responsive > .table-bordered > tfoot > tr > th:last-child,
+        .table-responsive > .table-bordered > thead > tr > td:last-child,
+        .table-responsive > .table-bordered > tbody > tr > td:last-child,
+        .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+            border-right: 0;
+        }
+
+        .table-responsive > .table-bordered > tbody > tr:last-child > th,
+        .table-responsive > .table-bordered > tfoot > tr:last-child > th,
+        .table-responsive > .table-bordered > tbody > tr:last-child > td,
+        .table-responsive > .table-bordered > tfoot > tr:last-child > td {
+            border-bottom: 0;
+        }
+    }
+</style>
+<div class="row js-appear-enabled animated fadeIn" data-toggle="appear">
+    <!-- Row #1 -->
+    <div class="col-6 col-xl-3">
+        <a class="block block-rounded block-bordered block-link-shadow bg-danger" href="javascript:void(0)">
+            <div class="block-content block-content-full clearfix">
+                <div class="float-right mt-15 d-none d-sm-block">
+                    <font color="white"><i class="si si-bag fa-2x"></i></font>
+                </div>
+                <div class="font-size-h3 font-w600 text-white js-count-to-enabled" data-toggle="countTo"
+                     data-speed="1000" data-to="1500">{$order}
+                </div>
+                <div class="font-size-sm font-w600 text-white text-muted">订单总数</div>
+            </div>
+        </a>
+    </div>
+    <div class="col-6 col-xl-3">
+        <a class="block block-rounded block-bordered block-link-shadow bg-success" href="javascript:void(0)">
+            <div class="block-content block-content-full clearfix">
+                <div class="float-right mt-15 d-none d-sm-block">
+                    <font color="white"><i class="si si-wallet fa-2x"></i></font>
+                </div>
+                <div class="font-size-h3 font-w600 text-white">$&nbsp;<span data-toggle="countTo" data-speed="1000"
+                                                                            data-to="780" class="js-count-to-enabled">{$num_user}</span>
+                </div>
+                <div class="font-size-sm font-w600 text-white text-muted">预存金额</div>
+            </div>
+        </a>
+    </div>
+    <div class="col-6 col-xl-3">
+        <a class="block block-rounded block-bordered block-link-shadow bg-warning" href="javascript:void(0)">
+            <div class="block-content block-content-full clearfix">
+                <div class="float-right mt-15 d-none d-sm-block">
+                    <font color="white"><i class="si si-bar-chart fa-3x"></i></font>
+                </div>
+                <div class="font-size-h3 font-w600 text-white">$&nbsp;<span data-toggle="countTo" data-speed="1000"
+                                                                            data-to="780" class="js-count-to-enabled">{$num_order}</span>
+                </div>
+                <div class="font-size-sm font-w600 text-white text-muted">交易流水</div>
+            </div>
+        </a>
+    </div>
+    <div class="col-6 col-xl-3">
+        <a class="block block-rounded block-bordered block-link-shadow bg-info" href="javascript:void(0)">
+            <div class="block-content block-content-full clearfix">
+                <div class="float-right mt-15 d-none d-sm-block">
+                    <font color="white"><i class="si si-users fa-2x"></i></font>
+                </div>
+                <div class="font-size-h3 font-w600 text-white js-count-to-enabled" data-toggle="countTo"
+                     data-speed="1000" data-to="4252">{$user}
+                </div>
+                <div class="font-size-sm font-w600 text-white text-muted">用户数量</div>
+            </div>
+        </a>
+    </div>
+    <!-- END Row #1 -->
+</div>
+<div class="row">
+    <!-- Latest Orders -->
+    <div class="col-xl-6">
+        <div class="block block-rounded block-bordered">
+            <div class="block-header">
+                <h3 class="block-title text-uppercase">Top10财富榜</h3>
+                <div class="block-options">
+                    <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle"
+                            data-action-mode="demo">
+                        <i class="si si-refresh"></i>
+                    </button>
+                    <button type="button" class="btn-block-option">
+                        <i class="si si-wrench"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="block-content p-5">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-vcenter">
+                        <thead>
+                        <tr>
+                            <th class="text-center">uid</th>
+                            <th>用户名</th>
+                            <th>用户QQ</th>
+                            <th>余额</th>
+                            <th>用户状态</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {foreach $user_10 as $k=>$v}
+                        <tr>
+                            <td class="text-center">{$v['uid']}</td>
+                            <td class="font-w600">{$v['uname']}</td>
+                            <td>{$v['qq']}</td>
+                            <td>{$v['uprice']}元</td>
+                            <td id="seal-{$v['uid']}">
+                                {if $v['status']==1}
+                                <span class="badge badge-success">激活</span>
+                                {else/}
+                                <span class="badge badge-danger">封禁</span>
+                                {/if}
+                            </td>
+                        </tr>
+                        {/foreach}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END Latest Orders -->
+    <!-- Top Products -->
+    <div class="col-xl-6">
+        <div class="block">
+            <div class="block-header">
+                <h3 class="block-title">
+                    Sales <small>This week</small>
+                </h3>
+                <div class="block-options">
+                    <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle"
+                            data-action-mode="demo">
+                        <i class="si si-refresh"></i>
+                    </button>
+                    <button type="button" class="btn-block-option">
+                        <i class="si si-wrench"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+            <div id="container" style="width:100%;height:361px;"></div>
+            <div class="block-content">
+                <div class="row items-push">
+                    <div class="col-6 col-sm-4 text-center text-sm-left">
+                        <div class="font-size-sm font-w600 text-uppercase text-muted">已支付订单</div>
+                        <div class="font-size-h4 font-w600">{$order_status}</div>
+                    </div>
+                    <div class="col-6 col-sm-4 text-center text-sm-center">
+                        <div class="font-size-sm font-w600 text-uppercase text-muted">未支付订单</div>
+                        <div class="font-size-h4 font-w600">{$order_fail}</div>
+                    </div>
+                    <div class="col-12 col-sm-4 text-center text-sm-right">
+                        <div class="font-size-sm font-w600 text-uppercase text-muted">用户数量</div>
+                        <div class="font-size-h4 font-w600">{$user_count}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END Top Products -->
+</div>
+<div class="row js-appear-enabled animated fadeIn" data-toggle="appear">
+    <!-- Row #5 -->
+    <div class="col-6 col-md-4 col-xl-2">
+        <a class="block block-link-shadow text-center" href="/{:ADMIN_DIR}/user/index">
+            <div class="block-content">
+                <p class="mt-5">
+                    <i class="si si-user fa-3x"></i>
+                </p>
+                <p class="font-w600">用户管理</p>
+            </div>
+        </a>
+    </div>
+    <div class="col-6 col-md-4 col-xl-2">
+        <a class="block block-link-shadow text-center" href="/{:ADMIN_DIR}/vip/index">
+            <div class="block-content ribbon ribbon-bookmark ribbon-primary ribbon-left">
+                <p class="mt-5">
+                    <i class="si si-trophy fa-3x"></i>
+                </p>
+                <p class="font-w600">会员等级</p>
+            </div>
+        </a>
+    </div>
+    <div class="col-6 col-md-4 col-xl-2">
+        <a class="block block-link-shadow text-center" href="/{:ADMIN_DIR}/member">
+            <div class="block-content">
+                <p class="mt-5">
+                    <i class="si si-users fa-3x"></i>
+                </p>
+                <p class="font-w600">管理员</p>
+            </div>
+        </a>
+    </div>
+    <div class="col-6 col-md-4 col-xl-2">
+        <a class="block block-link-shadow text-center" href="/{:ADMIN_DIR}/wx_config">
+            <div class="block-content">
+                <p class="mt-5">
+                    <i class="si si-bubbles fa-3x"></i>
+                </p>
+                <p class="font-w600">微信配置</p>
+            </div>
+        </a>
+    </div>
+    <div class="col-6 col-md-4 col-xl-2">
+        <a class="block block-link-shadow text-center" href="/{:ADMIN_DIR}/email_config">
+            <div class="block-content ribbon ribbon-bookmark ribbon-success ribbon-left">
+                <p class="mt-5">
+                    <i class="si si-envelope fa-3x"></i>
+                </p>
+                <p class="font-w600">邮箱配置</p>
+            </div>
+        </a>
+    </div>
+    <div class="col-6 col-md-4 col-xl-2">
+        <a class="block block-link-shadow text-center" href="/{:ADMIN_DIR}/config">
+            <div class="block-content">
+                <p class="mt-5">
+                    <i class="si si-settings fa-3x"></i>
+                </p>
+                <p class="font-w600">系统设置</p>
+            </div>
+        </a>
+    </div>
+    <!-- END Row #5 -->
+</div>
+{/block}
+{block name="footjs"}
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+<script>
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+    var app = {};
+    option = null;
+    option = {
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'cross',
+                label: {
+                    backgroundColor: '#6a7985'
+                }
+            }
+        },
+        legend: {
+            data: ['预存充值', '交易流水', '新入用户', '新入商户']
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis: [
+            {
+                type: 'category',
+                boundaryGap: false,
+                data: [{$riqi}]
+            }
+        ],
+        yAxis: [
+            {
+                type: 'value'
+            }
+        ],
+        series: [
+            {
+                name: '预存充值',
+                type: 'line',
+                stack: '总量',
+                areaStyle: {},
+                data: [{$recharge_7}]
+            },
+            {
+                name: '交易流水',
+                type: 'line',
+                stack: '总量',
+                areaStyle: {},
+                data: [{$order_7}]
+            },
+            {
+                name: '新入用户',
+                type: 'line',
+                stack: '总量',
+                areaStyle: {},
+                data: [{$user_xin}]
+            },
+            {
+                name: '新入商户',
+                type: 'line',
+                stack: '总量',
+                areaStyle: {normal: {}},
+                data: [{$submit_xin}]
+            },
+        ]
+    };
+    if (option && typeof option === "object") {
+        myChart.setOption(option, true);
+    }
+</script>
+{/block}

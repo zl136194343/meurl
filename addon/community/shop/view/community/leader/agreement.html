@@ -1,0 +1,70 @@
+{extend name="base"/}
+{block name="resources"}
+{/block}
+{block name="main"}
+<div class="layui-form ns-form">
+    <div class="layui-form-item">
+        <label class="layui-form-label"><span class="required">*</span>标题：</label>
+        <div class="layui-input-inline">
+            <input type="text" name="title" required lay-verify="required" placeholder="请输入协议标题" value="{$info.value.title ?? ''}" autocomplete="off" class="layui-input ns-len-long">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label"><span class="required">*</span>内容：</label>
+        <div class="layui-input-inline">
+            <script id="editor" type="text/plain" class="ns-special-length" style="height:500px;"></script>
+        </div>
+    </div>
+
+    <div class="ns-form-row">
+        <button class="layui-btn ns-bg-color" lay-submit lay-filter="save">保存</button>
+    </div>
+    <input type="hidden" name="" id="content" value="{$info.value.content ?? ''}" />
+</div>
+{/block}
+{block name="script"}
+<script type="text/javascript" charset="utf-8" src="STATIC_EXT/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="STATIC_EXT/ueditor/ueditor.all.js"></script>
+<script type="text/javascript" charset="utf-8" src="STATIC_EXT/ueditor/lang/zh-cn/zh-cn.js"></script>
+<script>
+    // 实例化富文本
+    var ue = UE.getEditor('editor');
+
+    if($('#content').val()){
+        ue.ready(function() {
+            ue.setContent($('#content').val());
+        });
+    }
+
+    layui.use('form', function() {
+        var form = layui.form,
+            is_submit = false;
+
+        form.render();
+
+        form.on('submit(save)', function(data) {
+
+            if(is_submit) return false;
+            is_submit = true;
+
+            $.ajax({
+                url: ns.url('community://shop/community/agreementConfig'),
+                data: {
+                    title: data.field.title,
+                    content: ue.getContent(),
+                },
+                dataType: 'JSON',
+                type: 'POST',
+                success: function(res) {
+                    is_submit = false;
+                    layer.msg(res.message);
+                },
+                error: function () {
+                    is_submit = false;
+                    layer.msg('操作异常')
+                }
+            });
+        });
+    });
+</script>
+{/block}

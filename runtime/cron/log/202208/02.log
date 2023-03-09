@@ -1,0 +1,699 @@
+[2022-08-02T08:23:27+08:00][info] 检测事件执行2022-08-02 08:23:27
+[2022-08-02T08:23:27+08:00][sql] CONNECT:[ UseTime:0.000253s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-08-02T08:23:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000864s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1659399807 [ RunTime:0.000347s ]
+[2022-08-02T08:23:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_coupon` [ RunTime:0.000874s ]
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_promotion_coupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659399807 [ RunTime:0.000295s ]
+[2022-08-02T08:23:27+08:00][cron] event:data{"id":2,"type":2,"period":1,"period_type":0,"name":"\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronCouponEnd","execute_time":1658925604,"relate_id":0,"create_time":1646988964}
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658925664  WHERE  `id` = 2 [ RunTime:0.005863s ]
+[2022-08-02T08:23:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_weapp_live_room` [ RunTime:0.001416s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_weapp_live_room` WHERE  `live_status` IN ('101','102','105') [ RunTime:0.000206s ]
+[2022-08-02T08:23:27+08:00][cron] event:data{"id":3,"type":2,"period":1,"period_type":1,"name":"\u8f6e\u8be2\u66f4\u65b0\u540c\u6b65\u76f4\u64ad\u95f4","event":"LiveRoomStatus","execute_time":1659369600,"relate_id":0,"create_time":1646988964}
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1659456000  WHERE  `id` = 3 [ RunTime:0.003885s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT GROUP_CONCAT(goods_id) as goods_id FROM gxfc_weapp_goods WHERE status = 1 [ RunTime:0.000198s ]
+[2022-08-02T08:23:27+08:00][cron] event:data{"id":4,"type":2,"period":1,"period_type":1,"name":"\u8f6e\u8be2\u66f4\u65b0\u540c\u6b65\u76f4\u64ad\u5546\u54c1","event":"LiveGoodsStatus","execute_time":1659369600,"relate_id":0,"create_time":1646988964}
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1659456000  WHERE  `id` = 4 [ RunTime:0.002886s ]
+[2022-08-02T08:23:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_platformcoupon` [ RunTime:0.000819s ]
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_promotion_platformcoupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659399807 [ RunTime:0.000225s ]
+[2022-08-02T08:23:27+08:00][cron] event:data{"id":5,"type":2,"period":1,"period_type":0,"name":"\u5e73\u53f0\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronPlatformcouponEnd","execute_time":1658925544,"relate_id":0,"create_time":1646988964}
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658925604  WHERE  `id` = 5 [ RunTime:0.003742s ]
+[2022-08-02T08:23:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_supplier` [ RunTime:0.000937s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT `supplier_site_id` FROM `gxfc_supplier` WHERE  `status` = 1  AND ( `expire_time` <= 1659399807 and expire_time != 0 ) [ RunTime:0.000215s ]
+[2022-08-02T08:23:27+08:00][cron] event:data{"id":6,"type":2,"period":1,"period_type":1,"name":"\u8f6e\u8be2\u68c0\u6d4b\u53ef\u5173\u95ed\u7684\u4f9b\u5e94\u5546","event":"CronSupplyClose","execute_time":1659369600,"relate_id":0,"create_time":1646988964}
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1659456000  WHERE  `id` = 6 [ RunTime:0.009049s ]
+[2022-08-02T08:23:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop` [ RunTime:0.001032s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT `site_id` FROM `gxfc_shop` WHERE  `shop_status` = 1  AND ( `expire_time` <= 1659399807 and expire_time != 0 ) [ RunTime:0.000209s ]
+[2022-08-02T08:23:27+08:00][cron] event:data{"id":8,"type":2,"period":1,"period_type":1,"name":"\u5e97\u94fa\u6279\u91cf\u81ea\u52a8\u5173\u95ed","event":"CronShopClose","execute_time":1659369600,"relate_id":0,"create_time":1646988965}
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1659456000  WHERE  `id` = 8 [ RunTime:0.003897s ]
+[2022-08-02T08:23:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_cluster` [ RunTime:0.000664s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT `rule_json`,`cluster_id` FROM `gxfc_member_cluster` [ RunTime:0.000126s ]
+[2022-08-02T08:23:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000867s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000158s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000133s ]
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_member_cluster`  SET `member_num` = 12 , `member_ids` = '1,2,3,4,5,6,8,9,10,11,30,31' , `update_time` = 1659399807  WHERE  `cluster_id` = 1 [ RunTime:0.008198s ]
+[2022-08-02T08:23:27+08:00][cron] event:data{"id":10,"type":2,"period":1,"period_type":0,"name":"\u4f1a\u5458\u7fa4\u4f53\u5b9a\u65f6\u5237\u65b0","event":"CronMemberClusterRefresh","execute_time":1658925545,"relate_id":0,"create_time":1646988965}
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658925605  WHERE  `id` = 10 [ RunTime:0.004875s ]
+[2022-08-02T08:23:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_website_settlement_period` [ RunTime:0.000787s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT `period_start_time`,`period_end_time` FROM `gxfc_website_settlement_period` ORDER BY `period_id` DESC LIMIT 1 [ RunTime:0.000163s ]
+[2022-08-02T08:23:27+08:00][sql] INSERT INTO `gxfc_website_settlement_period` SET `create_time` = 1659399807 , `period_start_time` = 1659285000 , `period_end_time` = 1659371400 [ RunTime:0.007332s ]
+[2022-08-02T08:23:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_website` [ RunTime:0.000824s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT `site_id`,`site_area_name` FROM `gxfc_website` WHERE  `site_id` <> 0 [ RunTime:0.000185s ]
+[2022-08-02T08:23:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_settlement` [ RunTime:0.000753s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT sum(website_commission) as website_commission FROM `gxfc_shop_settlement` WHERE  `settlement_id` = 0  AND `website_id` = 3 LIMIT 1 [ RunTime:0.000313s ]
+[2022-08-02T08:23:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_open_account` [ RunTime:0.000670s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT sum(website_commission) as website_commission FROM `gxfc_shop_open_account` WHERE  `settlement_id` = 0  AND `website_id` = 3 LIMIT 1 [ RunTime:0.000138s ]
+[2022-08-02T08:23:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_website_settlement` [ RunTime:0.000732s ]
+[2022-08-02T08:23:27+08:00][sql] INSERT INTO `gxfc_website_settlement` SET `settlement_no` = '202208021001' , `period_id` = 140 , `website_id` = 3 , `website_name` = '武汉市' , `order_commission` = 0 , `shop_commission` = 0 , `create_time` = 1659399807 , `period_start_time` = 1659285000 , `period_end_time` = 1659371400 [ RunTime:0.009082s ]
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_website`  SET `account_order` = `account_order` + 0  WHERE  `site_id` = 3 [ RunTime:0.000170s ]
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_website`  SET `account_shop` = `account_shop` + 0  WHERE  `site_id` = 3 [ RunTime:0.000133s ]
+[2022-08-02T08:23:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_account` [ RunTime:0.000702s ]
+[2022-08-02T08:23:27+08:00][sql] INSERT INTO `gxfc_account` SET `site_id` = 3 , `account_no` = '2022080208233031' , `account_type` = 'account' , `account_data` = 0 , `from_type` = 'order' , `type_name` = '订单结算' , `relate_tag` = '133' , `create_time` = 1659399807 , `remark` = '分站结算，账单编号202208021001' [ RunTime:0.004237s ]
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_website`  SET `account` = `account` + 0  WHERE  `site_id` = 3 [ RunTime:0.000161s ]
+[2022-08-02T08:23:27+08:00][sql] INSERT INTO `gxfc_account` SET `site_id` = 3 , `account_no` = '2022080208231262' , `account_type` = 'account' , `account_data` = 0 , `from_type` = 'shop' , `type_name` = '店铺入驻' , `relate_tag` = '133' , `create_time` = 1659399807 , `remark` = '分站结算，账单编号202208021001' [ RunTime:0.003606s ]
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_website`  SET `account` = `account` + 0  WHERE  `site_id` = 3 [ RunTime:0.000173s ]
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_shop_settlement`  SET `settlement_id` = 133  WHERE  `settlement_id` = 0  AND `website_id` = 3 [ RunTime:0.000579s ]
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_shop_open_account`  SET `settlement_id` = 133  WHERE  `settlement_id` = 0  AND `website_id` = 3 [ RunTime:0.000166s ]
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_website_settlement_period`  SET `settlement_no` = '202208020823' , `website_num` = 1 , `order_commission` = 0 , `shop_commission` = 0  WHERE  `period_id` = 140 [ RunTime:0.003674s ]
+[2022-08-02T08:23:27+08:00][cron] event:data{"id":15,"type":2,"period":1,"period_type":1,"name":"\u5206\u7ad9\u5468\u671f\u7ed3\u7b97","event":"WebsiteSettlement","execute_time":1659382200,"relate_id":0,"create_time":1646992857}
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1659468600  WHERE  `id` = 15 [ RunTime:0.005956s ]
+[2022-08-02T08:23:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_settlement_period` [ RunTime:0.000794s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT `period_start_time`,`period_end_time` FROM `gxfc_shop_settlement_period` ORDER BY `period_id` DESC LIMIT 1 [ RunTime:0.000133s ]
+[2022-08-02T08:23:27+08:00][sql] INSERT INTO `gxfc_shop_settlement_period` SET `period_no` = '2022080208236122' , `create_time` = 1659399807 , `period_start_time` = 1659283200 , `period_end_time` = 1659369600 [ RunTime:0.005700s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT `site_id`,`site_name`,`website_id` FROM `gxfc_shop` WHERE  `shop_status` = 1 [ RunTime:0.000183s ]
+[2022-08-02T08:23:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order` [ RunTime:0.001171s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT sum(order_money) as order_money, sum(refund_money) as refund_money, sum(shop_money) as shop_money, sum(platform_money) as platform_money, sum(refund_shop_money) as refund_shop_money, sum(refund_platform_money) as refund_platform_money, sum(commission) as commission, sum(platform_coupon_money) as platform_coupon_money, sum(refund_platform_coupon_money) as refund_platform_coupon_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 1  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1659369600 LIMIT 1 [ RunTime:0.000428s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT sum(hospital_money) as hospital_money,sum(refund_hospital_money) as refund_hospital_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `hospital_id` = 1  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1659369600 LIMIT 1 [ RunTime:0.000271s ]
+[2022-08-02T08:23:27+08:00][sql] INSERT INTO `gxfc_shop_settlement` SET `order_money` = 0 , `refund_money` = 0 , `shop_money` = 0 , `platform_money` = 0 , `refund_shop_money` = 0 , `refund_platform_money` = 0 , `commission` = 0 , `platform_coupon_money` = 0 , `refund_platform_coupon_money` = 0 , `settlement_no` = '20220802082314336' , `site_id` = 1 , `site_name` = '测试店铺' , `period_id` = 131 , `period_start_time` = 1659283200 , `period_end_time` = 1659369600 , `website_commission` = 0 [ RunTime:0.003583s ]
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_order`  SET `is_settlement` = 1 , `settlement_id` = 488  WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 1  AND `finish_time` <= 1659369600 [ RunTime:0.001719s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT `account` FROM `gxfc_shop` WHERE  `site_id` = 1 LIMIT 1 [ RunTime:0.000166s ]
+[2022-08-02T08:23:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_account` [ RunTime:0.000954s ]
+[2022-08-02T08:23:27+08:00][sql] INSERT INTO `gxfc_shop_account` SET `site_id` = 1 , `account_no` = '2022080208235988' , `account_type` = 'account' , `account_data` = 0 , `from_type` = 'order' , `type_name` = '店铺结算' , `relate_tag` = '488' , `create_time` = 1659399807 , `remark` = '店铺结算，账单编号20220802082314336' [ RunTime:0.003239s ]
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_shop`  SET `account` = 957.01  WHERE  `site_id` = 1 [ RunTime:0.002601s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT sum(order_money) as order_money, sum(refund_money) as refund_money, sum(shop_money) as shop_money, sum(platform_money) as platform_money, sum(refund_shop_money) as refund_shop_money, sum(refund_platform_money) as refund_platform_money, sum(commission) as commission, sum(platform_coupon_money) as platform_coupon_money, sum(refund_platform_coupon_money) as refund_platform_coupon_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 2  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1659369600 LIMIT 1 [ RunTime:0.000402s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT sum(hospital_money) as hospital_money,sum(refund_hospital_money) as refund_hospital_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `hospital_id` = 2  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1659369600 LIMIT 1 [ RunTime:0.000355s ]
+[2022-08-02T08:23:27+08:00][sql] INSERT INTO `gxfc_shop_settlement` SET `order_money` = 0 , `refund_money` = 0 , `shop_money` = 0 , `platform_money` = 0 , `refund_shop_money` = 0 , `refund_platform_money` = 0 , `commission` = 0 , `platform_coupon_money` = 0 , `refund_platform_coupon_money` = 0 , `settlement_no` = '20220802082325064' , `site_id` = 2 , `site_name` = '甘霖的店铺' , `period_id` = 131 , `period_start_time` = 1659283200 , `period_end_time` = 1659369600 , `website_commission` = 0 [ RunTime:0.002973s ]
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_order`  SET `is_settlement` = 1 , `settlement_id` = 489  WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 2  AND `finish_time` <= 1659369600 [ RunTime:0.001772s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT `account` FROM `gxfc_shop` WHERE  `site_id` = 2 LIMIT 1 [ RunTime:0.000174s ]
+[2022-08-02T08:23:27+08:00][sql] INSERT INTO `gxfc_shop_account` SET `site_id` = 2 , `account_no` = '2022080208234056' , `account_type` = 'account' , `account_data` = 0 , `from_type` = 'order' , `type_name` = '店铺结算' , `relate_tag` = '489' , `create_time` = 1659399807 , `remark` = '店铺结算，账单编号20220802082325064' [ RunTime:0.002833s ]
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_shop`  SET `account` = 0  WHERE  `site_id` = 2 [ RunTime:0.002843s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT sum(order_money) as order_money, sum(refund_money) as refund_money, sum(shop_money) as shop_money, sum(platform_money) as platform_money, sum(refund_shop_money) as refund_shop_money, sum(refund_platform_money) as refund_platform_money, sum(commission) as commission, sum(platform_coupon_money) as platform_coupon_money, sum(refund_platform_coupon_money) as refund_platform_coupon_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 4  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1659369600 LIMIT 1 [ RunTime:0.000374s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT sum(hospital_money) as hospital_money,sum(refund_hospital_money) as refund_hospital_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `hospital_id` = 4  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1659369600 LIMIT 1 [ RunTime:0.000293s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT `site_area_name`,`order_rate` FROM `gxfc_website` WHERE  `site_id` = 3 LIMIT 1 [ RunTime:0.000166s ]
+[2022-08-02T08:23:27+08:00][sql] INSERT INTO `gxfc_shop_settlement` SET `order_money` = 0 , `refund_money` = 0 , `shop_money` = 0 , `platform_money` = 0 , `refund_shop_money` = 0 , `refund_platform_money` = 0 , `commission` = 0 , `platform_coupon_money` = 0 , `refund_platform_coupon_money` = 0 , `settlement_no` = '20220802082344921' , `site_id` = 4 , `site_name` = '纵索2店铺' , `period_id` = 131 , `period_start_time` = 1659283200 , `period_end_time` = 1659369600 , `website_id` = 3 , `website_commission` = 0 [ RunTime:0.003898s ]
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_order`  SET `is_settlement` = 1 , `settlement_id` = 490  WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 4  AND `finish_time` <= 1659369600 [ RunTime:0.001469s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT `account` FROM `gxfc_shop` WHERE  `site_id` = 4 LIMIT 1 [ RunTime:0.000144s ]
+[2022-08-02T08:23:27+08:00][sql] INSERT INTO `gxfc_shop_account` SET `site_id` = 4 , `account_no` = '2022080208234717' , `account_type` = 'account' , `account_data` = 0 , `from_type` = 'order' , `type_name` = '店铺结算' , `relate_tag` = '490' , `create_time` = 1659399807 , `remark` = '店铺结算，账单编号20220802082344921' [ RunTime:0.002539s ]
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_shop`  SET `account` = 12398.23  WHERE  `site_id` = 4 [ RunTime:0.002642s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT sum(order_money) as order_money, sum(refund_money) as refund_money, sum(shop_money) as shop_money, sum(platform_money) as platform_money, sum(refund_shop_money) as refund_shop_money, sum(refund_platform_money) as refund_platform_money, sum(commission) as commission, sum(platform_coupon_money) as platform_coupon_money, sum(refund_platform_coupon_money) as refund_platform_coupon_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 9  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1659369600 LIMIT 1 [ RunTime:0.000362s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT sum(hospital_money) as hospital_money,sum(refund_hospital_money) as refund_hospital_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `hospital_id` = 9  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1659369600 LIMIT 1 [ RunTime:0.000322s ]
+[2022-08-02T08:23:27+08:00][sql] INSERT INTO `gxfc_shop_settlement` SET `order_money` = 0 , `refund_money` = 0 , `shop_money` = 0 , `platform_money` = 0 , `refund_shop_money` = 0 , `refund_platform_money` = 0 , `commission` = 0 , `platform_coupon_money` = 0 , `refund_platform_coupon_money` = 0 , `settlement_no` = '20220802082398015' , `site_id` = 9 , `site_name` = '小谷粒旗舰店' , `period_id` = 131 , `period_start_time` = 1659283200 , `period_end_time` = 1659369600 , `website_commission` = 0 [ RunTime:0.002623s ]
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_order`  SET `is_settlement` = 1 , `settlement_id` = 491  WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 9  AND `finish_time` <= 1659369600 [ RunTime:0.001572s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT `account` FROM `gxfc_shop` WHERE  `site_id` = 9 LIMIT 1 [ RunTime:0.000152s ]
+[2022-08-02T08:23:27+08:00][sql] INSERT INTO `gxfc_shop_account` SET `site_id` = 9 , `account_no` = '2022080208232094' , `account_type` = 'account' , `account_data` = 0 , `from_type` = 'order' , `type_name` = '店铺结算' , `relate_tag` = '491' , `create_time` = 1659399807 , `remark` = '店铺结算，账单编号20220802082398015' [ RunTime:0.003300s ]
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_shop`  SET `account` = 4765.36  WHERE  `site_id` = 9 [ RunTime:0.002840s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT sum(order_money) as order_money, sum(refund_money) as refund_money, sum(shop_money) as shop_money, sum(platform_money) as platform_money, sum(refund_shop_money) as refund_shop_money, sum(refund_platform_money) as refund_platform_money, sum(commission) as commission, sum(platform_coupon_money) as platform_coupon_money, sum(refund_platform_coupon_money) as refund_platform_coupon_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 10  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1659369600 LIMIT 1 [ RunTime:0.000389s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT sum(hospital_money) as hospital_money,sum(refund_hospital_money) as refund_hospital_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `hospital_id` = 10  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1659369600 LIMIT 1 [ RunTime:0.000310s ]
+[2022-08-02T08:23:27+08:00][sql] INSERT INTO `gxfc_shop_settlement` SET `order_money` = 0 , `refund_money` = 0 , `shop_money` = 0 , `platform_money` = 0 , `refund_shop_money` = 0 , `refund_platform_money` = 0 , `commission` = 0 , `platform_coupon_money` = 0 , `refund_platform_coupon_money` = 0 , `settlement_no` = '202208020823107260' , `site_id` = 10 , `site_name` = '李婉晴' , `period_id` = 131 , `period_start_time` = 1659283200 , `period_end_time` = 1659369600 , `website_commission` = 0 [ RunTime:0.005590s ]
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_order`  SET `is_settlement` = 1 , `settlement_id` = 492  WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 10  AND `finish_time` <= 1659369600 [ RunTime:0.001527s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT `account` FROM `gxfc_shop` WHERE  `site_id` = 10 LIMIT 1 [ RunTime:0.000159s ]
+[2022-08-02T08:23:27+08:00][sql] INSERT INTO `gxfc_shop_account` SET `site_id` = 10 , `account_no` = '2022080208236206' , `account_type` = 'account' , `account_data` = 0 , `from_type` = 'order' , `type_name` = '店铺结算' , `relate_tag` = '492' , `create_time` = 1659399807 , `remark` = '店铺结算，账单编号202208020823107260' [ RunTime:0.002903s ]
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_shop`  SET `account` = 60.6  WHERE  `site_id` = 10 [ RunTime:0.002776s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT sum(order_money) as order_money, sum(refund_money) as refund_money, sum(shop_money) as shop_money, sum(platform_money) as platform_money, sum(refund_shop_money) as refund_shop_money, sum(refund_platform_money) as refund_platform_money, sum(commission) as commission, sum(platform_coupon_money) as platform_coupon_money, sum(refund_platform_coupon_money) as refund_platform_coupon_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 11  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1659369600 LIMIT 1 [ RunTime:0.000344s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT sum(hospital_money) as hospital_money,sum(refund_hospital_money) as refund_hospital_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `hospital_id` = 11  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1659369600 LIMIT 1 [ RunTime:0.000310s ]
+[2022-08-02T08:23:27+08:00][sql] INSERT INTO `gxfc_shop_settlement` SET `order_money` = 0 , `refund_money` = 0 , `shop_money` = 0 , `platform_money` = 0 , `refund_shop_money` = 0 , `refund_platform_money` = 0 , `commission` = 0 , `platform_coupon_money` = 0 , `refund_platform_coupon_money` = 0 , `settlement_no` = '202208020823115160' , `site_id` = 11 , `site_name` = '有点东西旗舰店' , `period_id` = 131 , `period_start_time` = 1659283200 , `period_end_time` = 1659369600 , `website_commission` = 0 [ RunTime:0.003411s ]
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_order`  SET `is_settlement` = 1 , `settlement_id` = 493  WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 11  AND `finish_time` <= 1659369600 [ RunTime:0.001810s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT `account` FROM `gxfc_shop` WHERE  `site_id` = 11 LIMIT 1 [ RunTime:0.000204s ]
+[2022-08-02T08:23:27+08:00][sql] INSERT INTO `gxfc_shop_account` SET `site_id` = 11 , `account_no` = '2022080208234700' , `account_type` = 'account' , `account_data` = 0 , `from_type` = 'order' , `type_name` = '店铺结算' , `relate_tag` = '493' , `create_time` = 1659399807 , `remark` = '店铺结算，账单编号202208020823115160' [ RunTime:0.003432s ]
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_shop`  SET `account` = 4383.04  WHERE  `site_id` = 11 [ RunTime:0.002862s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT sum(order_money) as order_money, sum(refund_money) as refund_money, sum(shop_money) as shop_money, sum(platform_money) as platform_money, sum(refund_shop_money) as refund_shop_money, sum(refund_platform_money) as refund_platform_money, sum(commission) as commission, sum(platform_coupon_money) as platform_coupon_money, sum(refund_platform_coupon_money) as refund_platform_coupon_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 15  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1659369600 LIMIT 1 [ RunTime:0.000330s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT sum(hospital_money) as hospital_money,sum(refund_hospital_money) as refund_hospital_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `hospital_id` = 15  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1659369600 LIMIT 1 [ RunTime:0.000293s ]
+[2022-08-02T08:23:27+08:00][sql] INSERT INTO `gxfc_shop_settlement` SET `order_money` = 0 , `refund_money` = 0 , `shop_money` = 0 , `platform_money` = 0 , `refund_shop_money` = 0 , `refund_platform_money` = 0 , `commission` = 0 , `platform_coupon_money` = 0 , `refund_platform_coupon_money` = 0 , `settlement_no` = '202208020823152772' , `site_id` = 15 , `site_name` = '能卓百货经营部' , `period_id` = 131 , `period_start_time` = 1659283200 , `period_end_time` = 1659369600 , `website_commission` = 0 [ RunTime:0.003026s ]
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_order`  SET `is_settlement` = 1 , `settlement_id` = 494  WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 15  AND `finish_time` <= 1659369600 [ RunTime:0.001499s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT `account` FROM `gxfc_shop` WHERE  `site_id` = 15 LIMIT 1 [ RunTime:0.000163s ]
+[2022-08-02T08:23:27+08:00][sql] INSERT INTO `gxfc_shop_account` SET `site_id` = 15 , `account_no` = '2022080208235925' , `account_type` = 'account' , `account_data` = 0 , `from_type` = 'order' , `type_name` = '店铺结算' , `relate_tag` = '494' , `create_time` = 1659399807 , `remark` = '店铺结算，账单编号202208020823152772' [ RunTime:0.005411s ]
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_shop`  SET `account` = 0  WHERE  `site_id` = 15 [ RunTime:0.003669s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT sum(order_money) as order_money, sum(refund_money) as refund_money, sum(shop_money) as shop_money, sum(platform_money) as platform_money, sum(refund_shop_money) as refund_shop_money, sum(refund_platform_money) as refund_platform_money, sum(commission) as commission, sum(platform_coupon_money) as platform_coupon_money, sum(refund_platform_coupon_money) as refund_platform_coupon_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 16  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1659369600 LIMIT 1 [ RunTime:0.000342s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT sum(hospital_money) as hospital_money,sum(refund_hospital_money) as refund_hospital_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `hospital_id` = 16  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1659369600 LIMIT 1 [ RunTime:0.000282s ]
+[2022-08-02T08:23:27+08:00][sql] INSERT INTO `gxfc_shop_settlement` SET `order_money` = 0 , `refund_money` = 0 , `shop_money` = 0 , `platform_money` = 0 , `refund_shop_money` = 0 , `refund_platform_money` = 0 , `commission` = 0 , `platform_coupon_money` = 0 , `refund_platform_coupon_money` = 0 , `settlement_no` = '202208020823164352' , `site_id` = 16 , `site_name` = '乐越百货' , `period_id` = 131 , `period_start_time` = 1659283200 , `period_end_time` = 1659369600 , `website_commission` = 0 [ RunTime:0.003921s ]
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_order`  SET `is_settlement` = 1 , `settlement_id` = 495  WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 16  AND `finish_time` <= 1659369600 [ RunTime:0.001514s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT `account` FROM `gxfc_shop` WHERE  `site_id` = 16 LIMIT 1 [ RunTime:0.000147s ]
+[2022-08-02T08:23:27+08:00][sql] INSERT INTO `gxfc_shop_account` SET `site_id` = 16 , `account_no` = '2022080208232194' , `account_type` = 'account' , `account_data` = 0 , `from_type` = 'order' , `type_name` = '店铺结算' , `relate_tag` = '495' , `create_time` = 1659399807 , `remark` = '店铺结算，账单编号202208020823164352' [ RunTime:0.003687s ]
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_shop`  SET `account` = 0  WHERE  `site_id` = 16 [ RunTime:0.003179s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT sum(order_money) as order_money, sum(refund_money) as refund_money, sum(shop_money) as shop_money, sum(platform_money) as platform_money, sum(refund_shop_money) as refund_shop_money, sum(refund_platform_money) as refund_platform_money, sum(commission) as commission, sum(platform_coupon_money) as platform_coupon_money, sum(refund_platform_coupon_money) as refund_platform_coupon_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 17  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1659369600 LIMIT 1 [ RunTime:0.000336s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT sum(hospital_money) as hospital_money,sum(refund_hospital_money) as refund_hospital_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `hospital_id` = 17  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1659369600 LIMIT 1 [ RunTime:0.000261s ]
+[2022-08-02T08:23:27+08:00][sql] INSERT INTO `gxfc_shop_settlement` SET `order_money` = 0 , `refund_money` = 0 , `shop_money` = 0 , `platform_money` = 0 , `refund_shop_money` = 0 , `refund_platform_money` = 0 , `commission` = 0 , `platform_coupon_money` = 0 , `refund_platform_coupon_money` = 0 , `settlement_no` = '202208020823178318' , `site_id` = 17 , `site_name` = '呈卓百货' , `period_id` = 131 , `period_start_time` = 1659283200 , `period_end_time` = 1659369600 , `website_commission` = 0 [ RunTime:0.003081s ]
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_order`  SET `is_settlement` = 1 , `settlement_id` = 496  WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 17  AND `finish_time` <= 1659369600 [ RunTime:0.001536s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT `account` FROM `gxfc_shop` WHERE  `site_id` = 17 LIMIT 1 [ RunTime:0.000159s ]
+[2022-08-02T08:23:27+08:00][sql] INSERT INTO `gxfc_shop_account` SET `site_id` = 17 , `account_no` = '2022080208232015' , `account_type` = 'account' , `account_data` = 0 , `from_type` = 'order' , `type_name` = '店铺结算' , `relate_tag` = '496' , `create_time` = 1659399807 , `remark` = '店铺结算，账单编号202208020823178318' [ RunTime:0.003119s ]
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_shop`  SET `account` = 0  WHERE  `site_id` = 17 [ RunTime:0.002977s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT sum(order_money) as order_money, sum(refund_money) as refund_money, sum(shop_money) as shop_money, sum(platform_money) as platform_money, sum(refund_shop_money) as refund_shop_money, sum(refund_platform_money) as refund_platform_money, sum(commission) as commission, sum(platform_coupon_money) as platform_coupon_money, sum(refund_platform_coupon_money) as refund_platform_coupon_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 19  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1659369600 LIMIT 1 [ RunTime:0.000363s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT sum(hospital_money) as hospital_money,sum(refund_hospital_money) as refund_hospital_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `hospital_id` = 19  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1659369600 LIMIT 1 [ RunTime:0.000307s ]
+[2022-08-02T08:23:27+08:00][sql] INSERT INTO `gxfc_shop_settlement` SET `order_money` = 0 , `refund_money` = 0 , `shop_money` = 0 , `platform_money` = 0 , `refund_shop_money` = 0 , `refund_platform_money` = 0 , `commission` = 0 , `platform_coupon_money` = 0 , `refund_platform_coupon_money` = 0 , `settlement_no` = '202208020823195202' , `site_id` = 19 , `site_name` = 'add' , `period_id` = 131 , `period_start_time` = 1659283200 , `period_end_time` = 1659369600 , `website_commission` = 0 [ RunTime:0.003662s ]
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_order`  SET `is_settlement` = 1 , `settlement_id` = 497  WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 19  AND `finish_time` <= 1659369600 [ RunTime:0.001479s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT `account` FROM `gxfc_shop` WHERE  `site_id` = 19 LIMIT 1 [ RunTime:0.000173s ]
+[2022-08-02T08:23:27+08:00][sql] INSERT INTO `gxfc_shop_account` SET `site_id` = 19 , `account_no` = '2022080208239340' , `account_type` = 'account' , `account_data` = 0 , `from_type` = 'order' , `type_name` = '店铺结算' , `relate_tag` = '497' , `create_time` = 1659399807 , `remark` = '店铺结算，账单编号202208020823195202' [ RunTime:0.003345s ]
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_shop`  SET `account` = 0  WHERE  `site_id` = 19 [ RunTime:0.002822s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT sum(order_money) as order_money, sum(refund_money) as refund_money, sum(shop_money) as shop_money, sum(platform_money) as platform_money, sum(refund_shop_money) as refund_shop_money, sum(refund_platform_money) as refund_platform_money, sum(commission) as commission, sum(platform_coupon_money) as platform_coupon_money, sum(refund_platform_coupon_money) as refund_platform_coupon_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 24  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1659369600 LIMIT 1 [ RunTime:0.000373s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT sum(hospital_money) as hospital_money,sum(refund_hospital_money) as refund_hospital_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `hospital_id` = 24  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1659369600 LIMIT 1 [ RunTime:0.000283s ]
+[2022-08-02T08:23:27+08:00][sql] INSERT INTO `gxfc_shop_settlement` SET `order_money` = 0 , `refund_money` = 0 , `shop_money` = 0 , `platform_money` = 0 , `refund_shop_money` = 0 , `refund_platform_money` = 0 , `commission` = 0 , `platform_coupon_money` = 0 , `refund_platform_coupon_money` = 0 , `settlement_no` = '202208020823248498' , `site_id` = 24 , `site_name` = 'asdasdsa' , `period_id` = 131 , `period_start_time` = 1659283200 , `period_end_time` = 1659369600 , `website_commission` = 0 [ RunTime:0.006641s ]
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_order`  SET `is_settlement` = 1 , `settlement_id` = 498  WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 24  AND `finish_time` <= 1659369600 [ RunTime:0.001547s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT `account` FROM `gxfc_shop` WHERE  `site_id` = 24 LIMIT 1 [ RunTime:0.000164s ]
+[2022-08-02T08:23:27+08:00][sql] INSERT INTO `gxfc_shop_account` SET `site_id` = 24 , `account_no` = '2022080208237924' , `account_type` = 'account' , `account_data` = 0 , `from_type` = 'order' , `type_name` = '店铺结算' , `relate_tag` = '498' , `create_time` = 1659399807 , `remark` = '店铺结算，账单编号202208020823248498' [ RunTime:0.003603s ]
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_shop`  SET `account` = 0  WHERE  `site_id` = 24 [ RunTime:0.004957s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT sum(order_money) as order_money, sum(refund_money) as refund_money, sum(shop_money) as shop_money, sum(platform_money) as platform_money, sum(refund_shop_money) as refund_shop_money, sum(refund_platform_money) as refund_platform_money, sum(commission) as commission, sum(platform_coupon_money) as platform_coupon_money, sum(refund_platform_coupon_money) as refund_platform_coupon_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 25  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1659369600 LIMIT 1 [ RunTime:0.000391s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT sum(hospital_money) as hospital_money,sum(refund_hospital_money) as refund_hospital_money FROM `gxfc_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `hospital_id` = 25  AND `pay_type` <> 'OFFLINE_PAY'  AND `finish_time` <= 1659369600 LIMIT 1 [ RunTime:0.000311s ]
+[2022-08-02T08:23:27+08:00][sql] INSERT INTO `gxfc_shop_settlement` SET `order_money` = 0 , `refund_money` = 0 , `shop_money` = 0 , `platform_money` = 0 , `refund_shop_money` = 0 , `refund_platform_money` = 0 , `commission` = 0 , `platform_coupon_money` = 0 , `refund_platform_coupon_money` = 0 , `settlement_no` = '202208020823254828' , `site_id` = 25 , `site_name` = '谷粒FD' , `period_id` = 131 , `period_start_time` = 1659283200 , `period_end_time` = 1659369600 , `website_commission` = 0 [ RunTime:0.004284s ]
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_order`  SET `is_settlement` = 1 , `settlement_id` = 499  WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 25  AND `finish_time` <= 1659369600 [ RunTime:0.001558s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT `account` FROM `gxfc_shop` WHERE  `site_id` = 25 LIMIT 1 [ RunTime:0.000161s ]
+[2022-08-02T08:23:27+08:00][sql] INSERT INTO `gxfc_shop_account` SET `site_id` = 25 , `account_no` = '2022080208233653' , `account_type` = 'account' , `account_data` = 0 , `from_type` = 'order' , `type_name` = '店铺结算' , `relate_tag` = '499' , `create_time` = 1659399807 , `remark` = '店铺结算，账单编号202208020823254828' [ RunTime:0.002902s ]
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_shop`  SET `account` = 0  WHERE  `site_id` = 25 [ RunTime:0.002983s ]
+[2022-08-02T08:23:27+08:00][sql] UPDATE `gxfc_shop_settlement_period`  SET `shop_num` = 12 , `order_money` = 0 , `refund_money` = 0 , `shop_money` = 0 , `platform_money` = 0 , `refund_shop_money` = 0 , `refund_platform_money` = 0 , `commission` = 0 , `website_commission` = 0 , `platform_coupon_money` = 0 , `refund_platform_coupon_money` = 0  WHERE  `period_id` = 131 [ RunTime:0.003355s ]
+[2022-08-02T08:23:27+08:00][sql] SELECT `account` FROM `gxfc_website` WHERE  `site_id` = 0 LIMIT 1 [ RunTime:0.000185s ]
+[2022-08-02T08:23:28+08:00][sql] INSERT INTO `gxfc_account` SET `account_no` = '2022080208232928' , `site_id` = 0 , `account_type` = 'account' , `account_data` = 0 , `from_type` = 'order' , `relate_tag` = '131' , `create_time` = 1659399807 , `remark` = '订单结算，账单编号:2022080208236122' [ RunTime:0.003098s ]
+[2022-08-02T08:23:28+08:00][sql] UPDATE `gxfc_website`  SET `account` = 1476.46  WHERE  `site_id` = 0 [ RunTime:0.002869s ]
+[2022-08-02T08:23:28+08:00][cron] event:data{"id":54,"type":2,"period":1,"period_type":1,"name":"\u5e97\u94fa\u5468\u671f\u7ed3\u7b97","event":"ShopWithdrawPeriodCalc","execute_time":1659369600,"relate_id":0,"create_time":1647495751}
+[2022-08-02T08:23:28+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1659456000  WHERE  `id` = 54 [ RunTime:0.003260s ]
+[2022-08-02T08:23:28+08:00][sql] SELECT `store_settlement_time` FROM `gxfc_shop` WHERE  `site_id` = 1 LIMIT 1 [ RunTime:0.000184s ]
+[2022-08-02T08:23:28+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_store` [ RunTime:0.000872s ]
+[2022-08-02T08:23:28+08:00][sql] SELECT `site_id`,`site_name`,`store_id`,`store_name` FROM `gxfc_store` WHERE  `site_id` = 1 [ RunTime:0.000140s ]
+[2022-08-02T08:23:28+08:00][sql] UPDATE `gxfc_shop`  SET `store_settlement_time` = 1659369600  WHERE  `site_id` = 1 [ RunTime:0.000142s ]
+[2022-08-02T08:23:28+08:00][cron] event:data{"id":68,"type":2,"period":1,"period_type":1,"name":"\u95e8\u5e97\u5468\u671f\u7ed3\u7b97","event":"StoreWithdrawPeriodCalc","execute_time":1659369600,"relate_id":1,"create_time":1647856701}
+[2022-08-02T08:23:28+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1659456000  WHERE  `id` = 68 [ RunTime:0.003309s ]
+[2022-08-02T08:23:28+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_supply_settlement_period` [ RunTime:0.000793s ]
+[2022-08-02T08:23:28+08:00][sql] SELECT `period_start_time`,`period_end_time` FROM `gxfc_supply_settlement_period` ORDER BY `period_id` DESC LIMIT 1 [ RunTime:0.000149s ]
+[2022-08-02T08:23:28+08:00][sql] INSERT INTO `gxfc_supply_settlement_period` SET `period_no` = '2022080208235272' , `create_time` = 1659399808 , `period_start_time` = 1659283200 , `period_end_time` = 1659369600 [ RunTime:0.003067s ]
+[2022-08-02T08:23:28+08:00][sql] SELECT `supplier_site_id`,`title`,`website_id` FROM `gxfc_supplier` WHERE  `status` = 1 [ RunTime:0.000151s ]
+[2022-08-02T08:23:28+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_supply_order` [ RunTime:0.001969s ]
+[2022-08-02T08:23:28+08:00][sql] SELECT sum(order_money) as order_money, sum(refund_money) as refund_money, sum(supply_money) as supply_money, sum(platform_money) as platform_money, sum(refund_supply_money) as refund_supply_money, sum(refund_platform_money) as refund_platform_money, sum(commission) as commission FROM `gxfc_supply_order` WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 5  AND `finish_time` <= 1659369600 LIMIT 1 [ RunTime:0.000209s ]
+[2022-08-02T08:23:28+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_supply_settlement` [ RunTime:0.000733s ]
+[2022-08-02T08:23:28+08:00][sql] INSERT INTO `gxfc_supply_settlement` SET `order_money` = 0 , `refund_money` = 0 , `supply_money` = 0 , `platform_money` = 0 , `refund_supply_money` = 0 , `refund_platform_money` = 0 , `commission` = 0 , `settlement_no` = '20220802082358023' , `site_id` = 5 , `site_name` = '甘霖' , `period_id` = 125 , `period_start_time` = 1659283200 , `period_end_time` = 1659369600 , `website_commission` = 0 [ RunTime:0.005263s ]
+[2022-08-02T08:23:28+08:00][sql] UPDATE `gxfc_supply_order`  SET `is_settlement` = 1 , `settlement_id` = 125  WHERE  `order_status` = 10  AND `is_settlement` = 0  AND `site_id` = 5  AND `finish_time` <= 1659369600 [ RunTime:0.000170s ]
+[2022-08-02T08:23:28+08:00][sql] SELECT `account` FROM `gxfc_supplier` WHERE  `supplier_site_id` = 5 LIMIT 1 [ RunTime:0.000200s ]
+[2022-08-02T08:23:28+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_supply_account` [ RunTime:0.000704s ]
+[2022-08-02T08:23:28+08:00][sql] INSERT INTO `gxfc_supply_account` SET `site_id` = 5 , `account_no` = '2022080208239210' , `account_type` = 'account' , `account_data` = 0 , `from_type` = 'order' , `type_name` = '供应商结算' , `relate_tag` = '125' , `create_time` = 1659399808 , `remark` = '供应商结算，账单编号20220802082358023' [ RunTime:0.004467s ]
+[2022-08-02T08:23:28+08:00][sql] UPDATE `gxfc_supplier`  SET `account` = 0  WHERE  `supplier_site_id` = 5 [ RunTime:0.003454s ]
+[2022-08-02T08:23:28+08:00][sql] UPDATE `gxfc_supply_settlement_period`  SET `supply_num` = 1 , `order_money` = 0 , `refund_money` = 0 , `supply_money` = 0 , `platform_money` = 0 , `refund_supply_money` = 0 , `refund_platform_money` = 0 , `commission` = 0 , `website_commission` = 0  WHERE  `period_id` = 125 [ RunTime:0.004289s ]
+[2022-08-02T08:23:28+08:00][sql] SELECT `account` FROM `gxfc_website` WHERE  `site_id` = 0 LIMIT 1 [ RunTime:0.000175s ]
+[2022-08-02T08:23:28+08:00][sql] INSERT INTO `gxfc_account` SET `account_no` = '2022080208231939' , `site_id` = 0 , `account_type` = 'account' , `account_data` = 0 , `from_type` = 'order' , `relate_tag` = '125' , `create_time` = 1659399808 , `remark` = '供应商订单结算，账单编号:2022080208235272' [ RunTime:0.003205s ]
+[2022-08-02T08:23:28+08:00][sql] UPDATE `gxfc_website`  SET `account` = 1476.46  WHERE  `site_id` = 0 [ RunTime:0.003108s ]
+[2022-08-02T08:23:28+08:00][cron] event:data{"id":76,"type":2,"period":1,"period_type":1,"name":"\u4f9b\u5e94\u5546\u5468\u671f\u7ed3\u7b97","event":"SupplyPeriodCalc","execute_time":1659369600,"relate_id":0,"create_time":1648609290}
+[2022-08-02T08:23:28+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1659456000  WHERE  `id` = 76 [ RunTime:0.003728s ]
+[2022-08-02T08:23:28+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.001331s ]
+[2022-08-02T08:23:28+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000336s ]
+[2022-08-02T08:23:28+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-08-02T08:25:15+08:00][info] 检测事件执行2022-08-02 08:25:15
+[2022-08-02T08:25:15+08:00][sql] CONNECT:[ UseTime:0.000227s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-08-02T08:25:15+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.001047s ]
+[2022-08-02T08:25:15+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1659399915 [ RunTime:0.000333s ]
+[2022-08-02T08:25:15+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_coupon` [ RunTime:0.000824s ]
+[2022-08-02T08:25:15+08:00][sql] UPDATE `gxfc_promotion_coupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659399915 [ RunTime:0.000353s ]
+[2022-08-02T08:25:15+08:00][cron] event:data{"id":2,"type":2,"period":1,"period_type":0,"name":"\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronCouponEnd","execute_time":1658925664,"relate_id":0,"create_time":1646988964}
+[2022-08-02T08:25:15+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658925724  WHERE  `id` = 2 [ RunTime:0.011976s ]
+[2022-08-02T08:25:15+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_platformcoupon` [ RunTime:0.000887s ]
+[2022-08-02T08:25:15+08:00][sql] UPDATE `gxfc_promotion_platformcoupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659399915 [ RunTime:0.000231s ]
+[2022-08-02T08:25:15+08:00][cron] event:data{"id":5,"type":2,"period":1,"period_type":0,"name":"\u5e73\u53f0\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronPlatformcouponEnd","execute_time":1658925604,"relate_id":0,"create_time":1646988964}
+[2022-08-02T08:25:15+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658925664  WHERE  `id` = 5 [ RunTime:0.003778s ]
+[2022-08-02T08:25:15+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_cluster` [ RunTime:0.000714s ]
+[2022-08-02T08:25:15+08:00][sql] SELECT `rule_json`,`cluster_id` FROM `gxfc_member_cluster` [ RunTime:0.000142s ]
+[2022-08-02T08:25:15+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000934s ]
+[2022-08-02T08:25:15+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000168s ]
+[2022-08-02T08:25:15+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000146s ]
+[2022-08-02T08:25:15+08:00][sql] UPDATE `gxfc_member_cluster`  SET `member_num` = 12 , `member_ids` = '1,2,3,4,5,6,8,9,10,11,30,31' , `update_time` = 1659399915  WHERE  `cluster_id` = 1 [ RunTime:0.003599s ]
+[2022-08-02T08:25:15+08:00][cron] event:data{"id":10,"type":2,"period":1,"period_type":0,"name":"\u4f1a\u5458\u7fa4\u4f53\u5b9a\u65f6\u5237\u65b0","event":"CronMemberClusterRefresh","execute_time":1658925605,"relate_id":0,"create_time":1646988965}
+[2022-08-02T08:25:15+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658925665  WHERE  `id` = 10 [ RunTime:0.003383s ]
+[2022-08-02T08:25:15+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000977s ]
+[2022-08-02T08:25:15+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000293s ]
+[2022-08-02T08:25:15+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-08-02T09:05:09+08:00][info] 检测事件执行2022-08-02 09:05:09
+[2022-08-02T09:05:09+08:00][sql] CONNECT:[ UseTime:0.000260s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-08-02T09:05:09+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000923s ]
+[2022-08-02T09:05:09+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1659402309 [ RunTime:0.000334s ]
+[2022-08-02T09:05:09+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_coupon` [ RunTime:0.001381s ]
+[2022-08-02T09:05:09+08:00][sql] UPDATE `gxfc_promotion_coupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659402309 [ RunTime:0.000316s ]
+[2022-08-02T09:05:09+08:00][cron] event:data{"id":2,"type":2,"period":1,"period_type":0,"name":"\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronCouponEnd","execute_time":1658925724,"relate_id":0,"create_time":1646988964}
+[2022-08-02T09:05:09+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658925784  WHERE  `id` = 2 [ RunTime:0.004625s ]
+[2022-08-02T09:05:09+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_platformcoupon` [ RunTime:0.000795s ]
+[2022-08-02T09:05:09+08:00][sql] UPDATE `gxfc_promotion_platformcoupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659402309 [ RunTime:0.000249s ]
+[2022-08-02T09:05:09+08:00][cron] event:data{"id":5,"type":2,"period":1,"period_type":0,"name":"\u5e73\u53f0\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronPlatformcouponEnd","execute_time":1658925664,"relate_id":0,"create_time":1646988964}
+[2022-08-02T09:05:09+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658925724  WHERE  `id` = 5 [ RunTime:0.009168s ]
+[2022-08-02T09:05:09+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_cluster` [ RunTime:0.000711s ]
+[2022-08-02T09:05:09+08:00][sql] SELECT `rule_json`,`cluster_id` FROM `gxfc_member_cluster` [ RunTime:0.000145s ]
+[2022-08-02T09:05:09+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000893s ]
+[2022-08-02T09:05:09+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000145s ]
+[2022-08-02T09:05:09+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000132s ]
+[2022-08-02T09:05:09+08:00][sql] UPDATE `gxfc_member_cluster`  SET `member_num` = 12 , `member_ids` = '1,2,3,4,5,6,8,9,10,11,30,31' , `update_time` = 1659402309  WHERE  `cluster_id` = 1 [ RunTime:0.003760s ]
+[2022-08-02T09:05:09+08:00][cron] event:data{"id":10,"type":2,"period":1,"period_type":0,"name":"\u4f1a\u5458\u7fa4\u4f53\u5b9a\u65f6\u5237\u65b0","event":"CronMemberClusterRefresh","execute_time":1658925665,"relate_id":0,"create_time":1646988965}
+[2022-08-02T09:05:09+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658925725  WHERE  `id` = 10 [ RunTime:0.004926s ]
+[2022-08-02T09:05:09+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000868s ]
+[2022-08-02T09:05:09+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000279s ]
+[2022-08-02T09:05:09+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-08-02T09:23:18+08:00][info] 检测事件执行2022-08-02 09:23:18
+[2022-08-02T09:23:18+08:00][sql] CONNECT:[ UseTime:0.000284s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-08-02T09:23:18+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000839s ]
+[2022-08-02T09:23:18+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1659403398 [ RunTime:0.000381s ]
+[2022-08-02T09:23:18+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_coupon` [ RunTime:0.000923s ]
+[2022-08-02T09:23:18+08:00][sql] UPDATE `gxfc_promotion_coupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659403398 [ RunTime:0.000312s ]
+[2022-08-02T09:23:18+08:00][cron] event:data{"id":2,"type":2,"period":1,"period_type":0,"name":"\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronCouponEnd","execute_time":1658925784,"relate_id":0,"create_time":1646988964}
+[2022-08-02T09:23:18+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658925844  WHERE  `id` = 2 [ RunTime:0.004034s ]
+[2022-08-02T09:23:18+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_platformcoupon` [ RunTime:0.000820s ]
+[2022-08-02T09:23:18+08:00][sql] UPDATE `gxfc_promotion_platformcoupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659403398 [ RunTime:0.000222s ]
+[2022-08-02T09:23:18+08:00][cron] event:data{"id":5,"type":2,"period":1,"period_type":0,"name":"\u5e73\u53f0\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronPlatformcouponEnd","execute_time":1658925724,"relate_id":0,"create_time":1646988964}
+[2022-08-02T09:23:18+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658925784  WHERE  `id` = 5 [ RunTime:0.004735s ]
+[2022-08-02T09:23:18+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_cluster` [ RunTime:0.000719s ]
+[2022-08-02T09:23:18+08:00][sql] SELECT `rule_json`,`cluster_id` FROM `gxfc_member_cluster` [ RunTime:0.000150s ]
+[2022-08-02T09:23:18+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000871s ]
+[2022-08-02T09:23:18+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000158s ]
+[2022-08-02T09:23:18+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000137s ]
+[2022-08-02T09:23:18+08:00][sql] UPDATE `gxfc_member_cluster`  SET `member_num` = 12 , `member_ids` = '1,2,3,4,5,6,8,9,10,11,30,31' , `update_time` = 1659403398  WHERE  `cluster_id` = 1 [ RunTime:0.003827s ]
+[2022-08-02T09:23:18+08:00][cron] event:data{"id":10,"type":2,"period":1,"period_type":0,"name":"\u4f1a\u5458\u7fa4\u4f53\u5b9a\u65f6\u5237\u65b0","event":"CronMemberClusterRefresh","execute_time":1658925725,"relate_id":0,"create_time":1646988965}
+[2022-08-02T09:23:18+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658925785  WHERE  `id` = 10 [ RunTime:0.004705s ]
+[2022-08-02T09:23:18+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.001666s ]
+[2022-08-02T09:23:18+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000346s ]
+[2022-08-02T09:23:18+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-08-02T09:25:01+08:00][info] 检测事件执行2022-08-02 09:25:01
+[2022-08-02T09:25:01+08:00][sql] CONNECT:[ UseTime:0.000254s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-08-02T09:25:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000856s ]
+[2022-08-02T09:25:01+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1659403501 [ RunTime:0.000308s ]
+[2022-08-02T09:25:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_coupon` [ RunTime:0.000822s ]
+[2022-08-02T09:25:01+08:00][sql] UPDATE `gxfc_promotion_coupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659403501 [ RunTime:0.000352s ]
+[2022-08-02T09:25:01+08:00][cron] event:data{"id":2,"type":2,"period":1,"period_type":0,"name":"\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronCouponEnd","execute_time":1658925844,"relate_id":0,"create_time":1646988964}
+[2022-08-02T09:25:01+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658925904  WHERE  `id` = 2 [ RunTime:0.004192s ]
+[2022-08-02T09:25:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_platformcoupon` [ RunTime:0.000771s ]
+[2022-08-02T09:25:01+08:00][sql] UPDATE `gxfc_promotion_platformcoupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659403501 [ RunTime:0.000228s ]
+[2022-08-02T09:25:01+08:00][cron] event:data{"id":5,"type":2,"period":1,"period_type":0,"name":"\u5e73\u53f0\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronPlatformcouponEnd","execute_time":1658925784,"relate_id":0,"create_time":1646988964}
+[2022-08-02T09:25:01+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658925844  WHERE  `id` = 5 [ RunTime:0.003820s ]
+[2022-08-02T09:25:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_cluster` [ RunTime:0.000704s ]
+[2022-08-02T09:25:01+08:00][sql] SELECT `rule_json`,`cluster_id` FROM `gxfc_member_cluster` [ RunTime:0.000137s ]
+[2022-08-02T09:25:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000874s ]
+[2022-08-02T09:25:01+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000155s ]
+[2022-08-02T09:25:01+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000133s ]
+[2022-08-02T09:25:01+08:00][sql] UPDATE `gxfc_member_cluster`  SET `member_num` = 12 , `member_ids` = '1,2,3,4,5,6,8,9,10,11,30,31' , `update_time` = 1659403501  WHERE  `cluster_id` = 1 [ RunTime:0.004309s ]
+[2022-08-02T09:25:01+08:00][cron] event:data{"id":10,"type":2,"period":1,"period_type":0,"name":"\u4f1a\u5458\u7fa4\u4f53\u5b9a\u65f6\u5237\u65b0","event":"CronMemberClusterRefresh","execute_time":1658925785,"relate_id":0,"create_time":1646988965}
+[2022-08-02T09:25:01+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658925845  WHERE  `id` = 10 [ RunTime:0.006341s ]
+[2022-08-02T09:25:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.001016s ]
+[2022-08-02T09:25:01+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000299s ]
+[2022-08-02T09:25:01+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-08-02T09:26:42+08:00][info] 检测事件执行2022-08-02 09:26:42
+[2022-08-02T09:26:42+08:00][sql] CONNECT:[ UseTime:0.000227s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-08-02T09:26:42+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.001086s ]
+[2022-08-02T09:26:42+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1659403602 [ RunTime:0.000508s ]
+[2022-08-02T09:26:42+08:00][info] 检测事件执行2022-08-02 09:26:42
+[2022-08-02T09:26:42+08:00][info] 防止多次执行
+[2022-08-02T09:26:42+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_coupon` [ RunTime:0.000884s ]
+[2022-08-02T09:26:42+08:00][sql] UPDATE `gxfc_promotion_coupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659403602 [ RunTime:0.000478s ]
+[2022-08-02T09:26:42+08:00][cron] event:data{"id":2,"type":2,"period":1,"period_type":0,"name":"\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronCouponEnd","execute_time":1658925904,"relate_id":0,"create_time":1646988964}
+[2022-08-02T09:26:42+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658925964  WHERE  `id` = 2 [ RunTime:0.008236s ]
+[2022-08-02T09:26:42+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_platformcoupon` [ RunTime:0.001718s ]
+[2022-08-02T09:26:42+08:00][sql] UPDATE `gxfc_promotion_platformcoupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659403602 [ RunTime:0.000364s ]
+[2022-08-02T09:26:42+08:00][cron] event:data{"id":5,"type":2,"period":1,"period_type":0,"name":"\u5e73\u53f0\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronPlatformcouponEnd","execute_time":1658925844,"relate_id":0,"create_time":1646988964}
+[2022-08-02T09:26:42+08:00][info] 检测事件执行2022-08-02 09:26:42
+[2022-08-02T09:26:42+08:00][info] 防止多次执行
+[2022-08-02T09:26:42+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658925904  WHERE  `id` = 5 [ RunTime:0.005515s ]
+[2022-08-02T09:26:42+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_cluster` [ RunTime:0.001085s ]
+[2022-08-02T09:26:42+08:00][sql] SELECT `rule_json`,`cluster_id` FROM `gxfc_member_cluster` [ RunTime:0.000240s ]
+[2022-08-02T09:26:42+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.001521s ]
+[2022-08-02T09:26:42+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000436s ]
+[2022-08-02T09:26:42+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000260s ]
+[2022-08-02T09:26:42+08:00][sql] UPDATE `gxfc_member_cluster`  SET `member_num` = 12 , `member_ids` = '1,2,3,4,5,6,8,9,10,11,30,31' , `update_time` = 1659403602  WHERE  `cluster_id` = 1 [ RunTime:0.005226s ]
+[2022-08-02T09:26:42+08:00][cron] event:data{"id":10,"type":2,"period":1,"period_type":0,"name":"\u4f1a\u5458\u7fa4\u4f53\u5b9a\u65f6\u5237\u65b0","event":"CronMemberClusterRefresh","execute_time":1658925845,"relate_id":0,"create_time":1646988965}
+[2022-08-02T09:26:42+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658925905  WHERE  `id` = 10 [ RunTime:0.005166s ]
+[2022-08-02T09:26:42+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.001499s ]
+[2022-08-02T09:26:42+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000566s ]
+[2022-08-02T09:26:42+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-08-02T09:26:42+08:00][info] 检测事件执行2022-08-02 09:26:42
+[2022-08-02T09:26:42+08:00][info] 防止多次执行
+[2022-08-02T09:26:42+08:00][info] 检测事件执行2022-08-02 09:26:42
+[2022-08-02T09:26:42+08:00][info] 防止多次执行
+[2022-08-02T09:28:56+08:00][info] 检测事件执行2022-08-02 09:28:56
+[2022-08-02T09:28:56+08:00][sql] CONNECT:[ UseTime:0.000243s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-08-02T09:28:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000911s ]
+[2022-08-02T09:28:56+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1659403736 [ RunTime:0.000327s ]
+[2022-08-02T09:28:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_coupon` [ RunTime:0.000846s ]
+[2022-08-02T09:28:56+08:00][sql] UPDATE `gxfc_promotion_coupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659403736 [ RunTime:0.000253s ]
+[2022-08-02T09:28:56+08:00][cron] event:data{"id":2,"type":2,"period":1,"period_type":0,"name":"\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronCouponEnd","execute_time":1658925964,"relate_id":0,"create_time":1646988964}
+[2022-08-02T09:28:56+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926024  WHERE  `id` = 2 [ RunTime:0.005114s ]
+[2022-08-02T09:28:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_platformcoupon` [ RunTime:0.000728s ]
+[2022-08-02T09:28:56+08:00][sql] UPDATE `gxfc_promotion_platformcoupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659403736 [ RunTime:0.000198s ]
+[2022-08-02T09:28:56+08:00][cron] event:data{"id":5,"type":2,"period":1,"period_type":0,"name":"\u5e73\u53f0\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronPlatformcouponEnd","execute_time":1658925904,"relate_id":0,"create_time":1646988964}
+[2022-08-02T09:28:56+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658925964  WHERE  `id` = 5 [ RunTime:0.004945s ]
+[2022-08-02T09:28:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_cluster` [ RunTime:0.000692s ]
+[2022-08-02T09:28:56+08:00][sql] SELECT `rule_json`,`cluster_id` FROM `gxfc_member_cluster` [ RunTime:0.000137s ]
+[2022-08-02T09:28:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000877s ]
+[2022-08-02T09:28:56+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000154s ]
+[2022-08-02T09:28:56+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000140s ]
+[2022-08-02T09:28:56+08:00][sql] UPDATE `gxfc_member_cluster`  SET `member_num` = 12 , `member_ids` = '1,2,3,4,5,6,8,9,10,11,30,31' , `update_time` = 1659403736  WHERE  `cluster_id` = 1 [ RunTime:0.004347s ]
+[2022-08-02T09:28:56+08:00][cron] event:data{"id":10,"type":2,"period":1,"period_type":0,"name":"\u4f1a\u5458\u7fa4\u4f53\u5b9a\u65f6\u5237\u65b0","event":"CronMemberClusterRefresh","execute_time":1658925905,"relate_id":0,"create_time":1646988965}
+[2022-08-02T09:28:56+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658925965  WHERE  `id` = 10 [ RunTime:0.003812s ]
+[2022-08-02T09:28:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000907s ]
+[2022-08-02T09:28:56+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000290s ]
+[2022-08-02T09:28:56+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-08-02T09:30:43+08:00][info] 检测事件执行2022-08-02 09:30:43
+[2022-08-02T09:30:43+08:00][sql] CONNECT:[ UseTime:0.000276s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-08-02T09:30:43+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000820s ]
+[2022-08-02T09:30:43+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1659403843 [ RunTime:0.000336s ]
+[2022-08-02T09:30:43+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_coupon` [ RunTime:0.000852s ]
+[2022-08-02T09:30:43+08:00][sql] UPDATE `gxfc_promotion_coupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659403843 [ RunTime:0.000320s ]
+[2022-08-02T09:30:43+08:00][cron] event:data{"id":2,"type":2,"period":1,"period_type":0,"name":"\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronCouponEnd","execute_time":1658926024,"relate_id":0,"create_time":1646988964}
+[2022-08-02T09:30:43+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926084  WHERE  `id` = 2 [ RunTime:0.007656s ]
+[2022-08-02T09:30:43+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_platformcoupon` [ RunTime:0.002518s ]
+[2022-08-02T09:30:43+08:00][sql] UPDATE `gxfc_promotion_platformcoupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659403843 [ RunTime:0.000254s ]
+[2022-08-02T09:30:43+08:00][cron] event:data{"id":5,"type":2,"period":1,"period_type":0,"name":"\u5e73\u53f0\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronPlatformcouponEnd","execute_time":1658925964,"relate_id":0,"create_time":1646988964}
+[2022-08-02T09:30:43+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926024  WHERE  `id` = 5 [ RunTime:0.007086s ]
+[2022-08-02T09:30:43+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_cluster` [ RunTime:0.000758s ]
+[2022-08-02T09:30:43+08:00][sql] SELECT `rule_json`,`cluster_id` FROM `gxfc_member_cluster` [ RunTime:0.000139s ]
+[2022-08-02T09:30:43+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000919s ]
+[2022-08-02T09:30:43+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000186s ]
+[2022-08-02T09:30:43+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000177s ]
+[2022-08-02T09:30:43+08:00][sql] UPDATE `gxfc_member_cluster`  SET `member_num` = 12 , `member_ids` = '1,2,3,4,5,6,8,9,10,11,30,31' , `update_time` = 1659403843  WHERE  `cluster_id` = 1 [ RunTime:0.006080s ]
+[2022-08-02T09:30:43+08:00][cron] event:data{"id":10,"type":2,"period":1,"period_type":0,"name":"\u4f1a\u5458\u7fa4\u4f53\u5b9a\u65f6\u5237\u65b0","event":"CronMemberClusterRefresh","execute_time":1658925965,"relate_id":0,"create_time":1646988965}
+[2022-08-02T09:30:43+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926025  WHERE  `id` = 10 [ RunTime:0.005116s ]
+[2022-08-02T09:30:43+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.001033s ]
+[2022-08-02T09:30:43+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000298s ]
+[2022-08-02T09:30:43+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-08-02T09:33:16+08:00][info] 检测事件执行2022-08-02 09:33:16
+[2022-08-02T09:33:16+08:00][sql] CONNECT:[ UseTime:0.000246s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-08-02T09:33:16+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000945s ]
+[2022-08-02T09:33:16+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1659403996 [ RunTime:0.000337s ]
+[2022-08-02T09:33:16+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_coupon` [ RunTime:0.000813s ]
+[2022-08-02T09:33:16+08:00][sql] UPDATE `gxfc_promotion_coupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659403996 [ RunTime:0.000298s ]
+[2022-08-02T09:33:16+08:00][cron] event:data{"id":2,"type":2,"period":1,"period_type":0,"name":"\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronCouponEnd","execute_time":1658926084,"relate_id":0,"create_time":1646988964}
+[2022-08-02T09:33:16+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926144  WHERE  `id` = 2 [ RunTime:0.012668s ]
+[2022-08-02T09:33:16+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_platformcoupon` [ RunTime:0.000828s ]
+[2022-08-02T09:33:16+08:00][sql] UPDATE `gxfc_promotion_platformcoupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659403996 [ RunTime:0.000239s ]
+[2022-08-02T09:33:16+08:00][cron] event:data{"id":5,"type":2,"period":1,"period_type":0,"name":"\u5e73\u53f0\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronPlatformcouponEnd","execute_time":1658926024,"relate_id":0,"create_time":1646988964}
+[2022-08-02T09:33:16+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926084  WHERE  `id` = 5 [ RunTime:0.003491s ]
+[2022-08-02T09:33:16+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_cluster` [ RunTime:0.000737s ]
+[2022-08-02T09:33:16+08:00][sql] SELECT `rule_json`,`cluster_id` FROM `gxfc_member_cluster` [ RunTime:0.000172s ]
+[2022-08-02T09:33:16+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000958s ]
+[2022-08-02T09:33:16+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000203s ]
+[2022-08-02T09:33:16+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000177s ]
+[2022-08-02T09:33:16+08:00][sql] UPDATE `gxfc_member_cluster`  SET `member_num` = 12 , `member_ids` = '1,2,3,4,5,6,8,9,10,11,30,31' , `update_time` = 1659403996  WHERE  `cluster_id` = 1 [ RunTime:0.004918s ]
+[2022-08-02T09:33:16+08:00][cron] event:data{"id":10,"type":2,"period":1,"period_type":0,"name":"\u4f1a\u5458\u7fa4\u4f53\u5b9a\u65f6\u5237\u65b0","event":"CronMemberClusterRefresh","execute_time":1658926025,"relate_id":0,"create_time":1646988965}
+[2022-08-02T09:33:16+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926085  WHERE  `id` = 10 [ RunTime:0.005254s ]
+[2022-08-02T09:33:16+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000955s ]
+[2022-08-02T09:33:16+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000287s ]
+[2022-08-02T09:33:16+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-08-02T09:35:03+08:00][info] 检测事件执行2022-08-02 09:35:03
+[2022-08-02T09:35:03+08:00][sql] CONNECT:[ UseTime:0.000235s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-08-02T09:35:03+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000967s ]
+[2022-08-02T09:35:03+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1659404103 [ RunTime:0.000311s ]
+[2022-08-02T09:35:03+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_coupon` [ RunTime:0.000873s ]
+[2022-08-02T09:35:03+08:00][sql] UPDATE `gxfc_promotion_coupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659404103 [ RunTime:0.000293s ]
+[2022-08-02T09:35:03+08:00][cron] event:data{"id":2,"type":2,"period":1,"period_type":0,"name":"\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronCouponEnd","execute_time":1658926144,"relate_id":0,"create_time":1646988964}
+[2022-08-02T09:35:03+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926204  WHERE  `id` = 2 [ RunTime:0.019418s ]
+[2022-08-02T09:35:03+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_platformcoupon` [ RunTime:0.003223s ]
+[2022-08-02T09:35:03+08:00][sql] UPDATE `gxfc_promotion_platformcoupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659404103 [ RunTime:0.000247s ]
+[2022-08-02T09:35:03+08:00][cron] event:data{"id":5,"type":2,"period":1,"period_type":0,"name":"\u5e73\u53f0\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronPlatformcouponEnd","execute_time":1658926084,"relate_id":0,"create_time":1646988964}
+[2022-08-02T09:35:03+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926144  WHERE  `id` = 5 [ RunTime:0.004317s ]
+[2022-08-02T09:35:03+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_cluster` [ RunTime:0.000722s ]
+[2022-08-02T09:35:03+08:00][sql] SELECT `rule_json`,`cluster_id` FROM `gxfc_member_cluster` [ RunTime:0.000151s ]
+[2022-08-02T09:35:03+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000851s ]
+[2022-08-02T09:35:03+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000162s ]
+[2022-08-02T09:35:03+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000129s ]
+[2022-08-02T09:35:03+08:00][sql] UPDATE `gxfc_member_cluster`  SET `member_num` = 12 , `member_ids` = '1,2,3,4,5,6,8,9,10,11,30,31' , `update_time` = 1659404103  WHERE  `cluster_id` = 1 [ RunTime:0.004568s ]
+[2022-08-02T09:35:03+08:00][cron] event:data{"id":10,"type":2,"period":1,"period_type":0,"name":"\u4f1a\u5458\u7fa4\u4f53\u5b9a\u65f6\u5237\u65b0","event":"CronMemberClusterRefresh","execute_time":1658926085,"relate_id":0,"create_time":1646988965}
+[2022-08-02T09:35:03+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926145  WHERE  `id` = 10 [ RunTime:0.003307s ]
+[2022-08-02T09:35:03+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000970s ]
+[2022-08-02T09:35:03+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000294s ]
+[2022-08-02T09:35:03+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-08-02T09:36:44+08:00][info] 检测事件执行2022-08-02 09:36:44
+[2022-08-02T09:36:44+08:00][sql] CONNECT:[ UseTime:0.000246s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-08-02T09:36:44+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000951s ]
+[2022-08-02T09:36:44+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1659404204 [ RunTime:0.000300s ]
+[2022-08-02T09:36:44+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_coupon` [ RunTime:0.000842s ]
+[2022-08-02T09:36:44+08:00][sql] UPDATE `gxfc_promotion_coupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659404204 [ RunTime:0.000275s ]
+[2022-08-02T09:36:44+08:00][cron] event:data{"id":2,"type":2,"period":1,"period_type":0,"name":"\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronCouponEnd","execute_time":1658926204,"relate_id":0,"create_time":1646988964}
+[2022-08-02T09:36:44+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926264  WHERE  `id` = 2 [ RunTime:0.004243s ]
+[2022-08-02T09:36:44+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_platformcoupon` [ RunTime:0.000828s ]
+[2022-08-02T09:36:44+08:00][sql] UPDATE `gxfc_promotion_platformcoupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659404204 [ RunTime:0.000192s ]
+[2022-08-02T09:36:44+08:00][cron] event:data{"id":5,"type":2,"period":1,"period_type":0,"name":"\u5e73\u53f0\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronPlatformcouponEnd","execute_time":1658926144,"relate_id":0,"create_time":1646988964}
+[2022-08-02T09:36:44+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926204  WHERE  `id` = 5 [ RunTime:0.003811s ]
+[2022-08-02T09:36:44+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_cluster` [ RunTime:0.001955s ]
+[2022-08-02T09:36:44+08:00][sql] SELECT `rule_json`,`cluster_id` FROM `gxfc_member_cluster` [ RunTime:0.000166s ]
+[2022-08-02T09:36:44+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000967s ]
+[2022-08-02T09:36:44+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000176s ]
+[2022-08-02T09:36:44+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000141s ]
+[2022-08-02T09:36:44+08:00][sql] UPDATE `gxfc_member_cluster`  SET `member_num` = 12 , `member_ids` = '1,2,3,4,5,6,8,9,10,11,30,31' , `update_time` = 1659404204  WHERE  `cluster_id` = 1 [ RunTime:0.003539s ]
+[2022-08-02T09:36:44+08:00][cron] event:data{"id":10,"type":2,"period":1,"period_type":0,"name":"\u4f1a\u5458\u7fa4\u4f53\u5b9a\u65f6\u5237\u65b0","event":"CronMemberClusterRefresh","execute_time":1658926145,"relate_id":0,"create_time":1646988965}
+[2022-08-02T09:36:44+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926205  WHERE  `id` = 10 [ RunTime:0.004694s ]
+[2022-08-02T09:36:44+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000896s ]
+[2022-08-02T09:36:44+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000317s ]
+[2022-08-02T09:36:44+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-08-02T09:38:26+08:00][info] 检测事件执行2022-08-02 09:38:26
+[2022-08-02T09:38:26+08:00][sql] CONNECT:[ UseTime:0.000263s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-08-02T09:38:26+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.001070s ]
+[2022-08-02T09:38:26+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1659404306 [ RunTime:0.000411s ]
+[2022-08-02T09:38:26+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_coupon` [ RunTime:0.001062s ]
+[2022-08-02T09:38:26+08:00][sql] UPDATE `gxfc_promotion_coupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659404306 [ RunTime:0.000333s ]
+[2022-08-02T09:38:26+08:00][cron] event:data{"id":2,"type":2,"period":1,"period_type":0,"name":"\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronCouponEnd","execute_time":1658926264,"relate_id":0,"create_time":1646988964}
+[2022-08-02T09:38:26+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926324  WHERE  `id` = 2 [ RunTime:0.006128s ]
+[2022-08-02T09:38:26+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_platformcoupon` [ RunTime:0.000887s ]
+[2022-08-02T09:38:26+08:00][sql] UPDATE `gxfc_promotion_platformcoupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659404306 [ RunTime:0.000235s ]
+[2022-08-02T09:38:26+08:00][cron] event:data{"id":5,"type":2,"period":1,"period_type":0,"name":"\u5e73\u53f0\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronPlatformcouponEnd","execute_time":1658926204,"relate_id":0,"create_time":1646988964}
+[2022-08-02T09:38:26+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926264  WHERE  `id` = 5 [ RunTime:0.003688s ]
+[2022-08-02T09:38:26+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_cluster` [ RunTime:0.000784s ]
+[2022-08-02T09:38:26+08:00][sql] SELECT `rule_json`,`cluster_id` FROM `gxfc_member_cluster` [ RunTime:0.000154s ]
+[2022-08-02T09:38:26+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000942s ]
+[2022-08-02T09:38:26+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000158s ]
+[2022-08-02T09:38:26+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000131s ]
+[2022-08-02T09:38:26+08:00][sql] UPDATE `gxfc_member_cluster`  SET `member_num` = 12 , `member_ids` = '1,2,3,4,5,6,8,9,10,11,30,31' , `update_time` = 1659404306  WHERE  `cluster_id` = 1 [ RunTime:0.004524s ]
+[2022-08-02T09:38:26+08:00][cron] event:data{"id":10,"type":2,"period":1,"period_type":0,"name":"\u4f1a\u5458\u7fa4\u4f53\u5b9a\u65f6\u5237\u65b0","event":"CronMemberClusterRefresh","execute_time":1658926205,"relate_id":0,"create_time":1646988965}
+[2022-08-02T09:38:26+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926265  WHERE  `id` = 10 [ RunTime:0.003281s ]
+[2022-08-02T09:38:26+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.001003s ]
+[2022-08-02T09:38:26+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000321s ]
+[2022-08-02T09:38:26+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-08-02T09:38:26+08:00][info] 检测事件执行2022-08-02 09:38:26
+[2022-08-02T09:38:26+08:00][info] 防止多次执行
+[2022-08-02T09:41:18+08:00][info] 检测事件执行2022-08-02 09:41:18
+[2022-08-02T09:41:18+08:00][sql] CONNECT:[ UseTime:0.000244s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-08-02T09:41:18+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000848s ]
+[2022-08-02T09:41:18+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1659404478 [ RunTime:0.000361s ]
+[2022-08-02T09:41:18+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_coupon` [ RunTime:0.000839s ]
+[2022-08-02T09:41:18+08:00][sql] UPDATE `gxfc_promotion_coupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659404478 [ RunTime:0.000326s ]
+[2022-08-02T09:41:18+08:00][cron] event:data{"id":2,"type":2,"period":1,"period_type":0,"name":"\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronCouponEnd","execute_time":1658926324,"relate_id":0,"create_time":1646988964}
+[2022-08-02T09:41:18+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926384  WHERE  `id` = 2 [ RunTime:0.005395s ]
+[2022-08-02T09:41:18+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_platformcoupon` [ RunTime:0.000773s ]
+[2022-08-02T09:41:18+08:00][sql] UPDATE `gxfc_promotion_platformcoupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659404478 [ RunTime:0.000190s ]
+[2022-08-02T09:41:18+08:00][cron] event:data{"id":5,"type":2,"period":1,"period_type":0,"name":"\u5e73\u53f0\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronPlatformcouponEnd","execute_time":1658926264,"relate_id":0,"create_time":1646988964}
+[2022-08-02T09:41:18+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926324  WHERE  `id` = 5 [ RunTime:0.004007s ]
+[2022-08-02T09:41:18+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_cluster` [ RunTime:0.000714s ]
+[2022-08-02T09:41:18+08:00][sql] SELECT `rule_json`,`cluster_id` FROM `gxfc_member_cluster` [ RunTime:0.000183s ]
+[2022-08-02T09:41:18+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000868s ]
+[2022-08-02T09:41:18+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000163s ]
+[2022-08-02T09:41:18+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000145s ]
+[2022-08-02T09:41:18+08:00][sql] UPDATE `gxfc_member_cluster`  SET `member_num` = 12 , `member_ids` = '1,2,3,4,5,6,8,9,10,11,30,31' , `update_time` = 1659404478  WHERE  `cluster_id` = 1 [ RunTime:0.004502s ]
+[2022-08-02T09:41:18+08:00][cron] event:data{"id":10,"type":2,"period":1,"period_type":0,"name":"\u4f1a\u5458\u7fa4\u4f53\u5b9a\u65f6\u5237\u65b0","event":"CronMemberClusterRefresh","execute_time":1658926265,"relate_id":0,"create_time":1646988965}
+[2022-08-02T09:41:18+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926325  WHERE  `id` = 10 [ RunTime:0.003640s ]
+[2022-08-02T09:41:18+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000969s ]
+[2022-08-02T09:41:18+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000344s ]
+[2022-08-02T09:41:18+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-08-02T09:52:53+08:00][info] 检测事件执行2022-08-02 09:52:53
+[2022-08-02T09:52:53+08:00][sql] CONNECT:[ UseTime:0.000260s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-08-02T09:52:53+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000866s ]
+[2022-08-02T09:52:53+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1659405173 [ RunTime:0.000318s ]
+[2022-08-02T09:52:53+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_coupon` [ RunTime:0.000837s ]
+[2022-08-02T09:52:53+08:00][sql] UPDATE `gxfc_promotion_coupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659405173 [ RunTime:0.000276s ]
+[2022-08-02T09:52:53+08:00][cron] event:data{"id":2,"type":2,"period":1,"period_type":0,"name":"\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronCouponEnd","execute_time":1658926384,"relate_id":0,"create_time":1646988964}
+[2022-08-02T09:52:53+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926444  WHERE  `id` = 2 [ RunTime:0.007085s ]
+[2022-08-02T09:52:53+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_platformcoupon` [ RunTime:0.000757s ]
+[2022-08-02T09:52:53+08:00][sql] UPDATE `gxfc_promotion_platformcoupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659405173 [ RunTime:0.000241s ]
+[2022-08-02T09:52:53+08:00][cron] event:data{"id":5,"type":2,"period":1,"period_type":0,"name":"\u5e73\u53f0\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronPlatformcouponEnd","execute_time":1658926324,"relate_id":0,"create_time":1646988964}
+[2022-08-02T09:52:53+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926384  WHERE  `id` = 5 [ RunTime:0.016764s ]
+[2022-08-02T09:52:53+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_cluster` [ RunTime:0.000812s ]
+[2022-08-02T09:52:53+08:00][sql] SELECT `rule_json`,`cluster_id` FROM `gxfc_member_cluster` [ RunTime:0.000264s ]
+[2022-08-02T09:52:53+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000914s ]
+[2022-08-02T09:52:53+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000171s ]
+[2022-08-02T09:52:53+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000147s ]
+[2022-08-02T09:52:53+08:00][sql] UPDATE `gxfc_member_cluster`  SET `member_num` = 12 , `member_ids` = '1,2,3,4,5,6,8,9,10,11,30,31' , `update_time` = 1659405173  WHERE  `cluster_id` = 1 [ RunTime:0.004832s ]
+[2022-08-02T09:52:53+08:00][cron] event:data{"id":10,"type":2,"period":1,"period_type":0,"name":"\u4f1a\u5458\u7fa4\u4f53\u5b9a\u65f6\u5237\u65b0","event":"CronMemberClusterRefresh","execute_time":1658926325,"relate_id":0,"create_time":1646988965}
+[2022-08-02T09:52:53+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926385  WHERE  `id` = 10 [ RunTime:0.008206s ]
+[2022-08-02T09:52:53+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.001041s ]
+[2022-08-02T09:52:53+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000345s ]
+[2022-08-02T09:52:53+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-08-02T09:58:40+08:00][info] 检测事件执行2022-08-02 09:58:40
+[2022-08-02T09:58:40+08:00][sql] CONNECT:[ UseTime:0.000264s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-08-02T09:58:40+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000811s ]
+[2022-08-02T09:58:40+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1659405520 [ RunTime:0.000336s ]
+[2022-08-02T09:58:40+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_coupon` [ RunTime:0.000944s ]
+[2022-08-02T09:58:40+08:00][sql] UPDATE `gxfc_promotion_coupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659405520 [ RunTime:0.000273s ]
+[2022-08-02T09:58:40+08:00][cron] event:data{"id":2,"type":2,"period":1,"period_type":0,"name":"\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronCouponEnd","execute_time":1658926444,"relate_id":0,"create_time":1646988964}
+[2022-08-02T09:58:40+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926504  WHERE  `id` = 2 [ RunTime:0.004272s ]
+[2022-08-02T09:58:40+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_platformcoupon` [ RunTime:0.000742s ]
+[2022-08-02T09:58:40+08:00][sql] UPDATE `gxfc_promotion_platformcoupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659405520 [ RunTime:0.000227s ]
+[2022-08-02T09:58:40+08:00][cron] event:data{"id":5,"type":2,"period":1,"period_type":0,"name":"\u5e73\u53f0\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronPlatformcouponEnd","execute_time":1658926384,"relate_id":0,"create_time":1646988964}
+[2022-08-02T09:58:40+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926444  WHERE  `id` = 5 [ RunTime:0.004456s ]
+[2022-08-02T09:58:40+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_cluster` [ RunTime:0.000695s ]
+[2022-08-02T09:58:40+08:00][sql] SELECT `rule_json`,`cluster_id` FROM `gxfc_member_cluster` [ RunTime:0.000133s ]
+[2022-08-02T09:58:40+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000901s ]
+[2022-08-02T09:58:40+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000167s ]
+[2022-08-02T09:58:40+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000137s ]
+[2022-08-02T09:58:40+08:00][sql] UPDATE `gxfc_member_cluster`  SET `member_num` = 12 , `member_ids` = '1,2,3,4,5,6,8,9,10,11,30,31' , `update_time` = 1659405520  WHERE  `cluster_id` = 1 [ RunTime:0.003920s ]
+[2022-08-02T09:58:40+08:00][cron] event:data{"id":10,"type":2,"period":1,"period_type":0,"name":"\u4f1a\u5458\u7fa4\u4f53\u5b9a\u65f6\u5237\u65b0","event":"CronMemberClusterRefresh","execute_time":1658926385,"relate_id":0,"create_time":1646988965}
+[2022-08-02T09:58:40+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926445  WHERE  `id` = 10 [ RunTime:0.005712s ]
+[2022-08-02T09:58:40+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000991s ]
+[2022-08-02T09:58:40+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000285s ]
+[2022-08-02T09:58:40+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-08-02T10:11:17+08:00][info] 检测事件执行2022-08-02 10:11:17
+[2022-08-02T10:11:17+08:00][sql] CONNECT:[ UseTime:0.000422s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-08-02T10:11:17+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000823s ]
+[2022-08-02T10:11:17+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1659406277 [ RunTime:0.000342s ]
+[2022-08-02T10:11:17+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_coupon` [ RunTime:0.000837s ]
+[2022-08-02T10:11:17+08:00][sql] UPDATE `gxfc_promotion_coupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659406277 [ RunTime:0.000285s ]
+[2022-08-02T10:11:17+08:00][cron] event:data{"id":2,"type":2,"period":1,"period_type":0,"name":"\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronCouponEnd","execute_time":1658926504,"relate_id":0,"create_time":1646988964}
+[2022-08-02T10:11:17+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926564  WHERE  `id` = 2 [ RunTime:0.006122s ]
+[2022-08-02T10:11:17+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_platformcoupon` [ RunTime:0.000767s ]
+[2022-08-02T10:11:17+08:00][sql] UPDATE `gxfc_promotion_platformcoupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659406277 [ RunTime:0.000179s ]
+[2022-08-02T10:11:17+08:00][cron] event:data{"id":5,"type":2,"period":1,"period_type":0,"name":"\u5e73\u53f0\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronPlatformcouponEnd","execute_time":1658926444,"relate_id":0,"create_time":1646988964}
+[2022-08-02T10:11:17+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926504  WHERE  `id` = 5 [ RunTime:0.004608s ]
+[2022-08-02T10:11:17+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_cluster` [ RunTime:0.000671s ]
+[2022-08-02T10:11:17+08:00][sql] SELECT `rule_json`,`cluster_id` FROM `gxfc_member_cluster` [ RunTime:0.000131s ]
+[2022-08-02T10:11:17+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000868s ]
+[2022-08-02T10:11:17+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000178s ]
+[2022-08-02T10:11:17+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000147s ]
+[2022-08-02T10:11:17+08:00][sql] UPDATE `gxfc_member_cluster`  SET `member_num` = 12 , `member_ids` = '1,2,3,4,5,6,8,9,10,11,30,31' , `update_time` = 1659406277  WHERE  `cluster_id` = 1 [ RunTime:0.004330s ]
+[2022-08-02T10:11:17+08:00][cron] event:data{"id":10,"type":2,"period":1,"period_type":0,"name":"\u4f1a\u5458\u7fa4\u4f53\u5b9a\u65f6\u5237\u65b0","event":"CronMemberClusterRefresh","execute_time":1658926445,"relate_id":0,"create_time":1646988965}
+[2022-08-02T10:11:17+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926505  WHERE  `id` = 10 [ RunTime:0.005153s ]
+[2022-08-02T10:11:17+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000961s ]
+[2022-08-02T10:11:17+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000350s ]
+[2022-08-02T10:11:17+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-08-02T10:15:46+08:00][info] 检测事件执行2022-08-02 10:15:46
+[2022-08-02T10:15:46+08:00][sql] CONNECT:[ UseTime:0.000264s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-08-02T10:15:46+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.001117s ]
+[2022-08-02T10:15:46+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1659406546 [ RunTime:0.000375s ]
+[2022-08-02T10:15:46+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_coupon` [ RunTime:0.000851s ]
+[2022-08-02T10:15:46+08:00][sql] UPDATE `gxfc_promotion_coupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659406546 [ RunTime:0.000262s ]
+[2022-08-02T10:15:46+08:00][cron] event:data{"id":2,"type":2,"period":1,"period_type":0,"name":"\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronCouponEnd","execute_time":1658926564,"relate_id":0,"create_time":1646988964}
+[2022-08-02T10:15:46+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926624  WHERE  `id` = 2 [ RunTime:0.005063s ]
+[2022-08-02T10:15:46+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_platformcoupon` [ RunTime:0.000798s ]
+[2022-08-02T10:15:46+08:00][sql] UPDATE `gxfc_promotion_platformcoupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659406546 [ RunTime:0.000216s ]
+[2022-08-02T10:15:46+08:00][cron] event:data{"id":5,"type":2,"period":1,"period_type":0,"name":"\u5e73\u53f0\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronPlatformcouponEnd","execute_time":1658926504,"relate_id":0,"create_time":1646988964}
+[2022-08-02T10:15:46+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926564  WHERE  `id` = 5 [ RunTime:0.004489s ]
+[2022-08-02T10:15:46+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_cluster` [ RunTime:0.000677s ]
+[2022-08-02T10:15:46+08:00][sql] SELECT `rule_json`,`cluster_id` FROM `gxfc_member_cluster` [ RunTime:0.000137s ]
+[2022-08-02T10:15:46+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000883s ]
+[2022-08-02T10:15:46+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000232s ]
+[2022-08-02T10:15:46+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000310s ]
+[2022-08-02T10:15:46+08:00][sql] UPDATE `gxfc_member_cluster`  SET `member_num` = 12 , `member_ids` = '1,2,3,4,5,6,8,9,10,11,30,31' , `update_time` = 1659406546  WHERE  `cluster_id` = 1 [ RunTime:0.003206s ]
+[2022-08-02T10:15:46+08:00][cron] event:data{"id":10,"type":2,"period":1,"period_type":0,"name":"\u4f1a\u5458\u7fa4\u4f53\u5b9a\u65f6\u5237\u65b0","event":"CronMemberClusterRefresh","execute_time":1658926505,"relate_id":0,"create_time":1646988965}
+[2022-08-02T10:15:46+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926565  WHERE  `id` = 10 [ RunTime:0.004063s ]
+[2022-08-02T10:15:46+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000942s ]
+[2022-08-02T10:15:46+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000355s ]
+[2022-08-02T10:15:46+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-08-02T10:16:20+08:00][info] 检测事件执行2022-08-02 10:16:20
+[2022-08-02T10:16:20+08:00][sql] CONNECT:[ UseTime:0.000235s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-08-02T10:16:20+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000872s ]
+[2022-08-02T10:16:20+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1659406580 [ RunTime:0.000371s ]
+[2022-08-02T10:16:20+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_coupon` [ RunTime:0.000938s ]
+[2022-08-02T10:16:20+08:00][sql] UPDATE `gxfc_promotion_coupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659406580 [ RunTime:0.000288s ]
+[2022-08-02T10:16:20+08:00][cron] event:data{"id":2,"type":2,"period":1,"period_type":0,"name":"\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronCouponEnd","execute_time":1658926624,"relate_id":0,"create_time":1646988964}
+[2022-08-02T10:16:20+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926684  WHERE  `id` = 2 [ RunTime:0.019422s ]
+[2022-08-02T10:16:20+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_platformcoupon` [ RunTime:0.000970s ]
+[2022-08-02T10:16:20+08:00][sql] UPDATE `gxfc_promotion_platformcoupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659406580 [ RunTime:0.000276s ]
+[2022-08-02T10:16:20+08:00][cron] event:data{"id":5,"type":2,"period":1,"period_type":0,"name":"\u5e73\u53f0\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronPlatformcouponEnd","execute_time":1658926564,"relate_id":0,"create_time":1646988964}
+[2022-08-02T10:16:20+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926624  WHERE  `id` = 5 [ RunTime:0.003507s ]
+[2022-08-02T10:16:20+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_cluster` [ RunTime:0.000770s ]
+[2022-08-02T10:16:20+08:00][sql] SELECT `rule_json`,`cluster_id` FROM `gxfc_member_cluster` [ RunTime:0.000160s ]
+[2022-08-02T10:16:20+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000996s ]
+[2022-08-02T10:16:20+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000208s ]
+[2022-08-02T10:16:20+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000185s ]
+[2022-08-02T10:16:20+08:00][sql] UPDATE `gxfc_member_cluster`  SET `member_num` = 12 , `member_ids` = '1,2,3,4,5,6,8,9,10,11,30,31' , `update_time` = 1659406580  WHERE  `cluster_id` = 1 [ RunTime:0.005275s ]
+[2022-08-02T10:16:20+08:00][cron] event:data{"id":10,"type":2,"period":1,"period_type":0,"name":"\u4f1a\u5458\u7fa4\u4f53\u5b9a\u65f6\u5237\u65b0","event":"CronMemberClusterRefresh","execute_time":1658926565,"relate_id":0,"create_time":1646988965}
+[2022-08-02T10:16:20+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926625  WHERE  `id` = 10 [ RunTime:0.004165s ]
+[2022-08-02T10:16:20+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.001037s ]
+[2022-08-02T10:16:20+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000313s ]
+[2022-08-02T10:16:20+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-08-02T10:18:09+08:00][info] 检测事件执行2022-08-02 10:18:09
+[2022-08-02T10:18:09+08:00][sql] CONNECT:[ UseTime:0.000259s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-08-02T10:18:09+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000871s ]
+[2022-08-02T10:18:09+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1659406689 [ RunTime:0.000328s ]
+[2022-08-02T10:18:09+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_coupon` [ RunTime:0.000889s ]
+[2022-08-02T10:18:09+08:00][sql] UPDATE `gxfc_promotion_coupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659406689 [ RunTime:0.000282s ]
+[2022-08-02T10:18:09+08:00][cron] event:data{"id":2,"type":2,"period":1,"period_type":0,"name":"\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronCouponEnd","execute_time":1658926684,"relate_id":0,"create_time":1646988964}
+[2022-08-02T10:18:09+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926744  WHERE  `id` = 2 [ RunTime:0.003717s ]
+[2022-08-02T10:18:09+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_platformcoupon` [ RunTime:0.000795s ]
+[2022-08-02T10:18:09+08:00][sql] UPDATE `gxfc_promotion_platformcoupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659406689 [ RunTime:0.000240s ]
+[2022-08-02T10:18:09+08:00][cron] event:data{"id":5,"type":2,"period":1,"period_type":0,"name":"\u5e73\u53f0\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronPlatformcouponEnd","execute_time":1658926624,"relate_id":0,"create_time":1646988964}
+[2022-08-02T10:18:09+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926684  WHERE  `id` = 5 [ RunTime:0.003435s ]
+[2022-08-02T10:18:09+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_cluster` [ RunTime:0.000696s ]
+[2022-08-02T10:18:09+08:00][sql] SELECT `rule_json`,`cluster_id` FROM `gxfc_member_cluster` [ RunTime:0.000161s ]
+[2022-08-02T10:18:09+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000895s ]
+[2022-08-02T10:18:09+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000185s ]
+[2022-08-02T10:18:09+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000164s ]
+[2022-08-02T10:18:09+08:00][sql] UPDATE `gxfc_member_cluster`  SET `member_num` = 12 , `member_ids` = '1,2,3,4,5,6,8,9,10,11,30,31' , `update_time` = 1659406689  WHERE  `cluster_id` = 1 [ RunTime:0.003995s ]
+[2022-08-02T10:18:09+08:00][cron] event:data{"id":10,"type":2,"period":1,"period_type":0,"name":"\u4f1a\u5458\u7fa4\u4f53\u5b9a\u65f6\u5237\u65b0","event":"CronMemberClusterRefresh","execute_time":1658926625,"relate_id":0,"create_time":1646988965}
+[2022-08-02T10:18:09+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926685  WHERE  `id` = 10 [ RunTime:0.002941s ]
+[2022-08-02T10:18:09+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000987s ]
+[2022-08-02T10:18:09+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000296s ]
+[2022-08-02T10:18:09+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-08-02T10:30:01+08:00][info] 检测事件执行2022-08-02 10:30:01
+[2022-08-02T10:30:01+08:00][sql] CONNECT:[ UseTime:0.000250s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-08-02T10:30:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000866s ]
+[2022-08-02T10:30:01+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1659407401 [ RunTime:0.000443s ]
+[2022-08-02T10:30:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_coupon` [ RunTime:0.001024s ]
+[2022-08-02T10:30:01+08:00][sql] UPDATE `gxfc_promotion_coupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659407401 [ RunTime:0.000299s ]
+[2022-08-02T10:30:01+08:00][cron] event:data{"id":2,"type":2,"period":1,"period_type":0,"name":"\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronCouponEnd","execute_time":1658926744,"relate_id":0,"create_time":1646988964}
+[2022-08-02T10:30:01+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926804  WHERE  `id` = 2 [ RunTime:0.004416s ]
+[2022-08-02T10:30:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_platformcoupon` [ RunTime:0.000773s ]
+[2022-08-02T10:30:01+08:00][sql] UPDATE `gxfc_promotion_platformcoupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659407401 [ RunTime:0.000192s ]
+[2022-08-02T10:30:01+08:00][cron] event:data{"id":5,"type":2,"period":1,"period_type":0,"name":"\u5e73\u53f0\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronPlatformcouponEnd","execute_time":1658926684,"relate_id":0,"create_time":1646988964}
+[2022-08-02T10:30:01+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926744  WHERE  `id` = 5 [ RunTime:0.006019s ]
+[2022-08-02T10:30:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_cluster` [ RunTime:0.000759s ]
+[2022-08-02T10:30:01+08:00][sql] SELECT `rule_json`,`cluster_id` FROM `gxfc_member_cluster` [ RunTime:0.000151s ]
+[2022-08-02T10:30:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000920s ]
+[2022-08-02T10:30:01+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000156s ]
+[2022-08-02T10:30:01+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000130s ]
+[2022-08-02T10:30:01+08:00][sql] UPDATE `gxfc_member_cluster`  SET `member_num` = 12 , `member_ids` = '1,2,3,4,5,6,8,9,10,11,30,31' , `update_time` = 1659407401  WHERE  `cluster_id` = 1 [ RunTime:0.003889s ]
+[2022-08-02T10:30:01+08:00][cron] event:data{"id":10,"type":2,"period":1,"period_type":0,"name":"\u4f1a\u5458\u7fa4\u4f53\u5b9a\u65f6\u5237\u65b0","event":"CronMemberClusterRefresh","execute_time":1658926685,"relate_id":0,"create_time":1646988965}
+[2022-08-02T10:30:01+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926745  WHERE  `id` = 10 [ RunTime:0.006661s ]
+[2022-08-02T10:30:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000996s ]
+[2022-08-02T10:30:01+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000335s ]
+[2022-08-02T10:30:01+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-08-02T14:24:41+08:00][info] 检测事件执行2022-08-02 14:24:41
+[2022-08-02T14:24:41+08:00][sql] CONNECT:[ UseTime:0.000259s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-08-02T14:24:41+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000938s ]
+[2022-08-02T14:24:41+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1659421481 [ RunTime:0.000352s ]
+[2022-08-02T14:24:41+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_coupon` [ RunTime:0.000852s ]
+[2022-08-02T14:24:41+08:00][sql] UPDATE `gxfc_promotion_coupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659421481 [ RunTime:0.000361s ]
+[2022-08-02T14:24:41+08:00][cron] event:data{"id":2,"type":2,"period":1,"period_type":0,"name":"\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronCouponEnd","execute_time":1658926804,"relate_id":0,"create_time":1646988964}
+[2022-08-02T14:24:41+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926864  WHERE  `id` = 2 [ RunTime:0.004808s ]
+[2022-08-02T14:24:41+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_platformcoupon` [ RunTime:0.000826s ]
+[2022-08-02T14:24:41+08:00][sql] UPDATE `gxfc_promotion_platformcoupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659421481 [ RunTime:0.000263s ]
+[2022-08-02T14:24:41+08:00][cron] event:data{"id":5,"type":2,"period":1,"period_type":0,"name":"\u5e73\u53f0\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronPlatformcouponEnd","execute_time":1658926744,"relate_id":0,"create_time":1646988964}
+[2022-08-02T14:24:41+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926804  WHERE  `id` = 5 [ RunTime:0.003784s ]
+[2022-08-02T14:24:41+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_cluster` [ RunTime:0.000752s ]
+[2022-08-02T14:24:41+08:00][sql] SELECT `rule_json`,`cluster_id` FROM `gxfc_member_cluster` [ RunTime:0.000162s ]
+[2022-08-02T14:24:41+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000956s ]
+[2022-08-02T14:24:41+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000167s ]
+[2022-08-02T14:24:41+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000189s ]
+[2022-08-02T14:24:41+08:00][sql] UPDATE `gxfc_member_cluster`  SET `member_num` = 12 , `member_ids` = '1,2,3,4,5,6,8,9,10,11,30,31' , `update_time` = 1659421481  WHERE  `cluster_id` = 1 [ RunTime:0.009202s ]
+[2022-08-02T14:24:41+08:00][cron] event:data{"id":10,"type":2,"period":1,"period_type":0,"name":"\u4f1a\u5458\u7fa4\u4f53\u5b9a\u65f6\u5237\u65b0","event":"CronMemberClusterRefresh","execute_time":1658926745,"relate_id":0,"create_time":1646988965}
+[2022-08-02T14:24:41+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926805  WHERE  `id` = 10 [ RunTime:0.004956s ]
+[2022-08-02T14:24:41+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000961s ]
+[2022-08-02T14:24:41+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000309s ]
+[2022-08-02T14:24:41+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-08-02T19:55:27+08:00][info] 检测事件执行2022-08-02 19:55:27
+[2022-08-02T19:55:27+08:00][sql] CONNECT:[ UseTime:0.000216s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-08-02T19:55:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000885s ]
+[2022-08-02T19:55:27+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1659441327 [ RunTime:0.000343s ]
+[2022-08-02T19:55:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_coupon` [ RunTime:0.000795s ]
+[2022-08-02T19:55:27+08:00][sql] UPDATE `gxfc_promotion_coupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659441327 [ RunTime:0.000283s ]
+[2022-08-02T19:55:27+08:00][cron] event:data{"id":2,"type":2,"period":1,"period_type":0,"name":"\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronCouponEnd","execute_time":1658926864,"relate_id":0,"create_time":1646988964}
+[2022-08-02T19:55:27+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926924  WHERE  `id` = 2 [ RunTime:0.008168s ]
+[2022-08-02T19:55:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_platformcoupon` [ RunTime:0.000806s ]
+[2022-08-02T19:55:27+08:00][sql] UPDATE `gxfc_promotion_platformcoupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659441327 [ RunTime:0.000271s ]
+[2022-08-02T19:55:27+08:00][cron] event:data{"id":5,"type":2,"period":1,"period_type":0,"name":"\u5e73\u53f0\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronPlatformcouponEnd","execute_time":1658926804,"relate_id":0,"create_time":1646988964}
+[2022-08-02T19:55:27+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926864  WHERE  `id` = 5 [ RunTime:0.003561s ]
+[2022-08-02T19:55:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_cluster` [ RunTime:0.000700s ]
+[2022-08-02T19:55:27+08:00][sql] SELECT `rule_json`,`cluster_id` FROM `gxfc_member_cluster` [ RunTime:0.000157s ]
+[2022-08-02T19:55:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000957s ]
+[2022-08-02T19:55:27+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000185s ]
+[2022-08-02T19:55:27+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000186s ]
+[2022-08-02T19:55:27+08:00][sql] UPDATE `gxfc_member_cluster`  SET `member_num` = 12 , `member_ids` = '1,2,3,4,5,6,8,9,10,11,30,31' , `update_time` = 1659441327  WHERE  `cluster_id` = 1 [ RunTime:0.004268s ]
+[2022-08-02T19:55:27+08:00][cron] event:data{"id":10,"type":2,"period":1,"period_type":0,"name":"\u4f1a\u5458\u7fa4\u4f53\u5b9a\u65f6\u5237\u65b0","event":"CronMemberClusterRefresh","execute_time":1658926805,"relate_id":0,"create_time":1646988965}
+[2022-08-02T19:55:27+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926865  WHERE  `id` = 10 [ RunTime:0.003360s ]
+[2022-08-02T19:55:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.000862s ]
+[2022-08-02T19:55:27+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000284s ]
+[2022-08-02T19:55:27+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected
+[2022-08-02T20:03:42+08:00][info] 检测事件执行2022-08-02 20:03:42
+[2022-08-02T20:03:42+08:00][sql] CONNECT:[ UseTime:0.000207s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-08-02T20:03:42+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000896s ]
+[2022-08-02T20:03:42+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1659441822 [ RunTime:0.000403s ]
+[2022-08-02T20:03:42+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_coupon` [ RunTime:0.000908s ]
+[2022-08-02T20:03:42+08:00][sql] UPDATE `gxfc_promotion_coupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659441822 [ RunTime:0.000269s ]
+[2022-08-02T20:03:42+08:00][cron] event:data{"id":2,"type":2,"period":1,"period_type":0,"name":"\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronCouponEnd","execute_time":1658926924,"relate_id":0,"create_time":1646988964}
+[2022-08-02T20:03:42+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926984  WHERE  `id` = 2 [ RunTime:0.004956s ]
+[2022-08-02T20:03:42+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_platformcoupon` [ RunTime:0.000774s ]
+[2022-08-02T20:03:42+08:00][sql] UPDATE `gxfc_promotion_platformcoupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1659441822 [ RunTime:0.000196s ]
+[2022-08-02T20:03:42+08:00][cron] event:data{"id":5,"type":2,"period":1,"period_type":0,"name":"\u5e73\u53f0\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronPlatformcouponEnd","execute_time":1658926864,"relate_id":0,"create_time":1646988964}
+[2022-08-02T20:03:42+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926924  WHERE  `id` = 5 [ RunTime:0.004040s ]
+[2022-08-02T20:03:42+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_cluster` [ RunTime:0.000691s ]
+[2022-08-02T20:03:42+08:00][sql] SELECT `rule_json`,`cluster_id` FROM `gxfc_member_cluster` [ RunTime:0.000140s ]
+[2022-08-02T20:03:42+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000947s ]
+[2022-08-02T20:03:42+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000169s ]
+[2022-08-02T20:03:42+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000141s ]
+[2022-08-02T20:03:42+08:00][sql] UPDATE `gxfc_member_cluster`  SET `member_num` = 12 , `member_ids` = '1,2,3,4,5,6,8,9,10,11,30,31' , `update_time` = 1659441822  WHERE  `cluster_id` = 1 [ RunTime:0.003380s ]
+[2022-08-02T20:03:42+08:00][cron] event:data{"id":10,"type":2,"period":1,"period_type":0,"name":"\u4f1a\u5458\u7fa4\u4f53\u5b9a\u65f6\u5237\u65b0","event":"CronMemberClusterRefresh","execute_time":1658926865,"relate_id":0,"create_time":1646988965}
+[2022-08-02T20:03:42+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658926925  WHERE  `id` = 10 [ RunTime:0.024010s ]
+[2022-08-02T20:03:42+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_commander_order_goods` [ RunTime:0.001009s ]
+[2022-08-02T20:03:42+08:00][sql] SELECT * FROM `gxfc_commander_order_goods` WHERE  `order_goods_id` = 287 LIMIT 1 [ RunTime:0.000277s ]
+[2022-08-02T20:03:42+08:00][error] [0]Too few arguments to function addon\community\model\order\OrderRefund::orderRefundConfirm(), 1 passed in /www/wwwroot/ls.chnssl.com/addon/community/event/CronOrderRefundConfirm.php on line 40 and exactly 2 expected

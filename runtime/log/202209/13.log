@@ -1,0 +1,15 @@
+[2022-09-13T19:25:21+08:00][sql] CONNECT:[ UseTime:0.000306s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-09-13T19:25:21+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_shop` `s` LEFT JOIN `gxfc_website` `w` ON `w`.`site_id`=`s`.`website_id` ORDER BY `s`.`site_id` DESC [ RunTime:0.000318s ]
+[2022-09-13T19:25:21+08:00][sql] SELECT `s`.`site_id`,`s`.`expire_time`,`s`.`site_name`,`s`.`username`,`s`.`website_id`,`s`.`cert_id`,`s`.`is_own`,`s`.`category_name`,`s`.`group_name`,`s`.`shop_status`,`s`.`create_time`,`w`.`site_area_name` FROM `gxfc_shop` `s` LEFT JOIN `gxfc_website` `w` ON `w`.`site_id`=`s`.`website_id` ORDER BY `s`.`site_id` DESC LIMIT 0,10 [ RunTime:0.000369s ]
+[2022-09-13T19:25:21+08:00][sql] SELECT * FROM `gxfc_shop_cert` WHERE  `cert_id` = 4 LIMIT 1 [ RunTime:0.000390s ]
+[2022-09-13T19:25:21+08:00][sql] SELECT * FROM `gxfc_shop_cert` WHERE  `cert_id` = 5 LIMIT 1 [ RunTime:0.000365s ]
+[2022-09-13T19:25:21+08:00][sql] SELECT * FROM `gxfc_shop_cert` WHERE  `cert_id` = 1 LIMIT 1 [ RunTime:0.000330s ]
+[2022-09-13T19:27:08+08:00][sql] CONNECT:[ UseTime:0.000356s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-09-13T19:27:08+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_shop_apply` `sa` LEFT JOIN `gxfc_website` `w` ON `w`.`site_id`=`sa`.`website_id` ORDER BY `sa`.`create_time` DESC [ RunTime:0.000321s ]
+[2022-09-13T19:27:08+08:00][sql] SELECT `sa`.`apply_id`,`sa`.`member_id`,`sa`.`member_name`,`sa`.`cert_id`,`sa`.`shop_name`,`sa`.`apply_state`,`sa`.`apply_message`,`sa`.`apply_year`,`sa`.`category_name`,`sa`.`paying_money_certificate`,`sa`.`group_name`,`sa`.`audit_time`,`sa`.`finish_time`,`sa`.`create_time`,`sa`.`username`,`sa`.`paying_apply`,`sa`.`paying_deposit`,`sa`.`paying_amount`,`w`.`site_area_name` FROM `gxfc_shop_apply` `sa` LEFT JOIN `gxfc_website` `w` ON `w`.`site_id`=`sa`.`website_id` ORDER BY `sa`.`create_time` DESC LIMIT 0,10 [ RunTime:0.000378s ]
+[2022-09-13T19:28:26+08:00][sql] CONNECT:[ UseTime:0.000369s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-09-13T19:28:26+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_shop` `s` LEFT JOIN `gxfc_website` `w` ON `w`.`site_id`=`s`.`website_id` ORDER BY `s`.`site_id` DESC [ RunTime:0.000343s ]
+[2022-09-13T19:28:26+08:00][sql] SELECT `s`.`site_id`,`s`.`expire_time`,`s`.`site_name`,`s`.`username`,`s`.`website_id`,`s`.`cert_id`,`s`.`is_own`,`s`.`category_name`,`s`.`group_name`,`s`.`shop_status`,`s`.`create_time`,`w`.`site_area_name` FROM `gxfc_shop` `s` LEFT JOIN `gxfc_website` `w` ON `w`.`site_id`=`s`.`website_id` ORDER BY `s`.`site_id` DESC LIMIT 0,10 [ RunTime:0.000384s ]
+[2022-09-13T19:28:26+08:00][sql] SELECT * FROM `gxfc_shop_cert` WHERE  `cert_id` = 4 LIMIT 1 [ RunTime:0.000362s ]
+[2022-09-13T19:28:26+08:00][sql] SELECT * FROM `gxfc_shop_cert` WHERE  `cert_id` = 5 LIMIT 1 [ RunTime:0.000326s ]
+[2022-09-13T19:28:26+08:00][sql] SELECT * FROM `gxfc_shop_cert` WHERE  `cert_id` = 1 LIMIT 1 [ RunTime:0.000276s ]

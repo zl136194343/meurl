@@ -1,0 +1,2 @@
+[2022-09-21T05:12:59+08:00][sql] CONNECT:[ UseTime:0.000326s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-09-21T05:12:59+08:00][sql] SELECT `web_phone`,`web_email`,`web_qrcode`,`web_qq`,`web_weixin`,`logo` FROM `gxfc_website` WHERE  `site_id` = 0 LIMIT 1 [ RunTime:0.000329s ]

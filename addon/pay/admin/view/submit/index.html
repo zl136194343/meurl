@@ -1,0 +1,112 @@
+{extend name="/common/default"/}
+{block name="main"}
+<style>
+    .table-responsive {
+        min-height: .01%;
+        overflow-x: auto;
+    }
+
+    @media screen {
+        .table-responsive {
+            width: 100%;
+            margin-bottom: 15px;
+            overflow-y: hidden;
+            -ms-overflow-style: -ms-autohiding-scrollbar;
+            border: 1px solid #ddd;
+        }
+
+        .table-responsive > .table {
+            margin-bottom: 0;
+        }
+
+        .table-responsive > .table > thead > tr > th,
+        .table-responsive > .table > tbody > tr > th,
+        .table-responsive > .table > tfoot > tr > th,
+        .table-responsive > .table > thead > tr > td,
+        .table-responsive > .table > tbody > tr > td,
+        .table-responsive > .table > tfoot > tr > td {
+            white-space: nowrap;
+        }
+
+        .table-responsive > .table-bordered {
+            border: 0;
+        }
+
+        .table-responsive > .table-bordered > thead > tr > th:first-child,
+        .table-responsive > .table-bordered > tbody > tr > th:first-child,
+        .table-responsive > .table-bordered > tfoot > tr > th:first-child,
+        .table-responsive > .table-bordered > thead > tr > td:first-child,
+        .table-responsive > .table-bordered > tbody > tr > td:first-child,
+        .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+            border-left: 0;
+        }
+
+        .table-responsive > .table-bordered > thead > tr > th:last-child,
+        .table-responsive > .table-bordered > tbody > tr > th:last-child,
+        .table-responsive > .table-bordered > tfoot > tr > th:last-child,
+        .table-responsive > .table-bordered > thead > tr > td:last-child,
+        .table-responsive > .table-bordered > tbody > tr > td:last-child,
+        .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+            border-right: 0;
+        }
+
+        .table-responsive > .table-bordered > tbody > tr:last-child > th,
+        .table-responsive > .table-bordered > tfoot > tr:last-child > th,
+        .table-responsive > .table-bordered > tbody > tr:last-child > td,
+        .table-responsive > .table-bordered > tfoot > tr:last-child > td {
+            border-bottom: 0;
+        }
+    }
+</style>
+<div class="block">
+    <div class="block-header block-header-default bg-info">
+        <h3 class="block-title">{$title}</h3>
+    </div>
+    <div class="block-content">
+        <form action="/{:ADMIN_DIR}/submit/index">
+            <div class="form-group row">
+                <div class="col-lg-4">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="example-input1-group2" name="search"
+                               placeholder="可通过单号,姓名,商户简称,用户名,手机号码查询">
+                        <div class="input-group-prepend">
+                            <button type="submit" class="btn btn-info">
+                                <i class="fa fa-search"></i> 查找
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="table-responsive">
+            <table class="table table-bordered table-vcenter">
+                <thead>
+                <tr>
+                    <th class="text-center">申请单号</th>
+                    <th>姓名</th>
+                    <th>商户简称</th>
+                    <th>用户名</th>
+                    <th>手机号码</th>
+                    <th>申请时间</th>
+                    <th>商户状态</th>
+                </tr>
+                </thead>
+                <tbody>
+                {foreach $submit as $k=>$v}
+                <tr>
+                    <td class="text-center">{$v['sid']}</td>
+                    <td class="font-w600">{$v['id_card_name']}</td>
+                    <td>{$v['merchant_shortname']}</td>
+                    <td>{$v['uname']}</td>
+                    <td>{$v['contact_phone']}</td>
+                    <td>{$v['addtime']}</td>
+                    <td>{if $v['mchid']}<b style="color:green;">已签约</b>{else/}<b style="color:red;">未签约</b>{/if}</td>
+                </tr>
+                {/foreach}
+                </tbody>
+            </table>
+        </div>
+        {$submit|raw}
+    </div>
+</div>
+{/block}

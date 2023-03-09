@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>打印商品出库单</title>
+
+    <style media="print" type="text/css">.noprint{display:none}</style>
+    <style media="screen,print" type="text/css">
+        .table-class thead tr th {
+            padding: 10px !important;
+            font-size: 12px;
+        }
+        .table-class thead tr th.no-padding {
+            padding: 0 !important;
+        }
+        .table-class tr td{
+            padding: 10px !important;
+        }
+        .print-box{
+            padding: 20px;
+            border: 1px dashed #ccc;
+        }
+        .print-title-box{
+            padding: 0 1%;
+            display: flex;
+            justify-content: space-between;
+            align-items:center;
+            box-sizing: border-box;
+        }
+        .print-box .print-title{
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .print-box .print-table{
+            width: 100%;
+            font-size: 12px;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+<div class="print-box">
+
+    {notempty name='info.info'}
+    <table class="table-class print-table" border="1" cellspacing="0">
+        <colgroup>
+            <col width="8%">
+            <col width="50%">
+            <col width="20%">
+            <col width="10%">
+            <col width="10%">
+        </colgroup>
+        <thead>
+        <tr>
+            <th class="no-padding" align="center" colspan="6">
+                <div class="print-title-box">
+                    <p>{$info.info.site_name}</p>
+                    <p class="print-title">商品汇总</p>
+                    <p class="title-box-right">{$info.info.delivery_no}</p>
+                </div>
+            </th>
+        </tr>
+        <tr>
+            <th align="center">序号</th>
+            <th align="center">商品</th>
+            <th align="center">一级分类</th>
+            <th align="center">数量</th>
+            <th align="center">总价</th>
+        </tr>
+        </thead>
+        <tbody class="table-body">
+            {volist name='$info.data' id='vo'}
+                <tr>
+                    <td align="center">{$vo.serial}</td>
+                    <td align="center">{$vo.sku_name}</td>
+                    <td align="center">{$vo.category_name_1}</td>
+                    <td align="center">{$vo.num}</td>
+                    <td align="center">{$vo.goods_money}</td>
+                </tr>
+            {/volist}
+        </tbody>
+    </table>
+    {/notempty}
+</div>
+</body>
+
+</html>

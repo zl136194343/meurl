@@ -1,0 +1,115 @@
+{extend name='common/default'/}
+{block name="main"}
+<div class="row">
+    <div class="col-md-12">
+        <div class="block block-themed block-rounded block-shadow">
+            <div class="block-header block-header-default bg-gd-sea">
+                <h3 class="block-title">{$title}</h3>
+                <div class="block-options">
+                    <button type="button" class="btn-block-option">
+                        <i class="si si-wrench"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="block-content">
+                <form>
+                    <div class="form-group row">
+                        <label class="col-12" for="example-text-input">银行账号</label>
+                        <div class="col-md-12">
+                            <input type="text" class="form-control" name="account_number" placeholder="请输入银行账号">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-12" for="example-text-input">请选择开户行</label>
+                        <div class="col-md-12">
+                            <select name="account_bank" class="form-control">
+                                <option value="工商银行">工商银行</option>
+                                <option value="交通银行">交通银行</option>
+                                <option value="招商银行">招商银行</option>
+                                <option value="民生银行">民生银行</option>
+                                <option value="中信银行">中信银行</option>
+                                <option value="浦发银行">浦发银行</option>
+                                <option value="兴业银行">兴业银行</option>
+                                <option value="光大银行">光大银行</option>
+                                <option value="广发银行">广发银行</option>
+                                <option value="平安银行">平安银行</option>
+                                <option value="北京银行">北京银行</option>
+                                <option value="华夏银行">华夏银行</option>
+                                <option value="农业银行">农业银行</option>
+                                <option value="建设银行">建设银行</option>
+                                <option value="邮政储蓄银行">邮政储蓄银行</option>
+                                <option value="中国银行">中国银行</option>
+                                <option value="宁波银行">宁波银行</option>
+                                <option value="其他银行">其他银行</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-12" for="example-text-input">开户银行全称（含支行）</label>
+                        <div class="col-md-12">
+                            <input type="text" class="form-control" name="bank_name" placeholder="请输入开户银行全称">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-12" for="example-text-input">开户银行省市（搜索框内输入,如：长沙市）</label>
+                        <div class="col-md-12">
+                            <select class="form-control select2 ss" name="bank_address_code"></select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-12">
+                            <button type="button" id="submit" class="btn btn-alt-primary">立即提交</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footjs"}
+<link rel="stylesheet" href="//cdn.bootcss.com/select2/4.0.8/css/select2.min.css">
+<script src="//cdn.bootcss.com/select2/4.0.8/js/select2.full.min.js"></script>
+<script>
+    $('#submit').click(function () {
+        var cont = $("input,select").serialize();
+        layer.load(2, {shade: [0.1, '#fff']});
+        var sub_mch_id = {$sub_mch_id};
+        $.ajax({
+            type: "POST",
+            url: "{:url('/user/do_edit_cash/"+sub_mch_id+"')}",
+            data: cont,
+            dataType: 'json',
+            success: function (data) {
+                layer.closeAll();
+                if (data.code == 1) {
+                    layer.alert(data.msg, {icon: 6}, function () {
+                        window.location.href = "{:url('/user/wechart')}";
+                    });
+                } else {
+                    layer.alert(data.msg, {icon: 5});
+                }
+            },
+            timeout: 10000,
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                layer.closeAll();
+                if (textStatus == "timeout") {
+                    layer.msg('请求超时！');
+                } else {
+                    layer.msg('服务器错误！');
+                }
+            }
+        });
+    });
+
+    $(function () {
+        $(".ss").select2({
+            ajax: {
+                url: '/user/wechart_citycode',
+                dataType: 'json',
+                delay: 252
+            }
+        });
+    });
+</script>
+{/block}

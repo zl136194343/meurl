@@ -1,0 +1,124 @@
+{extend name="base"/}
+
+{block name="resources"}{/block}
+
+{block name="main"}
+<form class="layui-form ns-form">
+    <div class="layui-form-item">
+        <label class="layui-form-label"><span class="required">*</span>路线名称：</label>
+        <div class="layui-input-block">
+            <input name="line_name" type="text" placeholder="请输入路线名称" maxlength="30" lay-verify="required" class="layui-input ns-len-long" autocomplete="off">
+        </div>
+        <div class="ns-word-aux">
+            <p>路线名称最长不超过30个字符</p>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label"><span class="required">*</span>绑定配送员：</label>
+        <div class="layui-input-block">
+            <div class="layui-input-inline">
+                <input type="text" placeholder="请选择配送员" readonly name="clerk_name" autocomplete="off" class="layui-input ns-len-mid">
+            </div>
+            <input type="hidden" name="clerk_id" lay-verify="required">
+            <button class="layui-btn ns-bg-color" type="button" onclick="chooseClerk()">选择配送员</button>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">路线备注：</label>
+        <div class="layui-input-inline ns-len-long">
+            <textarea name="line_remark" placeholder="请输入路线备注" class="layui-textarea" maxlength="200"></textarea>
+        </div>
+    </div>
+
+    <div class="ns-form-row">
+        <button class="layui-btn ns-bg-color" lay-submit lay-filter="save">保存</button>
+        <button type="reset" class="layui-btn layui-btn-primary" onclick="back()">返回</button>
+    </div>
+</form>
+
+{/block}
+{block name="script"}
+<script>
+
+    layui.use(['form'], function (form) {
+        var is_submit = false;
+
+        // 验证
+        form.verify({
+
+        });
+
+        // 提交
+        form.on('submit(save)', function (data) {
+
+            if (is_submit) return false;
+            is_submit = true;
+
+            $.ajax({
+                url: ns.url('community://shop/communitydelivery/addLine'),
+                data: data.field,
+                dataType: 'json',
+                type: 'post',
+                success: function (data) {
+                    if (data.code == 0) {
+                        layer.confirm(data.message, {
+                            title: '操作提示',
+                            btn: ['返回列表', '继续添加'],
+                            yes: function () {
+                                back();
+                            },
+                            btn2: function () {
+                                window.location.reload();
+                            },
+                            cancel: function () {
+                                this.yes();
+                            }
+                        })
+                    } else {
+                        is_submit = false;
+                        layer.msg(data.message);
+                    }
+                },
+                error: function () {
+                    is_submit = false;
+                    layer.msg('操作异常');
+                }
+            });
+
+            return false;
+        });
+    });
+
+    /**
+     * 返回
+     */
+    function back() {
+        location.href = ns.url('community://shop/communitydelivery/lineList')
+    }
+
+    /**
+     * 选择配送员
+     */
+    function chooseClerk() {
+        layer.open({
+            title: '配送员列表',
+            id: 'bind_clerk_layer',
+            type: 2,
+            area: ['60%', '80%'],
+            content: ns.url('community://shop/communitydelivery/chooseClerk', {chooseCallback: 'chooseClerkCallback'}),
+        });
+    }
+
+    /**
+     * 选择配送员回调
+     * @param data
+     */
+    function chooseClerkCallback(data) {
+        $('input[name="clerk_id"]').val(data.clerk_id);
+        $('input[name="clerk_name"]').val(data.clerk_name);
+    }
+
+</script>
+{/block}

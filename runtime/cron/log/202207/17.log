@@ -1,0 +1,69 @@
+[2022-07-17T23:56:14+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658072464  WHERE  `id` = 5 [ RunTime:0.004641s ]
+[2022-07-17T23:56:14+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_cluster` [ RunTime:0.000728s ]
+[2022-07-17T23:56:14+08:00][sql] SELECT `rule_json`,`cluster_id` FROM `gxfc_member_cluster` [ RunTime:0.000145s ]
+[2022-07-17T23:56:14+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000942s ]
+[2022-07-17T23:56:14+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000164s ]
+[2022-07-17T23:56:14+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000197s ]
+[2022-07-17T23:56:14+08:00][sql] UPDATE `gxfc_member_cluster`  SET `member_num` = 11 , `member_ids` = '1,2,3,4,5,6,8,9,10,11,30' , `update_time` = 1658073374  WHERE  `cluster_id` = 1 [ RunTime:0.002812s ]
+[2022-07-17T23:56:14+08:00][cron] event:data{"id":10,"type":2,"period":1,"period_type":0,"name":"\u4f1a\u5458\u7fa4\u4f53\u5b9a\u65f6\u5237\u65b0","event":"CronMemberClusterRefresh","execute_time":1658072405,"relate_id":0,"create_time":1646988965}
+[2022-07-17T23:56:14+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658072465  WHERE  `id` = 10 [ RunTime:0.002668s ]
+[2022-07-17T23:57:14+08:00][info] 检测事件执行2022-07-17 23:57:14
+[2022-07-17T23:57:14+08:00][sql] CONNECT:[ UseTime:0.000216s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-17T23:57:14+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000874s ]
+[2022-07-17T23:57:14+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658073434 [ RunTime:0.000267s ]
+[2022-07-17T23:57:14+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_coupon` [ RunTime:0.000807s ]
+[2022-07-17T23:57:14+08:00][sql] UPDATE `gxfc_promotion_coupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1658073434 [ RunTime:0.000220s ]
+[2022-07-17T23:57:14+08:00][cron] event:data{"id":2,"type":2,"period":1,"period_type":0,"name":"\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronCouponEnd","execute_time":1658072464,"relate_id":0,"create_time":1646988964}
+[2022-07-17T23:57:14+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658072524  WHERE  `id` = 2 [ RunTime:0.004212s ]
+[2022-07-17T23:57:14+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_platformcoupon` [ RunTime:0.000778s ]
+[2022-07-17T23:57:14+08:00][sql] UPDATE `gxfc_promotion_platformcoupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1658073434 [ RunTime:0.000235s ]
+[2022-07-17T23:57:14+08:00][cron] event:data{"id":5,"type":2,"period":1,"period_type":0,"name":"\u5e73\u53f0\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronPlatformcouponEnd","execute_time":1658072464,"relate_id":0,"create_time":1646988964}
+[2022-07-17T23:57:14+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658072524  WHERE  `id` = 5 [ RunTime:0.003146s ]
+[2022-07-17T23:57:14+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_cluster` [ RunTime:0.000675s ]
+[2022-07-17T23:57:14+08:00][sql] SELECT `rule_json`,`cluster_id` FROM `gxfc_member_cluster` [ RunTime:0.000134s ]
+[2022-07-17T23:57:14+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000889s ]
+[2022-07-17T23:57:14+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000165s ]
+[2022-07-17T23:57:14+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000129s ]
+[2022-07-17T23:57:14+08:00][sql] UPDATE `gxfc_member_cluster`  SET `member_num` = 11 , `member_ids` = '1,2,3,4,5,6,8,9,10,11,30' , `update_time` = 1658073434  WHERE  `cluster_id` = 1 [ RunTime:0.003570s ]
+[2022-07-17T23:57:14+08:00][cron] event:data{"id":10,"type":2,"period":1,"period_type":0,"name":"\u4f1a\u5458\u7fa4\u4f53\u5b9a\u65f6\u5237\u65b0","event":"CronMemberClusterRefresh","execute_time":1658072465,"relate_id":0,"create_time":1646988965}
+[2022-07-17T23:57:14+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658072525  WHERE  `id` = 10 [ RunTime:0.005985s ]
+[2022-07-17T23:58:14+08:00][info] 检测事件执行2022-07-17 23:58:14
+[2022-07-17T23:58:14+08:00][sql] CONNECT:[ UseTime:0.000256s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-17T23:58:14+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000796s ]
+[2022-07-17T23:58:14+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658073494 [ RunTime:0.000257s ]
+[2022-07-17T23:58:14+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_coupon` [ RunTime:0.000877s ]
+[2022-07-17T23:58:14+08:00][sql] UPDATE `gxfc_promotion_coupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1658073494 [ RunTime:0.000234s ]
+[2022-07-17T23:58:14+08:00][cron] event:data{"id":2,"type":2,"period":1,"period_type":0,"name":"\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronCouponEnd","execute_time":1658072524,"relate_id":0,"create_time":1646988964}
+[2022-07-17T23:58:14+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658072584  WHERE  `id` = 2 [ RunTime:0.004670s ]
+[2022-07-17T23:58:14+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_platformcoupon` [ RunTime:0.000730s ]
+[2022-07-17T23:58:14+08:00][sql] UPDATE `gxfc_promotion_platformcoupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1658073494 [ RunTime:0.000195s ]
+[2022-07-17T23:58:14+08:00][cron] event:data{"id":5,"type":2,"period":1,"period_type":0,"name":"\u5e73\u53f0\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronPlatformcouponEnd","execute_time":1658072524,"relate_id":0,"create_time":1646988964}
+[2022-07-17T23:58:14+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658072584  WHERE  `id` = 5 [ RunTime:0.004122s ]
+[2022-07-17T23:58:14+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_cluster` [ RunTime:0.000684s ]
+[2022-07-17T23:58:14+08:00][sql] SELECT `rule_json`,`cluster_id` FROM `gxfc_member_cluster` [ RunTime:0.000148s ]
+[2022-07-17T23:58:14+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000903s ]
+[2022-07-17T23:58:14+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000154s ]
+[2022-07-17T23:58:14+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000142s ]
+[2022-07-17T23:58:14+08:00][sql] UPDATE `gxfc_member_cluster`  SET `member_num` = 11 , `member_ids` = '1,2,3,4,5,6,8,9,10,11,30' , `update_time` = 1658073494  WHERE  `cluster_id` = 1 [ RunTime:0.006874s ]
+[2022-07-17T23:58:14+08:00][cron] event:data{"id":10,"type":2,"period":1,"period_type":0,"name":"\u4f1a\u5458\u7fa4\u4f53\u5b9a\u65f6\u5237\u65b0","event":"CronMemberClusterRefresh","execute_time":1658072525,"relate_id":0,"create_time":1646988965}
+[2022-07-17T23:58:14+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658072585  WHERE  `id` = 10 [ RunTime:0.012279s ]
+[2022-07-17T23:59:14+08:00][info] 检测事件执行2022-07-17 23:59:14
+[2022-07-17T23:59:14+08:00][sql] CONNECT:[ UseTime:0.000238s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-17T23:59:14+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_cron` [ RunTime:0.000804s ]
+[2022-07-17T23:59:14+08:00][sql] SELECT `id`,`type`,`period`,`period_type`,`name`,`event`,`execute_time`,`relate_id`,`create_time` FROM `gxfc_cron` WHERE  `execute_time` <= 1658073554 [ RunTime:0.000249s ]
+[2022-07-17T23:59:14+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_coupon` [ RunTime:0.000802s ]
+[2022-07-17T23:59:14+08:00][sql] UPDATE `gxfc_promotion_coupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1658073554 [ RunTime:0.000216s ]
+[2022-07-17T23:59:14+08:00][cron] event:data{"id":2,"type":2,"period":1,"period_type":0,"name":"\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronCouponEnd","execute_time":1658072584,"relate_id":0,"create_time":1646988964}
+[2022-07-17T23:59:14+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658072644  WHERE  `id` = 2 [ RunTime:0.003832s ]
+[2022-07-17T23:59:14+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_promotion_platformcoupon` [ RunTime:0.000725s ]
+[2022-07-17T23:59:14+08:00][sql] UPDATE `gxfc_promotion_platformcoupon`  SET `state` = 3  WHERE  `state` = 1  AND `end_time` <= 1658073554 [ RunTime:0.000194s ]
+[2022-07-17T23:59:14+08:00][cron] event:data{"id":5,"type":2,"period":1,"period_type":0,"name":"\u5e73\u53f0\u4f18\u60e0\u5238\u8fc7\u671f\u81ea\u52a8\u5173\u95ed","event":"CronPlatformcouponEnd","execute_time":1658072584,"relate_id":0,"create_time":1646988964}
+[2022-07-17T23:59:14+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658072644  WHERE  `id` = 5 [ RunTime:0.003004s ]
+[2022-07-17T23:59:14+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_cluster` [ RunTime:0.000704s ]
+[2022-07-17T23:59:14+08:00][sql] SELECT `rule_json`,`cluster_id` FROM `gxfc_member_cluster` [ RunTime:0.000142s ]
+[2022-07-17T23:59:14+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000822s ]
+[2022-07-17T23:59:14+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000160s ]
+[2022-07-17T23:59:14+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` WHERE  `is_delete` = 0 [ RunTime:0.000123s ]
+[2022-07-17T23:59:14+08:00][sql] UPDATE `gxfc_member_cluster`  SET `member_num` = 11 , `member_ids` = '1,2,3,4,5,6,8,9,10,11,30' , `update_time` = 1658073554  WHERE  `cluster_id` = 1 [ RunTime:0.003845s ]
+[2022-07-17T23:59:14+08:00][cron] event:data{"id":10,"type":2,"period":1,"period_type":0,"name":"\u4f1a\u5458\u7fa4\u4f53\u5b9a\u65f6\u5237\u65b0","event":"CronMemberClusterRefresh","execute_time":1658072585,"relate_id":0,"create_time":1646988965}
+[2022-07-17T23:59:14+08:00][sql] UPDATE `gxfc_cron`  SET `execute_time` = 1658072645  WHERE  `id` = 10 [ RunTime:0.003171s ]

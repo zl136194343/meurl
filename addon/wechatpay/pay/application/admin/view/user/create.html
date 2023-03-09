@@ -1,0 +1,110 @@
+{extend name="/common/default" /}
+{block name="main"}
+<div class="row">
+    <div class="col-xl-12">
+        <!-- Bootstrap Contact -->
+        <div class="block block-themed">
+            <div class="block-header bg-info">
+                <h3 class="block-title">{$title}</h3>
+                <div class="block-options">
+                    <button type="button" class="btn-block-option" data-toggle="block-option" data-action="state_toggle"
+                            data-action-mode="demo">
+                        <i class="si si-refresh"></i>
+                    </button>
+                    <button type="button" class="btn-block-option" data-toggle="block-option"
+                            data-action="content_toggle"><i class="si si-arrow-up"></i></button>
+                </div>
+            </div>
+            <div class="block-content">
+                <form action="be_forms_premade.html" method="post" onsubmit="return false;">
+                    <div class="form-group row">
+                        <div class="col-6">
+                            <label for="contact1-firstname">用户名</label>
+                            <input type="text" class="form-control" id="contact1-firstname" name="uname"
+                                   placeholder="用户名">
+                        </div>
+                        <div class="col-6">
+                            <label for="contact1-lastname">用户密码</label>
+                            <input type="password" class="form-control" id="contact1-lastname" name="upwd"
+                                   placeholder="用户密码">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-6">
+                            <label for="contact1-email">用户邮箱</label>
+                            <div class="input-group">
+                                <input type="email" class="form-control" id="contact1-email" name="email"
+                                       placeholder="用户邮箱号码">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fa fa-envelope-o"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label>用户QQ</label>
+                            <input type="text" class="form-control" name="qq" placeholder="用户QQ">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-6">
+                            <label for="contact1-subject">会员等级</label>
+                            <div class="input-group">
+                                <select class="form-control" id="contact1-subject" name="v_id" size="1">
+                                    {foreach $vip as $k=>$v}
+                                    <option value="{$v['vid']}">{$v['vname']}</option>
+                                    {/foreach}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label>会员到期时间</label>
+                            <input type="text" class="form-control" name="v_time_expire" placeholder="格式:xxxx-xx-xx">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-12">
+                            <button id="submit" type="submit" style="float:right;" class="btn btn-alt-info">
+                                <i class="fa fa-send mr-5"></i> 立即添加
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- END Bootstrap Contact -->
+    </div>
+</div>
+{/block}
+{block name="footjs"}
+<script>
+    $("#submit").click(function () {
+        var cont = $("form").serialize();
+        layer.load(2, {shade: [0.1, '#fff']});
+        $.ajax({
+            url: "/{:ADMIN_DIR}/user/insert",
+            type: 'post',
+            dataType: 'json',
+            data: cont,
+            success: function (res) {
+                layer.closeAll();
+                if (res == '添加成功') {
+                    layer.alert(res, {icon: 6}, function () {
+                        location.href = "/{:ADMIN_DIR}/user/index";
+                    });
+                } else {
+                    layer.msg(res, {icon: 5});
+                }
+            },
+            timeout: 10000,
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                layer.closeAll();
+                if (textStatus == "timeout") {
+                    layer.msg('请求超时！');
+                } else {
+                    layer.msg('服务器错误！');
+                }
+            }
+        });
+    });
+</script>
+{/block}

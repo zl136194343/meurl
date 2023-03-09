@@ -1,0 +1,288 @@
+{extend name="base"/}
+{block name="resources"}
+<style>
+    .flex{display: flex;flex-wrap: wrap;}
+    .flex .layui-form-item{width:50%}
+    .ns-form-row{margin: 20px auto;}
+    .layui-tab-brief li{border-bottom: 3px solid #FFFFFF;}
+    .layui-tab-brief li.layui-this{border-bottom: 3px solid #ff6a00;}
+    .panel-content { padding-left: 15px; box-sizing: border-box; }
+    .ns-custom-panel .custom-panel-title .panel-content { width: calc(100% - 190px); }
+    .ns-account-value, .ns-split { line-height: 34px; }
+    .ns-custom-panel .custom-panel-from { display: flex; }
+    .ns-custom-panel .custom-panel-from .layui-form-label{
+        text-align: center;
+    }
+    .ns-custom-panel .custom-panel-from>div{
+        text-align: center;
+    }
+    .ns-custom-panel .custom-panel-from .layui-form-item>div>span{
+        margin-right: 10px;
+    }
+    .ns-custom-panel .custom-panel-from .layui-form-item>div>button{
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        padding: 0;
+        line-height: 20px;
+        border:0;
+        color:#FF6A00 ;
+    }
+    .layui-input-block + .layui-word-aux {
+        display: block;
+        margin-left: 100px;
+    }
+    .ns-admin-account {
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    .ns-admin-detail p {
+        display: inline-block;
+        width: 300px;
+        line-height: 30px;
+    }
+</style>
+{/block}
+{block name="main"}
+<div class="layui-card ns-card-common ns-card-brief">
+    <div class="layui-card-header">
+        <span class="ns-card-title">资讯信息</span>
+    </div>
+    <div class="layui-card-body">
+        <div class="layui-form-item">
+            <label class="layui-form-label ns-company-name">标题：</label>
+            <div class="layui-input-inline">
+                <input name="title" type="text" id="title" class="layui-input ns-len-long" value="{$verify_state.data.title}"  autocomplete="off">
+
+            </div>
+        </div>
+        
+        
+        	<div class="layui-form-item">
+		<label class="layui-form-label img-upload-lable">封面图：</label>
+		<div class="layui-input-block img-upload">
+			<div class="upload-img-block">
+				<div class="upload-img-box {notempty name="$verify_state['data']['cover_img']"}hover{/notempty}">
+					<div class="ns-upload-default" id="logoUpload">
+						{notempty name="$verify_state.data.cover_img"}
+						<div id="preview_logoUpload" class="preview_img">
+							<img layer-src src="{:img($verify_state.data.cover_img)}" class="img_prev"/>
+						</div>
+						{else/}
+						<div class="upload">
+							<img src="SHOP_IMG/upload_img.png" data-id="logoUpload"/>
+							<p>点击上传</p>
+						</div>
+						{/notempty}
+					</div>
+					<div class="operation">
+						<div>
+							<i title="图片预览" class="iconfont iconreview js-preview" style="margin-right: 20px;"></i>
+							<i title="删除图片" class="layui-icon layui-icon-delete js-delete"></i>
+						</div>
+						<div class="replace_img js-replace">点击替换</div>
+					</div>
+					<input type="hidden" id="logo" name="logo" value="{$verify_state.data.cover_img}"/>
+				</div>
+			</div>
+		</div>
+
+		<div class="ns-word-aux">
+			<p>建议图片尺寸：800x800像素；图片格式：jpg、png、jpeg。</p>
+		</div>
+	</div>
+        
+        <div class="layui-form-item">
+            <label class="layui-form-label">资讯详情：</label>
+            <div class="layui-input-inline ns-special-length">
+                <input type="hidden" name="goods_content" value="{$verify_state.data.content}" />
+                <script id="editor" type="text/plain" style="width:100%;height:500px;"></script>
+            </div>
+        </div>
+            <script type="text/javascript" charset="utf-8" src="__STATIC__/ext/ueditor/ueditor.config.js"></script>
+            <script type="text/javascript" charset="utf-8" src="__STATIC__/ext/ueditor/ueditor.all.js"> </script>
+            <script type="text/javascript" charset="utf-8" src="__STATIC__/ext/ueditor/lang/zh-cn/zh-cn.js"></script>
+
+        <script>
+            UE.registerUI('dialog', function(editor, uiName) {
+                var btn = new UE.ui.Button({
+                    name: 'xiumi-connect',
+                    title: 'ç§€ç±³',
+                    onclick: function() {
+                        var dialog = new UE.ui.Dialog({
+                            iframeUrl: 'xiumiUeDialogV5.html',
+                            editor: editor,
+                            name: 'xiumi-connect',
+                            title: "ç§€ç±³å›¾æ–‡æ¶ˆæ¯åŠ©æ‰‹",
+                            cssRules: "width: " + (window.innerWidth - 60) + "px;" + "height: " + (window.innerHeight - 60) + "px;",
+                        });
+                        dialog.render();
+                        dialog.open();
+                    }
+                });
+                return btn;
+            });
+        </script>
+        <link rel="stylesheet" href="./xiumi-ue-v5.css">
+        <style>
+            .edui-button.edui-for-xiumi-connect .edui-button-wrap .edui-button-body .edui-icon {
+                background-image: url("https://dl.xiumi.us/connect/ue/xiumi-connect-icon.png") !important;
+                background-size: contain;
+            }javascript:;
+        </style>
+        <div class="layui-form-item">
+            <label class="layui-form-label"><span class="required">*</span>是否推荐：</label>
+            <div class="layui-input-block" id="stustas">
+                <input type="radio" name="stustas" value="0" title="推荐" {$verify_state.data.status == 0 ? 'checked' : ''}>推荐
+                <input type="radio" name="stustas" value="1" title="不推荐" {$verify_state.data.status == 1 ? 'checked' : ''}>不推荐
+            </div>
+
+        </div>
+    </div>
+    <div class="ns-single-filter-box">
+        <div class="ns-form-row">
+            <button class="layui-btn ns-bg-color" lay-submit lay-filter="save">保存</button>
+            <button class="layui-btn layui-btn-primary" onclick="back()">返回</button>
+        </div>
+    </div>
+</div>
+
+<div class="layui-card-body">
+
+</div>
+<!-- 隐藏域 -->
+<input type="hidden" name="con_id" id="con_id" value="{$verify_state.data.id}" />
+</div>
+
+
+{/block}
+{block name="script"}
+<script>
+    $(function() {
+        goodsContent = UE.getEditor('editor');
+        goodsContent.ready(function () {
+            goodsContent.setContent($("input[name='goods_content']").val());
+        });
+    })
+    layui.use(['form'], function() {
+        var form = layui.form,
+               /* indexs = layui.layedit.build('demo'),
+                layedit = layui.layedit,*/
+                $ = layui.jquery,
+                payType = 1, //结算类型
+                autotrophy = 0,//自营类型
+                repeat_flag = false; //防重复标识
+
+        form.render();
+
+
+
+        form.on('submit(save)', function(data){
+            //添加
+
+//          data.field.content =layedit.getContent(indexs);
+            data.field.id =$('#con_id').val();
+//            data.field.title =$('#title').val();
+            data.field.title =$('#title').val();
+            data.field.stustas =$('input:radio:checked').val();
+            data.field.logo =$('#logo').val();
+            var goods_content = goodsContent.getContent();
+            data.field.content = goods_content;
+            $.ajax({
+                type: 'POST',
+                url: ns.url("admin/consulting/uploadStatus"),
+                data: data.field,
+                dataType: 'JSON',
+                success: function(res) {
+                    repeat_flag = false;
+                    if (res.code == 0) {
+                        layer.confirm('修改成功', {
+                            title:'操作提示',
+                            btn: ['返回列表'],
+                            yes: function(){
+                                location.href = ns.url("admin/consulting/lists")
+                            },
+                            btn2: function() {
+                                location.href = ns.url("admin/consulting/addCon")
+                            }
+                        });
+                    } else {
+                        layer.msg(res.message);
+                    }
+                }
+            });
+        });
+
+        /**
+         * select监听
+         */
+
+
+        /**
+         * 表单验证
+         */
+        form.verify({
+            mobile: function(value) {
+                var reg = /^1([38][0-9]|4[579]|5[0-3,5-9]|6[6]|7[0135678]|9[89])\d{8}$/;
+                if (value == '') {
+                    return;
+                }
+                if (!reg.test(value)) {
+                    return '请输入正确的手机号码!';
+                }
+            },
+            idcard: function(value) {
+                var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+                if (value == '') {
+                    return;
+                }
+                if (!reg.test(value)) {
+                    return '请输入正确的身份证号!';
+                }
+            },
+            bankprovince: function(value){
+                if (value == -1) return '请选择省';
+            },
+            bankcity: function(value){
+                if (value == -1) return '请选择市';
+            },
+            bankdistrict: function(value, item){
+                if (value == -1 && $(item).find('option').length > 1) return '请选择区县';
+            },
+        })
+
+    });
+
+    function back() {
+        location.href = ns.url("admin/consulting/lists");
+    }
+    
+    var logo_upload = new Upload({
+			elem: '#logoUpload'
+		});
+
+		// 店铺头像
+		var avatar_upload = new Upload({
+			elem: '#avatarUpload'
+		});
+
+		// 店铺大图
+		var banner_upload = new Upload({
+			elem: '#bannerUpload'
+		});
+</script>
+
+<!-- 积分弹框html -->
+
+<!-- 余额弹框html -->
+
+<!-- 余额（可提现）弹框html -->
+
+
+<!-- 成长值弹框html -->
+
+{/block}

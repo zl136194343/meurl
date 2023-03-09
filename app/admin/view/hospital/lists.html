@@ -1,0 +1,350 @@
+{extend name="base"/}
+{block name="resources"}
+<style>
+    .ns-screen{margin-bottom: 15px;}
+    .contraction span {
+        cursor: pointer;
+        display: inline-block;
+        width: 17px;
+        height: 17px;
+        text-align: center;
+        line-height: 14px;
+        user-select: none;
+    }
+    .store-list {
+        overflow: hidden;
+        padding: 0 45px;
+    }
+    .store-list li .img-wrap {
+        vertical-align: middle;
+        margin-right: 8px;
+        width: 120px;
+        height: 120px;
+        text-align: center;
+        line-height: 120px;
+    }
+    .store-list li .img-wrap img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    .store-list li .info-wrap span.sku-name {
+        -webkit-line-clamp: 2;
+        margin-bottom: 5px;
+    }
+    .store-list li .info-wrap span {
+        display: -webkit-box;
+        margin-bottom: 5px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+        word-break: break-all;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+    }
+    .store-list li {
+        float: left;
+        display: flex;
+        padding: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #EFEFEF;
+        width: 294px;
+        height: 140px;
+        align-items: center;
+    }
+    .img_block_sty{
+        width:30% !important;
+        height:90px !important;
+        line-height: 0px !important;
+    }
+    .img_block_sty img{
+        width:100%;
+        height:100%;
+    }
+    .info_block_sty{
+        width:70% !important;
+        height:90px !important;
+    }
+    .change_lines{
+        box-sizing: content-box;
+    }
+    .change_line{
+        width:100%;
+        height:auto;
+        white-space:normal;
+        margin-top: 10px;
+        font-size:13px;
+    }
+</style>
+
+{/block}
+{block name="main"}
+<div class="layui-collapse ns-tips">
+    <div class="layui-colla-item">
+        <h2 class="layui-colla-title">操作提示</h2>
+        <ul class="layui-colla-content layui-show">
+            <li>当前页面对咨询信息进行管理，可以添加咨询信息，查看咨询信息等。</li>
+        </ul>
+    </div>
+</div>
+
+<div class="ns-single-filter-box">
+    <button class="layui-btn ns-bg-color" onclick="clickAdd()">添加园所</button>
+</div>
+
+<form class="layui-colla-content layui-form layui-show">
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">园所名称：</label>
+            <div class="layui-input-inline">
+                <input type="text" id="search_text" name="title" placeholder="请输入咨询名称" class="layui-input">
+            </div>
+        </div>
+
+    </div>
+    <div class="ns-form-row">
+        <button class="layui-btn ns-bg-color" lay-submit lay-filter="search">筛选</button><!--
+        <button class="layui-btn ns-bg-color" lay-submit lay-filter="export">导出</button>-->
+        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+    </div>
+
+</form>
+
+<!-- 门店内容 -->
+<script type="text/html" id="storeList">
+    <tr class="js-list-{{d.index}}" id="store_img_{{d.index}}">
+
+        <td colspan="11">
+
+            <ul class="store-list">
+                {{# if(d.list.length > 0){ }}
+                {{# for(var i=0; i< d.list.length; i++){ }}
+                <li>
+                    <div class="img-wrap img_block_sty">
+                        {{# if(d.list[i].store_image){  }}
+                        <img layer-src src="{{ns.img(d.list[i].store_image)}}">
+                        {{# }else{ }}
+                        <img layer-src src="{:img($default_img.default_store_img)}" alt="">
+                        {{# } }}
+                    </div>
+                    <div class="info-wrap info_block_sty">
+                        <span class="sku-name">{{d.list[i].store_name}}</span>
+                        <span class="price">地址：{{ d.list[i].full_address}} {{  d.list[i].address }} </span>
+                        <span class="create_time">创建时间：{{ ns.time_to_date(d.list[i].create_time) }} </span>
+                    </div>
+                </li>
+                {{# } }}
+
+                {{# }else{ }}
+                暂无门店
+                {{# } }}
+            </ul>
+        </td>
+    </tr>
+</script>
+
+
+
+
+<table id="shop_list" lay-filter="shop_list"></table>
+
+
+<!-- 是否自营 -->
+
+
+<!-- 状态 -->
+<script type="text/html" id="status">
+
+</script>
+
+<!-- 工具栏操作 -->
+<script type="text/html" id="action">
+    <div class="ns-table-btn">
+
+    </div>
+</script>
+
+<!--商家名称-->
+<script type="text/html" id="site_name">
+    <div class="ns-table-title">
+        <div class="contraction" data-id="{{d.site_id}}" data-open="0">
+            <span>+</span>
+        </div>
+        <div class="ns-title-content">{{ d.site_name }}</div>
+    </div>
+</script>
+{/block}
+
+{block name="script"}
+<script>
+    var laytpl;
+    $(function () {
+        $("body").on("click", ".contraction", function () {
+
+            var site_id = $(this).attr("data-id");
+            var open = $(this).attr("data-open");
+            var tr = $(this).parent().parent().parent().parent();
+            var index = tr.attr("data-index");
+            if (open == 1) {
+                $(this).children("span").text("+");
+                $(".js-list-" + index).remove();
+            } else {
+                $(this).children("span").text("-");
+                $.ajax({
+                    url: ns.url("shop/consulting/lists"),
+                    data: {site_id: site_id},
+                    dataType: 'JSON',
+                    type: 'POST',
+                    async: false,
+                    success: function (res) {
+                        var store_list = $("#storeList").html();
+                        var data = {
+                            list: res.data.list,
+                            index: index
+                        };
+                        laytpl(store_list).render(data, function (html) {
+                            tr.after(html);
+                        });
+                        layer.photos({
+                            photos: '.img-wrap',
+                            anim: 5
+                        });
+                    }
+                });
+            }
+            $(this).attr("data-open", (open == 0 ? 1 : 0));
+        });
+        layui.use(['form', 'laydate','laytpl'], function() {
+            laytpl = layui.laytpl;
+            var table, table_website,
+                    form = layui.form,
+                    laydate = layui.laydate;
+            form.render();
+
+            //渲染时间
+            laydate.render({
+                elem: '#create_time',
+                type: 'datetime'
+            });
+
+            laydate.render({
+                elem: '#modify_time',
+                type: 'datetime'
+            });
+
+            /**
+             * 渲染表格
+             */
+            table = new Table({
+                elem: '#shop_list',
+                url: ns.url("admin/hospital/lists"),
+                cols: [
+                    [{   field:'hospital_name',
+                        title: '园所名称',
+                        width: '10%',
+                        unresize: 'false',
+                        templet: '#hospital_name'
+
+                    }, {
+                        field: 'hospital_img',
+                        title: '头像',
+                        width: '10%',
+                        unresize: 'false',
+
+                        templet: function(data) {
+                return '<span style="color: red"><img src="'+ns.img(data.hospital_img)+'"alt=""></span>' ;
+            }
+                    }, {
+                        field: 'create_time',
+                        title: '创建时间',
+                        width: '10%',
+                        unresize: 'false',
+                        templet: function(data) {
+                            return ns.time_to_date(data.create_time);
+                        }
+                    },{
+                        title: '操作',
+                        width: '18%',
+                        field: '#action',
+                        unresize: 'false',
+                        templet: function(data) {
+                            return '<a class="layui-btn" lay-event="basic">编辑</a><a class="layui-btn" style="display: inline-block;" href="javascript:deleteCategory('+data.hospital_id+');">删除</a>' ;
+                        }
+
+                    }]
+                ]
+            });
+
+            /**
+             * 搜索功能
+             */
+            form.on('submit(search)', function(data) {
+                table.reload({
+                    page: {
+                        curr: 1
+                    },
+                    where: data.field
+                });
+                return false;
+            });
+
+            // 城市分站
+            form.on('submit(search_website)', function(data) {
+                table_website.reload({
+                    page: {
+                        curr: 1
+                    },
+                    where: data.field
+                });
+                return false;
+            });
+
+            //批量导出
+            form.on('submit(export)', function(data){
+                data.field.order_type = 1;
+                location.href = ns.url("shop/shop/exportShop",data.field);
+                return false;
+            });
+
+            /**
+             * 监听工具栏操作
+             */
+            table.tool(function(obj) {
+                var data = obj.data,
+                        event = obj.event;
+                switch (event) {
+                    case 'basic': //基本信息
+                        location.href = ns.url("admin/hospital/editHos" + "?hospital_id=" +  data.hospital_id);
+                        break;
+
+                }
+            });
+
+
+        });
+
+    });
+    function deleteCategory(con_id) {
+
+        layer.confirm('确定要删除吗', function() {
+            $.ajax({
+                url: ns.url("admin/hospital/deleteHos"),
+                data: {hospital_id : con_id},
+                dataType: 'JSON',
+                type: 'POST',
+                async: false,
+                success: function (res) {
+                    layer.msg(res.message);
+                    if (res.code == 0) {
+                        location.reload();
+                    }
+                }
+            });
+        });
+    }
+    function clickAdd() {
+        location.href = ns.url("admin/hospital/addCon");
+    }
+
+</script>
+{/block}

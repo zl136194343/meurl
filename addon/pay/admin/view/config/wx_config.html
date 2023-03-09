@@ -1,0 +1,119 @@
+{extend name='common/default'/}
+{block name="main"}
+<div class="row">
+    <div class="col-md-12">
+        <div class="block block-themed block-rounded block-shadow">
+            <div class="block-header block-header-default bg-gd-sea">
+                <h3 class="block-title">{$title}</h3>
+                <div class="block-options">
+                    <button type="button" class="btn-block-option">
+                        <i class="si si-wrench"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="block-content">
+                <form>
+                    <div class="form-group row">
+                        <label class="col-12" for="example-text-input">mch_id</label>
+                        <div class="col-md-12">
+                            <input type="text" class="form-control" name="wx_mchid" value="{:config('wx_mchid')}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-12" for="example-text-input">key</label>
+                        <div class="col-md-12">
+                            <input type="text" class="form-control" name="wx_key" value="{:config('wx_key')}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-12" for="example-text-input">apiv3_key</label>
+                        <div class="col-md-12">
+                            <input type="text" class="form-control" name="wx_apiv3_key" value="{:config('wx_apiv3_key')}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-12" for="example-text-input">证书路径</label>
+                        <div class="col-md-12">
+                            <input type="text" class="form-control" name="wx_cert_path" value="{:config('wx_cert_path')}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-12" for="example-text-input">密钥路径</label>
+                        <div class="col-md-12">
+                            <input type="text" class="form-control" name="wx_key_path" value="{:config('wx_key_path')}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-12" for="example-text-input">服务商绑定APPID</label>
+                        <div class="col-md-12">
+                            <input type="text" class="form-control" name="wx_appid" value="{:config('wx_appid')}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-12" for="example-text-input">支付通用APPID</label>
+                        <div class="col-md-12">
+                            <input type="text" class="form-control" name="wx_pay_appid" value="{:config('wx_pay_appid')}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-12" for="example-text-input">支付通用AppSecret</label>
+                        <div class="col-md-12">
+                            <input type="text" class="form-control" name="wx_pay_secret" value="{:config('wx_pay_secret')}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-12" for="example-text-input">用户入驻微信官方费率</label>
+                        <div class="col-md-12">
+                            <input type="text" class="form-control" name="wx_rate" value="{:config('wx_rate')}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-12" for="example-text-input">默认服务费</label>
+                        <div class="col-md-12">
+                            <input type="text" class="form-control" name="wx_default_rate" value="{:config('wx_default_rate')}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-12">
+                            <button type="button" id="submit" class="btn btn-alt-primary">保存</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+{block name="footjs"}
+<script>
+    $('#submit').click(function () {
+        var cont = $("input,textarea,select").serialize();
+        layer.load(2, {shade: [0.1, '#fff']});
+        $.ajax({
+            type: "POST",
+            url: "/{:ADMIN_DIR}{:url('/do_config')}",
+            data: cont,
+            dataType: 'json',
+            success: function (data) {
+                layer.closeAll();
+                if (data.code == 1) {
+                    layer.alert(data.msg, {icon: 6}, function () {
+                        window.location.href = "/{:ADMIN_DIR}{:url('/wx_config')}";
+                    });
+                } else {
+                    layer.alert(data.msg, {icon: 5});
+                }
+            },
+            timeout: 10000,
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                layer.closeAll();
+                if (textStatus == "timeout") {
+                    layer.msg('请求超时！');
+                } else {
+                    layer.msg('服务器错误！');
+                }
+            }
+        });
+    });
+</script>
+{/block}

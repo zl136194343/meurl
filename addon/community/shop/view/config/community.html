@@ -1,0 +1,105 @@
+{extend name="base"/}
+{block name="resources"}
+{/block}
+{block name="main"}
+<div class="layui-form">
+	<div class="layui-card ns-card-common ns-card-brief">
+		<div class="layui-card-header">
+			<span class="ns-card-title">社区订单发货设置</span>
+		</div>
+		<div class="layui-card-body">
+			<div class="layui-form-item">
+				<label class="layui-form-label">发货的下单时间点：</label>
+				<div class="layui-input-inline">
+					<input type="text" class="layui-input" id="book_time" placeholder="请选择时间" autocomplete="off" value="{if $trade.book_time} {$trade.book_time} {/if}" readonly>
+					<i class="ns-calendar"></i>
+					<input type="hidden" class="layui-input book-time" name="book_time">
+				</div>
+				<div class="ns-word-aux">例：发货下单时间点12:00，那么12:00前下单按照当日达规则，可在当日的提货时间进行提货，否则在顺延的第二日进行提货。</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">提货时间点：</label>
+				<div class="layui-input-inline">
+					<input type="text" class="layui-input" id="pickup_time" placeholder="请选择时间" autocomplete="off" value="{if $trade.pickup_time} {$trade.pickup_time} {/if}" readonly>
+					<i class="ns-calendar"></i>
+					<input type="hidden" class="layui-input pickup-time" name="pickup_time">
+				</div>
+				<div class="ns-word-aux">若发货时间类型是当日达，那么提货时间点必须晚于下单时间点。</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">发货时间类型：</label>
+				<div class="layui-input-block">
+					<div class="layui-input-inline">
+						<input type="radio" name="delivery_type" value="1" title="当日达" autocomplete="off" class="layui-input ns-len-long" {if $trade.delivery_type == 1} checked {/if}>
+						<input type="radio" name="delivery_type" value="2" title="次日达" autocomplete="off" class="layui-input ns-len-long" {if $trade.delivery_type == 2} checked {/if}>
+						<input type="radio" name="delivery_type" value="3" title="隔日达" autocomplete="off" class="layui-input ns-len-long" {if $trade.delivery_type == 3} checked {/if}>
+					</div>
+				</div>
+				<div class="ns-word-aux">下单按照当前类型生成预计到达时间</div>
+			</div>
+
+			<div class="ns-form-row">
+				<button class="layui-btn ns-bg-color" lay-submit lay-filter="save">保存</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+{/block}
+{block name="script"}
+<script>
+	var bookTime = "{$trade.book_time}", pickupTime = "{$trade.pickup_time}";
+	if (Number(bookTime)){
+		$("#book_time").val(ns.time_to_date(bookTime, "h:m:s"));
+		$(".book-time").val(bookTime);
+	}
+
+	if (Number(pickupTime)){
+		$("#pickup_time").val(ns.time_to_date(pickupTime, "h:m:s"));
+		$(".pickup-time").val(pickupTime);
+	}
+	layui.use(['form', 'laydate'], function() {
+		var form = layui.form, laydate = layui.laydate, repeat_flag = false; //防重复标识
+		form.render();
+
+		// 时间渲染
+		laydate.render({
+			elem: '#book_time',
+			type: 'time',
+			done: function(value, date){
+				$(".book-time").val(ns.date_to_time(date.year + "-" + date.month + "-" + date.date + " " + date.hours + ":" + date.minutes + ":" + date.seconds))
+			}
+		});
+
+		//获取 - 结束时间
+		laydate.render({
+			elem: '#pickup_time',
+			type: 'time',
+			done: function(value, date){
+				$(".pickup-time").val(ns.date_to_time(date.year + "-" + date.month + "-" + date.date + " " + date.hours + ":" + date.minutes + ":" + date.seconds))
+			}
+		});
+
+		form.on('submit(save)', function(data) {
+			if (repeat_flag) return;
+			repeat_flag = true;
+
+			$.ajax({
+				type: 'POST',
+				url: ns.url("community://shop/config/community"),
+				data: data.field,
+				dataType: 'JSON',
+				success: function(res) {
+					repeat_flag = false;
+					if (res.code == 0 && !res.message) {
+						location.reload();
+						return;
+					}
+					layer.msg(res.message);
+				}
+			});
+		});
+
+	});
+</script>
+{/block}

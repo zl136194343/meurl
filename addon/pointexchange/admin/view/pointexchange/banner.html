@@ -1,0 +1,257 @@
+{extend name="app/admin/view/base.html"/}
+{block name="resources"}
+{/block}
+{block name="main"}
+<div class="layui-collapse ns-tips">
+    <div class="layui-colla-item">
+        <h2 class="layui-colla-title">操作提示</h2>
+        <ul class="layui-colla-content layui-show">
+            <li>站点设置包括网站的基本信息设置，SEO设置以及网站官方联系方式等</li>
+            <li>可根据SEO设置优化网站排名</li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-form ns-form">
+
+
+    <div class="layui-form-item">
+        <label class="layui-form-label img-upload-lable">轮播1：</label>
+        <div class="layui-input-block">
+            <div class="upload-img-block img-upload">
+                <div class="upload-img-box {notempty name="$config['banner1']"}hover{/notempty}"">
+                <div class="ns-upload-default" id="banner1">
+                    {if condition="$config.banner1"}
+                    <div id="preview_webLogoUpload" class="preview_img">
+                        <img layer-src src="{:img($config.banner1)}" class="img_prev"/>
+                    </div>
+                    {else/}
+                    <div class="upload">
+                        <img src="ADMIN_IMG/upload_img.png"/>
+                        <p>点击上传</p>
+                    </div>
+                    {/if}
+
+                </div>
+                <div class="operation">
+                    <div>
+                        <i title="图片预览" class="iconfont iconreview js-preview" style="margin-right: 20px;"></i>
+                        <i title="删除图片" class="layui-icon layui-icon-delete js-delete"></i>
+                    </div>
+
+                    <div class="replace_img js-replace">点击替换</div>
+                </div>
+                <input type="hidden" name="banner1" value="{$config.banner1}">
+            </div>
+        </div>
+    </div>
+    <div class="ns-word-aux">积分商城轮播，最佳显示尺寸为750px*30px</div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label img-upload-lable">轮播2：</label>
+        <div class="layui-input-block">
+            <div class="upload-img-block img-upload">
+                <div class="upload-img-box {notempty name="$config['banner2']"}hover{/notempty}"">
+                <div class="ns-upload-default" id="banner2">
+                    {if condition="$config.banner2"}
+                    <div id="preview_webLogoUpload" class="preview_img">
+                        <img layer-src src="{:img($config.banner2)}" class="img_prev"/>
+                    </div>
+                    {else/}
+                    <div class="upload">
+                        <img src="ADMIN_IMG/upload_img.png"/>
+                        <p>点击上传</p>
+                    </div>
+                    {/if}
+
+                </div>
+                <div class="operation">
+                    <div>
+                        <i title="图片预览" class="iconfont iconreview js-preview" style="margin-right: 20px;"></i>
+                        <i title="删除图片" class="layui-icon layui-icon-delete js-delete"></i>
+                    </div>
+
+                    <div class="replace_img js-replace">点击替换</div>
+                </div>
+                <input type="hidden" name="banner2" value="{$config.banner2}">
+            </div>
+        </div>
+    </div>
+    <div class="ns-word-aux">积分商城轮播，最佳显示尺寸为750px*30px</div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label img-upload-lable">轮播3：</label>
+        <div class="layui-input-block">
+            <div class="upload-img-block img-upload">
+                <div class="upload-img-box {notempty name="$config['banner3']"}hover{/notempty}"">
+                <div class="ns-upload-default" id="banner3">
+                    {if condition="$config.banner3"}
+                    <div id="preview_webLogoUpload" class="preview_img">
+                        <img layer-src src="{:img($config.banner3)}" class="img_prev"/>
+                    </div>
+                    {else/}
+                    <div class="upload">
+                        <img src="ADMIN_IMG/upload_img.png"/>
+                        <p>点击上传</p>
+                    </div>
+                    {/if}
+
+                </div>
+                <div class="operation">
+                    <div>
+                        <i title="图片预览" class="iconfont iconreview js-preview" style="margin-right: 20px;"></i>
+                        <i title="删除图片" class="layui-icon layui-icon-delete js-delete"></i>
+                    </div>
+
+                    <div class="replace_img js-replace">点击替换</div>
+                </div>
+                <input type="hidden" name="banner3" value="{$config.banner3}">
+            </div>
+        </div>
+    </div>
+    <div class="ns-word-aux">积分商城轮播，最佳显示尺寸为750px*30px</div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label img-upload-lable">轮播4：</label>
+        <div class="layui-input-block">
+            <div class="upload-img-block img-upload">
+                <div class="upload-img-box {notempty name="$config['banner4']"}hover{/notempty}"">
+                <div class="ns-upload-default" id="banner4">
+                    {if condition="$config.banner4"}
+                    <div id="preview_webLogoUpload" class="preview_img">
+                        <img layer-src src="{:img($config.banner4)}" class="img_prev"/>
+                    </div>
+                    {else/}
+                    <div class="upload">
+                        <img src="ADMIN_IMG/upload_img.png"/>
+                        <p>点击上传</p>
+                    </div>
+                    {/if}
+
+                </div>
+                <div class="operation">
+                    <div>
+                        <i title="图片预览" class="iconfont iconreview js-preview" style="margin-right: 20px;"></i>
+                        <i title="删除图片" class="layui-icon layui-icon-delete js-delete"></i>
+                    </div>
+
+                    <div class="replace_img js-replace">点击替换</div>
+                </div>
+                <input type="hidden" name="banner4" value="{$config.banner4}">
+            </div>
+        </div>
+    </div>
+    <div class="ns-word-aux">积分商城轮播，最佳显示尺寸为750px*30px</div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label img-upload-lable">轮播5：</label>
+        <div class="layui-input-block">
+            <div class="upload-img-block img-upload">
+                <div class="upload-img-box {notempty name="$config['banner5']"}hover{/notempty}"">
+                <div class="ns-upload-default" id="banner5">
+                    {if condition="$config.banner5"}
+                    <div id="preview_webLogoUpload" class="preview_img">
+                        <img layer-src src="{:img($config.banner5)}" class="img_prev"/>
+                    </div>
+                    {else/}
+                    <div class="upload">
+                        <img src="ADMIN_IMG/upload_img.png"/>
+                        <p>点击上传</p>
+                    </div>
+                    {/if}
+
+                </div>
+                <div class="operation">
+                    <div>
+                        <i title="图片预览" class="iconfont iconreview js-preview" style="margin-right: 20px;"></i>
+                        <i title="删除图片" class="layui-icon layui-icon-delete js-delete"></i>
+                    </div>
+
+                    <div class="replace_img js-replace">点击替换</div>
+                </div>
+                <input type="hidden" name="banner5" value="{$config.banner5}">
+            </div>
+        </div>
+    </div>
+    <div class="ns-word-aux">积分商城轮播，最佳显示尺寸为750px*30px</div>
+    </div>
+
+
+    <div class="ns-form-row">
+        <button class="layui-btn ns-bg-color" lay-submit lay-filter="save">保存</button>
+    </div>
+</div>
+{/block}
+{/block}
+{block name="script"}
+<script>
+    layui.use(['form'], function() {
+        var form = layui.form,
+            repeat_flag = false; //防重复标识
+        form.render();
+        form.on('submit(save)', function(data) {
+            if (data.field.web_status == undefined) {
+                data.field.web_status = 0;
+            }
+
+            if (data.field.wap_status == undefined) {
+                data.field.wap_status = 0;
+            }
+
+            if (repeat_flag) return;
+            repeat_flag = true;
+
+            //图片删除
+            if(!data.field.banner1) banner1.delete();
+            if(!data.field.banner2) banner2.delete();
+            if(!data.field.banner3) banner3.delete();
+            if(!data.field.banner4) banner4.delete();
+            if(!data.field.banner5) banner5.delete();
+
+
+            $.ajax({
+                type: 'POST',
+                dataType: 'JSON',
+                url: ns.url("pointexchange://admin/pointexchange/banner"),
+                data: data.field,
+                success: function(res) {
+                    layer.msg(res.message);
+                    if (res.code == 0) {
+                        location.reload();
+                    }else{
+                        repeat_flag = false;
+                    }
+                }
+            });
+        });
+
+        // 上传logo
+        var banner1 = new Upload({
+            elem: '#banner1',
+            url: ns.url("admin/upload/upload"),
+        });
+        var banner2 = new Upload({
+            elem: '#banner2',
+            url: ns.url("admin/upload/upload"),
+        });
+        var banner3 = new Upload({
+            elem: '#banner3',
+            url: ns.url("admin/upload/upload"),
+        });
+        var banner4 = new Upload({
+            elem: '#banner4',
+            url: ns.url("admin/upload/upload"),
+        });
+        var banner5 = new Upload({
+            elem: '#banner5',
+            url: ns.url("admin/upload/upload"),
+        });
+
+
+    });
+</script>
+{/block}

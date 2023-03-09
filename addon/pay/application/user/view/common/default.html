@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="zh" class="no-focus">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>{$title} - {:config('sitename')}</title>
+    <link rel="stylesheet" id="css-main" href="/static/css/codebase.min.css">
+</head>
+<body>
+<div id="page-container"
+     class="sidebar-o sidebar-inverse enable-page-overlay side-scroll page-header-fixed main-content-boxed side-trans-enabled">
+    <nav id="sidebar">
+        <div class="sidebar-content">
+            <div class="content-header content-header-fullrow px-15">
+                <div class="content-header-section sidebar-mini-visible-b">
+                    <span class="content-header-item font-w700 font-size-xl float-left animated fadeIn">
+                                <span class="text-dual-primary-dark">c</span><span class="text-primary">b</span>
+                            </span>
+                </div>
+                <div class="content-header-section text-center align-parent sidebar-mini-hidden">
+                    <button type="button" class="btn btn-circle btn-dual-secondary d-lg-none align-v-r"
+                            data-toggle="layout" data-action="sidebar_close">
+                        <i class="fa fa-times text-danger"></i>
+                    </button>
+                    <div class="content-header-item">
+                        <a class="link-effect font-w700" href="index.html">
+                            <i class="si si-fire text-primary"></i>
+                            <span class="font-size-xl text-primary">{:config('sitename')}</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="content-side content-side-full content-side-user px-10 align-parent">
+                <div class="sidebar-mini-visible-b align-v animated fadeIn">
+                    <img class="img-avatar img-avatar32"
+                         src="http://q2.qlogo.cn/headimg_dl?bs=qq&dst_uin={$uinfo.qq}&spec=100" alt="">
+                </div>
+                <div class="sidebar-mini-hidden-b text-center">
+                    <a class="img-link" href="/{:USER_DIR}/info">
+                        <img class="img-avatar" src="http://q2.qlogo.cn/headimg_dl?bs=qq&dst_uin={$uinfo.qq}&spec=100"
+                             alt="">
+                    </a>
+                    <ul class="list-inline mt-10">
+                        <li class="list-inline-item">
+                            <a class="link-effect text-dual-primary-dark font-size-xs font-w600 text-uppercase"
+                               href="/{:USER_DIR}/info">{$uinfo.uname}</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="link-effect text-dual-primary-dark" data-toggle="layout"
+                               data-action="sidebar_style_inverse_toggle" href="javascript:void(0)">
+                                <i class="si si-drop"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="link-effect text-dual-primary-dark" onclick="logout()">
+                                <i class="si si-logout"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content-side content-side-full">
+                <ul class="nav-main">
+                    <li>
+                        <a href="/{:USER_DIR}{:url('/index')}"><i class="si si-cup"></i><span class="sidebar-mini-hide">用户中心</span></a>
+                    </li>
+                    <li class="nav-main-heading"><span class="sidebar-mini-visible">UI</span><span
+                            class="sidebar-mini-hidden">消费</span></li>
+                    <li>
+                        <a href="/{:USER_DIR}{:url('/recharge')}"><i class="fa fa-rmb"></i><span class="sidebar-mini-hide">余额充值</span></a>
+                    </li>
+                    <li>
+                        <a href="/{:USER_DIR}{:url('/recharge_list')}"><i class="fa fa-rouble"></i><span class="sidebar-mini-hide">充值记录</span></a>
+                    </li>
+                    <li>
+                        <a href="/{:USER_DIR}{:url('/vip')}"><i class="si si-basket"></i><span class="sidebar-mini-hide">办理会员</span></a>
+                    </li>
+                    <li>
+                        <a href="/{:USER_DIR}{:url('/invite')}"><i class="si si-badge"></i><span class="sidebar-mini-hide"><font color="red">邀请返利</font></span></a>
+                    </li>
+                    <li class="nav-main-heading"><span class="sidebar-mini-visible">UI</span><span
+                            class="sidebar-mini-hidden">管理</span></li>
+                    <li>
+                        <a href="/{:USER_DIR}{:url('/wechart_add')}"><i class="si si-control-forward"></i><span class="sidebar-mini-hide">商户入驻</span></a>
+                    </li>
+                    <li>
+                        <a href="/{:USER_DIR}{:url('/wechart')}"><i class="si si-list"></i><span class="sidebar-mini-hide">商户列表</span></a>
+                    </li>
+                    <li>
+                        <a href="/{:USER_DIR}{:url('/order')}"><i class="si si-graph"></i><span class="sidebar-mini-hide">订单列表</span></a>
+                    </li>
+                    <li>
+                        <a href="/{:USER_DIR}{:url('/token')}"><i class="fa fa-code"></i><span class="sidebar-mini-hide">对接设置</span></a>
+                    </li>
+                    <li>
+                        <a href="/{:USER_DIR}{:url('/log')}"><i class="fa fa-list-alt"></i><span class="sidebar-mini-hide">资金记录</span></a>
+                    </li>
+                    <li class="nav-main-heading"><span class="sidebar-mini-visible">UI</span><span
+                            class="sidebar-mini-hidden">帮助</span></li>
+                    <li>
+                        <a href="http://wpa.qq.com/msgrd?v=3&uin={:config('qq')}&site=qq&menu=yes"><i class="fa fa-qq"></i><span class="sidebar-mini-hide">联系客服</span></a>
+                    </li>
+                    <li>
+                        <a href="mailto://{:config('email')}"><i class="si si-envelope"></i><span class="sidebar-mini-hide">邮件联系</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header id="page-header">
+        <div class="content-header">
+            <div class="content-header-section">
+                <button type="button" class="btn btn-circle btn-dual-secondary" data-toggle="layout"
+                        data-action="sidebar_toggle">
+                    <i class="fa fa-navicon"></i>
+                </button>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-circle btn-dual-secondary" id="page-header-options-dropdown"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-wrench"></i>
+                    </button>
+                    <div class="dropdown-menu min-width-300" aria-labelledby="page-header-options-dropdown">
+                        <h5 class="h6 text-center py-10 mb-10 border-b text-uppercase">设置</h5>
+                        <h6 class="dropdown-header">主题颜色</h6>
+                        <div class="row no-gutters text-center mb-5">
+                            <div class="col-2 mb-5">
+                                <a class="text-default" data-toggle="theme" data-theme="default"
+                                   href="javascript:void(0)">
+                                    <i class="fa fa-2x fa-circle"></i>
+                                </a>
+                            </div>
+                            <div class="col-2 mb-5">
+                                <a class="text-elegance" data-toggle="theme"
+                                   data-theme="/static/css/themes/elegance.min.css" href="javascript:void(0)">
+                                    <i class="fa fa-2x fa-circle"></i>
+                                </a>
+                            </div>
+                            <div class="col-2 mb-5">
+                                <a class="text-pulse" data-toggle="theme" data-theme="/static/css/themes/pulse.min.css"
+                                   href="javascript:void(0)">
+                                    <i class="fa fa-2x fa-circle"></i>
+                                </a>
+                            </div>
+                            <div class="col-2 mb-5">
+                                <a class="text-flat" data-toggle="theme" data-theme="/static/css/themes/flat.min.css"
+                                   href="javascript:void(0)">
+                                    <i class="fa fa-2x fa-circle"></i>
+                                </a>
+                            </div>
+                            <div class="col-2 mb-5">
+                                <a class="text-corporate" data-toggle="theme"
+                                   data-theme="/static/css/themes/corporate.min.css" href="javascript:void(0)">
+                                    <i class="fa fa-2x fa-circle"></i>
+                                </a>
+                            </div>
+                            <div class="col-2 mb-5">
+                                <a class="text-earth" data-toggle="theme" data-theme="/static/css/themes/earth.min.css"
+                                   href="javascript:void(0)">
+                                    <i class="fa fa-2x fa-circle"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <h6 class="dropdown-header">页眉</h6>
+                        <div class="row gutters-tiny text-center mb-5">
+                            <div class="col-6">
+                                <button type="button" class="btn btn-sm btn-block btn-alt-secondary"
+                                        data-toggle="layout" data-action="header_fixed_toggle">固定模式
+                                </button>
+                            </div>
+                            <div class="col-6">
+                                <button type="button"
+                                        class="btn btn-sm btn-block btn-alt-secondary d-none d-lg-block mb-10"
+                                        data-toggle="layout" data-action="header_style_classic">经典风格
+                                </button>
+                            </div>
+                        </div>
+                        <h6 class="dropdown-header">侧边栏</h6>
+                        <div class="row gutters-tiny text-center mb-5">
+                            <div class="col-6">
+                                <button type="button" class="btn btn-sm btn-block btn-alt-secondary mb-10"
+                                        data-toggle="layout" data-action="sidebar_style_inverse_off">亮色
+                                </button>
+                            </div>
+                            <div class="col-6">
+                                <button type="button" class="btn btn-sm btn-block btn-alt-secondary mb-10"
+                                        data-toggle="layout" data-action="sidebar_style_inverse_on">暗色
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-header-section">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-rounded btn-dual-secondary" id="page-header-user-dropdown"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-user d-sm-none"></i>
+                        <span class="d-none d-sm-inline-block">{$uinfo.uname}</span>
+                        <i class="fa fa-angle-down ml-5"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right min-width-200"
+                         aria-labelledby="page-header-user-dropdown">
+                        <h5 class="h6 text-center py-10 mb-5 border-b text-uppercase">{$uinfo.uname}</h5>
+                        <a class="dropdown-item" href="/{:USER_DIR}/info">
+                            <i class="si si-user mr-5"></i> 修改资料
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" onclick="logout()">
+                            <i class="si si-logout mr-5"></i> 退出登录
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="page-header-loader" class="overlay-header bg-primary">
+            <div class="content-header content-header-fullrow text-center">
+                <div class="content-header-item">
+                    <i class="fa fa-sun-o fa-spin text-white"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main id="main-container">
+        <div class="content">
+            {block name="main"}{/block}
+        </div>
+    </main>
+    <footer id="page-footer" class="opacity-0">
+        <div class="content py-20 font-size-xs clearfix">
+            <div class="float-right">
+                Crafted with <i class="fa fa-heart text-pulse"></i> by <a class="font-w600" href="">{:config('sitename')}</a>
+            </div>
+            <div class="float-left">
+                &copy; <span class="js-year-copy"></span> <a class="font-w600" href="" target="_blank">{:config('sitename')}</a>
+            </div>
+        </div>
+    </footer>
+</div>
+<script src="/static/js/codebase.core.min.js"></script>
+<script src="/static/js/codebase.app.min.js"></script>
+<script src="/static/js/plugins/chartjs/Chart.bundle.min.js"></script>
+<script src="/static/js/pages/be_pages_dashboard.min.js"></script>
+<script src="//cdn.bootcss.com/layer/2.3/layer.js"></script>
+<script>
+    function logout() {
+        layer.load(2, {shade: [0.1, '#fff']});
+        $.ajax({
+            url: "/{:USER_DIR}{:url('/logout')}",
+            type: 'post',
+            dataType: 'json',
+            success: function (data) {
+                layer.closeAll();
+                if (data.code == 1) {
+                    layer.alert(data.msg, {icon: 6}, function () {
+                        location.href = "/{:USER_DIR}{:url('/login')}";
+                    });
+                } else {
+                    layer.alert(data.msg, {icon: 5});
+                }
+            },
+            timeout: 10000,
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                layer.closeAll();
+                if (textStatus == "timeout") {
+                    layer.msg('请求超时！');
+                } else {
+                    layer.msg('服务器错误！');
+                }
+            }
+        });
+    }
+</script>
+{block name="footjs"}{/block}
+</body>
+</html>

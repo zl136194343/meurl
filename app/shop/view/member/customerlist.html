@@ -1,0 +1,260 @@
+{extend name="base"/}
+{block name="resources"}
+<style>
+	.ns-screen{margin: 15px 0;}
+	.member-info-wrap{display: flex;align-items: center;padding: 10px 0;}
+	.member-face{width: 40px;height: 40px;border-radius: 50%;overflow: hidden;}
+	.member-face img{width: 100%;height: auto;max-width: 100%;max-height: 100%;}
+	.member-nickname{margin-left: 10px;}
+
+</style>
+
+<link rel="stylesheet" type="text/css" href="SHOP_CSS/member_coupon.css" />
+{/block}
+
+{block name="main"}
+<div class="ns-tips layui-collapse">
+	<div class="layui-colla-item">
+		<h2 class="layui-colla-title">操作提示</h2>
+		<ul class="layui-colla-content layui-show">
+			<li>当前显示的是当前店铺添加客户管理列表</li>
+		</ul>
+	</div>
+</div>
+<!--<div class="ns-single-filter-box">
+	<button class="layui-btn ns-bg-color" onclick="add()">添加执行人员</button>
+</div>-->
+<!-- 筛选面板 -->
+<div class="ns-screen layui-collapse" lay-filter="selection_panel">
+	<div class="layui-colla-item">
+		<h2 class="layui-colla-title"></h2>
+		<form class="layui-colla-content layui-form layui-show">
+			<div class="layui-form-item">
+				<div class="layui-inline">
+					<label class="layui-form-label">搜索</label>
+					<div class="layui-input-inline">
+						<select name="search_text_type">
+							<option value="mobile">客户手机号</option>
+						</select>
+					</div>
+					<div class="layui-input-inline">
+						<input type="text" name="search_text" placeholder="手机号" autocomplete="off" class="layui-input ">
+					</div>
+				</div>
+			</div>
+			<div class="ns-form-row">
+				<button class="layui-btn ns-bg-color" lay-submit lay-filter="search">筛选</button>
+				<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+<!-- 会员列表 -->
+<table id="member_list" lay-filter="member_list"></table>
+
+<!-- 会员信息 -->
+<script type="text/html" id="member_info">
+	<div class="ns-table-title">
+		<div class="member-info-wrap">
+			<div class="member-face">
+				<img src="{{ns.img(d.headimg)}}" alt="" onerror="this.src = 'ADMIN_IMG/default_headimg.png'">
+			</div>
+			<div class="member-nickname">{{d.nickname}}</div>
+		</div>
+	</div>
+</script>
+
+<!-- 操作 -->
+<script type="text/html" id="action">
+	<div class="ns-table-btn">
+		<a class="layui-btn" lay-event="setReminders">提醒列表</a>
+	</div>
+</script>
+
+<!-- 批量操作 -->
+
+{/block}
+
+{block name="script"}
+<script type='text/javascript' src='SHOP_JS/coupon_list.js'></script>
+
+<script>
+layui.use(['form', 'laydate','laytpl'], function () {
+	var form = layui.form,
+		laytpl = layui.laytpl,
+		laydate = layui.laydate;
+	form.render();
+
+	var table = new Table({
+		elem: '#member_list',
+		url: ns.url("shop/member/customerlist"),
+		cols: [
+			[
+				{
+					title: '客户姓名',
+					unresize: 'false',
+					width: '20%',
+					field: 'name',
+				},
+				{
+					title: '手机号',
+					unresize: 'false',
+					width: '10%',
+					templet: function (data) {
+						return data.mobile == '' ? '--' : data.mobile;
+					}
+				},
+				{
+					title: '预约时间',
+					unresize: 'false',
+					width: '10%',
+					templet: function (data) {
+        				return ns.time_to_date(data.wedding_date);
+        			}
+				},
+				{
+					title: '预约地址',
+					unresize: 'false',
+					width: '20%',
+					field: 'site',
+				},
+				{
+					title: '执行人员',
+					unresize: 'false',
+					width: '20%',
+					field: 'personnel',
+				},
+				{
+					title: '操作',
+					toolbar: '#action',
+					unresize: 'false',
+					width: '20%'
+				}
+			]
+		],
+		// bottomToolbar: "#batchOperation"
+	});
+
+	//注册开始时间
+	laydate.render({
+		elem: '#start_date',
+		type: 'datetime'
+	});
+
+	//注册结束时间
+	laydate.render({
+		elem: '#end_date',
+		type: 'datetime'
+	});
+
+
+	/**
+	 * 搜索功能
+	 */
+	form.on('submit(search)', function (data) {
+		table.reload({
+			page: {
+				curr: 1
+			},
+			where: data.field
+		});
+		return false;
+	});
+
+	/**
+	 * 监听工具栏操作
+	 */
+ 	table.tool(function(obj) {
+		var data = obj.data;
+		switch (obj.event) {
+			case 'setReminders': //设置提醒
+				setReminders(data.id);
+				break;
+			case 'recive_coupon': //发放优惠券
+				selectCoupon(data.id);
+				break;
+		}
+	});
+	
+	function deleteGoods(goods_ids) {
+	layer.confirm('删除后进入回收站，确定删除吗?', function () {
+		if (repeat_flag) return;
+		repeat_flag = true;
+		
+		$.ajax({
+			url: ns.url("shop/member/operdel"),
+			data: {id: goods_ids},
+			dataType: 'JSON',
+			type: 'POST',
+			success: function (res) {
+				layer.msg(res.message);
+				repeat_flag = false;
+				if (res.code == 0) {
+					table.reload({
+						page: {
+							curr: $(".layui-laypage-em").next().html()  //主要代码行
+					    },
+					});
+					refreshVerifyStateCount();
+				}
+			}
+		});
+	});
+}
+
+    function setReminders(data){
+        /*laytpl($("#recive_coupon").html()).render(data, function(html) {
+			layer_coupon = layer.open({
+				title: '设置提醒',
+				skin: 'layer-tips-class',
+				type: 1,
+				area: ['700px', '542px'],
+				content: html,
+			});
+			renderCoupon("", data.member_id);
+		});*/
+		location.href = ns.url('shop/member/tixingList?id='+data);
+    }
+
+
+	/**
+	 * 发放优惠券
+	 */
+	function deleteGoods(goods_ids) {
+	layer.confirm('删除后进入回收站，确定删除吗?', function () {
+		if (repeat_flag) return;
+		repeat_flag = true;
+		
+		$.ajax({
+			url: ns.url("shop/member/operdel"),
+			data: {id: goods_ids},
+			dataType: 'JSON',
+			type: 'POST',
+			success: function (res) {
+				layer.msg(res.message);
+				repeat_flag = false;
+				if (res.code == 0) {
+					table.reload({
+						page: {
+							curr: $(".layui-laypage-em").next().html()  //主要代码行
+					    },
+					});
+					refreshVerifyStateCount();
+				}
+			}
+		});
+	});
+}
+    
+	
+})
+function add() {
+	    location.href = ns.url('shop/member/operationalAdd');
+    }
+
+</script>
+
+
+
+{/block}

@@ -1,0 +1,81 @@
+{extend name="base"/}
+{block name="resources"}
+<style>
+	.js-pid a{
+		margin-left: 20px;
+	}
+	.ns-form {
+		margin-top: 0;
+	}
+</style>
+{/block}
+{block name="main"}
+<form class="layui-form ns-form">
+	<div class="layui-form-item">
+		<label class="layui-form-label"><span class="required">*</span>分类名称：</label>
+		<div class="layui-input-block">
+			<input name="name" type="text" value="{$goods_category_info['name']}" placeholder="请输入分类名称" maxlength="30" lay-verify="required" class="layui-input ns-len-long" autocomplete="off">
+		</div>
+		<div class="ns-word-aux">
+			<p>分类名称最长不超过30个字符</p>
+		</div>
+	</div>
+
+	<div class="layui-form-item">
+		<label class="layui-form-label">分类图标：</label>
+		<div class="layui-input-block">
+			<div class="upload-img-block img-upload">
+				<div class="upload-img-box {notempty name="$goods_category_info['img']"}hover{/notempty}">
+					<div class="ns-upload-default" id="imgUpload">
+						{if condition="$goods_category_info['img']"}
+						<div id="preview_imgUpload" class="preview_img">
+							<img layer-src src="{:img($goods_category_info['img'])}" class="img_prev"/>
+						</div>
+						{else/}
+						<div class="upload">
+							<img src="ADMIN_IMG/upload_img.png"/>
+							<p>点击上传</p>
+						</div>
+						{/if}
+					</div>
+					<div class="operation">
+						<div>
+							<i title="图片预览" class="iconfont iconreview js-preview" style="margin-right: 20px;"></i>
+							<i title="删除图片" class="layui-icon layui-icon-delete js-delete"></i>
+						</div>
+						
+						<div class="replace_img js-replace">点击替换</div>
+					</div>
+					<input type="hidden" name="img" value="{$goods_category_info['img']}">
+				</div>
+			</div>
+		</div>
+		<div class="ns-word-aux">
+			<p>建议图片尺寸：100px * 100px。图片格式：jpg、png、jpeg。</p>
+		</div>
+	</div>
+
+	 <div class="layui-form-item">
+		<label class="layui-form-label">排序：</label>
+		<div class="layui-input-block">
+			<input name="sort" type="number" placeholder="请输入排序" lay-verify="num" class="layui-input ns-len-short" value="{$goods_category_info['sort']}">
+		</div>
+		<div class="ns-word-aux">
+			<p>排序值只能为整数</p>
+		</div>
+	</div>
+	
+
+	<input type="hidden" name="category_id" value="{$goods_category_info['id']}">
+
+	<div class="ns-form-row">
+		<button class="layui-btn ns-bg-color" lay-submit lay-filter="save">保存</button>
+		<button type="reset" class="layui-btn layui-btn-primary" onclick="back()">返回</button>
+	</div>
+</form>
+
+
+{/block}
+{block name="script"}
+<script src="ADMIN_JS/dtgl_edit_category.js"></script>
+{/block}

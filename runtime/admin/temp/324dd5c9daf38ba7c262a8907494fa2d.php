@@ -1,0 +1,886 @@
+<?php /*a:2:{s:70:"D:\phpstudy_pro\WWW\www.hunqin.com\app\admin\view\dtgl\card\lists.html";i:1671442686;s:59:"D:\phpstudy_pro\WWW\www.hunqin.com\app\admin\view\base.html";i:1666314447;}*/ ?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="renderer" content="webkit" />
+	<meta http-equiv="X-UA-COMPATIBLE" content="IE=edge,chrome=1" />
+	<title><?php echo htmlentities((isset($menu_info['title']) && ($menu_info['title'] !== '')?$menu_info['title']:"")); ?> - <?php echo htmlentities((isset($website['title']) && ($website['title'] !== '')?$website['title']:"婚业汇联管理系统")); ?></title>
+	<meta name="keywords" content="<?php echo htmlentities((isset($website['keywords']) && ($website['keywords'] !== '')?$website['keywords']:'婚业汇联管理系统')); ?>">
+	<meta name="description" content="<?php echo htmlentities((isset($website['desc']) && ($website['desc'] !== '')?$website['desc']:'描述')); ?>}">
+	<link rel="icon" type="image/x-icon" href="https://www.hunqin.com/public/static/img/bitbug_favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="https://www.hunqin.com/public/static/css/iconfont.css" />
+	<link rel="stylesheet" type="text/css" href="https://www.hunqin.com/public/static/ext/layui/css/layui.css" />
+	<link rel="stylesheet" type="text/css" href="https://www.hunqin.com/public/static/loading/msgbox.css"/>
+	<link rel="stylesheet" type="text/css" href="https://www.hunqin.com/app/admin/view/public/css/common.css" />
+	<script src="https://www.hunqin.com/public/static/js/jquery-3.1.1.js"></script>
+	<script src="https://www.hunqin.com/public/static/js/jquery.cookie.js"></script>
+	<script src="https://www.hunqin.com/public/static/ext/layui/layui.js"></script>
+	<script>
+		layui.use(['layer', 'upload', 'element'], function() {});
+		var nsColor = '#4685FD';
+		window.ns_url = {
+			baseUrl: "https://www.hunqin.com/",
+			route: ['<?php echo request()->module(); ?>', '<?php echo request()->controller(); ?>', '<?php echo request()->action(); ?>'],
+			IMGPATH:"https://www.hunqin.com/app/admin/view/public/img/"
+		};
+
+	</script>
+	<script src="https://www.hunqin.com/public/static/js/common.js"></script>
+	<script src="https://www.hunqin.com/app/admin/view/public/js/common.js"></script>
+	<style>
+		.ns-calendar{background: url("https://www.hunqin.com/public/static/img/ns_calendar.png") no-repeat center / 16px 16px;}
+		@media only screen and (max-width: 1130px) {
+			.layui-nav .layui-nav-item a {
+				margin-left: 25px;
+			}
+		}
+		@media only screen and (max-width: 1030px) {
+			.layui-nav .layui-nav-item a {
+				margin-left: 10px;
+			}
+		}
+	</style>
+	
+<style>
+	.ns-reason-box{display: none;width: 350px;box-sizing: border-box;padding: 20px;border: 1px solid #aaa;border-radius: 5px;background-color: #FFF;position: absolute;top: 50px;z-index: 999;color: #666;line-height: 30px;left: 0px;font-weight: normal;}
+	.ns-balance-box {text-align: left; left: unset; right: -270px;}
+	.ns-reason-box:before, .ns-reason-box:after{content: "";border: solid transparent;height: 0;position: absolute;width: 0;}
+	.ns-reason-box:before{border-width: 12px;border-bottom-color: #aaa;top: -12px;left: 43px;border-top: none;}
+	.ns-reason-growth:before{left: 56px;}
+	.ns-reason-box:after{border-width: 10px;border-bottom-color: #FFF;top: -20px;left: 45px;}
+	.ns-reason-growth:after{left: 58px;}
+	.ns-reason-box p{white-space: normal;line-height: 1.5;}
+	.layui-table-header{overflow: inherit;}
+	.layui-table-header .layui-table-cell{overflow: inherit;}
+	.ns-prompt .iconfont{font-size: 16px;color: rgba(0,0,0,0.7);cursor: pointer;font-weight: 500;margin-left: 3px;}
+	.ns-prompt-block.balance {justify-content: flex-end;}
+	.layui-form-item .layui-form-checkbox[lay-skin=primary] {margin-top: 0;}
+	.blacklist{background: #333;color: #fff;line-height: 1;padding: 3px 6px;border-radius: 3px;font-size: 12px;}
+	.layui-table-cell{text-align: center;}
+	.ns-prompt-box{margin:auto;}
+	.ns-table-tuwen-box .ns-img-box img{
+		width:100%;
+		max-width: auto;
+	}
+	.layui_input_block{margin-left: 110px!important;}
+</style>
+<link rel="stylesheet" type="text/css" href="https://www.hunqin.com/app/admin/view/public/css/member.css" />
+<link rel="stylesheet" type="text/css" href="https://www.hunqin.com/app/admin/view/public/css/member_coupon.css" />
+
+
+</head>
+<body>
+
+<div class="ns-logo">
+	<div class="logo-box">
+		<!--<img src="https://www.hunqin.com/app/admin/view/public/img/logo.png">-->
+	</div>
+	<span>婚业汇联管理系统</span>
+	<!--<span>服务电话：400-886-7993</span>-->
+</div>
+
+<div class="layui-layout layui-layout-admin">
+	
+	<div class="layui-header">
+		<!-- 一级菜单 -->
+		<ul class="layui-nav layui-layout-left">
+			<?php $second_menu = []; foreach($menu as $menu_k => $menu_v): ?>
+			<li class="layui-nav-item <?php if($menu_v['selected']): ?> layui-this<?php endif; ?>">
+				<a href="<?php echo htmlentities($menu_v['url']); ?>"><?php echo htmlentities($menu_v['title']); ?></a>
+			</li>
+			<?php if($menu_v['selected']): 
+				$second_menu = $menu_v['child_list'];
+				 ?>
+			<?php endif; ?>
+			<?php endforeach; ?>
+		</ul>
+		<ul class="layui-nav layui-layout-right">
+			<li class="layui-nav-item">
+				<a href="javascript:;">
+					<div class="ns-img-box">
+						<img src="https://www.hunqin.com/app/admin/view/public/img/default_headimg.png" alt="">
+					</div>
+					<?php echo htmlentities($user_info['username']); ?>
+				</a>
+				<dl class="layui-nav-child">
+					<dd class="ns-reset-pass" onclick="resetPassword();">
+						<a href="javascript:;">修改密码</a>
+					</dd>
+					<dd>
+						<a onclick="clearCache()" href="javascript:;">清除缓存</a>
+					</dd>
+					<dd>
+						<a href="<?php echo addon_url('admin/login/logout'); ?>" class="login-out">退出登录</a>
+					</dd>
+				</dl>
+			</li>
+		</ul>
+	</div>
+	
+
+	<?php if(!(empty($second_menu) || (($second_menu instanceof \think\Collection || $second_menu instanceof \think\Paginator ) && $second_menu->isEmpty()))): ?>
+	<div class="layui-side">
+		<div class="layui-side-scroll">
+			<span class="ns-side-title"><?php echo htmlentities($crumbs[0]['title']); ?></span>
+			<!-- 二三级菜单-->
+			<ul class="layui-nav layui-nav-tree"  lay-filter="test">
+				<?php foreach($second_menu as $menu_second_k => $menu_second_v): ?>
+				<li class="layui-nav-item <?php if($menu_second_v['selected']): ?> layui-nav-itemed <?php endif; if(!$menu_second_v['child_list'] && $menu_second_v['selected']): ?> layui-this<?php endif; ?>">
+					<a class="layui-menu-tips" href="<?php if(!$menu_second_v['child_list']): ?> <?php echo htmlentities($menu_second_v['url']); else: ?>javascript:;<?php endif; ?>"><?php echo htmlentities($menu_second_v['title']); ?></a>
+					<?php if(!(empty($menu_second_v['child_list']) || (($menu_second_v['child_list'] instanceof \think\Collection || $menu_second_v['child_list'] instanceof \think\Paginator ) && $menu_second_v['child_list']->isEmpty()))): ?>
+					<dl class="layui-nav-child">
+						<?php foreach($menu_second_v["child_list"] as $menu_third_k => $menu_third_v): ?>
+						<dd class="<?php if($menu_third_v['selected']): ?> layui-this<?php endif; ?>">
+							<a href="<?php echo htmlentities($menu_third_v['url']); ?>"><?php echo htmlentities($menu_third_v['title']); ?></a>
+						</dd>
+						<?php endforeach; ?>
+					</dl>
+					<?php endif; ?>
+				</li>
+				<?php endforeach; ?>
+			</ul>
+		</div>
+	</div>
+	<?php endif; ?>
+
+	<div class="layui-body<?php if(empty($second_menu) || (($second_menu instanceof \think\Collection || $second_menu instanceof \think\Paginator ) && $second_menu->isEmpty())): ?> child_no_exit<?php endif; ?>">
+		<!-- 面包屑 -->
+		
+		<?php if(count($second_menu) > 0): ?>
+		<div class="ns-crumbs<?php if(empty($second_menu) || (($second_menu instanceof \think\Collection || $second_menu instanceof \think\Paginator ) && $second_menu->isEmpty())): ?> child_no_exit<?php endif; ?>">
+		<span class="layui-breadcrumb" lay-separator="-">
+			<?php foreach($crumbs as $crumbs_k => $crumbs_v): if(count($crumbs) == ($crumbs_k + 1)): ?>
+			<a href="<?php echo htmlentities($crumbs_v['url']); ?>"><cite><?php echo htmlentities($crumbs_v['title']); ?></cite></a>
+			<?php else: ?>
+			<a href="<?php echo htmlentities($crumbs_v['url']); ?>"><?php echo htmlentities($crumbs_v['title']); ?></a>
+			<?php endif; ?>
+			<?php endforeach; ?>
+		</span>
+		</div>
+		<?php endif; ?>
+		
+		<div class="ns-body-content <?php if(count($second_menu) < 1): ?> crumbs_no_exit<?php endif; ?>">
+			<div class="ns-body">
+				<!-- 四级导航 -->
+				<?php if(isset($forth_menu) && !empty($forth_menu)): ?>
+				<div class="fourstage-nav layui-tab layui-tab-brief" lay-filter="edit_user_tab">
+					<ul class="layui-tab-title">
+						<?php if(is_array($forth_menu) || $forth_menu instanceof \think\Collection || $forth_menu instanceof \think\Paginator): $i = 0; $__LIST__ = $forth_menu;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menu): $mod = ($i % 2 );++$i;?>
+						<li class="<?php echo $menu['selected']==1 ? 'layui-this'  :  ''; ?>" lay-id="basic_info"><a href="<?php echo htmlentities($menu['parse_url']); ?>"><?php echo htmlentities($menu['title']); ?></a></li>
+						<?php endforeach; endif; else: echo "" ;endif; ?>
+					</ul>
+				</div>
+				<?php endif; ?>
+				
+
+
+<!-- 添加会员 -->
+
+
+<div class="ns-screen layui-collapse" lay-filter="selection_panel">
+	<div class="layui-colla-item">
+		<h2 class="layui-colla-title"></h2>
+		<form class="layui-colla-content layui-form layui-show">
+			<div class="ns-form-row">
+				<!--<button class="layui-btn ns-bg-color" lay-submit lay-filter="export">批量导出</button>-->
+				<!--<button type="reset" class="layui-btn layui-btn-primary">重置</button>-->
+			</div>
+		</form>
+	</div>
+</div>
+
+<table id="member_list" lay-filter="member_list"></table>
+
+<!-- 用户信息 -->
+
+
+
+
+<!-- 状态 -->
+
+
+<!-- 工具栏操作 -->
+<script type="text/html" id="action">
+	<div class="ns-table-btn">
+		{{# if(d.is_status == 0 ){ }}
+		<a class="layui-btn" lay-event="tuijian">推荐</a>
+		{{# } }}
+		{{# if(d.is_status == 1){ }}
+		<a class="layui-btn" lay-event="tuijianT">取消推荐</a>
+		{{# } }}
+		<a class="layui-btn" lay-event="info">删除</a>
+	</div>
+</script>
+
+			</div>
+
+			<!-- 版权信息 -->
+			<!--<div class="ns-footer">
+				<a class="ns-footer-img" href="#"><img src="<?php if(!empty($copyright['logo'])): ?> <?php echo img($copyright['logo']); else: ?>https://www.hunqin.com/public/static/img/copyright_logo.png<?php endif; ?>" /></a>
+			</div>-->
+		</div>
+	</div>
+</div>
+
+<!-- 重置密码弹框html -->
+<div class="layui-form" id="reset_pass" style="display: none;">
+    <div class="layui-form-item">
+        <label class="layui-form-label"><span class="required">*</span>原密码</label>
+        <div class="layui-input-block">
+            <input type="password" id="old_pass" name="old_pass" required class="layui-input ns-len-mid" maxlength="18" autocomplete="off" readonly onfocus="this.removeAttribute('readonly');" onblur="this.setAttribute('readonly',true);">
+            <span class="required"></span>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label"><span class="required">*</span>新密码</label>
+        <div class="layui-input-block">
+            <input type="password" id="new_pass" name="new_pass" required class="layui-input ns-len-mid" maxlength="18" autocomplete="off" readonly onfocus="this.removeAttribute('readonly');" onblur="this.setAttribute('readonly',true);">
+            <span class="required"></span>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label"><span class="required">*</span>确认新密码</label>
+        <div class="layui-input-block">
+            <input type="password" id="repeat_pass" name="repeat_pass" required class="layui-input ns-len-mid" maxlength="18" autocomplete="off" readonly onfocus="this.removeAttribute('readonly');" onblur="this.setAttribute('readonly',true);">
+            <span class="required"></span>
+        </div>
+    </div>
+
+    <div class="ns-form-row">
+        <button class="layui-btn ns-bg-color" onclick="repass()">确定</button>
+        <button class="layui-btn layui-btn-primary" onclick="closePass()">返回</button>
+    </div>
+</div>
+<script type="text/javascript">
+	layui.use('element',function () {
+		var element = layui.element;
+		element.render('breadcrumb');
+	});
+	function clearCache () {
+		$.ajax({
+			type: 'post',
+			url: ns.url("admin/Login/clearCache"),
+			dataType: 'JSON',
+			success: function(res) {
+				layer.msg(res.message);
+				location.reload();
+			}
+		})
+	}
+
+    /**
+     * 重置密码
+     */
+	var index;
+    function resetPassword() {
+        index = layer.open({
+            type:1,
+            content:$('#reset_pass'),
+            offset: 'auto',
+            area: ['650px']
+        });
+
+		setTimeout(function() {
+			$(".ns-reset-pass").removeClass('layui-this');
+		}, 1000);
+    }
+
+	// $(".ns-reset-pass").on('click', function() {
+	// 	$(this).removeClass('layui-this');
+	// })
+
+    var repeat_flag = false;
+    function repass(){
+        var old_pass = $("#old_pass").val();
+        var new_pass = $("#new_pass").val();
+        var repeat_pass = $("#repeat_pass").val();
+
+        if (old_pass == '') {
+            $("#old_pass").focus();
+            layer.msg("原密码不能为空");
+            return;
+        }
+
+        if (new_pass == '') {
+            $("#new_pass").focus();
+            layer.msg("密码不能为空");
+            return;
+        } else if ($("#new_pass").val().length < 6) {
+            $("#new_pass").focus();
+            layer.msg("密码不能少于6位数");
+            return;
+        }
+        if (repeat_pass == '') {
+            $("#repeat_pass").focus();
+            layer.msg("密码不能为空");
+            return;
+        } else if ($("#repeat_pass").val().length < 6) {
+            $("#repeat_pass").focus();
+            layer.msg("密码不能少于6位数");
+            return;
+        }
+        if (new_pass != repeat_pass) {
+            $("#repeat_pass").focus();
+            layer.msg("两次密码输入不一样，请重新输入");
+            return;
+        }
+
+        if(repeat_flag)return;
+        repeat_flag = true;
+
+        $.ajax({
+            type: "POST",
+            dataType: 'JSON',
+            url: ns.url("admin/login/modifypassword"),
+            data: {"old_pass": old_pass,"new_pass": new_pass},
+            success: function(res) {
+                layer.msg(res.message);
+                repeat_flag = false;
+
+                if (res.code == 0) {
+                    layer.close(index);
+                    location.reload();
+                }
+            }
+        });
+    }
+
+    function closePass() {
+        layer.close(index);
+	}
+
+	/**
+	 * 打开相册
+	 */
+	function openAlbum(callback, imgNum) {
+		layui.use(['layer'], function () {
+			//iframe层-父子操作
+			layer.open({
+				type: 2,
+				title: '图片管理',
+				area: ['825px', '675px'],
+				fixed: false, //不固定
+				btn: ['保存', '返回'],
+				content: ns.url("admin/album/album?imgNum=" + imgNum),
+				yes: function (index, layero) {
+					var iframeWin = window[layero.find('iframe')[0]['name']];//得到iframe页的窗口对象，执行iframe页的方法：
+
+					iframeWin.getCheckItem(function (obj) {
+						if (typeof callback == "string") {
+							try {
+								eval(callback + '(obj)');
+								layer.close(index);
+							} catch (e) {
+								console.error('回调函数' + callback + '未定义');
+							}
+						} else if (typeof callback == "function") {
+							callback(obj);
+							layer.close(index);
+						}
+
+					});
+				}
+			});
+		});
+	}
+
+	layui.use('element', function() {
+		var element = layui.element;
+		element.init();
+	});
+</script>
+
+
+<script type='text/javascript' src='https://www.hunqin.com/app/admin/view/public/js/coupon_list.js'></script>
+
+<script type="text/javascript">
+	var table, form, laytpl, laydate, 
+		repeat_flag = false, 
+		currentDate = new Date(), 
+		minDate = "",
+		layer_pass,
+		layer_label;
+		
+	layui.use(['form', 'laytpl', 'laydate'], function() {
+		form = layui.form;
+		laytpl = layui.laytpl;
+		laydate = layui.laydate;
+		currentDate.setDate(currentDate.getDate() - 7);
+		form.render();
+
+		//注册开始时间
+		laydate.render({
+			elem: '#reg_start_date',
+			type: 'datetime'
+		});
+
+		//注册结束时间
+		laydate.render({
+			elem: '#reg_end_date',
+			type: 'datetime'
+		});
+
+		/**
+		 * 重新渲染结束时间
+		 * */
+		function reRender() {
+			$("#reg_end_date").remove();
+			$(".end-time").html('<input type="text" class="layui-input" name="reg_end_date" id="reg_end_date" placeholder="请输入结束时间">');
+			laydate.render({
+				elem: '#reg_end_date',
+				min: minDate
+			});
+		}
+
+        //积分
+       /* $("body").on("mousemove",".ns-point",function() {
+            $("body").find(".ns-point-box").show().stop(false, true);
+        });
+        $("body").on("mouseout",".ns-point",function() {
+            $("body").find(".ns-point-box").hide().stop(false, true);
+        }); */
+
+        //余额
+        /* $("body").on("mousemove",".ns-balance",function() {
+            $("body").find(".ns-balance-box").show().stop(false, true);
+        });
+        $("body").on("mouseout",".ns-balance",function() {
+            $("body").find(".ns-balance-box").hide().stop(false, true);
+        }); */
+
+        //成长值
+       /* $("body").on("mousemove",".ns-growth",function() {
+            $("body").find(".ns-growth-box").show().stop(false, true);
+        });
+        $("body").on("mouseout",".ns-growth",function() {
+            $("body").find(".ns-growth-box").hide().stop(false, true);
+        }); */
+
+		table = new Table({
+			elem: '#member_list',
+			url: ns.url("admin/card/lists"),
+			cols: [
+				[{
+						field: 'id',
+						title: 'ID',
+						width: '10%',
+						unresize: 'false',
+					}, {
+						field: 'member_img',
+						title: '头像',
+						width: '10%',
+						unresize: 'false'
+					},{
+						field: 'member_name',
+						title: '姓名',
+						width: '10%',
+						unresize: 'false',
+
+					},{
+						field: 'mobile',
+						title: '手机号',
+						width: '10%',
+						unresize: 'false',
+						}, {
+						field: 'company_gs',
+						title: '公司',
+						width: '10%',
+						unresize: 'false',
+					}, {
+						field: 'company_bm',
+						title: '部门',
+						width: '10%',
+						unresize: 'false',
+						}, {
+						field: 'position_name',
+						title: '职位',
+						width: '10%',
+						unresize: 'false',
+					}, {
+						/*field: 'is_status',*/
+						title: '是否推荐',
+						width: '10%',
+						unresize: 'false',
+						templet:  function (data) {
+						if (data.is_status == 0) {
+							return '<spam>未推荐</spam>';
+						}else{
+							return '<spam>已推荐</spam>';
+						}
+					}
+					}, {
+						title: '操作',
+						width: '10%',
+						unresize: 'false',
+						toolbar: '#action'
+					}
+				]
+			],
+
+		});
+		
+		/**
+		 * 监听工具栏操作
+		 */
+		 table.tool(function(obj) {
+			var data = obj.data;
+			switch (obj.event) {
+				case 'info': //编辑
+					location.href = ns.url("admin/member/editMember?member_id=" + data.member_id);
+					break;
+				case 'delete': //删除
+					delMember(data.member_id);
+					break;
+				case 'reset_pass': //重置密码
+					resetPassword(data);
+					break;
+				case 'set_label': //设置标签
+					settingLabels({member_id: data.member_id, label: data.member_label});
+					break;
+				case 'more': //更多
+					$('.more-operation').css('display', 'none');
+					$(obj.tr).find('.more-operation').css('display', 'block');
+					break;
+                case 'change':
+                    var url = ns.url("fenxiao://admin/fenxiao/change", {member_id: data.member_id});
+                    //iframe层-父子操作
+                    var layerIndex = layer.open({
+                        title: "变更上级分销商",
+                        type: 2,
+                        area: ['1200px', '800px'],
+                        // btn: '保存',
+                        content: url,
+                        end: function () {
+                            location.reload();
+                        }
+                    });
+                    break;
+
+				case 'recive_coupon': //发放优惠券
+					selectCoupon(data);
+					break;
+				case 'blacklist': // 黑名单
+					addBlacklist(data.member_id);
+					break;
+				case 'remove_blacklist': // 移除黑名单
+					removeBlacklist(data.member_id);
+					break;
+				case 'tuijian': // 移除黑名单
+					tuijian(data.id,1);
+					break;
+				case 'tuijianT': // 移除黑名单
+					tuijian(data.id,0);
+					break;
+
+			}
+		});
+
+		$(document).click(function(event) {
+			if ($(event.target).attr('lay-event') != 'more' && $('.more-operation').not(':hidden').length) {
+				$('.more-operation').css('display', 'none');
+			}
+		});
+
+		/**
+		 * 批量操作
+		 */
+		table.toolbar(function(obj) {
+
+			if (obj.data.length < 1) {
+				layer.msg('请选择要操作的数据');
+				return;
+			}
+
+			switch (obj.event) {
+				case "del":
+					var id_array = new Array();
+					for (i in obj.data) id_array.push(obj.data[i].member_id);
+					delMember(id_array.toString());
+					break;
+				case "setlabel":
+					var id_array = new Array();
+					for (i in obj.data) id_array.push(obj.data[i].member_id);
+					settingLabels({member_id: id_array.toString()});
+					break;
+			}
+		});
+		table.bottomToolbar(function(obj) {
+			
+			if (obj.data.length < 1) {
+				layer.msg('请选择要操作的数据');
+				return;
+			}
+
+			switch (obj.event) {
+				case "del":
+					var id_array = new Array();
+					for (i in obj.data) id_array.push(obj.data[i].member_id);
+					delMember(id_array.toString());
+					break;
+				case "setlabel":
+					var id_array = new Array();
+					for (i in obj.data) id_array.push(obj.data[i].member_id);
+					settingLabels({member_id: id_array.toString()});
+					break;
+			}
+		});
+
+		/**
+		 * 删除
+		 */
+		function delMember(member_ids) {
+
+			if (repeat_flag) return false;
+			repeat_flag = true;
+			
+			layer.confirm('删除该会员，同时会删除相关账户，请谨慎操作！', function() {
+				$.ajax({
+					url: ns.url("admin/member/deleteMember"),
+					data: {member_ids: member_ids},
+					dataType: 'JSON',
+					type: 'POST',
+					success: function(res) {
+						layer.msg(res.message);
+						repeat_flag = false;
+
+						if (res.code == 0) {
+							table.reload();
+						}
+					}
+				});
+			}, function () {
+				layer.close();
+				repeat_flag = false;
+			});
+		}
+
+		/**
+		 * 重置密码
+		 */
+		function resetPassword(data) {
+			laytpl($("#pass_change").html()).render(data, function(html) {
+				layer_pass = layer.open({
+					title: '重置密码',
+					skin: 'layer-tips-class',
+					type: 1,
+					area: ['550px'],
+					content: html,
+				});
+			});
+		}
+		
+		form.on('submit(repass)', function(data) {
+			
+			if (repeat_flag) return false;
+			repeat_flag = true;
+			
+			$.ajax({
+				type: "POST",
+				url: ns.url("admin/member/modifyPassword"),
+				data: data.field,
+				dataType: 'JSON',
+				success: function(res) {
+					layer.msg(res.message);
+					repeat_flag = false;
+
+					if (res.code == 0) {
+						layer.closeAll('page');
+					}
+				}
+			});
+		});
+
+		/**
+		 * 设置标签
+		 */
+		function settingLabels(data) {
+
+			laytpl($("#label_change").html()).render(data, function(html) {
+				layer_label = layer.open({
+					title: '设置标签',
+					skin: 'layer-tips-class',
+					type: 1,
+					area: ['450px'],
+					content: html,
+					success: function(){
+						if (data.label) {
+							var label = data.label.split(',');
+							label.forEach(function (i) {
+								$('#reset_label [name="label_id'+ i +'"]').prop('checked', true);
+								form.render();
+							})
+
+						}
+					}
+				});
+			});
+
+			form.render();
+		}
+		
+		form.on('submit(setlabel)', function(obj) {
+			if (repeat_flag) return false;
+			repeat_flag = true;
+			var field = obj.field;
+			var arr_id = [];
+			for (var prop in field) {
+				if (prop == 'member_ids') {
+					continue;
+				}
+				arr_id.push(field[prop]);
+			}
+			$.ajax({
+				type: "POST",
+				url: ns.url("admin/member/modifyLabel"),
+				data: {
+					'member_ids': field.member_ids,
+					'label_ids': arr_id.toString()
+				},
+				dataType: 'JSON',
+				success: function(res) {
+					layer.msg(res.message);
+					repeat_flag = false;
+					if (res.code == 0) {
+						table.reload();
+						layer.closeAll('page');
+					}
+				}
+			});
+		});
+
+		/**
+		 * 搜索功能
+		 */
+		form.on('submit(search)', function(data) {
+			table.reload({
+				page: {
+					curr: 1
+				},
+				where: data.field
+			});
+			return false;
+		});
+
+        /**
+         *  导出
+         */
+        form.on('submit(export)', function(data) {
+            location.href = ns.url("admin/member/exportMember",data.field);
+            return false;
+        });
+
+		$(".search-form").click(function() {
+			$(".layui-form-search").show();
+			$(this).hide();
+		});
+
+		$(".form-hide-btn").click(function() {
+			$(".layui-form-search").hide();
+			$(".search-form").show();
+		});
+
+		/**
+		 * 表单验证
+		 */
+		form.verify({
+			repass: function(value) {
+				if (value != $(".new_pass").val()) {
+					return "输入错误,两次密码不一致!";
+				}
+			}
+		});
+
+		/**
+		 * 发放优惠券
+		 */
+		function selectCoupon(data) {
+			laytpl($("#recive_coupon").html()).render(data, function(html) {
+				layer_coupon = layer.open({
+					title: '选择优惠券',
+					skin: 'layer-tips-class',
+					type: 1,
+					area: ['700px', '542px'],
+					content: html,
+				});
+				renderCoupon("", data.member_id);
+			});
+		}
+
+		function tuijian(id,status){
+			$.ajax({
+				url: ns.url("admin/card/modifyStatus"),
+				data: {id:id,status:status},
+				dataType: 'JSON',
+				type: 'POST',
+				success: function(res) {
+					layer.msg(res.message);
+					if (res.code == 0) {
+						table.reload();
+					}
+				}
+			});
+		}
+		/**
+		 * 加入黑名单
+		 * @param member_ids
+		 */
+		function addBlacklist(member_ids) {
+			layer.confirm('加入黑名单后用户将强制退出无法登录，您确认要将用户加入黑名单吗？', function() {
+				$.ajax({
+					url: ns.url("admin/member/modifyStatus"),
+					data: {member_ids:member_ids},
+					dataType: 'JSON',
+					type: 'POST',
+					success: function(res) {
+						layer.msg(res.message);
+						if (res.code == 0) {
+							table.reload();
+						}
+					}
+				});
+			}, function () {
+				layer.close();
+			});
+		}
+
+		/**
+		 * 移除黑名单
+		 * @param member_ids
+		 */
+		function removeBlacklist(member_ids) {
+			layer.confirm('确定要移除黑名单？', function() {
+				$.ajax({
+					url: ns.url("admin/member/modifyStatus"),
+					data: {
+						member_ids: member_ids,
+						status: 1
+					},
+					dataType: 'JSON',
+					type: 'POST',
+					success: function(res) {
+						layer.msg(res.message);
+						if (res.code == 0) {
+							table.reload();
+						}
+					}
+				});
+			}, function () {
+				layer.close();
+			});
+		}
+	});
+	
+	function closePass() {
+		layer.close(layer_pass);
+	}
+	
+	function closeLabel() {
+		layer.close(layer_label);
+	}
+</script>
+
+
+</body>
+</html>

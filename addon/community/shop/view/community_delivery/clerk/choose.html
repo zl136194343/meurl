@@ -1,0 +1,140 @@
+{extend name="base"/}
+{block name="resources"}
+{/block}
+{block name="body"}
+<div class="ns-screen layui-collapse" lay-filter="selection_panel">
+    <div class="layui-colla-item">
+        <form class="layui-colla-content layui-form layui-show">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">配送员名称</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="clerk_name" placeholder="请输入配送员名称" autocomplete="off" class="layui-input ">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">配送员手机</label>
+                    <div class="layui-input-inline">
+                        <input type="number" name="clerk_mobile" placeholder="请输入配送员手机" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </div>
+            <div class="ns-form-row">
+                <button type="button" class="layui-btn ns-bg-color" lay-submit lay-filter="search">筛选</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- 列表 -->
+<table id="page_list" lay-filter="page_list"></table>
+
+{/block}
+{block name="script"}
+<script type="text/javascript">
+
+    layui.use('form', function(form) {
+        var table = new Table({
+            elem: '#page_list',
+            url: ns.url('community://shop/communitydelivery/clerklist'),
+            cols: [
+                [
+                    {
+                        title: '配送员',
+                        width: '30%',
+                        templet: function (data) {
+                            var html = '',
+                                default_img = 'community://shop_IMG/default_headimg.png';
+
+                            html += '<div class="ns-table-title">';
+                                html += '<div class="ns-title-pic">';
+                                    html += '<img layer-src src="'+ (data.clerk_headimg ? ns.img(data.clerk_headimg) : default_img) +'" onerror="this.src = \'' + default_img + '\'">';
+                                html += '</div>';
+                                html += '<div class="ns-title-content">';
+                                    html += '<p class="ns-multi-line-hiding">'+ data.clerk_name +'</p>';
+                                html += '</div>';
+                            html += '</div>';
+
+                            return html;
+                        },
+                    },
+                    {
+                        field: 'clerk_mobile',
+                        title: '手机号',
+                        width: '15%'
+                    },
+                    {
+                        title: '会员账号',
+                        width: '10%',
+                        templet: function (data) {
+                            return '<a href="'+ ns.url('community://shop/member/editmember', {member_id: data.member_id}) +'" class="ns-text-color" target="_blank">'+ data.username +'</a>';
+                        },
+                    },
+                    {
+                        title: '备注',
+                        width: '25%',
+                        templet: function (data) {
+                            return '<p class="ns-multi-line-hiding">'+ data.clerk_remark +'</p>';
+                        },
+                    },
+                    {
+                        title: '操作',
+                        width: '10%',
+                        templet: function(data) {
+                            var html = '';
+
+                            html += '<div class="ns-table-btn">';
+                                html += '<a class="layui-btn" lay-event="choose">选择</a>';
+                            html += '</div>';
+                            return html;
+                        },
+                    }
+                ]
+            ]
+        });
+
+
+        /**
+         * 监听工具栏操作
+         */
+        table.tool(function(obj) {
+            var data = obj.data;
+
+            switch (obj.event) {
+                // 选择
+                case 'choose':
+                    try {
+                        // 这里不能赋值于一个变量, 否则 this 指向错误
+                        if (typeof window.parent.{$chooseCallback} === 'function') {
+
+                            // 关闭弹出层
+                            window.parent.layer.close(window.parent.layer.getFrameIndex(window.name));
+
+                            // 调用父页面的选择回调
+                            window.parent.{$chooseCallback}(data);
+                        }
+
+                    } catch (e) {
+                        layer.msg('调用出错')
+                    }
+                    break;
+            }
+        });
+
+        /**
+         * 搜索功能
+         */
+        form.on('submit(search)', function(data) {
+            table.reload({
+                page: {
+                    curr: 1
+                },
+                where: data.field
+            });
+            return false;
+        });
+    });
+</script>
+
+{/block}

@@ -1,0 +1,72 @@
+{extend name="/common/default" /}
+{block name="main"}
+<div class="alert alert-warning bg-danger" role="alert" style="color:white;text-align:center;">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <strong>尊敬的用户:{:qqname($uinfo['qq'])}!</strong> 若已开通VIP购买高于本身等级的VIP则是升级(升级规则为当前VIP剩余天数乘以所需升级的VIP除以30),若购买等于本身等级的VIP则为续费,不能购买低于本身会员等级的!
+</div>
+<div class="row" style="margin-top:20px;">
+    {foreach $vip as $k=>$v}
+    {if $v['vid']!==0}
+    <div class="col-md-6 col-xl-3">
+        <a class="block block-link-pop block-rounded block-bordered text-center">
+            <div class="block-header">
+                <h3 class="block-title">{$v['vname']}</h3>
+            </div>
+            <div class="block-content bg-info">
+                <div class="h1 font-w700 mb-10 text-white">￥{$v['price']}/月</div>
+                <div class="h5 text-muted text-white"><span style="font-size:15px; text-decoration:line-through;">原价&nbsp;{$v['vprice']}</span>
+                </div>
+            </div>
+            <div class="block-content">
+                <p><strong>专属微信费率</strong>{$v['wx_rate']}%</p>
+                <p><strong>若是已经够买了VIP</strong></p>
+                <p><strong>高等级的VIP需升级后才可续费</strong></p>
+                <p><strong>VIP只能升级购买不能降级购买</strong></p>
+            </div>
+            <div class="block-content block-content-full bg-gray-lighter">
+                <button onclick="opening({$v['vid']})" class="btn btn-hero btn-sm btn-rounded btn-noborder btn-info" {if $v['vid']==0}disabled{/if}>
+                    立即开通
+                </button>
+            </div>
+        </a>
+    </div>
+    {/if}
+    {/foreach}
+</div>
+{/block}
+{block name="footjs"}
+<script>
+    function opening(id) {
+        layer.confirm('是否确认购买？', {
+            btn: ['确认','取消'] //按钮
+        }, function(){
+            layer.load(2, {shade: [0.1, '#fff']});
+            $.ajax({
+                url: "/{:USER_DIR}/do_vip",
+                type: 'post',
+                dataType: 'json',
+                data: {vid: id},
+                success: function (res) {
+                    layer.closeAll();
+                    if (res.code == 1) {
+                        layer.alert(res.msg, {icon: 6}, function () {
+                            location.href = "/{:USER_DIR}/vip";
+                        });
+                    } else {
+                        layer.msg(res.msg, {icon: 5});
+                    }
+                },
+                timeout: 10000,
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    layer.closeAll();
+                    if (textStatus == "timeout") {
+                        layer.msg('请求超时！');
+                    } else {
+                        layer.msg('服务器错误！');
+                    }
+                }
+            })
+        })
+    }
+</script>
+{/block}

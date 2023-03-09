@@ -1,0 +1,260 @@
+{extend name="base"/}
+{block name="resources"}
+<style>
+    .required { margin-right: 3px; }
+    .ns-check-member { position: relative; }
+    .ns-check-member .layui-btn { position: absolute; top: 0; right: 1px; border-color: #e5e5e5; padding: 0 10px; border-right: 0; }
+
+    .ns-store-company, .ns-pay-company, .ns-pay-alipay, .ns-shop-own { display: none; }
+
+    /* 关联会员 */
+    .ns-search-result { border: 1px solid; padding: 15px 30px 15px 15px; display: flex; align-items: center; position: relative;margin-top:10px; }
+    .ns-search-res-img { width: 50px; height: 50px; margin-right: 5px; text-align: center; line-height: 50px; }
+    .ns-search-res-img img { max-width: 100%; max-height: 100%; }
+    .ns-search-res-intro p { line-height: 24px; }
+    .ns-search-res-close { position: absolute; top: 5px; right: 5px; }
+
+    .ns-card-common:first-of-type {margin-top: 0;}
+    .ns-form-row {margin-top: 0;}
+    .ns-check-member .layui-input:focus+.layui-btn {border-color: #4685FD;}
+    .ns-store-company, .ns-pay-company{margin-top: 10px;}
+</style>
+{/block}
+{block name="main"}
+<div class="layui-form">
+    <!-- 店铺信息 -->
+
+
+    <!-- 申请类型 -->
+
+
+    <!-- 企业店铺独有 -->
+
+
+    <!-- 公共部分 -->
+    <!-- 联系人信息 -->
+    <div class="layui-card ns-card-common ns-card-brief">
+        <div class="layui-card-header">
+            <span class="ns-card-title">园所信息</span>
+        </div>
+        <div class="layui-card-body">
+            <div class="layui-form-item">
+                <label class="layui-form-label ns-company-name">园所名称：</label>
+                <div class="layui-input-inline">
+                    <input name="hospital_name" type="text" class="layui-input ns-len-long" autocomplete="off">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label img-upload-lable ns-company-pic-front">园所头像：</label>
+                <div class="layui-input-block">
+                    <div class="upload-img-block img-upload">
+                        <div class="upload-img-box">
+                            <div class="ns-upload-default" id="idCardPicFront">
+                                <div class="upload">
+                                    <img src="ADMIN_IMG/upload_img.png"/>
+                                    <p>点击上传</p>
+                                </div>
+                            </div>
+                            <div class="operation">
+                                <div>
+                                    <i title="图片预览" class="iconfont iconreview js-preview" style="margin-right: 20px;"></i>
+                                    <i title="删除图片" class="layui-icon layui-icon-delete js-delete"></i>
+                                </div>
+                                <div class="replace_img js-replace">点击替换</div>
+                            </div>
+                            <input type="hidden" name="hospital_img" value="">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- 营业执照 税务 -->
+    <!-- 企业店铺独有 -->
+
+
+    <!-- 身份证件 -->
+
+
+    <!-- 对公账户信息 -->
+    <!-- 企业店铺独有 -->
+
+
+    <!-- 结算信息 -->
+
+    <!-- 个人信息 -->
+
+
+    <div class="ns-single-filter-box">
+        <div class="ns-form-row">
+            <button class="layui-btn ns-bg-color" lay-submit lay-filter="save">保存</button>
+            <button class="layui-btn layui-btn-primary" onclick="back()">返回</button>
+        </div>
+    </div>
+
+    <!-- 隐藏域 -->
+    <!--	<input type="hidden" name="contacts_card_electronic_2" />   &lt;!&ndash; 身份证正面 &ndash;&gt;-->
+    <!--	<input type="hidden" name="contacts_card_electronic_3" />   &lt;!&ndash; 身份证反面 &ndash;&gt;-->
+    <!--	<input type="hidden" name="business_licence_number_electronic" />   &lt;!&ndash; 营业执照电子版 &ndash;&gt;-->
+    <!-- <input type="hidden" name="tax_registration_certificate_electronic" /> -->   <!-- 税务登记证号电子版 -->
+</div>
+{/block}
+{block name="script"}
+<script src="ADMIN_JS/address.js"></script>
+<script>
+    layui.use(['form'], function() {
+        var form = layui.form,
+
+                $ = layui.jquery,
+                payType = 1, //结算类型
+                autotrophy = 0,//自营类型
+                repeat_flag = false; //防重复标识
+
+        form.render();
+
+        initArea(form); //三级联动初始化
+        var idCardPicFront_upload = new Upload({
+            elem: '#idCardPicFront',
+            url: ns.url("admin/upload/upload")
+        });
+        form.on('submit(save)', function(data){
+        //添加
+
+
+            if (data.field.hospital_name == ''){
+                layer.msg("请输入园所名称");
+                return false;
+            }
+            if (data.field.hospital_img == ''){
+                layer.msg("请上传园所头像");
+                return false;
+            }
+            $.ajax({
+                type: 'POST',
+                url: ns.url("admin/hospital/addCon"),
+                data: data.field,
+                dataType: 'JSON',
+                success: function(res) {
+                    repeat_flag = false;
+                    if (res.code == 0) {
+                        layer.confirm('添加成功', {
+                            title:'操作提示',
+                            btn: ['返回列表', '继续添加'],
+                            yes: function(){
+                                location.href = ns.url("admin/hospital/lists")
+                            },
+                            btn2: function() {
+                                location.href = ns.url("admin/hospital/addCon")
+                            }
+                        });
+                    } else {
+                        layer.msg(res.message);
+                    }
+                }
+            });
+        });
+
+        /**
+         * select监听
+         */
+
+        /**
+         * 表单验证
+         */
+        form.verify({
+            title: function(value) {
+                alert(value);return
+                if (value == '') {
+                    return"请填写标题";
+                }
+            },
+            content: function(value) {
+                var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+                if (value == '') {
+                    return '请输入内容';
+                }
+                if (!reg.test(value)) {
+                    return '请输入正确的身份证号!';
+                }
+            },
+            bankprovince: function(value){
+                if (value == -1) return '请选择省';
+            },
+            bankcity: function(value){
+                if (value == -1) return '请选择市';
+            },
+            bankdistrict: function(value, item){
+                if (value == -1 && $(item).find('option').length > 1) return '请选择区县';
+            },
+        })
+
+    });
+
+    /**
+     * 点击搜索
+     */
+    var repeat_flag = false;
+    var html, val;
+
+    function checkMember() {
+        var parent = $(".ns-check-member");
+        var con = parent.find(".ns-member-name").val();
+        $(".layui-word-aux").remove();
+        $(".ns-search-result").remove();
+
+        if (repeat_flag) return false;
+        repeat_flag = true;
+
+        if (con == "" || con == null || con.trim() == "") {
+            repeat_flag = false;
+        } else {
+            $.ajax({
+                type: 'POST',
+                url: ns.url("admin/member/searchMember"),
+                data: {
+                    'search_text': con
+                },
+                dataType: 'JSON',
+                success: function(res) {
+                    layer.msg(res.message);
+                    repeat_flag = false;
+
+                    if (res.data == null) {
+                        html = '<span class="layui-word-aux">未找到该用户</span>';
+                        val = res.data;
+                    } else {
+                        html = '<div class="ns-search-result layui-input-inline ns-border-color-gray">' +
+                                '<div class="ns-search-res-img">' +
+                                '<img src="' + ns.img(res.data.headimg) + '" />' +
+                                '</div>' +
+                                '<div class="ns-search-res-intro">' +
+                                '<p>用户名：' + res.data.username + '</p>' +
+                                '<p>电话：' + res.data.mobile + '</p>' +
+                                '</div>' +
+                                '<div class="ns-search-res-close" onclick="closeMember()">' +
+                                '<i class="iconfont iconclose_light"></i>' +
+                                '</div>' +
+                                '</div>';
+                        val = res.data.member_id;
+                    }
+
+                    $(".ns-member-id").attr("value", val);
+                    $(".ns-check-member").append(html);
+                }
+            });
+        }
+    }
+
+    function closeMember() {
+        $(".ns-search-result").hide();
+    }
+
+    function back() {
+        location.href = ns.url("shop/consulting/lists");
+    }
+</script>
+{/block}

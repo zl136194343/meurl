@@ -1,0 +1,81 @@
+{extend name="base"/}
+{block name="resources"}
+{/block}
+{block name="main"}
+<div class="layui-form ns-form">
+    <div class="layui-form-item">
+        <label class="layui-form-label"><span class="required">*</span>社区距离限制：</label>
+        <div class="layui-input-block">
+            <div class="layui-input-inline">
+                <input type="number" min="0" name="community_distance" value="{$info.value.community_distance ?? 0}"  autocomplete="off" class="layui-input ns-len-short">
+            </div>
+            <div class="layui-form-mid">km</div>
+        </div>
+        <div class="ns-word-aux">会员定位进行筛选距离内的社区，超出范围的社区将不可进行选择</div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label "><span class="required">*</span>允许团长申请：</label>
+        <div class="layui-input-block">
+            <input type="checkbox" name="is_allow_apply" value="1" lay-skin="switch" {if isset($info.value.is_allow_apply) && $info.value.is_allow_apply == 1}checked{/if}>
+        </div>
+        <div class="ns-word-aux">允许会员进行自行申请团长，关闭之后只能后台添加团长</div>
+    </div>
+    
+    <div class="layui-form-item">
+        <label class="layui-form-label"><span class="required">*</span>最少提现金额：</label>
+        <div class="layui-input-block">
+            <div class="layui-input-inline">
+                <input type="number" min="0" name="community_mongey" value="{$info.value.community_mongey ?? 0}"  autocomplete="off" class="layui-input ns-len-short">
+            </div>
+            <div class="layui-form-mid">元</div>
+        </div>
+        <div class="ns-word-aux">会员定位进行筛选距离内的社区，超出范围的社区将不可进行选择</div>
+    </div>
+     <div class="layui-form-item">
+        <label class="layui-form-label"><span class="required">*</span>提现手续费：</label>
+        <div class="layui-input-block">
+            <div class="layui-input-inline">
+                <input type="number" min="0" name="community_charge" value="{$info.value.community_charge ?? 0}"  autocomplete="off" class="layui-input ns-len-short">
+            </div>
+            <div class="layui-form-mid">%</div>
+        </div>
+        <div class="ns-word-aux">会员定位进行筛选距离内的社区，超出范围的社区将不可进行选择</div>
+    </div>
+    
+    <div class="ns-form-row">
+        <button class="layui-btn ns-bg-color" lay-submit lay-filter="save">保存</button>
+    </div>
+</div>
+{/block}
+{block name="script"}
+<script>
+    layui.use('form', function() {
+        var form = layui.form,
+            is_submit = false;
+
+        form.render();
+
+        form.on('submit(save)', function(data) {
+
+            if(is_submit) return false;
+            is_submit = true;
+
+            $.ajax({
+                url: ns.url('community://shop/community/config'),
+                data: data.field,
+                dataType: 'JSON',
+                type: 'POST',
+                success: function(res) {
+                    is_submit = false;
+                    layer.msg(res.message);
+                },
+                error: function () {
+                    is_submit = false;
+                    layer.msg('操作异常')
+                }
+            });
+        });
+    });
+</script>
+{/block}

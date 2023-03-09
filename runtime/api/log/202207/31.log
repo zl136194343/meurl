@@ -1,0 +1,34 @@
+[2022-07-31T08:28:06+08:00][sql] CONNECT:[ UseTime:0.000325s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-31T08:28:06+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.001955s ]
+[2022-07-31T08:28:06+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `status` = 0 [ RunTime:0.000368s ]
+[2022-07-31T08:28:06+08:00][sql] CONNECT:[ UseTime:0.000220s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-31T08:28:06+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_site_diy_view` [ RunTime:0.000969s ]
+[2022-07-31T08:28:06+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.011730s ]
+[2022-07-31T08:28:06+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.002075s ]
+[2022-07-31T08:28:06+08:00][sql] CONNECT:[ UseTime:0.000257s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-31T08:28:06+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_notice` [ RunTime:0.000961s ]
+[2022-07-31T08:28:06+08:00][sql] SELECT `id`,`title`,`content`,`create_time`,`modify_time`,`is_top`,`receiving_type`,`receiving_name` FROM `gxfc_notice` WHERE  `receiving_type` LIKE '%mobile%' [ RunTime:0.000214s ]
+[2022-07-31T08:28:06+08:00][sql] CONNECT:[ UseTime:0.000997s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-31T08:28:06+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods_sku` [ RunTime:0.002199s ]
+[2022-07-31T08:28:06+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods_sku` `gs` INNER JOIN `gxfc_goods` `g` ON `gs`.`sku_id`=`g`.`sku_id` INNER JOIN `gxfc_shop` `s` ON `s`.`site_id`=`gs`.`site_id` WHERE  `s`.`shop_status` = 1  AND `s`.`conceal` = 0  AND `gs`.`goods_state` = 1  AND `gs`.`verify_state` = 1  AND `gs`.`is_delete` = 0 ORDER BY `gs`.`sort` DESC [ RunTime:0.001713s ]
+[2022-07-31T08:28:06+08:00][sql] SELECT `gs`.`goods_id`,`gs`.`sku_id`,`gs`.`sku_name`,`gs`.`price`,`gs`.`market_price`,`gs`.`discount_price`,`gs`.`stock`,`gs`.`sale_num`,`gs`.`sku_image`,`gs`.`goods_name`,`gs`.`site_id`,`gs`.`website_id`,`gs`.`is_own`,`gs`.`is_free_shipping`,`gs`.`introduction`,`gs`.`promotion_type`,`g`.`goods_image`,`g`.`site_name`,`gs`.`goods_spec_format`,`gs`.`is_virtual`,`gs`.`recommend_way`,`g`.`is_sale` FROM `gxfc_goods_sku` `gs` INNER JOIN `gxfc_goods` `g` ON `gs`.`sku_id`=`g`.`sku_id` INNER JOIN `gxfc_shop` `s` ON `s`.`site_id`=`gs`.`site_id` WHERE  `s`.`shop_status` = 1  AND `s`.`conceal` = 0  AND `gs`.`goods_state` = 1  AND `gs`.`verify_state` = 1  AND `gs`.`is_delete` = 0 ORDER BY `gs`.`sort` DESC LIMIT 0,4 [ RunTime:0.000471s ]
+[2022-07-31T08:28:06+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_consulting` [ RunTime:0.001082s ]
+[2022-07-31T08:28:06+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_consulting` `gs` WHERE  `status` = 0 ORDER BY `sort` DESC [ RunTime:0.000329s ]
+[2022-07-31T08:28:06+08:00][sql] SELECT * FROM `gxfc_consulting` `gs` WHERE  `status` = 0 ORDER BY `sort` DESC LIMIT 0,4 [ RunTime:0.000367s ]
+[2022-07-31T08:28:06+08:00][sql] CONNECT:[ UseTime:0.000204s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-31T08:28:06+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.001501s ]
+[2022-07-31T08:28:06+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `status` = 0 [ RunTime:0.000399s ]
+[2022-07-31T08:28:06+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods_cart` [ RunTime:0.000816s ]
+[2022-07-31T08:28:06+08:00][sql] SELECT `gc`.`num` FROM `gxfc_goods_cart` `gc` LEFT JOIN `gxfc_goods_sku` `gs` ON `gc`.`sku_id`=`gs`.`sku_id` WHERE  `gc`.`member_id` = 5  AND `gs`.`goods_state` = 1  AND `gs`.`is_delete` = 0 ORDER BY `cart_id` DESC [ RunTime:0.000278s ]
+[2022-07-31T08:28:06+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_wholesale_goods_cart` [ RunTime:0.000710s ]
+[2022-07-31T08:28:06+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_wholesale_goods_cart` `nwgc` INNER JOIN `gxfc_goods_sku` `ngs` ON `nwgc`.`sku_id`=`ngs`.`sku_id` INNER JOIN `gxfc_wholesale_goods_sku` `wgs` ON `nwgc`.`sku_id`=`wgs`.`sku_id` INNER JOIN `gxfc_shop` `s` ON `s`.`site_id`=`nwgc`.`site_id` WHERE  `nwgc`.`member_id` = 5 [ RunTime:0.000232s ]
+[2022-07-31T08:28:07+08:00][sql] CONNECT:[ UseTime:0.000269s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-31T08:28:07+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.001254s ]
+[2022-07-31T08:28:07+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `status` = 0 [ RunTime:0.000210s ]
+[2022-07-31T08:28:07+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods_cart` [ RunTime:0.000664s ]
+[2022-07-31T08:28:07+08:00][sql] SELECT `gc`.`num` FROM `gxfc_goods_cart` `gc` LEFT JOIN `gxfc_goods_sku` `gs` ON `gc`.`sku_id`=`gs`.`sku_id` WHERE  `gc`.`member_id` = 5  AND `gs`.`goods_state` = 1  AND `gs`.`is_delete` = 0 ORDER BY `cart_id` DESC [ RunTime:0.000215s ]
+[2022-07-31T08:28:09+08:00][sql] CONNECT:[ UseTime:0.000304s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-31T08:28:09+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.001256s ]
+[2022-07-31T08:28:09+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `status` = 0 [ RunTime:0.000237s ]
+[2022-07-31T08:28:09+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods_cart` [ RunTime:0.000819s ]
+[2022-07-31T08:28:09+08:00][sql] SELECT `gc`.`num` FROM `gxfc_goods_cart` `gc` LEFT JOIN `gxfc_goods_sku` `gs` ON `gc`.`sku_id`=`gs`.`sku_id` WHERE  `gc`.`member_id` = 5  AND `gs`.`goods_state` = 1  AND `gs`.`is_delete` = 0 ORDER BY `cart_id` DESC [ RunTime:0.000269s ]

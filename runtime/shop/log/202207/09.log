@@ -1,0 +1,3 @@
+[2022-07-09T05:45:49+08:00][sql] CONNECT:[ UseTime:0.000228s ] mysql:host=localhost;port=3306;dbname=ls_chnssl_com;charset=utf8
+[2022-07-09T05:45:49+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_website` [ RunTime:0.000991s ]
+[2022-07-09T05:45:49+08:00][sql] SELECT `web_phone`,`web_email`,`web_qrcode`,`web_qq`,`web_weixin`,`logo` FROM `gxfc_website` WHERE  `site_id` = 0 LIMIT 1 [ RunTime:0.000226s ]

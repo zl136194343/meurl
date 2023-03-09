@@ -1,0 +1,171 @@
+{extend name="base"/}
+{block name="resources"}
+{/block}
+{block name="main"}
+
+<div class="ns-single-filter-box">
+    <button class="layui-btn ns-bg-color" onclick="window.location.href = ns.url('community://shop/communitydelivery/addClerk')">添加配送员</button>
+
+    <div class="layui-form">
+        <div class="layui-input-inline">
+            <input type="number" name="clerk_mobile" placeholder="请输入配送员手机" autocomplete="off" class="layui-input">
+        </div>
+        <div class="layui-input-inline">
+            <input type="text" name="clerk_name" placeholder="请输入配送员名称" autocomplete="off" class="layui-input">
+            <button type="button" class="layui-btn layui-btn-primary" lay-filter="search" lay-submit>
+                <i class="layui-icon">&#xe615;</i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- 列表 -->
+<table id="page_list" lay-filter="page_list"></table>
+
+{/block}
+{block name="script"}
+<script type="text/javascript">
+
+
+    layui.use('form', function(form) {
+        // 防重复标识
+        var is_submit = false;
+
+
+        var table = new Table({
+            elem: '#page_list',
+            url: ns.url('community://shop/communitydelivery/clerklist'),
+            cols: [
+                [
+                    {
+                        title: '配送员',
+                        width: '20%',
+                        templet: function (data) {
+                            var html = '',
+                                default_img = 'SHOP_IMG/default_headimg.png';
+
+                            html += '<div class="ns-table-title">';
+                                html += '<div class="ns-title-pic">';
+                                    html += '<img layer-src src="'+ (data.clerk_headimg ? ns.img(data.clerk_headimg) : default_img) +'" onerror="this.src = \'' + default_img + '\'">';
+                                html += '</div>';
+                                html += '<div class="ns-title-content">';
+                                    html += '<p class="ns-multi-line-hiding">'+ data.clerk_name +'</p>';
+                                html += '</div>';
+                            html += '</div>';
+
+                            return html;
+                        },
+                    },
+                    {
+                        field: 'clerk_mobile',
+                        title: '手机号',
+                        width: '10%'
+                    },
+                    {
+                        title: '会员账号',
+                        width: '10%',
+                        templet: function (data) {
+                            return '<a href="'+ ns.url('community://shop/member/editmember', {member_id: data.member_id}) +'" class="ns-text-color" target="_blank">'+ data.username +'</a>';
+                        },
+                    },
+                    {
+                        title: '备注',
+                        width: '25%',
+                        templet: function (data) {
+                            return '<p class="ns-multi-line-hiding">'+ data.clerk_remark +'</p>';
+                        },
+                    },
+                    {
+                        title: '创建时间',
+                        width: '12%',
+                        templet: function (data) {
+                            return ns.time_to_date(data.create_time)
+                        }
+                    },
+                    {
+                        title: '操作',
+                        width: '10%',
+                        templet: function(data) {
+                            var html = '';
+
+                            html += '<div class="ns-table-btn">';
+                                html += '<a class="layui-btn" lay-event="edit">编辑</a>';
+                                html += '<a class="layui-btn" lay-event="delete">删除</a>';
+                            html += '</div>';
+                            return html;
+                        },
+                    }
+                ]
+            ]
+        });
+
+
+        /**
+         * 监听工具栏操作
+         */
+        table.tool(function(obj) {
+            var data = obj.data;
+
+            switch (obj.event) {
+                // 编辑
+                case 'edit':
+                    window.location.href = ns.url('community://shop/communitydelivery/editclerk', {clerk_id: data.clerk_id})
+                    break;
+                // 删除
+                case 'delete':
+                    deleteClerk(data.clerk_id);
+                    break;
+            }
+        });
+
+        /**
+         * 删除配送员
+         * @param clerk_id
+         */
+        function deleteClerk(clerk_id) {
+
+            layer.confirm('确定要删除吗?', function(index) {
+
+                layer.close(index);
+
+                if (is_submit) return false;
+                is_submit = true;
+
+                $.ajax({
+                    url: ns.url('community://shop/communitydelivery/deleteclerk'),
+                    data: {clerk_id : clerk_id},
+                    dataType: 'JSON',
+                    type: 'POST',
+                    async: false,
+                    success: function (res) {
+                        is_submit = false;
+                        layer.msg(res.message);
+
+                        if (res.code == 0) {
+                            table.reload();
+                        }
+                    },
+                    error: function () {
+                        is_submit = false;
+                        layer.msg('操作异常');
+                    }
+                });
+            });
+        }
+
+
+        /**
+         * 搜索功能
+         */
+        form.on('submit(search)', function(data) {
+            table.reload({
+                page: {
+                    curr: 1
+                },
+                where: data.field
+            });
+            return false;
+        });
+    });
+</script>
+{/block}

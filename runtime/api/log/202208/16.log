@@ -1,0 +1,71 @@
+[2022-08-16T16:28:20+08:00][sql] CONNECT:[ UseTime:0.000407s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-16T16:28:20+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'API_CONFIG' LIMIT 1 [ RunTime:0.000423s ]
+[2022-08-16T16:28:20+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `status` = 0 [ RunTime:0.000250s ]
+[2022-08-16T16:28:21+08:00][sql] CONNECT:[ UseTime:0.000413s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-16T16:28:21+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `status` = 0 [ RunTime:0.000426s ]
+[2022-08-16T16:28:21+08:00][sql] CONNECT:[ UseTime:0.000349s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-16T16:28:21+08:00][sql] SELECT `title`,`logo`,`desc`,`web_qrcode`,`web_status`,`close_reason`,`wap_status`,`keywords`,`web_email`,`web_phone` FROM `gxfc_website` WHERE  `site_id` = 0 LIMIT 1 [ RunTime:0.000440s ]
+[2022-08-16T16:28:21+08:00][sql] CONNECT:[ UseTime:0.000353s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-16T16:28:21+08:00][sql] UPDATE `gxfc_site_diy_view`  SET `click_num` = `click_num` + 1  WHERE  `name` = 'DIY_VIEW_INDEX' [ RunTime:0.004913s ]
+[2022-08-16T16:28:21+08:00][sql] SELECT `sdv`.`id`,`sdv`.`site_id`,`sdv`.`name`,`sdv`.`title`,`sdv`.`value`,`sdv`.`type`,`dvt`.`addon_name` FROM `gxfc_site_diy_view` `sdv` LEFT JOIN `gxfc_diy_view_temp` `dvt` ON `sdv`.`name`=`dvt`.`name` WHERE  `sdv`.`name` = 'DIY_VIEW_INDEX' LIMIT 1 [ RunTime:0.000373s ]
+[2022-08-16T16:28:22+08:00][sql] CONNECT:[ UseTime:0.000410s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-16T16:28:22+08:00][sql] SELECT `id`,`title`,`content`,`create_time`,`modify_time`,`is_top`,`receiving_type`,`receiving_name` FROM `gxfc_notice` WHERE  `receiving_type` LIKE '%mobile%' [ RunTime:0.001149s ]
+[2022-08-16T16:28:22+08:00][sql] CONNECT:[ UseTime:0.000351s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-16T16:28:22+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods_sku` `gs` INNER JOIN `gxfc_goods` `g` ON `gs`.`sku_id`=`g`.`sku_id` INNER JOIN `gxfc_shop` `s` ON `s`.`site_id`=`gs`.`site_id` WHERE  `s`.`shop_status` = 1  AND `gs`.`goods_state` = 1  AND `gs`.`verify_state` = 1  AND `gs`.`is_delete` = 0 ORDER BY `gs`.`sort` DESC [ RunTime:0.000431s ]
+[2022-08-16T16:28:22+08:00][sql] SELECT `gs`.`goods_id`,`gs`.`sku_id`,`gs`.`sku_name`,`gs`.`price`,`gs`.`market_price`,`gs`.`discount_price`,`gs`.`stock`,`gs`.`sale_num`,`gs`.`sku_image`,`gs`.`goods_name`,`gs`.`site_id`,`gs`.`website_id`,`gs`.`is_own`,`gs`.`is_free_shipping`,`gs`.`introduction`,`gs`.`promotion_type`,`g`.`goods_image`,`g`.`site_name`,`gs`.`goods_spec_format`,`gs`.`is_virtual`,`gs`.`recommend_way` FROM `gxfc_goods_sku` `gs` INNER JOIN `gxfc_goods` `g` ON `gs`.`sku_id`=`g`.`sku_id` INNER JOIN `gxfc_shop` `s` ON `s`.`site_id`=`gs`.`site_id` WHERE  `s`.`shop_status` = 1  AND `gs`.`goods_state` = 1  AND `gs`.`verify_state` = 1  AND `gs`.`is_delete` = 0 ORDER BY `gs`.`sort` DESC LIMIT 0,6 [ RunTime:0.000532s ]
+[2022-08-16T16:36:34+08:00][sql] CONNECT:[ UseTime:0.000420s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-16T16:36:34+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'REGISTER_CONFIG' LIMIT 1 [ RunTime:0.000462s ]
+[2022-08-16T16:36:34+08:00][sql] CONNECT:[ UseTime:0.000341s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-16T16:36:34+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'ORDER_EVALUATE_CONFIG' LIMIT 1 [ RunTime:0.000356s ]
+[2022-08-16T16:36:52+08:00][sql] CONNECT:[ UseTime:0.000356s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-16T16:36:52+08:00][sql] SELECT `member_id`,`username`,`nickname`,`mobile`,`email`,`status`,`last_login_time` FROM `gxfc_member` WHERE  `weapp_openid` = 'oNXEZ46Js_fDFZVQVZmukByV8X98'  AND `is_delete` = 0 LIMIT 1 [ RunTime:0.000398s ]
+[2022-08-16T16:36:52+08:00][sql] UPDATE `gxfc_member`  SET `login_time` = 1660639012 , `login_type` = 'weapp' , `login_type_name` = '微信小程序' , `last_login_time` = 1660639012 , `login_ip` = '171.113.167.112'  WHERE  `member_id` = 1 [ RunTime:0.007471s ]
+[2022-08-16T16:36:52+08:00][sql] SELECT * FROM `gxfc_message` WHERE  `keywords` = 'LOGIN' LIMIT 1 [ RunTime:0.000343s ]
+[2022-08-16T16:36:52+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'ALI_SMS_CONFIG' LIMIT 1 [ RunTime:0.000236s ]
+[2022-08-16T16:36:52+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'NIU_SMS_CONFIG' LIMIT 1 [ RunTime:0.000246s ]
+[2022-08-16T16:36:52+08:00][sql] SELECT `title` FROM `gxfc_website` WHERE  `site_id` = 0 LIMIT 1 [ RunTime:0.000221s ]
+[2022-08-16T16:36:52+08:00][sql] SELECT `username`,`mobile`,`email`,`reg_time`,`wx_openid`,`last_login_type`,`login_time` FROM `gxfc_member` WHERE  `member_id` = 1  AND `is_delete` = 0 LIMIT 1 [ RunTime:0.000252s ]
+[2022-08-16T16:36:52+08:00][sql] INSERT INTO `gxfc_message_sms_records` SET `account` = '18727381157' , `status` = 0 , `addon` = '' , `addon_name` = '' , `content` = '' , `var_parse` = '{\"name\":\"\"}' , `keywords` = 'LOGIN' , `create_time` = 1660639012 , `send_time` = 0 , `result` = '没有可用的短信发送方式' , `keywords_name` = '会员登录' [ RunTime:0.005289s ]
+[2022-08-16T16:36:52+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'EMAIL_CONFIG' LIMIT 1 [ RunTime:0.000246s ]
+[2022-08-16T16:36:52+08:00][sql] UPDATE `gxfc_member`  SET `weapp_openid` = ''  WHERE  `weapp_openid` = 'oNXEZ46Js_fDFZVQVZmukByV8X98'  AND `is_delete` = 0 [ RunTime:0.006768s ]
+[2022-08-16T16:36:52+08:00][sql] UPDATE `gxfc_member`  SET `weapp_openid` = 'oNXEZ46Js_fDFZVQVZmukByV8X98'  WHERE  `member_id` = 1  AND `is_delete` = 0 [ RunTime:0.003195s ]
+[2022-08-16T16:36:52+08:00][sql] CONNECT:[ UseTime:0.000368s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-16T16:36:52+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `status` = 0 [ RunTime:0.000308s ]
+[2022-08-16T16:36:52+08:00][sql] SELECT `gc`.`num` FROM `gxfc_goods_cart` `gc` LEFT JOIN `gxfc_goods_sku` `gs` ON `gc`.`sku_id`=`gs`.`sku_id` WHERE  `gc`.`member_id` = 1  AND `gs`.`goods_state` = 1  AND `gs`.`is_delete` = 0 ORDER BY `cart_id` DESC [ RunTime:0.000325s ]
+[2022-08-16T16:36:52+08:00][sql] CONNECT:[ UseTime:0.000374s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-16T16:36:52+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `status` = 0 [ RunTime:0.000359s ]
+[2022-08-16T16:36:52+08:00][sql] SELECT `member_id`,`source_member`,`username`,`nickname`,`mobile`,`email`,`password`,`status`,`headimg`,`member_level`,`member_level_name`,`member_label`,`member_label_name`,`qq`,`qq_openid`,`wx_openid`,`wx_unionid`,`ali_openid`,`baidu_openid`,`toutiao_openid`,`douyin_openid`,`realname`,`sex`,`location`,`birthday`,`point`,`balance`,`balance_money`,`growth`,`sign_days_series` FROM `gxfc_member` WHERE  `member_id` = 1  AND `is_delete` = 0 LIMIT 1 [ RunTime:0.000402s ]
+[2022-08-16T16:36:52+08:00][sql] SELECT * FROM `gxfc_member_level` WHERE  `level_id` = 1 LIMIT 1 [ RunTime:0.000233s ]
+[2022-08-16T16:36:52+08:00][sql] CONNECT:[ UseTime:0.000338s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-16T16:36:52+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `status` = 0 [ RunTime:0.000331s ]
+[2022-08-16T16:36:52+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_promotion_coupon` WHERE  `member_id` = 1  AND `state` = 1 [ RunTime:0.000314s ]
+[2022-08-16T16:36:53+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_promotion_platformcoupon` WHERE  `member_id` = 1  AND `state` = 1 [ RunTime:0.000458s ]
+[2022-08-16T16:36:53+08:00][sql] CONNECT:[ UseTime:0.000304s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-16T16:36:53+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `status` = 0 [ RunTime:0.000467s ]
+[2022-08-16T16:36:53+08:00][sql] CONNECT:[ UseTime:0.000276s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-16T16:36:53+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `status` = 0 [ RunTime:0.000221s ]
+[2022-08-16T16:36:53+08:00][sql] SELECT `verifier_id` FROM `gxfc_verifier` WHERE  `member_id` = 1 LIMIT 1 [ RunTime:0.000283s ]
+[2022-08-16T16:36:53+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_order` WHERE  `member_id` = 1  AND `order_status` = 0 [ RunTime:0.000354s ]
+[2022-08-16T16:36:53+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_order` WHERE  `member_id` = 1  AND `order_status` = 1 [ RunTime:0.000247s ]
+[2022-08-16T16:36:53+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_order` WHERE  `member_id` = 1  AND `order_status` = 3 [ RunTime:0.000233s ]
+[2022-08-16T16:36:53+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_order` WHERE  `member_id` = 1  AND `order_status` IN (4,10)  AND `is_evaluate` = 1 [ RunTime:0.000307s ]
+[2022-08-16T16:36:53+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_order_goods` WHERE  `member_id` = 1  AND `refund_status` IN (-1,1,2,4,5,6) [ RunTime:0.000249s ]
+[2022-08-16T16:37:03+08:00][sql] CONNECT:[ UseTime:0.000378s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-16T16:37:03+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'WECHAT_PAY_CONFIG' LIMIT 1 [ RunTime:0.000372s ]
+[2022-08-16T16:37:07+08:00][sql] CONNECT:[ UseTime:0.000366s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-16T16:37:07+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `status` = 0 [ RunTime:0.000378s ]
+[2022-08-16T16:37:07+08:00][sql] SELECT `member_id`,`source_member`,`username`,`nickname`,`mobile`,`email`,`password`,`status`,`headimg`,`member_level`,`member_level_name`,`member_label`,`member_label_name`,`qq`,`qq_openid`,`wx_openid`,`wx_unionid`,`ali_openid`,`baidu_openid`,`toutiao_openid`,`douyin_openid`,`realname`,`sex`,`location`,`birthday`,`point`,`balance`,`balance_money`,`growth`,`sign_days_series` FROM `gxfc_member` WHERE  `member_id` = 1  AND `is_delete` = 0 LIMIT 1 [ RunTime:0.000411s ]
+[2022-08-16T16:37:07+08:00][sql] CONNECT:[ UseTime:0.000304s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-16T16:37:07+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `status` = 0 [ RunTime:0.000273s ]
+[2022-08-16T16:37:07+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_order` WHERE  `member_id` = 1  AND `order_status` = 0 [ RunTime:0.000350s ]
+[2022-08-16T16:37:07+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_order` WHERE  `member_id` = 1  AND `order_status` = 1 [ RunTime:0.000339s ]
+[2022-08-16T16:37:07+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_order` WHERE  `member_id` = 1  AND `order_status` = 3 [ RunTime:0.000283s ]
+[2022-08-16T16:37:07+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_order` WHERE  `member_id` = 1  AND `order_status` IN (4,10)  AND `is_evaluate` = 1 [ RunTime:0.000293s ]
+[2022-08-16T16:37:07+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_order_goods` WHERE  `member_id` = 1  AND `refund_status` IN (-1,1,2,4,5,6) [ RunTime:0.000265s ]
+[2022-08-16T16:37:07+08:00][sql] CONNECT:[ UseTime:0.000448s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-16T16:37:07+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `status` = 0 [ RunTime:0.000330s ]
+[2022-08-16T16:37:07+08:00][sql] SELECT `verifier_id` FROM `gxfc_verifier` WHERE  `member_id` = 1 LIMIT 1 [ RunTime:0.000321s ]
+[2022-08-16T16:37:07+08:00][sql] CONNECT:[ UseTime:0.000285s ] mysql:host=127.0.0.1;port=3306;dbname=ls_ssl_com;charset=utf8
+[2022-08-16T16:37:07+08:00][sql] SELECT `member_id` FROM `gxfc_member` WHERE  `status` = 0 [ RunTime:0.000236s ]
+[2022-08-16T16:37:07+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_promotion_coupon` WHERE  `member_id` = 1  AND `state` = 1 [ RunTime:0.000479s ]
+[2022-08-16T16:37:07+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_promotion_platformcoupon` WHERE  `member_id` = 1  AND `state` = 1 [ RunTime:0.000261s ]

@@ -1,0 +1,389 @@
+{extend name="base"/}
+{block name="resources"}
+<link rel="stylesheet" href="SHOP_CSS/dashboard.css">
+{/block}
+{block name="main"}
+<div class="layui-card ns-card-common ns-card-brief">
+	<div class="layui-card-header">
+		<div>
+			<span class="ns-card-title">交易概况</span>
+		</div>
+	</div>
+	<div class="layui-card-body layui-col-space20">
+
+		<div class="layui-col-md3">
+			<div class="overview-box">
+				<div class="overview-title">
+					<div class="overview-title-text">今日订单数(笔)</div>
+					<div class="title ns-prompt-block overview-prompt">
+						<div class="ns-prompt">
+							<i class="iconfont iconwenhao1"></i>
+							<div class="ns-prompt-box">
+								<div class="ns-prompt-con">
+									今日已付款订单的成交数量
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="overview-con">
+					<div class="overview-value ns-text-color">{$today_data.order_pay_count}</div>
+					<div class="overview-rate">
+						<div>日同比 {$day_rate_data.order_pay_count}
+							{if $day_rate_data.order_pay_count > 0}
+							<img src="SHOP_IMG/shop-rate-add.png">
+							{else /}
+							<img src="SHOP_IMG/shop-rate-less.png">
+							{/if}
+						</div>
+						
+						<div>昨日订单数 {$yesterday_data.order_pay_count}</div>
+					</div>
+					<div class="overview-bottom">
+						<div class="overview-bottom-text">订单总数</div>
+						<div class="overview-bottom-value">{$total_data.order_pay_count}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="layui-col-md3">
+			<div class="overview-box">
+				<div class="overview-title">
+					<div class="overview-title-text">今日销售额(元)</div>
+					<div class="title ns-prompt-block overview-prompt">
+						<div class="ns-prompt">
+							<i class="iconfont iconwenhao1"></i>
+							<div class="ns-prompt-box">
+								<div class="ns-prompt-con">
+									今日已付款订单的销售金额
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="overview-con">
+					<div class="overview-value ns-text-color">{$today_data.order_total}</div>
+					<div class="overview-rate">
+						<div>日同比 {$day_rate_data.order_total}
+							{if $day_rate_data.order_total > 0}
+							<img src="SHOP_IMG/shop-rate-add.png">
+							{else /}
+							<img src="SHOP_IMG/shop-rate-less.png">
+							{/if}
+						</div>
+						<div>昨日销售额 {$yesterday_data.order_total}</div>
+					</div>
+					<div class="overview-bottom">
+						<div class="overview-bottom-text">销售总额</div>
+						<div class="overview-bottom-value">{$total_data.order_total}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="layui-col-md3">
+			<div class="overview-box">
+				<div class="overview-title">
+					<div class="overview-title-text">今日退款金额(元)</div>
+					<div class="title ns-prompt-block overview-prompt">
+						<div class="ns-prompt">
+							<i class="iconfont iconwenhao1"></i>
+							<div class="ns-prompt-box">
+								<div class="ns-prompt-con">
+									今日已退款订单项的金额
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="overview-con">
+					<div class="overview-value ns-text-color">{$today_data.refund_total}</div>
+					<div class="overview-rate">
+						<div>日同比 {$day_rate_data.refund_total}
+							{if $day_rate_data.refund_total > 0}
+							<img src="SHOP_IMG/shop-rate-add.png">
+							{else /}
+							<img src="SHOP_IMG/shop-rate-less.png">
+							{/if}
+						</div>
+						<div>昨日退款金额 {$yesterday_data.refund_total}</div>
+					</div>
+					<div class="overview-bottom">
+						<div class="overview-bottom-text">退款总额</div>
+						<div class="overview-bottom-value">{$total_data.refund_total}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="layui-col-md3">
+			<div class="overview-box">
+				<div class="overview-title">
+					<div class="overview-title-text">今日退款申请</div>
+					<div class="title ns-prompt-block overview-prompt">
+						<div class="ns-prompt">
+							<i class="iconfont iconwenhao1"></i>
+							<div class="ns-prompt-box">
+								<div class="ns-prompt-con">
+									今日已退款订单项的数量
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="overview-con">
+					<div class="overview-value ns-text-color">{$today_data.refund_total_count}</div>
+					<div class="overview-rate">
+						<div>日同比 {$day_rate_data.refund_total_count}
+							 {if $day_rate_data.refund_total_count > 0}
+							<img src="SHOP_IMG/shop-rate-add.png">
+							 {else /}
+							<img src="SHOP_IMG/shop-rate-less.png">
+							 {/if}
+						</div>
+						<div>昨日退款申请 {$yesterday_data.refund_total_count}</div>
+					</div>
+					<div class="overview-bottom">
+						<div class="overview-bottom-text">退款总数</div>
+						<div class="overview-bottom-value">{$total_data.refund_total_count}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="layui-card ns-card-common ns-card-brief">
+	<div class="layui-card-header">
+		<div>
+			<span class="ns-card-title">社区团购概况</span>
+		</div>
+	</div>
+	<div class="layui-card-body layui-col-space20">
+		<div class="layui-col-md3">
+			<div class="overview-box">
+				<div class="overview-title">
+					<div class="overview-title-text">今日新增团长</div>
+					<div class="title ns-prompt-block overview-prompt">
+						<div class="ns-prompt">
+							<i class="iconfont iconwenhao1"></i>
+							<div class="ns-prompt-box">
+								<div class="ns-prompt-con">
+									今日已审核通过及后台添加的团长数量
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="overview-con">
+					<div class="overview-value ns-text-color">{$today_data.community_leader}</div>
+					<div class="overview-rate">
+						<div>日同比 {$day_rate_data.community_leader}
+							 {if $day_rate_data.community_leader > 0}
+							<img src="SHOP_IMG/shop-rate-add.png">
+							 {else /}
+							<img src="SHOP_IMG/shop-rate-less.png">
+							 {/if}
+						</div>
+						<div>昨日新增团长 {$yesterday_data.community_leader}</div>
+					</div>
+					<div class="overview-bottom">
+						<div class="overview-bottom-text">团长总数</div>
+						<div class="overview-bottom-value">{$total_data.community_leader}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="layui-col-md3">
+			<div class="overview-box">
+				<div class="overview-title">
+					<div class="overview-title-text">今日团长佣金(元)</div>
+					<div class="title ns-prompt-block overview-prompt">
+						<div class="ns-prompt">
+							<i class="iconfont iconwenhao1"></i>
+							<div class="ns-prompt-box">
+								<div class="ns-prompt-con">
+									今日团长的已结算佣金金额
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="overview-con">
+					<div class="overview-value ns-text-color">{$today_data.community_leader_commission_total}</div>
+					<div class="overview-rate">
+						<div>日同比 {$day_rate_data.community_leader_commission_total}
+							 {if $day_rate_data.community_leader_commission_total > 0}
+							<img src="SHOP_IMG/shop-rate-add.png">
+							 {else /}
+							<img src="SHOP_IMG/shop-rate-less.png">
+							 {/if}
+						</div>
+						<div>昨日团长佣金 {$yesterday_data.community_leader_commission_total}</div>
+					</div>
+					<div class="overview-bottom">
+						<div class="overview-bottom-text">团长总结算佣金</div>
+						<div class="overview-bottom-value">{$total_data.community_leader_commission_total}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="layui-col-md3">
+			<div class="overview-box">
+				<div class="overview-title">
+					<div class="overview-title-text">今日新增配送员</div>
+					<div class="title ns-prompt-block overview-prompt">
+						<div class="ns-prompt">
+							<i class="iconfont iconwenhao1"></i>
+							<div class="ns-prompt-box">
+								<div class="ns-prompt-con">
+									今日后台添加配送员的数量
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="overview-con">
+					<div class="overview-value ns-text-color">{$today_data.community_clerk}</div>
+					<div class="overview-rate">
+						<div>日同比 {$day_rate_data.community_clerk}
+							 {if $day_rate_data.community_clerk > 0}
+							<img src="SHOP_IMG/shop-rate-add.png">
+							 {else /}
+							<img src="SHOP_IMG/shop-rate-less.png">
+							 {/if}
+						</div>
+						<div>昨日新增配送员 {$yesterday_data.community_clerk}</div>
+					</div>
+					<div class="overview-bottom">
+						<div class="overview-bottom-text">配送员总数</div>
+						<div class="overview-bottom-value">{$total_data.community_clerk}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="layui-col-md3">
+			<div class="overview-box">
+				<div class="overview-title">
+					<div class="overview-title-text">今日配送单数</div>
+					<div class="title ns-prompt-block overview-prompt">
+						<div class="ns-prompt">
+							<i class="iconfont iconwenhao1"></i>
+							<div class="ns-prompt-box">
+								<div class="ns-prompt-con">
+									今日生成配送单的数量
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="overview-con">
+					<div class="overview-value ns-text-color">{$today_data.community_delivery}</div>
+					<div class="overview-rate">
+						<div>日同比 {$day_rate_data.community_delivery}
+							 {if $day_rate_data.community_delivery > 0}
+							<img src="SHOP_IMG/shop-rate-add.png">
+							 {else /}
+							<img src="SHOP_IMG/shop-rate-less.png">
+							 {/if}
+						</div>
+						<div>昨日配送单数 {$yesterday_data.community_delivery}</div>
+					</div>
+					<div class="overview-bottom">
+						<div class="overview-bottom-text">配送单总数</div>
+						<div class="overview-bottom-value">{$total_data.community_delivery}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="layui-card ns-card-common ns-card-brief">
+	<div class="layui-card-header">
+		<div>
+			<span class="ns-card-title">会员(团长)提现概况</span>
+		</div>
+	</div>
+	<div class="layui-card-body layui-col-space20">
+		<div class="layui-col-md3">
+			<div class="overview-box">
+				<div class="overview-title">
+					<div class="overview-title-text">今日转账(元)</div>
+					<div class="title ns-prompt-block overview-prompt">
+						<div class="ns-prompt">
+							<i class="iconfont iconwenhao1"></i>
+							<div class="ns-prompt-box">
+								<div class="ns-prompt-con">
+									今日提现已转账的金额
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="overview-con">
+					<div class="overview-value ns-text-color">{$today_data.balance_withdraw}</div>
+					<div class="overview-rate">
+						<div>日同比 {$day_rate_data.balance_withdraw}
+							 {if $day_rate_data.balance_withdraw > 0}
+							<img src="SHOP_IMG/shop-rate-add.png">
+							 {else /}
+							<img src="SHOP_IMG/shop-rate-less.png">
+							 {/if}
+						</div>
+						<div>昨日转账 {$yesterday_data.balance_withdraw}</div>
+					</div>
+					<div class="overview-bottom">
+						<div class="overview-bottom-text">提现转账总额</div>
+						<div class="overview-bottom-value">{$total_data.balance_withdraw}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="layui-col-md3">
+			<div class="overview-box">
+				<div class="overview-title">
+					<div class="overview-title-text">今日申请提现(元)</div>
+					<div class="title ns-prompt-block overview-prompt">
+						<div class="ns-prompt">
+							<i class="iconfont iconwenhao1"></i>
+							<div class="ns-prompt-box">
+								<div class="ns-prompt-con">
+									今日申请提现的金额
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="overview-con">
+					<div class="overview-value ns-text-color">{$today_data.balance_withdraw_apply}</div>
+					<div class="overview-rate">
+						<div>日同比 {$day_rate_data.balance_withdraw_apply}
+							 {if $day_rate_data.balance_withdraw_apply > 0}
+							<img src="SHOP_IMG/shop-rate-add.png">
+							 {else /}
+							<img src="SHOP_IMG/shop-rate-less.png">
+							 {/if}
+						</div>
+						<div>昨日申请提现 {$yesterday_data.balance_withdraw_apply}</div>
+					</div>
+					<div class="overview-bottom">
+						<div class="overview-bottom-text">提现中金额</div>
+						<div class="overview-bottom-value">{$total_data.balance_withdraw_apply}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{/block}
+{block name="script"}
+{/block}

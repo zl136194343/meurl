@@ -1,0 +1,260 @@
+{extend name="base"/}
+{block name="resources"}
+<style>
+	.table_body {
+		font-family: arial;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+	.goods-category-list .layui-table td {
+		border-left: 0;
+		border-right: 0;
+	}
+	.goods-category-list .layui-table .switch {
+		font-size: 16px;
+		cursor: pointer;
+		width: 12px;
+		line-height: 1;
+		display: inline-block;
+		text-align: center;
+		vertical-align: middle;
+	}
+	.goods-category-list .layui-table img {width: 40px;}
+	.goods-category-list .layui-table td {
+		border-left: 0;
+		border-right: 0;
+	}
+	.goods-category-list .layui-table .switch {
+		font-size: 16px;
+		cursor: pointer;
+		width: 12px;
+		line-height: 1;
+		display: inline-block;
+		text-align: center;
+		vertical-align: middle;
+	}
+	.goods-category-list .layui-table img {width: 40px;}
+	/* 分类样式 */
+	.table_div{
+		color:#666
+	}
+	.table_head{
+		display: flex;
+		font-weight: bold;
+		background-color: #F7F7F7;
+	}
+	.table_head li{
+		height: 40px;
+		line-height: 40px;
+		border: 0;
+		border-bottom: 1px solid #e6e6e6;
+		padding: 9px 15px;
+		font-size: 14px;
+		
+	}
+	.table_head li:first-child{
+		padding-right: 0;
+		
+	}
+	.table_tr{
+		display: flex;
+		border-bottom: 1px solid #e6e6e6;
+	}
+	.table_tr .table_td{
+		position: relative;
+		padding: 11px 15px 8px;
+		min-height: 30px;
+		line-height: 33px;
+		font-size: 14px;
+	}
+	.table_tr .table_td span{
+		cursor: pointer;
+	}
+	.table_tr .table_td span>img{
+		width:12px;
+		height:12px
+	}
+	.table_tr .table_td span>img.rotate{
+		transform:rotate(90deg);
+	}
+	.table_tr .table_td .ns-img-box{
+		width:30px;
+		height:30px;
+		line-height: 30px;
+	}
+	.table_tr .table_td:first-child{
+		padding-right:0
+	}
+	.table_tr .ns-table-btn {
+	    display: flex;
+	    flex-wrap: wrap;
+	}
+	.table_tr .layui-btn {
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    height: 23px;
+	    border-radius: 50px;
+	    background-color: transparent;
+	    color: #4685FD;
+	    text-align: center;
+	    padding: 2px 8px 2px 0;
+	    margin: 5px 0 5px 5px;
+	    position: relative;
+	}
+	.table_two_div{
+		display: none;
+	}
+	.table_three{
+		display: none;
+	}
+	.empty_switch{
+		display: inline-block;
+		width:30px;
+		height:25px;
+		padding-right:15px;
+	}
+	.js-switch{display: inline-block;height:30px;width:30px;text-align: center;}
+	.table_move{
+		cursor: move;float:left;margin-right: 10px;
+	}
+	.table_moves{
+		cursor: move;float:left;margin-right: 10px;
+	}
+	.tables_move{
+		cursor: move;float:left;margin-right: 20px;padding-left: 70px;
+	}
+</style>
+{/block}
+{block name="main"}
+
+<table id="level_list" lay-filter="level_list"></table>
+
+<script type="text/html" id="action">
+	<div class="ns-table-btn">
+		<a class="layui-btn" lay-event="edit">编辑</a>
+	
+		<a class="layui-btn" lay-event="del">删除</a>
+<!--		<a class="layui-btn" lay-event="setDefault">设为默认</a>-->
+
+	</div>
+</script>
+{/block}
+{block name="script"}
+<script>
+	layui.use(['form'], function() {
+		var table,
+			form = layui.form,
+			repeat_flag = false; //防重复标识
+
+		table = new Table({
+			elem: '#level_list',
+			url: ns.url("admin/member/feedback"),
+			cols: [
+				[{
+					field: 'member_name',
+					title: '会员名称',
+					width: '30%',
+					unresize: 'false'
+				},{
+					field: 'feedback',
+					title: '意见',
+					width: '15%',
+					unresize: 'false'
+				}, {
+					title: '操作',
+					width: '15%',
+					unresize: 'false',
+					toolbar: '#action'
+				}]
+			]
+		});
+		
+		/**
+		 * 工具栏操作，编辑、删除
+		 */
+		table.tool(function(obj) {
+			var data = obj.data,
+				event = obj.event;
+				
+			switch (event) {
+				case 'edit': 
+					location.href = ns.url("admin/member/editfeedback?id=" + data.id);
+					break;
+				case 'del':
+					delMemberLevel(data.id);
+					break;
+				// case 'setDefault':
+				// 	setDefault(data.level_id);
+				// 	break;
+			}
+		});
+
+		/**
+		 * 搜索功能
+		 */
+		form.on('submit(search)', function(data) {
+			table.reload( {
+				page: {
+					curr: 1
+				},
+				where: data.field
+			});
+		});
+
+		// 删除方法
+		function delMemberLevel(level_ids) {
+			if(repeat_flag) return false;
+			repeat_flag = true;
+				
+			layer.confirm('确定要删除该反馈吗?', function() {
+				$.ajax({
+					type: 'POST',
+					url: ns.url("admin/member/deletefeedbock"),
+					data: {level_ids: level_ids},
+					dataType: 'JSON',
+					success: function(res) {
+						layer.msg(res.message);
+						repeat_flag = false;
+
+						if(res.code == 0){
+							table.reload();
+						}
+						
+					}
+				});
+			}, function () {
+				layer.close();
+				repeat_flag = false;
+			});
+		}
+
+		// 设置默认
+		// function setDefault(level_id){
+		// 	$.ajax({
+		// 		type: 'POST',
+		// 		url: ns.url("admin/memberlevel/setDefault"),
+		// 		data: {
+		// 			level_id: level_id
+		// 		},
+		// 		dataType: 'JSON',
+		// 		success: function(res) {
+		// 			layer.msg(res.message);
+		// 			if(res.code == 0){
+		// 				table.reload();
+		// 			}
+		// 		}
+		// 	});
+		// }
+	});
+
+	/**
+	 * 点击跳转添加会员等级页面
+	 */
+	/*function addLevel() {
+		location.href = ns.url("admin/memberlevel/addLevel");
+	}*/
+</script>
+{/block}

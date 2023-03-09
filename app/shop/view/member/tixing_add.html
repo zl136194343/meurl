@@ -1,0 +1,265 @@
+{extend name="base"/}
+{block name="resources"}
+<style>
+	.ns-form {margin-top: 0;}
+	.ns-calendar {
+      position: absolute;
+      top: 7px;
+      right: 8px;
+      width: 50px;
+      height: 34px;
+      z-index: 0;
+    }
+</style>
+{/block}
+{block name="main"}
+<!--<script src="__STATIC__/ext/drag-arrange.js"></script>
+<script src="__STATIC__/ext/video/videojs-ie8.min.js"></script>
+<script src="__STATIC__/ext/video/video.min.js"></script>
+<script src="__STATIC__/ext/searchable_select/searchable_select.js"></script>-->
+
+<script src="SHOP_JS/category_select.js"></script>
+<div class="layui-form ns-form">
+<div class="ns-pay-win">
+<div class="layui-form-item js-new-attr-list">
+						<label class="layui-form-label"></label>
+						<div class="layui-input-block">
+							<div class="layui-form">
+								<table class="layui-table">
+									<colgroup>
+										<col width="20%" />
+										<col width="20%" />
+										<col width="20%" />
+										<col width="30%" />
+										<col width="10%" />
+									</colgroup>
+									<thead>
+									<tr>
+									    <th>标题</th>
+										<th>推送人</th>
+										<th>推送时间</th>
+										<th >
+											备注
+
+										</th>
+									
+									</tr>
+									</thead>
+									<tbody class="ns-attr-new">
+										<tr class="goods-attr-tr goods-new-attr-tr">
+                                	    <td>
+                                		<input type="text" class="layui-input add-attr-title" />
+                                		</td>
+                                		<td>
+                                		  <select name="select_base_cityname" id="select_base_cityname" lay-filter="select_base_cityname" xm-select="select_base_cityname" xm-select-type="1"><option value="">请选择推送人员</option>{foreach name="$brand_list" item="vo"}<option value="{$vo['member_id']}" name="{$vo['name']}">{$vo['name']}</option>{/foreach}</select> 
+                                		</td>
+                                		<td>
+                                		
+                                		<div class="layui-inline"><div class="layui-input-inline"><input type="text" name="end" class="layui-input" id="end_time"  placeholder="选择时间"></div></div>
+                                		</td>
+                                		<td>
+                                		<input type="text" class="layui-input add-attr-reamk" />
+                                		</td>
+                                		
+                                		</tr>
+									</tbody>
+								</table>
+							</div>
+							<input type="hidden" name="id" id="id" value="{$id}" />
+							<!--<button class="layui-btn layui-btn-primary" onclick="addNewAttr()">添加参数</button>-->
+						</div>
+					</div>
+
+	<div class="ns-form-row">
+		<button class="layui-btn ns-bg-color" lay-submit lay-filter="save">保存</button>
+		<button class="layui-btn layui-btn-primary" onclick="back()">返回</button>
+	</div>
+</div>
+
+{/block}
+{block name="script"}
+<!--<script src="https://raw.githack.com/hnzzmsf/layui-formSelects/master/dist/formSelects-v4.min.js" type="text/javascript" charset="utf-8"></script>-->
+ <link rel="stylesheet" type="text/css" href="SHOP_CSS/formSelects-v4.css" media="all">
+ <!-- <link rel="stylesheet" type="text/css" href="../formSelects-v4.css" media="all">-->
+<!-- <script src="SHOP_JS/formSelects-v4.js"></script>-->
+<script>
+        layui.config({
+        base: "SHOP_JS/" //路径为插件
+  }).extend({
+        formSelects: 'formSelects-v4'
+  });
+	    layui.use(['form','laydate','formSelects'], function() {
+		var form = layui.form,
+			repeat_flag = false; //防重复标识
+			formSelects =  layui.formSelects;
+		form.render();
+
+		/**
+		 * 监听保存
+		 */
+		 var time = new Date();
+		 var currentTime = time.toLocaleDateString + " " + time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+		form.on('submit(save)', function(data) {
+			/*if (repeat_flag) return false;*/
+			repeat_flag = true;
+			var goodsAttrFormat = [];
+				$(".ns-attr-new .goods-new-attr-tr").each(function (i) {
+				/*var attr_id = $(this).find(".add-attr-name").val();*/
+				
+				var attr_value = $(this).find("#end_time").val();
+				var attr_title = $(this).find(".add-attr-title").val();
+				var attr_reamk = $(this).find(".add-attr-reamk").val();
+				var attr_name = JSON.stringify(layui.formSelects.value('select_base_cityname', 'name'));
+				var attr_id = JSON.stringify(layui.formSelects.value('select_base_cityname', 'valStr'));
+				/*var sort = $(this).find(".add-attr-sort").val();*/
+				var attr = {};
+                	attr.attr_name = attr_name;
+					attr.attr_id = attr_id;
+					attr.attr_value_name = attr_value;
+					attr.attr_title = attr_title;
+					attr.reamk = attr_reamk;
+					attr.id = $('#id').val();
+					goodsAttrFormat.push(attr);
+			});
+			console.log(goodsAttrFormat)
+			
+			data.field.goodsAttrFormat = goodsAttrFormat;
+			$.ajax({
+				url: ns.url("shop/member/tixingAdd"),
+				data: data.field,
+				dataType: 'JSON', //服务器返回json格式数据
+				type: 'POST', //HTTP请求类型
+				success: function(res) {
+					repeat_flag = false;
+					if (res.code == 0) {
+						layer.confirm('添加成功', {
+							title:'操作提示',
+							btn: ['返回列表', '继续添加'],
+							yes: function(){
+								location.href = ns.url("shop/member/customerlist")
+							},
+							btn2: function() {
+								location.href = ns.url("shop/member/tixingAdd")
+							}
+						});
+					}else{
+						layer.msg(res.message);
+					}
+				}
+			});
+		});
+		var  laydate = layui.laydate;
+		/*var formSelects = layui.xm_select;*/
+		laydate.render({
+			elem: '#end_time', //指定元素
+			type: 'datetime',
+			min: currentTime
+		});
+		/**
+		 * 表单验证
+		 */
+	
+	});
+ 	function back(){
+		location.href = ns.url("shop/member/operational");
+	}
+	var repeat_flag_member = false;
+	var html, val,num = 0;
+	function checkMember() {
+		var parent = $(".ns-check-member");
+		var con = parent.find(".ns-member-name").val();
+		$(".layui-word-aux").remove();
+		$(".ns-search-result").remove();
+        
+		if (repeat_flag_member) return false;
+		repeat_flag_member = true;
+
+		if (con == "" || con == null || con.trim() == "") {
+			repeat_flag = false;
+		} else {
+			$.ajax({
+				type: 'POST',
+				url: ns.url("shop/verify/searchMember"),
+				data: {
+					'search_text': con
+				},
+				dataType: 'JSON',
+				success: function(res) {
+					// layer.msg(res.message);
+					repeat_flag_member = false;
+
+					if (res.data == null) {
+						html = '<span class="layui-word-aux">未找到该用户</span>';
+						val = res.data;
+					} else {
+						html = '<div class="ns-search-result layui-input-inline ns-border-color-gray">' +
+								'<div class="ns-search-res-img">' +
+								'<img src="' + ns.img(res.data.headimg) + '" onerror="javascript:this.src=\'https://xyhl.chnssl.com/app/admin/view/public/img/default_headimg.png\';"/>' +
+								'</div>' +
+								'<div class="ns-search-res-intro">' +
+								'<p>用户名：' + res.data.realname + '</p>' +
+								'<p>电话：' + res.data.mobile + '</p>' +
+								'</div>' +
+								'<div class="ns-search-res-close" onclick="closeMember()">' +
+								'<i class="iconfont iconclose_light"></i>' +
+								'</div>' +
+								'</div>';
+						val = res.data.member_id;
+					}
+
+					$(".ns-member-id").attr("value", val);
+					$("#weixin_settlement_bank_account_name").val(res.data.realname);
+					$("#weixin_settlement_bank_address").val(res.data.nickname);
+					$("#weixin_settlement_bank_name").val(res.data.mobile);
+					$("input[name='member_id']").val(res.data.member_id);
+
+					$(".ns-check-member").append(html);
+				}
+			});
+		}
+	}
+	
+	function addNewAttr() {
+	    var from = layui.form;
+	var html = '<tr class="goods-attr-tr goods-new-attr-tr">' +
+		'<td>' +
+		'<input type="text" class="layui-input add-attr-title" />' +
+		'</td>' +
+		'<td>' +
+		 ' <select name="select_base_cityname['+num+']" id="select_base_cityname['+num+']" lay-filter="select_base_cityname['+num+']" xm-select="select_base_cityname['+num+']" xm-select-type="1"><option value="">请选择推送人员</option>{foreach name="$brand_list" item="vo"}<option value="{$vo['member_id']}" name="{$vo['name']}">{$vo['name']}</option>{/foreach}</select>'+ 
+		'</td>' +
+		'<td>' +
+		
+		'<div class="layui-inline"><div class="layui-input-inline"><input type="date" name="end" class="layui-input" id="end_time"  placeholder="选择时间"></div></div>' +
+		'</td>' +
+		'<td>' +
+		'<input type="text" class="layui-input add-attr-reamk" />' +
+		'</td>' +
+		'<td>' +
+		'<div class="ns-table-btn"><a class="layui-btn" onclick="delAttr(this)">删除</a></div>' +
+		'</td>' +
+		'</tr>';
+
+	$(".ns-attr-new").append(html);
+	num++;
+	$('.ns-null-data').hide();
+
+	                  
+	formSelects.render();
+	from.render();
+	isNullTable();
+}
+	function isNullTable() {
+	var len = $(".ns-attr-new .goods-attr-tr").length;
+	if (len == 0) {
+		$(".ns-attr-new").html('<tr class="ns-null-data"><td colspan="4" align="center">无数据</td></tr>');
+	} else {
+		$(".ns-attr-new .ns-null-data").remove();
+	}
+}
+function delAttr(obj) {
+	$(obj).parents("tr").remove();
+	isNullTable();
+}
+</script>
+{/block}

@@ -1,0 +1,336 @@
+{extend name="base"/}
+{block name="resources"}
+{/block}
+{block name="main"}
+<div class="ns-single-filter-box">
+    <div class="layui-form">
+        <div class="layui-inline">
+            <div class="layui-input-inline">
+                <select name="type">
+                    <option value="">请选择主体类型</option>
+                    {foreach $type_data as $key => $val}
+                    <option value="{$val.type}">{$val.name}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+        <div class="layui-input-inline">
+            <input type="text" name="name" placeholder="请输入导出记录名称" autocomplete="off" class="layui-input">
+            <button type="button" class="layui-btn layui-btn-primary" lay-filter="search" lay-submit>
+                <i class="layui-icon">&#xe615;</i>
+            </button>
+        </div>
+        <input type="hidden" name="status">
+    </div>
+</div>
+
+<!-- 列表 -->
+<div class="layui-tab ns-table-tab" lay-filter="page_tab">
+    <ul class="layui-tab-title">
+        <li class="layui-this" lay-id="">全部</li>
+        {volist name='status_data' id='vo'}
+        <li lay-id="{$vo.status}">{$vo.name}</li>
+        {/volist}
+    </ul>
+    <div class="layui-tab-content">
+        <table id="page_list" lay-filter="page_list"></table>
+    </div>
+</div>
+
+{/block}
+{block name="script"}
+<script type="text/javascript">
+
+
+    layui.use(['form', 'element'], function(form, element) {
+        // 防重复标识
+        var is_submit = false;
+
+
+        var table = new Table({
+            elem: '#page_list',
+            url: ns.url('shop/communitydelivery/exportList'),
+            cols: [
+                [
+                    {
+                        width: '2%',
+                        type: 'checkbox'
+                    },
+                    {
+                        title: '名称',
+                        width: '8%',
+                        templet: function (data) {
+                            return '<p class="ns-multi-line-hiding">'+ data.name +'</p>';
+                        },
+                    },
+                    {
+                        title: '主体类型',
+                        width: '8%',
+                        templet: function (data) {
+                            return data.type_info.name;
+                        },
+                    },
+                    {
+                        title: '状态',
+                        width: '6%',
+                        templet: function (data) {
+                            return '<span style="color: '+ data.status_info.color +';">'+ data.status_info.name +'</span>';
+                        },
+                    },
+                    {
+                        title: '时间',
+                        width: '15%',
+                        templet: function (data) {
+                            var html = '';
+
+                            html += '<p class="ns-multi-line-hiding">创建时间：'+ ns.time_to_date(data.create_time) +'</p>';
+                            if (data.exec_start_time) {
+                                html += '<p class="ns-multi-line-hiding">执行开始：'+ ns.time_to_date(data.exec_start_time) +'</p>';
+                            }
+                            if (data.exec_end_time) {
+                                html += '<p class="ns-multi-line-hiding">执行结束：'+ ns.time_to_date(data.exec_end_time) +'</p>';
+                            }
+
+                            return html;
+                        },
+                    },
+                    {
+                        title: '导出条件',
+                        width: '52%',
+                        templet: function (data) {
+                            var html = '';
+
+                            html += '<div class="layui-row layui-col-space10">';
+                            data.condition_desc.forEach(function (v) {
+                                html += '<div class="layui-col-md4 ns-multi-line-hiding">'+ v.name +'：'+ v.value +' </div>';
+                            })
+                            html += '</div>';
+
+                            return html;
+                        },
+                    },
+                    {
+                        title: '操作',
+                        width: '8%',
+                        templet: function (data) {
+                            var html = '';
+
+                            html += '<div class="ns-table-btn">';
+                                if (data.status_info.const === 'COMPLETED' && data.result) {
+                                    html += '<a class="layui-btn" href="'+ ns.img(data.result) +'">下载</a>';
+                                }
+                                if ($.inArray(data.status_info.const, ['WAIT_EXEC', 'COMPLETED', 'EXEC_FAIL']) !== -1) {
+                                    html += '<a class="layui-btn" lay-event="reset">重执</a>';
+                                }
+                                html += '<a class="layui-btn" lay-event="delete">删除</a>';
+                            html += '</div>';
+
+                            return html;
+                        },
+                    }
+                ]
+            ],
+            bottomToolbar: (function () {
+                var html = '';
+
+                html += '<div class="tool-temp-btns">';
+                    html += '<button class="layui-btn layui-btn-primary" lay-event="delete">批量删除</button>';
+                html += '</div>';
+
+                return html;
+            })()
+        });
+
+        // 监听Tab切换
+        element.on('tab(page_tab)', function () {
+            var status = $(this).attr('lay-id');
+
+            $('input[type="hidden"][name="status"]').val(status)
+
+            table.reload({
+                page: {
+                    curr: 1
+                },
+                where: {
+                    status: status
+                }
+            });
+        });
+
+        /**
+         * 监听工具栏操作
+         */
+        table.tool(function(obj) {
+            var data = obj.data;
+
+            switch (obj.event) {
+                // 删除
+                case 'delete':
+                    layer.confirm('确定要删除吗?', function(index) {
+                        layer.close(index);
+
+                        deleteExport(data.export_id);
+                    });
+                    break;
+                // 重执
+                case 'reset':
+                    resetExport(data.export_id);
+                    break;
+            }
+        });
+
+        /**
+         * 批量操作
+         */
+        table.bottomToolbar(function (obj) {
+            var data = obj.data,
+                id_arr = [];
+
+            if (data.length === 0) {
+                layer.msg('请选择要操作的数据');
+                return false;
+            }
+
+            for (i in data) id_arr.push(data[i].export_id);
+            var ids = id_arr.toString();
+
+            switch (obj.event) {
+                // 批量删除
+                case 'delete':
+                    layer.confirm('确定要批量删除吗?', function(index) {
+                        layer.close(index);
+
+                        deleteExport(ids);
+                    });
+                    break;
+
+            }
+        });
+
+        /**
+         * 删除导出记录
+         * @param export_ids
+         */
+        function deleteExport(export_ids) {
+
+            export_ids = String(export_ids);
+
+            if (is_submit) return false;
+            is_submit = true;
+
+            $.ajax({
+                url: ns.url('shop/communitydelivery/deleteExport'),
+                data: {export_ids : export_ids},
+                dataType: 'JSON',
+                type: 'POST',
+                async: false,
+                success: function (res) {
+                    is_submit = false;
+                    layer.msg(res.message);
+
+                    if (res.code == 0) {
+                        table.reload();
+                    }
+                },
+                error: function () {
+                    is_submit = false;
+                    layer.msg('操作异常');
+                }
+            });
+        }
+
+        /**
+         * 重执
+         * @param export_id
+         */
+        function resetExport(export_id) {
+            var layer_index;
+
+            layer.confirm('确定要重执吗?', function(index) {
+
+                layer.close(index);
+
+                if (is_submit) return false;
+                is_submit = true;
+
+                new Promise(function (resolve, reject) {
+
+                    // 重执导出记录
+                    $.ajax({
+                        url: ns.url('shop/communitydelivery/resetExport'),
+                        data: {export_id: export_id},
+                        dataType: 'JSON',
+                        type: 'POST',
+                        beforeSend : function(){
+                            // 显示加载中提示
+                            layer_index = layer.load();
+                        },
+                        complete : function () {
+
+                            // 关闭加载中提示
+                            layer.close(layer_index);
+                        },
+                        success: function (res) {
+
+                            if (res.code == 0) {
+                                resolve();
+                            } else {
+                                reject();
+                            }
+                        },
+                        error: function () {
+                            reject()
+                            layer.msg('操作异常');
+                        }
+                    });
+                }).then(function (res) {
+
+                    // 执行导出
+                    $.ajax({
+                        url: ns.url('shop/communitydelivery/exportOrder'),
+                        data: {export_id: export_id},
+                        dataType: 'JSON',
+                        type: 'POST',
+                        beforeSend : function(){
+                            // 显示加载中提示
+                            layer_index = layer.load();
+                        },
+                        complete : function () {
+                            // 关闭加载中提示
+                            layer.close(layer_index);
+                        },
+                        success: function (res) {
+                            is_submit = false;
+                            layer.msg(res.message);
+
+                            if (res.code == 0) {
+                                table.reload();
+                            }
+                        },
+                        error: function () {
+                            is_submit = false;
+                            layer.msg('操作异常');
+                        }
+                    });
+
+                }).catch(function (reason) {
+                    is_submit = false;
+                })
+            });
+        }
+
+        /**
+         * 搜索功能
+         */
+        form.on('submit(search)', function(data) {
+            table.reload({
+                page: {
+                    curr: 1
+                },
+                where: data.field
+            });
+            return false;
+        });
+    });
+</script>
+{/block}

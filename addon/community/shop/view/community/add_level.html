@@ -1,0 +1,145 @@
+{extend name="base"/}
+{block name="resources"}
+<style>
+	.ns-form {margin-top: 0;}
+	.layui-btn+.layui-btn {margin-left: 0;}
+	.layui-btn {margin-right: 10px; margin-bottom: 15px;}
+	.weight-list span{display: inline-block;width: 60px;line-height: 30px;border:1px solid #eee;border-radius: 4px;text-align: center;font-size: 12px;cursor: pointer;}
+	.weight-list span.active{border-color: #ff8143; }
+	.weight-list span.disabled{background:#f1f1f1;cursor: not-allowed; }
+</style>
+{/block}
+{block name="main"}
+<div class="layui-form ns-form">
+
+    <!-- 基础上传 -->
+    <div class="layui-card ns-card-common ns-card-brief">
+        <div class="layui-card-header">
+            <span class="ns-card-title">团长等级分佣</span>
+        </div>
+        <div class="layui-card-body">
+
+
+			<div class="layui-form-item">
+				<label class="layui-form-label"><span class="required">*</span>等级名称：</label>
+				<div class="layui-input-block">
+					<input type="text" name="level_name" lay-verify="required"  autocomplete="off" class="layui-input ns-len-mid">
+				</div>
+			</div>
+
+
+<!--			<div class="layui-form-item">-->
+<!--				<label class="layui-form-label"><span class="required">*</span>每单提成金额：</label>-->
+<!--				<div class="layui-input-inline">-->
+<!--					<input type="number" min="0" name="commission_money" lay-verify="required|money"  autocomplete="off" class="layui-input ns-len-short">-->
+<!--				</div>-->
+<!--				<div class="layui-form-mid">元</div>-->
+<!--			</div>-->
+
+
+			<div class="layui-form-item">
+				<label class="layui-form-label"><span class="required">*</span>订单提成比例：</label>
+
+				<div class="layui-input-inline">
+					<input type="number" min="0" name="commission_rate" lay-verify="required|money"  autocomplete="off" class="layui-input ns-len-short">
+				</div>
+				<div class="layui-form-mid">%</div>
+			</div>
+
+<!--			<div class="layui-form-item">-->
+<!--				<label class="layui-form-label"><span class="required">*</span>权重：</label>-->
+<!--				<div class="layui-input-inline">-->
+<!--					<input type="number" min="0" name="sort" value="0"  autocomplete="off" class="layui-input ns-len-short">-->
+<!--				</div>-->
+<!--				<div class="layui-form-mid">由低到高</div>-->
+<!--			</div>-->
+
+
+			<div class="ns-form-row">
+				<button class="layui-btn ns-bg-color" lay-submit lay-filter="save">保存</button>
+				<button class="layui-btn layui-btn-primary" onclick="back()">返回</button>
+			</div>
+		</div>
+    </div>
+
+</div>
+{/block}
+{block name="script"}
+<script>
+
+    layui.use(['form'], function() {
+        var form = layui.form,
+            repeat_flag = false; //防重复标识
+		form.render();
+
+
+        form.on('submit(save)', function(data) {
+
+            if (repeat_flag) return;
+            repeat_flag = true;
+
+            $.ajax({
+                type: 'POST',
+                dataType: 'JSON',
+				url: ns.url("community://shop/community/addlevel"),
+                data: data.field,
+                success: function(res) {
+					repeat_flag = false;
+                    if (res.code == 0) {
+                        layer.confirm('添加成功', {
+                            title:'操作提示',
+                            btn: ['返回列表', '继续添加'],
+							closeBtn: 0,
+                            yes: function(){
+								location.href = ns.url("community://shop/community/levellist");
+                            },
+                            btn2: function() {
+								location.href = ns.url("community://shop/community/levellist");
+                            }
+                        });
+                    }else{
+                        layer.msg(res.message);
+                    }
+                }
+            });
+        });
+		
+		/**
+		 * 表单验证
+		 */
+		form.verify({
+			num: function(value, item) {
+				var str = $(item).parents(".layui-form-item").find("label").text().split("*").join("");
+				str = str.substring(0, str.length - 1);
+				
+				if (value <= 0) {
+					return str + '必须大于0';
+				}
+				if (value % 1 != 0) {
+					return str + '必须为整数';
+				}
+			},
+			money: function(value, item) {
+				var str = $(item).parents(".layui-form-item").find("label").text().split("*").join("");
+				str = str.substring(0, str.length - 1);
+				
+				if (value < 0) {
+					return str + '不能小于0';
+				}
+				var arrMen = value.split(".");
+				var val = 0;
+				if (arrMen.length == 2) {
+					val = arrMen[1];
+				}
+				if (val.length > 2) {
+					return str + "最多可保留两位小数";
+				}
+			}
+		});
+    });
+	
+	function back() {
+		location.href = ns.url("community://shop/community/levellist");
+	}
+</script>
+{/block}
