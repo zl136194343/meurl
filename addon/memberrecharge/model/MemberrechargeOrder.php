@@ -165,6 +165,49 @@ class MemberrechargeOrder extends BaseModel
 
     }
 
+    public function orderPayPt($data)
+    {
+        $order_field = 'order_id,site_id,recharge_id,recharge_name,order_no,cover_img,face_value,buy_price,point,growth,coupon_id,price,pay_type,status,create_time,pay_time,member_id,member_img,nickname,level,type';
+        $order = $this->getMemberRechargeOrderInfo([ [ 'out_trade_no', '=', $data[ 'out_trade_no' ] ] ], $order_field);
+        $order_info = $order[ 'data' ];
+        if ($order_info[ 'status' ] == 1) {
+            model('member_recharge_order')->startTrans();
+            try {
+
+                $pay_list = $this->getPayType();
+
+                $pay_type_name = '';
+                if (!empty($data[ 'pay_type' ])) {
+                    $pay_type_name = $pay_list[ $data[ 'pay_type' ] ];
+                }
+
+                //修改订单状态
+                $order_data = [
+                    'pay_type' => $data[ 'pay_type' ],
+                    'pay_type_name' => $pay_type_name,
+                    'pay_time' => time(),
+                    'price' => $order_info[ 'buy_price' ],
+                    'status' => 2
+                ];
+                $res = model('member_recharge_order')->update($order_data, [ [ 'out_trade_no', '=', $data[ 'out_trade_no' ] ] ]);
+
+
+
+
+                model('member_recharge_order')->commit();
+                return $this->success($res);
+            } catch (\Exception $e) {
+
+                model('member_recharge_order')->rollback();
+                return $this->error('', $e->getMessage());
+            }
+        } else {
+            return $this->success(true);
+        }
+
+    }
+
+
     /**
      * 定时关闭订单
      * @param $order_id

@@ -733,9 +733,9 @@ class Goods extends BaseModel
      * @param string $order
      * @param string $field
      */
-    public function getGoodsSkuPageList($condition = [], $page = 1, $page_size = PAGE_LIST_ROWS, $order = '', $field = '*', $alias = '', $join = '')
+    public function getGoodsSkuPageList($condition = [], $page = 1, $page_size = PAGE_LIST_ROWS, $order = '', $field = '*', $alias = '', $join = '',$type=0)
     {
-        $list = model('goods_sku')->pageList($condition, $field, $order, $page, $page_size, $alias, $join);
+        $list = model('goods_sku')->rawPageList($condition, $field, $order, $page, $page_size, $alias, $join,'',$type);
         return $this->success($list);
     }
 

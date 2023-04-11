@@ -162,6 +162,7 @@ class PintuanOrder extends BaseModel
 				$res = model('promotion_pintuan_order')->update($pintuan_order_data, [ [ 'order_id', '=', $order['order_id'] ] ]);
 				//更新订单营销状态名称
 				model('order')->update([ 'promotion_status_name' => '拼团中', 'is_lock' => 1], [ [ 'order_id', '=', $order['order_id'] ] ]);
+
 			} else {//参团
 				
 				//更新拼团订单信息

@@ -145,6 +145,7 @@ class Model
         } else {
             self::$query_obj = Db::name($this->table)->alias($alias)->where($condition)->orderRaw($order);
             $count_obj = Db::name($this->table)->alias($alias)->where($condition)->orderRaw($order);
+
         }
 
         if (!empty($join)) {
@@ -286,6 +287,7 @@ class Model
      */
     final public function update($data = [], $where = [])
     {
+
         return Db::name($this->table)->where($where)->update($data);
     }
 

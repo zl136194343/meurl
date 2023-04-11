@@ -222,6 +222,7 @@ class DiyView extends BaseModel
     {
         $data = json_encode($condition);
         $cache = Cache::get("site_diy_view_getSiteDiyViewDetail_" . $data);
+
         if (!empty($cache)) {
             return $this->success($cache);
         }
