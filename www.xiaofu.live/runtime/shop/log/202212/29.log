@@ -1,0 +1,11 @@
+[2022-12-29T10:44:42+08:00][sql] CONNECT:[ UseTime:0.000444s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2022-12-29T10:44:42+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_config` [ RunTime:0.001045s ]
+[2022-12-29T10:44:42+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'CAPTCHA_CONFIG' LIMIT 1 [ RunTime:0.000368s ]
+[2022-12-29T10:44:42+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'SHOP_JOIN_ADV_CONFIG' LIMIT 1 [ RunTime:0.000328s ]
+[2022-12-29T10:44:42+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_document` [ RunTime:0.000985s ]
+[2022-12-29T10:44:42+08:00][sql] SELECT `site_id`,`app_module`,`document_key`,`title`,`content`,`create_time`,`modify_time` FROM `gxfc_document` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `document_key` = 'SHOP_JOIN_GUIDE_1' LIMIT 1 [ RunTime:0.000360s ]
+[2022-12-29T10:44:42+08:00][sql] SELECT `site_id`,`app_module`,`document_key`,`title`,`content`,`create_time`,`modify_time` FROM `gxfc_document` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `document_key` = 'SHOP_JOIN_GUIDE_2' LIMIT 1 [ RunTime:0.000378s ]
+[2022-12-29T10:44:42+08:00][sql] SELECT `site_id`,`app_module`,`document_key`,`title`,`content`,`create_time`,`modify_time` FROM `gxfc_document` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `document_key` = 'SHOP_JOIN_GUIDE_3' LIMIT 1 [ RunTime:0.000308s ]
+[2022-12-29T10:44:42+08:00][sql] SELECT `site_id`,`app_module`,`document_key`,`title`,`content`,`create_time`,`modify_time` FROM `gxfc_document` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `document_key` = 'SHOP_JOIN_GUIDE_4' LIMIT 1 [ RunTime:0.000338s ]
+[2022-12-29T10:44:42+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_website` [ RunTime:0.001043s ]
+[2022-12-29T10:44:42+08:00][sql] SELECT `web_phone`,`web_email`,`web_qrcode`,`web_qq`,`web_weixin`,`logo` FROM `gxfc_website` WHERE  `site_id` = 0 LIMIT 1 [ RunTime:0.000257s ]

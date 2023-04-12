@@ -1,0 +1,100 @@
+<script src="../../public/js/position_list.js"></script>{extend name="base"/}
+{block name="resources"}
+<link rel="stylesheet" href="ADMIN_CSS/goods_lists.css">
+<style>
+    .promotion-addon span {
+        border-radius: 3px;
+        border: 1px solid;
+        font-size: 12px;
+        line-height: 14px;
+        padding: 2px 4px;
+        margin-right: 3px;
+        margin-top: 3px;
+        color: #FFFFFF;
+    }
+    .layui-table-header .layui-table-cell{
+        overflow: inherit;
+    }
+    .layui-table-box {overflow: inherit;}
+    .layui-table-header {overflow: inherit;}
+    .layui-table-cell, .layui-table-tool-panel li {overflow: inherit;}
+</style>
+{/block}
+{block name="main"}
+<div class="layui-collapse ns-tips">
+    <div class="layui-colla-item">
+        <h2 class="layui-colla-title">操作提示</h2>
+        <ul class="layui-colla-content layui-show">
+            <li>当前显示的是商家发布过的所有商品，当商品处于上架状态时前台显示</li>
+            <li>虚拟商品用户购买之后可以通过订单核销进行商品核销处理。</li>
+            <li>如果商家的商品操作违规，平台可以操作违规下架，违规下架的商品需要商家编辑审核之后才能重新上架</li>
+        </ul>
+    </div>
+</div>
+
+<div class="ns-screen layui-collapse" lay-filter="selection_panel">
+    <div class="layui-colla-item">
+        <h2 class="layui-colla-title">筛选</h2>
+        <form class="layui-colla-content layui-form layui-show">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">搜索方式：</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="search_text" autocomplete="off" class="layui-input" placeholder="请输入职位名称" />
+                    </div>
+                </div>
+            </div>
+            <div class="ns-form-row">
+                <button class="layui-btn ns-bg-color" lay-submit id="" lay-filter="search">筛选</button>
+                <button type="reset" class="layui-btn layui-btn-primary reset">重置</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="layui-tab ns-table-tab" lay-filter="goods_list_tab">
+
+    <div class="layui-tab-content">
+        <table id="goods_list" lay-filter="goods_list"></table>
+    </div>
+</div>
+
+<!-- 商品信息 -->
+
+
+<!-- 操作 -->
+<script type="text/html" id="action">
+    <div class="operation-wrap" data-goods-id="{{d.id}}">
+        <div class="popup-qrcode-wrap"><img class="popup-qrcode-loadimg" src="__STATIC__/loading/loading.gif" /></div>
+        <div class="ns-table-btn">
+
+            <a class="layui-btn" lay-event="lockup">删除</a>
+<!--            <a class="layui-btn" lay-event="browse_records">浏览记录</a>-->
+        </div>
+    </div>
+</script>
+
+<!-- 批量操作 -->
+
+
+<!-- 批量操作 -->
+
+
+<!-- SKU商品列表 -->
+
+<!-- 商品推广 -->
+
+<!-- 商品预览 -->
+
+
+<!-- 编辑排序 -->
+<script type="text/html" id="editSort">
+    <input name="sort" type="number" onchange="editSort({{d.id}}, this)" value="{{d.sort}}" class="layui-input edit-sort ns-sort-len">
+</script>
+
+<!-- 设置商品推荐方式 -->
+
+{/block}
+{block name="script"}
+<script src="ADMIN_JS/position_list.js"></script>
+{/block}

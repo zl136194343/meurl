@@ -1,0 +1,85 @@
+{extend name="base"/}
+{block name="resources"}
+{/block}
+{block name="main"}
+
+<div  class="layui-form">
+	{if !empty($shop_watch)}
+	<div id="preview_bannerUpload" class="preview_img">
+		<img layer-src src="{:img($shop_watch)}" class="img_prev"/>
+	</div>
+	{/if}
+	{if empty($shop_watch)}
+	<div class="ns-form-row">
+		<button class="layui-btn ns-bg-color" onclick="back()">生成二维码</button>
+	</div>
+	{/if}
+</div>
+
+{/block}
+{block name="script"}
+<script>
+	layui.use(['form'], function(){
+		var form = layui.form,
+			repeat_flag = false; //防重复标识
+			
+		form.render();
+			
+		form.on('submit(save)', function(data){
+			if (repeat_flag) return;
+			repeat_flag = true;
+			
+			//图片删除
+			if(!data.field.logo) logo_upload.delete();
+			if(!data.field.avatar) avatar_upload.delete();
+			if(!data.field.banner) banner_upload.delete();
+			
+			$.ajax({
+				type: 'POST',
+				url: ns.url("shop/shop/config"),
+				data: data.field,
+				dataType: 'JSON',
+				success: function(res) {
+					layer.msg(res.message);
+					repeat_flag = false;
+					if (res.code == 0) {
+						setTimeout(function(){ location.reload(); }, 1000);
+					}
+				}
+			});
+		});
+
+		// 店铺LOGO
+		var logo_upload = new Upload({
+			elem: '#logoUpload'
+		});
+
+		// 店铺头像
+		var avatar_upload = new Upload({
+			elem: '#avatarUpload'
+		});
+
+		// 店铺大图
+		var banner_upload = new Upload({
+			elem: '#bannerUpload'
+		});
+	});
+	function back() {
+		$.ajax({
+			type: 'POST',
+			url: ns.url("shop/shop/getXcxCode"),
+			data: [],
+			dataType: 'JSON',
+			success: function(res) {
+				layer.msg(res.msg);
+				repeat_flag = false;
+				if (res.code == 0) {
+					var str = '<div id="preview_bannerUpload" class="preview_img">'+res.data+'</div>';
+					$('.layui-form').html(str);
+					$('.ns-form-row').css('display','none');
+				}
+			}
+		});
+	}
+</script>
+{/block}

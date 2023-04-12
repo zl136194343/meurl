@@ -1,0 +1,9 @@
+[2023-03-06T11:07:32+08:00][sql] CONNECT:[ UseTime:0.000337s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-03-06T11:07:32+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000757s ]
+[2023-03-06T11:07:32+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'weapp://admin/Weapp/setting'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000383s ]
+[2023-03-06T11:07:32+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'WEAPP_SETTING'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000272s ]
+[2023-03-06T11:07:32+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'WEAPP_ROOT'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000274s ]
+[2023-03-06T11:07:33+08:00][sql] CONNECT:[ UseTime:0.000356s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-03-06T11:07:33+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000790s ]
+[2023-03-06T11:07:33+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'weapp://admin/Weapp/config'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000417s ]
+[2023-03-06T11:07:33+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'WEAPP_CONFIG'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000297s ]

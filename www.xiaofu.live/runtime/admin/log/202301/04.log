@@ -1,0 +1,200 @@
+[2023-01-04T09:09:09+08:00][sql] CONNECT:[ UseTime:0.000368s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T09:09:09+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_user` [ RunTime:0.001114s ]
+[2023-01-04T09:09:09+08:00][sql] SELECT `uid`,`app_module`,`app_group`,`is_admin`,`site_id`,`group_id`,`group_name`,`username`,`password`,`member_id`,`create_time`,`update_time`,`status`,`login_time`,`login_ip` FROM `gxfc_user` WHERE  `username` = 'admin'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000354s ]
+[2023-01-04T09:09:09+08:00][sql] UPDATE `gxfc_user`  SET `login_time` = 1672794549 , `login_ip` = '171.113.165.57'  WHERE  `uid` = 1 [ RunTime:0.006288s ]
+[2023-01-04T09:09:09+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_user_log` [ RunTime:0.000951s ]
+[2023-01-04T09:09:09+08:00][sql] INSERT INTO `gxfc_user_log` SET `uid` = 1 , `username` = 'admin' , `site_id` = 0 , `url` = 'admin/Login/login' , `ip` = '171.113.165.57' , `data` = '[]' , `action_name` = '用户登录' , `create_time` = 1672794549 [ RunTime:0.006989s ]
+[2023-01-04T09:09:10+08:00][sql] CONNECT:[ UseTime:0.000394s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T09:09:10+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_stat_shop` [ RunTime:0.001138s ]
+[2023-01-04T09:09:10+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2023  AND `month` = 1  AND `day` = 4 LIMIT 1 [ RunTime:0.000409s ]
+[2023-01-04T09:09:10+08:00][sql] INSERT INTO `gxfc_stat_shop` SET `site_id` = 0 , `year` = 2023 , `month` = 1 , `day` = 4 , `day_time` = 1672761600 [ RunTime:0.006698s ]
+[2023-01-04T09:09:10+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2023  AND `month` = 1  AND `day` = 4  AND `day_time` = 1672761600 LIMIT 1 [ RunTime:0.000395s ]
+[2023-01-04T09:09:10+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2023  AND `month` = 1  AND `day` = 4 LIMIT 1 [ RunTime:0.000365s ]
+[2023-01-04T09:09:10+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2023  AND `month` = 1  AND `day` = 3 LIMIT 1 [ RunTime:0.000338s ]
+[2023-01-04T09:09:10+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 12  AND `day` = 26 LIMIT 1 [ RunTime:0.000353s ]
+[2023-01-04T09:09:10+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 12  AND `day` = 27 LIMIT 1 [ RunTime:0.000353s ]
+[2023-01-04T09:09:10+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 12  AND `day` = 28 LIMIT 1 [ RunTime:0.000364s ]
+[2023-01-04T09:09:10+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 12  AND `day` = 29 LIMIT 1 [ RunTime:0.000356s ]
+[2023-01-04T09:09:10+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 12  AND `day` = 30 LIMIT 1 [ RunTime:0.000339s ]
+[2023-01-04T09:09:10+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2022  AND `month` = 12  AND `day` = 31 LIMIT 1 [ RunTime:0.000340s ]
+[2023-01-04T09:09:10+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2023  AND `month` = 01  AND `day` = 01 LIMIT 1 [ RunTime:0.000343s ]
+[2023-01-04T09:09:10+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2023  AND `month` = 01  AND `day` = 02 LIMIT 1 [ RunTime:0.000352s ]
+[2023-01-04T09:09:10+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2023  AND `month` = 01  AND `day` = 03 LIMIT 1 [ RunTime:0.000354s ]
+[2023-01-04T09:09:10+08:00][sql] SELECT `id`,`site_id`,`year`,`month`,`day`,`order_total`,`shipping_total`,`refund_total`,`order_pay_count`,`goods_pay_count`,`shop_money`,`platform_money`,`create_time`,`modify_time`,`collect_shop`,`collect_goods`,`visit_count`,`order_count`,`goods_count`,`add_goods_count`,`day_time`,`member_count` FROM `gxfc_stat_shop` WHERE  `site_id` = 0  AND `year` = 2023  AND `month` = 01  AND `day` = 04 LIMIT 1 [ RunTime:0.000333s ]
+[2023-01-04T09:09:10+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order` [ RunTime:0.001620s ]
+[2023-01-04T09:09:10+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_order` WHERE  `order_status` = 0  AND `is_delete` = 0 [ RunTime:0.000296s ]
+[2023-01-04T09:09:10+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_order` WHERE  `order_status` = 1  AND `is_delete` = 0 [ RunTime:0.000267s ]
+[2023-01-04T09:09:10+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order_goods` [ RunTime:0.001168s ]
+[2023-01-04T09:09:10+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_order_goods` WHERE  `refund_status` NOT IN (0,3) [ RunTime:0.000779s ]
+[2023-01-04T09:09:10+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_goods` [ RunTime:0.001164s ]
+[2023-01-04T09:09:10+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `goods_state` = 1  AND `is_delete` = 0 [ RunTime:0.000279s ]
+[2023-01-04T09:09:10+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` WHERE  `goods_state` = 0  AND `is_delete` = 0 [ RunTime:0.000268s ]
+[2023-01-04T09:09:10+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_fenxiao_withdraw` [ RunTime:0.000985s ]
+[2023-01-04T09:09:10+08:00][sql] SELECT COUNT(`id`) AS think_count FROM `gxfc_fenxiao_withdraw` WHERE  `status` = 1 [ RunTime:0.000261s ]
+[2023-01-04T09:09:10+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_fenxiao_apply` [ RunTime:0.000889s ]
+[2023-01-04T09:09:10+08:00][sql] SELECT COUNT(`apply_id`) AS think_count FROM `gxfc_fenxiao_apply` WHERE  `status` = 1 [ RunTime:0.000235s ]
+[2023-01-04T09:09:10+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_order_complain` [ RunTime:0.000961s ]
+[2023-01-04T09:09:10+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_order_complain` WHERE  `complain_status` = 1 [ RunTime:0.000237s ]
+[2023-01-04T09:09:10+08:00][sql] SELECT SUM(`order_money`) AS think_sum FROM `gxfc_order` [ RunTime:0.000275s ]
+[2023-01-04T09:09:10+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.001258s ]
+[2023-01-04T09:09:10+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member` [ RunTime:0.000196s ]
+[2023-01-04T09:09:10+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop_apply` [ RunTime:0.000927s ]
+[2023-01-04T09:09:10+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_shop_apply` WHERE  `create_time` BETWEEN 1672761600 AND 1672847999 [ RunTime:0.000220s ]
+[2023-01-04T09:09:10+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_shop_apply` WHERE  `create_time` BETWEEN 1672675200 AND 1672761599 [ RunTime:0.000204s ]
+[2023-01-04T09:09:10+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_shop` [ RunTime:0.001165s ]
+[2023-01-04T09:09:10+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_shop` WHERE  `create_time` BETWEEN 1672761600 AND 1672847999 [ RunTime:0.000210s ]
+[2023-01-04T09:09:10+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_shop` [ RunTime:0.000171s ]
+[2023-01-04T09:09:10+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_goods` [ RunTime:0.000179s ]
+[2023-01-04T09:09:16+08:00][sql] CONNECT:[ UseTime:0.000401s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T09:09:16+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl` [ RunTime:0.001094s ]
+[2023-01-04T09:09:16+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000263s ]
+[2023-01-04T09:09:16+08:00][sql] SELECT * FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC LIMIT 0,10 [ RunTime:0.000259s ]
+[2023-01-04T09:09:18+08:00][sql] CONNECT:[ UseTime:0.000377s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T09:09:18+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.001111s ]
+[2023-01-04T09:09:18+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Dtgl/addcategory'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000361s ]
+[2023-01-04T09:10:17+08:00][sql] CONNECT:[ UseTime:0.000375s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T09:10:17+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.001166s ]
+[2023-01-04T09:10:17+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Company/lists'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000415s ]
+[2023-01-04T09:10:17+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'DTGL_GS_LIST'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000350s ]
+[2023-01-04T09:10:17+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'DTGL_GS'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000334s ]
+[2023-01-04T09:10:17+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001126s ]
+[2023-01-04T09:10:17+08:00][sql] SELECT `id`,`is_show`,`name`,`image`,`sort`,`pid`,`full_address`,`level` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.000296s ]
+[2023-01-04T09:10:21+08:00][sql] CONNECT:[ UseTime:0.000376s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T09:10:21+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.001092s ]
+[2023-01-04T09:10:21+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Wuliao/group'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000378s ]
+[2023-01-04T09:10:21+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'WULIAO_TYPE'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000319s ]
+[2023-01-04T09:10:21+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'WULIAO_ROOT'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000311s ]
+[2023-01-04T09:10:21+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_wuliao_group` [ RunTime:0.000969s ]
+[2023-01-04T09:10:21+08:00][sql] SELECT `id`,`group_name`,`pid`,`level`,`sort` FROM `gxfc_wuliao_group` ORDER BY `sort` ASC [ RunTime:0.000246s ]
+[2023-01-04T09:10:42+08:00][sql] CONNECT:[ UseTime:0.000355s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T09:10:42+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl_fenlei` [ RunTime:0.002504s ]
+[2023-01-04T09:10:42+08:00][sql] INSERT INTO `gxfc_dtgl_fenlei` SET `name` = ' 节日祝福' , `img` = 'upload/common/images/20230104/20230104091041167279464135291.png' , `sort` = 0 [ RunTime:0.000294s ]
+[2023-01-04T09:10:42+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_user_log` [ RunTime:0.000948s ]
+[2023-01-04T09:10:42+08:00][sql] INSERT INTO `gxfc_user_log` SET `uid` = 1 , `username` = 'admin' , `site_id` = 0 , `url` = 'admin/Dtgl/addCategory' , `ip` = '171.113.165.57' , `data` = '[]' , `action_name` = '添加动态分类: 节日祝福' , `create_time` = 1672794642 [ RunTime:0.005087s ]
+[2023-01-04T09:10:42+08:00][sql] CONNECT:[ UseTime:0.000397s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T09:10:42+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl_fenlei` [ RunTime:0.001081s ]
+[2023-01-04T09:10:42+08:00][sql] SELECT `id`,`name`,`img`,`sort` FROM `gxfc_dtgl_fenlei` ORDER BY `sort` ASC [ RunTime:0.000327s ]
+[2023-01-04T09:10:46+08:00][sql] CONNECT:[ UseTime:0.000408s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T09:10:46+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.001110s ]
+[2023-01-04T09:10:46+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Dtgl/addcategory'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000387s ]
+[2023-01-04T09:10:56+08:00][sql] CONNECT:[ UseTime:0.000383s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T09:10:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl_fenlei` [ RunTime:0.000980s ]
+[2023-01-04T09:10:56+08:00][sql] INSERT INTO `gxfc_dtgl_fenlei` SET `name` = '2552' , `img` = 'upload/common/images/20230104/20230104091055167279465526175.png' , `sort` = 0 [ RunTime:0.000313s ]
+[2023-01-04T09:10:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_user_log` [ RunTime:0.000925s ]
+[2023-01-04T09:10:56+08:00][sql] INSERT INTO `gxfc_user_log` SET `uid` = 1 , `username` = 'admin' , `site_id` = 0 , `url` = 'admin/Dtgl/addCategory' , `ip` = '171.113.165.57' , `data` = '[]' , `action_name` = '添加动态分类:2552' , `create_time` = 1672794656 [ RunTime:0.005021s ]
+[2023-01-04T09:10:56+08:00][sql] CONNECT:[ UseTime:0.000396s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T09:10:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl_fenlei` [ RunTime:0.001221s ]
+[2023-01-04T09:10:56+08:00][sql] SELECT `id`,`name`,`img`,`sort` FROM `gxfc_dtgl_fenlei` ORDER BY `sort` ASC [ RunTime:0.000259s ]
+[2023-01-04T09:10:58+08:00][sql] CONNECT:[ UseTime:0.000395s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T09:10:58+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.001145s ]
+[2023-01-04T09:10:58+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Dtgl/addcategory'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000421s ]
+[2023-01-04T09:11:01+08:00][sql] CONNECT:[ UseTime:0.000375s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T09:11:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl_fenlei` [ RunTime:0.001079s ]
+[2023-01-04T09:11:01+08:00][sql] INSERT INTO `gxfc_dtgl_fenlei` SET `name` = '大萨达所' , `img` = '' , `sort` = 0 [ RunTime:0.000310s ]
+[2023-01-04T09:11:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_user_log` [ RunTime:0.000982s ]
+[2023-01-04T09:11:01+08:00][sql] INSERT INTO `gxfc_user_log` SET `uid` = 1 , `username` = 'admin' , `site_id` = 0 , `url` = 'admin/Dtgl/addCategory' , `ip` = '171.113.165.57' , `data` = '[]' , `action_name` = '添加动态分类:大萨达所' , `create_time` = 1672794661 [ RunTime:0.007769s ]
+[2023-01-04T09:11:01+08:00][sql] CONNECT:[ UseTime:0.000409s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T09:11:01+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl_fenlei` [ RunTime:0.001075s ]
+[2023-01-04T09:11:01+08:00][sql] SELECT `id`,`name`,`img`,`sort` FROM `gxfc_dtgl_fenlei` ORDER BY `sort` ASC [ RunTime:0.000285s ]
+[2023-01-04T09:39:13+08:00][sql] CONNECT:[ UseTime:0.000355s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T09:39:13+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.001055s ]
+[2023-01-04T09:39:13+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Upload/config'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000388s ]
+[2023-01-04T09:39:13+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'CONFIG_UPLOAD_SET'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000353s ]
+[2023-01-04T09:39:13+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'CONFIG_UPLOAD'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000310s ]
+[2023-01-04T09:39:13+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'CONFIG_BASE'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000306s ]
+[2023-01-04T09:39:13+08:00][sql] SELECT `parent` FROM `gxfc_menu` WHERE  `url` = 'admin/upload/config'  AND `level` = 4 LIMIT 1 [ RunTime:0.000416s ]
+[2023-01-04T09:39:13+08:00][sql] SELECT * FROM `gxfc_menu` WHERE  `app_module` = 'admin'  AND `is_show` = 1  AND `parent` = 'CONFIG_UPLOAD' ORDER BY `sort` ASC [ RunTime:0.000523s ]
+[2023-01-04T09:39:13+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_config` [ RunTime:0.001100s ]
+[2023-01-04T09:39:13+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'UPLOAD_CONFIG' LIMIT 1 [ RunTime:0.000317s ]
+[2023-01-04T09:39:22+08:00][sql] CONNECT:[ UseTime:0.000343s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T09:39:22+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.001076s ]
+[2023-01-04T09:39:22+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Upload/oss'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000453s ]
+[2023-01-04T09:39:22+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'UPLOAD_OSS'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000354s ]
+[2023-01-04T09:39:22+08:00][sql] SELECT `parent` FROM `gxfc_menu` WHERE  `url` = 'admin/upload/oss'  AND `level` = 4 LIMIT 1 [ RunTime:0.000393s ]
+[2023-01-04T13:58:55+08:00][sql] CONNECT:[ UseTime:0.000388s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T13:58:55+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.001170s ]
+[2023-01-04T13:58:55+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Dtgl/lists'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000416s ]
+[2023-01-04T13:58:55+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'DTGL_LIST'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000331s ]
+[2023-01-04T13:58:55+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'DTGL_ROOT'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000303s ]
+[2023-01-04T13:58:55+08:00][sql] CONNECT:[ UseTime:0.000379s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T13:58:55+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_dtgl` [ RunTime:0.001118s ]
+[2023-01-04T13:58:55+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC [ RunTime:0.000267s ]
+[2023-01-04T13:58:55+08:00][sql] SELECT * FROM `gxfc_dtgl` `` ORDER BY `sort` DESC,`id` DESC LIMIT 0,10 [ RunTime:0.000316s ]
+[2023-01-04T13:58:56+08:00][sql] CONNECT:[ UseTime:0.000388s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T13:58:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.001120s ]
+[2023-01-04T13:58:56+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Company/lists'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000411s ]
+[2023-01-04T13:58:56+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'DTGL_GS_LIST'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000445s ]
+[2023-01-04T13:58:56+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'DTGL_GS'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000320s ]
+[2023-01-04T13:58:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001120s ]
+[2023-01-04T13:58:56+08:00][sql] SELECT `id`,`is_show`,`name`,`image`,`sort`,`pid`,`full_address`,`level` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.000245s ]
+[2023-01-04T13:58:58+08:00][sql] CONNECT:[ UseTime:0.000358s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T13:58:58+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.001160s ]
+[2023-01-04T13:58:58+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Company/position'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000407s ]
+[2023-01-04T13:58:58+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'DTGL_GS_ZW'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000332s ]
+[2023-01-04T13:58:58+08:00][sql] CONNECT:[ UseTime:0.000391s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T13:58:58+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company_position` [ RunTime:0.001096s ]
+[2023-01-04T13:58:58+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company_position` `a` ORDER BY `id` DESC [ RunTime:0.000313s ]
+[2023-01-04T13:58:58+08:00][sql] SELECT * FROM `gxfc_company_position` `a` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000200s ]
+[2023-01-04T13:58:59+08:00][sql] CONNECT:[ UseTime:0.000383s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T13:58:59+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001155s ]
+[2023-01-04T13:58:59+08:00][sql] SELECT `id`,`is_show`,`name`,`image`,`sort`,`pid`,`full_address`,`level` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.000312s ]
+[2023-01-04T13:59:00+08:00][sql] CONNECT:[ UseTime:0.000389s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T13:59:00+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company_position` [ RunTime:0.001118s ]
+[2023-01-04T13:59:00+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company_position` `a` ORDER BY `id` DESC [ RunTime:0.000548s ]
+[2023-01-04T13:59:00+08:00][sql] SELECT * FROM `gxfc_company_position` `a` ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000290s ]
+[2023-01-04T13:59:02+08:00][sql] CONNECT:[ UseTime:0.000406s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T13:59:02+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001223s ]
+[2023-01-04T13:59:02+08:00][sql] SELECT `id`,`is_show`,`name`,`image`,`sort`,`pid`,`full_address`,`level` FROM `gxfc_company` ORDER BY `sort` ASC [ RunTime:0.000291s ]
+[2023-01-04T14:19:16+08:00][sql] CONNECT:[ UseTime:0.000401s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T14:19:16+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.001243s ]
+[2023-01-04T14:19:16+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Company/rzlists'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000431s ]
+[2023-01-04T14:19:16+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'GSRZ'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000340s ]
+[2023-01-04T14:19:16+08:00][error] [10501]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'hunqin.gxfc_comapny' doesn't exist
+[2023-01-04T14:19:31+08:00][sql] CONNECT:[ UseTime:0.000383s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T14:19:31+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001212s ]
+[2023-01-04T14:19:31+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company` `a` WHERE  `business_license` <> ''  AND `is_qyrz` = 0 ORDER BY `id` DESC [ RunTime:0.000347s ]
+[2023-01-04T14:19:31+08:00][sql] SELECT `name`,`business_license`,`business_name`,`credit_code`,`representative`,`corporate_card`,`id` FROM `gxfc_company` `a` WHERE  `business_license` <> ''  AND `is_qyrz` = 0 ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000286s ]
+[2023-01-04T14:19:31+08:00][error] [8]未定义数组索引: id
+[2023-01-04T14:20:07+08:00][sql] CONNECT:[ UseTime:0.000393s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T14:20:07+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001170s ]
+[2023-01-04T14:20:07+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company` `a` WHERE  `business_license` <> ''  AND `is_qyrz` = 0 ORDER BY `id` DESC [ RunTime:0.000292s ]
+[2023-01-04T14:20:07+08:00][sql] SELECT `name`,`business_license`,`business_name`,`credit_code`,`representative`,`corporate_card`,`id` FROM `gxfc_company` `a` WHERE  `business_license` <> ''  AND `is_qyrz` = 0 ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000243s ]
+[2023-01-04T14:21:09+08:00][sql] CONNECT:[ UseTime:0.000387s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T14:21:09+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001228s ]
+[2023-01-04T14:21:09+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company` `a` WHERE  `business_license` <> ''  AND `is_qyrz` = 0 ORDER BY `id` DESC [ RunTime:0.000326s ]
+[2023-01-04T14:21:09+08:00][sql] SELECT `name`,`business_license`,`business_name`,`credit_code`,`representative`,`corporate_card`,`id` FROM `gxfc_company` `a` WHERE  `business_license` <> ''  AND `is_qyrz` = 0 ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000251s ]
+[2023-01-04T14:21:33+08:00][sql] CONNECT:[ UseTime:0.000380s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T14:21:33+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001207s ]
+[2023-01-04T14:21:33+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company` `a` WHERE  `business_license` <> ''  AND `is_qyrz` = 0 ORDER BY `id` DESC [ RunTime:0.000348s ]
+[2023-01-04T14:21:33+08:00][sql] SELECT `name`,`business_license`,`business_name`,`credit_code`,`representative`,`corporate_card`,`id` FROM `gxfc_company` `a` WHERE  `business_license` <> ''  AND `is_qyrz` = 0 ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000279s ]
+[2023-01-04T14:21:52+08:00][sql] CONNECT:[ UseTime:0.000396s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T14:21:52+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001227s ]
+[2023-01-04T14:21:52+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company` `a` WHERE  `business_license` <> ''  AND `is_qyrz` = 0 ORDER BY `id` DESC [ RunTime:0.000336s ]
+[2023-01-04T14:21:52+08:00][sql] SELECT `name`,`business_license`,`business_name`,`credit_code`,`representative`,`corporate_card`,`id` FROM `gxfc_company` `a` WHERE  `business_license` <> ''  AND `is_qyrz` = 0 ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000236s ]
+[2023-01-04T14:22:24+08:00][sql] CONNECT:[ UseTime:0.000369s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T14:22:24+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001144s ]
+[2023-01-04T14:22:24+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company` `a` WHERE  `business_license` <> ''  AND `is_qyrz` = 0 ORDER BY `id` DESC [ RunTime:0.000335s ]
+[2023-01-04T14:22:24+08:00][sql] SELECT `name`,`business_license`,`business_name`,`credit_code`,`representative`,`corporate_card`,`id` FROM `gxfc_company` `a` WHERE  `business_license` <> ''  AND `is_qyrz` = 0 ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000298s ]
+[2023-01-04T14:22:36+08:00][sql] CONNECT:[ UseTime:0.000382s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T14:22:36+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001242s ]
+[2023-01-04T14:22:36+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company` `a` WHERE  `business_license` <> ''  AND `is_qyrz` = 0 ORDER BY `id` DESC [ RunTime:0.000307s ]
+[2023-01-04T14:22:36+08:00][sql] SELECT `name`,`business_license`,`business_name`,`credit_code`,`representative`,`corporate_card`,`id` FROM `gxfc_company` `a` WHERE  `business_license` <> ''  AND `is_qyrz` = 0 ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000278s ]
+[2023-01-04T14:22:57+08:00][sql] CONNECT:[ UseTime:0.000390s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T14:22:57+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001336s ]
+[2023-01-04T14:22:57+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company` `a` WHERE  `business_license` <> ''  AND `is_qyrz` = 0 ORDER BY `id` DESC [ RunTime:0.000293s ]
+[2023-01-04T14:22:57+08:00][sql] SELECT `name`,`business_license`,`business_name`,`credit_code`,`representative`,`corporate_card`,`id` FROM `gxfc_company` `a` WHERE  `business_license` <> ''  AND `is_qyrz` = 0 ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000271s ]
+[2023-01-04T14:23:08+08:00][sql] CONNECT:[ UseTime:0.000508s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T14:23:08+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001241s ]
+[2023-01-04T14:23:08+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company` `a` WHERE  `business_license` <> ''  AND `is_qyrz` = 0 ORDER BY `id` DESC [ RunTime:0.000341s ]
+[2023-01-04T14:23:08+08:00][sql] SELECT `name`,`business_license`,`business_name`,`credit_code`,`representative`,`corporate_card`,`id` FROM `gxfc_company` `a` WHERE  `business_license` <> ''  AND `is_qyrz` = 0 ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000300s ]
+[2023-01-04T14:23:55+08:00][sql] CONNECT:[ UseTime:0.000392s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T14:23:55+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001176s ]
+[2023-01-04T14:23:55+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company` `a` WHERE  `business_license` <> ''  AND `is_qyrz` = 0 ORDER BY `id` DESC [ RunTime:0.000332s ]
+[2023-01-04T14:23:55+08:00][sql] SELECT `name`,`business_license`,`business_name`,`credit_code`,`representative`,`corporate_card`,`id` FROM `gxfc_company` `a` WHERE  `business_license` <> ''  AND `is_qyrz` = 0 ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000291s ]
+[2023-01-04T14:24:08+08:00][sql] CONNECT:[ UseTime:0.000371s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T14:24:08+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_config` [ RunTime:0.001056s ]
+[2023-01-04T14:24:08+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'CAPTCHA_CONFIG' LIMIT 1 [ RunTime:0.000341s ]
+[2023-01-04T14:25:32+08:00][sql] CONNECT:[ UseTime:0.000366s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-01-04T14:25:32+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.001324s ]
+[2023-01-04T14:25:32+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company` `a` WHERE  `business_license` <> ''  AND `is_qyrz` = 0 ORDER BY `id` DESC [ RunTime:0.000350s ]
+[2023-01-04T14:25:32+08:00][sql] SELECT `name`,`business_license`,`business_name`,`credit_code`,`representative`,`corporate_card`,`id` FROM `gxfc_company` `a` WHERE  `business_license` <> ''  AND `is_qyrz` = 0 ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000280s ]

@@ -1,0 +1,211 @@
+[2023-02-14T09:22:27+08:00][sql] CONNECT:[ UseTime:0.000329s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-14T09:22:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_pay` [ RunTime:0.000794s ]
+[2023-02-14T09:22:27+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '20230214092224070001' LIMIT 1 [ RunTime:0.000360s ]
+[2023-02-14T09:22:27+08:00][sql] UPDATE `gxfc_pay`  SET `trade_no` = '4200001765202302144851917079' , `pay_type` = 'wechatpay' , `pay_addon` = 'wechatpay' , `pay_time` = 1676337747 , `pay_status` = 2  WHERE  `out_trade_no` = '20230214092224070001' [ RunTime:0.006901s ]
+[2023-02-14T09:22:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_client_order` [ RunTime:0.000620s ]
+[2023-02-14T09:22:27+08:00][sql] SELECT * FROM `gxfc_client_order` WHERE  `order_no` = '20230214092224070001' LIMIT 1 [ RunTime:0.000398s ]
+[2023-02-14T09:22:27+08:00][sql] UPDATE `gxfc_client_order`  SET `pay_status` = 1 , `pay_time` = 1676337747 , `pay_type` = 'wechatpay' , `pay_type_name` = '微信支付'  WHERE  `id` = 224  AND `is_status` = 0 [ RunTime:0.000215s ]
+[2023-02-14T09:22:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_client` [ RunTime:0.000665s ]
+[2023-02-14T09:22:27+08:00][sql] SELECT `tjr_partner_id`,`product_id` FROM `gxfc_client` WHERE  `id` = 17 LIMIT 1 [ RunTime:0.000198s ]
+[2023-02-14T09:22:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_partner` [ RunTime:0.000511s ]
+[2023-02-14T09:22:27+08:00][sql] SELECT `member_id` FROM `gxfc_member_partner` WHERE  `id` = 7 LIMIT 1 [ RunTime:0.000132s ]
+[2023-02-14T09:22:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000828s ]
+[2023-02-14T09:22:27+08:00][sql] SELECT `realname`,`weapp_openid` FROM `gxfc_member` WHERE  `member_id` = 2407 LIMIT 1 [ RunTime:0.000200s ]
+[2023-02-14T09:22:27+08:00][sql] UPDATE `gxfc_client`  SET `is_status` = 1 , `update_time` = 1676337747  WHERE  `id` = 17 [ RunTime:0.000176s ]
+[2023-02-14T09:22:27+08:00][sql] UPDATE `gxfc_client_order`  SET `is_zhuanzhang` = 1  WHERE  `out_trade_no` = '20230214092224070001' [ RunTime:0.000257s ]
+[2023-02-14T09:22:27+08:00][error] [2]Cannot modify header information - headers already sent by (output started at /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/symfony/http-foundation/Response.php:381)
+[2023-02-14T09:22:27+08:00][error] [1]Uncaught think\exception\ErrorException: Cannot modify header information - headers already sent by (output started at /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/symfony/http-foundation/Response.php:381) in /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Cookie.php:226
+Stack trace:
+#0 [internal function]: think\initializer\Error->appError(2, 'Cannot modify h...', '/www/wwwroot/ww...', 226, Array)
+#1 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Cookie.php(226): setcookie('think_lang', '', 0, '/', '', false, false)
+#2 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Cookie.php(196): think\Cookie->saveCookie('think_lang', '', 0, '/', '', false, false, '')
+#3 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Response.php(142): think\Cookie->save()
+#4 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/initializer/Error.php(58): think\Response->se
+[2023-02-14T09:28:46+08:00][sql] CONNECT:[ UseTime:0.000370s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-14T09:28:46+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_pay` [ RunTime:0.000741s ]
+[2023-02-14T09:28:46+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '20230214092824060001' LIMIT 1 [ RunTime:0.000315s ]
+[2023-02-14T09:28:46+08:00][sql] UPDATE `gxfc_pay`  SET `trade_no` = '4200001752202302149708577562' , `pay_type` = 'wechatpay' , `pay_addon` = 'wechatpay' , `pay_time` = 1676338126 , `pay_status` = 2  WHERE  `out_trade_no` = '20230214092824060001' [ RunTime:0.006503s ]
+[2023-02-14T09:28:46+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_client_order` [ RunTime:0.000687s ]
+[2023-02-14T09:28:46+08:00][sql] SELECT * FROM `gxfc_client_order` WHERE  `order_no` = '20230214092824060001' LIMIT 1 [ RunTime:0.000389s ]
+[2023-02-14T09:28:46+08:00][sql] UPDATE `gxfc_client_order`  SET `pay_status` = 1 , `pay_time` = 1676338126 , `pay_type` = 'wechatpay' , `pay_type_name` = '微信支付'  WHERE  `id` = 225  AND `is_status` = 0 [ RunTime:0.000234s ]
+[2023-02-14T09:28:46+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_client` [ RunTime:0.000666s ]
+[2023-02-14T09:28:46+08:00][sql] SELECT `tjr_partner_id`,`product_id` FROM `gxfc_client` WHERE  `id` = 21 LIMIT 1 [ RunTime:0.000193s ]
+[2023-02-14T09:28:46+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_partner` [ RunTime:0.000511s ]
+[2023-02-14T09:28:46+08:00][sql] SELECT `member_id` FROM `gxfc_member_partner` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000212s ]
+[2023-02-14T09:28:46+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000860s ]
+[2023-02-14T09:28:46+08:00][sql] SELECT `realname`,`weapp_openid` FROM `gxfc_member` WHERE  `member_id` = 2406 LIMIT 1 [ RunTime:0.000196s ]
+[2023-02-14T09:28:46+08:00][sql] UPDATE `gxfc_client`  SET `is_status` = 1 , `update_time` = 1676338126  WHERE  `id` = 21 [ RunTime:0.000188s ]
+[2023-02-14T09:28:46+08:00][sql] UPDATE `gxfc_client_order`  SET `is_zhuanzhang` = 1  WHERE  `out_trade_no` = '20230214092824060001' [ RunTime:0.000254s ]
+[2023-02-14T09:28:46+08:00][error] [2]Cannot modify header information - headers already sent by (output started at /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/symfony/http-foundation/Response.php:381)
+[2023-02-14T09:28:46+08:00][error] [1]Uncaught think\exception\ErrorException: Cannot modify header information - headers already sent by (output started at /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/symfony/http-foundation/Response.php:381) in /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Cookie.php:226
+Stack trace:
+#0 [internal function]: think\initializer\Error->appError(2, 'Cannot modify h...', '/www/wwwroot/ww...', 226, Array)
+#1 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Cookie.php(226): setcookie('think_lang', '', 0, '/', '', false, false)
+#2 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Cookie.php(196): think\Cookie->saveCookie('think_lang', '', 0, '/', '', false, false, '')
+#3 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Response.php(142): think\Cookie->save()
+#4 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/initializer/Error.php(58): think\Response->se
+[2023-02-14T09:52:58+08:00][sql] CONNECT:[ UseTime:0.000345s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-14T09:52:58+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_pay` [ RunTime:0.000698s ]
+[2023-02-14T09:52:58+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '20230214095224060001' LIMIT 1 [ RunTime:0.000302s ]
+[2023-02-14T09:52:58+08:00][sql] UPDATE `gxfc_pay`  SET `trade_no` = '4200001763202302143254243096' , `pay_type` = 'wechatpay' , `pay_addon` = 'wechatpay' , `pay_time` = 1676339578 , `pay_status` = 2  WHERE  `out_trade_no` = '20230214095224060001' [ RunTime:0.006319s ]
+[2023-02-14T09:52:58+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_client_order` [ RunTime:0.000671s ]
+[2023-02-14T09:52:58+08:00][sql] SELECT * FROM `gxfc_client_order` WHERE  `order_no` = '20230214095224060001' LIMIT 1 [ RunTime:0.000432s ]
+[2023-02-14T09:52:58+08:00][sql] UPDATE `gxfc_client_order`  SET `pay_status` = 1 , `pay_time` = 1676339578 , `pay_type` = 'wechatpay' , `pay_type_name` = '微信支付'  WHERE  `id` = 226  AND `is_status` = 0 [ RunTime:0.000211s ]
+[2023-02-14T09:52:58+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_client` [ RunTime:0.000641s ]
+[2023-02-14T09:52:58+08:00][sql] SELECT `tjr_partner_id`,`product_id` FROM `gxfc_client` WHERE  `id` = 21 LIMIT 1 [ RunTime:0.000188s ]
+[2023-02-14T09:52:58+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_partner` [ RunTime:0.000494s ]
+[2023-02-14T09:52:58+08:00][sql] SELECT `member_id` FROM `gxfc_member_partner` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000136s ]
+[2023-02-14T09:52:58+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000800s ]
+[2023-02-14T09:52:58+08:00][sql] SELECT `realname`,`weapp_openid` FROM `gxfc_member` WHERE  `member_id` = 2406 LIMIT 1 [ RunTime:0.000178s ]
+[2023-02-14T09:52:58+08:00][sql] UPDATE `gxfc_client`  SET `is_status` = 2 , `update_time` = 1676339578  WHERE  `id` = 21 [ RunTime:0.000177s ]
+[2023-02-14T09:52:58+08:00][sql] UPDATE `gxfc_client_order`  SET `is_zhuanzhang` = 1  WHERE  `out_trade_no` = '20230214095224060001' [ RunTime:0.000276s ]
+[2023-02-14T09:52:58+08:00][error] [2]Cannot modify header information - headers already sent by (output started at /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/symfony/http-foundation/Response.php:381)
+[2023-02-14T09:52:58+08:00][error] [1]Uncaught think\exception\ErrorException: Cannot modify header information - headers already sent by (output started at /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/symfony/http-foundation/Response.php:381) in /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Cookie.php:226
+Stack trace:
+#0 [internal function]: think\initializer\Error->appError(2, 'Cannot modify h...', '/www/wwwroot/ww...', 226, Array)
+#1 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Cookie.php(226): setcookie('think_lang', '', 0, '/', '', false, false)
+#2 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Cookie.php(196): think\Cookie->saveCookie('think_lang', '', 0, '/', '', false, false, '')
+#3 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Response.php(142): think\Cookie->save()
+#4 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/initializer/Error.php(58): think\Response->se
+[2023-02-14T11:09:26+08:00][sql] CONNECT:[ UseTime:0.000368s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-14T11:09:26+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_pay` [ RunTime:0.000687s ]
+[2023-02-14T11:09:26+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '20230214110824070001' LIMIT 1 [ RunTime:0.000296s ]
+[2023-02-14T11:09:26+08:00][sql] UPDATE `gxfc_pay`  SET `trade_no` = '4200001749202302146631599384' , `pay_type` = 'wechatpay' , `pay_addon` = 'wechatpay' , `pay_time` = 1676344166 , `pay_status` = 2  WHERE  `out_trade_no` = '20230214110824070001' [ RunTime:0.014715s ]
+[2023-02-14T11:09:26+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_client_order` [ RunTime:0.000602s ]
+[2023-02-14T11:09:26+08:00][sql] SELECT * FROM `gxfc_client_order` WHERE  `order_no` = '20230214110824070001' LIMIT 1 [ RunTime:0.000401s ]
+[2023-02-14T11:09:26+08:00][sql] UPDATE `gxfc_client_order`  SET `pay_status` = 1 , `pay_time` = 1676344166 , `pay_type` = 'wechatpay' , `pay_type_name` = '微信支付'  WHERE  `id` = 227  AND `is_status` = 0 [ RunTime:0.000210s ]
+[2023-02-14T11:09:26+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_client` [ RunTime:0.000618s ]
+[2023-02-14T11:09:26+08:00][sql] SELECT `tjr_partner_id`,`product_id` FROM `gxfc_client` WHERE  `id` = 16 LIMIT 1 [ RunTime:0.000187s ]
+[2023-02-14T11:09:26+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_partner` [ RunTime:0.000552s ]
+[2023-02-14T11:09:26+08:00][sql] SELECT `member_id` FROM `gxfc_member_partner` WHERE  `id` = 7 LIMIT 1 [ RunTime:0.000139s ]
+[2023-02-14T11:09:26+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000824s ]
+[2023-02-14T11:09:26+08:00][sql] SELECT `realname`,`weapp_openid` FROM `gxfc_member` WHERE  `member_id` = 2407 LIMIT 1 [ RunTime:0.000156s ]
+[2023-02-14T11:09:26+08:00][sql] UPDATE `gxfc_client`  SET `is_status` = 1 , `update_time` = 1676344166  WHERE  `id` = 16 [ RunTime:0.000219s ]
+[2023-02-14T11:09:26+08:00][sql] UPDATE `gxfc_client_order`  SET `is_zhuanzhang` = 1  WHERE  `out_trade_no` = '20230214110824070001' [ RunTime:0.000252s ]
+[2023-02-14T11:09:26+08:00][error] [2]Cannot modify header information - headers already sent by (output started at /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/symfony/http-foundation/Response.php:381)
+[2023-02-14T11:09:26+08:00][error] [1]Uncaught think\exception\ErrorException: Cannot modify header information - headers already sent by (output started at /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/symfony/http-foundation/Response.php:381) in /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Cookie.php:226
+Stack trace:
+#0 [internal function]: think\initializer\Error->appError(2, 'Cannot modify h...', '/www/wwwroot/ww...', 226, Array)
+#1 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Cookie.php(226): setcookie('think_lang', '', 0, '/', '', false, false)
+#2 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Cookie.php(196): think\Cookie->saveCookie('think_lang', '', 0, '/', '', false, false, '')
+#3 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Response.php(142): think\Cookie->save()
+#4 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/initializer/Error.php(58): think\Response->se
+[2023-02-14T14:03:27+08:00][sql] CONNECT:[ UseTime:0.000330s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-14T14:03:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_config` [ RunTime:0.000755s ]
+[2023-02-14T14:03:27+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'ALI_PAY_CONFIG' LIMIT 1 [ RunTime:0.000350s ]
+[2023-02-14T14:03:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_pay` [ RunTime:0.002721s ]
+[2023-02-14T14:03:27+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '20230214140324070001' LIMIT 1 [ RunTime:0.000268s ]
+[2023-02-14T14:03:27+08:00][sql] UPDATE `gxfc_pay`  SET `trade_no` = '4200001761202302142626810428' , `pay_type` = 'wechatpay' , `pay_addon` = 'wechatpay' , `pay_time` = 1676354607 , `pay_status` = 2  WHERE  `out_trade_no` = '20230214140324070001' [ RunTime:0.004727s ]
+[2023-02-14T14:03:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_client_order` [ RunTime:0.000570s ]
+[2023-02-14T14:03:27+08:00][sql] SELECT * FROM `gxfc_client_order` WHERE  `order_no` = '20230214140324070001' LIMIT 1 [ RunTime:0.000255s ]
+[2023-02-14T14:03:27+08:00][sql] UPDATE `gxfc_client_order`  SET `pay_status` = 1 , `pay_time` = 1676354607 , `pay_type` = 'wechatpay' , `pay_type_name` = '微信支付'  WHERE  `id` = 228  AND `is_status` = 0 [ RunTime:0.000214s ]
+[2023-02-14T14:03:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_client` [ RunTime:0.000597s ]
+[2023-02-14T14:03:27+08:00][sql] SELECT `tjr_partner_id`,`product_id` FROM `gxfc_client` WHERE  `id` = 23 LIMIT 1 [ RunTime:0.000193s ]
+[2023-02-14T14:03:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_partner` [ RunTime:0.000469s ]
+[2023-02-14T14:03:27+08:00][sql] SELECT `member_id` FROM `gxfc_member_partner` WHERE  `id` = 7 LIMIT 1 [ RunTime:0.000129s ]
+[2023-02-14T14:03:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000754s ]
+[2023-02-14T14:03:27+08:00][sql] SELECT `realname`,`weapp_openid` FROM `gxfc_member` WHERE  `member_id` = 2407 LIMIT 1 [ RunTime:0.000150s ]
+[2023-02-14T14:03:27+08:00][sql] UPDATE `gxfc_client`  SET `is_status` = 1 , `update_time` = 1676354607  WHERE  `id` = 23 [ RunTime:0.000182s ]
+[2023-02-14T14:03:27+08:00][sql] UPDATE `gxfc_client_order`  SET `is_zhuanzhang` = 1  WHERE  `out_trade_no` = '20230214140324070001' [ RunTime:0.000135s ]
+[2023-02-14T14:03:27+08:00][error] [2]Cannot modify header information - headers already sent by (output started at /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/symfony/http-foundation/Response.php:381)
+[2023-02-14T14:03:27+08:00][error] [1]Uncaught think\exception\ErrorException: Cannot modify header information - headers already sent by (output started at /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/symfony/http-foundation/Response.php:381) in /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Cookie.php:226
+Stack trace:
+#0 [internal function]: think\initializer\Error->appError(2, 'Cannot modify h...', '/www/wwwroot/ww...', 226, Array)
+#1 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Cookie.php(226): setcookie('think_lang', '', 0, '/', '', false, false)
+#2 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Cookie.php(196): think\Cookie->saveCookie('think_lang', '', 0, '/', '', false, false, '')
+#3 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Response.php(142): think\Cookie->save()
+#4 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/initializer/Error.php(58): think\Response->se
+[2023-02-14T14:04:33+08:00][sql] CONNECT:[ UseTime:0.000340s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-14T14:04:33+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_pay` [ RunTime:0.000779s ]
+[2023-02-14T14:04:33+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '20230214140424060001' LIMIT 1 [ RunTime:0.000339s ]
+[2023-02-14T14:04:33+08:00][sql] UPDATE `gxfc_pay`  SET `trade_no` = '4200001744202302149808028276' , `pay_type` = 'wechatpay' , `pay_addon` = 'wechatpay' , `pay_time` = 1676354673 , `pay_status` = 2  WHERE  `out_trade_no` = '20230214140424060001' [ RunTime:0.005146s ]
+[2023-02-14T14:04:33+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_client_order` [ RunTime:0.000609s ]
+[2023-02-14T14:04:33+08:00][sql] SELECT * FROM `gxfc_client_order` WHERE  `order_no` = '20230214140424060001' LIMIT 1 [ RunTime:0.000307s ]
+[2023-02-14T14:04:33+08:00][sql] UPDATE `gxfc_client_order`  SET `pay_status` = 1 , `pay_time` = 1676354673 , `pay_type` = 'wechatpay' , `pay_type_name` = '微信支付'  WHERE  `id` = 229  AND `is_status` = 0 [ RunTime:0.000217s ]
+[2023-02-14T14:04:33+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_client` [ RunTime:0.000678s ]
+[2023-02-14T14:04:33+08:00][sql] SELECT `tjr_partner_id`,`product_id` FROM `gxfc_client` WHERE  `id` = 25 LIMIT 1 [ RunTime:0.000210s ]
+[2023-02-14T14:04:33+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_partner` [ RunTime:0.000525s ]
+[2023-02-14T14:04:33+08:00][sql] SELECT `member_id` FROM `gxfc_member_partner` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000147s ]
+[2023-02-14T14:04:33+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000838s ]
+[2023-02-14T14:04:33+08:00][sql] SELECT `realname`,`weapp_openid` FROM `gxfc_member` WHERE  `member_id` = 2406 LIMIT 1 [ RunTime:0.000180s ]
+[2023-02-14T14:04:33+08:00][sql] UPDATE `gxfc_client`  SET `is_status` = 1 , `update_time` = 1676354673  WHERE  `id` = 25 [ RunTime:0.000188s ]
+[2023-02-14T14:04:33+08:00][sql] UPDATE `gxfc_client_order`  SET `is_zhuanzhang` = 1  WHERE  `out_trade_no` = '20230214140424060001' [ RunTime:0.000155s ]
+[2023-02-14T14:04:33+08:00][error] [2]Cannot modify header information - headers already sent by (output started at /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/symfony/http-foundation/Response.php:381)
+[2023-02-14T14:04:33+08:00][error] [1]Uncaught think\exception\ErrorException: Cannot modify header information - headers already sent by (output started at /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/symfony/http-foundation/Response.php:381) in /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Cookie.php:226
+Stack trace:
+#0 [internal function]: think\initializer\Error->appError(2, 'Cannot modify h...', '/www/wwwroot/ww...', 226, Array)
+#1 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Cookie.php(226): setcookie('think_lang', '', 0, '/', '', false, false)
+#2 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Cookie.php(196): think\Cookie->saveCookie('think_lang', '', 0, '/', '', false, false, '')
+#3 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Response.php(142): think\Cookie->save()
+#4 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/initializer/Error.php(58): think\Response->se
+[2023-02-14T14:07:44+08:00][sql] CONNECT:[ UseTime:0.000329s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-14T14:07:44+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_pay` [ RunTime:0.000668s ]
+[2023-02-14T14:07:44+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '20230214140724060001' LIMIT 1 [ RunTime:0.000308s ]
+[2023-02-14T14:07:44+08:00][sql] UPDATE `gxfc_pay`  SET `trade_no` = '4200001735202302145952218186' , `pay_type` = 'wechatpay' , `pay_addon` = 'wechatpay' , `pay_time` = 1676354864 , `pay_status` = 2  WHERE  `out_trade_no` = '20230214140724060001' [ RunTime:0.007475s ]
+[2023-02-14T14:07:44+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_client_order` [ RunTime:0.000638s ]
+[2023-02-14T14:07:44+08:00][sql] SELECT * FROM `gxfc_client_order` WHERE  `order_no` = '20230214140724060001' LIMIT 1 [ RunTime:0.000261s ]
+[2023-02-14T14:07:44+08:00][sql] UPDATE `gxfc_client_order`  SET `pay_status` = 1 , `pay_time` = 1676354864 , `pay_type` = 'wechatpay' , `pay_type_name` = '微信支付'  WHERE  `id` = 230  AND `is_status` = 0 [ RunTime:0.000216s ]
+[2023-02-14T14:07:44+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_client` [ RunTime:0.000697s ]
+[2023-02-14T14:07:44+08:00][sql] SELECT `tjr_partner_id`,`product_id` FROM `gxfc_client` WHERE  `id` = 25 LIMIT 1 [ RunTime:0.000230s ]
+[2023-02-14T14:07:44+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_partner` [ RunTime:0.000567s ]
+[2023-02-14T14:07:44+08:00][sql] SELECT `member_id` FROM `gxfc_member_partner` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000146s ]
+[2023-02-14T14:07:44+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000837s ]
+[2023-02-14T14:07:44+08:00][sql] SELECT `realname`,`weapp_openid` FROM `gxfc_member` WHERE  `member_id` = 2406 LIMIT 1 [ RunTime:0.000178s ]
+[2023-02-14T14:07:44+08:00][sql] UPDATE `gxfc_client`  SET `is_status` = 2 , `update_time` = 1676354864  WHERE  `id` = 25 [ RunTime:0.000183s ]
+[2023-02-14T14:07:44+08:00][sql] UPDATE `gxfc_client_order`  SET `is_zhuanzhang` = 1  WHERE  `out_trade_no` = '20230214140724060001' [ RunTime:0.000157s ]
+[2023-02-14T14:07:44+08:00][error] [2]Cannot modify header information - headers already sent by (output started at /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/symfony/http-foundation/Response.php:381)
+[2023-02-14T14:07:44+08:00][error] [1]Uncaught think\exception\ErrorException: Cannot modify header information - headers already sent by (output started at /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/symfony/http-foundation/Response.php:381) in /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Cookie.php:226
+Stack trace:
+#0 [internal function]: think\initializer\Error->appError(2, 'Cannot modify h...', '/www/wwwroot/ww...', 226, Array)
+#1 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Cookie.php(226): setcookie('think_lang', '', 0, '/', '', false, false)
+#2 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Cookie.php(196): think\Cookie->saveCookie('think_lang', '', 0, '/', '', false, false, '')
+#3 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Response.php(142): think\Cookie->save()
+#4 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/initializer/Error.php(58): think\Response->se
+[2023-02-14T14:08:27+08:00][sql] CONNECT:[ UseTime:0.000303s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-14T14:08:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_pay` [ RunTime:0.000697s ]
+[2023-02-14T14:08:27+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '20230214140824060001' LIMIT 1 [ RunTime:0.000339s ]
+[2023-02-14T14:08:27+08:00][sql] UPDATE `gxfc_pay`  SET `trade_no` = '4200001724202302143748437003' , `pay_type` = 'wechatpay' , `pay_addon` = 'wechatpay' , `pay_time` = 1676354907 , `pay_status` = 2  WHERE  `out_trade_no` = '20230214140824060001' [ RunTime:0.006000s ]
+[2023-02-14T14:08:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_client_order` [ RunTime:0.000622s ]
+[2023-02-14T14:08:27+08:00][sql] SELECT * FROM `gxfc_client_order` WHERE  `order_no` = '20230214140824060001' LIMIT 1 [ RunTime:0.000279s ]
+[2023-02-14T14:08:27+08:00][sql] UPDATE `gxfc_client_order`  SET `pay_status` = 1 , `pay_time` = 1676354907 , `pay_type` = 'wechatpay' , `pay_type_name` = '微信支付'  WHERE  `id` = 231  AND `is_status` = 0 [ RunTime:0.000214s ]
+[2023-02-14T14:08:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_client` [ RunTime:0.000657s ]
+[2023-02-14T14:08:27+08:00][sql] SELECT `tjr_partner_id`,`product_id` FROM `gxfc_client` WHERE  `id` = 24 LIMIT 1 [ RunTime:0.000220s ]
+[2023-02-14T14:08:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_partner` [ RunTime:0.000568s ]
+[2023-02-14T14:08:27+08:00][sql] SELECT `member_id` FROM `gxfc_member_partner` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000135s ]
+[2023-02-14T14:08:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000844s ]
+[2023-02-14T14:08:27+08:00][sql] SELECT `realname`,`weapp_openid` FROM `gxfc_member` WHERE  `member_id` = 2406 LIMIT 1 [ RunTime:0.000168s ]
+[2023-02-14T14:08:27+08:00][sql] UPDATE `gxfc_client`  SET `is_status` = 1 , `update_time` = 1676354907  WHERE  `id` = 24 [ RunTime:0.000183s ]
+[2023-02-14T14:08:27+08:00][sql] UPDATE `gxfc_client_order`  SET `is_zhuanzhang` = 1  WHERE  `out_trade_no` = '20230214140824060001' [ RunTime:0.000142s ]
+[2023-02-14T14:08:27+08:00][error] [2]Cannot modify header information - headers already sent by (output started at /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/symfony/http-foundation/Response.php:381)
+[2023-02-14T14:08:27+08:00][error] [1]Uncaught think\exception\ErrorException: Cannot modify header information - headers already sent by (output started at /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/symfony/http-foundation/Response.php:381) in /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Cookie.php:226
+Stack trace:
+#0 [internal function]: think\initializer\Error->appError(2, 'Cannot modify h...', '/www/wwwroot/ww...', 226, Array)
+#1 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Cookie.php(226): setcookie('think_lang', '', 0, '/', '', false, false)
+#2 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Cookie.php(196): think\Cookie->saveCookie('think_lang', '', 0, '/', '', false, false, '')
+#3 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Response.php(142): think\Cookie->save()
+#4 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/initializer/Error.php(58): think\Response->se
+[2023-02-14T16:23:06+08:00][sql] CONNECT:[ UseTime:0.000339s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-14T16:23:06+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_config` [ RunTime:0.000737s ]
+[2023-02-14T16:23:06+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'ALI_PAY_CONFIG' LIMIT 1 [ RunTime:0.000243s ]
+[2023-02-14T16:23:06+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_pay` [ RunTime:0.000791s ]
+[2023-02-14T16:23:06+08:00][sql] SELECT `id`,`site_id`,`out_trade_no`,`pay_type`,`trade_no`,`pay_no`,`pay_body`,`pay_detail`,`pay_money`,`pay_addon`,`pay_voucher`,`pay_status`,`return_url`,`event`,`mch_info`,`create_time`,`pay_time` FROM `gxfc_pay` WHERE  `out_trade_no` = '20230214162224070001' LIMIT 1 [ RunTime:0.000303s ]
+[2023-02-14T16:23:06+08:00][sql] UPDATE `gxfc_pay`  SET `trade_no` = '4200001736202302144694516128' , `pay_type` = 'wechatpay' , `pay_addon` = 'wechatpay' , `pay_time` = 1676362986 , `pay_status` = 2  WHERE  `out_trade_no` = '20230214162224070001' [ RunTime:0.011363s ]
+[2023-02-14T16:23:06+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_client_order` [ RunTime:0.000652s ]
+[2023-02-14T16:23:06+08:00][sql] SELECT * FROM `gxfc_client_order` WHERE  `order_no` = '20230214162224070001' LIMIT 1 [ RunTime:0.000242s ]
+[2023-02-14T16:23:06+08:00][sql] UPDATE `gxfc_client_order`  SET `pay_status` = 1 , `pay_time` = 1676362986 , `pay_type` = 'wechatpay' , `pay_type_name` = '微信支付'  WHERE  `id` = 232  AND `is_status` = 0 [ RunTime:0.000250s ]
+[2023-02-14T16:23:06+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_client` [ RunTime:0.000614s ]
+[2023-02-14T16:23:06+08:00][sql] SELECT `tjr_partner_id`,`product_id` FROM `gxfc_client` WHERE  `id` = 23 LIMIT 1 [ RunTime:0.000195s ]
+[2023-02-14T16:23:06+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_partner` [ RunTime:0.000473s ]
+[2023-02-14T16:23:06+08:00][sql] SELECT `member_id` FROM `gxfc_member_partner` WHERE  `id` = 7 LIMIT 1 [ RunTime:0.000132s ]
+[2023-02-14T16:23:06+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000746s ]
+[2023-02-14T16:23:06+08:00][sql] SELECT `realname`,`weapp_openid` FROM `gxfc_member` WHERE  `member_id` = 2407 LIMIT 1 [ RunTime:0.000147s ]
+[2023-02-14T16:23:06+08:00][sql] UPDATE `gxfc_client`  SET `is_status` = 2 , `update_time` = 1676362986  WHERE  `id` = 23 [ RunTime:0.000186s ]
+[2023-02-14T16:23:06+08:00][sql] UPDATE `gxfc_client_order`  SET `is_zhuanzhang` = 1  WHERE  `out_trade_no` = '20230214162224070001' [ RunTime:0.000150s ]
+[2023-02-14T16:23:06+08:00][error] [2]Cannot modify header information - headers already sent by (output started at /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/symfony/http-foundation/Response.php:381)
+[2023-02-14T16:23:06+08:00][error] [1]Uncaught think\exception\ErrorException: Cannot modify header information - headers already sent by (output started at /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/symfony/http-foundation/Response.php:381) in /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Cookie.php:226
+Stack trace:
+#0 [internal function]: think\initializer\Error->appError(2, 'Cannot modify h...', '/www/wwwroot/ww...', 226, Array)
+#1 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Cookie.php(226): setcookie('think_lang', '', 0, '/', '', false, false)
+#2 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Cookie.php(196): think\Cookie->saveCookie('think_lang', '', 0, '/', '', false, false, '')
+#3 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/Response.php(142): think\Cookie->save()
+#4 /www/wwwroot/www.xiaofu.live/www.xiaofu.live/vendor/topthink/framework/src/think/initializer/Error.php(58): think\Response->se

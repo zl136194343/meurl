@@ -1,0 +1,213 @@
+[2023-02-08T09:43:15+08:00][sql] CONNECT:[ UseTime:0.000327s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T09:43:15+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_user` [ RunTime:0.000754s ]
+[2023-02-08T09:43:15+08:00][sql] SELECT `uid`,`app_module`,`app_group`,`is_admin`,`site_id`,`group_id`,`group_name`,`username`,`password`,`member_id`,`create_time`,`update_time`,`status`,`login_time`,`login_ip` FROM `gxfc_user` WHERE  `username` = 'admin'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000335s ]
+[2023-02-08T09:43:15+08:00][sql] UPDATE `gxfc_user`  SET `login_time` = 1675820595 , `login_ip` = '171.113.165.40'  WHERE  `uid` = 1 [ RunTime:0.006413s ]
+[2023-02-08T09:43:15+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_user_log` [ RunTime:0.000650s ]
+[2023-02-08T09:43:15+08:00][sql] INSERT INTO `gxfc_user_log` SET `uid` = 1 , `username` = 'admin' , `site_id` = 0 , `url` = 'admin/Login/login' , `ip` = '171.113.165.40' , `data` = '[]' , `action_name` = '用户登录' , `create_time` = 1675820595 [ RunTime:0.005636s ]
+[2023-02-08T09:43:17+08:00][sql] CONNECT:[ UseTime:0.000375s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T09:43:17+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000977s ]
+[2023-02-08T09:43:17+08:00][sql] SELECT 
+                sum(balance) as balance, 
+                sum(balance_money) as balance_money,
+                sum(balance_withdraw_apply) as balance_withdraw_apply, 
+                sum(balance_withdraw) as balance_withdraw
+                 FROM `gxfc_member` WHERE  `member_id` > 0 LIMIT 1 [ RunTime:0.000305s ]
+[2023-02-08T09:43:17+08:00][sql] CONNECT:[ UseTime:0.000353s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T09:43:17+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_withdraw` [ RunTime:0.000714s ]
+[2023-02-08T09:43:17+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member_withdraw` `` ORDER BY `apply_time` DESC [ RunTime:0.000204s ]
+[2023-02-08T09:43:17+08:00][sql] SELECT * FROM `gxfc_member_withdraw` `` ORDER BY `apply_time` DESC LIMIT 0,10 [ RunTime:0.000233s ]
+[2023-02-08T09:49:35+08:00][sql] CONNECT:[ UseTime:0.000335s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T09:49:35+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.000905s ]
+[2023-02-08T09:49:35+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000269s ]
+[2023-02-08T09:49:35+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000353s ]
+[2023-02-08T09:49:37+08:00][sql] CONNECT:[ UseTime:0.000351s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T09:49:37+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.000879s ]
+[2023-02-08T09:49:37+08:00][sql] UPDATE `gxfc_card`  SET `is_status` = 1  WHERE  `id` = 2456 [ RunTime:0.006042s ]
+[2023-02-08T09:49:37+08:00][sql] CONNECT:[ UseTime:0.000317s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T09:49:37+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.000848s ]
+[2023-02-08T09:49:37+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000207s ]
+[2023-02-08T09:49:37+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000320s ]
+[2023-02-08T09:51:35+08:00][sql] CONNECT:[ UseTime:0.000327s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T09:51:35+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.000795s ]
+[2023-02-08T09:51:35+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000147s ]
+[2023-02-08T09:51:35+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000222s ]
+[2023-02-08T09:51:40+08:00][sql] CONNECT:[ UseTime:0.000340s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T09:51:40+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.000852s ]
+[2023-02-08T09:51:40+08:00][sql] SELECT `id`,`is_vip`,`is_show`,`name`,`image`,`sort`,`pid`,`full_address`,`level`,`is_qyrz` FROM `gxfc_company` WHERE  `pid` = 0 ORDER BY `sort` ASC [ RunTime:0.000370s ]
+[2023-02-08T09:51:42+08:00][sql] CONNECT:[ UseTime:0.000316s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T09:51:42+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.000921s ]
+[2023-02-08T09:51:42+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000149s ]
+[2023-02-08T09:51:42+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000225s ]
+[2023-02-08T09:56:20+08:00][sql] CONNECT:[ UseTime:0.000313s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T09:56:20+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.000762s ]
+[2023-02-08T09:56:20+08:00][sql] SELECT `id`,`is_vip`,`is_show`,`name`,`image`,`sort`,`pid`,`full_address`,`level`,`is_qyrz` FROM `gxfc_company` WHERE  `pid` = 0 ORDER BY `sort` ASC [ RunTime:0.000216s ]
+[2023-02-08T09:56:24+08:00][sql] CONNECT:[ UseTime:0.000337s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T09:56:24+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.000827s ]
+[2023-02-08T09:56:24+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000155s ]
+[2023-02-08T09:56:24+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000232s ]
+[2023-02-08T13:22:27+08:00][sql] CONNECT:[ UseTime:0.000347s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T13:22:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000738s ]
+[2023-02-08T13:22:27+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Config/sysmlist'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000392s ]
+[2023-02-08T13:22:27+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'SYSM_MALL_LIST'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000276s ]
+[2023-02-08T13:22:27+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'SYSM_MALL'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000259s ]
+[2023-02-08T13:22:27+08:00][sql] CONNECT:[ UseTime:0.000358s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T13:22:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_sysm` [ RunTime:0.000647s ]
+[2023-02-08T13:22:27+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_sysm` `a` [ RunTime:0.000202s ]
+[2023-02-08T13:22:27+08:00][sql] SELECT * FROM `gxfc_sysm` `a` LIMIT 0,10 [ RunTime:0.000194s ]
+[2023-02-08T13:22:55+08:00][sql] CONNECT:[ UseTime:0.000336s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T13:22:55+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000779s ]
+[2023-02-08T13:22:55+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Config/group'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000409s ]
+[2023-02-08T13:22:55+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'SYSM_MALL_TYPE'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000302s ]
+[2023-02-08T13:22:55+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_smsy_group` [ RunTime:0.000613s ]
+[2023-02-08T13:22:55+08:00][sql] SELECT `id`,`group_name`,`pid`,`level`,`sort`,`desc` FROM `gxfc_smsy_group` ORDER BY `sort` ASC [ RunTime:0.000219s ]
+[2023-02-08T13:43:22+08:00][sql] CONNECT:[ UseTime:0.000346s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T13:43:22+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_sysm` [ RunTime:0.000690s ]
+[2023-02-08T13:43:22+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_sysm` `a` [ RunTime:0.000234s ]
+[2023-02-08T13:43:22+08:00][sql] SELECT * FROM `gxfc_sysm` `a` LIMIT 0,10 [ RunTime:0.000242s ]
+[2023-02-08T13:45:50+08:00][sql] CONNECT:[ UseTime:0.000338s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T13:45:50+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_sysm` [ RunTime:0.000654s ]
+[2023-02-08T13:45:50+08:00][sql] DELETE FROM `gxfc_sysm` WHERE  `id` = 26 [ RunTime:0.004592s ]
+[2023-02-08T13:45:50+08:00][sql] CONNECT:[ UseTime:0.000348s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T13:45:50+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_sysm` [ RunTime:0.000692s ]
+[2023-02-08T13:45:50+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_sysm` `a` [ RunTime:0.000217s ]
+[2023-02-08T13:45:50+08:00][sql] SELECT * FROM `gxfc_sysm` `a` LIMIT 0,10 [ RunTime:0.000184s ]
+[2023-02-08T13:45:53+08:00][sql] CONNECT:[ UseTime:0.000344s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T13:45:53+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_sysm` [ RunTime:0.000715s ]
+[2023-02-08T13:45:53+08:00][sql] DELETE FROM `gxfc_sysm` WHERE  `id` = 25 [ RunTime:0.016344s ]
+[2023-02-08T13:45:53+08:00][sql] CONNECT:[ UseTime:0.000337s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T13:45:53+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_sysm` [ RunTime:0.000675s ]
+[2023-02-08T13:45:53+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_sysm` `a` [ RunTime:0.000202s ]
+[2023-02-08T13:45:53+08:00][sql] SELECT * FROM `gxfc_sysm` `a` LIMIT 0,10 [ RunTime:0.000201s ]
+[2023-02-08T13:45:56+08:00][sql] CONNECT:[ UseTime:0.000354s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T13:45:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000686s ]
+[2023-02-08T13:45:56+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Config/sysmAdd'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000356s ]
+[2023-02-08T13:45:56+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_smsy_group` [ RunTime:0.000555s ]
+[2023-02-08T13:45:56+08:00][sql] SELECT `id`,`group_name`,`pid`,`sort`,`level`,`desc` FROM `gxfc_smsy_group` WHERE  `pid` = 0 [ RunTime:0.000236s ]
+[2023-02-08T13:45:57+08:00][sql] CONNECT:[ UseTime:0.000327s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T13:45:57+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_smsy_group` [ RunTime:0.000674s ]
+[2023-02-08T13:45:57+08:00][sql] SELECT * FROM `gxfc_smsy_group` WHERE  `level` = '1' ORDER BY `sort` ASC,`id` DESC [ RunTime:0.000298s ]
+[2023-02-08T13:45:57+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_smsy_group` WHERE  `pid` = 4 [ RunTime:0.000240s ]
+[2023-02-08T13:45:57+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_smsy_group` WHERE  `pid` = 1 [ RunTime:0.000211s ]
+[2023-02-08T13:46:08+08:00][sql] CONNECT:[ UseTime:0.000347s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T13:46:08+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_sysm` [ RunTime:0.000621s ]
+[2023-02-08T13:46:08+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_sysm` `a` [ RunTime:0.000148s ]
+[2023-02-08T13:46:08+08:00][sql] SELECT * FROM `gxfc_sysm` `a` LIMIT 0,10 [ RunTime:0.000136s ]
+[2023-02-08T13:46:09+08:00][sql] CONNECT:[ UseTime:0.000354s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T13:46:09+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_smsy_group` [ RunTime:0.000667s ]
+[2023-02-08T13:46:09+08:00][sql] SELECT `id`,`group_name`,`pid`,`level`,`sort`,`desc` FROM `gxfc_smsy_group` ORDER BY `sort` ASC [ RunTime:0.000194s ]
+[2023-02-08T13:46:19+08:00][sql] CONNECT:[ UseTime:0.000331s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T13:46:19+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000686s ]
+[2023-02-08T13:46:19+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Config/editsmsycategory'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000385s ]
+[2023-02-08T13:46:19+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_smsy_group` [ RunTime:0.000531s ]
+[2023-02-08T13:46:19+08:00][sql] SELECT * FROM `gxfc_smsy_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000213s ]
+[2023-02-08T13:46:19+08:00][sql] SELECT `group_name` FROM `gxfc_smsy_group` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000167s ]
+[2023-02-08T13:46:26+08:00][sql] CONNECT:[ UseTime:0.000339s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T13:46:26+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_smsy_group` [ RunTime:0.000664s ]
+[2023-02-08T13:46:26+08:00][sql] UPDATE `gxfc_smsy_group`  SET `id` = 1 , `group_name` = '名片' , `pid` = 0 , `level` = '1' , `sort` = '' , `desc` = '名片'  WHERE  `id` = 1 [ RunTime:0.000353s ]
+[2023-02-08T13:46:27+08:00][sql] CONNECT:[ UseTime:0.000320s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T13:46:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_smsy_group` [ RunTime:0.000702s ]
+[2023-02-08T13:46:27+08:00][sql] SELECT `id`,`group_name`,`pid`,`level`,`sort`,`desc` FROM `gxfc_smsy_group` ORDER BY `sort` ASC [ RunTime:0.000276s ]
+[2023-02-08T13:46:30+08:00][sql] CONNECT:[ UseTime:0.000399s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T13:46:30+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000668s ]
+[2023-02-08T13:46:30+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Config/editsmsycategory'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000228s ]
+[2023-02-08T13:46:30+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_smsy_group` [ RunTime:0.000536s ]
+[2023-02-08T13:46:30+08:00][sql] SELECT * FROM `gxfc_smsy_group` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000214s ]
+[2023-02-08T13:46:30+08:00][sql] SELECT `group_name` FROM `gxfc_smsy_group` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000175s ]
+[2023-02-08T13:46:35+08:00][sql] CONNECT:[ UseTime:0.000368s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T13:46:35+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_smsy_group` [ RunTime:0.000626s ]
+[2023-02-08T13:46:35+08:00][sql] UPDATE `gxfc_smsy_group`  SET `id` = 4 , `group_name` = '转介绍' , `pid` = 0 , `level` = '1' , `sort` = '' , `desc` = '转介绍'  WHERE  `id` = 4 [ RunTime:0.000267s ]
+[2023-02-08T13:46:35+08:00][sql] CONNECT:[ UseTime:0.000320s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T13:46:35+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_smsy_group` [ RunTime:0.000680s ]
+[2023-02-08T13:46:35+08:00][sql] SELECT `id`,`group_name`,`pid`,`level`,`sort`,`desc` FROM `gxfc_smsy_group` ORDER BY `sort` ASC [ RunTime:0.000234s ]
+[2023-02-08T13:46:39+08:00][sql] CONNECT:[ UseTime:0.000313s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T13:46:39+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000637s ]
+[2023-02-08T13:46:39+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Config/editsmsycategory'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000217s ]
+[2023-02-08T13:46:39+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_smsy_group` [ RunTime:0.000532s ]
+[2023-02-08T13:46:39+08:00][sql] SELECT * FROM `gxfc_smsy_group` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000211s ]
+[2023-02-08T13:46:39+08:00][sql] SELECT `group_name` FROM `gxfc_smsy_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000168s ]
+[2023-02-08T13:47:21+08:00][sql] CONNECT:[ UseTime:0.000318s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T13:47:21+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_smsy_group` [ RunTime:0.000639s ]
+[2023-02-08T13:47:21+08:00][sql] UPDATE `gxfc_smsy_group`  SET `id` = 2 , `group_name` = '23232' , `pid` = 1 , `level` = '2' , `sort` = '' , `desc` = '小名片 | 打造专业人设'  WHERE  `id` = 2 [ RunTime:0.000270s ]
+[2023-02-08T13:47:21+08:00][sql] CONNECT:[ UseTime:0.000312s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T13:47:21+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_smsy_group` [ RunTime:0.000648s ]
+[2023-02-08T13:47:21+08:00][sql] SELECT `id`,`group_name`,`pid`,`level`,`sort`,`desc` FROM `gxfc_smsy_group` ORDER BY `sort` ASC [ RunTime:0.000230s ]
+[2023-02-08T13:47:26+08:00][sql] CONNECT:[ UseTime:0.000340s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T13:47:26+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000734s ]
+[2023-02-08T13:47:26+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Config/editsmsycategory'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000269s ]
+[2023-02-08T13:47:26+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_smsy_group` [ RunTime:0.000614s ]
+[2023-02-08T13:47:26+08:00][sql] SELECT * FROM `gxfc_smsy_group` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000263s ]
+[2023-02-08T13:47:26+08:00][sql] SELECT `group_name` FROM `gxfc_smsy_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000246s ]
+[2023-02-08T13:47:33+08:00][sql] CONNECT:[ UseTime:0.000313s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T13:47:33+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_smsy_group` [ RunTime:0.000650s ]
+[2023-02-08T13:47:33+08:00][sql] UPDATE `gxfc_smsy_group`  SET `id` = 2 , `group_name` = '小名片 | 打造专业人设' , `pid` = 1 , `level` = '2' , `sort` = '' , `desc` = '小名片 | 打造专业人设'  WHERE  `id` = 2 [ RunTime:0.000274s ]
+[2023-02-08T13:47:33+08:00][sql] CONNECT:[ UseTime:0.000331s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T13:47:33+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_smsy_group` [ RunTime:0.000572s ]
+[2023-02-08T13:47:33+08:00][sql] SELECT `id`,`group_name`,`pid`,`level`,`sort`,`desc` FROM `gxfc_smsy_group` ORDER BY `sort` ASC [ RunTime:0.000226s ]
+[2023-02-08T13:47:36+08:00][sql] CONNECT:[ UseTime:0.000332s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T13:47:36+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000856s ]
+[2023-02-08T13:47:36+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Config/editsmsycategory'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000267s ]
+[2023-02-08T13:47:36+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_smsy_group` [ RunTime:0.000561s ]
+[2023-02-08T13:47:36+08:00][sql] SELECT * FROM `gxfc_smsy_group` WHERE  `id` = 3 LIMIT 1 [ RunTime:0.000219s ]
+[2023-02-08T13:47:36+08:00][sql] SELECT `group_name` FROM `gxfc_smsy_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000178s ]
+[2023-02-08T13:47:47+08:00][sql] CONNECT:[ UseTime:0.000323s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T13:47:47+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_smsy_group` [ RunTime:0.000607s ]
+[2023-02-08T13:47:47+08:00][sql] UPDATE `gxfc_smsy_group`  SET `id` = 3 , `group_name` = '小名片 | 管理你的人脉' , `pid` = 1 , `level` = '2' , `sort` = '' , `desc` = '小名片 | 管理你的人脉'  WHERE  `id` = 3 [ RunTime:0.000277s ]
+[2023-02-08T13:47:47+08:00][sql] CONNECT:[ UseTime:0.000331s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T13:47:47+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_smsy_group` [ RunTime:0.000693s ]
+[2023-02-08T13:47:47+08:00][sql] SELECT `id`,`group_name`,`pid`,`level`,`sort`,`desc` FROM `gxfc_smsy_group` ORDER BY `sort` ASC [ RunTime:0.000268s ]
+[2023-02-08T13:47:51+08:00][sql] CONNECT:[ UseTime:0.000345s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T13:47:51+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000719s ]
+[2023-02-08T13:47:51+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Config/editsmsycategory'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000230s ]
+[2023-02-08T13:47:51+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_smsy_group` [ RunTime:0.000556s ]
+[2023-02-08T13:47:51+08:00][sql] SELECT * FROM `gxfc_smsy_group` WHERE  `id` = 5 LIMIT 1 [ RunTime:0.000220s ]
+[2023-02-08T13:47:51+08:00][sql] SELECT `group_name` FROM `gxfc_smsy_group` WHERE  `id` = 4 LIMIT 1 [ RunTime:0.000174s ]
+[2023-02-08T13:48:04+08:00][sql] CONNECT:[ UseTime:0.000347s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T13:48:04+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_smsy_group` [ RunTime:0.000760s ]
+[2023-02-08T13:48:04+08:00][sql] UPDATE `gxfc_smsy_group`  SET `id` = 5 , `group_name` = '转介绍 | 管理员设置' , `pid` = 4 , `level` = '2' , `sort` = '' , `desc` = '转介绍 | 管理员设置'  WHERE  `id` = 5 [ RunTime:0.000303s ]
+[2023-02-08T13:48:04+08:00][sql] CONNECT:[ UseTime:0.000321s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T13:48:04+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_smsy_group` [ RunTime:0.000608s ]
+[2023-02-08T13:48:04+08:00][sql] SELECT `id`,`group_name`,`pid`,`level`,`sort`,`desc` FROM `gxfc_smsy_group` ORDER BY `sort` ASC [ RunTime:0.000232s ]
+[2023-02-08T15:37:04+08:00][sql] CONNECT:[ UseTime:0.000349s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T15:37:04+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000707s ]
+[2023-02-08T15:37:04+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Config/sysmconfig'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000436s ]
+[2023-02-08T15:37:04+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'SYSM_MALL_CONFIG'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000331s ]
+[2023-02-08T15:37:15+08:00][sql] CONNECT:[ UseTime:0.000321s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T15:37:15+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_smsy_group` [ RunTime:0.000622s ]
+[2023-02-08T15:37:15+08:00][sql] SELECT `id`,`group_name`,`pid`,`level`,`sort`,`desc` FROM `gxfc_smsy_group` ORDER BY `sort` ASC [ RunTime:0.000171s ]
+[2023-02-08T16:10:22+08:00][sql] CONNECT:[ UseTime:0.000327s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T16:10:22+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.000737s ]
+[2023-02-08T16:10:22+08:00][sql] SELECT `id`,`is_vip`,`is_show`,`name`,`image`,`sort`,`pid`,`full_address`,`level`,`is_qyrz` FROM `gxfc_company` WHERE  `pid` = 0 ORDER BY `sort` ASC [ RunTime:0.000201s ]
+[2023-02-08T16:10:30+08:00][sql] CONNECT:[ UseTime:0.000340s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T16:10:30+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.000825s ]
+[2023-02-08T16:10:30+08:00][sql] SELECT `id`,`is_vip`,`is_show`,`name`,`image`,`sort`,`pid`,`full_address`,`level`,`is_qyrz` FROM `gxfc_company` WHERE  `pid` = 0 ORDER BY `sort` ASC [ RunTime:0.000243s ]
+[2023-02-08T16:10:41+08:00][sql] CONNECT:[ UseTime:0.000317s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T16:10:41+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.000812s ]
+[2023-02-08T16:10:41+08:00][sql] SELECT `id`,`is_vip`,`is_show`,`name`,`image`,`sort`,`pid`,`full_address`,`level`,`is_qyrz` FROM `gxfc_company` WHERE  `pid` = 0 ORDER BY `sort` ASC [ RunTime:0.000253s ]
+[2023-02-08T16:10:54+08:00][sql] CONNECT:[ UseTime:0.000308s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T16:10:54+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.000775s ]
+[2023-02-08T16:10:54+08:00][sql] SELECT `id`,`is_vip`,`is_show`,`name`,`image`,`sort`,`pid`,`full_address`,`level`,`is_qyrz` FROM `gxfc_company` WHERE  `pid` = 0 ORDER BY `sort` ASC [ RunTime:0.000207s ]
+[2023-02-08T16:11:12+08:00][sql] CONNECT:[ UseTime:0.000326s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T16:11:12+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.000764s ]
+[2023-02-08T16:11:12+08:00][sql] SELECT `id`,`is_vip`,`is_show`,`name`,`image`,`sort`,`pid`,`full_address`,`level`,`is_qyrz` FROM `gxfc_company` WHERE  `pid` = 0 ORDER BY `sort` ASC [ RunTime:0.000206s ]
+[2023-02-08T16:16:18+08:00][sql] CONNECT:[ UseTime:0.000337s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T16:16:18+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.000846s ]
+[2023-02-08T16:16:18+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_company` `a` WHERE  `business_license` <> '' ORDER BY `id` DESC [ RunTime:0.000262s ]
+[2023-02-08T16:16:18+08:00][sql] SELECT `name`,`business_license`,`business_name`,`credit_code`,`representative`,`corporate_card`,`id`,`is_qyrz` FROM `gxfc_company` `a` WHERE  `business_license` <> '' ORDER BY `id` DESC LIMIT 0,10 [ RunTime:0.000226s ]
+[2023-02-08T16:16:18+08:00][sql] CONNECT:[ UseTime:0.000342s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T16:16:18+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.000833s ]
+[2023-02-08T16:16:18+08:00][sql] SELECT `id`,`is_vip`,`is_show`,`name`,`image`,`sort`,`pid`,`full_address`,`level`,`is_qyrz` FROM `gxfc_company` WHERE  `pid` = 0 ORDER BY `sort` ASC [ RunTime:0.000314s ]
+[2023-02-08T16:16:26+08:00][sql] CONNECT:[ UseTime:0.000313s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T16:16:26+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.000783s ]
+[2023-02-08T16:16:26+08:00][sql] SELECT `id`,`is_vip`,`is_show`,`name`,`image`,`sort`,`pid`,`full_address`,`level`,`is_qyrz` FROM `gxfc_company` WHERE  `pid` = 0 ORDER BY `sort` ASC [ RunTime:0.000211s ]
+[2023-02-08T16:17:30+08:00][sql] CONNECT:[ UseTime:0.000334s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T16:17:30+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.000807s ]
+[2023-02-08T16:17:30+08:00][sql] UPDATE `gxfc_company`  SET `headcount` = 100 , `is_vip` = 1 , `referral_type` = 1 , `vip_create_time` = 1675844250 , `vip_end_time` = 1707380250  WHERE  `id` = 83 [ RunTime:0.012482s ]
+[2023-02-08T16:17:30+08:00][sql] CONNECT:[ UseTime:0.000321s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T16:17:30+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.000776s ]
+[2023-02-08T16:17:30+08:00][sql] SELECT `id`,`is_vip`,`is_show`,`name`,`image`,`sort`,`pid`,`full_address`,`level`,`is_qyrz` FROM `gxfc_company` WHERE  `pid` = 0 ORDER BY `sort` ASC [ RunTime:0.000304s ]
+[2023-02-08T16:18:22+08:00][sql] CONNECT:[ UseTime:0.000342s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T16:18:22+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.000832s ]
+[2023-02-08T16:18:22+08:00][sql] SELECT `id`,`is_vip`,`is_show`,`name`,`image`,`sort`,`pid`,`full_address`,`level`,`is_qyrz` FROM `gxfc_company` WHERE  `pid` = 0 ORDER BY `sort` ASC [ RunTime:0.000263s ]
+[2023-02-08T16:18:25+08:00][sql] CONNECT:[ UseTime:0.000320s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-08T16:18:25+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_company` [ RunTime:0.000866s ]
+[2023-02-08T16:18:25+08:00][sql] SELECT `id`,`is_vip`,`is_show`,`name`,`image`,`sort`,`pid`,`full_address`,`level`,`is_qyrz` FROM `gxfc_company` WHERE  `pid` = 0 ORDER BY `sort` ASC [ RunTime:0.000221s ]

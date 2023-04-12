@@ -1,0 +1,11 @@
+[2023-02-01T11:48:38+08:00][sql] CONNECT:[ UseTime:0.000353s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-02-01T11:48:38+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.001326s ]
+[2023-02-01T11:48:38+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'wechat://admin/Wechat/config'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000448s ]
+[2023-02-01T11:48:38+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'WCHAT_CONFIG'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000378s ]
+[2023-02-01T11:49:03+08:00][sql] CONNECT:[ UseTime:0.000393s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-02-01T11:49:03+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_config` [ RunTime:0.001191s ]
+[2023-02-01T11:49:03+08:00][sql] SELECT `id` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'WECHAT_CONFIG' LIMIT 1 [ RunTime:0.000329s ]
+[2023-02-01T11:49:03+08:00][sql] UPDATE `gxfc_config`  SET `site_id` = 0 , `app_module` = 'admin' , `config_key` = 'WECHAT_CONFIG' , `value` = '{\"wechat_name\":\"\\u5a5a\\u4e1a\\u6c47\\u8054\",\"wechat_original\":\"gh_c10b507d541f\",\"appid\":\"wxeb9fbbde0d747ad1\",\"appsecret\":\"f73661efdc59e7f4a95dc1d9139c179a\",\"token\":\"\",\"encodingaeskey\":\"\",\"qrcode\":\"\"}' , `config_desc` = '微信公众号设置' , `is_use` = 0 , `modify_time` = 1675223343  WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'WECHAT_CONFIG' [ RunTime:0.011971s ]
+[2023-02-01T13:05:04+08:00][sql] CONNECT:[ UseTime:0.000372s ] mysql:host=127.0.0.1;port=3306;dbname=hunqin;charset=utf8
+[2023-02-01T13:05:04+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_config` [ RunTime:0.001144s ]
+[2023-02-01T13:05:04+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'WEAPP_CONFIG' LIMIT 1 [ RunTime:0.000368s ]

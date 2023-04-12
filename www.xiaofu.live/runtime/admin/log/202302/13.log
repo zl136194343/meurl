@@ -1,0 +1,56 @@
+[2023-02-13T11:59:07+08:00][error] [0]variable type error： array
+[2023-02-13T18:03:24+08:00][sql] CONNECT:[ UseTime:0.000331s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-13T18:03:24+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_user` [ RunTime:0.000701s ]
+[2023-02-13T18:03:24+08:00][sql] SELECT `uid`,`app_module`,`app_group`,`is_admin`,`site_id`,`group_id`,`group_name`,`username`,`password`,`member_id`,`create_time`,`update_time`,`status`,`login_time`,`login_ip` FROM `gxfc_user` WHERE  `username` = 'admin'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000337s ]
+[2023-02-13T18:03:24+08:00][sql] UPDATE `gxfc_user`  SET `login_time` = 1676282604 , `login_ip` = '171.83.116.230'  WHERE  `uid` = 1 [ RunTime:0.017101s ]
+[2023-02-13T18:03:24+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_user_log` [ RunTime:0.000580s ]
+[2023-02-13T18:03:24+08:00][sql] INSERT INTO `gxfc_user_log` SET `uid` = 1 , `username` = 'admin' , `site_id` = 0 , `url` = 'admin/Login/login' , `ip` = '171.83.116.230' , `data` = '[]' , `action_name` = '用户登录' , `create_time` = 1676282604 [ RunTime:0.004746s ]
+[2023-02-13T18:03:25+08:00][sql] CONNECT:[ UseTime:0.000337s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-13T18:03:25+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.000714s ]
+[2023-02-13T18:03:25+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Memberwithdraw/lists'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000420s ]
+[2023-02-13T18:03:25+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'MEMBER_WITHDRAW_LIST'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000362s ]
+[2023-02-13T18:03:25+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'ACCOUNT_ROOT'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000337s ]
+[2023-02-13T18:03:25+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.000985s ]
+[2023-02-13T18:03:25+08:00][sql] SELECT 
+                sum(balance) as balance, 
+                sum(balance_money) as balance_money,
+                sum(balance_withdraw_apply) as balance_withdraw_apply, 
+                sum(balance_withdraw) as balance_withdraw
+                 FROM `gxfc_member` WHERE  `member_id` > 0 LIMIT 1 [ RunTime:0.000336s ]
+[2023-02-13T18:03:25+08:00][sql] CONNECT:[ UseTime:0.000338s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-13T18:03:25+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member_withdraw` [ RunTime:0.000729s ]
+[2023-02-13T18:03:25+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_member_withdraw` `` ORDER BY `apply_time` DESC [ RunTime:0.000159s ]
+[2023-02-13T18:03:25+08:00][sql] SELECT * FROM `gxfc_member_withdraw` `` ORDER BY `apply_time` DESC LIMIT 0,10 [ RunTime:0.000180s ]
+[2023-02-13T18:03:27+08:00][sql] CONNECT:[ UseTime:0.000331s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-13T18:03:27+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.000888s ]
+[2023-02-13T18:03:27+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000210s ]
+[2023-02-13T18:03:27+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000348s ]
+[2023-02-13T18:03:40+08:00][sql] CONNECT:[ UseTime:0.000366s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-13T18:03:40+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.000851s ]
+[2023-02-13T18:03:40+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000191s ]
+[2023-02-13T18:03:40+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000233s ]
+[2023-02-13T18:03:55+08:00][sql] CONNECT:[ UseTime:0.000318s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-13T18:03:55+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.000879s ]
+[2023-02-13T18:03:55+08:00][sql] UPDATE `gxfc_card`  SET `is_status` = 1  WHERE  `id` = 2459 [ RunTime:0.006371s ]
+[2023-02-13T18:03:55+08:00][sql] CONNECT:[ UseTime:0.000339s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-13T18:03:55+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.000897s ]
+[2023-02-13T18:03:55+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000255s ]
+[2023-02-13T18:03:55+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000373s ]
+[2023-02-13T18:07:19+08:00][sql] CONNECT:[ UseTime:0.000359s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-13T18:07:19+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.000884s ]
+[2023-02-13T18:07:19+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000148s ]
+[2023-02-13T18:07:19+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000236s ]
+[2023-02-13T18:07:24+08:00][sql] CONNECT:[ UseTime:0.000332s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-13T18:07:24+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.000831s ]
+[2023-02-13T18:07:24+08:00][sql] UPDATE `gxfc_card`  SET `is_status` = 0  WHERE  `id` = 2458 [ RunTime:0.005189s ]
+[2023-02-13T18:07:24+08:00][sql] CONNECT:[ UseTime:0.000341s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-13T18:07:24+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.000860s ]
+[2023-02-13T18:07:24+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000212s ]
+[2023-02-13T18:07:24+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000313s ]
+[2023-02-13T18:07:26+08:00][sql] CONNECT:[ UseTime:0.000337s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-13T18:07:26+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.000885s ]
+[2023-02-13T18:07:26+08:00][sql] UPDATE `gxfc_card`  SET `is_status` = 2  WHERE  `id` = 2458 [ RunTime:0.012009s ]
+[2023-02-13T18:07:26+08:00][sql] CONNECT:[ UseTime:0.000359s ] mysql:host=127.0.0.1;port=3306;dbname=xiaofu;charset=utf8
+[2023-02-13T18:07:26+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_card` [ RunTime:0.000926s ]
+[2023-02-13T18:07:26+08:00][sql] SELECT COUNT(*) AS think_count FROM `gxfc_card` `` [ RunTime:0.000217s ]
+[2023-02-13T18:07:26+08:00][sql] SELECT * FROM `gxfc_card` `` LIMIT 0,10 [ RunTime:0.000332s ]

@@ -1,0 +1,22 @@
+[2023-04-10T17:31:00+08:00][sql] CONNECT:[ UseTime:0.000862s ] mysql:host=127.0.0.1;port=3306;dbname=tongcheng;charset=utf8
+[2023-04-10T17:31:00+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_addon` [ RunTime:0.001328s ]
+[2023-04-10T17:31:00+08:00][sql] SELECT `name` FROM `gxfc_addon` [ RunTime:0.000294s ]
+[2023-04-10T17:31:02+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_group` [ RunTime:0.002057s ]
+[2023-04-10T17:31:02+08:00][sql] SELECT * FROM `gxfc_group` WHERE  `group_id` = 1  AND `site_id` = 0  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000643s ]
+[2023-04-10T17:31:02+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_menu` [ RunTime:0.002618s ]
+[2023-04-10T17:31:02+08:00][sql] SELECT * FROM `gxfc_menu` WHERE  `app_module` = 'admin'  AND `is_show` = 1 ORDER BY `sort` ASC [ RunTime:0.003042s ]
+[2023-04-10T17:31:02+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `url` = 'admin/Memberwithdraw/lists'  AND `app_module` = 'admin' ORDER BY `level` DESC LIMIT 1 [ RunTime:0.000579s ]
+[2023-04-10T17:31:02+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'MEMBER_WITHDRAW_LIST'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000589s ]
+[2023-04-10T17:31:02+08:00][sql] SELECT `id`,`app_module`,`name`,`title`,`parent`,`level`,`url`,`is_show`,`sort`,`desc`,`picture`,`is_icon`,`picture_select`,`is_control`,`addon` FROM `gxfc_menu` WHERE  `name` = 'ACCOUNT_ROOT'  AND `app_module` = 'admin' LIMIT 1 [ RunTime:0.000566s ]
+[2023-04-10T17:31:02+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_website` [ RunTime:0.005651s ]
+[2023-04-10T17:31:02+08:00][sql] SELECT `title`,`logo`,`desc`,`keywords`,`web_status`,`close_reason` FROM `gxfc_website` WHERE  `site_id` = 0 LIMIT 1 [ RunTime:0.002041s ]
+[2023-04-10T17:31:02+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_config` [ RunTime:0.002036s ]
+[2023-04-10T17:31:02+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'COPYRIGHT' LIMIT 1 [ RunTime:0.000529s ]
+[2023-04-10T17:31:02+08:00][sql] SELECT `site_id`,`app_module`,`config_key`,`value`,`config_desc`,`is_use`,`create_time`,`modify_time` FROM `gxfc_config` WHERE  `site_id` = 0  AND `app_module` = 'admin'  AND `config_key` = 'DEFAULT_IMAGE' LIMIT 1 [ RunTime:0.001044s ]
+[2023-04-10T17:31:02+08:00][sql] SHOW FULL COLUMNS FROM `gxfc_member` [ RunTime:0.001139s ]
+[2023-04-10T17:31:02+08:00][sql] SELECT 
+                sum(balance) as balance, 
+                sum(balance_money) as balance_money,
+                sum(balance_withdraw_apply) as balance_withdraw_apply, 
+                sum(balance_withdraw) as balance_withdraw
+                 FROM `gxfc_member` WHERE  `member_id` > 0 LIMIT 1 [ RunTime:0.000568s ]
